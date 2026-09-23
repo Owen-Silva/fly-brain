@@ -1,0 +1,3 @@
+condition,seed,n_eln_silenced,runaway_intact,runaway_eln_silenced,mn9_hz_intact,mn9_hz_eln_silenced,median_spikes_intact,median_spikes_eln_silenced
+water_200Hz,3000,38,7,2,20.5,21.733333333333334,21355.0,20352.0
+bitter_200Hz,4001,38,2,0,0.0,0.0,11599.5,11599.5

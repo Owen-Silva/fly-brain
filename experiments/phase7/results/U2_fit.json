@@ -1,0 +1,35 @@
+{
+ "{\"E_inh_mV\": -60.0, \"conductance\": true}": {
+  "trajectory": [
+   [
+    1.0,
+    6.533333333333333
+   ],
+   [
+    2.0,
+    54.2
+   ],
+   [
+    4.0,
+    16.266666666666666
+   ],
+   [
+    2.378414230005442,
+    52.4,
+    15,
+    20261.0
+   ]
+  ],
+  "scale": 2.0,
+  "mn9_at_scale": 54.2,
+  "status": "target not reached before MN9 fell or the network ignited",
+  "target_hz": 65.7,
+  "fit_seed": 900,
+  "trajectory_columns": [
+   "scale",
+   "mn9_hz",
+   "trials",
+   "median_spikes_per_trial"
+  ]
+ }
+}

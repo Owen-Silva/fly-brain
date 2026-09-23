@@ -1,0 +1,86 @@
+config,check,per_seed,holds (all seeds)
+baseline,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+baseline,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+baseline,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+baseline,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+baseline,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+baseline,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+baseline,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+baseline_newseeds,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+baseline_newseeds,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+baseline_newseeds,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+baseline_newseeds,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+baseline_newseeds,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+baseline_newseeds,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+baseline_newseeds,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+U1_delays,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+U1_delays,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+U1_delays,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+U1_delays,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+U1_delays,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+U1_delays,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+U1_delays,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+U1_delays_slow0.129,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U1_delays_slow0.129,sugar 200 Hz > sugar 100 Hz,pass,True
+U1_delays_slow0.129,sugar: contra MN9 > ipsi MN9,pass,True
+U1_delays_slow0.129,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass,True
+U1_delays_slow0.129,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U1_delays_slow0.129,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U1_delays_fast2.07,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U1_delays_fast2.07,sugar 200 Hz > sugar 100 Hz,pass,True
+U1_delays_fast2.07,sugar: contra MN9 > ipsi MN9,pass,True
+U1_delays_fast2.07,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass,True
+U1_delays_fast2.07,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U1_delays_fast2.07,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U1_delays_soma,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U1_delays_soma,sugar 200 Hz > sugar 100 Hz,pass,True
+U1_delays_soma,sugar: contra MN9 > ipsi MN9,pass,True
+U1_delays_soma,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass,True
+U1_delays_soma,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U1_delays_soma,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U2_cond,sugar 100 Hz drives MN9 (>= 20 Hz),FAIL/FAIL/FAIL,False
+U2_cond,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+U2_cond,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+U2_cond,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",FAIL/FAIL/FAIL,False
+U2_cond,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+U2_cond,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+U2_cond,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",FAIL/FAIL/FAIL,False
+U2_cond_Ei-70,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U2_cond_Ei-70,sugar 200 Hz > sugar 100 Hz,pass,True
+U2_cond_Ei-70,sugar: contra MN9 > ipsi MN9,pass,True
+U2_cond_Ei-70,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",FAIL,False
+U2_cond_Ei-70,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U2_cond_Ei-70,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U2_cond_tuned,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+U2_cond_tuned,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+U2_cond_tuned,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+U2_cond_tuned,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+U2_cond_tuned,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+U2_cond_tuned,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+U2_cond_tuned,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+U3_adapt,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+U3_adapt,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+U3_adapt,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+U3_adapt,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+U3_adapt,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+U3_adapt,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+U3_adapt,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+U3_adapt_half,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U3_adapt_half,sugar 200 Hz > sugar 100 Hz,pass,True
+U3_adapt_half,sugar: contra MN9 > ipsi MN9,pass,True
+U3_adapt_half,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass,True
+U3_adapt_half,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U3_adapt_half,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U3_adapt_tau300,sugar 100 Hz drives MN9 (>= 20 Hz),pass,True
+U3_adapt_tau300,sugar 200 Hz > sugar 100 Hz,pass,True
+U3_adapt_tau300,sugar: contra MN9 > ipsi MN9,pass,True
+U3_adapt_tau300,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass,True
+U3_adapt_tau300,bitter alone: MN9 silent (<= 1 Hz),pass,True
+U3_adapt_tau300,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass,True
+U13,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+U13,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+U13,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+U13,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+U13,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+U13,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+U13,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True

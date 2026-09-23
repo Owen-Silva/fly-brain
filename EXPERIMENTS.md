@@ -486,3 +486,116 @@ right steering rule without fixing or correcting this first.
   system is suspect until then.
 - **Explained in plain English:** `docs/phase6-runaway-activity.md`. Numbers:
   `experiments/phase6/runaway/results/summary_stats.txt`.
+
+# EXPERIMENTS.md entries: Phase 7 upgrades 1-3
+
+(Written by the Phase 7 lane for the main session to paste into EXPERIMENTS.md.
+All numbers: snapshot 630, whole brain, `experiments/phase7/results/summary.md`.
+Every entry is PRELIMINARY in the PLAN.md Phase 6 sense: 3 seeds and parameter
+variants were run, but there has been no independent review.)
+
+How every upgrade was checked: the Phase 3 conditions (sugar 100 and 200 Hz,
+water 200 Hz, bitter 200 Hz, sugar 100 + bitter 120 Hz, and sugar 200 + Ir94e
+200 Hz for runaway activity) were each run with 3 random seeds x 30 trials x
+1 s (the runaway condition with 5 seeds = 150 trials), with the upgrade ON,
+and compared with the unchanged baseline engine run on the same seeds. A
+check "holds" only if it passes for every seed. "Noise floor" = how much the
+baseline differs from itself when run with 3 new seeds.
+
+## 2026-09-22 - Phase 7 upgrade 1: distance-dependent synaptic delays (PRELIMINARY)
+
+**Source.** Synaptic part 1.8 ms: Paul et al. 2015, Front Cell Neurosci 9:29
+(measured from the spike at the nerve terminal, so no travel time is in it).
+Conduction speed 0.2 m/s: Kottmeier et al. 2020, Nat Commun 11:4491 (larval
+axons 0.196 m/s motor, 0.129 m/s sensory); fast bound 2.07 m/s: Kadas et al.
+2019, eNeuro (adult giant fiber). Positions: FlyWire anchor points (Schlegel
+et al. 2024); there are no synapse positions for snapshot 630.
+
+**What changed.** Each connection's delay = 1.8 ms + straight-line distance
+between the two neurons' anchor points / 0.2 m/s (median 2.3 ms, longest
+4.9 ms; baseline: all 1.8 ms). Switch `delays` in `sim/realism.py`.
+
+**What happened to the baseline results.** All Phase 3 checks hold on all 3
+seeds. MN9 (opposite side): sugar 100 Hz 67.3 -> 71.1 Hz (+6%, consistent
+across seeds), sugar 200 Hz 93.5 -> 93.3, water 30.8 -> 31.0, bitter 0 -> 0,
+sugar + bitter 1.4 -> 1.4, sugar 200 + Ir94e 200 63.6 -> 64.2. Neuron by
+neuron: correlation 0.9988-1.0000 (noise floor 0.9999-1.0000), 49-50 of the
+top 50 the same. Runaway in sugar 200 + Ir94e 200: 6/150 vs 5/150 (p = 1.0),
+no change. Variants (0.129 m/s, 2.07 m/s, cell-body distances; 1 seed each)
+agree.
+
+**Plain English.** Signals now take longer to arrive the farther they travel,
+half a millisecond extra on average. The brain's responses barely change, so
+the paper's feeding result does not depend on the "every signal takes 1.8 ms"
+shortcut.
+
+## 2026-09-22 - Phase 7 upgrade 2: conductance-based synapses (PRELIMINARY, FAILS checks)
+
+**Source.** Acetylcholine (nicotinic) reversal ~0 mV: Lee & O'Dowd 1999,
+J Neurosci 19:5311; Su & O'Dowd 2003, J Neurosci 23:9246 (+8.9 mV). Chloride
+(GABA-Rdl, GluCl) reversal -50 to -60 mV: Rohrbough & Broadie 2002,
+J Neurophysiol 88:847; -45 to -50 mV McCarthy et al. 2011, J Neurosci
+31:8181; -37 mV Su & O'Dowd 2003. All whole-cell recordings, so the in-vivo
+value is uncertain. Used 0 and -60 mV; -70 mV as a variant.
+
+**What changed.** A synapse's push now depends on the voltage's distance from
+the channel's reversal potential. Weights rescaled explicitly so one synapse
+moves a neuron at rest exactly as in the baseline: excitatory conductance
+0.275/52 = 0.00529, inhibitory 0.275/8 = 0.0344 (in units of the leak
+conductance). Switch `conductance`.
+
+**What happened to the baseline results.** Three checks fail on all seeds:
+sugar 100 Hz -> MN9 6.8 Hz (needs >= 20), water -> 0 Hz, sugar 200 + Ir94e
+200 -> 0 Hz (abolished). Diagnosis: conductance-based excitation alone gives
+53 Hz, inhibition alone 25 Hz, both 7 Hz (inhibitory shunting is the larger
+cause). -70 mV: sugar 100 Hz 26 Hz but water still 0.1 Hz. Re-fitting the one
+global synapse multiplier (as Shiu et al. did) peaks at 54 Hz at 2x and never
+reaches the paper's 65.7 Hz. At 2x all seven MN9 checks pass (sugar 100 Hz
+52.6 Hz, water 20.6, bitter 0, sugar + bitter 4.4, Ir94e 13.7), but the brain
+becomes unstable: it runs away with water (19/90), bitter (4/90) and sugar
+alone (2/90 each), never seen in the baseline, and resembles the baseline
+less (correlation 0.64-0.95). Runaway: drop-in 0/150 (p = 0.06) is MASKING
+(the whole network is weakened; a single forced kick to the eLNs still
+ignites it); at 2x, 5/90 in sugar + Ir94e, and silencing the 38 antennal-lobe
+eLNs removes most of the new runaways (water 7 -> 2, bitter 2 -> 0 of 30), so
+the retune makes the existing eLN loop easier to trigger and adds at least
+one other route. Neither is a fix of the sign problem.
+
+**Plain English.** Making synapses behave like real ion channels is more
+realistic, but with the baseline's synapse strengths it starves the feeding
+pathway, and turning all strengths up to compensate makes the network
+unstable. It needs a proper re-fit (separate excitatory and inhibitory
+strengths, better chloride data), which was not done. Not stacked with the
+other upgrades.
+
+## 2026-09-22 - Phase 7 upgrade 3: spike-frequency adaptation (PRELIMINARY)
+
+**Source.** Strength: Zhao & Wu 1997, J Neurosci 17:2187 (cultured Drosophila
+central neurons, 600 ms steps at 2-3x threshold; "adaptive" = last rate below
+0.7x the first). Time constant 100 ms: SK-channel pauses in Drosophila sensory
+neurons, median 104 ms (Onodera et al. 2017, eLife 6:e29754); dSK in fly
+neurons: Abou Tayoun et al. 2011, J Neurosci 31:13897. No direct measurement
+for adult central brain neurons was found.
+
+**What changed.** Every spike adds a brake current that fades with a 100 ms
+time constant; 0.974 mV per spike, calibrated so one model neuron on the
+Zhao & Wu protocol slows to exactly 0.7x. Same for every neuron. Switch
+`adaptation`.
+
+**What happened to the baseline results.** All Phase 3 checks hold on all 3
+seeds, alone and together with upgrade 1. MN9 about a third lower: sugar
+100 Hz 67.3 -> 43.9, sugar 200 Hz 93.5 -> 67.0, water 30.8 -> 11.0, bitter
+0 -> 0, sugar + bitter 1.4 -> 3.2 (7% of sugar alone; check allows 10%),
+sugar 200 + Ir94e 200 63.6 -> 32.0. Neuron by neuron: correlation
+0.947-0.991, 38-47 of the top 50. Runaway: 0/150 vs 5/150 (p = 0.06).
+Half strength and a 300 ms time constant also give 0/150 each (pooled
+0/450 vs 5/150, p = 0.001). But a single forced kick to 10 DM1 smell neurons
+or to the 38 antennal-lobe eLNs still ignites the whole brain with every
+adaptation setting (about 30% fewer spikes), so the Phase 6 eLN loop is still
+there: adaptation MASKS the sign/wiring problem, it does not fix it. Variants (half strength; 300 ms) pass the same checks, with a
+smaller drop.
+
+**Plain English.** Letting neurons tire during a long input, as many real fly
+neurons do, keeps every yes/no behaviour of the paper but lowers all the
+firing rates by about a third, so the paper's exact numbers depend on the
+model having no adaptation.

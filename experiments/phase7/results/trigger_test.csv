@@ -1,0 +1,17 @@
+config,trigger,total_spikes,neurons_firing,ignites
+baseline,10 DM1 smell neurons fire once,444790,8177,True
+baseline,38 eLNs fire once,664857,9850,True
+U1_delays,10 DM1 smell neurons fire once,447185,8211,True
+U1_delays,38 eLNs fire once,719431,10139,True
+U2_cond,10 DM1 smell neurons fire once,164127,3160,True
+U2_cond,38 eLNs fire once,300019,4661,True
+U2_cond_tuned,10 DM1 smell neurons fire once,358629,7846,True
+U2_cond_tuned,38 eLNs fire once,735213,9570,True
+U3_adapt,10 DM1 smell neurons fire once,297401,7541,True
+U3_adapt,38 eLNs fire once,464698,9331,True
+U3_adapt_half,10 DM1 smell neurons fire once,359593,7776,True
+U3_adapt_half,38 eLNs fire once,548292,9460,True
+U3_adapt_tau300,10 DM1 smell neurons fire once,319554,7812,True
+U3_adapt_tau300,38 eLNs fire once,496845,9513,True
+U13,10 DM1 smell neurons fire once,302088,7614,True
+U13,38 eLNs fire once,465187,9376,True

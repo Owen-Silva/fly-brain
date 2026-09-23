@@ -1,0 +1,15 @@
+{
+ "config": "U2_cond_tuned",
+ "engine": "realism",
+ "realism": {
+  "delays": false,
+  "conductance": true,
+  "adaptation": false,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_weight_scale": 2.0,
+  "g_exc_per_synapse": 0.010576923076923078,
+  "g_inh_per_synapse": 0.06875
+ },
+ "n_trials_per_seed": 30
+}

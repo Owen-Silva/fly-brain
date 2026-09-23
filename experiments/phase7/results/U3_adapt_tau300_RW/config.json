@@ -1,0 +1,12 @@
+{
+ "config": "U3_adapt_tau300_RW",
+ "engine": "realism",
+ "realism": {
+  "delays": false,
+  "conductance": false,
+  "adaptation": true,
+  "tau_adapt_ms": 300.0,
+  "adapt_mV": 0.312242236510185
+ },
+ "n_trials_per_seed": 30
+}

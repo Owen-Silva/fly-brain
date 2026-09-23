@@ -1,0 +1,16 @@
+{
+ "config": "U1_delays_slow0.129",
+ "engine": "realism",
+ "realism": {
+  "delays": true,
+  "conductance": false,
+  "adaptation": false,
+  "velocity_m_per_s": 0.129,
+  "distance": "anchor",
+  "delay_ms_mean": 2.597493051422132,
+  "delay_ms_median": 2.5,
+  "delay_ms_p95": 3.6,
+  "delay_ms_max": 6.6000000000000005
+ },
+ "n_trials_per_seed": 30
+}

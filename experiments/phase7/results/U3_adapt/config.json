@@ -1,0 +1,12 @@
+{
+ "config": "U3_adapt",
+ "engine": "realism",
+ "realism": {
+  "delays": false,
+  "conductance": false,
+  "adaptation": true,
+  "tau_adapt_ms": 100.0,
+  "adapt_mV": 0.9738954166171474
+ },
+ "n_trials_per_seed": 30
+}
