@@ -10,3 +10,4 @@ output/
 # Raw per-timestep arrays from olfaction runs (regenerable, ~80 MB)
 experiments/phase5/unexplored/results/*.npy
 __pycache__/
+.venv-body/
