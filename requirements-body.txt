@@ -1,0 +1,46 @@
+# Phase 9 body environment (.venv-body). Kept SEPARATE from the main .venv so
+# the physics body model cannot disturb the verified brain setup.
+#
+# Create it (Windows, Python 3.13):
+#   py -3.13 -m venv .venv-body
+#   .venv-body\Scripts\python.exe -m pip install -r requirements-body.txt
+#
+# Everything the main project pins, at the same versions:
+-r requirements.txt
+#
+# The body model: FlyGym 2.1.0 (NeuroMechFly, EPFL; Wang-Chen et al. 2024,
+# Nature Methods). It also installs the `flygym_demo` package (the walking
+# controllers). All other lines below are what `pip install flygym==2.1.0`
+# pulled in on 2026-09-22, pinned to the exact versions that were installed and
+# used for the Phase 9 runs (packages already pinned above are not repeated).
+flygym==2.1.0
+mujoco==3.9.0
+absl-py==2.5.0
+etils==1.14.0
+fsspec==2026.9.0
+glfw==2.10.2
+imageio==2.37.4
+imageio-ffmpeg==0.6.0
+jaxtyping==0.3.7
+loguru==0.7.3
+mediapy==1.2.7
+PyOpenGL==3.1.10
+PyYAML==6.0.3
+tabulate==0.9.0
+wadler_lindig==0.1.7
+win32_setctime==1.2.0
+zipp==4.1.0
+# pulled in by mediapy (notebook display helpers; not used by our code)
+ipython==9.17.1
+ipython_pygments_lexers==1.1.1
+asttokens==3.0.2
+executing==2.2.1
+jedi==0.20.0
+matplotlib-inline==0.2.2
+parso==0.8.7
+prompt_toolkit==3.0.53
+psutil==7.2.2
+pure_eval==0.2.4
+stack-data==0.6.3
+traitlets==5.16.1
+wcwidth==0.8.4

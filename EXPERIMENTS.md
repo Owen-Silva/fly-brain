@@ -821,3 +821,67 @@ switches on the punishment neurons, so after a single sniff the fly "learns" tha
 smell is bad. That signal comes from neurons outside the mushroom body. The biggest one
 probably releases dopamine (a computer prediction, about 64% confident), but the model
 treats it as a plain excitatory neuron; that is the next thing to check.
+
+## 2026-09-23 — Phase 9, first steps: the closed brain-body loop (odor taxis)
+
+**What was built**
+
+- A separate environment, `.venv-body`: the same pinned packages as `.venv`, plus
+  FlyGym 2.1.0 and its dependencies (`requirements-body.txt`). FlyGym's walking runs here.
+  - `.venv-body/` is in `.gitignore` (added by another lane).
+- Smell, added back to FlyGym 2.x with the published FlyGym 1.x rule: strength =
+  peak × distance⁻² at 2 antennae + 2 palps (`sim/body/odor.py`). Source: the
+  flygym-gymnasium 1.3.2 code, NeuroMechFly v2 (Wang-Chen et al. 2024).
+- The closed loop (`sim/body/`), in 50 ms windows:
+  1. antenna odor → firing rate of the left and right DM1 smell neurons;
+  2. the whole brain runs for 50 ms, keeping its state between windows;
+  3. the left and right DNa02/DNa01 spikes → a turn command → FlyGym's [left, right]
+     drive;
+  4. FlyGym's walking controller moves the body.
+  - `FastBrain` cannot carry its state across windows. The workaround is a copy of its
+    inner loop that keeps the state (`brain_stepper.py`). It is proven spike-for-spike
+    identical to one uninterrupted FastBrain run, on small networks (tests) and once on
+    the full brain (300 ms, 129,098 spikes).
+- **Not brain-driven, and labelled so:** walking speed (fixed), all leg movement (FlyGym's
+  controller), and the hand-written comparison rule.
+- Controls:
+  - (a) the read-out DNs silenced;
+  - (b) FlyGym 1.x's hand-written taxis rule (NOT brain-driven);
+  - (c) no odor.
+- The DN → drive read-out is one swappable object (`DriveMapping`).
+- Tests: `tests/test_body_loop.py`, 22 tests.
+
+**What happened** (4 start layouts per condition, odor 15 mm away at ±45°/±90°, 3 s
+each; `docs/phase9-body-loop.md`):
+
+- **Recommended sign fix (`al_ln_literature`):** no read-out neuron fired a single
+  spike in any window. The brain-driven fly walked straight, on exactly the same path
+  as the silenced fly. It reached the odor 0 of 4 times, and 0 of 4 again with other
+  brain seeds.
+- **Same brain, with smell neurons 10× more sensitive:** the steering neurons fired, but
+  almost only the LEFT DNa02. The fly turned left for odor on either side and reached the
+  odor only when it was on its left (1 of 4).
+- **Published model and the `eln_electrical` fix:** the smell system runs away. The fly
+  spins in left circles (about 440° in 3 s) and reached the odor 0 of 4 times.
+  - These flies *end* closer to the odor than the silenced fly only because they circle
+    near the start. Their closest approach is the same.
+- **Hand-written rule, same body (NOT brain-driven):** reached the odor 4 of 4 times, in
+  1.6-1.9 s.
+- **Silenced DNs and no odor:** walked straight, 0 of 4.
+- **Answer:** the brain-driven fly does NOT approach the odor better than chance or
+  better than the silenced fly. This matches the Phase 5 wiring finding: left-only and
+  right-only DM1 smell both drive the LEFT DNa02. The PLAN.md Phase 9 checkpoint is
+  **not passed**.
+
+**Follow-up:** `docs/phase6-steering.md` appeared after the runs finished. It found no
+DM1 steering read-out among all 463 left/right DN pairs. Following its recommendation, any
+DM1 odor-taxis demo uses the hand-written rule, labelled "turning NOT brain-driven". Its
+optional DA1 + DNpe002 route was not run. The loop supports it through two config
+entries: `orn_type` and `drive_mapping`.
+
+**Validated?** No. PRELIMINARY:
+
+- n = 4 layouts per condition, one brain seed each (two for the recommended fix);
+- no Phase 6 seed/parameter sweep;
+- ORN/DN side labels not independently checked;
+- the sensor → rate curve is a modelling choice.

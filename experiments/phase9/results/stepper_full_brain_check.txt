@@ -1,0 +1,5 @@
+fix=none; 300 ms, DM1 ORNs at 75 Hz, 50 ms windows
+one FastBrain run: 129098 spikes, 95927 neurons touched, 5.3 s
+windowed stepper : 129098 spikes, 95927 neurons touched, 4.0 s
+IDENTICAL spike for spike: True
+
