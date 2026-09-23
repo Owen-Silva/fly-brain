@@ -1,0 +1,13 @@
+condition (snapshot 630),readout,ours,trials (ours),paper,reference repo run (30 trials),paper source,expected direction,direction matches,number within 2 sd of paper
+sugar_100Hz,MN9 contra,67.0 ± 3.6 Hz,10,65.7 ± 3.3 Hz,67.0,notes; repo run gives 67.0,up,YES,"yes (diff +1.3 Hz, 1.0 SE)"
+sugar_100Hz,MN9 ipsi,51.4 ± 5.0 Hz,10,49.7 ± 4.4 Hz,48.6,notes; repo run gives 48.6,"up, below contra",YES,"yes (diff +1.7 Hz, 1.0 SE)"
+sugar_100Hz,active neurons,392.0,10,410.0,404.0,notes; repo run gives 404,network grows with rate,YES,
+sugar_200Hz,MN9 contra,92.7 ± 3.7 Hz,10,93.2 ± 5.2 Hz,93.3,notes; repo run gives 93.3,"up, above 100 Hz value",YES,"yes (diff -0.5 Hz, 0.3 SE)"
+sugar_200Hz,MN9 ipsi,62.9 ± 4.4 Hz,10,62.9 ± 3.6 Hz,61.8,notes; repo run gives 61.8,"up, below contra",YES,"yes (diff +0.0 Hz, 0.0 SE)"
+sugar_200Hz,active neurons,432.0,10,455.0,448.0,text (455 neurons at 200 Hz); repo run gives 448,network grows with rate,YES,
+water_200Hz,MN9 contra,33.5 ± 6.1 Hz,10,30.7 ± 5.4 Hz,,notes (UNVERIFIED number); text: water activates MN9,"up, weaker than sugar",YES,"yes (diff +2.8 Hz, 1.3 SE)"
+water_200Hz,MN9 ipsi,13.9 ± 5.4 Hz,10,13.0 Hz,,notes (UNVERIFIED number),"up, below contra",YES,
+bitter_200Hz,MN9 contra,0.0 ± 0.0 Hz,5,0.0 Hz,,notes (UNVERIFIED number),zero,YES,
+sugar100_bitter40,MN9 contra,48.0 ± 6.1 Hz,5,45.3 Hz,,notes (UNVERIFIED number); text: bitter inhibits MN9,down vs sugar alone,YES,
+sugar100_bitter120,MN9 contra,0.9 ± 0.7 Hz,10,1.5 Hz,,notes (UNVERIFIED number); text: bitter inhibits MN9,"down, near zero",YES,
+sugar200_ir94e200,MN9 contra,58.4 ± 17.3 Hz,5,64.3 Hz,,notes (UNVERIFIED number); text: strong Ir94e does not eliminate strong sugar,"down vs sugar alone, not abolished",YES,

@@ -154,3 +154,35 @@ the result was validated (see PLAN.md Phase 6). Newest entries at the bottom.
 - **Validated:** Yes for the Phase 4 checkpoint: the app and code give
   identical results. This is a check of the app, not a new scientific
   finding. The MN9 response itself comes from Phase 3.
+
+## 2026-09-22: Phase 3, reproduce the published result (Brian2, snapshot 630)
+- **Changed:** Ported the paper's own model code (`data/reference/model.py`) to
+  `sim/shiu_model.py` so it runs on this laptop. Every equation, parameter, weight and sign
+  rule is identical (a test checks this against their file). Five practical changes, none of
+  which touch the maths: Brian2's pure-Python engine (no C++ compiler here), the brain is built
+  once per experiment instead of once per trial, every trial has a recorded random seed,
+  silencing is done with an equivalent faster method, and firing rates are computed exactly like
+  their `utils.get_rate`. Used the paper's own wiring-diagram snapshot (630).
+- **Ran:** 7 experiments, REDUCED protocol: 10 trials of 1 s for sugar 100 Hz, sugar 200 Hz,
+  water 200 Hz, sugar 100 + bitter 120 Hz; 5 trials for bitter 200 Hz alone, sugar 100 +
+  bitter 40 Hz, sugar 200 + Ir94e 200 Hz (the paper used 30 trials). Results, seeds and settings
+  are in `experiments/phase3/results/v630/`.
+- **Happened:** MN9, the feeding motor neuron, behaves as in the paper in all 12 checks:
+  sugar 100 Hz 67.0 (paper 65.7), sugar 200 Hz 92.7 (93.2), water 33.5 (30.7), bitter alone
+  0.0 (0.0), sugar + bitter 40 Hz 48.0 (45.3), sugar + bitter 120 Hz 0.9 (1.5), strong sugar +
+  Ir94e 58.4 (64.3), all in spikes per second. Neuron by neuron, our sugar runs match the
+  reference code's own saved 30-trial runs with correlation 0.9996 (200 Hz) and 0.9992 (100 Hz),
+  and no neuron differs by more than noise would explain.
+- **Surprise:** in 2 of 5 trials of "sugar 200 + Ir94e 200", the whole model suddenly switched
+  into runaway activity (about 8,300 neurons firing non-stop, up to 364,000 spikes in a second,
+  against about 21,000 normally). No other trial did this. Probably a real property of the model,
+  not a bug, but not yet checked. Needs Phase 6 treatment (more seeds) before that experiment is
+  used for anything.
+- **Not done:** the snapshot 783 cross-check with Brian2 (dropped for time and memory; the fast
+  engine covers 783). The paper's MN9 numbers for water, bitter and Ir94e were taken from
+  `docs/reference-notes.md` and not re-checked here (UNVERIFIED); their directions were checked
+  against the paper's text.
+- **Validated:** Yes for the Phase 3 checkpoint (same neurons respond, same direction, similar
+  strength), with the reduced trial count noted. The Ir94e runaway observation is NOT validated.
+- **Explained in plain English:** `docs/phase3-explained.md`. Side-by-side table:
+  `experiments/phase3/comparison_table.md`.
