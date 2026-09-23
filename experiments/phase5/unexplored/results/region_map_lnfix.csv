@@ -1,0 +1,169 @@
+odor,stim_side,n_seeds,group,hemisphere,n_in_group,n_active,pct_active,mean_rate_active
+DM1,both,1,ORNs of this type (driven),left,35,35,100.0,148.0
+DM1,both,1,ORNs of this type (driven),right,33,33,100.0,147.9
+DM1,both,1,"ORNs, other types",left,1079,12,1.1,24.2
+DM1,both,1,"ORNs, other types",right,1099,12,1.1,24.7
+DM1,both,1,PNs of this glomerulus,left,1,1,100.0,260.4
+DM1,both,1,PNs of this glomerulus,right,1,1,100.0,238.3
+DM1,both,1,"PNs, other uniglomerular",left,140,4,2.9,17.3
+DM1,both,1,"PNs, other uniglomerular",right,140,7,5.0,16.2
+DM1,both,1,"PNs, multiglomerular",left,200,21,10.5,42.1
+DM1,both,1,"PNs, multiglomerular",right,203,15,7.4,40.8
+DM1,both,1,AL local neurons,left,212,58,27.4,59.0
+DM1,both,1,AL local neurons,right,212,76,35.8,47.2
+DM1,both,1,Lateral horn neurons (LHLN or LH* type),left,551,45,8.2,55.0
+DM1,both,1,Lateral horn neurons (LHLN or LH* type),right,548,51,9.3,47.2
+DM1,both,1,Lateral horn centrifugal,left,21,11,52.4,63.4
+DM1,both,1,Lateral horn centrifugal,right,21,14,66.7,40.0
+DM1,both,1,Kenyon cells,left,2580,131,5.1,23.0
+DM1,both,1,Kenyon cells,right,2597,74,2.8,15.7
+DM1,both,1,MBONs,left,49,16,32.7,18.1
+DM1,both,1,MBONs,right,48,16,33.3,16.0
+DM1,both,1,DANs,left,164,6,3.7,24.8
+DM1,both,1,DANs,right,162,9,5.6,17.8
+DM1,both,1,APL,left,1,1,100.0,88.6
+DM1,both,1,APL,right,1,1,100.0,30.2
+DM1,both,1,Descending neurons,left,639,46,7.2,12.5
+DM1,both,1,Descending neurons,right,648,46,7.1,8.5
+DM1,both,1,Everything else,left,56527,347,0.6,26.0
+DM1,both,1,Everything else,right,59196,357,0.6,22.3
+DM1,left,3,ORNs of this type (driven),left,35,35,100.0,147.6
+DM1,left,3,ORNs of this type (driven),right,33,0,0.0,0.0
+DM1,left,3,"ORNs, other types",left,1079,0,0.0,0.0
+DM1,left,3,"ORNs, other types",right,1099,0,0.0,0.0
+DM1,left,3,PNs of this glomerulus,left,1,1,100.0,210.1
+DM1,left,3,PNs of this glomerulus,right,1,1,100.0,180.0
+DM1,left,3,"PNs, other uniglomerular",left,140,0,0.0,0.0
+DM1,left,3,"PNs, other uniglomerular",right,140,0,0.0,0.0
+DM1,left,3,"PNs, multiglomerular",left,200,11,5.5,38.2
+DM1,left,3,"PNs, multiglomerular",right,203,5,2.5,41.5
+DM1,left,3,AL local neurons,left,212,22,10.4,56.0
+DM1,left,3,AL local neurons,right,212,22,10.4,35.5
+DM1,left,3,Lateral horn neurons (LHLN or LH* type),left,551,39,7.1,50.3
+DM1,left,3,Lateral horn neurons (LHLN or LH* type),right,548,43,7.8,40.8
+DM1,left,3,Lateral horn centrifugal,left,21,9,42.9,58.2
+DM1,left,3,Lateral horn centrifugal,right,21,11,52.4,36.4
+DM1,left,3,Kenyon cells,left,2580,102,4.0,18.0
+DM1,left,3,Kenyon cells,right,2597,28,1.1,14.5
+DM1,left,3,MBONs,left,49,15,30.6,11.6
+DM1,left,3,MBONs,right,48,10,20.8,14.4
+DM1,left,3,DANs,left,164,6,3.7,16.8
+DM1,left,3,DANs,right,162,8,4.9,15.9
+DM1,left,3,APL,left,1,1,100.0,65.1
+DM1,left,3,APL,right,1,1,100.0,5.8
+DM1,left,3,Descending neurons,left,639,42,6.6,12.1
+DM1,left,3,Descending neurons,right,648,38,5.9,8.8
+DM1,left,3,Everything else,left,56527,271,0.5,26.5
+DM1,left,3,Everything else,right,59196,273,0.5,23.0
+DM1,right,3,ORNs of this type (driven),left,35,0,0.0,0.0
+DM1,right,3,ORNs of this type (driven),right,33,33,100.0,147.6
+DM1,right,3,"ORNs, other types",left,1079,9,0.8,15.8
+DM1,right,3,"ORNs, other types",right,1099,11,1.0,12.7
+DM1,right,3,PNs of this glomerulus,left,1,1,100.0,199.3
+DM1,right,3,PNs of this glomerulus,right,1,1,100.0,185.2
+DM1,right,3,"PNs, other uniglomerular",left,140,2,1.4,16.9
+DM1,right,3,"PNs, other uniglomerular",right,140,6,4.3,6.7
+DM1,right,3,"PNs, multiglomerular",left,200,17,8.5,29.4
+DM1,right,3,"PNs, multiglomerular",right,203,13,6.4,33.8
+DM1,right,3,AL local neurons,left,212,55,25.9,42.6
+DM1,right,3,AL local neurons,right,212,75,35.4,29.7
+DM1,right,3,Lateral horn neurons (LHLN or LH* type),left,551,37,6.7,52.4
+DM1,right,3,Lateral horn neurons (LHLN or LH* type),right,548,49,8.9,40.1
+DM1,right,3,Lateral horn centrifugal,left,21,9,42.9,62.4
+DM1,right,3,Lateral horn centrifugal,right,21,12,57.1,36.5
+DM1,right,3,Kenyon cells,left,2580,97,3.8,17.9
+DM1,right,3,Kenyon cells,right,2597,36,1.4,13.3
+DM1,right,3,MBONs,left,49,14,28.6,13.4
+DM1,right,3,MBONs,right,48,13,27.1,13.7
+DM1,right,3,DANs,left,164,6,3.7,20.9
+DM1,right,3,DANs,right,162,9,5.6,15.8
+DM1,right,3,APL,left,1,1,100.0,52.2
+DM1,right,3,APL,right,1,1,100.0,3.8
+DM1,right,3,Descending neurons,left,639,44,6.9,11.4
+DM1,right,3,Descending neurons,right,648,46,7.1,7.3
+DM1,right,3,Everything else,left,56527,289,0.5,26.3
+DM1,right,3,Everything else,right,59196,313,0.5,23.4
+DA2,both,1,ORNs of this type (driven),left,16,16,100.0,147.9
+DA2,both,1,ORNs of this type (driven),right,22,22,100.0,147.6
+DA2,both,1,"ORNs, other types",left,1098,0,0.0,0.0
+DA2,both,1,"ORNs, other types",right,1110,0,0.0,0.0
+DA2,both,1,PNs of this glomerulus,left,5,5,100.0,51.0
+DA2,both,1,PNs of this glomerulus,right,6,6,100.0,74.0
+DA2,both,1,"PNs, other uniglomerular",left,136,0,0.0,0.0
+DA2,both,1,"PNs, other uniglomerular",right,135,0,0.0,0.0
+DA2,both,1,"PNs, multiglomerular",left,200,3,1.5,6.8
+DA2,both,1,"PNs, multiglomerular",right,203,3,1.5,1.9
+DA2,both,1,AL local neurons,left,212,6,2.8,20.8
+DA2,both,1,AL local neurons,right,212,9,4.2,22.3
+DA2,both,1,Lateral horn neurons (LHLN or LH* type),left,551,11,2.0,12.1
+DA2,both,1,Lateral horn neurons (LHLN or LH* type),right,548,18,3.3,13.0
+DA2,both,1,Lateral horn centrifugal,left,21,3,14.3,0.9
+DA2,both,1,Lateral horn centrifugal,right,21,3,14.3,0.9
+DA2,both,1,Kenyon cells,left,2580,0,0.0,0.0
+DA2,both,1,Kenyon cells,right,2597,0,0.0,0.0
+DA2,both,1,MBONs,left,49,3,6.1,0.6
+DA2,both,1,MBONs,right,48,5,10.4,0.6
+DA2,both,1,DANs,left,164,3,1.8,1.2
+DA2,both,1,DANs,right,162,3,1.9,1.4
+DA2,both,1,APL,left,1,0,0.0,0.0
+DA2,both,1,APL,right,1,0,0.0,0.0
+DA2,both,1,Descending neurons,left,639,9,1.4,1.3
+DA2,both,1,Descending neurons,right,648,7,1.1,0.9
+DA2,both,1,Everything else,left,56527,108,0.2,2.6
+DA2,both,1,Everything else,right,59196,111,0.2,2.4
+DA2,left,3,ORNs of this type (driven),left,16,16,100.0,147.4
+DA2,left,3,ORNs of this type (driven),right,22,0,0.0,0.0
+DA2,left,3,"ORNs, other types",left,1098,0,0.0,0.0
+DA2,left,3,"ORNs, other types",right,1110,0,0.0,0.0
+DA2,left,3,PNs of this glomerulus,left,5,3,60.0,9.0
+DA2,left,3,PNs of this glomerulus,right,6,6,100.0,37.9
+DA2,left,3,"PNs, other uniglomerular",left,136,1,0.7,0.5
+DA2,left,3,"PNs, other uniglomerular",right,135,0,0.0,0.0
+DA2,left,3,"PNs, multiglomerular",left,200,3,1.5,9.1
+DA2,left,3,"PNs, multiglomerular",right,203,3,1.5,4.1
+DA2,left,3,AL local neurons,left,212,4,1.9,16.1
+DA2,left,3,AL local neurons,right,212,9,4.2,13.7
+DA2,left,3,Lateral horn neurons (LHLN or LH* type),left,551,10,1.8,8.2
+DA2,left,3,Lateral horn neurons (LHLN or LH* type),right,548,19,3.5,6.4
+DA2,left,3,Lateral horn centrifugal,left,21,5,23.8,2.6
+DA2,left,3,Lateral horn centrifugal,right,21,3,14.3,3.7
+DA2,left,3,Kenyon cells,left,2580,0,0.0,0.0
+DA2,left,3,Kenyon cells,right,2597,0,0.0,0.0
+DA2,left,3,MBONs,left,49,5,10.2,2.0
+DA2,left,3,MBONs,right,48,5,10.4,2.4
+DA2,left,3,DANs,left,164,4,2.4,3.8
+DA2,left,3,DANs,right,162,4,2.5,4.3
+DA2,left,3,APL,left,1,0,0.0,0.0
+DA2,left,3,APL,right,1,0,0.0,0.0
+DA2,left,3,Descending neurons,left,639,23,3.6,2.1
+DA2,left,3,Descending neurons,right,648,20,3.1,1.9
+DA2,left,3,Everything else,left,56527,167,0.3,4.5
+DA2,left,3,Everything else,right,59196,199,0.3,3.7
+DA2,right,3,ORNs of this type (driven),left,16,0,0.0,0.0
+DA2,right,3,ORNs of this type (driven),right,22,22,100.0,147.4
+DA2,right,3,"ORNs, other types",left,1098,0,0.0,0.0
+DA2,right,3,"ORNs, other types",right,1110,0,0.0,0.0
+DA2,right,3,PNs of this glomerulus,left,5,5,100.0,29.9
+DA2,right,3,PNs of this glomerulus,right,6,6,100.0,42.2
+DA2,right,3,"PNs, other uniglomerular",left,136,0,0.0,0.0
+DA2,right,3,"PNs, other uniglomerular",right,135,0,0.0,0.0
+DA2,right,3,"PNs, multiglomerular",left,200,0,0.0,0.0
+DA2,right,3,"PNs, multiglomerular",right,203,0,0.0,0.0
+DA2,right,3,AL local neurons,left,212,3,1.4,2.4
+DA2,right,3,AL local neurons,right,212,3,1.4,9.2
+DA2,right,3,Lateral horn neurons (LHLN or LH* type),left,551,3,0.5,11.1
+DA2,right,3,Lateral horn neurons (LHLN or LH* type),right,548,6,1.1,11.0
+DA2,right,3,Lateral horn centrifugal,left,21,0,0.0,0.0
+DA2,right,3,Lateral horn centrifugal,right,21,0,0.0,0.0
+DA2,right,3,Kenyon cells,left,2580,0,0.0,0.0
+DA2,right,3,Kenyon cells,right,2597,0,0.0,0.0
+DA2,right,3,MBONs,left,49,0,0.0,0.0
+DA2,right,3,MBONs,right,48,0,0.0,0.0
+DA2,right,3,DANs,left,164,0,0.0,0.0
+DA2,right,3,DANs,right,162,0,0.0,0.0
+DA2,right,3,APL,left,1,0,0.0,0.0
+DA2,right,3,APL,right,1,0,0.0,0.0
+DA2,right,3,Descending neurons,left,639,0,0.0,0.0
+DA2,right,3,Descending neurons,right,648,0,0.0,0.0
+DA2,right,3,Everything else,left,56527,0,0.0,0.0
+DA2,right,3,Everything else,right,59196,2,0.0,10.2

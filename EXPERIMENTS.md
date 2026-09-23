@@ -293,3 +293,141 @@ this same check on any future result. Write-up with plots: `docs/phase5-sensitiv
     10-trial "redundant" calls, which can miss effects under about 5-10%.
   - **No new finding**, so Phase 6 step 6 does not apply. Not done: the paper's other six
     sugar rates, an activation screen, and snapshot 783.
+
+## 2026-09-22 — Phase 5: competition between tastes (sugar vs bitter, Ir94e, water)
+
+**What was changed.** Nothing in the model. New scripts in `experiments/phase5/competition/`:
+- `job_server.py` builds the whole brain once (snapshot 630, fast engine, 2 threads) and
+  runs every Phase 5 script in that one process.
+- `run_grid.py` runs the input-rate grids, `analyze_competition.py` makes the tables and
+  plots, and `suppressors.py` and `suppressor_robustness.py` search for the brake neurons.
+- `phase5_common.py` holds shared helpers. It reads the paper's ID lists out of
+  `sim/shiu_model.py` without importing Brian2.
+- Write-up: `docs/phase5-competition.md`.
+
+**What happened.**
+- **The paper's anchor points reproduce** (30 trials, seed 0). Sugar 100 Hz alone gives MN9
+  67.6 Hz (paper 67.0). Adding bitter at 40 / 80 / 120 / 200 Hz gives 47.7 / 13.4 / 1.4 /
+  0.0 Hz (paper 45.3 / 11.7 / 1.5 / 0.0). Sugar 200 + bitter 200 gives 10.7 (paper 11.2).
+  Sugar 100 + Ir94e 200 gives 4.1 (paper 2.5), and sugar 200 + Ir94e 200 gives 65.0
+  (paper 64.3). Sugar 40 + water 200 gives 61.8 (paper 61.2). Every point is within
+  2.5 Hz of the paper.
+- **Sugar x bitter grid** (sugar 50-200 Hz x bitter 0-200 Hz, 3 seeds x 30 trials). The
+  seed-to-seed spread is 1 Hz or less. MN9 falls along a steep S-curve, not a switch.
+  - The Hill steepness n is about 2.9 to 3.8.
+  - Going from 10% suppressed to 90% suppressed takes a 3.2- to 4.6-fold rise in bitter.
+  - The tipping point b50 (MN9 halved) scales with sugar: 23 / 54 / 83 / 112 Hz of
+    bitter at sugar 50 / 100 / 150 / 200 Hz. So bitter wins at about half the sugar rate.
+  - A fine 10 Hz sweep (seed 0) agrees: b50 56 Hz at sugar 100, 119 Hz at sugar 200.
+- **The brake neuron.** 22 inhibitory neurons are switched on by bitter. Silencing one
+  of them, CB0219-left (720575940624600840, glutamate), restores MN9 from 12.4 to
+  65.7 Hz with sugar 100 + bitter 80 (98% recovery, 3 seeds). With bitter 200 it gives
+  55% recovery. Silencing the top 3 gives about 100% even at bitter 200.
+  - It gets 247 synapses directly from the bitter GRNs and none from the sugar GRNs.
+  - It inhibits the sugar pathway's middle-stage cells (CB0393, CB0493, CB0762 x2,
+    DNge080), not MN9 itself.
+  - The result holds at w_syn 80% / 100% / 120% (74% / 98% / 102% recovery).
+- **Sugar + Ir94e** (3 seeds). At sugar 100 Hz, Ir94e 0 / 50 / 100 / 200 Hz gives MN9
+  67.0 / 46.8 / 17.1 / 3.6 Hz (b50 68 Hz, a bit weaker than bitter). At sugar 200 Hz,
+  Ir94e 200 Hz only lowers MN9 to 64.7 Hz. It does not abolish strong sugar, as the paper
+  found.
+- **Sugar + water** (3 seeds). The inputs combine synergistically. Sugar 40 (5.5 Hz) plus
+  water 100 (0 Hz) gives 45.3 Hz. Sugar 20 (0 Hz) plus water 200 (30.7 Hz) gives 45.6 Hz.
+  It saturates near 86 Hz at sugar 100.
+
+**Validated?**
+- **Yes** for the reproduction of the paper's sugar + bitter points (3 seeds, paper
+  match, biology direction).
+- **PRELIMINARY** for the tipping-point shape and ratio: no real-fly dose-response surface
+  was compared.
+- **PRELIMINARY / surprising** for "one glutamatergic neuron carries most of the bitter
+  suppression". Checks done: 3 seeds, w_syn +/-20%, IDs and signs. Literature: real flies
+  also use presynaptic GABA_B inhibition (Chu et al. 2014) and peripheral suppression,
+  which the model lacks. A quick web search found no published name for CB0219.
+  Nobody has been contacted (Phase 6 step 6 is the owner's call).
+
+**Plain English.** Mixing bitter into sugar turns the feeding motor neuron down smoothly
+but quickly. Bitter needs to be about half as strong as sugar to cut the response in half.
+In the model, most of that "stop eating" signal runs through one inhibitory neuron. That is
+a testable prediction, but not yet a finding.
+
+## 2026-09-22 — Phase 5: unexplored area, smell (DM1 vinegar / DA2 geosmin) and the left/right question
+
+**What was changed.** Nothing in the project's model. New scripts in
+`experiments/phase5/unexplored/`:
+- `run_olfaction.py`: the simulations. Its "lnfix" option is an exploratory variant
+  that makes 53 antennal-lobe local neurons inhibitory **for that run only**, inside our
+  own process, then restores the model and checks the restore.
+- `analyze_olfaction.py`: tables and plots.
+- `olf_ignition.py`, `phase6_ignition_check.py` (includes an independent simple
+  simulator) and `phase6_ignition_lesions.py`: the runaway checks.
+- `al_wiring.py` and `olf_paths.py`: wiring only, no simulation.
+- `steering_ids.py`: the steering neurons as 630 IDs.
+- Write-up: `docs/phase5-olfaction.md`.
+
+**Cell-type filters checked on the 630 labels.** In snapshot 630 the ORN types sit in
+`hemibrain_type`, not `cell_type`, so the Phase 8 doc's filter finds nothing there.
+Counts: ORN_DM1 68 (35 L / 33 R), ORN_DA2 39 (16 L / 22 R / 1 unlabelled), ALPN 685,
+KC 5,177, MBON 97, DAN 326.
+
+**What happened.**
+1. **The published model's smell system runs away.** If 3 DM1 ORNs fire once each,
+   about 8,150 neurons switch on and keep firing on their own for the full second.
+   That includes 65% of all Kenyon cells. With 2 ORNs, nothing spreads. Sugar controls
+   do not do this.
+   - The effect survives seeds 0-2 and w_syn 80-120%.
+   - It is reproduced by an independent, from-scratch simulator (8,031 vs 8,177
+     neurons), so it is not a bug in our engine.
+2. **The cause is 53 LNs.** These antennal-lobe local neurons (types lLN1 / lLN2T and
+   others) have a low-confidence transmitter guess of serotonin or dopamine, so the
+   model treats them as excitatory.
+   - Silencing them stops the runaway (26 neurons fire, none at the end).
+   - Making them inhibitory also stops it, and leaves sugar -> MN9 exactly unchanged
+     (67.6 / 67.3 / 66.2 Hz).
+3. **With that fix (exploratory):**
+   - **DM1 (both antennae, 150 Hz)** drives its PNs at about 170-200 Hz, 4% of Kenyon
+     cells (realistic sparseness), 32 of 97 MBONs and 92 descending neurons.
+   - **DA2** goes mainly to the lateral horn, reaches no Kenyon cells and only weakly
+     reaches 16 descending neurons.
+4. **Left/right, fixed variant** (3 seeds x 30 trials, 150 Hz):
+   - Left-only and right-only DM1 both drive the **left** DNa02 (42.5 vs 36.4 Hz).
+     The right DNa02 stays at 0 either way.
+   - The cause is a left/right see-saw in the lateral accessory lobe. The left AOTU019
+     (GABA) fires about 112 Hz and silences the right DNa02. It starts at the first
+     synapse: the left DM1 PN gets more ORN synapses from both antennae (the same in
+     snapshots 630 and 783).
+   - Real flies show a 30-50% same-side PN advantage (Gaudry et al. 2013). The model
+     has none.
+   - Among descending neurons, 55 of 100 active ones differ between left-only and
+     right-only DM1, but not as mirror pairs.
+   - Right-only DA2 reaches no descending neurons.
+5. **Left/right, published model** (3 seeds x 30 trials, 150 Hz). These used 300 ms
+   trials, because the runaway settles within 50 ms.
+   - **DM1:** left-only and right-only give the same output. Only 2 of 169 active
+     descending neurons differ consistently, by 3 Hz or less. The left DNa02 is at
+     about 50 Hz for either side; the right one stays silent.
+   - **DA2:** the right side ignites later and only in 20-24 of 30 trials, so its
+     responses are weaker. The left DNa02 still wins either way.
+   - DNg100 is under 1 Hz and DNp09 is at 0 in both versions.
+   - **Conclusion:** the Phase 9 open risk is confirmed. Neither version gives
+     mirror-image steering commands.
+
+**Validated?**
+- Every olfaction result is **PRELIMINARY**.
+- The runaway and the fixed-side steering bias are **surprising**, and Phase 6 steps
+  1-5 were done:
+  - 1: seeds and w_syn +/-20%;
+  - 2: independent simulator, IDs and signs;
+  - 3: quick literature check;
+  - 4: both contradict known biology, so we suspect the model;
+  - 5: this write-up.
+- The GABAergic identity of lLN1 / lLN2T is background knowledge, not re-read in this
+  pass.
+- The "lnfix" variant is not part of the project's model. Adopting it would be a
+  Phase 7-style upgrade, and that is the owner's call. Nobody has been contacted.
+
+**Plain English.** In the published model, a whiff of any strong smell sets the whole smell
+system on fire. That traces back to 53 inhibitory cells mislabelled as excitatory. With
+those fixed, smell responses look like a real fly's. But left and right smells still steer
+the same way, because of a lopsided wiring pattern. Phase 9 cannot use a simple left-minus-
+right steering rule without fixing or correcting this first.

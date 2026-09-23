@@ -1,0 +1,361 @@
+test,area,t_ms,spikes
+volley68,ORN_DM1 (driven),0,68
+volley68,ORN_DM1 (driven),50,0
+volley68,ORN_DM1 (driven),100,0
+volley68,ORN_DM1 (driven),150,0
+volley68,ORN_DM1 (driven),200,0
+volley68,ORN_DM1 (driven),250,0
+volley68,ORN_DM1 (driven),300,0
+volley68,ORN_DM1 (driven),350,0
+volley68,ORN_DM1 (driven),400,0
+volley68,ORN_DM1 (driven),450,0
+volley68,ORN_DM1 (driven),500,0
+volley68,ORN_DM1 (driven),550,0
+volley68,ORN_DM1 (driven),600,0
+volley68,ORN_DM1 (driven),650,0
+volley68,ORN_DM1 (driven),700,0
+volley68,ORN_DM1 (driven),750,0
+volley68,ORN_DM1 (driven),800,0
+volley68,ORN_DM1 (driven),850,0
+volley68,ORN_DM1 (driven),900,0
+volley68,ORN_DM1 (driven),950,0
+volley68,ORN (other),0,151
+volley68,ORN (other),50,447
+volley68,ORN (other),100,420
+volley68,ORN (other),150,424
+volley68,ORN (other),200,402
+volley68,ORN (other),250,438
+volley68,ORN (other),300,414
+volley68,ORN (other),350,450
+volley68,ORN (other),400,420
+volley68,ORN (other),450,468
+volley68,ORN (other),500,416
+volley68,ORN (other),550,427
+volley68,ORN (other),600,482
+volley68,ORN (other),650,449
+volley68,ORN (other),700,417
+volley68,ORN (other),750,456
+volley68,ORN (other),800,438
+volley68,ORN (other),850,458
+volley68,ORN (other),900,421
+volley68,ORN (other),950,443
+volley68,PN,0,1748
+volley68,PN,50,2756
+volley68,PN,100,2774
+volley68,PN,150,2736
+volley68,PN,200,2739
+volley68,PN,250,2768
+volley68,PN,300,2757
+volley68,PN,350,2765
+volley68,PN,400,2743
+volley68,PN,450,2798
+volley68,PN,500,2765
+volley68,PN,550,2763
+volley68,PN,600,2779
+volley68,PN,650,2788
+volley68,PN,700,2736
+volley68,PN,750,2787
+volley68,PN,800,2756
+volley68,PN,850,2771
+volley68,PN,900,2773
+volley68,PN,950,2753
+volley68,AL local,0,1847
+volley68,AL local,50,2736
+volley68,AL local,100,2746
+volley68,AL local,150,2733
+volley68,AL local,200,2717
+volley68,AL local,250,2730
+volley68,AL local,300,2746
+volley68,AL local,350,2755
+volley68,AL local,400,2741
+volley68,AL local,450,2743
+volley68,AL local,500,2762
+volley68,AL local,550,2733
+volley68,AL local,600,2776
+volley68,AL local,650,2740
+volley68,AL local,700,2733
+volley68,AL local,750,2776
+volley68,AL local,800,2764
+volley68,AL local,850,2746
+volley68,AL local,900,2756
+volley68,AL local,950,2748
+volley68,lateral horn,0,1115
+volley68,lateral horn,50,1811
+volley68,lateral horn,100,1820
+volley68,lateral horn,150,1812
+volley68,lateral horn,200,1806
+volley68,lateral horn,250,1795
+volley68,lateral horn,300,1798
+volley68,lateral horn,350,1812
+volley68,lateral horn,400,1803
+volley68,lateral horn,450,1823
+volley68,lateral horn,500,1828
+volley68,lateral horn,550,1816
+volley68,lateral horn,600,1822
+volley68,lateral horn,650,1813
+volley68,lateral horn,700,1814
+volley68,lateral horn,750,1817
+volley68,lateral horn,800,1806
+volley68,lateral horn,850,1812
+volley68,lateral horn,900,1815
+volley68,lateral horn,950,1805
+volley68,Kenyon cell,0,3683
+volley68,Kenyon cell,50,7739
+volley68,Kenyon cell,100,7663
+volley68,Kenyon cell,150,7897
+volley68,Kenyon cell,200,7508
+volley68,Kenyon cell,250,7851
+volley68,Kenyon cell,300,7571
+volley68,Kenyon cell,350,7769
+volley68,Kenyon cell,400,7735
+volley68,Kenyon cell,450,7994
+volley68,Kenyon cell,500,7878
+volley68,Kenyon cell,550,7709
+volley68,Kenyon cell,600,7834
+volley68,Kenyon cell,650,7911
+volley68,Kenyon cell,700,7750
+volley68,Kenyon cell,750,7714
+volley68,Kenyon cell,800,7843
+volley68,Kenyon cell,850,7806
+volley68,Kenyon cell,900,7858
+volley68,Kenyon cell,950,7838
+volley68,MBON/DAN/APL,0,304
+volley68,MBON/DAN/APL,50,807
+volley68,MBON/DAN/APL,100,806
+volley68,MBON/DAN/APL,150,805
+volley68,MBON/DAN/APL,200,793
+volley68,MBON/DAN/APL,250,817
+volley68,MBON/DAN/APL,300,787
+volley68,MBON/DAN/APL,350,820
+volley68,MBON/DAN/APL,400,808
+volley68,MBON/DAN/APL,450,811
+volley68,MBON/DAN/APL,500,820
+volley68,MBON/DAN/APL,550,810
+volley68,MBON/DAN/APL,600,807
+volley68,MBON/DAN/APL,650,805
+volley68,MBON/DAN/APL,700,808
+volley68,MBON/DAN/APL,750,804
+volley68,MBON/DAN/APL,800,820
+volley68,MBON/DAN/APL,850,809
+volley68,MBON/DAN/APL,900,807
+volley68,MBON/DAN/APL,950,819
+volley68,descending,0,116
+volley68,descending,50,254
+volley68,descending,100,231
+volley68,descending,150,253
+volley68,descending,200,256
+volley68,descending,250,233
+volley68,descending,300,244
+volley68,descending,350,253
+volley68,descending,400,240
+volley68,descending,450,247
+volley68,descending,500,262
+volley68,descending,550,253
+volley68,descending,600,270
+volley68,descending,650,236
+volley68,descending,700,243
+volley68,descending,750,253
+volley68,descending,800,265
+volley68,descending,850,242
+volley68,descending,900,250
+volley68,descending,950,265
+volley68,other,0,3182
+volley68,other,50,6132
+volley68,other,100,6124
+volley68,other,150,6123
+volley68,other,200,6114
+volley68,other,250,6188
+volley68,other,300,6144
+volley68,other,350,6297
+volley68,other,400,6157
+volley68,other,450,6199
+volley68,other,500,6234
+volley68,other,550,6218
+volley68,other,600,6273
+volley68,other,650,6087
+volley68,other,700,6245
+volley68,other,750,6085
+volley68,other,800,6272
+volley68,other,850,6229
+volley68,other,900,6128
+volley68,other,950,6222
+150Hz,ORN_DM1 (driven),0,487
+150Hz,ORN_DM1 (driven),50,497
+150Hz,ORN_DM1 (driven),100,514
+150Hz,ORN_DM1 (driven),150,502
+150Hz,ORN_DM1 (driven),200,468
+150Hz,ORN_DM1 (driven),250,480
+150Hz,ORN_DM1 (driven),300,499
+150Hz,ORN_DM1 (driven),350,493
+150Hz,ORN_DM1 (driven),400,490
+150Hz,ORN_DM1 (driven),450,553
+150Hz,ORN_DM1 (driven),500,481
+150Hz,ORN_DM1 (driven),550,552
+150Hz,ORN_DM1 (driven),600,497
+150Hz,ORN_DM1 (driven),650,495
+150Hz,ORN_DM1 (driven),700,485
+150Hz,ORN_DM1 (driven),750,476
+150Hz,ORN_DM1 (driven),800,537
+150Hz,ORN_DM1 (driven),850,505
+150Hz,ORN_DM1 (driven),900,532
+150Hz,ORN_DM1 (driven),950,527
+150Hz,ORN (other),0,201
+150Hz,ORN (other),50,452
+150Hz,ORN (other),100,451
+150Hz,ORN (other),150,420
+150Hz,ORN (other),200,446
+150Hz,ORN (other),250,424
+150Hz,ORN (other),300,427
+150Hz,ORN (other),350,428
+150Hz,ORN (other),400,452
+150Hz,ORN (other),450,466
+150Hz,ORN (other),500,444
+150Hz,ORN (other),550,463
+150Hz,ORN (other),600,431
+150Hz,ORN (other),650,434
+150Hz,ORN (other),700,433
+150Hz,ORN (other),750,405
+150Hz,ORN (other),800,466
+150Hz,ORN (other),850,440
+150Hz,ORN (other),900,467
+150Hz,ORN (other),950,444
+150Hz,PN,0,1997
+150Hz,PN,50,2800
+150Hz,PN,100,2791
+150Hz,PN,150,2791
+150Hz,PN,200,2803
+150Hz,PN,250,2777
+150Hz,PN,300,2794
+150Hz,PN,350,2773
+150Hz,PN,400,2791
+150Hz,PN,450,2789
+150Hz,PN,500,2786
+150Hz,PN,550,2778
+150Hz,PN,600,2785
+150Hz,PN,650,2785
+150Hz,PN,700,2791
+150Hz,PN,750,2776
+150Hz,PN,800,2815
+150Hz,PN,850,2794
+150Hz,PN,900,2798
+150Hz,PN,950,2805
+150Hz,AL local,0,2102
+150Hz,AL local,50,2745
+150Hz,AL local,100,2761
+150Hz,AL local,150,2753
+150Hz,AL local,200,2777
+150Hz,AL local,250,2747
+150Hz,AL local,300,2739
+150Hz,AL local,350,2767
+150Hz,AL local,400,2757
+150Hz,AL local,450,2773
+150Hz,AL local,500,2774
+150Hz,AL local,550,2782
+150Hz,AL local,600,2748
+150Hz,AL local,650,2762
+150Hz,AL local,700,2759
+150Hz,AL local,750,2752
+150Hz,AL local,800,2773
+150Hz,AL local,850,2775
+150Hz,AL local,900,2784
+150Hz,AL local,950,2772
+150Hz,lateral horn,0,1242
+150Hz,lateral horn,50,1862
+150Hz,lateral horn,100,1840
+150Hz,lateral horn,150,1810
+150Hz,lateral horn,200,1818
+150Hz,lateral horn,250,1844
+150Hz,lateral horn,300,1821
+150Hz,lateral horn,350,1833
+150Hz,lateral horn,400,1811
+150Hz,lateral horn,450,1828
+150Hz,lateral horn,500,1830
+150Hz,lateral horn,550,1813
+150Hz,lateral horn,600,1831
+150Hz,lateral horn,650,1843
+150Hz,lateral horn,700,1808
+150Hz,lateral horn,750,1816
+150Hz,lateral horn,800,1840
+150Hz,lateral horn,850,1866
+150Hz,lateral horn,900,1804
+150Hz,lateral horn,950,1837
+150Hz,Kenyon cell,0,4408
+150Hz,Kenyon cell,50,8077
+150Hz,Kenyon cell,100,8137
+150Hz,Kenyon cell,150,7939
+150Hz,Kenyon cell,200,8023
+150Hz,Kenyon cell,250,7821
+150Hz,Kenyon cell,300,8042
+150Hz,Kenyon cell,350,8036
+150Hz,Kenyon cell,400,7894
+150Hz,Kenyon cell,450,7850
+150Hz,Kenyon cell,500,8231
+150Hz,Kenyon cell,550,7910
+150Hz,Kenyon cell,600,8092
+150Hz,Kenyon cell,650,8024
+150Hz,Kenyon cell,700,8073
+150Hz,Kenyon cell,750,7865
+150Hz,Kenyon cell,800,8128
+150Hz,Kenyon cell,850,8002
+150Hz,Kenyon cell,900,8195
+150Hz,Kenyon cell,950,8022
+150Hz,MBON/DAN/APL,0,385
+150Hz,MBON/DAN/APL,50,822
+150Hz,MBON/DAN/APL,100,847
+150Hz,MBON/DAN/APL,150,803
+150Hz,MBON/DAN/APL,200,838
+150Hz,MBON/DAN/APL,250,811
+150Hz,MBON/DAN/APL,300,836
+150Hz,MBON/DAN/APL,350,830
+150Hz,MBON/DAN/APL,400,821
+150Hz,MBON/DAN/APL,450,802
+150Hz,MBON/DAN/APL,500,854
+150Hz,MBON/DAN/APL,550,816
+150Hz,MBON/DAN/APL,600,836
+150Hz,MBON/DAN/APL,650,835
+150Hz,MBON/DAN/APL,700,843
+150Hz,MBON/DAN/APL,750,810
+150Hz,MBON/DAN/APL,800,829
+150Hz,MBON/DAN/APL,850,830
+150Hz,MBON/DAN/APL,900,840
+150Hz,MBON/DAN/APL,950,833
+150Hz,descending,0,135
+150Hz,descending,50,259
+150Hz,descending,100,254
+150Hz,descending,150,231
+150Hz,descending,200,260
+150Hz,descending,250,235
+150Hz,descending,300,269
+150Hz,descending,350,249
+150Hz,descending,400,260
+150Hz,descending,450,251
+150Hz,descending,500,237
+150Hz,descending,550,252
+150Hz,descending,600,252
+150Hz,descending,650,250
+150Hz,descending,700,263
+150Hz,descending,750,252
+150Hz,descending,800,249
+150Hz,descending,850,241
+150Hz,descending,900,255
+150Hz,descending,950,243
+150Hz,other,0,3702
+150Hz,other,50,6361
+150Hz,other,100,6329
+150Hz,other,150,6225
+150Hz,other,200,6440
+150Hz,other,250,6184
+150Hz,other,300,6369
+150Hz,other,350,6281
+150Hz,other,400,6310
+150Hz,other,450,6327
+150Hz,other,500,6257
+150Hz,other,550,6294
+150Hz,other,600,6304
+150Hz,other,650,6397
+150Hz,other,700,6202
+150Hz,other,750,6184
+150Hz,other,800,6363
+150Hz,other,850,6350
+150Hz,other,900,6297
+150Hz,other,950,6361

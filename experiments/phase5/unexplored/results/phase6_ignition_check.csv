@@ -1,0 +1,16 @@
+test,engine,n_active,n_firing_in_last_100ms,wall_s
+volley 10 DM1 ORNs,independent simple sim,8031,7488,125.0
+volley 10 DM1 ORNs,fast engine,8177,7713,
+volley 21 sugar GRNs (control),independent simple sim,32,0,
+"volley 10 DM1 ORNs, w_syn x0.8",fast engine,6374,5935,
+"volley 10 DM1 ORNs, w_syn x0.9",fast engine,7303,6872,
+"volley 10 DM1 ORNs, w_syn x1.1",fast engine,8923,8280,
+"volley 10 DM1 ORNs, w_syn x1.2",fast engine,9706,8980,
+volley 2 DM1 ORNs,fast engine,2,0,
+volley 3 DM1 ORNs,fast engine,8154,7664,
+volley 5 DM1 ORNs,fast engine,8162,7632,
+volley 10 DA2 ORNs,fast engine,10,0,
+volley 21 sugar GRNs (control),fast engine,32,0,
+sugar GRNs 100 Hz for 1 s (control),fast engine,353,285,
+"DM1 ORNs 2 Hz, seed 1",fast engine,8309,7805,
+"DM1 ORNs 2 Hz, seed 2",fast engine,8324,7757,

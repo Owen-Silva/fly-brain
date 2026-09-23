@@ -1,0 +1,14 @@
+test,n_trials,n_active,spikes_per_trial,n_firing_in_last_100ms,active_ORN_DM1 (driven),active_ORN (other),active_PN,active_AL local,active_lateral horn,active_Kenyon cell,active_MBON/DAN/APL,active_descending,active_other,n_silenced
+volley: 68 DM1 ORNs fire once,1,8216,445072.0,7603,68,269,536,350,450,3297,198,158,2890,
+volley: 10 DM1 ORNs fire once,1,8177,444790.0,7713,10,263,537,349,451,3301,200,164,2902,
+volley: 1 DM1 ORNs fire once,1,1,1.0,0,1,0,0,0,0,0,0,0,0,
+DM1 ORNs at 1 Hz,2,8283,376626.0,7815,56,270,536,350,452,3306,202,169,2942,
+DM1 ORNs at 2 Hz,2,8276,437430.0,7831,67,270,537,349,450,3301,200,169,2933,
+DM1 ORNs at 5 Hz,2,8327,443014.5,7910,68,266,536,350,451,3309,200,183,2964,
+DM1 ORNs at 150 Hz (time course),1,8272,465606.0,7811,68,264,539,351,451,3331,204,161,2903,
+"DM1 20 Hz, nothing silenced",2,8325,446336.5,7866,68,266,538,350,452,3305,201,174,2971,
+"DM1 20 Hz, silence other ORNs",2,8268,441635.0,7822,68,263,538,347,450,3295,198,168,2941,2203.0
+"DM1 20 Hz, silence Kenyon cells",2,7927,410945.5,7530,68,268,536,350,454,3325,36,162,2728,5177.0
+"DM1 20 Hz, silence excitatory AL local neurons",2,6937,328269.0,6441,68,116,488,331,423,2588,160,166,2597,79.0
+"DM1 20 Hz, silence multiglomerular PNs",2,7320,396969.5,7017,68,255,521,337,453,3129,179,155,2223,403.0
+"DM1 20 Hz, silence all PNs except DM1 PNs",2,1923,112915.0,1728,68,161,405,284,51,179,44,92,639,683.0

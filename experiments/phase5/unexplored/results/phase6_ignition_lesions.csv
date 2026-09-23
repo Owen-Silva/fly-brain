@@ -1,0 +1,7 @@
+silenced,n_silenced,n_active,n_firing_in_last_100ms
+nothing,0,8177,7713
+"LNs excitatory in the model (ref_sign +1), all",150,26,0
+LNs predicted serotonin/dopamine (treated excitatory),53,26,0
+LNs predicted GABA/glutamate but excitatory in the model,27,6746,6257
+LNs predicted acetylcholine,79,6769,6126
+all LNs,424,26,0

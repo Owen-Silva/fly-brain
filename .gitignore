@@ -7,3 +7,6 @@ data/*
 # Brian2 build caches and generated output
 output/
 *.pyc
+# Raw per-timestep arrays from olfaction runs (regenerable, ~80 MB)
+experiments/phase5/unexplored/results/*.npy
+__pycache__/

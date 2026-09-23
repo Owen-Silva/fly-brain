@@ -55,6 +55,15 @@ project's own data files, not taken from papers, unless a paper is cited.
 
 ### 2.2 The filters and the counts (measured)
 
+> **Correction (2026-09-22, from the Phase 5 olfaction lane):** these filters are for the
+> 783 annotations. In the snapshot 630 labels (the paper's snapshot) the ORN filter below
+> matches nothing; the ORN types live in the `hemibrain_type` column there (e.g. DM1 = 68
+> neurons, DA2 = 39). Also, 53 antennal-lobe local neurons (lLN1/lLN2T) carry a
+> low-confidence serotonin/dopamine prediction, so the reference model treats them as
+> excitatory although they are GABAergic; this makes olfactory input ignite the whole
+> network. Fix or account for it before any Phase 8 olfactory work. See
+> `docs/phase5-olfaction.md`.
+
 | Circuit part | Filter | Count | Notes |
 |---|---|---|---|
 | Olfactory receptor neurons (ORNs) | `super_class == "sensory"` and `cell_class == "olfactory"` | 2,282 | 53 `ORN_*` types (e.g. `ORN_DA1` 126, `ORN_DM1` 68, `ORN_V` 67). Side labelled (1,118 left, 1,134 right, 30 "na"). 2,122 come in through the antennal nerve and 160 through the palp nerve (`nerve` column). |

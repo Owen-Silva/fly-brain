@@ -1,0 +1,11 @@
+variant,test,value
+baseline,"sugar 100 Hz, MN9 rate, seed 0",67.63333333333334
+baseline,"sugar 100 Hz, MN9 rate, seed 1",67.26666666666667
+baseline,"sugar 100 Hz, MN9 rate, seed 2",66.2
+baseline,volley 10 DM1 ORNs: neurons active,8177.0
+baseline,volley 10 DM1 ORNs: firing in last 100 ms,7713.0
+lnfix,"sugar 100 Hz, MN9 rate, seed 0",67.63333333333334
+lnfix,"sugar 100 Hz, MN9 rate, seed 1",67.26666666666667
+lnfix,"sugar 100 Hz, MN9 rate, seed 2",66.2
+lnfix,volley 10 DM1 ORNs: neurons active,24.0
+lnfix,volley 10 DM1 ORNs: firing in last 100 ms,0.0
