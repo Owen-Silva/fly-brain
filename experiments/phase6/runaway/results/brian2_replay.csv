@@ -1,0 +1,6 @@
+trial,brian2_total,fast_total,brian2_runaway,fast_runaway,brian2_onset_ms,fast_onset_ms,brian2_active,fast_active,brian2_mn9_hz,fast_mn9_hz,per_neuron_r,stim_neurons_same_count,first100ms_spikes_brian2,first100ms_spikes_fast,first100ms_identical,fast_wall_s
+0,23086,23086,False,False,,,905,905,62.0,62.0,1.0,39/39,1541,1541,True,7.38
+1,122156,122156,True,True,778.0,778.0,8304,8304,63.0,63.0,1.0,39/39,1724,1724,True,10.79
+2,20979,20979,False,False,,,827,827,67.0,67.0,1.0,39/39,1669,1669,True,2.72
+3,364473,364473,True,True,237.0,237.0,8468,8468,25.0,25.0,1.0,39/39,1527,1527,True,17.1
+4,20077,20077,False,False,,,868,868,75.0,75.0,1.0,39/39,1457,1457,True,3.54

@@ -1,0 +1,17 @@
+test,variant,n,runaway,median_spikes,mn9_mean_hz
+olfactory trigger: 10 DM1 ORNs fire once,F53: 53 5-HT/DA-predicted AL local neurons inhibitory,1,0,24,0.0
+38 eLNs fire once,F53: 53 5-HT/DA-predicted AL local neurons inhibitory,1,0,38,0.0
+"sugar 100 Hz, 30 trials (MN9; intact 67.63)",F53: 53 5-HT/DA-predicted AL local neurons inhibitory,30,0,9678,67.63
+"Ir94e 200 Hz, 60 trials (intact 9/60)",F53: 53 5-HT/DA-predicted AL local neurons inhibitory,60,0,8009,0.0
+"sugar 200 + Ir94e 200, 150 trials (intact 6/150)",F53: 53 5-HT/DA-predicted AL local neurons inhibitory,150,0,19612,65.16
+olfactory trigger: 10 DM1 ORNs fire once,F25: 25 of them outside FlyWire-cholinergic types inhibitory,1,1,164308,0.0
+38 eLNs fire once,F25: 25 of them outside FlyWire-cholinergic types inhibitory,1,1,462375,0.0
+"sugar 100 Hz, 30 trials (MN9; intact 67.63)",F25: 25 of them outside FlyWire-cholinergic types inhibitory,30,0,9678,67.63
+"Ir94e 200 Hz, 60 trials (intact 9/60)",F25: 25 of them outside FlyWire-cholinergic types inhibitory,60,1,8134,0.0
+"sugar 200 + Ir94e 200, 150 trials (intact 6/150)",F25: 25 of them outside FlyWire-cholinergic types inhibitory,150,1,19612,64.97
+olfactory trigger: 10 DM1 ORNs fire once,"MONO: 634 low-confidence monoamine neurons (not KCs, no measured NT) inhibitory",1,0,24,0.0
+38 eLNs fire once,"MONO: 634 low-confidence monoamine neurons (not KCs, no measured NT) inhibitory",1,1,203652,0.0
+"sugar 100 Hz, 30 trials (MN9; intact 67.63)","MONO: 634 low-confidence monoamine neurons (not KCs, no measured NT) inhibitory",30,0,9668,68.83
+"Ir94e 200 Hz, 60 trials (intact 9/60)","MONO: 634 low-confidence monoamine neurons (not KCs, no measured NT) inhibitory",60,0,7557,0.0
+"sugar 200 + Ir94e 200, 150 trials (intact 6/150)","MONO: 634 low-confidence monoamine neurons (not KCs, no measured NT) inhibitory",150,0,19237,57.37
+olfactory trigger after restoring (must ignite),intact,1,1,444790,0.0

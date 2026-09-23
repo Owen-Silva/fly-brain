@@ -1,0 +1,12 @@
+test,variant,n,runaway,mn9_mean_hz,mn9_sd_hz,median_spikes
+"C Ir94e 200, 60 trials",intact model,60,9,0.0,0.0,8285
+"D sugar 100 (Phase 3 baseline), 30 trials",intact model,30,0,67.63,4.57,9678
+C olfactory trigger: 10 DM1 ORNs fire once,intact model,1,1,0.0,0.0,444790
+"C Ir94e 200, 60 trials",44 eLNs silenced,60,0,0.0,0.0,8009
+"D sugar 100 (Phase 3 baseline), 30 trials",44 eLNs silenced,30,0,67.63,4.57,9678
+C olfactory trigger: 10 DM1 ORNs fire once,44 eLNs silenced,1,0,0.0,0.0,26
+"C Ir94e 200, 60 trials",eLN output only onto inhibitory neurons,60,0,0.0,0.0,8044
+"D sugar 100 (Phase 3 baseline), 30 trials",eLN output only onto inhibitory neurons,30,0,67.63,4.57,9678
+C olfactory trigger: 10 DM1 ORNs fire once,eLN output only onto inhibitory neurons,1,0,0.0,0.0,30
+"E volley: 20 first-firing neurons fire once, no taste input",intact model,1,1,0.0,0.0,654795
+"E volley: 44 eLNs fire once, no taste input",intact model,1,1,0.0,0.0,664857

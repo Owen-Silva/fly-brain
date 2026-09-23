@@ -1,0 +1,129 @@
+test,group,condition,seed,trial,total_spikes,n_active,max_distinct_10ms,distinct_last_100ms,runaway,onset_ms,mn9_hz,mn9_ipsi_hz,wall_s
+A paired,none (baseline),sugar200_ir94e200,1,20,274758,8445,4444,7833,True,440.0,35.0,21.0,18.03
+A paired,none (baseline),sugar200_ir94e200,2,12,322142,8502,4325,7881,True,336.0,39.0,21.0,16.14
+A paired,none (baseline),sugar200_ir94e200,2,24,42532,7557,4215,7433,True,953.0,68.0,39.0,3.19
+A paired,none (baseline),sugar200_ir94e200,2,28,227919,8490,4464,7849,True,541.0,41.0,21.0,15.93
+A paired,none (baseline),sugar200_ir94e200,3,7,356659,8479,4356,7800,True,258.0,43.0,24.0,26.94
+A paired,none (baseline),sugar200_ir94e200,3,15,306756,8476,4484,7854,True,371.0,45.0,23.0,23.18
+A paired,none (baseline),ir94e200_alone,0,6,83261,7971,4234,7664,True,836.0,0.0,0.0,9.7
+A paired,none (baseline),ir94e200_alone,0,10,170613,8135,4229,7645,True,638.0,0.0,0.0,14.85
+A paired,none (baseline),ir94e200_alone,0,14,321502,8238,4263,7681,True,307.0,0.0,0.0,32.53
+A paired,none (baseline),ir94e200_alone,0,21,255967,8220,4235,7698,True,455.0,0.0,0.0,22.31
+A paired,none (baseline),ir94e200_alone,1,6,136089,8134,4255,7668,True,722.0,0.0,0.0,11.3
+A paired,none (baseline),ir94e200_alone,1,8,218667,8175,4291,7667,True,533.0,0.0,0.0,16.6
+A paired,none (baseline),ir94e200_alone,1,9,218970,8291,4209,7685,True,536.0,0.0,0.0,37.62
+A paired,none (baseline),ir94e200_alone,1,10,323495,8224,4184,7661,True,302.0,0.0,0.0,41.7
+A paired,none (baseline),ir94e200_alone,1,28,307252,8317,4345,7645,True,345.0,0.0,0.0,45.47
+A paired,none (baseline),ir94e200_alone,2,22,87755,8020,4324,7684,True,829.0,0.0,0.0,16.92
+A paired,44 cholinergic eLNs,sugar200_ir94e200,1,20,22093,888,414,758,False,,58.0,30.0,7.82
+A paired,44 cholinergic eLNs,sugar200_ir94e200,2,12,24146,911,421,693,False,,73.0,46.0,12.8
+A paired,44 cholinergic eLNs,sugar200_ir94e200,2,24,21243,892,376,649,False,,68.0,38.0,7.5
+A paired,44 cholinergic eLNs,sugar200_ir94e200,2,28,21929,913,356,357,False,,71.0,40.0,9.22
+A paired,44 cholinergic eLNs,sugar200_ir94e200,3,7,22064,875,452,321,False,,71.0,43.0,9.8
+A paired,44 cholinergic eLNs,sugar200_ir94e200,3,15,24488,900,424,311,False,,67.0,34.0,10.78
+A paired,44 cholinergic eLNs,ir94e200_alone,0,6,9056,614,275,57,False,,0.0,0.0,8.13
+A paired,44 cholinergic eLNs,ir94e200_alone,0,10,7775,621,246,55,False,,0.0,0.0,5.69
+A paired,44 cholinergic eLNs,ir94e200_alone,0,14,9098,600,299,374,False,,0.0,0.0,10.08
+A paired,44 cholinergic eLNs,ir94e200_alone,0,21,8901,615,311,46,False,,0.0,0.0,8.66
+A paired,44 cholinergic eLNs,ir94e200_alone,1,6,11279,666,285,541,False,,0.0,0.0,8.59
+A paired,44 cholinergic eLNs,ir94e200_alone,1,8,7822,625,275,434,False,,0.0,0.0,9.71
+A paired,44 cholinergic eLNs,ir94e200_alone,1,9,9087,709,270,61,False,,0.0,0.0,9.4
+A paired,44 cholinergic eLNs,ir94e200_alone,1,10,11780,749,300,56,False,,0.0,0.0,9.5
+A paired,44 cholinergic eLNs,ir94e200_alone,1,28,11302,705,285,44,False,,0.0,0.0,10.34
+A paired,44 cholinergic eLNs,ir94e200_alone,2,22,9611,652,290,53,False,,0.0,0.0,12.46
+A paired,30 lLN1_b/c only,sugar200_ir94e200,1,20,179121,6448,2885,5820,True,443.0,51.0,31.0,18.51
+A paired,30 lLN1_b/c only,sugar200_ir94e200,2,12,210025,6572,2814,5689,True,339.0,45.0,24.0,28.23
+A paired,30 lLN1_b/c only,sugar200_ir94e200,2,24,34858,5482,2861,5350,True,956.0,68.0,39.0,5.03
+A paired,30 lLN1_b/c only,sugar200_ir94e200,2,28,150582,6585,3047,5786,True,544.0,45.0,23.0,19.78
+A paired,30 lLN1_b/c only,sugar200_ir94e200,3,7,231620,6567,2922,5741,True,261.0,34.0,19.0,26.91
+A paired,30 lLN1_b/c only,sugar200_ir94e200,3,15,201286,6619,3077,5737,True,375.0,39.0,19.0,22.82
+A paired,30 lLN1_b/c only,ir94e200_alone,0,6,56584,6030,2874,5626,True,841.0,0.0,0.0,4.77
+A paired,30 lLN1_b/c only,ir94e200_alone,0,10,110982,6230,2777,5706,True,640.0,0.0,0.0,13.79
+A paired,30 lLN1_b/c only,ir94e200_alone,0,14,206448,6294,2854,5580,True,311.0,0.0,0.0,23.14
+A paired,30 lLN1_b/c only,ir94e200_alone,0,21,164362,6301,2761,5518,True,459.0,0.0,0.0,22.65
+A paired,30 lLN1_b/c only,ir94e200_alone,1,6,90026,6154,2760,5560,True,725.0,0.0,0.0,14.03
+A paired,30 lLN1_b/c only,ir94e200_alone,1,8,141056,6260,2780,5624,True,536.0,0.0,0.0,15.26
+A paired,30 lLN1_b/c only,ir94e200_alone,1,9,142413,6466,2842,5628,True,539.0,0.0,0.0,6.92
+A paired,30 lLN1_b/c only,ir94e200_alone,1,10,205590,6279,2825,5561,True,307.0,0.0,0.0,8.97
+A paired,30 lLN1_b/c only,ir94e200_alone,1,28,195294,6442,2815,5611,True,348.0,0.0,0.0,8.76
+A paired,30 lLN1_b/c only,ir94e200_alone,2,22,58768,6090,2806,5675,True,832.0,0.0,0.0,4.81
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,1,20,22814,900,370,793,False,,73.0,41.0,2.73
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,2,12,24762,918,428,732,False,,70.0,45.0,3.23
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,2,24,21562,860,403,755,False,,65.0,38.0,1.57
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,2,28,22257,908,406,681,False,,60.0,32.0,2.36
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,3,7,23011,914,409,316,False,,53.0,29.0,3.22
+A paired,150 model-excitatory AL local neurons,sugar200_ir94e200,3,15,22854,901,382,340,False,,71.0,38.0,3.34
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,0,6,8469,663,302,57,False,,0.0,0.0,1.75
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,0,10,8468,614,271,62,False,,0.0,0.0,1.75
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,0,14,9147,707,257,43,False,,0.0,0.0,2.49
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,0,21,8255,638,259,45,False,,0.0,0.0,2.36
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,1,6,8107,671,279,479,False,,0.0,0.0,2.23
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,1,8,9212,642,245,434,False,,0.0,0.0,2.37
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,1,9,6985,529,222,61,False,,0.0,0.0,7.93
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,1,10,10553,661,321,393,False,,0.0,0.0,8.11
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,1,28,12442,691,248,47,False,,0.0,0.0,9.18
+A paired,150 model-excitatory AL local neurons,ir94e200_alone,2,22,9743,664,314,409,False,,0.0,0.0,6.49
+A paired,all 424 AL local neurons,sugar200_ir94e200,1,20,22814,900,370,793,False,,73.0,41.0,8.8
+A paired,all 424 AL local neurons,sugar200_ir94e200,2,12,21146,869,333,337,False,,69.0,38.0,4.55
+A paired,all 424 AL local neurons,sugar200_ir94e200,2,24,20828,829,405,716,False,,64.0,39.0,1.72
+A paired,all 424 AL local neurons,sugar200_ir94e200,2,28,22257,908,406,681,False,,60.0,32.0,2.16
+A paired,all 424 AL local neurons,sugar200_ir94e200,3,7,20834,863,366,351,False,,62.0,32.0,2.74
+A paired,all 424 AL local neurons,sugar200_ir94e200,3,15,21761,851,331,331,False,,67.0,32.0,3.3
+A paired,all 424 AL local neurons,ir94e200_alone,0,6,10644,694,306,57,False,,0.0,0.0,2.14
+A paired,all 424 AL local neurons,ir94e200_alone,0,10,7403,597,256,62,False,,0.0,0.0,1.65
+A paired,all 424 AL local neurons,ir94e200_alone,0,14,11317,693,332,49,False,,0.0,0.0,3.24
+A paired,all 424 AL local neurons,ir94e200_alone,0,21,8255,638,259,45,False,,0.0,0.0,2.93
+A paired,all 424 AL local neurons,ir94e200_alone,1,6,7367,641,264,462,False,,0.0,0.0,2.56
+A paired,all 424 AL local neurons,ir94e200_alone,1,8,9226,648,247,434,False,,0.0,0.0,2.04
+A paired,all 424 AL local neurons,ir94e200_alone,1,9,7893,629,286,387,False,,0.0,0.0,2.37
+A paired,all 424 AL local neurons,ir94e200_alone,1,10,10555,661,321,393,False,,0.0,0.0,2.7
+A paired,all 424 AL local neurons,ir94e200_alone,1,28,8678,680,250,42,False,,0.0,0.0,2.79
+A paired,all 424 AL local neurons,ir94e200_alone,2,22,9743,664,314,409,False,,0.0,0.0,2.63
+A paired,20 first-firing neurons,sugar200_ir94e200,1,20,22093,888,414,758,False,,58.0,30.0,2.75
+A paired,20 first-firing neurons,sugar200_ir94e200,2,12,22689,902,421,331,False,,65.0,41.0,3.17
+A paired,20 first-firing neurons,sugar200_ir94e200,2,24,21241,890,376,647,False,,68.0,38.0,1.41
+A paired,20 first-firing neurons,sugar200_ir94e200,2,28,21929,913,356,357,False,,71.0,40.0,2.44
+A paired,20 first-firing neurons,sugar200_ir94e200,3,7,21397,870,439,315,False,,59.0,30.0,3.22
+A paired,20 first-firing neurons,sugar200_ir94e200,3,15,22204,910,391,318,False,,56.0,32.0,3.35
+A paired,20 first-firing neurons,ir94e200_alone,0,6,9056,614,275,57,False,,0.0,0.0,2.23
+A paired,20 first-firing neurons,ir94e200_alone,0,10,7776,621,246,55,False,,0.0,0.0,2.07
+A paired,20 first-firing neurons,ir94e200_alone,0,14,9098,600,299,374,False,,0.0,0.0,6.04
+A paired,20 first-firing neurons,ir94e200_alone,0,21,8901,615,311,46,False,,0.0,0.0,14.36
+A paired,20 first-firing neurons,ir94e200_alone,1,6,11279,666,285,541,False,,0.0,0.0,8.8
+A paired,20 first-firing neurons,ir94e200_alone,1,8,8590,640,284,434,False,,0.0,0.0,2.46
+A paired,20 first-firing neurons,ir94e200_alone,1,9,9087,709,270,61,False,,0.0,0.0,3.15
+A paired,20 first-firing neurons,ir94e200_alone,1,10,11780,749,300,56,False,,0.0,0.0,3.33
+A paired,20 first-firing neurons,ir94e200_alone,1,28,11302,705,285,44,False,,0.0,0.0,3.18
+A paired,20 first-firing neurons,ir94e200_alone,2,22,11571,644,290,413,False,,0.0,0.0,2.79
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,1,20,22735,891,378,355,False,,67.0,36.0,3.34
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,2,12,19608,785,357,343,False,,60.0,41.0,2.88
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,2,24,19763,798,352,709,False,,62.0,46.0,1.78
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,2,28,19248,787,314,329,False,,62.0,33.0,2.21
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,3,7,22318,849,363,356,False,,73.0,50.0,10.87
+A paired,control: 38 random excitatory runaway neurons outside AL,sugar200_ir94e200,3,15,20437,827,364,251,False,,51.0,33.0,8.53
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,0,6,6092,514,241,57,False,,0.0,0.0,4.28
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,0,10,7114,552,253,55,False,,0.0,0.0,4.99
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,0,14,7852,575,286,153,False,,0.0,0.0,14.3
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,0,21,8432,574,282,44,False,,0.0,0.0,10.93
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,1,6,7213,549,220,452,False,,0.0,0.0,9.63
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,1,8,6473,495,222,455,False,,0.0,0.0,5.37
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,1,9,10296,650,276,398,False,,0.0,0.0,7.94
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,1,10,6976,582,272,50,False,,0.0,0.0,8.4
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,1,28,7128,526,244,43,False,,0.0,0.0,10.87
+A paired,control: 38 random excitatory runaway neurons outside AL,ir94e200_alone,2,22,193963,8096,4146,7596,True,587.0,0.0,0.0,41.85
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,1,20,22095,890,414,758,False,,58.0,30.0,10.01
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,2,12,23103,913,421,325,False,,66.0,39.0,15.04
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,2,24,21242,892,376,649,False,,68.0,38.0,8.19
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,2,28,21707,910,346,361,False,,65.0,36.0,10.67
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,3,7,22066,877,452,321,False,,71.0,43.0,14.09
+A paired,eLN chemical output only onto inhibitory neurons,sugar200_ir94e200,3,15,23842,890,423,296,False,,61.0,37.0,11.66
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,0,6,9057,614,275,57,False,,0.0,0.0,8.62
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,0,10,7776,622,246,55,False,,0.0,0.0,4.13
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,0,14,10319,643,292,410,False,,0.0,0.0,12.83
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,0,21,8666,611,311,46,False,,0.0,0.0,13.44
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,1,6,11284,666,286,542,False,,0.0,0.0,11.83
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,1,8,8145,655,348,436,False,,0.0,0.0,13.23
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,1,9,9083,709,271,61,False,,0.0,0.0,13.32
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,1,10,10852,661,276,49,False,,0.0,0.0,11.15
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,1,28,10316,667,302,45,False,,0.0,0.0,12.8
+A paired,eLN chemical output only onto inhibitory neurons,ir94e200_alone,2,22,9613,653,290,53,False,,0.0,0.0,12.78

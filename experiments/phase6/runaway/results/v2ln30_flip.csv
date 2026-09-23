@@ -1,0 +1,7 @@
+test,variant,n,runaway,median_spikes,mn9_mean_hz
+olfactory trigger: 10 DM1 ORNs fire once,2 v2LN30 neurons made inhibitory,1,1,315379,0.0
+20 first-firing neurons fire once,2 v2LN30 neurons made inhibitory,1,1,425605,0.0
+largest strong loop (7 neurons) fires once,2 v2LN30 neurons made inhibitory,1,1,289506,0.0
+"Ir94e 200 Hz, 60 trials (seeds 0-1; intact: 9/60)",2 v2LN30 neurons made inhibitory,60,4,8134,0.0
+"sugar 100 Hz, 30 trials (MN9; intact 67.63 Hz)",2 v2LN30 neurons made inhibitory,30,0,9678,67.63
+olfactory trigger after restoring (must ignite),intact,1,1,444790,0.0

@@ -1,0 +1,22 @@
+row order equals reference completeness file: True
+SUGAR: 21 IDs, unique 21, round-trip ID->row->ID ok: True
+IR94E: 18 IDs, unique 18, round-trip ID->row->ID ok: True
+BITTER: 21 IDs, unique 21, round-trip ID->row->ID ok: True
+WATER: 18 IDs, unique 18, round-trip ID->row->ID ok: True
+sugar/Ir94e overlap: 0
+neurons whose outgoing connections mix + and -: 0 of 127015
+model sign == sign from Phase 2 transmitter labels: 0.98491 (n=127015); == reference sign column: 1.00000
+zero-weight connections: 0
+
+IR94E (n=18): class {'gustatory': 18}, side (630 labels) {'left': 18}, nerve {'MxLbN': 18}
+  transmitter {'acetylcholine': 16, 'glutamate': 2}; model sign {1: 16, -1: 2}; reference sign {1: 16, -1: 2}
+  FlyWire v783 annotation types for the same IDs: {'LB1e': 11, 'LB2a-b': 4, 'LB2c': 3}, sub-class {'bitter': 11, 'low-salt': 7}
+  outgoing synapses: total 6369, excitatory 5486, inhibitory 883
+
+SUGAR (n=21): class {'gustatory': 21}, side (630 labels) {'left': 21}, nerve {'MxLbN': 21}
+  transmitter {'acetylcholine': 21}; model sign {1: 21}; reference sign {1: 21}
+  FlyWire v783 annotation types for the same IDs: {'LB3': 20, nan: 1}, sub-class {'sugar/water': 20, nan: 1}
+  outgoing synapses: total 7430, excitatory 7430, inhibitory 0
+
+autapses (neuron -> itself): 0; excitatory 0, largest excitatory autapse 0 synapses
+excitatory neurons 86543, inhibitory 40472; excitatory synapses 31462331, inhibitory 21331308

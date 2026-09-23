@@ -1,0 +1,18 @@
+test,group,n,runaway,neurons_firing_last_100ms,median_spikes
+olfactory trigger: 10 DM1 ORNs fire once,intact,1,1,[7713],444790
+20 first-firing neurons fire once,intact,1,1,[9600],654795
+olfactory trigger: 10 DM1 ORNs fire once,38 eLNs (lLN1_b/c + lLN2T_a-c),1,0,[0],26
+20 first-firing neurons fire once,38 eLNs (lLN1_b/c + lLN2T_a-c),1,1,[7165],412120
+olfactory trigger: 10 DM1 ORNs fire once,8 lLN2T_a-c only,1,0,[0],26
+20 first-firing neurons fire once,8 lLN2T_a-c only,1,1,[8642],563485
+olfactory trigger: 10 DM1 ORNs fire once,control 1: 38 random excitatory runaway neurons outside AL,1,1,[7599],442131
+20 first-firing neurons fire once,control 1: 38 random excitatory runaway neurons outside AL,1,1,[9568],655991
+olfactory trigger: 10 DM1 ORNs fire once,control 2: 38 random excitatory runaway neurons outside AL,1,1,[7618],441866
+20 first-firing neurons fire once,control 2: 38 random excitatory runaway neurons outside AL,1,1,[9631],654365
+olfactory trigger: 10 DM1 ORNs fire once,control 3: 38 random excitatory runaway neurons outside AL,1,1,[7651],442791
+20 first-firing neurons fire once,control 3: 38 random excitatory runaway neurons outside AL,1,1,[9601],656195
+"Ir94e 200 Hz, 60 trials (seeds 0-1)",38 eLNs (lLN1_b/c + lLN2T_a-c),60,0,,8009
+"Ir94e 200 Hz, 60 trials (seeds 0-1)",8 lLN2T_a-c only,60,0,,8009
+"Ir94e 200 Hz, 60 trials (seeds 0-1)",control 1: 38 random excitatory runaway neurons outside AL,60,9,,7653
+"Ir94e 200 Hz, 60 trials (seeds 0-1)",control 2: 38 random excitatory runaway neurons outside AL,60,9,,8223
+"Ir94e 200 Hz, 60 trials (seeds 0-1)",control 3: 38 random excitatory runaway neurons outside AL,60,9,,8285

@@ -431,3 +431,58 @@ system on fire. That traces back to 53 inhibitory cells mislabelled as excitator
 those fixed, smell responses look like a real fly's. But left and right smells still steer
 the same way, because of a lopsided wiring pattern. Phase 9 cannot use a simple left-minus-
 right steering rule without fixing or correcting this first.
+
+## 2026-09-22: Phase 6, the "runaway activity" surprise (sugar 200 + Ir94e 200)
+
+- **Question:** In Phase 3, 2 of 5 Brian2 trials of "sugar 200 Hz + Ir94e 200 Hz" switched the
+  whole brain into non-stop firing (about 8,300 neurons, up to 364,000 spikes in 1 s). Real, bug,
+  or artefact? PLAN.md Phase 6 steps 1-5.
+- **Changed:** nothing in the model. All runs use the paper's model on the fast engine, snapshot
+  630, from one long-lived process (`experiments/phase6/runaway/server.py`). Diagnostic "what-if"
+  changes (silencing, sign flips, cutting some connections) were made in memory for single runs
+  and undone afterwards; each was checked to be undone.
+- **Runaway definition:** more than 1,500 different neurons firing in any 10 ms slice (healthy
+  trials top out at 442, runaways never below 3,741). Agrees with the Phase 3 "5x median" rule on
+  448 of 450 trials.
+- **Ran and found:**
+  - *Step 1, does it hold:* 150 trials each (30 x 5 seeds). sugar 200 + Ir94e 200: 6/150 (4%);
+    sugar 200 alone: 0/150; Ir94e 200 alone: 20/150 (13%). It is a random tipping event (about
+    4% per second): 3-second trials ran away 4/30 (13%), onsets spread from 0.8 to 2.3 s. Once
+    started it never stops, even with all input switched off (9/9 still firing 1+ s later).
+    Synapse strength +5%: 17/30 run away; +10%: 25/30 (Ir94e alone 28/30); sugar alone still 0.
+    Grid of sugar 0-300 x Ir94e 0-300 Hz (20 trials each): only Ir94e >= 200 Hz triggers it
+    (about 1 in 10 at 200 Hz, 1 in 3 at 300 Hz, whatever the sugar rate); sugar + bitter and
+    sugar + water at 200 Hz: 0/20 each.
+  - *Step 2, bug checks:* the Phase 3 Brian2 inputs replayed in the fast engine give
+    spike-for-spike identical trials, runaways included (same onset, 778 and 237 ms). 2/5 vs 6/150
+    is an unlucky draw (1.5% chance; Fisher p = 0.02). IDs, signs (100% equal to the reference
+    file) and indexing verified. Note: FlyWire's later annotation types the paper's 18 "Ir94e"
+    neurons as LB1e (11) and LB2a-c (7).
+  - *Step 3, where and why:* every runaway starts in the antennal lobe (smell centre), not in the
+    taste pathway, 10-20 ms before the explosion, in excitatory local neurons (lLN2T_c, v2LN30,
+    lLN1_b/c) and projection neurons. Same state as the Phase 5 olfaction "ignition" (overlap
+    0.90). Silencing the 38 eLNs (lLN1_b/c + lLN2T_a-c), or only the 8 lLN2T, drops Ir94e runaway
+    from 9/60 to 0/60 and stops the smell trigger; 3 random size-matched control lesions change
+    nothing (9, 9, 9 of 60). The self-sustaining engine is antennal-lobe excitatory local neurons
+    plus projection neurons (silencing either stops even forced ignition); Kenyon cells and
+    lateral horn are passengers. Coordinator's request: flipping the olfaction lane's 53
+    "serotonin/dopamine" AL local neurons to inhibitory removes the taste runaway too (0/150 and
+    0/60), MN9 unchanged; the 28 of them of types lLN1_b/c and lLN2T are the ones that matter.
+  - *Step 4, literature:* no report of runaway in the Shiu paper, its repo issues, or Eon Systems'
+    port. Real flies do not show this; seizure-like activity needs mutants, shocks or GABA block.
+    Real eLNs excite projection neurons through gap junctions (Yaksi & Wilson 2010).
+- **Verdict:** a real property of the published model (not a bug in our code), caused by missing
+  or mislabelled biology in about 28-38 antennal-lobe local neurons; not a finding about flies.
+  Two fixes both remove it and keep sugar -> MN9 exactly (67.63 spikes/s): make them inhibitory
+  (if the olfaction lane is right that they are GABAergic) or keep their chemical output only
+  onto inhibitory neurons (if FlyWire's "cholinergic" annotation is right; real eLNs use gap
+  junctions onto projection neurons). Missing spike-frequency adaptation is a likely reason the
+  state never ends (untested).
+- **Validated:** Yes for "not a bug" (two engines identical) and for the mechanism (lesion tests
+  with random controls). NOT validated: which of the two fixes matches biology (needs the real
+  transmitter of lLN1_b/c and lLN2T); adaptation as a cure; snapshot 783.
+- **For Phase 7:** add to its checkpoint "10 DM1 smell neurons firing once must not ignite the
+  brain, and Ir94e 200 Hz must not run away". Any Phase 5 olfaction result that drives the smell
+  system is suspect until then.
+- **Explained in plain English:** `docs/phase6-runaway-activity.md`. Numbers:
+  `experiments/phase6/runaway/results/summary_stats.txt`.

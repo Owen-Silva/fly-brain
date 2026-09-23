@@ -1,0 +1,37 @@
+Loop group of 2 neurons:
+  720575940608293129  ALPN/VP2_adPN  side right  predicted acetylcholine  model sign +
+  720575940637136752  ALLN/lLN2X04  side right  predicted gaba  model sign -
+    VP2_adPN -> 720575940637136752: 174 synapses
+    720575940637136752 -> VP2_adPN: 177 synapses
+Loop group of 4 neurons:
+  720575940611174702  ALLN/v2LN30  side right  predicted serotonin  model sign +
+  720575940613804259  ALLN/lLN2T_c  side right  predicted serotonin  model sign +
+  720575940626887268  ALPN/DP1l_adPN  side right  predicted acetylcholine  model sign +
+  720575940646576436  ALLN/lLN2T_c  side right  predicted serotonin  model sign +
+    v2LN30 -> lLN2T_c: 163 synapses
+    v2LN30 -> DP1l_adPN: 235 synapses
+    v2LN30 -> lLN2T_c: 197 synapses
+    lLN2T_c -> v2LN30: 437 synapses
+    DP1l_adPN -> v2LN30: 212 synapses
+    lLN2T_c -> v2LN30: 524 synapses
+Loop group of 7 neurons:
+  720575940614705583  ALPN/DP1l_adPN  side left  predicted acetylcholine  model sign +
+  720575940619633787  ALPN/VA2_adPN  side left  predicted acetylcholine  model sign +
+  720575940624700140  ALLN/lLN2T_c  side left  predicted serotonin  model sign +
+  720575940626881149  ALLN/lLN2T_c  side left  predicted serotonin  model sign +
+  720575940628467611  ALPN/VL2p_adPN  side left  predicted acetylcholine  model sign +
+  720575940630610425  ALLN/v2LN30  side left  predicted glutamate  model sign -
+  720575940636000631  ALPN/DP1m_adPN  side left  predicted acetylcholine  model sign +
+    DP1l_adPN -> v2LN30: 192 synapses
+    VA2_adPN -> lLN2T_c: 196 synapses
+    VA2_adPN -> v2LN30: 191 synapses
+    lLN2T_c -> v2LN30: 464 synapses
+    lLN2T_c -> DP1m_adPN: 165 synapses
+    lLN2T_c -> v2LN30: 408 synapses
+    VL2p_adPN -> v2LN30: 234 synapses
+    v2LN30 -> DP1l_adPN: 244 synapses
+    v2LN30 -> VA2_adPN: 266 synapses
+    v2LN30 -> lLN2T_c: 193 synapses
+    v2LN30 -> VL2p_adPN: 388 synapses
+    DP1m_adPN -> lLN2T_c: 313 synapses
+    DP1m_adPN -> lLN2T_c: 296 synapses

@@ -1,0 +1,5 @@
+test,n,runaway,median_spikes,last100_neurons
+"volley: the 13 loop neurons fire once, no other input",1,1,627981,9075
+volley: the largest loop (7 neurons) fires once,1,1,547967,8344
+olfactory trigger with the 13 loop neurons silenced,1,0,26,0
+"Ir94e 200 Hz, 60 trials, 13 loop neurons silenced",60,0,8009,159

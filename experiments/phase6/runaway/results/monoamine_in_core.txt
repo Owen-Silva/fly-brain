@@ -1,0 +1,4 @@
+runaway core neurons: 6765
+  predicted serotonin/dopamine/octopamine: 3210, of which Kenyon cells 2956, AL local neurons 53, other 201
+  in the MONO flip set: 43
+  MONO set by cell class: {'mechanosensory': 170, '(none)': 118, 'visual': 91, 'AN': 70, 'CX': 45, 'gustatory': 29, 'DN': 27, 'ALLN': 27, 'unknown_sensory': 17, 'optic_lobes': 16}

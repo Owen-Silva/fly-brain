@@ -1,0 +1,16 @@
+Peak voltage bump from ONE spike per synapse: 0.0433 mV; a lone spike fires its target if it has >= 162 synapses onto it (threshold is 7 mV above rest).
+whole brain: excitatory edges with >= 162 synapses: 1858; closed loops (strongly connected groups >1 neuron): 7, neurons in them: 21; largest 7
+whole brain: excitatory edges with >= 81 synapses: 12447; closed loops (strongly connected groups >1 neuron): 22, neurons in them: 172; largest 92
+whole brain: excitatory edges with >= 40 synapses: 53495; closed loops (strongly connected groups >1 neuron): 43, neurons in them: 1693; largest 1592
+runaway core: excitatory edges with >= 162 synapses: 337; closed loops (strongly connected groups >1 neuron): 3, neurons in them: 13; largest 7
+    members by class/type: ALLN/lLN2T_c: 4; ALLN/v2LN30: 2; ALPN/DP1l_adPN: 2; ALLN/: 1; ALPN/DP1m_adPN: 1; ALPN/VA2_adPN: 1; ALPN/VL2p_adPN: 1; ALPN/VP2_adPN: 1
+runaway core: excitatory edges with >= 81 synapses: 1992; closed loops (strongly connected groups >1 neuron): 5, neurons in them: 106; largest 92
+    members by class/type: ALLN/lLN1_b,lLN1_c: 30; ALLN/: 18; /: 8; ALLN/lLN2F_a: 4; ALLN/lLN2T_b: 4; ALLN/lLN2T_c: 4; ALLN/lLN2T_e: 4; DN/: 3; ALLN/lLN1_a: 3; ALPN/VP1d_il2PN: 2; ALLN/il3LN6: 2; ALPN/DC1_adPN: 2
+runaway core: excitatory edges with >= 40 synapses: 6806; closed loops (strongly connected groups >1 neuron): 14, neurons in them: 295; largest 253
+    members by class/type: ALLN/: 47; /: 32; ALLN/lLN1_b,lLN1_c: 30; DN/: 7; ALLN/lLN2P_b: 5; ALLN/lLN2T_c: 4; ALLN/lLN2T_e: 4; ALLN/lLN2F_a: 4; ALLN/lLN2T_b: 4; ALPN/DM2_lPN: 4; MBON/MBON12: 4; ALLN/lLN1_a: 3
+runaway active set: excitatory edges with >= 162 synapses: 485; closed loops (strongly connected groups >1 neuron): 3, neurons in them: 13; largest 7
+    members by class/type: ALLN/lLN2T_c: 4; ALLN/v2LN30: 2; ALPN/DP1l_adPN: 2; ALLN/: 1; ALPN/DP1m_adPN: 1; ALPN/VA2_adPN: 1; ALPN/VL2p_adPN: 1; ALPN/VP2_adPN: 1
+runaway active set: excitatory edges with >= 81 synapses: 2661; closed loops (strongly connected groups >1 neuron): 6, neurons in them: 111; largest 92
+    members by class/type: ALLN/lLN1_b,lLN1_c: 30; ALLN/: 18; /: 11; DN/: 5; ALLN/lLN2F_a: 4; ALLN/lLN2T_c: 4; ALLN/lLN2T_b: 4; ALLN/lLN2T_e: 4; ALLN/lLN1_a: 3; ALPN/VP1d_il2PN: 2; ALLN/il3LN6: 2; ALPN/DC1_adPN: 2
+runaway active set: excitatory edges with >= 40 synapses: 8864; closed loops (strongly connected groups >1 neuron): 23, neurons in them: 349; largest 274
+    members by class/type: ALLN/: 47; /: 45; ALLN/lLN1_b,lLN1_c: 30; DN/: 9; ALLN/lLN2P_b: 5; ALLN/lLN2F_a: 4; ALLN/lLN2T_b: 4; ALLN/lLN2T_c: 4; ALPN/DM2_lPN: 4; MBON/MBON12: 4; ALLN/lLN2T_e: 4; ALLN/lLN1_a: 3
