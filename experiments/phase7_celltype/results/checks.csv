@@ -1,0 +1,21 @@
+config,check,per_seed,holds (all seeds)
+baseline,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+baseline,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+baseline,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+baseline,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+baseline,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+baseline,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+baseline,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True
+baseline_newseeds,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+baseline_newseeds,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+baseline_newseeds,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+baseline_newseeds,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+baseline_newseeds,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+baseline_newseeds,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+CT_main,sugar 100 Hz drives MN9 (>= 20 Hz),pass/pass/pass,True
+CT_main,sugar 200 Hz > sugar 100 Hz,pass/pass/pass,True
+CT_main,sugar: contra MN9 > ipsi MN9,pass/pass/pass,True
+CT_main,"water 200 Hz drives MN9 (>= 5 Hz), less than sugar 200",pass/pass/pass,True
+CT_main,bitter alone: MN9 silent (<= 1 Hz),pass/pass/pass,True
+CT_main,sugar 100 + bitter 120: MN9 near 0 (<= 10% of sugar alone),pass/pass/pass,True
+CT_main,"sugar 200 + Ir94e 200: MN9 lower than sugar alone, not abolished (>= 10 Hz)",pass/pass/pass,True

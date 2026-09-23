@@ -1,0 +1,65 @@
+{
+ "config": "CT_main",
+ "engine": "celltype",
+ "celltype": {
+  "enabled": true,
+  "groups": {
+   "uPN_ACh": {
+    "n_neurons": 251,
+    "v_0": -57.8,
+    "v_th": -47.8,
+    "v_rst": -57.8,
+    "gap": 10.0,
+    "t_mbr": 22.9,
+    "t_rfc": 2.2,
+    "measured": [
+     "t_mbr_ms",
+     "v_0_mV",
+     "v_th_gap_mV"
+    ]
+   },
+   "KC": {
+    "n_neurons": 5177,
+    "v_0": -57.8,
+    "v_th": -36.3,
+    "v_rst": -57.8,
+    "gap": 21.5,
+    "t_mbr": 11.2,
+    "t_rfc": 2.2,
+    "measured": [
+     "t_mbr_ms",
+     "v_0_mV",
+     "v_th_gap_mV"
+    ]
+   },
+   "PEN": {
+    "n_neurons": 42,
+    "v_0": -46.1,
+    "v_th": -34.1,
+    "v_rst": -46.1,
+    "gap": 12.0,
+    "t_mbr": 20.0,
+    "t_rfc": 2.2,
+    "measured": [
+     "v_0_mV",
+     "v_th_gap_mV"
+    ]
+   },
+   "lLNv": {
+    "n_neurons": 7,
+    "v_0": -49.0,
+    "v_th": -42.0,
+    "v_rst": -49.0,
+    "gap": 7.0,
+    "t_mbr": 3.66,
+    "t_rfc": 2.2,
+    "measured": [
+     "t_mbr_ms",
+     "v_0_mV"
+    ]
+   }
+  },
+  "n_neurons_changed": 5477
+ },
+ "n_trials_per_seed": 30
+}

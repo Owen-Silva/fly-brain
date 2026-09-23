@@ -1,0 +1,13 @@
+config,condition,trials,runaway_trials,fraction,95% range,p vs baseline (Fisher),median onset (ms)
+baseline,sugar200_ir94e200,150,6,0.040,0.018-0.085,,641
+baseline,ir94e_200Hz,150,19,0.127,0.083-0.189,,609
+CT_main,sugar200_ir94e200,150,6,0.040,0.018-0.085,1,646
+CT_main,ir94e_200Hz,150,19,0.127,0.083-0.189,1,560
+CT_only_uPN,sugar200_ir94e200,150,6,0.040,0.018-0.085,1,644
+CT_only_uPN,ir94e_200Hz,150,19,0.127,0.083-0.189,1,558
+CT_only_KC,sugar200_ir94e200,150,6,0.040,0.018-0.085,1,644
+CT_only_KC,ir94e_200Hz,150,19,0.127,0.083-0.189,1,611
+CT_PNgap17.8,sugar200_ir94e200,150,6,0.040,0.018-0.085,1,649
+CT_PNgap17.8,ir94e_200Hz,150,19,0.127,0.083-0.189,1,565
+CT_KCtau200,sugar200_ir94e200,150,6,0.040,0.018-0.085,1,646
+CT_KCtau200,ir94e_200Hz,150,19,0.127,0.083-0.189,1,560

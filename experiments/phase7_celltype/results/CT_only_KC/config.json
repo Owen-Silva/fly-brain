@@ -1,0 +1,25 @@
+{
+ "config": "CT_only_KC",
+ "engine": "celltype",
+ "celltype": {
+  "enabled": true,
+  "groups": {
+   "KC": {
+    "n_neurons": 5177,
+    "v_0": -57.8,
+    "v_th": -36.3,
+    "v_rst": -57.8,
+    "gap": 21.5,
+    "t_mbr": 11.2,
+    "t_rfc": 2.2,
+    "measured": [
+     "t_mbr_ms",
+     "v_0_mV",
+     "v_th_gap_mV"
+    ]
+   }
+  },
+  "n_neurons_changed": 5177
+ },
+ "n_trials_per_seed": 30
+}

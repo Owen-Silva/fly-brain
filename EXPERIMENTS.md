@@ -678,3 +678,64 @@ applied to the other excitatory local neurons in the smell centre. With that, th
 brain stops locking up, the paper's taste results do not change at all, and the smell
 centre recruits a realistic small fraction of the learning centre. The left/right smell
 steering is still wrong.
+
+## 2026-09-23 - Phase 7 upgrade 4: cell-type-specific neuron settings (PRELIMINARY)
+
+**Sources (all read in full text; page/figure per number in
+`experiments/phase7_celltype/celltype_params.csv`).** Kenyon cells: Turner, Bazhenov &
+Laurent 2008, J Neurophysiol 99:734 (threshold 21.5 +/- 5.6 mV above rest, 17 cells,
+p. 741 / Fig. 3G; holding potential -57.8 mV; the authors' one-compartment time constant
+1.0 uF/cm2 / 0.089 mS/cm2 = 11.2 ms, tuned to the measured 11.5 ms synaptic potential,
+p. 737). Projection neurons: Gouwens & Wilson 2009, J Neurosci 29:6239 (Table 1:
+resistance x capacitance of 3 DM1 cells = 22.9 ms; seal-corrected rest -57.8 mV, Fig. 7);
+Jeanne & Wilson 2015, Neuron 88:1014 (about 10 mV from average voltage to threshold, 18
+DA1 cells, Fig. 4C). P-EN neurons: Turner-Evans et al. 2017, eLife 6:e23496
+(Supplementary file 1: mean gap 12.0 mV over 8 recordings, rest -46.1 mV). Large LNv
+clock neurons: Sheeba et al. 2008, J Neurophysiol 99:976 (305 MOhm x 12 pF = 3.66 ms;
+rest -49 mV; explant, 24 C). Input resistances found but not used (the model has no
+current; Kazama & Wilson 2008, Neuron 58:401, Fig. 4: projection-neuron synapses are
+matched to each cell's resistance). Nothing found for MN9, taste interneurons or
+mushroom-body output neurons; von Reyn et al. 2014 (giant fiber) and visual-neuron
+papers NOT read (UNVERIFIED, not used).
+
+**What changed.** 5,477 neurons (4.3%) get their measured values: 5,177 Kenyon cells
+(gap 21.5 mV, time constant 11.2 ms), 251 cholinergic single-glomerulus projection neurons
+(gap 10 mV, 22.9 ms), 42 P-ENs (gap 12 mV), 7 large LNvs (3.66 ms). Threshold is always
+set as a gap above the cell's own rest (in this model only the gap matters). Everything
+else keeps the shared values; refractory period 2.2 ms for all (none measured).
+`sim/celltype_params.py`, `CellTypeBrain`; the baseline engine was not edited, and with no
+measured values the new engine gives the baseline's spikes exactly (tests, incl. whole
+brain).
+
+**What happened to the baseline results.** All Phase 3 checks hold on all 3 seeds, and
+the five taste checks are spike-for-spike identical to the baseline for every neuron
+(correlation 1.000, top 50 identical): none of the 5,477 changed neurons fires in those
+experiments in either model, so the sugar result is untouched (MN9: sugar 100 Hz 67.3,
+sugar 200 Hz 93.5, water 30.8, bitter 0, sugar + bitter 1.4, sugar 200 + Ir94e 200 63.6
+Hz, all unchanged). Runaway (Phase 6 definition, 150 trials each): 6 vs 6 (sugar 200 +
+Ir94e 200) and 19 vs 19 (Ir94e alone), p = 1; the loop runs through antennal-lobe local
+neurons, which have no usable measurement. The real change is in the mushroom body:
+driving the DM1 smell neurons (150 Hz, 3 seeds x 30 trials), 4.1% of Kenyon cells fire per
+trial instead of 64.2% (real flies: 6 +/- 5%, Turner 2008), and mushroom-body output
+neurons drop from 70 active at about 100 Hz to 25 at about 25 Hz. The antennal lobe still
+ignites in every smell trial (the Phase 5/6 problem is not fixed by this upgrade).
+Which group does it: Kenyon cells alone 64% -> 9.0%, projection neurons alone 64% -> 53%
+(both: 4.1%); P-ENs and clock neurons never fired in any condition tested. The two
+judgement calls (projection-neuron gap 17.8 mV from two papers combined instead of the
+directly measured 10 mV; Kenyon cell time constant 200 ms from the cell body instead of
+11.2 ms) give 1.4% and 3.1%, and no version changes the runaway rate (all 6/150 and
+19/150, p = 1). Noise floor (baseline with 3 new seeds): correlation 0.99991-0.99998,
+6-29 neurons active in only one run; the upgrade in the taste checks: 1.000, 0 neurons.
+
+**Validated?** Phase 3 checks: yes (3 seeds, identical). Runaway: 150 trials x 2
+conditions. Variants of both judgement calls run. Not validated beyond that: coverage is
+small and off the taste pathway, one recorded type stands for its whole class, and the
+Kenyon cell comparison is made inside the (unrealistic) runaway state. **PRELIMINARY.**
+
+**Plain English.** Where scientists have measured a fly cell type with an electrode, the
+model now uses their numbers instead of one shared setting. Only four cell types had
+numbers that fit this simple model, and none of them sits on the sugar-to-feeding
+pathway, so the paper's feeding result comes out exactly the same. The big effect is in
+the learning centre: real Kenyon cells need a large push before they fire, and with that
+measured value only about 4% of them respond to a smell, as in real flies, instead of
+two-thirds. Details: `docs/phase7-celltype-params.md`.

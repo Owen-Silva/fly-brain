@@ -1,0 +1,6 @@
+{
+ "config": "baseline_newseeds",
+ "engine": "baseline",
+ "celltype": "baseline engine",
+ "n_trials_per_seed": 30
+}

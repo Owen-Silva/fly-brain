@@ -1,0 +1,15 @@
+config,condition,trials,runaway_trials,DM1 PN rate (Hz),KCs firing per healthy trial (mean),"% of 5,177 KCs (healthy)",uPNs firing per healthy trial,KCs firing per runaway trial (mean),"% of 5,177 KCs (runaway)",uPNs firing per runaway trial
+baseline,dm1_orn_150Hz,90,90,283.0,,,,3324.7,64.22,239.0
+CT_main,dm1_orn_150Hz,90,90,260.9,,,,212.0,4.1,237.0
+CT_only_uPN,dm1_orn_150Hz,30,30,259.5,,,,2764.7,53.4,237.0
+CT_only_uPN,ir94e_200Hz,150,19,11.7,0.0,0.0,0.0,2667.9,51.53,235.4
+CT_only_uPN,sugar200_ir94e200,150,6,3.2,0.0,0.0,0.0,2701.3,52.18,236.3
+CT_only_KC,dm1_orn_150Hz,30,30,284.2,,,,467.2,9.02,239.0
+CT_only_KC,ir94e_200Hz,150,19,13.7,0.0,0.0,0.1,388.8,7.51,238.7
+CT_only_KC,sugar200_ir94e200,150,6,3.7,0.0,0.0,0.0,405.0,7.82,239.0
+CT_PNgap17.8,dm1_orn_150Hz,30,30,226.7,,,,73.1,1.41,224.0
+CT_PNgap17.8,ir94e_200Hz,150,19,10.0,0.0,0.0,0.0,52.3,1.01,222.3
+CT_PNgap17.8,sugar200_ir94e200,150,6,2.7,0.0,0.0,0.0,51.3,0.99,223.3
+CT_KCtau200,dm1_orn_150Hz,30,30,261.2,,,,159.3,3.08,237.0
+CT_KCtau200,ir94e_200Hz,150,19,11.9,0.0,0.0,0.0,60.5,1.17,235.5
+CT_KCtau200,sugar200_ir94e200,150,6,3.2,0.0,0.0,0.0,49.3,0.95,236.5

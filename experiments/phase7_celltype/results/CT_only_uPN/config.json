@@ -1,0 +1,25 @@
+{
+ "config": "CT_only_uPN",
+ "engine": "celltype",
+ "celltype": {
+  "enabled": true,
+  "groups": {
+   "uPN_ACh": {
+    "n_neurons": 251,
+    "v_0": -57.8,
+    "v_th": -47.8,
+    "v_rst": -57.8,
+    "gap": 10.0,
+    "t_mbr": 22.9,
+    "t_rfc": 2.2,
+    "measured": [
+     "t_mbr_ms",
+     "v_0_mV",
+     "v_th_gap_mV"
+    ]
+   }
+  },
+  "n_neurons_changed": 251
+ },
+ "n_trials_per_seed": 30
+}
