@@ -1,0 +1,1689 @@
+[
+ {
+  "name": "named-Roundup",
+  "label": "Roundup (all 2, both sides)",
+  "ids": [
+   "720575940607272649",
+   "720575940623211725"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-G2N-1",
+  "label": "G2N-1 (all 2, both sides)",
+  "ids": [
+   "720575940620874757",
+   "720575940623718380"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Zorro",
+  "label": "Zorro (all 2, both sides)",
+  "ids": [
+   "720575940611015122",
+   "720575940629888530"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Rattle",
+  "label": "Rattle (all 2, both sides)",
+  "ids": [
+   "720575940630461660",
+   "720575940638103349"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Clavicle",
+  "label": "Clavicle (all 2, both sides)",
+  "ids": [
+   "720575940632648868",
+   "720575940655014049"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-FMIn",
+  "label": "FMIn (all 2, both sides)",
+  "ids": [
+   "720575940614763666",
+   "720575940636675214"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Fdg",
+  "label": "Fdg (all 2, both sides)",
+  "ids": [
+   "720575940631997032",
+   "720575940647030324"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Bract",
+  "label": "Bract (all 4, both sides)",
+  "ids": [
+   "720575940610001220",
+   "720575940626557442",
+   "720575940627285267",
+   "720575940645045527"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Phantom",
+  "label": "Phantom (all 2, both sides)",
+  "ids": [
+   "720575940616103218",
+   "720575940637763135"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Usnea",
+  "label": "Usnea (all 2, both sides)",
+  "ids": [
+   "720575940632648612",
+   "720575940641366517"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Sternum",
+  "label": "Sternum (all 2, both sides)",
+  "ids": [
+   "720575940632365905",
+   "720575940647060532"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Rounddown",
+  "label": "Rounddown (all 2, both sides)",
+  "ids": [
+   "720575940609407939",
+   "720575940627847752"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-Roundtree",
+  "label": "Roundtree (all 2, both sides)",
+  "ids": [
+   "720575940621261296",
+   "720575940632252743"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-DNge062",
+  "label": "DNge062 (all 2, both sides)",
+  "ids": [
+   "720575940619853515",
+   "720575940626038714"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "named-CB0880",
+  "label": "CB0880 (all 2, both sides)",
+  "ids": [
+   "720575940622391337",
+   "720575940624084372"
+  ],
+  "source": "named"
+ },
+ {
+  "name": "type-CB0008",
+  "label": "cell type CB0008 (2 active)",
+  "ids": [
+   "720575940632648612",
+   "720575940641366517"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0030",
+  "label": "cell type CB0030 (2 active)",
+  "ids": [
+   "720575940609935172",
+   "720575940623453959"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0038",
+  "label": "cell type CB0038 (2 active)",
+  "ids": [
+   "720575940631997032",
+   "720575940647030324"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0055",
+  "label": "cell type CB0055 (2 active)",
+  "ids": [
+   "720575940620274085",
+   "720575940631918649"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0070",
+  "label": "cell type CB0070 (2 active)",
+  "ids": [
+   "720575940612064113",
+   "720575940626972056"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0072",
+  "label": "cell type CB0072 (2 active)",
+  "ids": [
+   "720575940634756203",
+   "720575940639198397"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0087",
+  "label": "cell type CB0087 (2 active)",
+  "ids": [
+   "720575940609939780",
+   "720575940625047484"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0110",
+  "label": "cell type CB0110 (2 active)",
+  "ids": [
+   "720575940610232274",
+   "720575940648864633"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0117",
+  "label": "cell type CB0117 (2 active)",
+  "ids": [
+   "720575940611988197",
+   "720575940624310857"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0118",
+  "label": "cell type CB0118 (2 active)",
+  "ids": [
+   "720575940619973712",
+   "720575940633277209"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0177",
+  "label": "cell type CB0177 (2 active)",
+  "ids": [
+   "720575940630579574",
+   "720575940634210155"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0192",
+  "label": "cell type CB0192 (2 active)",
+  "ids": [
+   "720575940611015122",
+   "720575940629888530"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0202",
+  "label": "cell type CB0202 (2 active)",
+  "ids": [
+   "720575940617471133",
+   "720575940644968215"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0219",
+  "label": "cell type CB0219 (2 active)",
+  "ids": [
+   "720575940620062288",
+   "720575940624600840"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0226",
+  "label": "cell type CB0226 (2 active)",
+  "ids": [
+   "720575940611164770",
+   "720575940633316563"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0246",
+  "label": "cell type CB0246 (2 active)",
+  "ids": [
+   "720575940620170887",
+   "720575940632602532"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0247",
+  "label": "cell type CB0247 (2 active)",
+  "ids": [
+   "720575940615811670",
+   "720575940660223873"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0248",
+  "label": "cell type CB0248 (2 active)",
+  "ids": [
+   "720575940622695448",
+   "720575940627383685"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0262",
+  "label": "cell type CB0262 (2 active)",
+  "ids": [
+   "720575940635239672",
+   "720575940636895406"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0302",
+  "label": "cell type CB0302 (2 active)",
+  "ids": [
+   "720575940629207963",
+   "720575940639786915"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0331",
+  "label": "cell type CB0331 (2 active)",
+  "ids": [
+   "720575940609993284",
+   "720575940627446661"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0393",
+  "label": "cell type CB0393 (2 active)",
+  "ids": [
+   "720575940612357618",
+   "720575940632047890"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0416",
+  "label": "cell type CB0416 (2 active)",
+  "ids": [
+   "720575940615153494",
+   "720575940629000783"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0419",
+  "label": "cell type CB0419 (2 active)",
+  "ids": [
+   "720575940626495746",
+   "720575940636053678"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0449",
+  "label": "cell type CB0449 (2 active)",
+  "ids": [
+   "720575940613687789",
+   "720575940630667372"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0460",
+  "label": "cell type CB0460 (2 active)",
+  "ids": [
+   "720575940621422518",
+   "720575940647518340"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0465",
+  "label": "cell type CB0465 (2 active)",
+  "ids": [
+   "720575940624966840",
+   "720575940636809646"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0473",
+  "label": "cell type CB0473 (2 active)",
+  "ids": [
+   "720575940607386290",
+   "720575940627083294"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0480",
+  "label": "cell type CB0480 (2 active)",
+  "ids": [
+   "720575940612906518",
+   "720575940639285949"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0484",
+  "label": "cell type CB0484 (2 active)",
+  "ids": [
+   "720575940622235425",
+   "720575940625705930"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0493",
+  "label": "cell type CB0493 (2 active)",
+  "ids": [
+   "720575940621261296",
+   "720575940632252743"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0494",
+  "label": "cell type CB0494 (2 active)",
+  "ids": [
+   "720575940613743569",
+   "720575940626278974"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0538",
+  "label": "cell type CB0538 (2 active)",
+  "ids": [
+   "720575940609405635",
+   "720575940610803554"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0553",
+  "label": "cell type CB0553 (2 active)",
+  "ids": [
+   "720575940607272649",
+   "720575940623211725"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0559",
+  "label": "cell type CB0559 (2 active)",
+  "ids": [
+   "720575940619473624",
+   "720575940620780272"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0561",
+  "label": "cell type CB0561 (2 active)",
+  "ids": [
+   "720575940622612749",
+   "720575940632159519"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0568",
+  "label": "cell type CB0568 (2 active)",
+  "ids": [
+   "720575940609133269",
+   "720575940616018956"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0573",
+  "label": "cell type CB0573 (2 active)",
+  "ids": [
+   "720575940625867056",
+   "720575940631349335"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0603",
+  "label": "cell type CB0603 (2 active)",
+  "ids": [
+   "720575940610258552",
+   "720575940627779983"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0671",
+  "label": "cell type CB0671 (2 active)",
+  "ids": [
+   "720575940610621026",
+   "720575940641585627"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0700",
+  "label": "cell type CB0700 (2 active)",
+  "ids": [
+   "720575940618165019",
+   "720575940630868793"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0704",
+  "label": "cell type CB0704 (4 active)",
+  "ids": [
+   "720575940612952557",
+   "720575940621577036",
+   "720575940626999464",
+   "720575940630034231"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0707",
+  "label": "cell type CB0707 (2 active)",
+  "ids": [
+   "720575940618472261",
+   "720575940623209165"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0708",
+  "label": "cell type CB0708 (2 active)",
+  "ids": [
+   "720575940636165624",
+   "720575940638181092"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0714",
+  "label": "cell type CB0714 (4 active)",
+  "ids": [
+   "720575940610000964",
+   "720575940613943215",
+   "720575940625175054",
+   "720575940642428045"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0724",
+  "label": "cell type CB0724 (2 active)",
+  "ids": [
+   "720575940610054980",
+   "720575940620335269"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0740",
+  "label": "cell type CB0740 (2 active)",
+  "ids": [
+   "720575940612558061",
+   "720575940625861660"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0762",
+  "label": "cell type CB0762 (4 active)",
+  "ids": [
+   "720575940621586854",
+   "720575940628997123",
+   "720575940630781433",
+   "720575940633185567"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0778",
+  "label": "cell type CB0778 (2 active)",
+  "ids": [
+   "720575940620374693",
+   "720575940629421415"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0781",
+  "label": "cell type CB0781 (2 active)",
+  "ids": [
+   "720575940631406411",
+   "720575940634301852"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0788",
+  "label": "cell type CB0788 (2 active)",
+  "ids": [
+   "720575940616864086",
+   "720575940625737776"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0791",
+  "label": "cell type CB0791 (2 active)",
+  "ids": [
+   "720575940611436408",
+   "720575940624906483"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0799",
+  "label": "cell type CB0799 (2 active)",
+  "ids": [
+   "720575940612692633",
+   "720575940630771449"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0801",
+  "label": "cell type CB0801 (2 active)",
+  "ids": [
+   "720575940611548878",
+   "720575940630683385"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0807",
+  "label": "cell type CB0807 (2 active)",
+  "ids": [
+   "720575940609915204",
+   "720575940617552057"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0811",
+  "label": "cell type CB0811 (2 active)",
+  "ids": [
+   "720575940617494877",
+   "720575940637656286"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0821",
+  "label": "cell type CB0821 (2 active)",
+  "ids": [
+   "720575940620673985",
+   "720575940621399899"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0824",
+  "label": "cell type CB0824 (2 active)",
+  "ids": [
+   "720575940619114048",
+   "720575940624023188"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0832",
+  "label": "cell type CB0832 (2 active)",
+  "ids": [
+   "720575940616466260",
+   "720575940628648809"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0836",
+  "label": "cell type CB0836 (2 active)",
+  "ids": [
+   "720575940618864725",
+   "720575940619455879"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0845",
+  "label": "cell type CB0845 (2 active)",
+  "ids": [
+   "720575940607193986",
+   "720575940629561347"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0847",
+  "label": "cell type CB0847 (2 active)",
+  "ids": [
+   "720575940621573030",
+   "720575940624623287"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0853",
+  "label": "cell type CB0853 (2 active)",
+  "ids": [
+   "720575940617488477",
+   "720575940620031366"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0855",
+  "label": "cell type CB0855 (2 active)",
+  "ids": [
+   "720575940630820919",
+   "720575940635578303"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0858",
+  "label": "cell type CB0858 (2 active)",
+  "ids": [
+   "720575940627410451",
+   "720575940628826128"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0863",
+  "label": "cell type CB0863 (2 active)",
+  "ids": [
+   "720575940617629841",
+   "720575940627819151"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0865",
+  "label": "cell type CB0865 (4 active)",
+  "ids": [
+   "720575940620474278",
+   "720575940621057702",
+   "720575940626289021",
+   "720575940635211115"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0871",
+  "label": "cell type CB0871 (2 active)",
+  "ids": [
+   "720575940629810748",
+   "720575940630865724"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0885",
+  "label": "cell type CB0885 (2 active)",
+  "ids": [
+   "720575940627828296",
+   "720575940633373651"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0889",
+  "label": "cell type CB0889 (2 active)",
+  "ids": [
+   "720575940612423922",
+   "720575940623192781"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0890",
+  "label": "cell type CB0890 (2 active)",
+  "ids": [
+   "720575940611160930",
+   "720575940628755815"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0892",
+  "label": "cell type CB0892 (2 active)",
+  "ids": [
+   "720575940628676457",
+   "720575940630094652"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0896",
+  "label": "cell type CB0896 (2 active)",
+  "ids": [
+   "720575940608498780",
+   "720575940626626597"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0910",
+  "label": "cell type CB0910 (2 active)",
+  "ids": [
+   "720575940625045180",
+   "720575940625874992"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0911",
+  "label": "cell type CB0911 (2 active)",
+  "ids": [
+   "720575940612888178",
+   "720575940623352063"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-CB0919",
+  "label": "cell type CB0919 (2 active)",
+  "ids": [
+   "720575940619173534",
+   "720575940625580988"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNae015",
+  "label": "cell type DNae015 (2 active)",
+  "ids": [
+   "720575940621519130",
+   "720575940632962786"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNg16",
+  "label": "cell type DNg16 (2 active)",
+  "ids": [
+   "720575940641480949",
+   "720575940645047831"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNg28",
+  "label": "cell type DNg28 (3 active)",
+  "ids": [
+   "720575940626256765",
+   "720575940628630171",
+   "720575940630980559"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNg31",
+  "label": "cell type DNg31 (2 active)",
+  "ids": [
+   "720575940632722771",
+   "720575940660229505"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNg38",
+  "label": "cell type DNg38 (2 active)",
+  "ids": [
+   "720575940608735241",
+   "720575940613929391"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge007",
+  "label": "cell type DNge007 (2 active)",
+  "ids": [
+   "720575940626993694",
+   "720575940639425112"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge018",
+  "label": "cell type DNge018 (2 active)",
+  "ids": [
+   "720575940625641402",
+   "720575940631283267"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge023",
+  "label": "cell type DNge023 (2 active)",
+  "ids": [
+   "720575940623578375",
+   "720575940630996055"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge031",
+  "label": "cell type DNge031 (2 active)",
+  "ids": [
+   "720575940615041430",
+   "720575940644653348"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge040",
+  "label": "cell type DNge040 (2 active)",
+  "ids": [
+   "720575940606607234",
+   "720575940645352814"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge042",
+  "label": "cell type DNge042 (2 active)",
+  "ids": [
+   "720575940613347299",
+   "720575940631959097"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge046",
+  "label": "cell type DNge046 (4 active)",
+  "ids": [
+   "720575940620714150",
+   "720575940622027222",
+   "720575940630291767",
+   "720575940644758308"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge051",
+  "label": "cell type DNge051 (2 active)",
+  "ids": [
+   "720575940610677828",
+   "720575940649829241"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge059",
+  "label": "cell type DNge059 (2 active)",
+  "ids": [
+   "720575940615671106",
+   "720575940619877396"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge062",
+  "label": "cell type DNge062 (2 active)",
+  "ids": [
+   "720575940619853515",
+   "720575940626038714"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge080",
+  "label": "cell type DNge080 (2 active)",
+  "ids": [
+   "720575940609407939",
+   "720575940627847752"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge106",
+  "label": "cell type DNge106 (2 active)",
+  "ids": [
+   "720575940624484796",
+   "720575940631662648"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge123",
+  "label": "cell type DNge123 (2 active)",
+  "ids": [
+   "720575940612036837",
+   "720575940615715003"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge125",
+  "label": "cell type DNge125 (2 active)",
+  "ids": [
+   "720575940605658033",
+   "720575940617588258"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge163",
+  "label": "cell type DNge163 (2 active)",
+  "ids": [
+   "720575940606866377",
+   "720575940635179871"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge165",
+  "label": "cell type DNge165 (2 active)",
+  "ids": [
+   "720575940624897516",
+   "720575940647029044"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge211",
+  "label": "cell type DNge211 (2 active)",
+  "ids": [
+   "720575940612603289",
+   "720575940614730914"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-DNge226",
+  "label": "cell type DNge226 (2 active)",
+  "ids": [
+   "720575940605513649",
+   "720575940629508599"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "type-VESa2-M01",
+  "label": "cell type VESa2_M01 (2 active)",
+  "ids": [
+   "720575940607689394",
+   "720575940635451546"
+  ],
+  "source": "celltype",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "path-2hop-all",
+  "label": "all 2-hop relays to MN9 (all, 13)",
+  "ids": [
+   "720575940607386290",
+   "720575940615041430",
+   "720575940616857174",
+   "720575940616864217",
+   "720575940617678566",
+   "720575940625867056",
+   "720575940627847752",
+   "720575940629564688",
+   "720575940631349335",
+   "720575940632030008",
+   "720575940632365905",
+   "720575940632486969",
+   "720575940640162944"
+  ],
+  "source": "pathway"
+ },
+ {
+  "name": "path-2hop-exc_only",
+  "label": "all 2-hop relays to MN9 (exc_only, 8)",
+  "ids": [
+   "720575940607386290",
+   "720575940616857174",
+   "720575940617678566",
+   "720575940625867056",
+   "720575940627847752",
+   "720575940631349335",
+   "720575940632365905",
+   "720575940632486969"
+  ],
+  "source": "pathway"
+ },
+ {
+  "name": "path-top20-strongest-exc",
+  "label": "neurons on the 20 strongest excitatory routes (17)",
+  "ids": [
+   "720575940609407939",
+   "720575940614763666",
+   "720575940619853515",
+   "720575940620874757",
+   "720575940623210445",
+   "720575940623211725",
+   "720575940623718380",
+   "720575940624084372",
+   "720575940626191306",
+   "720575940626279742",
+   "720575940627847752",
+   "720575940629888530",
+   "720575940632047890",
+   "720575940632252743",
+   "720575940632365905",
+   "720575940655013025",
+   "720575940655014049"
+  ],
+  "source": "pathway"
+ },
+ {
+  "name": "top2-at100",
+  "label": "top 2 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940623211725"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top3-at100",
+  "label": "top 3 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940623211725",
+   "720575940632047890"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top5-at100",
+  "label": "top 5 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940619853515",
+   "720575940623211725",
+   "720575940632047890",
+   "720575940632365905"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top10-at100",
+  "label": "top 10 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940612611301",
+   "720575940619853515",
+   "720575940620874757",
+   "720575940623211725",
+   "720575940627847752",
+   "720575940630579574",
+   "720575940632047890",
+   "720575940632365905",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top20-at100",
+  "label": "top 20 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940609407939",
+   "720575940612611301",
+   "720575940615671106",
+   "720575940616103218",
+   "720575940619853515",
+   "720575940619877396",
+   "720575940620874757",
+   "720575940623209165",
+   "720575940623210445",
+   "720575940623211725",
+   "720575940627847752",
+   "720575940628972048",
+   "720575940630579574",
+   "720575940631997032",
+   "720575940632047890",
+   "720575940632252743",
+   "720575940632365905",
+   "720575940647033396",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top40-at100",
+  "label": "top 40 single-silencing effects at 100 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940607451081",
+   "720575940609133269",
+   "720575940609407939",
+   "720575940612611301",
+   "720575940612692633",
+   "720575940613687789",
+   "720575940615296818",
+   "720575940615671106",
+   "720575940616103218",
+   "720575940617593233",
+   "720575940619853515",
+   "720575940619877396",
+   "720575940620874757",
+   "720575940623209165",
+   "720575940623210445",
+   "720575940623211725",
+   "720575940623478115",
+   "720575940625641402",
+   "720575940626279742",
+   "720575940626308697",
+   "720575940627086594",
+   "720575940627847752",
+   "720575940628972048",
+   "720575940629239934",
+   "720575940629561347",
+   "720575940629664768",
+   "720575940629888530",
+   "720575940630579574",
+   "720575940631703608",
+   "720575940631997032",
+   "720575940632047890",
+   "720575940632252743",
+   "720575940632365905",
+   "720575940634301852",
+   "720575940639972816",
+   "720575940645352814",
+   "720575940647030324",
+   "720575940647033396",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   100
+  ]
+ },
+ {
+  "name": "top2-at50",
+  "label": "top 2 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940620874757"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ },
+ {
+  "name": "top3-at50",
+  "label": "top 3 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940612611301",
+   "720575940620874757"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ },
+ {
+  "name": "top5-at50",
+  "label": "top 5 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940612611301",
+   "720575940620874757",
+   "720575940628972048",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ },
+ {
+  "name": "top10-at50",
+  "label": "top 10 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940612611301",
+   "720575940612692633",
+   "720575940620874757",
+   "720575940623211725",
+   "720575940625102692",
+   "720575940628972048",
+   "720575940629888530",
+   "720575940638103349",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ },
+ {
+  "name": "top20-at50",
+  "label": "top 20 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940609407939",
+   "720575940612611301",
+   "720575940612692633",
+   "720575940615671106",
+   "720575940619473624",
+   "720575940619877396",
+   "720575940620874757",
+   "720575940623211725",
+   "720575940625102692",
+   "720575940627847752",
+   "720575940628972048",
+   "720575940629888530",
+   "720575940630579574",
+   "720575940631703608",
+   "720575940631997032",
+   "720575940632047890",
+   "720575940632252743",
+   "720575940638103349",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ },
+ {
+  "name": "top40-at50",
+  "label": "top 40 single-silencing effects at 50 Hz",
+  "ids": [
+   "720575940607272649",
+   "720575940609407939",
+   "720575940612611301",
+   "720575940612692633",
+   "720575940615671106",
+   "720575940617593233",
+   "720575940617629841",
+   "720575940618472261",
+   "720575940619473624",
+   "720575940619853515",
+   "720575940619877396",
+   "720575940620874757",
+   "720575940621261296",
+   "720575940621586854",
+   "720575940622348156",
+   "720575940623210445",
+   "720575940623211725",
+   "720575940625102692",
+   "720575940625178768",
+   "720575940625705930",
+   "720575940625861660",
+   "720575940626279742",
+   "720575940627086594",
+   "720575940627847752",
+   "720575940628114684",
+   "720575940628972048",
+   "720575940629888530",
+   "720575940630579574",
+   "720575940631703608",
+   "720575940631997032",
+   "720575940632047890",
+   "720575940632118156",
+   "720575940632252743",
+   "720575940636828334",
+   "720575940637144944",
+   "720575940638103349",
+   "720575940638181092",
+   "720575940642428045",
+   "720575940655013025",
+   "720575940655014049"
+  ],
+  "source": "topk",
+  "stim_hz": [
+   50
+  ]
+ }
+]

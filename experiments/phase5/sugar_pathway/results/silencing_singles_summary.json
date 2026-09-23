@@ -1,0 +1,41 @@
+{
+ "50": {
+  "n_tested": 344,
+  "baseline_mn9_hz": 20.633333333333333,
+  "classes": {
+   "redundant": 300,
+   "reduces (strong, >=20%)": 24,
+   "increases": 10,
+   "reduces (weak, <20%)": 7,
+   "blocks": 3
+  },
+  "min_ratio": 0.3554119547657512,
+  "vs_paper": {
+   "n_overlap": 198,
+   "pearson_r": 0.9334283548664466,
+   "spearman_r": 0.5771384657060733,
+   "ours_le_0.8": 27,
+   "paper_le_0.8": 21,
+   "both_le_0.8": 19
+  }
+ },
+ "100": {
+  "n_tested": 344,
+  "baseline_mn9_hz": 67.63333333333334,
+  "classes": {
+   "redundant": 314,
+   "reduces (weak, <20%)": 19,
+   "increases": 9,
+   "reduces (strong, >=20%)": 2
+  },
+  "min_ratio": 0.7358304583538688,
+  "vs_paper": {
+   "n_overlap": 198,
+   "pearson_r": 0.9304671090621496,
+   "spearman_r": 0.6522313709453422,
+   "ours_le_0.8": 2,
+   "paper_le_0.8": 2,
+   "both_le_0.8": 2
+  }
+ }
+}

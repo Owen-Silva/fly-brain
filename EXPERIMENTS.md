@@ -229,3 +229,67 @@ threshold or the synaptic time constant by 20%, or randomly scrambling synapse c
 can switch it off. Exact firing rates move a lot with the settings for every result, so only the
 yes/no direction should be trusted, not the numbers. New reusable tool: `sim/validation.py` runs
 this same check on any future result. Write-up with plots: `docs/phase5-sensitivity.md`.
+
+## 2026-09-22: Phase 5, sugar to MN9 pathway: tracing and silencing (PRELIMINARY)
+
+- **Changed:** Nothing in the model. We used the fast engine, snapshot 630 and the paper's
+  settings. Everything lives in `experiments/phase5/sugar_pathway/`. The write-up is
+  `docs/phase5-sugar-pathway.md`.
+  - **(1) Pathway tracing** (wiring only): fewest-hop and strongest routes from the 21 sugar
+    GRNs to each MN9. A connection's cost is minus the log of its share of the receiving
+    neuron's input, and each route is marked for whether it passes an inhibitory neuron.
+  - **(2) Silencing screen**, 344 neurons. These are all neurons firing at 1 Hz or more under
+    100 Hz sugar, plus 1 more from the paper's own list. Each was silenced alone at 100 Hz and
+    at 50 Hz sugar.
+    - Statistics: paired Wilcoxon test against the normal run, which had identical random
+      input (seed 0), with Benjamini-Hochberg correction (q < 0.05).
+    - Classes: blocks (ratio <= 0.5), reduces strongly (0.5 to 0.8), reduces weakly,
+      increases, or redundant.
+    - Two-stage design, adopted part-way through to save time: 10 trials first. Re-run at
+      30 trials if the change was more than 2 standard errors or outside 90-110%. The first
+      137 neurons at 100 Hz had already been run at 30 trials.
+  - **(3) Groups**: both members of the paper's named cell types, 100 FlyWire cell types, the
+    relays on the traced routes, and the "top k" single hits together.
+  - **(4) Seeds 1-3** for the blocking and strongly reducing results, plus the 5 largest per
+    frequency.
+  - **(5) w_syn +/-20%** for the Roundup and route-set blocks.
+- **Happened:**
+  - **Wiring.** The fewest hops is 2, through 13 relays for the main MN9 (5 of them
+    inhibitory). Five of the 13 never fire under sugar, and silencing any of the other 8 lowers
+    MN9 by at most 10%. The strongest route is sugar GRNs -> G2N-1 -> Roundup -> MN9. Named
+    neurons on the 20 strongest excitatory routes: G2N-1, Zorro, FMIn, Clavicle, Roundup,
+    Rounddown, Roundtree and Sternum. Not on them: Bract, Fdg, Phantom, Rattle and Usnea.
+  - **Single silencing at 100 Hz** (MN9 67.6 Hz; paper 65.7): 0 block, 2 strongly reduce (the
+    left and right Roundup, 0.74 and 0.78), 19 weakly reduce, 9 increase (8 of them
+    inhibitory brakes; DNge031 1.38) and 314 are redundant.
+  - **Single silencing at 50 Hz** (MN9 20.6 Hz): 3 block (right Roundup 0.36, sugar GRN
+    sugar_l_12 0.47, CB0277 0.50), 24 strongly reduce, 7 weakly reduce, 10 increase and 300
+    are redundant.
+  - **Groups.** Both Roundups together give 0.35 (100 Hz) and 0.19 (50 Hz). The top 3
+    singles together give 0.05 and 0.14. The 17 neurons on the strongest routes together give
+    0 at both rates. Two cell types (CB0821, CB0087) change MN9 only when both members are
+    silenced, and those changes are small.
+  - **Against the paper's own screen** (198 shared neurons): r = 0.93 at both rates. The same
+    2 neurons are below the 20% line at 100 Hz. At 50 Hz, 19 of the paper's 21 are also below
+    it in ours.
+  - **Against real flies.** Clavicle, G2N-1, Zorro and Rattle are needed, and Bract and
+    Phantom are not; both the model and the flies agree on these. The model disagrees with the
+    flies on Roundup (the model says it is the bottleneck; flies do not need it), Usnea and
+    FMIn. The paper reported the same disagreements.
+  - **Seeds 1-3** (52 results): all 52 keep the same direction, and 50 of 52 stay
+    significant. All 12 at 100 Hz keep their class, and 30 of 40 at 50 Hz do; the rest sit on
+    a 0.5 or 0.8 class line. Examples: both Roundups 0.34-0.35 (100 Hz) and 0.19-0.25
+    (50 Hz); the strongest-route set 0 in every seed.
+  - **w_syn -20% / +20%**: both Roundups 0.17 / 0.37 and the route set 0 / 0, so the blocks
+    hold.
+- **Validated:** Partly.
+  - **Checked:** it reproduces the paper's own silencing screen; the blocking and strong
+    results survive 3 new seeds, and the key blocks survive w_syn +/-20%; the controls pass
+    (all GRNs silenced gives MN9 = 0; a silent neuron gives an identical run); IDs and signs
+    check out.
+  - **Still PRELIMINARY:** everything as a statement about real flies (the model disagrees
+    with experiment on Roundup, FMIn and Usnea, as the paper also reported); every seed-0-only
+    result (weak effects, the 100 cell-type groups, the Phantom disinhibition chain); and the
+    10-trial "redundant" calls, which can miss effects under about 5-10%.
+  - **No new finding**, so Phase 6 step 6 does not apply. Not done: the paper's other six
+    sugar rates, an activation screen, and snapshot 783.

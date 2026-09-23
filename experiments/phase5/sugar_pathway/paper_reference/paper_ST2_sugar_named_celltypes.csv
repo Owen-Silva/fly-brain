@@ -1,0 +1,12 @@
+Neuron Name,Responds to sugar?,"Predicted to respond to sugar? (>0 Hz firing, Supplemental Table 1A)",Sufficient for proboscis extension?,MN9 frequency due to 200 Hz Activation (Supplemental Table 3 and/or Table 1B),Required for proboscis extension to 50 mM Sucrose?,"Change to MN9 as a result of silencing, 50 Hz Sugar"
+Bract,"Yes (Shiu, Sterne et al., 2022; Bract1 and Bract 2 are assumed to have identical phenotypes)",Yes,"Yes (Shiu, Sterne et al., 2022; Bract1 and Bract 2 are assumed to have identical phenotypes)",63.966666666666598,"No (Shiu, Sterne et al., 2022; Bract1 and Bract2 are assumed to have identical phenotypes)",1.08748
+Clavicle,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",77.566666666666606,"Yes (Shiu, Sterne et al., 2022)",0.66380800408370566
+Fdg,"Yes (Flood et al., 2013; Shiu, Sterne et al., 2022)",Yes,"Yes (Flood et al., 2013; Shiu, Sterne et al., 2022)",74.766666666666595,"Yes (Flood et al., 2013) No  (Shiu, Sterne et al., 2022)",0.85420254789065997
+FMIn,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",32.266666666666602,"Yes (Shiu, Sterne et al., 2022; 1 of 2 split-Gal4s)",1.3138938788840253
+G2N-1,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",80.2,"Yes (Shiu, Sterne et al., 2022)",0.61921108391270552
+MN9,"Yes (Gordon and Scott, 2009)",Yes,"Yes (Gordon and Scott, 2009)",191.06666666666601,"Yes (Gordon and Scott, 2009)"
+Phantom,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",0,"No (Shiu, Sterne et al., 2022)",1.0823329472269188
+Rattle,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",39.6,"Yes (Shiu, Sterne et al., 2022)",0.86449414485319809
+Roundup,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",154.69999999999999,"No (Shiu, Sterne et al., 2022)",0.66723853640454822
+Usnea,"No (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",0,"Yes (Shiu, Sterne et al., 2022)",1.2298458370232994
+Zorro,"Yes (Shiu, Sterne et al., 2022)",Yes,"Yes (Shiu, Sterne et al., 2022)",3.5333333333333301,"Yes (Shiu, Sterne et al., 2022)",0.77186977219035535

@@ -1,0 +1,83 @@
+{
+ "checks": {
+  "edge_sign_vs_neuron_sign_mismatches": 0,
+  "mn9_cell_types": {
+   "MN9_main": "CB0701",
+   "MN9_second": "CB0701"
+  },
+  "sugar_grn_cell_types": {},
+  "sugar_grn_signs": {
+   "1": 21
+  }
+ },
+ "targets": {
+  "MN9_main": {
+   "hops_all": {
+    "min_hops": 2,
+    "n_shortest_routes": 59,
+    "n_neurons_on_shortest_routes_excl_grn_and_mn9": 13,
+    "n_inhibitory_on_routes": 5
+   },
+   "hops_exc_only": {
+    "min_hops": 2,
+    "n_shortest_routes": 39,
+    "n_neurons_on_shortest_routes_excl_grn_and_mn9": 8,
+    "n_inhibitory_on_routes": 0
+   },
+   "strongest_all_pooled": {
+    "best_strength": 0.00014135103777306463,
+    "subgraph_neurons": 529,
+    "n_paths_listed": 20
+   },
+   "strongest_exc_only_pooled": {
+    "best_strength": 0.00014135103777306463,
+    "subgraph_neurons": 173,
+    "n_paths_listed": 20
+   },
+   "strongest_all_per_grn": {
+    "best_strength": 4.04495108092732e-05,
+    "subgraph_neurons": 524,
+    "n_paths_listed": 20
+   },
+   "strongest_exc_only_per_grn": {
+    "best_strength": 4.04495108092732e-05,
+    "subgraph_neurons": 209,
+    "n_paths_listed": 20
+   }
+  },
+  "MN9_second": {
+   "hops_all": {
+    "min_hops": 2,
+    "n_shortest_routes": 148,
+    "n_neurons_on_shortest_routes_excl_grn_and_mn9": 25,
+    "n_inhibitory_on_routes": 10
+   },
+   "hops_exc_only": {
+    "min_hops": 2,
+    "n_shortest_routes": 86,
+    "n_neurons_on_shortest_routes_excl_grn_and_mn9": 15,
+    "n_inhibitory_on_routes": 0
+   },
+   "strongest_all_pooled": {
+    "best_strength": 8.706920544509128e-05,
+    "subgraph_neurons": 673,
+    "n_paths_listed": 20
+   },
+   "strongest_exc_only_pooled": {
+    "best_strength": 6.593553958702473e-05,
+    "subgraph_neurons": 241,
+    "n_paths_listed": 20
+   },
+   "strongest_all_per_grn": {
+    "best_strength": 4.266417267395714e-05,
+    "subgraph_neurons": 535,
+    "n_paths_listed": 20
+   },
+   "strongest_exc_only_per_grn": {
+    "best_strength": 4.266417267395714e-05,
+    "subgraph_neurons": 215,
+    "n_paths_listed": 20
+   }
+  }
+ }
+}

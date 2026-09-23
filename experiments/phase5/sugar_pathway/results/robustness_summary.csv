@@ -1,0 +1,53 @@
+base_cond,label,stim_hz,ratios_seeds123,classes_seeds123,max_q,ratio_seed0,class_seed0,same_class_all_4_seeds
+grp_100_s0_named-Roundup,"Roundup (all 2, both sides)",100,0.344 / 0.343 / 0.338,blocks / blocks / blocks,1.707294403549849e-06,0.34647609659931,blocks,True
+grp_100_s0_path-2hop-exc_only,"all 2-hop relays to MN9 (exc_only, 8)",100,0.789 / 0.779 / 0.768,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",1.707294403549849e-06,0.7900443568260226,"reduces (strong, >=20%)",True
+grp_100_s0_path-top20-strongest-exc,neurons on the 20 strongest excitatory routes (17),100,0.000 / 0.000 / 0.000,blocks / blocks / blocks,1.707294403549849e-06,0.0,blocks,True
+grp_100_s0_top2-at100,top 2 single-silencing effects at 100 Hz,100,0.344 / 0.343 / 0.338,blocks / blocks / blocks,1.707294403549849e-06,0.34647609659931,blocks,True
+grp_100_s0_top3-at100,top 3 single-silencing effects at 100 Hz,100,0.047 / 0.047 / 0.049,blocks / blocks / blocks,1.707294403549849e-06,0.0497782158698866,blocks,True
+grp_100_s0_top5-at100,top 5 single-silencing effects at 100 Hz,100,0.020 / 0.021 / 0.020,blocks / blocks / blocks,1.707294403549849e-06,0.0216855593888615,blocks,True
+grp_50_s0_named-Clavicle,"Clavicle (all 2, both sides)",50,0.646 / 0.646 / 0.586,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0001340820740007141,0.6575121163166397,"reduces (strong, >=20%)",True
+grp_50_s0_named-G2N-1,"G2N-1 (all 2, both sides)",50,0.543 / 0.576 / 0.583,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",5.06168440673708e-06,0.5961227786752827,"reduces (strong, >=20%)",True
+grp_50_s0_named-Rattle,"Rattle (all 2, both sides)",50,0.756 / 0.788 / 0.764,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0012143821066568589,0.7722132471728594,"reduces (strong, >=20%)",True
+grp_50_s0_named-Rounddown,"Rounddown (all 2, both sides)",50,0.592 / 0.616 / 0.619,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",5.06168440673708e-06,0.5815831987075929,"reduces (strong, >=20%)",True
+grp_50_s0_named-Roundtree,"Roundtree (all 2, both sides)",50,0.621 / 0.596 / 0.584,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",5.59355478059084e-06,0.64297253634895,"reduces (strong, >=20%)",True
+grp_50_s0_named-Roundup,"Roundup (all 2, both sides)",50,0.222 / 0.254 / 0.189,blocks / blocks / blocks,4.131224614537534e-06,0.1906300484652665,blocks,True
+grp_50_s0_named-Zorro,"Zorro (all 2, both sides)",50,0.648 / 0.646 / 0.624,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",5.59355478059084e-06,0.6639741518578351,"reduces (strong, >=20%)",True
+grp_50_s0_path-2hop-exc_only,"all 2-hop relays to MN9 (exc_only, 8)",50,0.495 / 0.553 / 0.484,"blocks / reduces (strong, >=20%) / blocks",4.854672409050248e-06,0.4846526655896607,blocks,False
+grp_50_s0_path-top20-strongest-exc,neurons on the 20 strongest excitatory routes (17),50,0.000 / 0.000 / 0.000,blocks / blocks / blocks,4.131224614537534e-06,0.0,blocks,True
+grp_50_s0_top2-at50,top 2 single-silencing effects at 50 Hz,50,0.150 / 0.151 / 0.170,blocks / blocks / blocks,4.131224614537534e-06,0.1308562197092084,blocks,True
+grp_50_s0_top3-at50,top 3 single-silencing effects at 50 Hz,50,0.141 / 0.158 / 0.167,blocks / blocks / blocks,4.131224614537534e-06,0.1437802907915993,blocks,True
+grp_50_s0_top5-at50,top 5 single-silencing effects at 50 Hz,50,0.041 / 0.056 / 0.037,blocks / blocks / blocks,4.131224614537534e-06,0.0549273021001615,blocks,True
+sil_100_s0_720575940607272649,roundup_r,100,0.765 / 0.736 / 0.758,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",3.431857350117381e-06,0.7806801379990141,"reduces (strong, >=20%)",True
+sil_100_s0_720575940615041430,,100,1.366 / 1.408 / 1.394,increases / increases / increases,3.431857350117381e-06,1.3814687037949729,increases,True
+sil_100_s0_720575940619853515,,100,0.864 / 0.869 / 0.856,"reduces (weak, <20%) / reduces (weak, <20%) / reduces (weak, <20%)",4.642370062920487e-06,0.8462296697880729,"reduces (weak, <20%)",True
+sil_100_s0_720575940623211725,roundup_l,100,0.748 / 0.734 / 0.737,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",3.431857350117381e-06,0.7358304583538688,"reduces (strong, >=20%)",True
+sil_100_s0_720575940632047890,,100,0.841 / 0.843 / 0.856,"reduces (weak, <20%) / reduces (weak, <20%) / reduces (weak, <20%)",4.642370062920487e-06,0.8363725973385904,"reduces (weak, <20%)",True
+sil_100_s0_720575940639198653,sugar_l_12,100,0.852 / 0.871 / 0.886,"reduces (weak, <20%) / reduces (weak, <20%) / reduces (weak, <20%)",4.15733656061075e-06,0.8555938886150812,"reduces (weak, <20%)",True
+sil_50_s0_720575940607272649,roundup_r,50,0.396 / 0.349 / 0.373,blocks / blocks / blocks,1.3238046249298407e-05,0.3554119547657512,blocks,True
+sil_50_s0_720575940609407939,,50,0.817 / 0.830 / 0.815,"reduces (weak, <20%) / reduces (weak, <20%) / reduces (weak, <20%)",0.002892462918589415,0.7996768982229402,"reduces (strong, >=20%)",False
+sil_50_s0_720575940612611301,,50,0.531 / 0.532 / 0.502,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",1.3238046249298407e-05,0.4991922455573506,blocks,False
+sil_50_s0_720575940612692633,,50,0.721 / 0.762 / 0.744,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0012479408336639123,0.6978998384491115,"reduces (strong, >=20%)",True
+sil_50_s0_720575940615041430,,50,2.477 / 2.502 / 2.428,increases / increases / increases,1.3238046249298407e-05,2.631663974151858,increases,True
+sil_50_s0_720575940615671106,,50,0.740 / 0.865 / 0.793,"reduces (strong, >=20%) / reduces (weak, <20%) / reduces (strong, >=20%)",0.0009186896299434367,0.7770597738287561,"reduces (strong, >=20%)",False
+sil_50_s0_720575940617000768,sugar_l_4,50,0.607 / 0.783 / 0.766,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.00013360660193769815,0.6203554119547658,"reduces (strong, >=20%)",True
+sil_50_s0_720575940617937543,sugar_l_14,50,0.706 / 0.714 / 0.709,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0003009355513683666,0.7140549273021002,"reduces (strong, >=20%)",True
+sil_50_s0_720575940620874757,G2N_1_l,50,0.543 / 0.576 / 0.583,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",1.5747462598737582e-05,0.5961227786752827,"reduces (strong, >=20%)",True
+sil_50_s0_720575940620900446,sugar_l_13,50,0.637 / 0.627 / 0.651,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",3.566342851338537e-05,0.6736672051696284,"reduces (strong, >=20%)",True
+sil_50_s0_720575940621502051,sugar_l_8,50,0.895 / 0.826 / 0.830,"redundant / reduces (weak, <20%) / reduces (weak, <20%)",0.10544105246217357,0.7738287560581584,"reduces (strong, >=20%)",False
+sil_50_s0_720575940623211725,roundup_l,50,0.645 / 0.662 / 0.659,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",1.604569925272594e-05,0.667205169628433,"reduces (strong, >=20%)",True
+sil_50_s0_720575940624963786,sugar_l_0,50,0.679 / 0.756 / 0.758,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.00027307872638959306,0.7366720516962844,"reduces (strong, >=20%)",True
+sil_50_s0_720575940625102692,,50,0.579 / 0.654 / 0.656,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",5.236061364393207e-05,0.5799676898222941,"reduces (strong, >=20%)",True
+sil_50_s0_720575940627847752,Rounddown,50,0.745 / 0.799 / 0.815,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (weak, <20%)",0.0017204419071810628,0.7124394184168013,"reduces (strong, >=20%)",False
+sil_50_s0_720575940628853239,sugar_l_18,50,0.773 / 0.772 / 0.801,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (weak, <20%)",0.002563279010196584,0.7043618739903069,"reduces (strong, >=20%)",False
+sil_50_s0_720575940628972048,,50,0.599 / 0.640 / 0.610,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",2.719354856076075e-05,0.6478190630048466,"reduces (strong, >=20%)",True
+sil_50_s0_720575940629888530,Zorro_l,50,0.631 / 0.662 / 0.602,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",1.604569925272594e-05,0.6849757673667205,"reduces (strong, >=20%)",True
+sil_50_s0_720575940631703608,,50,0.742 / 0.712 / 0.736,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.00022968799104529527,0.7495961227786753,"reduces (strong, >=20%)",True
+sil_50_s0_720575940632047890,,50,0.684 / 0.651 / 0.772,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0027436597194562097,0.7689822294022618,"reduces (strong, >=20%)",True
+sil_50_s0_720575940632252743,Roundtree,50,0.657 / 0.645 / 0.637,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",3.0181133393567772e-05,0.6898222940226171,"reduces (strong, >=20%)",True
+sil_50_s0_720575940632425919,sugar_l_15,50,0.640 / 0.759 / 0.627,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.001258129021562116,0.6768982229402262,"reduces (strong, >=20%)",True
+sil_50_s0_720575940633143833,sugar_l_16,50,0.651 / 0.605 / 0.674,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",4.711116708797077e-05,0.6623586429725363,"reduces (strong, >=20%)",True
+sil_50_s0_720575940637568838,sugar_l_2,50,0.858 / 0.788 / 0.836,"reduces (weak, <20%) / reduces (strong, >=20%) / reduces (weak, <20%)",0.012365214738090246,0.7560581583198708,"reduces (strong, >=20%)",False
+sil_50_s0_720575940638103349,rattle_l,50,0.756 / 0.788 / 0.764,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.0015455772266541842,0.7722132471728594,"reduces (strong, >=20%)",True
+sil_50_s0_720575940638202345,sugar_l_3,50,0.840 / 0.887 / 0.811,"reduces (weak, <20%) / redundant / reduces (weak, <20%)",0.09337186688567785,0.7996768982229402,"reduces (strong, >=20%)",False
+sil_50_s0_720575940639198653,sugar_l_12,50,0.397 / 0.410 / 0.503,"blocks / blocks / reduces (strong, >=20%)",1.3238046249298407e-05,0.468497576736672,blocks,False
+sil_50_s0_720575940655014049,clavicle_l,50,0.646 / 0.646 / 0.586,"reduces (strong, >=20%) / reduces (strong, >=20%) / reduces (strong, >=20%)",0.00018112841575535066,0.6575121163166397,"reduces (strong, >=20%)",True
