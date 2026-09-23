@@ -1,0 +1,235 @@
+cell_type,super_class,cell_class,amine,evidence,predicted,known_nt,known_nt_source,neurons,connections,synapses,mean_pred_conf
+untyped,ascending,AN,serotonin,prediction,serotonin,,,158,9525,28091.0,0.610942
+untyped,central,,serotonin,prediction,serotonin,,,62,4724,13697.0,0.55364144
+AVLP538,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,2459,11360.0,0.6645665
+PPL103,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine; dopamine, nitric oxide","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",2,4547,10617.0,0.7915199
+PAM06,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),28,5306,8801.0,0.80053025
+untyped,optic,optic_lobes,serotonin,literature,dopamine,serotonin,"Nern et al., 2024 (EASI-FISH)",11,5348,8472.0,0.5072009
+SMP145,central,,dopamine,prediction,dopamine,,,4,4614,8450.0,0.54267645
+PLP030,visual_centrifugal,,dopamine,literature,dopamine,dopamine; dopamine,"Chiang et al., 2011 (MCFO); Mao and Davis 2009 (immuno)",3,5724,7801.0,0.74821454
+CL033,visual_centrifugal,,dopamine,literature,dopamine,dopamine,Mao and Davis 2009 (immuno),4,5706,7704.0,0.73971367
+PAM08,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),36,5294,7272.0,0.85777
+AVLP532,central,,dopamine,prediction,dopamine,,,2,2367,6960.0,0.7042445
+ExR3,central,CX,serotonin,literature,dopamine,"serotonin; serotonin, acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, negative, tyramine-negative, octopamine-negative, neuropeptides-negative","Pooryasin et al., 2015 (immuno); Wolff et a., 2024 (EASI-FISH)",2,1428,6749.0,0.42459825
+PAM10,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),13,3831,6087.0,0.83107215
+FB4Y,central,CX,serotonin,literature,dopamine,"serotonin, space blanket, glutamate-negative, acetylcholine-negative, gaba-negative, dopamine-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",5,2317,5908.0,0.38587287
+PPM1201,central,,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),4,3848,5546.0,0.82507133
+untyped,central,,dopamine,prediction,dopamine,,,18,3092,5261.0,0.44424117
+PPL101,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine; dopamine, nitric oxide","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",2,2852,5183.0,0.8160166
+PPL201,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,2974,4977.0,0.81454176
+5-HTPMPV03,visual_centrifugal,,serotonin,literature,dopamine,serotonin,Pooryasin and Fiala 2015 (immuno),2,4005,4968.0,0.4447481
+PAM05,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),19,2794,4907.0,0.78114575
+SLP438,central,,dopamine,prediction,dopamine,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",4,2743,4733.0,0.4104062
+PPL107,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,1610,4660.0,0.7493285
+hb1416796844,central,,dopamine,prediction,dopamine,,,2,2279,4622.0,0.77747536
+PAM04,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),30,3675,4581.0,0.7661135
+l-LNv,optic,bilateral,serotonin,prediction,serotonin,"pdf, dNPF; glycine, acetylcholine-negative; acetylcholine-negative, gaba-negative, glutamate-negative; acetylcholine-negative","Reinhard et al., 2023 (immuno); Mao et al., 2024 (transgenics); Nern et al., 2024 (EASI-FISH); Croset et al., 2018 (scRNA-seq)",7,2578,4203.0,0.76573
+PPL202,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,2265,4115.0,0.7623975
+SMP504,central,,serotonin,literature,acetylcholine,serotonin,"Chiang et al., 2011 (MCFO)",2,951,3933.0,0.8324199
+PAM01,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),36,3349,3931.0,0.8923216
+PPM1203,central,,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),2,1754,3891.0,0.79293704
+AVLP476,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,1811,3796.0,0.6806929
+PAM11,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno),14,2170,3751.0,0.8111108
+OA-ASM3,central,,dopamine,prediction,dopamine,,,2,2180,3691.0,0.4668544
+PPL105,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine; dopamine, sNPF","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",2,1976,3654.0,0.8422251
+AVLP594,central,,serotonin,prediction,serotonin,natalisin,"Jiang et al., 2013 (immuno)",2,835,3605.0,0.53682446
+CB0735,central,,dopamine,prediction,dopamine,,,4,2015,3503.0,0.39607614
+OA-VUMx1,central,,dopamine,prediction,dopamine,,,1,1053,3419.0,0.7037183
+PPL106,central,DAN,dopamine,literature,dopamine,dopamine; dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",2,1914,3322.0,0.6966276
+PAM07,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),15,2600,3279.0,0.9083308
+CB0573,central,,dopamine,prediction,dopamine,,,2,1458,3215.0,0.6819422
+AVLP593,central,,dopamine,prediction,dopamine,,,2,1310,3133.0,0.6839775
+SMP178,central,,dopamine,literature,acetylcholine,dopamine,"Chiang et al., 2011 (MCFO)",2,853,3059.0,0.7242688
+SLP457,central,,dopamine,prediction,dopamine,,,4,2331,3012.0,0.7129365
+FB1H,central,CX,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,1467,2991.0,0.577795
+SMP367,descending,DN,serotonin,prediction,serotonin,CCAP,"González Segarra et al., 2023 (transgenics)",2,827,2970.0,0.7384412
+SIP087,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,1643,2951.0,0.6946043
+SMP001,central,,serotonin,prediction,serotonin,allatostatin-a,"Vitzthum et al., 1996 (immuno)",2,1182,2941.0,0.4498241
+SMP503,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,1985,2823.0,0.74709105
+PAM09,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),10,1281,2820.0,0.7606602
+FB1C,central,CX,dopamine,literature,dopamine,"dopamine, Nplp1, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",3,1459,2775.0,0.47990677
+OA-ASM2,central,,dopamine,prediction,dopamine,,,2,1825,2761.0,0.49042806
+SMP384,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,1628,2737.0,0.640406
+CB0748,visual_centrifugal,,dopamine,prediction,dopamine,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",5,1606,2712.0,0.33371598
+FB2A,central,CX,dopamine,literature,dopamine,"dopamine, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative; dopamine","Wolff et al., 2024 (EASI-FISH); Hulse et al., 2020 (immuno)",5,1391,2667.0,0.5261761
+PAM14,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),17,2006,2570.0,0.8856984
+DSKMP1A,descending,DN,serotonin,prediction,serotonin,drosulfakinin,"Soderberg et al., 2012 (immuno)",2,1850,2523.0,0.6239393
+PAM12,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),22,1898,2454.0,0.8924408
+PAL01,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,1362,2440.0,0.71628106
+PAL03,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,1148,2408.0,0.78652436
+PPM1205,central,,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),2,768,2367.0,0.7453278
+DNp32,descending,DN,dopamine,prediction,dopamine,myosuppressin,"Carlsson et al., 2010 (immuno)",2,1439,2183.0,0.51104003
+CB0461,central,,dopamine,prediction,dopamine,,,2,829,2179.0,0.6761993
+FB5H,central,CX,dopamine,literature,dopamine,dopamine,"Hulse et al., 2020 (immuno)",2,774,2067.0,0.4318061
+"CRZ01,CRZ02",central,,serotonin,prediction,serotonin,"corazonin, sNPF","Kubrak et al., 2016 (immuno)",4,1123,2058.0,0.73227286
+PLP211,central,,dopamine,prediction,dopamine,,,2,1170,2009.0,0.5115504
+ExR2,central,CX,dopamine,literature,dopamine,dopamine,Nassel and Elekes 1992 (immuno),4,913,1931.0,0.5331632
+LAL128,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,689,1930.0,0.6747222
+hb451722668,central,,serotonin,prediction,serotonin,,,2,640,1796.0,0.7110668
+PPM1202,central,,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),4,1177,1761.0,0.7733163
+CL358,visual_centrifugal,,dopamine,prediction,dopamine,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",2,1353,1712.0,0.40090472
+CB0053,central,,dopamine,prediction,dopamine,,,2,874,1670.0,0.75721717
+untyped,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),9,1163,1646.0,0.84021807
+CB0452,central,,dopamine,prediction,dopamine,,,2,923,1609.0,0.62749743
+AVLP219,central,,serotonin,prediction,serotonin,,,3,403,1527.0,0.40784553
+untyped,ascending,AN,dopamine,prediction,dopamine,,,8,586,1517.0,0.51820016
+CB0892,central,,serotonin,literature,dopamine,serotonin,Yao and Scott 2022 (immuno),2,559,1500.0,0.4881994
+DSKMP1B,descending,DN,serotonin,prediction,serotonin,drosulfakinin,"Soderberg et al., 2012 (immuno)",2,1056,1489.0,0.5804416
+CB0722,central,,serotonin,prediction,serotonin,,,2,321,1400.0,0.3914367
+SAG,ascending,AN,serotonin,prediction,serotonin,,,2,271,1349.0,0.4959653
+DSKMP3,central,,dopamine,prediction,dopamine,drosulfakinin; drosulfakinin,"Soderberg et al., 2012 (immuno); Wu et al., 2019 (immuno)",3,638,1340.0,0.36183128
+SLP304,central,,serotonin,prediction,serotonin,leucokinin,"Yurgel et al., 2019 (immuno)",2,596,1336.0,0.67924535
+CL357,central,,dopamine,prediction,dopamine,"acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Nern et al., 2024 (EASI-FISH)",1,604,1308.0,0.58129305
+SMP181,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,881,1298.0,0.6508968
+AVLP155,central,,serotonin,prediction,serotonin,,,1,329,1290.0,0.38223812
+ATL031,central,,dopamine,prediction,dopamine,,,2,653,1286.0,0.69483423
+DNge222,descending,DN,dopamine,prediction,dopamine,,,2,640,1268.0,0.4995693
+PPL104,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,677,1257.0,0.80082667
+PAM13,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),11,957,1246.0,0.79580873
+DNge047,descending,DN,dopamine,prediction,dopamine,,,2,835,1239.0,0.45148364
+LAL082,central,,serotonin,prediction,serotonin,,,2,473,1224.0,0.33744168
+PPL108,central,,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,586,1192.0,0.6758537
+untyped,central,,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",15,812,1125.0,0.56506056
+ATL042,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,647,1107.0,0.69730693
+PLP210,visual_centrifugal,,serotonin,prediction,serotonin,,,2,846,1098.0,0.38709545
+SMP505,central,,serotonin,literature,acetylcholine,serotonin,"Chiang et al., 2011 (MCFO)",2,358,1085.0,0.78152406
+FC2A,central,CX,serotonin,prediction,serotonin,,,4,419,1072.0,0.36542666
+CB0017,central,,dopamine,prediction,dopamine,,,2,504,1065.0,0.45074183
+SMP039,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",4,847,1053.0,0.59764624
+DGI,central,,serotonin,prediction,serotonin,,,2,683,1051.0,0.47722948
+hb1343489608,descending,DN,serotonin,prediction,serotonin,,,2,303,1032.0,0.44825232
+PPL102,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,588,1023.0,0.44785786
+SLP403,central,,serotonin,prediction,serotonin,,,4,516,1022.0,0.72234994
+5-HTPMPD01,central,,serotonin,literature,dopamine,serotonin,"Sitaraman et al., 2008 (immuno)",2,812,1016.0,0.653106
+CB0124,central,,dopamine,prediction,dopamine,,,1,515,943.0,0.37961373
+aDT4,sensory,unknown_sensory,serotonin,literature,acetylcholine,serotonin,"Shih and Chiang et al., 2011 (MCFO)",3,307,940.0,0.58363324
+CB0809,central,,serotonin,prediction,serotonin,,,2,252,937.0,0.50382864
+NPFP1,descending,DN,serotonin,prediction,serotonin,dNPF; dNPF; acetylcholine-negative,"Krashes et al. 2009 (immuno); Chiang et al., 2011 (MCFO); Croset et al., 2018 (scRNA-seq)",1,408,931.0,0.5328839
+untyped,central,,serotonin,prediction,serotonin,"hugin, sNPF","Carlsson et al., 2013 (immuno)",6,656,922.0,0.8168485
+untyped,central,CX,serotonin,prediction,serotonin,,,9,295,902.0,0.47895035
+ATL043,central,,dopamine,prediction,dopamine,,,2,396,893.0,0.6451024
+CL344,central,,serotonin,literature,dopamine,serotonin,"Chiang et al., 2011 (MCFO)",2,510,873.0,0.56986535
+CB0494,central,,dopamine,prediction,dopamine,,,2,315,866.0,0.66969156
+CB0212,central,,serotonin,literature,serotonin,serotonin,Yao and Scott 2022 (immuno),2,476,858.0,0.5094832
+SLP444,central,,serotonin,prediction,serotonin,,,4,632,848.0,0.7340983
+5-HTPMPV01,central,,serotonin,literature,dopamine,serotonin,"Sitaraman et al., 2008 (immuno)",1,496,845.0,0.3031412
+hDeltaJ,central,CX,serotonin,prediction,serotonin,,,4,276,827.0,0.48931193
+CB0088,central,,dopamine,prediction,dopamine,,,2,220,823.0,0.4986586
+DNg30,descending,DN,serotonin,literature,serotonin,"natalisin; serotonin, MIP; acetylcholine-negative","Jiang et al., 2013 (immuno); Scheunemann et al., 2018 (immuno); Croset et al. 2018 (scRNA-seq)",2,447,822.0,0.8133847
+SMP385,central,,dopamine,prediction,dopamine,,,1,563,821.0,0.69347686
+IB118,central,,serotonin,literature,serotonin,serotonin,"Chiang et al., 2011 (MCFO)",2,435,815.0,0.5555727
+CL107,central,,serotonin,prediction,serotonin,,,1,179,805.0,0.4700983
+PAM03,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),10,708,773.0,0.81500405
+PAM02,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),11,564,748.0,0.74581665
+SLP212,central,,dopamine,prediction,dopamine,,,2,335,734.0,0.30728012
+DNge200,descending,DN,serotonin,prediction,serotonin,,,2,182,728.0,0.57539415
+untyped,optic,bilateral,serotonin,prediction,serotonin,"pdf, dNPF; glycine, acetylcholine-negative; acetylcholine-negative, gaba-negative, glutamate-negative; acetylcholine-negative","Reinhard et al., 2023 (immuno); Mao et al., 2024 (transgenics); Nern et al., 2024 (EASI-FISH); Croset et al., 2018 (scRNA-seq)",1,437,712.0,0.83644634
+PAL02,central,,dopamine,literature,dopamine,dopamine,"Chiang et al., 2011 (MCFO)",2,424,682.0,0.6858494
+DNge094,descending,DN,serotonin,prediction,serotonin,,,6,253,626.0,0.48155296
+NPFL1-I,central,,serotonin,prediction,serotonin,dNPF; dNPF; acetylcholine-negative,"Krashes et al. 2009 (immuno); Chiang et al., 2011 (MCFO); Croset et al., 2018 (scRNA-seq)",2,442,616.0,0.63340616
+PAM06,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),2,361,616.0,0.7625437
+SMP587,central,,dopamine,prediction,dopamine,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,272,587.0,0.30113354
+SMP587,central,,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,252,584.0,0.3381972
+ATL032,central,,dopamine,prediction,dopamine,,,2,270,571.0,0.4466567
+CL357,central,,serotonin,prediction,serotonin,"acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Nern et al., 2024 (EASI-FISH)",1,322,565.0,0.60354966
+CB0578,central,,serotonin,prediction,serotonin,,,2,351,554.0,0.45876092
+CB0364,central,,serotonin,prediction,serotonin,,,2,74,552.0,0.52450967
+PPL204,central,,dopamine,literature,dopamine,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",2,238,547.0,0.6502476
+PAM08,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),3,419,544.0,0.8957502
+CB0262,central,,serotonin,literature,dopamine,serotonin,Yao and Scott 2022 (immuno),1,343,526.0,0.45728716
+hb1221802845,central,,serotonin,prediction,serotonin,,,1,137,518.0,0.37671772
+CB0262,central,,serotonin,literature,serotonin,serotonin,Yao and Scott 2022 (immuno),1,345,505.0,0.49004364
+SMP589,central,,dopamine,prediction,dopamine,,,1,224,503.0,0.35997045
+FC2B,central,CX,serotonin,prediction,serotonin,,,2,175,468.0,0.3967635
+CB0483,central,,serotonin,prediction,serotonin,,,1,146,460.0,0.5028416
+untyped,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),2,302,448.0,0.74244684
+"vDeltaF,vDeltaG,vDeltaH,vDeltaI",central,CX,dopamine,prediction,dopamine,,,2,161,441.0,0.32316583
+hb1791391565,descending,DN,serotonin,prediction,serotonin,,,2,127,421.0,0.5096387
+CB0769,motor,motor,serotonin,prediction,serotonin,,,2,173,415.0,0.48370498
+SMP588,central,,dopamine,prediction,dopamine,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",1,302,413.0,0.46323112
+PAM07,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),3,346,406.0,0.889723
+untyped,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),2,254,406.0,0.80486906
+5-HTPMPV01,central,,serotonin,literature,serotonin,serotonin,"Sitaraman et al., 2008 (immuno)",1,289,404.0,0.547785
+FB4Y,central,CX,serotonin,literature,serotonin,"serotonin, space blanket, glutamate-negative, acetylcholine-negative, gaba-negative, dopamine-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1,222,403.0,0.5087172
+IB048,central,,serotonin,prediction,serotonin,,,1,144,394.0,0.46050957
+DNge216,descending,DN,serotonin,prediction,serotonin,,,1,142,388.0,0.41505238
+ATL034,central,,serotonin,prediction,serotonin,,,1,172,387.0,0.5864436
+SLP374,central,,dopamine,prediction,dopamine,capability,"Deng et al., 2019 (transgenics)",2,238,383.0,0.45571113
+PAM11,central,DAN,dopamine,literature,dopamine,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),1,230,382.0,0.8309187
+"ATL017,ATL018",central,,serotonin,prediction,serotonin,,,1,96,368.0,0.68324554
+"FB5J,FB5K,FB5L,FB5M,FB5N,FB5W",central,CX,serotonin,prediction,serotonin,,,3,167,344.0,0.6172787
+CL255,central,,serotonin,prediction,serotonin,,,1,172,320.0,0.5483168
+CB0224,central,,serotonin,prediction,serotonin,,,1,104,315.0,0.33455205
+PAM11,central,DAN,dopamine,prediction,dopamine,,,1,183,313.0,0.8624949
+PAM15,central,DAN,dopamine,literature,dopamine,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),3,275,311.0,0.9197696
+DNg28,descending,DN,serotonin,literature,acetylcholine,serotonin; serotonin,Alekseyenko et al. 2010 (immuno); Yao and Scott 2022 (immuno),1,90,300.0,0.8319976
+FB2A,central,CX,dopamine,literature,serotonin,"dopamine, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative; dopamine","Wolff et al., 2024 (EASI-FISH); Hulse et al., 2020 (immuno)",1,180,292.0,0.49307832
+DNg22,descending,DN,serotonin,prediction,serotonin,FMRFa,"Song et al., 2023 (immuno)",2,165,282.0,0.7284803
+PAM01,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),3,227,281.0,0.8365019
+PAM02,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),3,187,260.0,0.7908752
+CB0878,central,,serotonin,prediction,serotonin,"hugin, sNPF","Carlsson et al., 2013 (immuno)",2,204,258.0,0.863215
+AOTU024,central,,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,91,256.0,0.5748381
+SLP463,central,,serotonin,prediction,serotonin,"proctolin, allatostatin-c","Reinhard et al., 2023 (immuno, intersection)",2,135,234.0,0.73739195
+untyped,central,,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),1,150,234.0,0.51491815
+DNg26,descending,DN,serotonin,literature,serotonin,allatostatin-c; serotonin,"Cheong et al., 2023 (MCFO); Gautham et al. 2024 (unknown)",4,172,232.0,0.6721283
+CL352,central,,serotonin,literature,acetylcholine,serotonin,"Chiang et al., 2011 (MCFO)",1,106,229.0,0.5514926
+CB0726,endocrine,pars lateralis,serotonin,prediction,serotonin,"corazonin, sNPF","Reinhard et al., 2023 (immuno)",4,110,204.0,0.45610014
+PAM15,central,DAN,dopamine,literature,dopamine,dopamine,Mao & Davis 2009 (immuno),1,137,197.0,0.8010456
+DNge231,descending,DN,serotonin,prediction,serotonin,,,2,88,187.0,0.4645514
+"FS4A,FS4B,FS4C",central,CX,serotonin,prediction,serotonin,,,4,122,181.0,0.5179728
+FC2C,central,CX,serotonin,prediction,serotonin,,,2,87,171.0,0.54692566
+"vDeltaF,vDeltaG,vDeltaH,vDeltaI",central,CX,serotonin,prediction,serotonin,,,1,64,146.0,0.31992903
+CB.FB5I0,central,CX,serotonin,prediction,serotonin,,,1,84,142.0,0.3686317
+AVLP441,central,,serotonin,prediction,serotonin,,,1,63,131.0,0.61882645
+"MC61,MC64",visual_projection,,dopamine,prediction,dopamine,,,1,33,123.0,0.40715083
+DNpe015,descending,DN,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",3,68,113.0,0.5560968
+CL360,central,,serotonin,literature,acetylcholine,serotonin,"Chiang et al., 2011 (MCFO)",1,81,110.0,0.50995857
+CL360,central,,serotonin,literature,serotonin,serotonin,"Chiang et al., 2011 (MCFO)",1,105,108.0,0.49747372
+"FB4A,FB4D,FB4E,FB4F,FB4G,FB4H,FB4I,FB4J",central,CX,serotonin,prediction,serotonin,,,2,56,79.0,0.65930295
+ALON3,central,ALON,serotonin,prediction,serotonin,,,1,35,76.0,0.43407324
+DNge126,descending,DN,serotonin,prediction,serotonin,,,2,32,69.0,0.7299783
+DNp16/17,descending,DN,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",5,45,66.0,0.4827858
+5-HT-IR Tan,optic,optic_lobes,serotonin,prediction,serotonin,,,4,40,56.0,0.7182605
+CB.FB1I1,central,CX,serotonin,prediction,serotonin,,,1,44,52.0,0.4788635
+untyped,visual_projection,,serotonin,prediction,serotonin,,,1,33,51.0,0.40679336
+DNg36_b,descending,DN,serotonin,prediction,serotonin,,,1,23,50.0,0.3311733
+DNge151,descending,DN,serotonin,prediction,serotonin,,,1,33,46.0,0.50691634
+DNge114,descending,DN,serotonin,prediction,serotonin,,,3,33,46.0,0.69286376
+untyped,visual_centrifugal,,serotonin,prediction,serotonin,,,6,39,46.0,0.6389868
+untyped,motor,motor,serotonin,prediction,serotonin,,,1,27,43.0,0.47300202
+DNg28,descending,DN,serotonin,literature,octopamine,serotonin; serotonin,Alekseyenko et al. 2010 (immuno); Yao and Scott 2022 (immuno),1,35,39.0,0.38765597
+untyped,optic,optic_lobes,dopamine,prediction,dopamine,,,1,31,33.0,0.51890206
+untyped,optic,optic_lobes,serotonin,prediction,serotonin,,,2,27,32.0,0.3996653
+5-HT-IR Tan,optic,optic_lobes,dopamine,prediction,dopamine,,,1,26,31.0,0.61982936
+SAF,central,,serotonin,prediction,serotonin,,,1,29,31.0,0.39658296
+DNge109,descending,DN,serotonin,prediction,serotonin,,,1,14,29.0,0.7015282
+FS3,central,CX,serotonin,prediction,serotonin,,,1,17,27.0,0.5522637
+"PI1,PI2,PI3",endocrine,pars intercerebralis,serotonin,prediction,serotonin,myosuppressin,"Reinhard et al., 2023 (immuno)",2,25,25.0,0.3269747
+"CL228,SMP491",central,,serotonin,prediction,serotonin,,,1,17,21.0,0.44411048
+DNge102,descending,DN,serotonin,prediction,serotonin,,,1,13,19.0,0.4279562
+"PI1,PI2,PI3",endocrine,pars intercerebralis,serotonin,prediction,serotonin,"DILP2, DILP3, DILP5; dARC1; acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Cao et al., 2001 (immuno); Mattaliano et al., 2007 (immuno); Croset et al., 2018 (scRNA-seq)",2,14,19.0,0.3537169
+CB0836,motor,motor,serotonin,prediction,serotonin,,,1,18,19.0,0.2878302
+CB0905,endocrine,pars lateralis,serotonin,prediction,serotonin,"corazonin, sNPF","Reinhard et al., 2023 (immuno)",1,14,18.0,0.43899086
+T1,optic,optic_lobes,serotonin,prediction,serotonin,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",5,12,18.0,0.33620948
+"PI1,PI2,PI3",endocrine,pars intercerebralis,serotonin,prediction,serotonin,Dh44,"Reinhard et al., 2023 (immuno)",2,15,16.0,0.26874137
+FB1C,central,CX,dopamine,literature,serotonin,"dopamine, Nplp1, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1,14,15.0,0.3128263
+CB0831,motor,motor,serotonin,prediction,serotonin,,,1,11,14.0,0.35792828
+CB0750,motor,motor,serotonin,prediction,serotonin,,,1,14,14.0,0.23901783
+DNES1,endocrine,pars lateralis,serotonin,prediction,serotonin,,,4,9,11.0,0.54525334
+DNES3,endocrine,pars lateralis,dopamine,prediction,dopamine,Dh31; acetylcholine-negative,"Reinhard et al., 2023 (immuno); Croset et al., 2018 (scRNA-seq)",1,10,10.0,0.2756834
+untyped,optic,optic_lobes,dopamine,prediction,dopamine,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",4,7,9.0,0.37149468
+DNp17,descending,DN,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,5,8.0,0.6033249
+DNge015,descending,DN,serotonin,prediction,serotonin,,,1,6,7.0,0.2627575
+DNg17,descending,DN,serotonin,prediction,serotonin,,,1,6,6.0,0.356181
+DNg03,descending,DN,serotonin,prediction,serotonin,,,1,6,6.0,0.49481833
+CB0705,motor,motor,serotonin,prediction,serotonin,,,1,4,4.0,0.40823156
+"PI1,PI2,PI3",endocrine,pars intercerebralis,serotonin,prediction,serotonin,,,2,3,3.0,0.37390473
+DNg01_a,descending,DN,serotonin,prediction,serotonin,,,1,3,3.0,0.45173168
+untyped,optic,optic_lobes,serotonin,prediction,serotonin,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",1,2,2.0,0.5841581
+DNge116,descending,DN,serotonin,prediction,serotonin,,,1,1,1.0,0.41033897
+DNg05_b,descending,DN,serotonin,prediction,serotonin,,,1,1,1.0,0.4452994
+DNge116,descending,DN,dopamine,prediction,dopamine,,,1,1,1.0,0.31118008
+"PI1,PI2,PI3",endocrine,pars intercerebralis,dopamine,prediction,dopamine,,,1,1,1.0,0.61305606
+PS228,descending,DN,serotonin,prediction,serotonin,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,1,1.0,0.5798551
+PS228,descending,DN,dopamine,prediction,dopamine,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1,1,1.0,0.88751775
+T1,optic,optic_lobes,dopamine,prediction,dopamine,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",1,1,1.0,0.44136694

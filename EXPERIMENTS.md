@@ -993,3 +993,108 @@ plus three slow tests on the real engine.
 `sim/realism.py` suggests its builder for that combination would fail with delays on
 (it looks for a neuron-position file named after the fix). Not run; left for the owner
 of `sim/`.
+
+## 2026-09-23 - Phase 7 upgrade 5, neuromodulators: dopamine and serotonin cells as slow signals, and whole-brain punishment learning (PRELIMINARY)
+
+**Question.** The published model treats every cell that does not use GABA or glutamate as a
+fast "push" (excitation), including dopamine and serotonin cells. In Phase 8 this blocked
+punishment learning in the whole brain: a smell alone made the punishment neurons
+PPL1-γ1pedc fire about 16 spikes per sniff, more than the artificial punishment, so every
+smell was "punished". Is that fast push real, and does removing it (where the evidence says
+so) unblock punishment learning?
+
+**Sources.** Receptors: every known fly dopamine and serotonin receptor is a slow receptor
+working through chemical messengers inside the cell (Blenau et al. 2017; Tierney 2018, via
+search summaries); no dopamine- or serotonin-gated fast channel is reported in flies (Jones
+et al. 2010, via search summary). Fast co-release: dopamine neurons also release GABA or
+glutamate, both brakes (Yamazaki et al. 2023, J Neurosci 43:8294), and nitric oxide (Aso et
+al. 2019, eLife 8:e49257); octopamine cells release glutamate (Sherer et al. 2020, PLoS Genet
+16:e1008609); the serotonin cell CSD probably also releases acetylcholine (Zhang & Gaudry
+2016, eLife 5:e16836). Serotonin input to PPL1-γ1pedc in real flies is slow (5-HT2A) and
+matters only for long-term memory (Scheunemann et al. 2018, Neuron 98:350). Identities:
+FlyWire literature transmitter column (`known_nt`, v783; for SMP384/SMP504 it cites Chiang et
+al. 2011, a shape match to a single-cell image in a serotonin-neuron genetic line, not
+antibody staining). Checks and learning protocol: Phase 3, Phase 6 and Phase 8 (Hige et al.
+2015, Neuron 88:985). Full list and plain-English write-up: `docs/phase7-neuromodulators.md`.
+
+**Identity check.** The biggest outside pushes onto PPL1-γ1pedc during a sniff come from
+SMP384 (machine guess dopamine, confidence 0.63-0.65, but literature **serotonin**) and
+SMP504 (guess acetylcholine 0.82-0.84, literature **serotonin**); SMP384's cell bodies lie
+among antibody-confirmed serotonin cells. So the question is "serotonin cells giving a fast
+push", not "dopamine cells". The known serotonin input to these neurons (the SPN, cell type
+DNg30) has no synapses onto them in this connectome.
+
+**What changed.** Three new, optional fix names in `sim/sign_fixes.py` (additive: every old
+fix, number, test and the default `al_ln_literature` are unchanged). Each starts from
+`al_ln_literature` and removes all outgoing connections of the chosen cells (their fast
+push); nothing else changes and no sign is flipped:
+- `al_ln_literature+da_modulatory`: dopamine cells, 494 (378 from the literature, 116 guess
+  only); 136,260 more connections (239,393 synapses) removed.
+- `al_ln_literature+da_5ht_modulatory`: dopamine + serotonin cells, 997 (445 literature, 552
+  guess only); 205,612 connections (402,094 synapses).
+- `al_ln_literature+da_5ht_literature`: dopamine + serotonin cells known from the literature
+  only, 445 (378 dopamine, 67 serotonin); 122,500 connections (220,590 synapses).
+Rules: the literature decides first; the machine guess is used only when the literature names
+no transmitter (not at all in the literature-only fix). Never touched: antennal-lobe local
+neurons, guess-only sensory neurons (580), CSD, cells already brakes or without outputs (65),
+octopamine/tyramine cells (fast glutamate co-release). New tests: `tests/test_neuromod.py`
+(7 tests).
+
+**What happened: checks against the paper** (each fix alone vs `al_ln_literature`, 3 seeds x
+30 trials, same trials as the sign audit; MN9 in spikes/s):
+- `+da_5ht_literature` passes every check: sugar 100 Hz 68.1 (was 67.3; paper 65.7), sugar
+  200 Hz 94.1 (93.5), water 30.9 (30.8), bitter alone 0, sugar + bitter 1.48 (1.36), no
+  runaway (0 of 90 for Ir94e 200 Hz and for DM1 150 Hz), Kenyon cells active under DM1
+  3.1% (3.6%).
+- `+da_modulatory` and `+da_5ht_modulatory` pass everything except water -> feeding, which
+  is 26-28% weaker (22.3 and 22.9 vs 30.8); the cause is three taste-area cells (CB0573,
+  CB0461, CB0088) whose "dopamine" label is only a machine guess.
+- Phase 8's sugar -> MN9 check with learning switched on, for `+da_5ht_literature`:
+  identical spikes in 60 of 60 trials (3 seeds x 10 trials x 2 rates), MN9 67.0 and 93.2,
+  not one Kenyon-cell -> output-neuron connection changed. Passes.
+
+**What happened: punishment learning in the whole brain** (Phase 8 rule and calibration
+unchanged; 3 simulated flies; "net" = minus the same fly's no-training run):
+- Dopamine cells alone: no help. PPL1-γ1pedc still fires 12.7 spikes per sniff and every
+  condition still ends near -100%.
+- Dopamine + serotonin cells: PPL1-γ1pedc fires 0.17 (guess-including fix) or 0 (literature
+  fix) spikes per sniff. Removing only SMP384 and SMP504 (4 cells) is enough (0 spikes).
+- `+da_5ht_literature`, approach neuron MBON-γ1pedc>α/β, input change after vs before:
+  paired odor A + punishment: A -99.5%, B -47.2% (net -61% vs -9%); odors swapped: -98.8% vs
+  -40.8% (net -60% vs -2%). The punished odor lost more than the other in all 6 runs; the
+  net "learned" score (CS+ minus CS-) was -55% on average, below -20% in 5 of 6 runs (-30% to
+  -90%); in the sixth (fly 2, odor A) the untrained fly already loses 76% of odor A's input,
+  leaving little to learn (-10%).
+- Controls (net learned score, mean and range): unpaired 0% (-8 .. +9), punishment only 0%
+  (all 0), odor only -6% (-32 .. +10), backward -14% (-35 .. +8). One fly (fly 0) shows a
+  -32% / -35% odor-specific drop in odor-only and backward training (circuit model: backward
+  -9%; Hige et al.: none).
+- Reward (PAM-γ5 + PAM-β'2a paired with A, "avoid" neuron MBON-γ5β'2a): A -98.8%, B -4.7%,
+  3 of 3; unpaired +1.4% vs -0.5% (net learned score -1%, 0 of 3). Passes.
+- Still off: with no training at all, the approach neuron's input over the 4 test sniffs of
+  an odor after the (empty) training period is 39% lower than over the 4 before (3% to 76% by
+  fly and odor; circuit model about 2%). Causes seen in the runs: PPL1-γ1pedc still fires a
+  stray spike about once every 8-10 sniffs, and PPL1-γ1 (PPL102, also sending dopamine to
+  part of this neuron's Kenyon-cell synapses) fires 2-3 spikes per sniff of odor B.
+  PPL102 input trace (first sniff, learning off): 0 spikes for odor A, 3-5 for odor B in all
+  3 flies; its input during odor B is about 2.5 times that during odor A, mostly from outside
+  the mushroom-body circuit (biggest: LAL185, CRE011, SMP385, SMP177, CRE078; none is a
+  literature dopamine or serotonin cell), so this fix cannot remove it.
+
+**Verdict.** PLAN.md Phase 8 checkpoint in the whole brain with `+da_5ht_literature`: the fly
+learns in the right direction for punishment and reward, odor-specifically, and does not
+learn in the unpaired control; odor-only and backward controls are near zero on average
+but not in every fly, and test sniffs alone weaken the read-out by about a third. **Passes,
+PRELIMINARY, with those caveats.** The project default was NOT changed
+(`RECOMMENDED_FIX = "al_ln_literature"`); switching is the owner's call.
+
+**Validated?** No (PRELIMINARY). Phase 6 validation was not done. Unverified: that SMP384
+and SMP504 really are serotonin cells (one shape-match source plus cell-body position); that
+these cells have no fast co-transmitter; the slow effects themselves are not modelled (only
+dopamine's effect on Kenyon-cell -> MBON synapses is); 3 seeds only; some literature sources
+were used through abstracts or search summaries (marked in the doc).
+
+**Files.** `sim/sign_fixes.py` (additive), `tests/test_neuromod.py`,
+`experiments/phase7_neuromod/` (counts, identity tables, validation runs and tables),
+`experiments/phase8_aversive/` (sniff traces, conditioning, regression, summaries, plot
+`plots/aversive_compare.png`), `docs/phase7-neuromodulators.md`.

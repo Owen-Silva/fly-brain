@@ -1,0 +1,12 @@
+{
+ "A": {
+  "identical": true,
+  "spikes_removed_brain": 58035,
+  "spikes_kept_brain": 58035
+ },
+ "B": {
+  "identical": true,
+  "spikes_removed_brain": 62538,
+  "spikes_kept_brain": 62538
+ }
+}

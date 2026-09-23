@@ -87,6 +87,50 @@ The fixes (``FIXES``)
     numbers can be reproduced; the sources above contradict it for the 34
     literature-typed eLNs among them.
 
+``"al_ln_literature+da_modulatory"``, ``"al_ln_literature+da_5ht_modulatory"`` and
+``"al_ln_literature+da_5ht_literature"``
+    (Phase 7 item 5, neuromodulators; added 2026-09-23; evidence and results in
+    docs/phase7-neuromodulators.md.) Start from ``al_ln_literature`` exactly,
+    then remove every outgoing connection of the dopamine neurons (first
+    name), or of the dopamine AND serotonin neurons (second name), or of the
+    dopamine and serotonin neurons whose transmitter is known from the
+    literature, not only from the machine prediction (third name). Nothing
+    else changes: no sign flips, no other connections, neuron order kept.
+    Plain English: the published model lets these cells give their partners
+    a fast "push" like acetylcholine does. In flies every known dopamine and
+    serotonin receptor is a slow G-protein-coupled receptor (dopamine: Dop1R1,
+    Dop1R2, Dop2R, DopEcR; serotonin: 5-HT1A, 1B, 2A, 2B, 7), and no dopamine-
+    or serotonin-gated ion channel has been reported in Drosophila (its
+    cys-loop channel family is predicted to be gated by acetylcholine, GABA,
+    glutamate, histamine and pH: Jones et al. 2010, Heredity 104:247). Their
+    effect is slow modulation (for dopamine in the mushroom body, the change
+    in Kenyon-cell -> output-neuron strength that sim/plasticity.py models).
+    Which cells count (``monoamine_of``): FlyWire's literature transmitter
+    (``known_nt``) decides whenever it names a transmitter; only if it names
+    none is the machine prediction (``top_nt``) used. Left alone:
+    * cells whose literature entry also names a fast transmitter (Kenyon
+      cells: acetylcholine; DPM: GABA + serotonin), and CSD, whose serotonin
+      entry hides a reported fast acetylcholine output (Zhang & Gaudry 2016,
+      eLife 5:e16836);
+    * antennal-lobe local neurons (handled by the ``al_ln_literature`` rule;
+      Eckstein et al. 2024 think their serotonin/dopamine guesses are wrong)
+      and sensory neurons whose only evidence is the prediction (Eckstein et
+      al. 2024: "many first-order sensory neurons ... were mispredicted for
+      serotonin rather than acetylcholine");
+    * cells the reference file already makes inhibitory (their sign came from
+      the per-synapse GABA/glutamate majority, not from the monoamine rule);
+    * octopamine and tyramine cells: most octopamine neurons also release
+      glutamate (Sherer et al. 2020, PLoS Genet 16:e1008609), so a real fast
+      output exists whose sign is not known; not changed.
+    Known gap kept on record: dopamine neurons also co-release GABA (PAM) or
+    glutamate (PPL1), acting in an inhibitory way (Yamazaki et al. 2023,
+    J Neurosci 43:8294); that fast inhibitory part is NOT added.
+    ``keep_outputs`` (root IDs) leaves those cells' connections in place; the
+    learning experiments use it for the 305 mushroom-body dopamine neurons,
+    whose outputs sim/plasticity.py switches off itself while still reading
+    where they reach the Kenyon cells (same spikes, see
+    experiments/phase8_aversive).
+
 Where the neuron labels come from
 ---------------------------------
 Cell class / type / predicted transmitter: data/cache/connectome_630_neurons
@@ -116,9 +160,27 @@ LABELS_630 = ROOT / "data" / "cache" / "connectome_630_neurons.parquet"
 ANN_630 = ROOT / "data" / "flywire" / "Supplemental_file1_annotations_v1.1.0_630.tsv"
 ANN_783 = ROOT / "data" / "flywire" / "Supplemental_file1_neuron_annotations.tsv"
 
-FIXES = ("none", "eln_electrical", "al_ln_literature", "known_nt", "ln53_inhibitory")
+#: Neuromodulator fixes (Phase 7 item 5): fix name -> monoamines whose
+#: fast outgoing connections are removed (on top of "al_ln_literature").
+NEUROMOD_FIXES = {
+    "al_ln_literature+da_modulatory": ("dopamine",),
+    "al_ln_literature+da_5ht_modulatory": ("dopamine", "serotonin"),
+    "al_ln_literature+da_5ht_literature": ("dopamine", "serotonin"),
+}
+#: Which kinds of evidence for "this cell is dopaminergic/serotonergic" a
+#: neuromodulator fix accepts (default: literature and prediction).
+NEUROMOD_EVIDENCE = {"al_ln_literature+da_5ht_literature": ("literature",)}
+FIXES = ("none", "eln_electrical", "al_ln_literature", "known_nt", "ln53_inhibitory",
+         *NEUROMOD_FIXES)
 #: The recommended default (see docs/phase7-neurotransmitter-audit.md).
 RECOMMENDED_FIX = "al_ln_literature"
+
+#: Cell types whose FlyWire literature entry names only serotonin although a
+#: fast co-transmitter has been reported; the neuromodulator fixes leave them.
+FAST_COTRANSMITTER_EXCEPTIONS = {
+    "CSD": "Zhang & Gaudry 2016 (eLife 5:e16836): CSD likely releases acetylcholine "
+           "in addition to serotonin",
+}
 
 #: Fast transmitters and the sign the paper's rule gives them.
 FAST_SIGN = {"acetylcholine": 1, "gaba": -1, "glutamate": -1}
@@ -255,6 +317,61 @@ def ln53_mask(lab):
             & np.isin(lab.top_nt.to_numpy(), ["serotonin", "dopamine"]))
 
 
+def monoamine_of(lab):
+    """Each neuron's monoamine for the neuromodulator fixes, literature first.
+
+    Returns (amine, evidence), two object arrays in the model's row order.
+    amine is one of MONOAMINES or "" (not a monoamine cell, or ambiguous);
+    evidence is "literature" (FlyWire ``known_nt`` names only monoamine(s),
+    no fast transmitter), "prediction" (``known_nt`` names no transmitter at
+    all, so the machine prediction ``top_nt`` is used) or "".
+    A literature entry naming a fast transmitter (Kenyon cells, DPM, ...) or
+    histamine always wins: amine "". A literature entry naming two different
+    monoamines is ambiguous: amine "".
+    """
+    kind = lab.known_kind.to_numpy()
+    known = lab.known_nt.astype(str).str.lower().to_numpy()
+    top = lab.top_nt.astype(str).to_numpy()
+    n = len(lab)
+    amine = np.full(n, "", dtype=object)
+    evidence = np.full(n, "", dtype=object)
+    lit = np.flatnonzero(kind == "monoamine")
+    for i in lit:
+        toks = {t.strip() for t in re.split(r"[;,]", known[i])}
+        named = [a for a in MONOAMINES if a in toks]
+        if len(named) == 1:
+            amine[i], evidence[i] = named[0], "literature"
+    silent = np.isin(kind, ["none", "other"])      # literature names no transmitter
+    pred = silent & np.isin(top, MONOAMINES)
+    amine[pred] = top[pred]
+    evidence[pred] = "prediction"
+    return amine, evidence
+
+
+def modulatory_mask(lab, sign, amines, evidence=("literature", "prediction")):
+    """Neurons whose fast outgoing connections a neuromodulator fix removes.
+
+    ``sign`` = each neuron's sign in the brain the fix starts from
+    (``al_ln_literature``). A neuron is in the mask if its monoamine
+    (``monoamine_of``) is one of ``amines``, the model makes it excitatory
+    (sign +1), it is not an antennal-lobe local neuron, not a sensory neuron
+    known only by prediction, and not in ``FAST_COTRANSMITTER_EXCEPTIONS``.
+    ``evidence`` limits which evidence counts ("literature", "prediction").
+    """
+    accepted = tuple(evidence)
+    amine, evidence = monoamine_of(lab)
+    names = (lab.cell_type.astype(str).to_numpy(), lab.hemibrain_type.astype(str).to_numpy(),
+             lab.cell_class.astype(str).to_numpy())
+    exception = np.zeros(len(lab), bool)
+    for t in FAST_COTRANSMITTER_EXCEPTIONS:
+        for col in names:
+            exception |= col == t
+    sensory_pred = (lab.super_class.astype(str).to_numpy() == "sensory") & (evidence == "prediction")
+    return (np.isin(amine, list(amines)) & np.isin(evidence, list(accepted))
+            & (np.asarray(sign) == 1)
+            & (lab.cell_class.astype(str).to_numpy() != "ALLN") & ~sensory_pred & ~exception)
+
+
 # ---------------------------------------------------------------------------
 # Applying a fix
 # ---------------------------------------------------------------------------
@@ -273,6 +390,7 @@ class FixReport:
     to_excitatory: int = 0
     target_neurons: list = field(default_factory=list)       # root IDs the fix is about
     notes: str = ""
+    details: dict = field(default_factory=dict)              # extra counts (neuromod fixes)
 
     def summary(self):
         return (f"{self.fix}: connections {self.n_connections_before:,} -> "
@@ -283,11 +401,65 @@ class FixReport:
                 f"connections, {self.flipped_synapses:,} synapses)")
 
 
-def apply_fix(fix, root_ids, pre, post, signed, lab=None):
+def _apply_neuromod(fix, root_ids, pre, post, signed, lab, keep_outputs):
+    """The neuromodulator fixes: ``al_ln_literature``, then remove the fast
+    outgoing connections of the monoamine neurons in ``NEUROMOD_FIXES[fix]``."""
+    amines = NEUROMOD_FIXES[fix]
+    pre, post, signed, base = apply_fix("al_ln_literature", root_ids, pre, post, signed, lab)
+    rid = np.asarray(root_ids, dtype=np.int64)
+    sign = neuron_signs(len(rid), pre, signed)
+    accepted = NEUROMOD_EVIDENCE.get(fix, ("literature", "prediction"))
+    mod = modulatory_mask(lab, sign, amines, accepted)
+    kept = np.zeros(len(rid), bool)
+    if keep_outputs is not None:
+        kept = np.isin(rid, np.asarray(list(keep_outputs), dtype=np.int64)) & mod
+    drop = (mod & ~kept)[pre]
+    syn_out = np.bincount(pre, weights=np.abs(signed), minlength=len(rid))
+    con_out = np.bincount(pre, minlength=len(rid))
+    amine, evidence = monoamine_of(lab)
+    by = {}
+    for a in amines:
+        for ev in accepted:
+            m = mod & ~kept & (amine == a) & (evidence == ev)
+            by[f"{a}_{ev}"] = dict(neurons=int(m.sum()), connections=int(con_out[m].sum()),
+                                   synapses=int(syn_out[m].sum()))
+    rep = FixReport(fix, base.n_connections_before, base.n_connections_before)
+    rep.flipped_neurons = base.flipped_neurons
+    rep.to_inhibitory = base.to_inhibitory
+    rep.flipped_connections = base.flipped_connections
+    rep.flipped_synapses = base.flipped_synapses
+    rep.removed_connections = base.removed_connections + int(drop.sum())
+    rep.removed_synapses = base.removed_synapses + int(np.abs(signed[drop]).sum())
+    rep.target_neurons = rid[mod & ~kept].tolist()
+    rep.details = dict(base_fix="al_ln_literature", amines=list(amines), evidence=list(accepted),
+                       modulatory_neurons=int((mod & ~kept).sum()),
+                       modulatory_connections_removed=int(drop.sum()),
+                       modulatory_synapses_removed=int(np.abs(signed[drop]).sum()),
+                       kept_outputs=int(kept.sum()), by_amine_and_evidence=by)
+    rep.notes = (f"al_ln_literature, then fast outputs of {int((mod & ~kept).sum())} "
+                 f"{'/'.join(amines)} neurons removed ({int(drop.sum()):,} connections); "
+                 f"{int(kept.sum())} kept on request (keep_outputs)")
+    keep = ~drop
+    pre, post, signed = pre[keep], post[keep], signed[keep]
+    rep.n_connections_after = int(pre.size)
+    return pre, post, signed, rep
+
+
+def apply_fix(fix, root_ids, pre, post, signed, lab=None, keep_outputs=None):
     """Return (pre, post, signed, report) with ``fix`` applied. The inputs are
-    not modified. Connection order is kept (removed ones are just left out)."""
+    not modified. Connection order is kept (removed ones are just left out).
+
+    ``keep_outputs`` (neuromodulator fixes only): root IDs whose outgoing
+    connections are left in place although the fix would remove them."""
     if fix not in FIXES:
         raise ValueError(f"unknown fix {fix!r}; choose one of {FIXES}")
+    if keep_outputs is not None and fix not in NEUROMOD_FIXES:
+        raise ValueError("keep_outputs only applies to the neuromodulator fixes "
+                         f"{tuple(NEUROMOD_FIXES)}")
+    if fix in NEUROMOD_FIXES:
+        if lab is None:
+            lab = neuron_table(root_ids)
+        return _apply_neuromod(fix, root_ids, pre, post, signed, lab, keep_outputs)
     n = len(root_ids)
     rep = FixReport(fix, int(pre.size), int(pre.size))
     if fix == "none":
@@ -355,17 +527,19 @@ def apply_fix(fix, root_ids, pre, post, signed, lab=None):
 
 
 def build_brain(fix="none", snapshot="630", params=None, n_threads=1, return_report=False,
-                lab=None):
+                lab=None, keep_outputs=None):
     """A FastBrain with ``fix`` applied (snapshot 630 only).
 
     ``fix="none"`` gives the paper's model, identical spike for spike to
     ``FastBrain("630")``. Use ``return_report=True`` to also get a
-    ``FixReport`` saying exactly what changed.
+    ``FixReport`` saying exactly what changed. ``keep_outputs``: see
+    ``apply_fix`` (neuromodulator fixes only).
     """
     if str(snapshot) != "630":
         raise ValueError("sign fixes are defined for snapshot 630 only")
     root_ids, pre, post, signed = load_reference_arrays(snapshot)
-    pre2, post2, signed2, rep = apply_fix(fix, root_ids, pre, post, signed, lab)
+    pre2, post2, signed2, rep = apply_fix(fix, root_ids, pre, post, signed, lab,
+                                          keep_outputs=keep_outputs)
     del pre, post, signed
     brain = FastBrain.from_arrays(root_ids, pre2, post2, signed2, params=params,
                                   n_threads=n_threads)

@@ -1,0 +1,25 @@
+input_type,drive_per_sniff,in_mb_circuit,cells,predicted,pred_conf,known_nt,known_nt_source,amine_rule,evidence,model_sign,cells_removed_by_da_modulatory,cells_removed_by_da_5ht_modulatory,cells_removed_by_da_5ht_literature
+KCab-m,10205.7,True,619,dopamine,0.43-0.69,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno, RNAi); Johard et al. (immuno); Aso et al. 2019 (scRNA-seq)",,,1,0/619,0/619,0/619
+KCg-m,5326.3,True,2190,acetylcholine/dopamine/gaba,0.42-0.86,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq); Barnstedt et al., 2016 (immun",,,1,0/2190,0/2190,0/2190
+SMP384,4237.5,False,2,dopamine,0.63-0.65,serotonin,"Chiang et al., 2011 (MCFO)",serotonin,literature,1,0/2,2/2,2/2
+SMP504,2903.8,False,2,acetylcholine,0.82-0.84,serotonin,"Chiang et al., 2011 (MCFO)",serotonin,literature,1,0/2,2/2,2/2
+CRE069,2403.0,False,2,acetylcholine,0.65-0.70,,,,,1,0/2,0/2,0/2
+KCab-c,1145.0,True,403,dopamine,0.43-0.72,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno, RNAi); Johard et al. (immuno); Aso et al. 2019 (scRNA-seq)",,,1,0/403,0/403,0/403
+KCab-s,887.5,True,621,dopamine,0.44-0.73,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno, RNAi); Johard et al. (immuno); Aso et al. 2019 (scRNA-seq)",,,1,0/621,0/621,0/621
+SMP385,369.7,False,2,acetylcholine/dopamine,0.56-0.69,,,dopamine,prediction,1,1/2,1/2,0/2
+PPL107,364.7,True,2,dopamine,0.70-0.80,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",dopamine,literature,1,2/2,2/2,2/2
+"ATL017,ATL018",230.5,False,6,acetylcholine/glutamate/serotonin,0.43-0.69,,,serotonin,prediction,-1,0/6,1/6,0/6
+LHPV7c1,129.3,False,3,acetylcholine,0.81-0.86,acetylcholine,"Dolan et al., 2019 (immuno)",,,1,0/3,0/3,0/3
+SMP177,109.8,False,2,acetylcholine,0.89-0.89,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",,,1,0/2,0/2,0/2
+oviIN,-101.7,False,2,gaba,0.74-0.84,gaba,"Wang et al., 2020 (FISH)",,,-1,0/2,0/2,0/2
+LHCENT8,-104.8,False,4,gaba,0.90-0.92,,,,,-1,0/4,0/4,0/4
+MBON20,-120.2,True,2,gaba,0.89-0.91,gaba,"Aso et al., 2014 (immuno)",,,-1,0/2,0/2,0/2
+LHCENT3,-144.3,False,2,gaba,0.66-0.70,,,,,-1,0/2,0/2,0/2
+SMP011,-181.5,False,4,glutamate,0.79-0.84,,,,,-1,0/4,0/4,0/4
+LHAV6g1,-183.0,False,2,glutamate,0.65-0.68,,,,,-1,0/2,0/2,0/2
+SMP116,-227.7,False,2,glutamate,0.78-0.83,,,,,-1,0/2,0/2,0/2
+LHCENT9,-262.0,False,2,gaba,0.62-0.74,,,,,-1,0/2,0/2,0/2
+MBON11,-408.8,True,2,gaba,0.70-0.84,gaba; gaba,"Aso et al., 2014 (immuno); Aso et al., 2019 (scRNA-seq)",,,-1,0/2,0/2,0/2
+SMP115,-1850.0,False,2,glutamate,0.85-0.86,,,,,-1,0/2,0/2,0/2
+CRE102,-3714.8,False,2,glutamate,0.71-0.83,,,,,-1,0/2,0/2,0/2
+APL,-17474.0,True,2,gaba,0.77-0.80,gaba; gaba,"Liu et al. 2009 (immuno); Aso et al., 2019 (scRNA-seq)",,,-1,0/2,0/2,0/2

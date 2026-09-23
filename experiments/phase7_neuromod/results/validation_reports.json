@@ -1,0 +1,93 @@
+{
+ "al_ln_check": {
+  "fix": "al_ln_literature",
+  "summary": "al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)"
+ },
+ "da_modulatory": {
+  "fix": "al_ln_literature+da_modulatory",
+  "summary": "al_ln_literature+da_modulatory: connections 14,687,178 -> 14,499,379 (removed 187,799, 590,841 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "base_fix": "al_ln_literature",
+  "amines": [
+   "dopamine"
+  ],
+  "modulatory_neurons": 494,
+  "modulatory_connections_removed": 136260,
+  "modulatory_synapses_removed": 239393,
+  "kept_outputs": 0,
+  "by_amine_and_evidence": {
+   "dopamine_literature": {
+    "neurons": 378,
+    "connections": 92234,
+    "synapses": 155035
+   },
+   "dopamine_prediction": {
+    "neurons": 116,
+    "connections": 44026,
+    "synapses": 84358
+   }
+  }
+ },
+ "da_5ht_modulatory": {
+  "fix": "al_ln_literature+da_5ht_modulatory",
+  "summary": "al_ln_literature+da_5ht_modulatory: connections 14,687,178 -> 14,430,027 (removed 257,151, 753,542 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "base_fix": "al_ln_literature",
+  "amines": [
+   "dopamine",
+   "serotonin"
+  ],
+  "modulatory_neurons": 997,
+  "modulatory_connections_removed": 205612,
+  "modulatory_synapses_removed": 402094,
+  "kept_outputs": 0,
+  "by_amine_and_evidence": {
+   "dopamine_literature": {
+    "neurons": 378,
+    "connections": 92234,
+    "synapses": 155035
+   },
+   "dopamine_prediction": {
+    "neurons": 116,
+    "connections": 44026,
+    "synapses": 84358
+   },
+   "serotonin_literature": {
+    "neurons": 67,
+    "connections": 30266,
+    "synapses": 65555
+   },
+   "serotonin_prediction": {
+    "neurons": 436,
+    "connections": 39086,
+    "synapses": 97146
+   }
+  }
+ },
+ "da_5ht_literature": {
+  "fix": "al_ln_literature+da_5ht_literature",
+  "summary": "al_ln_literature+da_5ht_literature: connections 14,687,178 -> 14,513,139 (removed 174,039, 572,038 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "base_fix": "al_ln_literature",
+  "amines": [
+   "dopamine",
+   "serotonin"
+  ],
+  "evidence": [
+   "literature"
+  ],
+  "modulatory_neurons": 445,
+  "modulatory_connections_removed": 122500,
+  "modulatory_synapses_removed": 220590,
+  "kept_outputs": 0,
+  "by_amine_and_evidence": {
+   "dopamine_literature": {
+    "neurons": 378,
+    "connections": 92234,
+    "synapses": 155035
+   },
+   "serotonin_literature": {
+    "neurons": 67,
+    "connections": 30266,
+    "synapses": 65555
+   }
+  }
+ }
+}
