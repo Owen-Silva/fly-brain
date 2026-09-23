@@ -75,3 +75,43 @@ the result was validated (see PLAN.md Phase 6). Newest entries at the bottom.
 - **Checkpoint:** PASS (counts match; cached load under half a second).
 - Details: `docs/phase2-explained.md`, `experiments/phase2/summary.txt`,
   `experiments/phase2/crosscheck_zenodo.txt`.
+
+## 2026-09-22: Fast whole-brain engine (no compiler needed)
+- **Changed:** Added `sim/fast_engine.py`, a re-implementation of the paper's
+  model (`data/reference/model.py`) that runs fast without a C compiler. Every
+  rule is copied from the reference, and from what Brian2 actually does with it:
+  the same equations, parameters, 0.1 ms step, 1.8 ms delay, 2.2 ms refractory
+  period, reset, weights, Poisson input and silencing. It loads either
+  connectome snapshot (`"630"`, the paper's, or `"783"`). This added numba
+  0.67.0 and llvmlite 0.49.0 to the environment; they need pinning in
+  requirements.txt.
+- **Happened:**
+  - **Speed.** One 1-second trial of the whole brain now takes 0.38 s on one
+    core (sugar at 100 Hz) or 0.48 s (200 Hz). Brian2 without a compiler
+    takes 21-55 s, so that is 45-145 times faster. The paper's 30-trial
+    experiment takes about 7-10 s on two cores instead of 30-60 minutes.
+  - **Small networks, same input as Brian2.** Four random networks, each
+    firing 900-1,060 spikes. Every spike landed on the same 0.1 ms step as in
+    the reference's own Brian2 code, and the voltage traces were identical to
+    the last digit. Two bugs planted on purpose (letting input through during
+    the refractory period; a one-step delay error) were both caught.
+  - **Whole brain against the paper authors' own Brian2 output (v630,
+    30 trials).** Rates across all neurons correlate at r = 0.9996-0.9998.
+    99.4-100% of neurons agree within 3 standard errors (the random noise).
+    MN9 with sugar at 100 Hz: 67.6 Hz here, 67.0 Hz in their file, 65.7 ± 3.3
+    in the paper. At 200 Hz: 92.9 Hz here, 93.3 Hz in their file, 93.2 in the
+    paper. The three silencing runs from the tutorial also match (MN9 within
+    0.7 Hz).
+  - **Against the Phase 3 Brian2 port (10 trials each).** Sugar at 100 Hz:
+    r = 0.9992, MN9 69.7 vs 67.0 Hz. Water at 200 Hz: r = 0.9996, MN9 29.7 vs
+    33.5 Hz. Both MN9 gaps are under 2 standard errors.
+  - **Finding.** The reference file `results/example/sugarR.parquet` was made
+    with **200 Hz** input, not 150 Hz: its stimulated neurons fire at
+    196.75 Hz, which is what 200 Hz input gives. Do not compare 150 Hz runs
+    against it.
+- **Validated:** Yes. The engine matches Brian2 exactly on small networks. On
+  the whole brain it matches, within random noise, both the authors' published
+  output and our Brian2 port. Only the random input numbers differ from
+  Brian2's, so single trials differ but averages agree. Not yet compared: the
+  bitter and competition conditions, and v783. The Phase 3 port had not
+  finished those; `compare_phase3.py` covers them when they are done.

@@ -1,0 +1,30 @@
+{
+ "sugar_100Hz": {
+  "snapshot": "630",
+  "brian2_trials": 10,
+  "fast_trials": 30,
+  "pearson_r": 0.9992104678944188,
+  "max_abs_diff_hz": 7.633333333333326,
+  "neurons_rate_ge_1hz": 352,
+  "frac_within_3_se": 0.9886363636363636,
+  "frac_within_4_se": 0.9971590909090909,
+  "mn9_fast_hz": 69.7,
+  "mn9_brian2_hz": 67.0,
+  "brian2_s_per_trial": 104.093,
+  "fast_s_per_trial_2threads": 0.33181375000009816
+ },
+ "water_200Hz": {
+  "snapshot": "630",
+  "brian2_trials": 10,
+  "fast_trials": 30,
+  "pearson_r": 0.99957198555398,
+  "max_abs_diff_hz": 11.399999999999977,
+  "neurons_rate_ge_1hz": 226,
+  "frac_within_3_se": 0.995575221238938,
+  "frac_within_4_se": 1.0,
+  "mn9_fast_hz": 29.7,
+  "mn9_brian2_hz": 33.5,
+  "brian2_s_per_trial": 102.50500000000002,
+  "fast_s_per_trial_2threads": 0.19323865333341625
+ }
+}
