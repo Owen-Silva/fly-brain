@@ -1,0 +1,17 @@
+condition,pair,left_odor_L,left_odor_R,right_odor_L,right_odor_R,turn_left_odor,turn_right_odor,mirror
+wsyn90,DNa02,17.17,0.0,0.0,9.77,17.17,-9.77,True
+wsyn90,DNa01,0.0,0.0,0.0,0.0,0.0,0.0,False
+wsyn90,DNpe002,43.0,0.0,0.0,40.4,43.0,-40.4,True
+wsyn90,DNb05,34.1,0.0,0.0,31.2,34.1,-31.2,True
+wsyn110,DNa02,23.13,10.73,8.67,18.23,12.4,-9.57,True
+wsyn110,DNa01,0.47,0.03,0.2,2.9,0.43,-2.7,True
+wsyn110,DNpe002,50.2,0.0,0.0,53.3,50.2,-53.3,True
+wsyn110,DNb05,54.83,1.87,0.23,53.43,52.97,-53.2,True
+rate75,DNa02,1.63,0.0,0.0,0.1,1.63,-0.1,True
+rate75,DNa01,0.0,0.0,0.0,0.0,0.0,0.0,False
+rate75,DNpe002,27.43,0.0,0.0,23.4,27.43,-23.4,True
+rate75,DNb05,7.27,0.0,0.0,8.23,7.27,-8.23,True
+il3LN6off,DNa02,23.8,2.27,0.7,18.07,21.53,-17.37,True
+il3LN6off,DNa01,0.0,0.0,0.1,0.27,0.0,-0.17,False
+il3LN6off,DNpe002,48.23,0.0,13.37,53.27,48.23,-39.9,True
+il3LN6off,DNb05,49.0,0.0,1.37,46.5,49.0,-45.13,True

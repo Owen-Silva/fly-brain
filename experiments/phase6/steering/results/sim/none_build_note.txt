@@ -1,0 +1,1 @@
+none: connections 14,687,178 -> 14,687,178 (removed 0, 0 synapses); sign flipped for 0 neurons (0 to inhibitory, 0 to excitatory; 0 connections, 0 synapses)

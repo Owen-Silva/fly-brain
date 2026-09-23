@@ -1,0 +1,16 @@
+ORNs: 2227
+same-side share, all ORNs: median 0.579; fraction > 0.5: 0.666
+histogram (0-0.1, ..., 0.9-1): [108, 41, 70, 149, 319, 549, 505, 277, 133, 76]
+anchor on label side = False: n=197, median same-side share 0.433
+anchor on label side = True: n=2030, median same-side share 0.589
+DM1 ORNs by label: median same-side share {'left': 0.644, 'right': 0.488} ; fraction > 0.5: {'left': 1.0, 'right': 0.42}
+glomeruli with median same-side share > 0.5: left ORNs 42, right ORNs 35, of 51
+near-0 group by glomerulus: {'ORN_VA1v': 26, 'ORN_VA1d': 21, 'ORN_VA5': 8, 'ORN_VL2a': 7, 'ORN_DL3': 6, 'ORN_VA7m': 6, 'ORN_DA3': 4, 'ORN_DA4l': 4, 'ORN_DM3': 3, 'ORN_VA3': 3} by label {'left': 64, 'right': 44} median PN syn 17.0 vs all 59.0
+near-1 group: {'ORN_VA1d': 13, 'ORN_VL1': 8, 'ORN_VL2a': 6, 'ORN_DL3': 6, 'ORN_VA1v': 5, 'ORN_VC5': 4, 'ORN_DL1': 4, 'ORN_DA1': 4} median PN syn 26.5
+anchor off-side among near-0: 0.51
+DM1 68 share<0.1: 0 median share 0.553
+DA1 126 share<0.1: 1 median share 0.568
+DM4 41 share<0.1: 0 median share 0.555
+DM2 54 share<0.1: 0 median share 0.482
+VA2 67 share<0.1: 0 median share 0.472
+DA2 38 share<0.1: 1 median share 0.433

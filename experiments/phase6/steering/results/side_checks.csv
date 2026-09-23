@@ -1,0 +1,23 @@
+snapshot,group,label,n,n_with_pos,position_used,agree_with_label,median_offset_from_midline_um,type_630,cell_type
+630,ORN,left,1114,1114.0,anchor,1000,-71.35800170898438,,
+630,ORN,right,1132,1132.0,anchor,1049,66.18199920654297,,
+630,ALPN,left,341,341.0,soma,340,-102.7979965209961,,
+630,ALPN,right,344,344.0,soma,344,89.34600067138672,,
+630,DNa02_L,left,1,1.0,soma,1,-118.25399780273438,DNa02,<NA>
+630,DNa02_R,right,1,1.0,soma,1,130.16200256347656,DNa02,<NA>
+630,DNa01_L,left,1,1.0,soma,1,-103.30999755859375,VES006,DNa01
+630,DNa01_R,right,1,1.0,soma,1,105.13800048828125,VES006,DNa01
+783,ORN,left,1114,1114.0,anchor,1000,-70.99199676513672,,
+783,ORN,right,1132,1132.0,anchor,1049,66.56400299072266,,
+783,ALPN,left,341,341.0,soma,340,-102.31999969482422,,
+783,ALPN,right,344,344.0,soma,344,89.72799682617188,,
+783,DNa02_L,left,1,1.0,soma,1,-117.87200164794922,DNa02,DNa02
+783,DNa02_R,right,1,1.0,soma,1,130.54400634765625,DNa02,DNa02
+783,DNa01_L,left,1,1.0,soma,1,-102.9280014038086,VES006,DNa01
+783,DNa01_R,right,1,1.0,soma,1,105.5199966430664,VES006,DNa01
+783,ALPN (input neuropil),left,340,,majority of AL input synapses in AL_L vs AL_R,335,,,
+783,ALPN (input neuropil),right,343,,majority of AL input synapses in AL_L vs AL_R,337,,,
+783,DNa02_L (input neuropil),left,1,,"top input neuropils LAL_L:4227, IPS_L:2281, SPS_L:1962, VES_L:1676",1,,,
+783,DNa02_R (input neuropil),right,1,,"top input neuropils LAL_R:5028, IPS_R:2072, VES_R:1904, SPS_R:1781",1,,,
+783,DNa01_L (input neuropil),left,1,,"top input neuropils GNG:1725, VES_L:1287, LAL_L:1193, IPS_L:585",1,,,
+783,DNa01_R (input neuropil),right,1,,"top input neuropils GNG:1818, VES_R:1590, LAL_R:1216, WED_R:604",1,,,

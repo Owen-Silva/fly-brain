@@ -1,0 +1,1 @@
+al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)

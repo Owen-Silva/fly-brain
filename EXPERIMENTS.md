@@ -885,3 +885,66 @@ entries: `orn_type` and `drive_mapping`.
 - no Phase 6 seed/parameter sweep;
 - ORN/DN side labels not independently checked;
 - the sensor → rate curve is a modelling choice.
+
+## 2026-09-23 - Phase 6: the one-sided steering result ("either smell side says turn left") (PRELIMINARY)
+
+**What was changed.** Nothing in the model. A Phase 6 investigation of the Phase 5/7/9
+finding that left-only and right-only DM1 smell both make the LEFT DNa02 fire more.
+(1) Side-label checks for ORNs, PNs, DNa02 and DNa01 from cell body positions, FlyWire
+anchor points, 783 synapse locations (which antennal lobe / LAL the synapses sit in) and a
+per-ORN wiring fingerprint, in snapshots 630 and 783. (2) Same-side vs other-side ORN -> PN
+synapse counts for every glomerulus. (3) Simulations: DM1, DA1, DM4, DM2, VA2 and DA2 ORNs,
+left-only vs right-only at 150 Hz, 3 seeds x 30 trials, with the validated
+`al_ln_literature` fix (1 s trials) and the published model (300 ms trials), every
+descending neuron recorded; 463 left/right DN pair types scanned for a turn signal that
+flips with the smell's side. Checks on the one channel that worked (DA1): synapse strength
+90/110%, 75 Hz input, il3LN6 silenced, and both-antennae gradients (150/150, 150/100,
+100/150 Hz, also for DM1). An exploratory variant (not a model change) multiplied same-side
+ORN -> PN connections by 1.4 (Gaudry et al. 2013). (4) Literature: Gaudry 2013, Tobin 2017,
+Schlegel 2021, Taisz 2023, Rayshubskiy 2025 read in this pass.
+
+**What happened.**
+- No bug. PN cell bodies 684 of 685 on their labelled side; 672 of 683 PNs collect their
+  smell input in the labelled side's antennal lobe (783); DNa02/DNa01 cell bodies and
+  inputs (own-side LAL) all match. ORNs connect 1.51x more to same-side PNs and 1.62x more
+  to other-side local neurons, both as in the literature; swapped ORN labels would reverse
+  this. 630 and 783 give the same counts.
+- Real wiring asymmetry. The left DM1 PN gets more ORN synapses from BOTH antennae (left
+  ORNs 2,062 vs 1,175; right ORNs 1,662 vs 1,275): 52% more in total. Each PN still gets
+  more from its own side. Across the lobe, only 32 of 51 glomeruli (783: 33 of 53) "mirror"
+  at the first synapse; the 19 that do not have large left/right size differences (median
+  20% vs 5%), 15 of them left-heavy. DM1, DM2, VA2 and DA2 fail; DM4 passes by 1 synapse;
+  DA1 passes. With same-side synapses counted 1.4x, 42 of 51 would mirror.
+- Simulations with the fix: DNa02 turn (left minus right) +5.7 / +4.8 Hz for DM1 left /
+  right smell (d' 0.2), +16.1 / +16.3 for DM4; DM2 right, VA2 and DA2 reach no steering
+  neuron. No DN pair flips for any of these. **DA1 mirrors**: DNa02 22.7/1.0 Hz for a left
+  smell and 0.1/15.7 Hz for a right smell (all seeds), plus 15 other DN pairs (best:
+  DNpe002, +45.9 / -46.3 Hz); robust to w_syn +/-10%, 75 Hz and il3LN6 silencing.
+  Published model: every glomerulus runs away and DNa02 says "turn left" (+47 to +53 Hz)
+  for every smell from every side, DA1 included.
+- Gradients (both antennae smell): DNa02 has a fixed left offset for DA1 (+17.9 Hz at
+  150/150) and turns the wrong way for 100/150 (+4.7 Hz). DNpe002 turns the right way in
+  100% of 1 s trials for both 150/100 (+16.8 Hz) and 100/150 (-6.1 Hz). DM1: every read-out
+  says left for every gradient.
+- Exploratory same-side release x1.4: DM1 PNs now mirror (1.39x / 1.07x same-side), but DM1
+  DNa02 still does not (+35.0 / +1.5 Hz).
+- Why DNa02 is stuck: for DM1 the right DNa02 gets 1.3-1.8x more inhibition than excitation
+  either way (left AOTU019, right LAL051); for DA1 a short same-side route via DNae007
+  drives each DNa02.
+
+**Validated?** Phase 6 steps 1-4 done (3 seeds x 30 trials, parameter variation for DA1,
+bug checks in two snapshots, literature read). Not verified: whether DM1's left excess is
+biology or reconstruction; ORN sides checked only indirectly; DNpe002's real function and
+its accuracy in 50 ms windows; our DA1 synapse counts are lower than Taisz 2023's (filter
+difference assumed). Nothing shared. **PRELIMINARY.** Verdict: real connectome property
+plus model limitation, not a bug. Details and Phase 9 recommendation:
+`docs/phase6-steering.md`; files in `experiments/phase6/steering/`.
+
+**Plain English.** In this brain, the left vinegar glomerulus is simply bigger than the
+right one, so whichever antenna smells vinegar, the left side of the brain hears it
+louder. Real flies correct for this: each smell neuron releases more signal on its own
+side, and the model cannot know that from a wiring diagram. The steering neurons then
+work like a see-saw that is already tipped left, so the model always says "turn left".
+One smell channel, the one for the pheromone cVA, does steer the right way when only one
+antenna smells it. For the body simulation this means: turning toward vinegar must be
+labelled as not coming from the brain; a brain-driven turn is only available for cVA.
