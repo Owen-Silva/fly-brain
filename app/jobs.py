@@ -14,14 +14,14 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any
 
-from .engine_adapter import EngineAdapter, RunResult
+from .engine_adapter import MAX_BRAINS_IN_MEMORY, EngineAdapter, RunResult, check_variant, variant_key, variant_label
 
 
 @dataclass
 class Job:
     id: str
     params: dict[str, Any]
-    state: str = "queued"           # queued -> building -> running -> done | failed
+    state: str = "queued"           # queued -> building (a model's brain) -> running -> done | failed
     message: str = "Waiting for the previous run to finish."
     progress: float | None = None   # 0..1, or None when the engine cannot say
     created: float = field(default_factory=time.time)
@@ -52,8 +52,9 @@ class JobManager:
         self._order: list[str] = []
         self._lock = threading.Lock()
         self._pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="flybrain-run")
-        self._sec_per_sim_s: float | None = None  # wall seconds per simulated trial-second
-        self._runs_done = 0
+        # Wall seconds per simulated trial-second, per model (their speeds differ).
+        self._sec_per_sim_s: dict[str, float] = {}
+        self._runs_done: dict[str, int] = {}
 
     def submit(self, params: dict[str, Any]) -> Job:
         job = Job(id=uuid.uuid4().hex[:12], params=params, engine=dict(self.adapter.engine_info))
@@ -77,11 +78,17 @@ class JobManager:
         job.started = time.time()
         try:
             p = job.params
-            if not self.adapter.engine_built(p["snapshot"]):
+            variant = p.get("variant")
+            if not self.adapter.engine_built(p["snapshot"], variant):
                 job.state = "building"
-                job.message = (f"Loading the fly brain network (snapshot {p['snapshot']}). This happens "
-                               "on the first run after the app starts or after switching snapshot, "
-                               "and can take a while.")
+                label = variant_label(check_variant(variant, p["snapshot"]))
+                last = self.adapter.last_build_seconds(p["snapshot"], variant)
+                job.message = (f"Building the brain for the model '{label}' (map {p['snapshot']}). "
+                               "This happens the first time a model is used, then it stays in memory "
+                               f"(the app keeps at most {MAX_BRAINS_IN_MEMORY} built models, so one "
+                               "you used earlier may be dropped and rebuilt later). "
+                               + (f"It took {last:.0f} s last time." if last is not None
+                                  else "This can take from a few seconds to about a minute."))
 
             def progress(frac):
                 try:
@@ -94,21 +101,23 @@ class JobManager:
 
             # If the engine never calls progress(), the page shows an honest
             # "working, this engine does not report progress" instead.
-            self.adapter.engine(p["snapshot"])
+            self.adapter.engine(p["snapshot"], variant)
             job.state = "running"
             job.message = "Running the simulation."
             sim_s = p["n_trials"] * p["duration_ms"] / 1000.0
-            if self._sec_per_sim_s is not None:
-                job.estimate_s = self._sec_per_sim_s * sim_s
+            speed_key = f"{p['snapshot']}|{variant_key(check_variant(variant, p['snapshot']))}"
+            if speed_key in self._sec_per_sim_s:
+                job.estimate_s = self._sec_per_sim_s[speed_key] * sim_s
             job.result = self.adapter.run(p["excite"], p["silence"], p["duration_ms"],
                                           p["n_trials"], p["seed"], p["rate_hz"], progress,
-                                          snapshot=p["snapshot"])
+                                          snapshot=p["snapshot"], variant=variant,
+                                          stim_groups=p.get("stim_groups"))
             job.engine = dict(job.result.engine)
             # The first run after start-up also pays one-off compile costs, so it
             # is not used for the speed estimate.
-            self._runs_done += 1
-            if sim_s > 0 and self._runs_done > 1:
-                self._sec_per_sim_s = job.result.wall_seconds / sim_s
+            self._runs_done[speed_key] = self._runs_done.get(speed_key, 0) + 1
+            if sim_s > 0 and self._runs_done[speed_key] > 1:
+                self._sec_per_sim_s[speed_key] = job.result.wall_seconds / sim_s
             job.progress = 1.0
             job.state = "done"
             job.message = f"Finished in {job.result.wall_seconds:.1f} s."

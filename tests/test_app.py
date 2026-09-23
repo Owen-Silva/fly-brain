@@ -1,9 +1,15 @@
 """Phase 4: the explorer app's web API (FastAPI TestClient, stand-in engine).
 
 These tests force the stand-in engine so they are fast and do not depend on
-the whole-brain simulator. One test marked "slow" runs whatever real engine the
-adapter finds, with a tiny run.
+the whole-brain simulator. The tests marked "slow" use the real engine: the
+Phase 4 checkpoint (sugar setup, app == direct FastBrain, MN9 67.6 Hz), the
+sugar + bitter setup (MN9 47.7 Hz) and the DA1 steering setup on the
+recommended fix (same rates as the saved Phase 6 run). Each builds one brain
+at a time (the checkpoint builds a second, separate one on purpose).
 """
+import json
+import shutil
+import threading
 import time
 
 import numpy as np
@@ -11,6 +17,7 @@ import pandas as pd
 import pytest
 from fastapi.testclient import TestClient
 
+import app.engine_adapter as ea
 from app import setups as st
 from app.engine_adapter import (MN9_LEFT_ID as MN9_ID, SUGAR_GRN_IDS_630 as SUGAR_GRN_IDS,
                                 EngineAdapter, EngineError, _normalise_result)
@@ -221,6 +228,297 @@ def test_no_engine_means_runs_refused_with_banner(monkeypatch, tmp_path):
     assert r.status_code == 503 and "switched off" in r.json()["detail"]
 
 
+# ---------------------------------------------------------------------------
+# Model variants, per-group input rates and backward-compatible setups
+# (added 2026-09-23). Stand-in engine: these check the app's plumbing, not biology.
+# ---------------------------------------------------------------------------
+FIX = {"fix": "al_ln_literature", "upgrades": []}
+SUGAR = [str(i) for i in SUGAR_GRN_IDS]
+BITTER = [str(i) for i in ea.BITTER_GRN_IDS_630]
+
+
+def run_and_wait(client, p):
+    r = client.post("/api/runs", json=p)
+    assert r.status_code == 202, r.text
+    j = r.json()
+    return j, wait_done(client, j["job_id"])
+
+
+def group_params(groups, **kw):
+    p = {k: v for k, v in run_params(**kw).items() if k not in ("excite", "rate_hz")}
+    p["stim_groups"] = groups
+    return p
+
+
+@pytest.fixture()
+def fresh(tmp_path):
+    """A client with its own stand-in adapter, so the brain cache starts empty."""
+    return TestClient(create_app(EngineAdapter(force_fake=True, fake_seconds_per_trial=0.0),
+                                 setup_dir=tmp_path))
+
+
+def test_variant_is_run_recorded_and_reproducible(fresh):
+    c = fresh
+    j, s = run_and_wait(c, run_params(variant=FIX))
+    assert s["state"] == "done" and s["params"]["variant"] == FIX
+    res = c.get(f"/api/runs/{j['job_id']}/results").json()
+    v = res["variant"]
+    assert (v["fix"], v["upgrades"], v["label"]) == ("al_ln_literature", [], "Recommended neurotransmitter fix")
+    assert set(v["code"]) == {"sim/fast_engine.py", "sim/sign_fixes.py"} and all(v["code"].values())
+    csv = c.get(f"/api/runs/{j['job_id']}/rates.csv").text
+    assert "fix=al_ln_literature" in csv and "sim/sign_fixes.py=" in csv
+    j0, _ = run_and_wait(c, run_params())          # no variant given = the published model
+    assert c.get(f"/api/runs/{j0['job_id']}/results").json()["variant"]["key"] == "published"
+    rates = lambda job: c.app.state.jobs.get(job["job_id"]).result.rates_hz  # noqa: E731
+    assert rates(j0) != rates(j)                   # the choice really reaches the engine
+    j2, _ = run_and_wait(c, run_params(variant=FIX))
+    assert rates(j2) == rates(j)                   # same model + seed -> identical
+    up = {"fix": "none", "upgrades": ["adaptation", "delays"]}
+    j3, s3 = run_and_wait(c, run_params(variant=up))
+    v3 = c.get(f"/api/runs/{j3['job_id']}/results").json()["variant"]
+    assert v3["upgrades"] == ["delays", "adaptation"] and "sim/realism.py" in v3["code"]
+
+
+@pytest.mark.parametrize("variant, snapshot, words", [
+    ({"fix": "bogus"}, "630", "unknown model"),
+    ({"fix": "eln_electrical"}, "630", "unknown model"),       # exists in sim/, not offered
+    ({"fix": "none", "upgrades": ["conductance"]}, "630", "not validated"),
+    ({"fix": "al_ln_literature", "upgrades": ["adaptation"]}, "630", "never tested"),
+    ({"fix": "none", "upgrades": ["celltype", "delays"]}, "630", "on their own"),
+    ({"fix": "al_ln_literature"}, "783", "630 brain map only"),
+    ({"fix": "none", "upgrades": ["delays"]}, "783", "630 brain map only"),
+    ("al_ln_literature", "630", "must be an object"),
+])
+def test_models_not_offered_are_refused_with_a_reason(client, variant, snapshot, words):
+    r = client.post("/api/runs", json=run_params(variant=variant, snapshot=snapshot))
+    assert r.status_code == 400 and words in r.json()["detail"], r.text
+    r = client.post("/api/setups", json={**run_params(variant=variant, snapshot=snapshot), "name": "x"})
+    assert r.status_code == 400 and words in r.json()["detail"]
+
+
+def test_model_panel_state_and_docs(fresh):
+    c = fresh
+    r = c.get("/api/models/state", params={"fix": "al_ln_literature"}).json()
+    assert r["ok"] and r["label"] == "Recommended neurotransmitter fix" and r["problem"] is None
+    assert r["options"]["up:adaptation"] == {"allowed": False, "why": r["options"]["up:adaptation"]["why"]}
+    assert "never tested" in r["options"]["up:adaptation"]["why"]
+    assert r["options"]["fix:none"]["allowed"] is True
+    assert r["memory"]["in_memory"] is False and r["memory"]["error"] is None
+    r = c.get("/api/models/state", params={"upgrades": "delays,adaptation"}).json()
+    assert r["ok"] and r["key"] == "none+delays+adaptation"
+    assert not r["options"]["up:celltype"]["allowed"] and not r["options"]["fix:al_ln_literature"]["allowed"]
+    r = c.get("/api/models/state", params={"snapshot": "783"}).json()
+    assert r["ok"] and all(not o["allowed"] for k, o in r["options"].items() if k != "fix:none")
+    r = c.get("/api/models/state", params={"fix": "al_ln_literature", "upgrades": "delays"}).json()
+    assert r["ok"] is False and "never tested" in r["problem"]
+    models = c.get("/api/status").json()["models"]
+    assert [o["id"] for o in models["fixes"]] == ["none", "al_ln_literature"]
+    assert [o["id"] for o in models["upgrades"]] == ["delays", "adaptation", "celltype"]
+    for o in models["fixes"] + models["upgrades"]:
+        assert o["label"] and o["about"] and o["available"] is True
+        d = c.get(f"/api/model-docs/{o['doc']}")
+        assert d.status_code == 200 and len(d.text) > 200
+    assert c.get("/api/model-docs/PLAN.md").status_code == 404
+
+
+def test_at_most_two_brains_in_memory_least_recent_dropped(fresh):
+    c = fresh
+    ad = c.app.state.adapter
+    for v in (None, FIX, {"fix": "none", "upgrades": ["adaptation"]}):
+        assert run_and_wait(c, run_params(variant=v))[1]["state"] == "done"
+    ms = ad.models_status()
+    assert ea.MAX_BRAINS_IN_MEMORY == 2 and len(ms["in_memory"]) == 2
+    assert [m["key"] for m in ms["in_memory"]] == ["none+adaptation", "al_ln_literature"]  # newest first
+    assert "dropped 'Published model'" in ms["dropped"][-1]
+    st_ = c.get("/api/models/state").json()        # the published model needs a rebuild now
+    assert st_["memory"]["in_memory"] is False
+    assert st_["memory"]["will_drop"].startswith("Recommended neurotransmitter fix")
+
+
+def test_building_a_model_is_shown_while_it_happens(fresh, monkeypatch):
+    c = fresh
+    ad = c.app.state.adapter
+    gate, real = threading.Event(), ad._build
+    monkeypatch.setattr(ad, "_build", lambda snap, v: (gate.wait(10), real(snap, v))[1])
+    j = c.post("/api/runs", json=run_params(variant=FIX)).json()
+    t0 = time.time()
+    while not c.get("/api/models/state", params={"fix": "al_ln_literature"}).json()["memory"]["building"]:
+        assert time.time() - t0 < 10, "never reported as building"
+        time.sleep(0.01)
+    s = c.get(f"/api/runs/{j['job_id']}").json()
+    assert s["state"] == "building"
+    assert "Building the brain for the model 'Recommended neurotransmitter fix'" in s["message"]
+    assert c.get("/api/status").json()["models"]["building"]["label"] == "Recommended neurotransmitter fix"
+    gate.set()
+    assert wait_done(c, j["job_id"])["state"] == "done"
+    assert c.get("/api/status").json()["models"]["building"] is None
+
+
+def test_model_that_fails_to_build_is_reported_never_replaced(fresh, monkeypatch):
+    c = fresh
+    ad = c.app.state.adapter
+    real = ad._build
+
+    def broken(snap, v):
+        if v["fix"] == "al_ln_literature":
+            raise MemoryError("not enough memory (test)")
+        return real(snap, v)
+    monkeypatch.setattr(ad, "_build", broken)
+    j, s = run_and_wait(c, run_params(variant=FIX))
+    assert s["state"] == "failed"
+    assert "Recommended neurotransmitter fix" in s["error"] and "not enough memory (test)" in s["error"]
+    assert "Nothing was run in its place" in s["error"]
+    assert c.get(f"/api/runs/{j['job_id']}/results").status_code == 409
+    status = c.get("/api/status").json()
+    assert "could not be built" in status["banner"] and "not enough memory (test)" in status["banner"]
+    ms = c.get("/api/models/state", params={"fix": "al_ln_literature"}).json()
+    assert "not enough memory (test)" in ms["memory"]["error"]
+    assert ms["models"]["in_memory"] == []          # nothing was built in its place
+    assert run_and_wait(c, run_params())[1]["state"] == "done"   # the published model still runs
+
+
+def test_model_whose_code_cannot_load_is_refused_visibly(fresh):
+    c = fresh
+    c.app.state.adapter.option_problems["al_ln_literature"] = \
+        "sim/sign_fixes.py exists but failed to import: SyntaxError (test)"
+    r = c.post("/api/runs", json=run_params(variant=FIX))
+    assert r.status_code == 400 and "failed to import" in r.json()["detail"]
+    assert "Nothing was run in its place" in r.json()["detail"]
+    fixes = {o["id"]: o for o in c.get("/api/status").json()["models"]["fixes"]}
+    assert fixes["al_ln_literature"]["available"] is False and "failed to import" in fixes["al_ln_literature"]["problem"]
+    assert "failed to import" in c.get("/api/models/state", params={"fix": "al_ln_literature"}).json()["problem"]
+
+
+def test_each_group_gets_its_own_rate(fresh, monkeypatch):
+    c = fresh
+    seen, orig = [], ea.FakeEngine.run
+
+    def spy(self, excite, silence, duration_ms, n_trials, seed, rate_hz, progress=None):
+        seen.append((excite, rate_hz))
+        return orig(self, excite, silence, duration_ms, n_trials, seed, rate_hz, progress)
+    monkeypatch.setattr(ea.FakeEngine, "run", spy)
+    p = group_params([{"name": "Sugar", "rate_hz": 100, "ids": SUGAR},
+                      {"name": "Bitter", "rate_hz": 40, "ids": BITTER}], duration_ms=2000, n_trials=5)
+    j, s = run_and_wait(c, p)
+    assert s["state"] == "done"
+    excite, rate = seen[-1]
+    assert isinstance(excite, dict) and rate is None
+    assert list(excite) == [int(i) for i in SUGAR + BITTER]          # group order kept
+    assert {excite[int(i)] for i in SUGAR} == {100.0} and {excite[int(i)] for i in BITTER} == {40.0}
+    res = c.get(f"/api/runs/{j['job_id']}/results", params={"include_stimulated": True, "top": 200}).json()
+    assert res["stim_groups"] == [{"name": "Sugar", "rate_hz": 100.0, "n": 21},
+                                  {"name": "Bitter", "rate_hz": 40.0, "n": 21}]
+    assert res["params"]["rate_hz"] is None
+    rows = {r["root_id"]: r for r in res["top"]}
+    assert rows[BITTER[0]]["group"] == "Bitter" and rows[SUGAR[0]]["group"] == "Sugar"
+    assert 85 < np.mean([rows[i]["rate_hz"] for i in SUGAR]) < 115      # stand-in fires them at
+    assert 30 < np.mean([rows[i]["rate_hz"] for i in BITTER]) < 50      # their own input rate
+    sp = c.get(f"/api/runs/{j['job_id']}/spikes").json()
+    assert {r["group"] for r in sp["rows"] if r["role"] == "stimulated"} == {"Sugar, 100 Hz", "Bitter, 40 Hz"}
+    csv = c.get(f"/api/runs/{j['job_id']}/rates.csv").text
+    assert "# stimulus groups: Sugar at 100 Hz (21 neurons); Bitter at 40 Hz (21 neurons)" in csv
+
+
+def test_one_group_is_exactly_the_old_single_rate_run(client):
+    old = run_params(seed=21)
+    new = group_params([{"name": "Anything", "rate_hz": 150, "ids": old["excite"]}], seed=21)
+    a, _ = run_and_wait(client, old)
+    b, _ = run_and_wait(client, new)
+    jobs = client.app.state.jobs
+    assert jobs.get(a["job_id"]).result.rates_hz == jobs.get(b["job_id"]).result.rates_hz
+    assert a["params"]["stim_groups"] == [{"name": "Stimulated", "rate_hz": 150.0, "ids": old["excite"]}]
+    assert a["params"]["rate_hz"] == b["params"]["rate_hz"] == 150.0
+
+
+@pytest.mark.parametrize("groups, words", [
+    ([{"name": "A", "rate_hz": 100, "ids": SUGAR[:2]}, {"name": "B", "rate_hz": 40, "ids": SUGAR[1:3]}],
+     "two stimulus groups"),
+    ([{"name": "A", "rate_hz": 100, "ids": SUGAR[:2]}, {"name": "Empty", "rate_hz": 40, "ids": []}],
+     "'Empty' has no neurons"),
+    ([{"name": "A", "rate_hz": 5000, "ids": SUGAR[:2]}], "input rate of group 'A'"),
+    ([{"name": "A", "rate_hz": None, "ids": SUGAR[:2]}], "missing or not a number"),
+    ([{"name": "A", "rate_hz": 10, "ids": SUGAR[:1]}] * 9, "at most 8"),
+])
+def test_bad_stimulus_groups_are_refused_with_a_reason(client, groups, words):
+    r = client.post("/api/runs", json=group_params(groups))
+    assert r.status_code == 400 and words in r.json()["detail"], r.text
+
+
+def test_old_setup_without_model_loads_as_the_published_model(client, tmp_path):
+    shutil.copy(st.SETUP_DIR / "sugar_grn_right.json", tmp_path / "sugar_grn_right.json")
+    raw = json.loads((tmp_path / "sugar_grn_right.json").read_text(encoding="utf-8"))
+    assert raw["format"] == "fly-brain-app-setup/1" and "variant" not in raw and "stim_groups" not in raw
+    got = client.get("/api/setups/sugar_grn_right").json()
+    p = got["params"]
+    assert got["params_error"] is None
+    assert p["variant"] == {"fix": "none", "upgrades": []}
+    assert p["stim_groups"] == [{"name": "Stimulated", "rate_hz": 100.0, "ids": raw["excite"]}]
+    assert p["rate_hz"] == 100.0 and p["excite"] == raw["excite"]
+    # Saved with the real engine while the stand-in runs: warned, not silently accepted.
+    assert got["engine_matches"] is False and "sim.fast_engine" in got["engine_warning"]
+    assert st.code_check(raw, dict(raw["engine"])) == (True, None)   # same engine code: no warning
+    j, _ = run_and_wait(client, {k: p[k] for k in st.RUN_KEYS})
+    assert client.get(f"/api/runs/{j['job_id']}/results").json()["variant"]["key"] == "published"
+    listed = client.get("/api/setups").json()["setups"]
+    assert listed[0]["model"] == "Published model" and listed[0]["n_groups"] == 1
+
+
+def test_setup_with_groups_and_model_round_trips_and_flags_code_changes(client, monkeypatch):
+    body = group_params([{"name": "Sugar", "rate_hz": 100, "ids": SUGAR},
+                         {"name": "Bitter", "rate_hz": 40, "ids": BITTER}], seed=9, variant=FIX)
+    body.update(name="comp_fix", title="Competition, fixed model")
+    r = client.post("/api/setups", json=body)
+    assert r.status_code == 201, r.text
+    saved = r.json()["setup"]
+    assert saved["format"] == "fly-brain-app-setup/2" and saved["rate_hz"] is None
+    assert saved["variant"]["fix"] == "al_ln_literature" and saved["variant"]["code"]["sim/sign_fixes.py"]
+    assert saved["stim_groups"][1] == {"name": "Bitter", "rate_hz": 40.0, "ids": BITTER}
+    got = client.get("/api/setups/comp_fix").json()
+    assert got["engine_matches"] is True and got["engine_warning"] is None
+    assert got["params"]["variant"] == FIX and got["params"]["stim_groups"] == saved["stim_groups"]
+    out = []
+    for _ in range(2):
+        j, _ = run_and_wait(client, {k: got["params"][k] for k in st.RUN_KEYS})
+        out.append(client.app.state.jobs.get(j["job_id"]).result.rates_hz)
+    assert out[0] == out[1]
+    real_hash = ea._file_hash
+    monkeypatch.setattr(ea, "_file_hash",
+                        lambda path: "0000changed0" if path.name == "sign_fixes.py" else real_hash(path))
+    got = client.get("/api/setups/comp_fix").json()
+    assert got["engine_matches"] is False and "sim/sign_fixes.py, which has changed" in got["engine_warning"]
+
+
+def test_ready_made_competition_and_steering_setups(adapter):
+    p = st.run_params(st.load_setup("sugar_bitter_competition"))
+    assert [(g["name"], g["rate_hz"], g["ids"]) for g in p["stim_groups"]] == [
+        ("Sugar", 100.0, SUGAR), ("Bitter", 40.0, BITTER)]
+    assert (p["variant"], p["snapshot"], p["seed"], p["duration_ms"], p["n_trials"]) == (
+        {"fix": "none", "upgrades": []}, "630", 0, 1000.0, 30)
+    assert str(MN9_ID) in p["watch"]
+    q = st.run_params(st.load_setup("da1_left_smell_fix"))
+    assert q["variant"] == FIX and q["snapshot"] == "630" and q["seed"] == 0
+    assert [(g["rate_hz"], g["ids"]) for g in q["stim_groups"]] == [
+        (150.0, [str(i) for i in ea.DA1_LEFT_ORN_IDS_630])]
+    assert set(q["watch"]) == {str(i) for _, left, right in ea.STEERING_DN_IDS_630 for i in (left, right)}
+    for prm in (p, q):           # both run end to end (stand-in: plumbing only)
+        small = {**prm, "duration_ms": 50, "n_trials": 2}
+        app_rates, summary = run_through_app(adapter, small)
+        assert compare(run_from_code(adapter, small).rates_hz, app_rates)["n_different"] == 0
+        assert summary["is_fake"] is True and summary["variant"]["fix"] == prm["variant"]["fix"]
+
+
+def test_da1_and_steering_ids_match_the_630_labels():
+    f = ea.ROOT / "data" / "cache" / "connectome_630_neurons.parquet"
+    if not f.exists():
+        pytest.skip("630 label cache not built on this computer")
+    lab = pd.read_parquet(f, columns=["root_id", "cell_class", "hemibrain_type", "side"])
+    da1 = lab[(lab.cell_class == "olfactory") & (lab.hemibrain_type == "ORN_DA1") & (lab.side == "left")]
+    assert da1.root_id.tolist() == ea.DA1_LEFT_ORN_IDS_630          # same set, model row order
+    by = lab.set_index("root_id")
+    for name, left, right in ea.STEERING_DN_IDS_630:
+        assert (by.loc[left, "side"], by.loc[right, "side"]) == ("left", "right"), name
+
+
 @pytest.mark.slow
 def test_checkpoint_sugar_setup_app_equals_direct_fast_engine():
     """Phase 4 checkpoint: the saved sugar setup (snapshot 630, 100 Hz, 30 x 1000 ms,
@@ -249,3 +547,38 @@ def test_checkpoint_sugar_setup_app_equals_direct_fast_engine():
     assert csv_mn9.split(",")[6] == f"{direct.rate(MN9_ID):.6f}"
     assert app_rates[MN9_ID] == pytest.approx(67.6, abs=0.1)
     assert app_rates == direct_rates                           # every neuron, exactly
+
+
+@pytest.mark.slow
+def test_competition_setup_through_app_equals_direct_run():
+    """Sugar 100 Hz + bitter 40 Hz (published model, seed 0): the app gives exactly
+    the rates of the engine's own per-neuron-rate call on the same brain, and MN9
+    is 47.7 Hz (Phase 5, docs/phase5-competition.md; paper 45.3 Hz)."""
+    p = st.run_params(st.load_setup("sugar_bitter_competition"))
+    real = EngineAdapter(force_fake=False)
+    assert real.engine_info["name"] == "sim.fast_engine", real.engine_info["reason"]
+    app_rates, summary = run_through_app(real, p)
+    assert summary["variant"]["key"] == "published"
+    brain = real.engine("630").brain
+    direct = brain.run(excite={int(i): float(g["rate_hz"]) for g in p["stim_groups"] for i in g["ids"]},
+                       duration_ms=1000.0, n_trials=30, seed=0)
+    assert compare({int(k): float(v) for k, v in direct.rates().items()}, app_rates)["n_different"] == 0
+    assert app_rates[MN9_ID] == pytest.approx(47.7, abs=0.05)
+
+
+@pytest.mark.slow
+def test_da1_setup_on_recommended_fix_reproduces_phase6():
+    """DA1 left-only smell on the recommended fix (seed 0): left DNa02 far above the
+    right one, and every neuron's rate equals the saved Phase 6 run (if present)."""
+    p = st.run_params(st.load_setup("da1_left_smell_fix"))
+    real = EngineAdapter(force_fake=False)
+    app_rates, summary = run_through_app(real, p)
+    assert summary["variant"]["fix"] == "al_ln_literature"
+    dna02_l, dna02_r = ea.STEERING_DN_IDS_630[0][1:]
+    assert app_rates.get(dna02_l, 0.0) > 15.0 > 3.0 > app_rates.get(dna02_r, 0.0)
+    saved = ea.ROOT / "experiments/phase6/steering/results/sim/al_ln_DA1_left_s0.npz"
+    if saved.exists():
+        z = np.load(saved)
+        root_ids = real.engine("630", p["variant"]).brain.root_ids
+        old = {int(r): float(v) for r, v in zip(root_ids, z["rates"]) if v}
+        assert compare(old, app_rates, tol=1e-4)["n_different"] == 0

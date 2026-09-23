@@ -948,3 +948,48 @@ work like a see-saw that is already tipped left, so the model always says "turn 
 One smell channel, the one for the pheromone cVA, does steer the right way when only one
 antenna smells it. For the body simulation this means: turning toward vinegar must be
 labelled as not coming from the brain; a brain-driven turn is only available for cVA.
+
+## 2026-09-23 - Explorer app: model choices and per-group input rates
+
+**What changed.** The explorer app (`.venv\Scripts\python.exe -m app`) can now run the
+improved model versions, not just the published one:
+
+- A **Model** box on the page: *Published model (Shiu et al. 2024)* (the default,
+  unchanged) or the *Recommended neurotransmitter fix*, plus optional upgrades
+  *distance-based delays*, *adaptation* and *measured cell-type settings*. Each has a
+  one-line description and a link to its write-up. Only checked versions are offered;
+  combinations that were never tested (an upgrade plus the fix, cell-type settings plus
+  anything) are switched off, with the reason shown next to them.
+- Each model's brain is built the first time it is used (2 to 5 seconds here) and kept;
+  at most two are kept in memory, and the page says which one will be dropped. If a
+  model cannot be built, the run fails with the reason, the banner says so, and no other
+  model is run in its place.
+- **Stimulus groups**: the neurons to stimulate can be split into groups with their own
+  input rates, for example sugar at 100 Hz and bitter at 40 Hz in one run.
+- Saved setups and results now record the exact model: its name, switches and a
+  fingerprint of each code file it uses. Loading a setup whose code has changed since
+  says which file changed. Setups saved before this (like the sugar one) load as the
+  published model with one input rate.
+- Two new ready-made setups: *sugar 100 Hz + bitter 40 Hz* and *DA1 smell, left antenna
+  only, on the recommended fix*.
+
+**What happened (all through the app, seed 0, 30 one-second trials).**
+
+| Check | Result |
+| --- | --- |
+| Phase 4 checkpoint re-run (sugar setup, app vs code) | SAME RESULT: MN9 67.63 Hz both ways, all 409 active neurons identical |
+| Sugar 100 Hz + bitter 40 Hz (published model) | MN9 47.70 Hz, app = code for all 428 neurons; Phase 5 got 47.7 Hz, the paper 45.3 Hz |
+| DA1 left smell (recommended fix) | left DNa02 22.9 Hz vs right 0.8 Hz ("turn left"); app = code, and all 216 active neurons equal the saved Phase 6 run |
+| Every offered model, 3 short sugar trials | MN9 67.3 (published), 71.7 (delays), 42.7 (adaptation), 45.0 (both), 67.3 (cell-type): in line with the Phase 7 write-ups |
+
+**Validated?** The app itself: yes. The same recipe gives identical numbers through the
+app and from code, for the published model and for the fix, and the new setups
+reproduce the earlier Phase 5 and Phase 6 numbers exactly. The model versions
+themselves keep the status their own write-ups give them (the fix: recommended; the
+upgrades: preliminary). Tests: `tests/test_app.py`, fast tests with the stand-in engine
+plus three slow tests on the real engine.
+
+**Not verified.** Combining an upgrade with the fix is not offered; reading
+`sim/realism.py` suggests its builder for that combination would fail with delays on
+(it looks for a neuron-position file named after the fix). Not run; left for the owner
+of `sim/`.

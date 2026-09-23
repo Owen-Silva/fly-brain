@@ -31,6 +31,23 @@ How the real modules are wired in (checked 2026-09-22):
 If one of these cannot be loaded, the banner names what is missing and why,
 and runs are switched off (or the slow engine is used, and labelled).
 
+Model variants (added 2026-09-23). Besides the published model, a run can use
+a VALIDATED variant (snapshot 630 only):
+  sim/sign_fixes.py    build_brain(fix=..., snapshot="630", n_threads) -> a
+                       FastBrain with a neurotransmitter-sign fix applied.
+                       Only the fixes listed in FIX_CHOICES are offered (the
+                       recommended "al_ln_literature"); other names in
+                       sign_fixes.FIXES are not exposed.
+  sim/realism.py       RealisticBrain("630", n_threads, realism={"delays":
+                       bool, "adaptation": bool}) -> upgrades 1 and 3.
+                       Upgrade 2 (conductance) is NOT validated and not offered.
+  sim/celltype_params.py  CellTypeBrain("630", n_threads) -> measured
+                       cell-type settings (on its own only).
+Each variant's brain is built on first use and kept; at most
+MAX_BRAINS_IN_MEMORY brains are kept at once (least recently used is dropped).
+A variant that cannot be built is reported (run error, banner, model panel);
+the app never runs a different model in its place.
+
 FLYBRAIN_APP_FAKE=1 forces the stand-in engine and stand-in neuron list (the
 fast automated tests use it; nothing else ever falls back to it).
 FLYBRAIN_APP_THREADS=n lets the fast engine run n trials at once (default 1,
@@ -38,11 +55,13 @@ because the computer is shared).
 """
 from __future__ import annotations
 
+import gc
 import hashlib
 import importlib
 import os
 import threading
 import time
+from collections import OrderedDict
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
@@ -80,6 +99,35 @@ SUGAR_GRN_IDS_630 = [
 SUGAR_GRN_IDS_783 = [720575940639259967 if i == 720575940620900446 else i for i in SUGAR_GRN_IDS_630]
 MN9_LEFT_ID = 720575940660219265          # "MN9 left" in figures.ipynb (same id in 630 and 783)
 MN9_RIGHT_IDS = {"630": 720575940645521262, "783": 720575940618238523}
+# Bitter taste neurons (sim/shiu_model.py BITTER_R_630, the paper's Fig. 3A list).
+BITTER_GRN_IDS_630 = [
+    720575940621778381, 720575940602353632, 720575940617094208, 720575940619197093, 720575940626287336,
+    720575940618600651, 720575940627692048, 720575940630195909, 720575940646212996, 720575940610483162,
+    720575940645743412, 720575940627578156, 720575940622298631, 720575940621008895, 720575940629146711,
+    720575940610259370, 720575940610481370, 720575940619028208, 720575940614281266, 720575940613061118,
+    720575940604027168,
+]
+# DA1 (cVA pheromone) smell neurons of the LEFT antenna in snapshot 630: cell_class
+# "olfactory", hemibrain_type "ORN_DA1", side "left", in model row order (the
+# selection of experiments/phase6/steering/s2_simulate.py).
+DA1_LEFT_ORN_IDS_630 = [
+    720575940606165606, 720575940606227890, 720575940606922674, 720575940607090306, 720575940608044501,
+    720575940612443827, 720575940614569414, 720575940614586690, 720575940614982654, 720575940615708466,
+    720575940616526292, 720575940617486081, 720575940618080566, 720575940619498887, 720575940619591872,
+    720575940619873472, 720575940620101614, 720575940620687425, 720575940621368685, 720575940622198664,
+    720575940622712810, 720575940623080132, 720575940623122685, 720575940623137930, 720575940623358954,
+    720575940623747086, 720575940623927956, 720575940626269468, 720575940626585481, 720575940626606223,
+    720575940627048018, 720575940627777265, 720575940628251947, 720575940628314217, 720575940629266767,
+    720575940629336770, 720575940629471682, 720575940629847678, 720575940630062587, 720575940630368965,
+    720575940630428227, 720575940630442745, 720575940630461994, 720575940631012664, 720575940631229800,
+    720575940632679379, 720575940632765388, 720575940634538080, 720575940634702431, 720575940635708267,
+    720575940636165743, 720575940638216420, 720575940638807485, 720575940644191012, 720575940644530030,
+    720575940644683031, 720575940646583172, 720575940654436769, 720575940658814849, 720575940659996033,
+]
+# Steering descending neurons (docs/phase6-steering.md), snapshot 630: (name, left id, right id).
+STEERING_DN_IDS_630 = [("DNa02", 720575940629327659, 720575940604737708),
+                       ("DNpe002", 720575940629428215, 720575940620642940),
+                       ("DNb05", 720575940620266689, 720575940629461442)]
 
 TABLE_COLUMNS = ["root_id", "cell_type", "name", "super_class", "cell_class", "nt", "side"]
 _COLUMN_CANDIDATES = {
@@ -108,6 +156,8 @@ class RunResult:
     snapshot: str = DEFAULT_SNAPSHOT
     wall_seconds: float = 0.0
     notes: list[str] = field(default_factory=list)
+    variant: dict[str, Any] = field(default_factory=dict)      # variant_record(): model + code fingerprints
+    stim_groups: list[dict[str, Any]] = field(default_factory=list)  # [{name, rate_hz, ids}]
 
 
 def check_snapshot(s) -> str:
@@ -122,6 +172,139 @@ def _file_hash(path: Path) -> str | None:
         return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
     except OSError:
         return None
+
+
+# --------------------------------------------------------------------------
+# Model variants
+# --------------------------------------------------------------------------
+# Only VALIDATED variants are offered. Each has a one-line plain-English
+# description and its doc (served by the app at /api/docs/<file>).
+PUBLISHED_VARIANT = {"fix": "none", "upgrades": []}
+MAX_BRAINS_IN_MEMORY = 2
+VARIANT_SNAPSHOT = "630"          # every variant is defined for snapshot 630 only
+
+FIX_CHOICES = {
+    "none": {
+        "label": "Published model (Shiu et al. 2024)",
+        "short": "Published model",
+        "about": "The paper's model exactly as published, the one Phase 3 checked. Use it to compare with the paper.",
+        "doc": "phase3-explained.md",
+    },
+    "al_ln_literature": {
+        "label": "Recommended neurotransmitter fix",
+        "short": "Recommended neurotransmitter fix",
+        "about": ("Corrects about 150 smell-centre (antennal lobe) local neurons to match published "
+                  "recordings. Stops the non-stop 'runaway' firing after strong smell input; taste "
+                  "results stay identical to the published model."),
+        "doc": "phase7-neurotransmitter-audit.md",
+    },
+}
+UPGRADE_CHOICES = {
+    "delays": {
+        "label": "Distance-based delays",
+        "short": "distance delays",
+        "about": ("Each spike also needs travel time along the wire (distance / 0.2 m/s) on top of the "
+                  "fixed 1.8 ms synapse delay. Changes very little. Preliminary."),
+        "doc": "phase7-realism.md",
+    },
+    "adaptation": {
+        "label": "Adaptation",
+        "short": "adaptation",
+        "about": ("Neurons driven for a long time slow down (a brake that fades over about 100 ms). "
+                  "Every response gets weaker: sugar 100 Hz gives MN9 about 44 Hz instead of 67. Preliminary."),
+        "doc": "phase7-realism.md",
+    },
+    "celltype": {
+        "label": "Measured cell-type settings",
+        "short": "cell-type settings",
+        "about": ("The few cell types measured with electrodes (Kenyon cells, projection neurons, P-EN, "
+                  "clock neurons; 4% of neurons) get their measured settings. No effect on taste. Preliminary."),
+        "doc": "phase7-celltype-params.md",
+    },
+}
+UPGRADE_ORDER = tuple(UPGRADE_CHOICES)
+# Docs the page may link to (served as plain text by /api/docs/<file>).
+DOCS_DIR = ROOT / "docs"
+SERVED_DOCS = sorted({c["doc"] for c in (*FIX_CHOICES.values(), *UPGRADE_CHOICES.values())}
+                     | {"phase4-app-explained.md", "phase5-competition.md", "phase6-steering.md"})
+
+# Which files make up each piece of a variant (their fingerprints are recorded).
+_CODE_FILES = {
+    "base": ["sim/fast_engine.py"],
+    "fix": ["sim/sign_fixes.py"],
+    "delays": ["sim/realism.py"],
+    "adaptation": ["sim/realism.py"],
+    "celltype": ["sim/celltype_params.py", "experiments/phase7_celltype/celltype_params.csv"],
+}
+
+
+def combination_problem(fix: str, upgrades: list[str], snapshot: str = DEFAULT_SNAPSHOT) -> str | None:
+    """Why this combination is not offered (plain English), or None if it is."""
+    if (fix != "none" or upgrades) and snapshot != VARIANT_SNAPSHOT:
+        return (f"Model variants exist for the {VARIANT_SNAPSHOT} brain map only (the fixes and "
+                "upgrades were built and checked on it). Switch the brain map to 630, or use the "
+                "published model.")
+    if "celltype" in upgrades and (fix != "none" or len(upgrades) > 1):
+        return ("Measured cell-type settings can only be used on their own, with the published "
+                "model: the simulator has no version that combines them with other changes, and "
+                "the combination was never tested (docs/phase7-celltype-params.md).")
+    if fix != "none" and upgrades:
+        return ("Delays and adaptation were checked on the published model only. Together with the "
+                "neurotransmitter fix they were never tested, so the app does not offer that yet.")
+    return None
+
+
+def check_variant(v, snapshot: str = DEFAULT_SNAPSHOT) -> dict[str, Any]:
+    """Tidy a model choice into {"fix", "upgrades"}; ValueError says why it is refused.
+
+    Missing (None or {}) means the published model, which is how setups saved
+    before variants existed are read."""
+    if v in (None, "", {}):
+        return {"fix": "none", "upgrades": []}
+    if not isinstance(v, dict):
+        raise ValueError("'variant' must be an object like {\"fix\": \"none\", \"upgrades\": []}")
+    fix = str(v.get("fix") or "none").strip()
+    if fix not in FIX_CHOICES:
+        raise ValueError(f"unknown model '{fix}'. The app offers: "
+                         + ", ".join(f"'{k}' ({c['label']})" for k, c in FIX_CHOICES.items()))
+    ups = v.get("upgrades") or []
+    if not isinstance(ups, (list, tuple)):
+        raise ValueError("'upgrades' must be a list, e.g. [\"adaptation\"]")
+    bad = [str(u) for u in ups if str(u) not in UPGRADE_CHOICES]
+    if bad:
+        raise ValueError(f"unknown upgrade(s) {', '.join(bad)}. The app offers: "
+                         + ", ".join(UPGRADE_ORDER) + " (conductance-based synapses are not validated)")
+    ups = [u for u in UPGRADE_ORDER if u in {str(x) for x in ups}]
+    problem = combination_problem(fix, ups, check_snapshot(snapshot))
+    if problem:
+        raise ValueError(problem)
+    return {"fix": fix, "upgrades": ups}
+
+
+def is_published(v: dict[str, Any]) -> bool:
+    return v.get("fix", "none") == "none" and not v.get("upgrades")
+
+
+def variant_key(v: dict[str, Any]) -> str:
+    return "published" if is_published(v) else "+".join([v["fix"], *v["upgrades"]])
+
+
+def variant_label(v: dict[str, Any]) -> str:
+    base = FIX_CHOICES[v["fix"]]["short"]
+    ups = [UPGRADE_CHOICES[u]["short"] for u in v.get("upgrades", [])]
+    return base + (" + " + " + ".join(ups) if ups else "")
+
+
+def variant_record(v: dict[str, Any]) -> dict[str, Any]:
+    """Everything needed to say exactly which model ran: names, switches and
+    the fingerprint (first 12 characters of the SHA-256) of every file it used."""
+    files = list(_CODE_FILES["base"])
+    if v["fix"] != "none":
+        files += _CODE_FILES["fix"]
+    for u in v["upgrades"]:
+        files += [f for f in _CODE_FILES[u] if f not in files]
+    return {"fix": v["fix"], "upgrades": list(v["upgrades"]), "key": variant_key(v),
+            "label": variant_label(v), "code": {f: _file_hash(ROOT / f) for f in files}}
 
 
 def _to_int_ids(ids) -> list[int]:
@@ -157,6 +340,14 @@ def _fake_table() -> pd.DataFrame:
                          "acetylcholine", "right"))
     for rid in (MN9_LEFT_ID, *MN9_RIGHT_IDS.values()):
         rows.append((rid, "FAKE-MN9", "MN9", "motor", "brain_motor_neuron", "acetylcholine", ""))
+    # So the other ready-made setups can be loaded and exercised with the stand-in too.
+    for i, rid in enumerate(BITTER_GRN_IDS_630):
+        rows.append((rid, "FAKE-bitterGRN", f"bitter_{i + 1}", "sensory", "gustatory", "acetylcholine", "right"))
+    for i, rid in enumerate(DA1_LEFT_ORN_IDS_630):
+        rows.append((rid, "FAKE-ORN_DA1", f"orn_da1_{i + 1}", "sensory", "olfactory", "acetylcholine", "left"))
+    for name, left, right in STEERING_DN_IDS_630:
+        rows.append((left, f"FAKE-{name}", name, "descending", "", "acetylcholine", "left"))
+        rows.append((right, f"FAKE-{name}", name, "descending", "", "acetylcholine", "right"))
     kinds = [("FAKE-interA", "central", "acetylcholine"), ("FAKE-interB", "central", "gaba"),
              ("FAKE-interC", "central", "glutamate"), ("FAKE-descend", "descending", "acetylcholine"),
              ("FAKE-motor", "motor", "acetylcholine")]
@@ -175,22 +366,28 @@ class FakeEngine:
     is no wiring, no physics and no biology here. Never read meaning into it.
     """
 
-    def __init__(self, all_ids: list[int], seconds_per_trial: float = 0.02):
+    def __init__(self, all_ids: list[int], seconds_per_trial: float = 0.02, variant_key: str = "published"):
         self._ids = np.array(sorted(all_ids), dtype=np.int64)
         self._pause = seconds_per_trial
+        self.variant_key = variant_key
 
     def run(self, excite, silence, duration_ms, n_trials, seed, rate_hz, progress=None):
         silence_set = set(silence)
-        exc = [e for e in excite if e not in silence_set]
-        rates: dict[int, float] = {e: float(rate_hz) for e in exc}
+        # excite: a list (all at rate_hz) or {root_id: rate}, like FastBrain.run.
+        per = dict(excite) if isinstance(excite, dict) else {e: rate_hz for e in excite}
+        rates: dict[int, float] = {e: float(r) for e, r in per.items() if e not in silence_set}
+        exc = list(rates)
+        drive = float(np.mean(list(rates.values()))) if rates else 0.0
         if exc:
-            # Same stimulated set -> same pretend-downstream neurons.
-            key = int(hashlib.sha256(",".join(map(str, sorted(exc))).encode()).hexdigest()[:8], 16)
+            # Same stimulated set (and model variant) -> same pretend-downstream neurons.
+            tag = ",".join(map(str, sorted(exc))) + ("" if self.variant_key == "published"
+                                                     else "|" + self.variant_key)
+            key = int(hashlib.sha256(tag.encode()).hexdigest()[:8], 16)
             pool = np.array([i for i in self._ids if i not in rates and i not in silence_set])
             if len(pool):
                 pick = np.random.default_rng(key).choice(pool, size=min(25, len(pool)), replace=False)
                 for rank, rid in enumerate(pick):
-                    rates[int(rid)] = float(rate_hz) * 0.5 * (0.85 ** rank)
+                    rates[int(rid)] = drive * 0.5 * (0.85 ** rank)
         rng = np.random.default_rng(seed)
         trials = []
         for t in range(n_trials):
@@ -249,23 +446,40 @@ class ShiuModelEngine:
         self._mod, self.snapshot = mod, snapshot
 
     def run(self, excite, silence, duration_ms, n_trials, seed, rate_hz, progress=None):
+        extra = {}
+        if isinstance(excite, dict):
+            # The Brian2 port has exactly two input rates (the paper's r_poi / r_poi2).
+            by_rate: dict[float, list[int]] = {}
+            for rid, r in excite.items():
+                by_rate.setdefault(float(r), []).append(rid)
+            if len(by_rate) > 2:
+                raise EngineError("the slow engine (sim/shiu_model.py) supports at most two different "
+                                  f"input rates in one run; this run has {len(by_rate)}")
+            (rate_hz, excite), *rest = by_rate.items()
+            if rest:
+                extra = {"rate2_hz": rest[0][0], "excite2_ids": rest[0][1]}
         out = self._mod.run_trials(excite_ids=excite, silence_ids=silence, duration_ms=duration_ms,
                                    n_trials=n_trials, rate_hz=rate_hz, seed=seed,
-                                   dataset=self.snapshot)
+                                   dataset=self.snapshot, **extra)
         spikes = out.spikes.rename(columns={"t": "t_s", "flywire_id": "root_id"})
         return {"spikes": spikes, "rates": out.rates, "rate_sd": out.rate_std}
 
 
 class FastBrainEngine:
-    """Wraps sim/fast_engine.py's FastBrain (built once per snapshot, run many times)."""
+    """Wraps sim/fast_engine.py's FastBrain, or a brain built by one of the
+    variant builders (same run() interface; built once, run many times)."""
 
-    def __init__(self, mod, snapshot: str, n_threads: int = 1):
-        self.brain = mod.FastBrain(snapshot=snapshot, n_threads=n_threads)
+    def __init__(self, mod, snapshot: str, n_threads: int = 1, brain=None):
+        self.brain = brain if brain is not None else mod.FastBrain(snapshot=snapshot, n_threads=n_threads)
         self.snapshot = snapshot
 
     def run(self, excite, silence, duration_ms, n_trials, seed, rate_hz, progress=None):
+        # excite is a list (every neuron at rate_hz, exactly as before variants
+        # existed) or {root_id: rate} for per-group rates (FastBrain.run's own
+        # form for the reference's second input rate).
         res = self.brain.run(excite=excite, silence=silence, duration_ms=duration_ms,
-                             n_trials=n_trials, seed=seed, rate_hz=rate_hz)
+                             n_trials=n_trials, seed=seed,
+                             rate_hz=None if isinstance(excite, dict) else rate_hz)
         spikes = pd.DataFrame({"trial": res.trial, "root_id": res.root_ids[res.neuron],
                                "t_ms": res.time_ms})
         # Mean rates from the engine's own SimResult.rates() (the same numbers a
@@ -376,11 +590,17 @@ class EngineAdapter:
             force_fake = os.environ.get(FORCE_FAKE_ENV, "") not in ("", "0", "false")
         self.force_fake = force_fake
         self._fake_pause = fake_seconds_per_trial
-        self._lock = threading.RLock()
+        self._lock = threading.RLock()        # neuron lists
+        self._build_lock = threading.RLock()  # building / dropping brains
         self._tables: dict[str, _Table] = {}
-        self._engines: dict[str, Any] = {}   # one built network per snapshot, reused
-        self._engine_errors: dict[str, str] = {}
+        # Built brains, keyed (snapshot, variant key), least recently used first.
+        self._engines: OrderedDict[tuple[str, str], Any] = OrderedDict()
+        self._engine_errors: dict[tuple[str, str], str] = {}
+        self._build_seconds: dict[tuple[str, str], float] = {}
+        self._building: dict[str, Any] | None = None
+        self._dropped: list[str] = []         # plain-English log of brains dropped to save memory
         self._probe_modules()
+        self._probe_variants()
         self.table(DEFAULT_SNAPSHOT)          # load the default neuron list now
 
     # ---- discovery -------------------------------------------------------
@@ -432,6 +652,56 @@ class EngineAdapter:
                 "is_fake": False, "is_fallback": False, "missing": True,
                 "reason": "; ".join(reasons)}
 
+    def _probe_variants(self):
+        """Can each offered fix / upgrade be built here? {option: None or why not}."""
+        self._variant_mods: dict[str, Any] = {}
+        self.option_problems: dict[str, str | None] = {}
+        if self._engine_kind == "fake":
+            self.option_problems = {k: None for k in (*FIX_CHOICES, *UPGRADE_CHOICES)}
+            return
+        for k in (*FIX_CHOICES, *UPGRADE_CHOICES):
+            self.option_problems[k] = None
+        self.option_problems["none"] = None if self.runs_enabled else "no simulator"
+        if self._engine_kind != "fast":
+            why = ("model variants need the fast engine (sim/fast_engine.py), which is not available: "
+                   + self.engine_info["reason"])
+            for k in (*[f for f in FIX_CHOICES if f != "none"], *UPGRADE_CHOICES):
+                self.option_problems[k] = why
+            return
+        sf, err = _import("sign_fixes")
+        for k in (f for f in FIX_CHOICES if f != "none"):
+            if sf is None:
+                self.option_problems[k] = err
+            elif not callable(getattr(sf, "build_brain", None)):
+                self.option_problems[k] = "sim/sign_fixes.py has no build_brain()"
+            elif k not in getattr(sf, "FIXES", ()):
+                self.option_problems[k] = f"sim/sign_fixes.py no longer defines the fix '{k}'"
+        self._variant_mods["sign_fixes"] = sf
+        rl, err = _import("realism")
+        for k in ("delays", "adaptation"):
+            if rl is None:
+                self.option_problems[k] = err
+            elif not hasattr(rl, "RealisticBrain"):
+                self.option_problems[k] = "sim/realism.py has no RealisticBrain class"
+            elif k not in getattr(rl, "REALISM_DEFAULTS", {}):
+                self.option_problems[k] = f"sim/realism.py has no '{k}' switch"
+        self._variant_mods["realism"] = rl
+        ct, err = _import("celltype_params")
+        if ct is None:
+            self.option_problems["celltype"] = err
+        elif not hasattr(ct, "CellTypeBrain"):
+            self.option_problems["celltype"] = "sim/celltype_params.py has no CellTypeBrain class"
+        self._variant_mods["celltype_params"] = ct
+
+    def variant_unavailable(self, v: dict[str, Any]) -> str | None:
+        """Why this (already checked) variant cannot be built here, or None."""
+        for k in (v["fix"], *v["upgrades"]):
+            why = self.option_problems.get(k)
+            if why:
+                name = (FIX_CHOICES.get(k) or UPGRADE_CHOICES.get(k))["label"]
+                return f"'{name}' is not available: {why}"
+        return None
+
     @property
     def runs_enabled(self) -> bool:
         return self._engine_kind != "none"
@@ -439,6 +709,9 @@ class EngineAdapter:
     def table(self, snapshot: str) -> _Table:
         """The neuron list for one snapshot (loaded on first use, then kept)."""
         snapshot = check_snapshot(snapshot)
+        t = self._tables.get(snapshot)
+        if t is not None:                      # no waiting while a brain is being built
+            return t
         with self._lock:
             if snapshot in self._tables:
                 return self._tables[snapshot]
@@ -489,8 +762,12 @@ class EngineAdapter:
                          + self.engine_info["reason"] + ".")
         elif self.engine_info["is_fallback"]:
             parts.append("Using the slow engine. " + self.engine_info["reason"] + ".")
-        for snap, err in self._engine_errors.items():
-            parts.append(f"The real engine failed to start for snapshot {snap}: {err}")
+        for (snap, key), err in list(self._engine_errors.items()):
+            if key == "published":
+                parts.append(f"The real engine failed to start for snapshot {snap}: {err}")
+            else:
+                parts.append(f"The model '{self._label_of(key)}' could not be built (snapshot {snap}): "
+                             f"{err}. Runs with it are refused; no other model is run in its place.")
         for snap, t in self._tables.items():
             if t.info.get("missing"):
                 parts.append(f"No neuron list for snapshot {snap}. Why: {t.info['reason']}.")
@@ -501,12 +778,58 @@ class EngineAdapter:
                 parts.append(f"Snapshot {snap} neuron labels: {t.info['reason']}.")
         return " ".join(parts) or None
 
+    @staticmethod
+    def _label_of(key: str) -> str:
+        if key == "published":
+            return variant_label(PUBLISHED_VARIANT)
+        fix, *ups = key.split("+")
+        return variant_label({"fix": fix, "upgrades": ups})
+
+    def _mem_entry(self, snap: str, key: str) -> dict[str, Any]:
+        return {"snapshot": snap, "key": key, "label": self._label_of(key),
+                "build_seconds": (None if (snap, key) not in self._build_seconds
+                                  else round(self._build_seconds[(snap, key)], 1))}
+
+    def models_status(self) -> dict[str, Any]:
+        """What the page's Model panel shows: the offered choices, what is in memory,
+        what is being built, and every build failure with its reason."""
+        def opt(k, c):
+            return {"id": k, "label": c["label"], "about": c["about"], "doc": c["doc"],
+                    "available": self.option_problems.get(k) is None,
+                    "problem": self.option_problems.get(k)}
+        b = self._building
+        return {
+            "fixes": [opt(k, c) for k, c in FIX_CHOICES.items()],
+            "upgrades": [opt(k, c) for k, c in UPGRADE_CHOICES.items()],
+            "variant_snapshot": VARIANT_SNAPSHOT, "max_in_memory": MAX_BRAINS_IN_MEMORY,
+            "in_memory": [self._mem_entry(s, k) for (s, k) in reversed(self._engines)],  # newest first
+            "building": None if b is None else {**b, "for_s": round(time.time() - b["since"], 1)},
+            "errors": [{**self._mem_entry(s, k), "reason": e} for (s, k), e in self._engine_errors.items()],
+            "dropped": self._dropped[-5:],
+        }
+
+    def variant_state(self, v: dict[str, Any], snapshot: str) -> dict[str, Any]:
+        """Memory / build state of one (checked) variant, for the Model panel."""
+        k = (snapshot, variant_key(v))
+        will_drop = None
+        if k not in self._engines and len(self._engines) >= MAX_BRAINS_IN_MEMORY:
+            s, key = next(iter(self._engines))
+            will_drop = f"{self._label_of(key)} (map {s})"
+        b = self._building
+        return {"in_memory": k in self._engines,
+                "building": bool(b and (b["snapshot"], b["key"]) == k),
+                "other_building": None if not b or (b["snapshot"], b["key"]) == k else b["label"],
+                "last_build_s": None if k not in self._build_seconds else round(self._build_seconds[k], 1),
+                "error": self._engine_errors.get(k), "unavailable": self.variant_unavailable(v),
+                "will_drop": will_drop}
+
     def status(self) -> dict[str, Any]:
-        return {"engine": dict(self.engine_info, built_for=sorted(self._engines),
-                               start_errors=dict(self._engine_errors)),
+        return {"engine": dict(self.engine_info,
+                               built_for=sorted({s for (s, _k) in self._engines}),
+                               start_errors={f"{s} {k}": e for (s, k), e in self._engine_errors.items()}),
                 "neurons": {s: dict(t.info) for s, t in self._tables.items()},
                 "snapshots": list(SNAPSHOTS), "default_snapshot": DEFAULT_SNAPSHOT,
-                "runs_enabled": self.runs_enabled,
+                "runs_enabled": self.runs_enabled, "models": self.models_status(),
                 "is_fake": self.is_fake, "banner": self.banner()}
 
     # ---- neuron lookup -------------------------------------------------
@@ -550,55 +873,160 @@ class EngineAdapter:
         return {"query": q, "snapshot": snapshot, "total": int(len(ranked)), "results": results}
 
     # ---- running -----------------------------------------------------------
-    def engine_built(self, snapshot: str = DEFAULT_SNAPSHOT) -> bool:
-        return check_snapshot(snapshot) in self._engines
+    def _variant(self, variant, snapshot: str) -> dict[str, Any]:
+        try:
+            return check_variant(variant, snapshot)
+        except ValueError as exc:
+            raise EngineError(str(exc)) from None
 
-    def engine(self, snapshot: str = DEFAULT_SNAPSHOT):
-        """The built engine for a snapshot (built once, then kept and reused)."""
+    def engine_built(self, snapshot: str = DEFAULT_SNAPSHOT, variant=None) -> bool:
         snapshot = check_snapshot(snapshot)
+        return (snapshot, variant_key(self._variant(variant, snapshot))) in self._engines
+
+    def last_build_seconds(self, snapshot: str = DEFAULT_SNAPSHOT, variant=None) -> float | None:
+        snapshot = check_snapshot(snapshot)
+        return self._build_seconds.get((snapshot, variant_key(self._variant(variant, snapshot))))
+
+    def _build(self, snapshot: str, v: dict[str, Any]):
+        """Build one brain for (snapshot, variant). No caching here."""
+        key = variant_key(v)
+        if self._engine_kind == "fake":
+            return FakeEngine(self.table(snapshot).df["root_id"].tolist(), self._fake_pause, variant_key=key)
+        if self._engine_kind == "shiu":
+            if not is_published(v):
+                raise EngineError("model variants need the fast engine; the slow engine runs the "
+                                  "published model only")
+            return ShiuModelEngine(self._engine_mod, snapshot)
+        threads = _app_threads()
+        if is_published(v):
+            # Exactly what the app built before variants existed (the Phase 4 checkpoint path).
+            return FastBrainEngine(self._engine_mod, snapshot, threads)
+        ups = set(v["upgrades"])
+        if v["fix"] != "none" and not ups:
+            brain = self._variant_mods["sign_fixes"].build_brain(fix=v["fix"], snapshot=snapshot,
+                                                                 n_threads=threads)
+        elif v["fix"] == "none" and ups == {"celltype"}:
+            brain = self._variant_mods["celltype_params"].CellTypeBrain(snapshot, n_threads=threads)
+        elif v["fix"] == "none" and ups and ups <= {"delays", "adaptation"}:
+            brain = self._variant_mods["realism"].RealisticBrain(
+                snapshot, n_threads=threads,
+                realism={"delays": "delays" in ups, "adaptation": "adaptation" in ups})
+        else:  # never reached while check_variant refuses these; never guess a substitute
+            raise EngineError(f"the app has no way to build '{variant_label(v)}'")
+        return FastBrainEngine(None, snapshot, brain=brain)
+
+    @staticmethod
+    def _release_memory():
+        gc.collect()
+        try:                                   # pyarrow keeps freed memory parked; hand it back
+            import sys
+            pa = sys.modules.get("pyarrow")
+            if pa is not None:
+                pa.default_memory_pool().release_unused()
+        except Exception:  # noqa: BLE001 - only a memory courtesy
+            pass
+
+    def engine(self, snapshot: str = DEFAULT_SNAPSHOT, variant=None):
+        """The built brain for (snapshot, model variant): built on first use, then kept.
+
+        At most MAX_BRAINS_IN_MEMORY brains are kept; the least recently used is
+        dropped (before the new one is built, so memory never holds three). A
+        failure is recorded and raised with its reason; nothing else is run instead.
+        """
+        snapshot = check_snapshot(snapshot)
+        v = self._variant(variant, snapshot)
         if not self.runs_enabled:
             raise EngineError("runs are switched off because no fly brain simulator could be "
                               "loaded: " + self.engine_info["reason"])
-        with self._lock:
-            if snapshot in self._engines:
-                return self._engines[snapshot]
+        why = self.variant_unavailable(v)
+        if why:
+            raise EngineError(why + ". Nothing was run in its place.")
+        k = (snapshot, variant_key(v))
+        with self._build_lock:
+            if k in self._engines:
+                self._engines.move_to_end(k)
+                return self._engines[k]
+            while len(self._engines) >= MAX_BRAINS_IN_MEMORY:
+                (s, key), old = self._engines.popitem(last=False)
+                del old
+                self._dropped.append(f"{time.strftime('%H:%M:%S')}: dropped '{self._label_of(key)}' "
+                                     f"(map {s}) from memory to make room for '{variant_label(v)}'")
+                self._release_memory()
+            self._building = {"snapshot": snapshot, "key": k[1], "label": variant_label(v),
+                              "since": time.time()}
+            t0 = time.perf_counter()
             try:
-                if self._engine_kind == "fast":
-                    eng = FastBrainEngine(self._engine_mod, snapshot, _app_threads())
-                elif self._engine_kind == "shiu":
-                    eng = ShiuModelEngine(self._engine_mod, snapshot)
-                else:
-                    eng = FakeEngine(self.table(snapshot).df["root_id"].tolist(), self._fake_pause)
-            except Exception as exc:  # noqa: BLE001
-                self._engine_errors[snapshot] = f"{type(exc).__name__}: {exc}"
-                raise EngineError(f"the engine ({self.engine_info['module']}) could not be built for "
-                                  f"snapshot {snapshot}: {self._engine_errors[snapshot]}") from exc
-            self._engine_errors.pop(snapshot, None)
-            self._engines[snapshot] = eng
+                eng = self._build(snapshot, v)
+            except Exception as exc:  # noqa: BLE001 - recorded, shown, never swallowed
+                self._engine_errors[k] = f"{type(exc).__name__}: {exc}"
+                self._release_memory()
+                if is_published(v):
+                    raise EngineError(f"the engine ({self.engine_info['module']}) could not be built for "
+                                      f"snapshot {snapshot}: {self._engine_errors[k]}") from exc
+                raise EngineError(f"the model '{variant_label(v)}' could not be built for snapshot "
+                                  f"{snapshot}: {self._engine_errors[k]}. Nothing was run in its "
+                                  "place.") from exc
+            finally:
+                self._building = None
+            self._build_seconds[k] = time.perf_counter() - t0
+            self._engine_errors.pop(k, None)
+            self._engines[k] = eng
             return eng
 
     def warm_up(self, snapshots=SNAPSHOTS) -> dict[str, float]:
-        """Build the network for each snapshot now (the app does this at start-up)."""
+        """Build the published model's network for each snapshot now (the app does
+        this at start-up). The default snapshot is built last, so it is the one
+        kept longest when a model variant needs the room."""
         took = {}
-        for snap in snapshots:
+        for snap in sorted(snapshots, key=lambda s: s == DEFAULT_SNAPSHOT):
             t0 = time.perf_counter()
             self.table(snap)
             self.engine(snap)
             took[snap] = time.perf_counter() - t0
         return took
 
-    def run(self, excite, silence, duration_ms: float, n_trials: int, seed: int, rate_hz: float,
+    def run(self, excite, silence, duration_ms: float, n_trials: int, seed: int, rate_hz: float | None,
             progress: Callable[[float], None] | None = None,
-            snapshot: str = DEFAULT_SNAPSHOT) -> RunResult:
-        excite, silence = _to_int_ids(excite), _to_int_ids(silence)
-        eng = self.engine(snapshot)
+            snapshot: str = DEFAULT_SNAPSHOT, variant=None,
+            stim_groups: list[dict[str, Any]] | None = None) -> RunResult:
+        """One run. Either ``excite`` + ``rate_hz`` (every stimulated neuron at one
+        rate, as before) or ``stim_groups`` = [{"name", "rate_hz", "ids"}, ...]
+        (each group at its own rate). ``variant`` None = the published model."""
+        silence = _to_int_ids(silence)
+        if stim_groups:
+            groups = [{"name": str(g.get("name") or f"Group {n}"), "rate_hz": float(g["rate_hz"]),
+                       "ids": _to_int_ids(g.get("ids"))} for n, g in enumerate(stim_groups, 1)]
+        else:
+            groups = [{"name": "Stimulated", "rate_hz": None if rate_hz is None else float(rate_hz),
+                       "ids": _to_int_ids(excite)}]
+        seen: dict[int, str] = {}
+        for g in groups:
+            for i in g["ids"]:
+                if i in seen:
+                    raise EngineError(f"neuron {i} is in two stimulus groups ('{seen[i]}' and "
+                                      f"'{g['name']}')")
+                seen[i] = g["name"]
+        rates = {g["rate_hz"] for g in groups if g["ids"]}
+        if len(rates) <= 1:
+            # One rate for everyone: exactly the call the app made before per-group rates.
+            eng_in = [i for g in groups for i in g["ids"]]
+            eng_rate = rates.pop() if rates else rate_hz
+        else:
+            # Different rates: {root_id: rate}, in group order (the order sets which
+            # random numbers each neuron gets, so it is kept exactly as saved).
+            eng_in = {i: g["rate_hz"] for g in groups for i in g["ids"]}
+            eng_rate = None
+        v = self._variant(variant, snapshot)
+        eng = self.engine(snapshot, v)
         t0 = time.perf_counter()
-        raw = eng.run(excite, silence, duration_ms, n_trials, seed, rate_hz, progress)
+        raw = eng.run(eng_in, silence, duration_ms, n_trials, seed, eng_rate, progress)
         wall = time.perf_counter() - t0
-        trials, rates, sd, notes = _normalise_result(raw, n_trials, duration_ms)
-        return RunResult(trials=trials, rates_hz=rates, rate_sd_hz=sd, duration_ms=duration_ms,
+        trials, rates_hz, sd, notes = _normalise_result(raw, n_trials, duration_ms)
+        return RunResult(trials=trials, rates_hz=rates_hz, rate_sd_hz=sd, duration_ms=duration_ms,
                          n_trials=len(trials), engine=dict(self.engine_info), snapshot=snapshot,
-                         wall_seconds=wall, notes=notes)
+                         wall_seconds=wall, notes=notes, variant=variant_record(v),
+                         stim_groups=[{"name": g["name"], "rate_hz": g["rate_hz"],
+                                       "ids": [str(i) for i in g["ids"]]} for g in groups])
 
 
 _ADAPTER: EngineAdapter | None = None

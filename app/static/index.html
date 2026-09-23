@@ -45,9 +45,11 @@
       <h2>2. Your picks</h2>
       <div class="pick" data-list="excite">
         <div class="pick-head"><h3>Stimulate <span class="count" id="n-excite">0</span></h3>
-          <button type="button" class="link" data-clear="excite">Clear</button></div>
-        <p class="hint">Driven with random input spikes at the input rate.</p>
-        <ul class="chips" id="list-excite"></ul>
+          <button type="button" class="link" id="addGroup">+ Add a group</button></div>
+        <p class="hint">Driven with random input spikes. Each group has its own input rate
+          (for example sugar at 100 Hz and bitter at 40 Hz). New picks go into the group marked
+          <b>add here</b>.</p>
+        <div id="groups"></div>
       </div>
       <div class="pick" data-list="silence">
         <div class="pick-head"><h3>Silence <span class="count" id="n-silence">0</span></h3>
@@ -63,20 +65,29 @@
       </div>
     </div>
 
+    <div class="block" id="modelBlock">
+      <h2>3. Model</h2>
+      <p class="hint">Which version of the fly brain model to run. Every run and saved setup records it.</p>
+      <fieldset class="opts" id="fixOptions"><legend>Model</legend></fieldset>
+      <fieldset class="opts" id="upgradeOptions"><legend>Optional upgrades</legend></fieldset>
+      <p class="model-problem" id="modelProblem" hidden></p>
+      <p class="model-state" id="modelState"></p>
+    </div>
+
     <div class="block">
-      <h2>3. Run</h2>
+      <h2>4. Run</h2>
       <div class="grid2">
         <label class="field"><span>Length (ms)</span><input id="duration" type="number" min="1" max="10000" step="1" value="1000"></label>
         <label class="field"><span>Repeats (trials)</span><input id="trials" type="number" min="1" max="100" step="1" value="30"></label>
-        <label class="field"><span>Input rate (Hz)</span><input id="rate" type="number" min="0" max="1000" step="1" value="150"></label>
         <label class="field"><span>Random seed</span><input id="seed" type="number" min="0" step="1" placeholder="blank = pick one"></label>
       </div>
+      <p class="hint">Input rates are set per stimulus group, above.</p>
       <button type="button" class="primary" id="runBtn">Run simulation</button>
       <p class="hint" id="runHint"></p>
     </div>
 
     <div class="block">
-      <h2>4. Saved setups</h2>
+      <h2>5. Saved setups</h2>
       <div class="row">
         <select id="setupSelect" aria-label="Saved setups"></select>
         <button type="button" id="loadBtn">Load</button>

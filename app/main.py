@@ -18,7 +18,9 @@ from fastapi.staticfiles import StaticFiles
 
 from . import results as res
 from . import setups as st
-from .engine_adapter import DEFAULT_SNAPSHOT, EngineAdapter, check_snapshot, get_adapter
+from .engine_adapter import (DEFAULT_SNAPSHOT, DOCS_DIR, FIX_CHOICES, SERVED_DOCS, UPGRADE_CHOICES,
+                             EngineAdapter, check_snapshot, check_variant, combination_problem,
+                             get_adapter, variant_key, variant_label)
 from .jobs import JobManager
 
 STATIC = Path(__file__).resolve().parent / "static"
@@ -70,6 +72,41 @@ def create_app(adapter: EngineAdapter | None = None, setup_dir: Path | None = No
         except ValueError as exc:
             raise HTTPException(400, str(exc)) from None
 
+    # ---- model variants ----------------------------------------------------
+    @app.get("/api/models/state")
+    def model_state(snapshot: str = DEFAULT_SNAPSHOT, fix: str = "none", upgrades: str = ""):
+        """Is this model choice allowed, is it in memory, and which other choices
+        are allowed from here (each with a plain-English reason if not)."""
+        snap = _snap(snapshot)
+        ups = [u for u in upgrades.split(",") if u]
+        options = {}
+        for k in FIX_CHOICES:
+            why = combination_problem(k, [u for u in ups if u in UPGRADE_CHOICES], snap)
+            options["fix:" + k] = {"allowed": why is None and adapter.option_problems.get(k) is None,
+                                   "why": adapter.option_problems.get(k) or why}
+        for k in UPGRADE_CHOICES:
+            trial = sorted({*[u for u in ups if u in UPGRADE_CHOICES], k})
+            why = combination_problem(fix if fix in FIX_CHOICES else "none", trial, snap)
+            options["up:" + k] = {"allowed": why is None and adapter.option_problems.get(k) is None,
+                                  "why": adapter.option_problems.get(k) or why}
+        try:
+            v = check_variant({"fix": fix, "upgrades": ups}, snap)
+        except ValueError as exc:
+            return {"ok": False, "problem": str(exc), "options": options, "variant": None}
+        return {"ok": True, "problem": adapter.variant_unavailable(v), "variant": v,
+                "key": variant_key(v), "label": variant_label(v), "options": options,
+                "memory": adapter.variant_state(v, snap), "models": adapter.models_status()}
+
+    @app.get("/api/model-docs/{name}", response_class=PlainTextResponse)
+    def doc(name: str):
+        """The model docs the page links to, as plain text (only the listed files)."""
+        if name not in SERVED_DOCS:
+            raise HTTPException(404, f"no doc called '{name}' is served by the app")
+        path = DOCS_DIR / name
+        if not path.exists():
+            raise HTTPException(404, f"docs/{name} does not exist on this computer")
+        return PlainTextResponse(path.read_text(encoding="utf-8"), media_type="text/plain; charset=utf-8")
+
     # ---- runs ------------------------------------------------------------
     @app.post("/api/runs", status_code=202)
     def start_run(body: dict[str, Any] = Body(...)):
@@ -82,6 +119,9 @@ def create_app(adapter: EngineAdapter | None = None, setup_dir: Path | None = No
         if not p["excite"]:
             raise HTTPException(400, "pick at least one neuron to stimulate; with no input the "
                                      "model brain stays silent")
+        why = adapter.variant_unavailable(p["variant"])
+        if why:
+            raise HTTPException(400, why + ". Nothing was run in its place.")
         snap = p["snapshot"]
         unknown = adapter.unknown_ids([int(i) for i in p["excite"] + p["silence"] + p["watch"]], snap)
         if unknown:
@@ -133,14 +173,15 @@ def create_app(adapter: EngineAdapter | None = None, setup_dir: Path | None = No
             raise HTTPException(400, str(exc)) from None
         except FileNotFoundError as exc:
             raise HTTPException(404, str(exc)) from None
-        saved, now = data.get("engine") or {}, adapter.engine_info
-        same = (saved.get("name") == now.get("name") and saved.get("code_hash") == now.get("code_hash"))
-        warning = None if same else (
-            f"This setup was saved with engine '{saved.get('name')}' "
-            f"(version {saved.get('version')}, code {saved.get('code_hash')}); the app is now using "
-            f"'{now.get('name')}' (version {now.get('version')}, code {now.get('code_hash')}). "
-            "Results may differ from when it was saved.")
-        return {"setup": data, "engine_matches": same, "engine_warning": warning}
+        same, warning = st.code_check(data, adapter.engine_info)
+        try:
+            params, params_error = st.run_params(data), None
+        except ValueError as exc:
+            params, params_error = None, f"This setup cannot be run as saved: {exc}"
+        # "params": the setup as the app will run it (an old setup without a model
+        # is the published model; its single input rate is one stimulus group).
+        return {"setup": data, "params": params, "params_error": params_error,
+                "engine_matches": same, "engine_warning": warning}
 
     @app.post("/api/setups", status_code=201)
     def setups_save(body: dict[str, Any] = Body(...), overwrite: bool = False):

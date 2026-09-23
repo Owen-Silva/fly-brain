@@ -27,11 +27,21 @@ def ranked_rates(result: RunResult) -> list[tuple[int, float]]:
     return sorted(result.rates_hz.items(), key=lambda kv: (-kv[1], kv[0]))
 
 
+def _group_of(rid: str, result: RunResult) -> dict[str, Any] | None:
+    for g in result.stim_groups:
+        if rid in g["ids"]:
+            return g
+    return None
+
+
 def neuron_row(adapter: EngineAdapter, result: RunResult, rid: int, params, rank=None):
     rec = adapter.neuron_record(rid, result.snapshot)
     rec.update(rate_hz=round(result.rates_hz.get(rid, 0.0), 4),
                rate_sd_hz=round(result.rate_sd_hz.get(rid, 0.0), 4),
                role=_role(str(rid), params))
+    g = _group_of(str(rid), result) if rec["role"] == "stimulated" else None
+    if g is not None:
+        rec.update(group=g["name"], group_rate_hz=g["rate_hz"])
     if rank is not None:
         rec["rank"] = rank
     return rec
@@ -54,7 +64,9 @@ def summary(adapter: EngineAdapter, result: RunResult, params: dict[str, Any],
     watch = [neuron_row(adapter, result, int(r), params) for r in params.get("watch", [])]
     return {
         "engine": result.engine, "is_fake": bool(result.engine.get("is_fake")),
-        "snapshot": result.snapshot,
+        "snapshot": result.snapshot, "variant": result.variant,
+        "stim_groups": [{"name": g["name"], "rate_hz": g["rate_hz"], "n": len(g["ids"])}
+                        for g in result.stim_groups],
         "duration_ms": result.duration_ms, "n_trials": result.n_trials,
         "wall_seconds": round(result.wall_seconds, 3), "notes": result.notes,
         "n_active": len(ranked), "n_active_downstream": n_down,
@@ -95,9 +107,11 @@ def raster(adapter: EngineAdapter, result: RunResult, params: dict[str, Any],
             truncated = True
         n_spikes += len(ts)
         rec = adapter.neuron_record(rid, result.snapshot)
+        g = _group_of(str(rid), result)
         rows.append({"root_id": str(rid), "cell_type": rec["cell_type"], "name": rec["name"],
                      "cell_class": rec["cell_class"],
                      "role": _role(str(rid), params),
+                     "group": None if g is None else f"{g['name']}, {g['rate_hz']:g} Hz",
                      "rate_hz": round(result.rates_hz.get(rid, 0.0), 3),
                      "t_ms": [round(float(t), 2) for t in ts]})
     return {"trial": trial, "n_trials": result.n_trials, "snapshot": result.snapshot,
@@ -113,8 +127,14 @@ def rates_csv(adapter: EngineAdapter, result: RunResult, params: dict[str, Any])
     if eng.get("is_fake"):
         buf.write("# WARNING: stand-in engine, NOT the fly brain model. " + eng.get("reason", "") + "\n")
     buf.write(f"# engine={eng.get('name')} version={eng.get('version')} code_hash={eng.get('code_hash')}\n")
+    var = result.variant or {}
+    code = " ".join(f"{f}={h}" for f, h in (var.get("code") or {}).items())
+    buf.write(f"# model={var.get('label')} fix={var.get('fix')} "
+              f"upgrades={','.join(var.get('upgrades') or []) or 'none'} code: {code}\n")
     buf.write(f"# duration_ms={result.duration_ms} n_trials={result.n_trials} "
               f"seed={params.get('seed')} rate_hz={params.get('rate_hz')} snapshot={result.snapshot}\n")
+    buf.write("# stimulus groups: " + "; ".join(f"{g['name']} at {g['rate_hz']:g} Hz ({len(g['ids'])} neurons)"
+                                                 for g in result.stim_groups) + "\n")
     w = csv.writer(buf, lineterminator="\n")
     w.writerow(["root_id", "cell_type", "super_class", "nt", "side", "role", "rate_hz", "rate_sd_hz"])
     for rid, rate in ranked_rates(result):

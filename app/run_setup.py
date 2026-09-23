@@ -22,42 +22,55 @@ import time
 
 from . import results as res
 from . import setups as st
-from .engine_adapter import EngineAdapter
+from .engine_adapter import EngineAdapter, variant_label
 
 
 def _params(setup, args):
-    p = {k: setup.get(k) for k in ("excite", "silence", "watch", "duration_ms", "n_trials",
-                                    "seed", "rate_hz", "snapshot")}
+    # An old setup (no "variant", no "stim_groups") is the published model with
+    # one stimulus group at its single input rate.
+    p = st.run_params(setup)
     changed = []
-    for flag, key in (("trials", "n_trials"), ("duration", "duration_ms"), ("seed", "seed"),
-                      ("rate", "rate_hz")):
+    for flag, key in (("trials", "n_trials"), ("duration", "duration_ms"), ("seed", "seed")):
         v = getattr(args, flag)
         if v is not None:
             p[key] = v
             changed.append(f"{key}={v}")
-    return st.validate_params(p), changed
+    if args.rate is not None:          # one rate for every stimulus group
+        p["stim_groups"] = [{**g, "rate_hz": args.rate} for g in p["stim_groups"]]
+        changed.append(f"every stimulus group at {args.rate:g} Hz")
+    return st.validate_params({**p, "excite": None, "rate_hz": None}), changed
 
 
 def run_from_code(adapter: EngineAdapter, p):
     return adapter.run(p["excite"], p["silence"], p["duration_ms"], p["n_trials"], p["seed"],
-                       p["rate_hz"], snapshot=p["snapshot"])
+                       p["rate_hz"], snapshot=p["snapshot"], variant=p.get("variant"),
+                       stim_groups=p.get("stim_groups"))
 
 
 def run_engine_directly(adapter: EngineAdapter, p):
     """The way a Phase 3 script would do it: call the engine's own API and use
     the engine's own rate arithmetic, with none of the app's code in between.
     Returns ({root_id: Hz}, description). Only possible for the fast engine;
-    for other engines this falls back to the adapter and says so."""
-    eng = adapter.engine(p["snapshot"])
+    for other engines this falls back to the adapter and says so. For a model
+    variant the brain is the one the variant's own builder made (sim/sign_fixes.py,
+    sim/realism.py or sim/celltype_params.py); the run itself is a direct call."""
+    eng = adapter.engine(p["snapshot"], p.get("variant"))
     brain = getattr(eng, "brain", None)
     if brain is None:
         r = run_from_code(adapter, p)
         return r.rates_hz, f"{adapter.engine_info['name']} via app/engine_adapter.py (no direct path for this engine)"
-    res = brain.run(excite=[int(i) for i in p["excite"]], silence=[int(i) for i in p["silence"]],
+    groups = p.get("stim_groups") or []
+    if len({g["rate_hz"] for g in groups}) > 1:
+        # Per-group rates: the engine's own {root_id: rate} form, in group order.
+        excite, rate, how = {int(i): float(g["rate_hz"]) for g in groups for i in g["ids"]}, None, "excite={id: rate}"
+    else:
+        excite, rate, how = [int(i) for i in p["excite"]], p["rate_hz"], f"rate_hz={p['rate_hz']:g}"
+    res = brain.run(excite=excite, silence=[int(i) for i in p["silence"]],
                     duration_ms=p["duration_ms"], n_trials=p["n_trials"], seed=p["seed"],
-                    rate_hz=p["rate_hz"])
+                    rate_hz=rate)
     rates = {int(k): float(v) for k, v in res.rates().items()}
-    return rates, f"FastBrain(snapshot={getattr(eng, 'snapshot', '?')}).run(...) then SimResult.rates()"
+    return rates, (f"{type(brain).__name__}(snapshot={getattr(brain, 'snapshot', '?')}).run({how}, ...) "
+                   "then SimResult.rates()")
 
 
 def run_through_app(adapter: EngineAdapter, p, timeout_s: float = 3600):
@@ -100,6 +113,8 @@ def _print_summary(adapter, result, p, top):
     s = res.summary(adapter, result, p, top=top)
     eng = s["engine"]
     print(f"Engine: {eng['name']} version {eng['version']} (code {eng['code_hash']}), snapshot {s['snapshot']}")
+    var = s.get("variant") or {}
+    print(f"Model: {var.get('label')}  (code: " + ", ".join(f"{f} {h}" for f, h in (var.get("code") or {}).items()) + ")")
     if s["is_fake"]:
         print("!! STAND-IN ENGINE: these numbers are NOT from the fly brain model. " + eng["reason"])
     print(f"Ran {s['n_trials']} trial(s) of {s['duration_ms']:g} ms in {s['wall_seconds']:.1f} s; "
@@ -119,7 +134,7 @@ def main(argv=None):
     ap.add_argument("--trials", type=int, help="override the number of trials")
     ap.add_argument("--duration", type=float, help="override the run length in ms")
     ap.add_argument("--seed", type=int, help="override the random seed")
-    ap.add_argument("--rate", type=float, help="override the input rate in Hz")
+    ap.add_argument("--rate", type=float, help="override the input rate in Hz (every stimulus group)")
     ap.add_argument("--top", type=int, default=20)
     ap.add_argument("--csv", help="write every neuron's rate to this CSV file")
     ap.add_argument("--compare", action="store_true",
@@ -129,16 +144,17 @@ def main(argv=None):
     setup = st.load_setup(args.setup, allow_path=True)
     p, changed = _params(setup, args)
     print(f"Setup: {setup['title']}  ({len(p['excite'])} stimulated, {len(p['silence'])} silenced, "
-          f"{p['duration_ms']:g} ms x {p['n_trials']} trials, seed {p['seed']}, {p['rate_hz']:g} Hz, "
-          f"snapshot {p['snapshot']})")
+          f"{p['duration_ms']:g} ms x {p['n_trials']} trials, seed {p['seed']}, snapshot {p['snapshot']})")
+    print(f"  Stimulus: {st.groups_text(p['stim_groups'])}")
+    print(f"  Model: {variant_label(p['variant'])}" + ("" if setup.get("variant") else
+          "  (setup saved before model variants existed, so: the published model)"))
     if changed:
         print("Overrides (differs from the saved setup): " + ", ".join(changed))
 
     adapter = EngineAdapter()
-    saved = setup.get("engine") or {}
-    if saved.get("code_hash") != adapter.engine_info.get("code_hash"):
-        print(f"Note: setup was saved with engine '{saved.get('name')}' code {saved.get('code_hash')}; "
-              f"now using '{adapter.engine_info['name']}' code {adapter.engine_info['code_hash']}.")
+    same, warning = st.code_check(setup, adapter.engine_info)
+    if not same:
+        print("Note: " + warning)
     if not args.compare:
         result = run_from_code(adapter, p)
         _print_summary(adapter, result, p, args.top)
