@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+# Connectome data is large and re-downloadable; never commit it.
+data/*
+!data/.gitkeep
+# Brian2 build caches and generated output
+output/
+*.pyc

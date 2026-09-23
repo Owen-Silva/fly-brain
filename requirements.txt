@@ -1,0 +1,8 @@
+# Core simulation and data stack (pinned to the versions verified in Phase 0).
+numpy==2.5.3
+pandas==3.0.6
+pyarrow==25.0.1
+matplotlib==3.11.2
+brian2==2.10.1
+scipy==1.18.1
+pytest==9.1.1
