@@ -115,3 +115,42 @@ the result was validated (see PLAN.md Phase 6). Newest entries at the bottom.
   Brian2's, so single trials differ but averages agree. Not yet compared: the
   bitter and competition conditions, and v783. The Phase 3 port had not
   finished those; `compare_phase3.py` covers them when they are done.
+
+## 2026-09-22: Phase 4, interactive explorer app
+
+- **Built:** A small website that runs on this computer
+  (`.venv\Scripts\python.exe -m app`, then open http://127.0.0.1:8765). You can
+  choose the brain map (FlyWire snapshot 630, the paper's, or 783), search
+  neurons by cell type, label or FlyWire id, and put them in Stimulate /
+  Silence / Watch lists. You then run the whole brain for a chosen length,
+  number of trials, seed and input rate, and get a replayed spike raster and a
+  ranked table of the most active neurons. Runs happen in the background so
+  the page never freezes. Setups are saved as small files in `app/setups/`.
+  Each one holds every setting needed to re-run exactly, including the
+  snapshot, the engine name and a fingerprint of its code. A ready-made setup,
+  `sugar_grn_right`, holds the paper's sugar experiment: snapshot 630, the 21
+  right-side sugar taste neurons from the reference notebooks, 100 Hz input
+  (as in Phase 3's sugar_100Hz run), 1000 ms, 30 trials, seed 0, with both
+  MN9 feeding motor neurons on the watch list.
+- **Engine:** the app reaches the simulator only through
+  `app/engine_adapter.py`. It uses `sim/fast_engine.py` (FastBrain, built once
+  per snapshot when the app starts) and the Phase 2 neuron lists from
+  `sim/connectome.py`. If the fast engine cannot be imported, the app uses the
+  slow Brian2 port (`sim/shiu_model.py`) and says so. If no engine loads at
+  all, Run is switched off and a yellow banner, which cannot be closed, says
+  why. The app never makes up results. A stand-in engine exists only for the
+  fast automated tests, and it is clearly labelled whenever it is on.
+- **Happened (Phase 4 checkpoint):** the saved sugar setup was run twice with
+  the same seed: straight through the fast engine, and through the app's own
+  web requests. The answers matched exactly. MN9 (720575940660219265) fired
+  at 67.63 Hz both ways, the other MN9 (720575940645521262) at 49.60 Hz both
+  ways, and all 409 neurons that fired had the same rate (largest difference
+  0.000000 Hz). Each run took 13 to 15 s. The web page, driven in a
+  browser, showed the same 67.63 Hz. An earlier run of the same check on
+  snapshot 783 (150 Hz) also matched exactly for all 435 neurons that fired.
+- **Tests:** `tests/test_app.py`, 19 passed in 37 s, including one test marked
+  "slow" that repeats the checkpoint against a separately built FastBrain.
+  18 fast tests run in about 5 s.
+- **Validated:** Yes for the Phase 4 checkpoint: the app and code give
+  identical results. This is a check of the app, not a new scientific
+  finding. The MN9 response itself comes from Phase 3.

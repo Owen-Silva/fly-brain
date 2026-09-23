@@ -9,3 +9,9 @@ pytest==9.1.1
 # Fast engine JIT (compiles without a C compiler).
 numba==0.67.0
 llvmlite==0.49.0
+# Phase 4 explorer app.
+fastapi==0.141.1
+uvicorn==0.53.0
+httpx==0.28.1
+starlette==1.6.0
+pydantic==2.13.5

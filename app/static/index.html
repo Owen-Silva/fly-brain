@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly Brain Explorer</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top">
+  <h1>Fly brain explorer</h1>
+  <p class="engine-line" id="engineLine">Checking the simulator&hellip;</p>
+</header>
+
+<div id="banner" class="banner" role="alert" hidden></div>
+
+<main class="layout">
+  <section class="panel controls" aria-label="Experiment setup">
+    <div class="block">
+      <h2>1. Find neurons</h2>
+      <label class="field">
+        <span>Brain map (FlyWire snapshot)</span>
+        <select id="snapshot">
+          <option value="630">630: the paper's snapshot (Phase 3)</option>
+          <option value="783">783: newer public release</option>
+        </select>
+      </label>
+      <p class="hint">Neuron ids differ between snapshots; every run and saved setup records which one it used.</p>
+      <label class="field">
+        <span>Cell type, name or FlyWire id</span>
+        <input id="q" type="search" autocomplete="off" spellcheck="false"
+               placeholder="e.g. CB0701, gustatory, 720575940660219265">
+      </label>
+      <p class="hint" id="searchInfo">Type at least 2 characters.</p>
+      <div class="bulk" id="bulk" hidden>
+        <span id="bulkText"></span>
+        <button type="button" data-bulk="excite">Stimulate all</button>
+        <button type="button" data-bulk="silence">Silence all</button>
+      </div>
+      <ul class="hits" id="hits"></ul>
+    </div>
+
+    <div class="block">
+      <h2>2. Your picks</h2>
+      <div class="pick" data-list="excite">
+        <div class="pick-head"><h3>Stimulate <span class="count" id="n-excite">0</span></h3>
+          <button type="button" class="link" data-clear="excite">Clear</button></div>
+        <p class="hint">Driven with random input spikes at the input rate.</p>
+        <ul class="chips" id="list-excite"></ul>
+      </div>
+      <div class="pick" data-list="silence">
+        <div class="pick-head"><h3>Silence <span class="count" id="n-silence">0</span></h3>
+          <button type="button" class="link" data-clear="silence">Clear</button></div>
+        <p class="hint">Their output connections are switched off for the run.</p>
+        <ul class="chips" id="list-silence"></ul>
+      </div>
+      <div class="pick" data-list="watch">
+        <div class="pick-head"><h3>Watch <span class="count" id="n-watch">0</span></h3>
+          <button type="button" class="link" data-clear="watch">Clear</button></div>
+        <p class="hint">Always shown in the results, even if they stay quiet.</p>
+        <ul class="chips" id="list-watch"></ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>3. Run</h2>
+      <div class="grid2">
+        <label class="field"><span>Length (ms)</span><input id="duration" type="number" min="1" max="10000" step="1" value="1000"></label>
+        <label class="field"><span>Repeats (trials)</span><input id="trials" type="number" min="1" max="100" step="1" value="30"></label>
+        <label class="field"><span>Input rate (Hz)</span><input id="rate" type="number" min="0" max="1000" step="1" value="150"></label>
+        <label class="field"><span>Random seed</span><input id="seed" type="number" min="0" step="1" placeholder="blank = pick one"></label>
+      </div>
+      <button type="button" class="primary" id="runBtn">Run simulation</button>
+      <p class="hint" id="runHint"></p>
+    </div>
+
+    <div class="block">
+      <h2>4. Saved setups</h2>
+      <div class="row">
+        <select id="setupSelect" aria-label="Saved setups"></select>
+        <button type="button" id="loadBtn">Load</button>
+      </div>
+      <p class="hint" id="setupInfo"></p>
+      <details class="save">
+        <summary>Save the current setup</summary>
+        <label class="field"><span>Name (a-z, 0-9, _ and -)</span><input id="saveName" type="text" maxlength="64" placeholder="sugar_plus_bitter"></label>
+        <label class="field"><span>Title</span><input id="saveTitle" type="text" maxlength="120"></label>
+        <label class="field"><span>Notes</span><textarea id="saveDesc" rows="3"></textarea></label>
+        <label class="check"><input id="saveOverwrite" type="checkbox"> Replace a setup with the same name</label>
+        <button type="button" id="saveBtn">Save setup</button>
+        <p class="hint" id="saveInfo"></p>
+      </details>
+    </div>
+  </section>
+
+  <section class="panel results" aria-label="Results">
+    <div class="block" id="statusBlock">
+      <h2>Run status</h2>
+      <p id="statusText" class="status">No run yet. Pick neurons to stimulate, then press Run.</p>
+      <div class="bar" id="bar" hidden><div class="bar-fill" id="barFill"></div></div>
+      <pre class="error" id="errorText" hidden></pre>
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h2>Spike raster</h2>
+        <div class="row tight">
+          <label class="inline">Trial <select id="trialSelect" aria-label="Trial"></select></label>
+          <button type="button" id="replayBtn" disabled>Replay</button>
+        </div>
+      </div>
+      <p class="hint">Each row is one neuron, each tick one spike, time runs left to right.
+        Stimulated neurons are at the top in the accent colour.</p>
+      <div class="raster-wrap" id="rasterWrap">
+        <canvas id="raster" height="220" aria-label="Spike raster"></canvas>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <p class="hint" id="rasterInfo"></p>
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h2>Most active neurons</h2>
+        <div class="row tight">
+          <label class="inline"><input id="inclStim" type="checkbox"> include stimulated</label>
+          <select id="topN" aria-label="How many rows"><option>25</option><option selected>50</option><option>100</option><option>250</option></select>
+        </div>
+      </div>
+      <p class="hint" id="resultsInfo">Results appear here after a run.</p>
+      <div id="watchBox"></div>
+      <div class="table-wrap">
+        <table class="rank" id="rankTable" hidden>
+          <thead><tr><th>#</th><th>Cell type</th><th>Class</th><th>Transmitter</th><th class="num">Rate (Hz)</th><th class="num">&plusmn; spread</th><th>FlyWire id</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="hint"><a id="csvLink" href="#" hidden>Download every neuron's rate (CSV)</a></p>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
