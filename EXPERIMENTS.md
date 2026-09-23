@@ -739,3 +739,85 @@ pathway, so the paper's feeding result comes out exactly the same. The big effec
 the learning centre: real Kenyon cells need a large push before they fire, and with that
 measured value only about 4% of them respond to a smell, as in real flies, instead of
 two-thirds. Details: `docs/phase7-celltype-params.md`.
+
+# EXPERIMENTS.md entry: Phase 8, learning in the mushroom body
+
+(Written by the Phase 8 lane for the main session to paste into EXPERIMENTS.md. Full
+write-up: `docs/phase8-learning.md`. Numbers: `experiments/phase8/results/`.)
+
+## 2026-09-22/23 - Phase 8: dopamine-gated learning in the mushroom body (PRELIMINARY)
+
+**Sources.** Learning rule, timing and the calibration target: Hige et al. 2015, Neuron
+88:985 (one 1-s odor paired with PPL1-γ1pedc stimulation: MBON-γ1pedc>α/β synaptic current
+-90%, spikes -80%; unpaired odor -25% spikes; backward pairing no change; α2 compartment
+needs 1 min of pairing). Timing window: Handler et al. 2019, Cell 178:60. Separate
+compartments: Cohn et al. 2015, Cell 163:1742. Which DAN teaches what: Aso & Rubin 2016,
+eLife 5:e16135. Approach/avoid MBONs: Aso et al. 2014, eLife 3:e04580. Compartment of each
+MBON/DAN type: hemibrain instance names (research doc 2.4).
+
+**What changed.** New file `sim/plasticity.py` (the baseline engine is untouched). Every
+Kenyon cell (KC) keeps an "active recently" tag (+1 per spike, time constant 1 s); every
+compartment keeps a dopamine level (+1 per DAN spike per DAN cell, time constant 0.2 s,
+chosen). Each time step, every KC -> MBON connection shrinks by exp(-eta x tag x dopamine x dt),
+only in its own compartment and brain half. Only the 62,177 KC -> MBON connections can
+change. eta calibrated once (seeds 900-904) to Hige's -90% current; α2/α3 learn 95x slower
+(calibrated to Hige's α2 result). Decision on DAN outputs: by default their fast excitatory
+synapses (the published model's +1 sign) are switched off for the 305 DANs with a known
+compartment, so dopamine acts only through learning; the published treatment was run too.
+Model: the mushroom-body circuit (all PNs, KCs, MBONs, DANs, APL, DPM; 570,433 connections,
+copied unchanged from snapshot 630), odors = 2 non-overlapping sets of 4 glomeruli given to
+their projection neurons (5.4% and 4.3% of KCs respond). Whole-brain runs as well (below).
+
+**What happened (MB circuit, 5 seeds, change after vs before, net of a no-training run
+with the same seeds).**
+- Paired (odor A + PPL1-γ1pedc): MBON-γ1pedc>α/β input from A -91% (sd 6), from B -9%
+  (sd 2); 5 of 5 seeds. Odors swapped: -89% vs -6%.
+- Unpaired +0.2%, odor only +0.2%, DAN only 0.0%.
+- Backward (DAN 0.5 s before odor): -9% (Hige: none). With a dopamine time constant of
+  0.1 s instead of 0.2 s: -0.5%; with 0.5 s: -59% (eta re-calibrated each time). So Hige's
+  backward result pins the dopamine signal to about 0.1 s in this rule.
+- Reward: PAM-γ5 + PAM-β'2a paired with A: "avoid" MBON-γ5β'2a input from A -78%, from B
+  -8%; PAM-α1: MBON-α1 -94% vs -12%. Approach-minus-avoidance input for the trained odor
+  moves toward avoidance after punishment (-0.83) and toward approach after reward (+0.10).
+- α2: 1-s pairing -10%, 60-s pairing -94% (partly built in by the calibration).
+- Each DAN changed only its own compartment's MBONs. Published fast-DAN treatment: every
+  number within 1 percentage point.
+- Whole brain, recommended sign fix `al_ln_literature` (3 seeds, all 7 conditions): smell
+  input sparse (4.9% / 4.2% of KCs). REWARD works: PAM-γ5 + PAM-β'2a paired with A,
+  MBON-γ5β'2a input from A -98.5%, from B -4% (net of no training -97.5% vs -4.6%; 3 of 3
+  seeds). PUNISHMENT cannot be seen: a sniff alone makes PPL1-γ1pedc fire about 16 spikes
+  (the artificial punishment gives about 11; in the circuit a sniff gives 0), so every test
+  sniff is itself a punishment trial; MBON-γ1pedc>α/β input from A goes 6,555 -> 46 from the
+  first to the second sniff without any training, and all 7 conditions end at -100% for
+  both odors. Trace of that drive (`trace_ppl1.py`): inside the circuit KC excitation and
+  inhibition cancel (net about 0); the net push (about 4,000 synapse-weighted spikes per
+  sniff) comes from outside, largest SMP384 (predicted transmitter dopamine, confidence
+  0.63-0.65, counted excitatory by the published model), SMP504, CRE069. Lead only, not
+  tested.
+- No fix (published brain; paired and no-training only): smell runs away (62% of KCs,
+  about 540,000 spikes and 490 PPL1-γ1pedc spikes per sniff); both conditions -100% (A) /
+  about -97% (B); nothing can be read.
+- `eln_electrical` (recommended on 2026-09-22, since superseded; 5 conditions): runaway
+  (22% / 19% of KCs, about 180 PPL1-γ1pedc spikes per sniff); everything -100%, reward not
+  odor-specific (-100% vs -93%). LN-fix `ln53_inhibitory` (comparison only; the audit found
+  it wrong for 34 cells): like the recommended fix, punishment hidden, reward -98% vs -6%.
+- Phase 3 check: learning on, no training, published, `al_ln_literature` and
+  `eln_electrical` brains, sugar 100 and 200 Hz, 3 seeds x 10 trials each: MN9 identical
+  spike for spike in all trials (68.3 and 93.3 Hz), no connection changed at all.
+
+**Validated?** PRELIMINARY. 20 automated tests pass (`20 passed`, slow tests included) (learning off = baseline engine exactly;
+only the right synapses change; one change matches the formula within 1%). Several seeds,
+both odor assignments, both DAN treatments and a dopamine time-constant sweep were run; no
+independent review. Chosen/unmeasured: dopamine time constant, spikes per light pulse,
+compartment placement by lobe (not by real synapse position), MBON28's compartment.
+
+**Plain English.** The simulated fly can now learn. Pair a smell with a "that hurt"
+dopamine signal and the output neuron that says "go towards this" stops listening to that
+smell (about 90% less input), just as in real flies, while its response to another smell
+barely moves. Without pairing, nothing changes. Reward works the same way in the reward
+compartments. This works in the mushroom-body circuit on its own. In the whole brain, with the recommended sign fix, reward learning works the same way.
+Punishment learning cannot be tested there yet: in the whole brain the smell by itself
+switches on the punishment neurons, so after a single sniff the fly "learns" that every
+smell is bad. That signal comes from neurons outside the mushroom body. The biggest one
+probably releases dopamine (a computer prediction, about 64% confident), but the model
+treats it as a plain excitatory neuron; that is the next thing to check.
