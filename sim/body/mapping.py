@@ -94,15 +94,33 @@ class SensorMapping:
     """
     r_max_hz: float = 150.0
     i_half: float = 0.01
+    #: Which antennae can smell (added 2026-09-23 for experiments/phase9_da1):
+    #: "both" (default, unchanged behaviour), "left_only" or "right_only".
+    #: "left_only" = the RIGHT antenna is covered, the lab manipulation of
+    #: removing or covering one antenna (e.g. Borst & Heisenberg 1982;
+    #: Duistermars et al. 2009). The covered side's ORNs get 0 Hz. It is a
+    #: fixed property of the trial, NOT computed from where the odor is, so
+    #: it adds no hand-written left/right decision.
+    antennae: str = "both"
+
+    def __post_init__(self):
+        if self.antennae not in ("both", "left_only", "right_only"):
+            raise ValueError(f"unknown antennae {self.antennae!r}")
 
     def rate(self, intensity):
         i = np.clip(np.asarray(intensity, float), 0.0, None)
         return self.r_max_hz * i / (i + self.i_half)
 
+    def side_rates(self, i_left_antenna, i_right_antenna):
+        """(left rate, right rate) in Hz after applying ``antennae``."""
+        rl = float(self.rate(i_left_antenna)) if self.antennae != "right_only" else 0.0
+        rr = float(self.rate(i_right_antenna)) if self.antennae != "left_only" else 0.0
+        return rl, rr
+
     def orn_rates(self, i_left_antenna, i_right_antenna, n_left, n_right):
         """Rates for the concatenated [left ORNs, right ORNs] list."""
-        return np.concatenate([np.full(n_left, float(self.rate(i_left_antenna))),
-                               np.full(n_right, float(self.rate(i_right_antenna)))])
+        rl, rr = self.side_rates(i_left_antenna, i_right_antenna)
+        return np.concatenate([np.full(n_left, rl), np.full(n_right, rr)])
 
 
 # ---------------------------------------------------------------------------
@@ -200,6 +218,45 @@ class DriveMapping:
         t = self.turn(rates)
         f = self.forward(rates)
         return turn_to_drive(t, f, self.max_modulation), t, f
+
+
+# ---------------------------------------------------------------------------
+# DA1 (cVA) read-outs (added 2026-09-23 for experiments/phase9_da1)
+# ---------------------------------------------------------------------------
+#: DNpe002 (hemibrain type VES068), snapshot 630; side from the label table's
+#: ``side`` column. The best left/right DA1 read-out for BOTH antennae
+#: smelling in docs/phase6-steering.md section 4d (PRELIMINARY).
+DNPE002_IDS = {"DNpe002_L": 720575940629428215, "DNpe002_R": 720575940620642940}
+
+
+def dna02_drive_mapping(**kw):
+    """DA1 demo read-out 1: ONLY the DNa02 pair (read and, in the "dns"
+    control, silenced). turn = tanh((DNa02_L - DNa02_R) / 20 Hz), positive =
+    left. Sign from biology: more DNa02 on one side turns the fly to that
+    side (Rayshubskiy et al. 2025, eLife, doi:10.7554/eLife.102230). DNa01 is
+    left out because it is silent for DA1 (docs/phase6-steering.md 4a).
+    Forward drive fixed at 1.0 (NOT brain-driven)."""
+    ids = {k: DN_IDS[k] for k in ("DNa02_L", "DNa02_R")}
+    base = dict(neuron_ids=ids, turn_weights={"DNa02_L": 1.0, "DNa02_R": -1.0},
+                forward_weights={})
+    base.update(kw)
+    return DriveMapping(**base)
+
+
+def dnpe002_drive_mapping(**kw):
+    """DA1 demo read-out 2: ONLY the DNpe002 pair.
+    turn = tanh((DNpe002_L - DNpe002_R) / 20 Hz), positive = left.
+
+    ASSUMPTION (UNVERIFIED): nobody has shown what DNpe002 does in a real
+    fly, so "more left DNpe002 = turn left" is our choice, made by analogy
+    with DNa02 (ipsilateral). Because the sign is chosen, a DNpe002-driven
+    fly that turns TOWARD cVA shows only that the brain tells left from
+    right; the DIRECTION of the behaviour is then our assumption, not the
+    brain's. Forward drive fixed at 1.0 (NOT brain-driven)."""
+    base = dict(neuron_ids=dict(DNPE002_IDS),
+                turn_weights={"DNpe002_L": 1.0, "DNpe002_R": -1.0}, forward_weights={})
+    base.update(kw)
+    return DriveMapping(**base)
 
 
 # ---------------------------------------------------------------------------

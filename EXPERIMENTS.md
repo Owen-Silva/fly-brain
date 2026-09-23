@@ -1237,3 +1237,76 @@ the water and bitter results depend on the balance between the two strengths: a 
 excitation breaks one of them, exactly as the same shift does in the paper's own model (a little
 more sharply here). So it is a usable optional switch, not the new default. Details:
 `docs/phase7-conductance.md`.
+
+## 2026-09-23 - Phase 9: brain-driven steering with the cVA smell channel (DA1) in the body loop; checkpoint attempt (PARTIAL, PRELIMINARY)
+
+**What was changed.** Nothing in the brain model. Additive options in the body loop
+(`sim/body/mapping.py`: `SensorMapping(antennae="left_only"/"right_only")` covers one
+antenna; `dna02_drive_mapping()` and `dnpe002_drive_mapping()` read and silence only that
+descending-neuron pair; `DNPE002_IDS`; one line in `sim/body/loop.py`). Old behaviour
+unchanged (`tests/test_body_loop.py`: 22 passed in `.venv-body`, 20 passed + 2 skipped in
+`.venv`). Everything run with the sign fix `al_ln_literature`, snapshot 630.
+(1) Biology first, written before any closed-loop run (docs/phase9-da1-demo.md section
+1): virgin females walk toward cVA on a food background (Lebreton et al. 2014, Y-tube),
+mated ones do not; cVA is an aggregation pheromone (Bartelt 1985); close to a real male
+(2-5 mm) flies of both sexes turn away (Taisz et al. 2023); more DNa02 on one side turns
+the fly to that side (Rayshubskiy et al. 2025). Expected: turn toward cVA. Pass rule
+fixed in advance: PASS only for a normal fly with the DNa02 read-out; PARTIAL if only a
+one-antenna fly or only the DNpe002 read-out (whose turning direction is our
+assumption) works.
+(2) Brain-only check (no body), 50 ms windows, 3 seeds: the DA1 rates the body produces.
+(3) Closed loop, 1.5 s trials, source 6 mm away. Normal fly: source at +90, +45, 0, -45,
+-90 degrees. One-antenna fly: left or right antenna only, source left or right. Brain
+conditions (DNa02 or DNpe002 steers) with 3 seeds each; controls: no odor, DA1 smell
+neurons silenced and DNa02 silenced (3 seeds), DNpe002 silenced (seed 0), the
+hand-written FlyGym rule (NOT brain-driven, seed 0) and the published model (seed 0).
+142 trials in all. Metrics: turn toward the source (or toward the smelling antenna) in
+the first second, closest approach, reached / time to reach; Mann-Whitney, paired
+Wilcoxon and sign tests.
+
+**What happened.**
+- Brain only: when both antennae smell, the left/right difference is 1-3 Hz of
+  smell-neuron firing, smaller than the model's built-in left bias in both read-outs, so
+  both say "turn left" for a source on either side. With one antenna covered both
+  read-outs point to the smelling side (DNpe002 in 99-100% of windows; DNa02 only above
+  about 100 Hz).
+- Normal fly: the DNa02-driven fly turned LEFT in 15 of 15 trials whatever the source's
+  side; it turned toward the source in 6 of 12 (chance) and got no closer than the
+  silenced fly (closest approach 4.1 vs 4.2 mm, p = 0.87). DNpe002: 7 of 12, 4.2 mm.
+  NOT passed.
+- One-antenna fly, DNa02: the left-antenna fly turns left, the right-antenna fly turns
+  right: 11 of 12 trials raw, 12 of 12 against the same-seed silenced fly, +31 degrees in
+  the first second vs 0 (Mann-Whitney p = 0.0006 vs DA1 silenced and vs DNa02
+  silenced, n = 12 vs 12; paired Wilcoxon p = 0.0005). Right turns are
+  weaker than left (left DNa02 2.7-10.7 Hz, right 0.7-4.7 Hz). It did not reach the
+  source (0 of 6 with the source on the smelling side).
+- One-antenna fly, DNpe002 (direction assumed): 12 of 12, about 130 degrees, reached the
+  source 6 of 6 times when it was on the smelling side.
+- Every silenced / no-odor trial got the straight drive [1, 1] in every 50 ms window, and
+  all control paths for one walking-rhythm seed were identical (0.0 mm apart).
+- Hand-written rule (NOT brain-driven): reached the source 5 of 5 times.
+- Published model (no fix), DNa02: runaway activity, left DNa02 38-53 Hz vs right 0-0.7 Hz;
+  the fly spins left in all 5 layouts and reached the source only when it was on the
+  left (2 of 5).
+
+**Validated?** No: PRELIMINARY. Phase 6 steps done: several seeds (3 for the brain
+conditions), bug checks (tests; drive and path checks on the controls), literature,
+comparison with biology. Not done: parameter variations in the closed loop. Not
+verified: the FlyWire fly's mating status, the ORN side labels, what DNpe002 does in a
+real fly, how a one-antenna female responds to cVA specifically, and whether a static
+1/distance² cVA cloud reaching 6 mm is realistic (real cVA acts within a few mm).
+Nothing shared, no one contacted.
+
+**Plain English.** We let the brain steer the virtual fly with the one smell channel
+that the brain model can tell left from right with: the male pheromone cVA. A normal fly
+smelling with both antennae does not find the cVA: the two antennae smell almost the same,
+and the model's built-in preference for the left wins, so the fly curves left whatever
+side the smell is on. When one antenna is covered (a standard lab trick), the fly turns
+toward the side of the antenna that still smells, as a real fly is expected to, and that
+turn vanishes when the smell neurons or the steering neurons (DNa02) are silenced. So
+the Phase 9 checkpoint is met only partly: in a one-antenna fly, not in a normal fly.
+Walking speed and the legs are not controlled by the brain in any of this; FlyGym's
+built-in controller does that.
+
+Files: `experiments/phase9_da1/` (open_loop_da1.py, run_da1.py, analyze_da1.py,
+results/, plots/), `docs/phase9-da1-demo.md`.

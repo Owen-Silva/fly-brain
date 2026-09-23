@@ -35,6 +35,12 @@ DNs listed in ``TrialConfig.drive_mapping`` (8 by default; they are silenced
 in the brain AND the body receives 0 Hz from them);
 ``silence="orns"`` cuts the output of the DM1 smell neurons; ``odor_on=False``
 turns every odor source off (same arena otherwise).
+
+DA1 (cVA) options (added 2026-09-23, experiments/phase9_da1): ``orn_type=
+"ORN_DA1"``; ``drive_mapping=mapping.dna02_drive_mapping()`` or
+``mapping.dnpe002_drive_mapping()`` (only that DN pair is read and, with
+``silence="dns"``, silenced); ``sensor_mapping=SensorMapping(antennae=
+"left_only")`` covers the right antenna (a one-antenna fly).
 """
 
 from __future__ import annotations
@@ -215,7 +221,7 @@ def run_trial(cfg: TrialConfig, brain=None, log=None):
         t0 = time.perf_counter()
         if cfg.steering == "brain":
             sm = cfg.sensor_mapping
-            rl, rr = float(sm.rate(i_l)), float(sm.rate(i_r))
+            rl, rr = sm.side_rates(i_l, i_r)          # = sm.rate() unless one antenna is covered
             rates = sm.orn_rates(i_l, i_r, iface.left_ids.size, iface.right_ids.size)
             seen, fired = iface.run_window(rates, cfg.window_ms)
             drive, turn, fwd = cfg.drive_mapping.drive(seen)

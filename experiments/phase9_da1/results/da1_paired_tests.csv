@@ -1,0 +1,6 @@
+arena,condition,control,metric,n_pairs,mean_diff,n_positive,wilcoxon_p
+A,dna02,no_odor,turn_toward_source_1s_deg,12,12.66,6,0.3804
+A,dnpe002,no_odor,turn_toward_source_1s_deg,12,2.149,6,0.9697
+A,published_dna02,no_odor,turn_toward_source_1s_deg,4,-20.19,2,0.625
+B,one_dna02,one_orns_off,turn_toward_intact_1s_deg,12,31.02,12,0.0004883
+B,one_dnpe002,one_orns_off,turn_toward_intact_1s_deg,12,129.2,12,0.0004883
