@@ -1,0 +1,88 @@
+{
+ "none": {
+  "summary": "none: connections 14,687,178 -> 14,687,178 (removed 0, 0 synapses); sign flipped for 0 neurons (0 to inhibitory, 0 to excitatory; 0 connections, 0 synapses)",
+  "removed_connections": 0,
+  "removed_synapses": 0,
+  "flipped_neurons": 0,
+  "flipped_connections": 0,
+  "to_inhibitory": 0,
+  "to_excitatory": 0,
+  "params": null
+ },
+ "al_ln_literature": {
+  "summary": "al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "removed_connections": 51539,
+  "removed_synapses": 351448,
+  "flipped_neurons": 13,
+  "flipped_connections": 10455,
+  "to_inhibitory": 13,
+  "to_excitatory": 0,
+  "params": null
+ },
+ "eln_electrical": {
+  "summary": "eln_electrical: connections 14,687,178 -> 14,668,930 (removed 18,248, 162,261 synapses); sign flipped for 0 neurons (0 to inhibitory, 0 to excitatory; 0 connections, 0 synapses)",
+  "removed_connections": 18248,
+  "removed_synapses": 162261,
+  "flipped_neurons": 0,
+  "flipped_connections": 0,
+  "to_inhibitory": 0,
+  "to_excitatory": 0,
+  "params": null
+ },
+ "known_nt": {
+  "summary": "known_nt: connections 14,687,178 -> 14,687,178 (removed 0, 0 synapses); sign flipped for 1334 neurons (456 to inhibitory, 878 to excitatory; 107,380 connections, 409,927 synapses)",
+  "removed_connections": 0,
+  "removed_synapses": 0,
+  "flipped_neurons": 1334,
+  "flipped_connections": 107380,
+  "to_inhibitory": 456,
+  "to_excitatory": 878,
+  "params": null
+ },
+ "ln53_inhibitory": {
+  "summary": "ln53_inhibitory: connections 14,687,178 -> 14,687,178 (removed 0, 0 synapses); sign flipped for 53 neurons (53 to inhibitory, 0 to excitatory; 32,409 connections, 242,039 synapses)",
+  "removed_connections": 0,
+  "removed_synapses": 0,
+  "flipped_neurons": 53,
+  "flipped_connections": 32409,
+  "to_inhibitory": 53,
+  "to_excitatory": 0,
+  "params": null
+ },
+ "al_ln_literature_wsyn0.9": {
+  "summary": "al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "removed_connections": 51539,
+  "removed_synapses": 351448,
+  "flipped_neurons": 13,
+  "flipped_connections": 10455,
+  "to_inhibitory": 13,
+  "to_excitatory": 0,
+  "params": {
+   "w_syn": 0.24750000000000003
+  }
+ },
+ "al_ln_literature_wsyn1.1": {
+  "summary": "al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "removed_connections": 51539,
+  "removed_synapses": 351448,
+  "flipped_neurons": 13,
+  "flipped_connections": 10455,
+  "to_inhibitory": 13,
+  "to_excitatory": 0,
+  "params": {
+   "w_syn": 0.30250000000000005
+  }
+ },
+ "al_ln_literature_wsyn1.2": {
+  "summary": "al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)",
+  "removed_connections": 51539,
+  "removed_synapses": 351448,
+  "flipped_neurons": 13,
+  "flipped_connections": 10455,
+  "to_inhibitory": 13,
+  "to_excitatory": 0,
+  "params": {
+   "w_syn": 0.33
+  }
+ }
+}

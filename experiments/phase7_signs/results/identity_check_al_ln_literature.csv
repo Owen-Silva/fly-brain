@@ -1,0 +1,6 @@
+fix,condition,trials,spikes_baseline,spikes_fixed,identical
+al_ln_literature,sugar_100Hz,10,95881,95881,True
+al_ln_literature,sugar_200Hz,10,169546,169546,True
+al_ln_literature,water_200Hz,10,74432,74432,True
+al_ln_literature,bitter_200Hz,10,64405,64405,True
+al_ln_literature,sugar100_bitter120,10,91812,91812,True

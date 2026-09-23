@@ -1,0 +1,6 @@
+config,trials,kc_pct_per_trial_mean,kc_pct_per_trial_sd,kc_pct_per_trial_nonrunaway,kc_pct_rate_over_0p5Hz,runaway_trials,real_flies
+none,90,64.22,0.15,,64.27,90,"about 5-10% (Turner 2008; Honegger 2011, background, not re-read)"
+al_ln_literature,90,3.62,0.11,3.62,3.61,0,"about 5-10% (Turner 2008; Honegger 2011, background, not re-read)"
+eln_electrical,90,20.26,0.4,,20.59,90,"about 5-10% (Turner 2008; Honegger 2011, background, not re-read)"
+known_nt,90,53.3,0.22,,53.35,90,"about 5-10% (Turner 2008; Honegger 2011, background, not re-read)"
+ln53_inhibitory,90,3.95,0.13,3.95,3.98,0,"about 5-10% (Turner 2008; Honegger 2011, background, not re-read)"

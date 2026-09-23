@@ -1,0 +1,61 @@
+neurons with outgoing connections: 127,015
+known_nt available (mapped from v783): 77,161; one fast transmitter: 66,837
+activity: baseline runs found
+
+A literature disagrees with model sign (fixed by known_nt): 1,334 neurons, 409,927 outgoing synapses, 0 active in the Phase 3 taste runs (0 synapses), 24 under Ir94e (runaway-contaminated), 29 under DM1 (all runaway)
+    (optic_lobes) (optic_lobes) n=806 sign -1/1 top=acetylcholine conf=0.46 known='acetylcholine' out=126,463 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=2
+    Mi1 (medulla_intrinsic) n=37 sign -1 top=acetylcholine conf=0.43 known='acetylcholine' out=34,125 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    L4 (L1-5) n=222 sign -1 top=acetylcholine conf=0.40 known='acetylcholine' out=27,601 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    PS130 () n=2 sign 1 top=acetylcholine conf=0.92 known='gaba' out=24,384 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=1
+    il3LN6 (ALLN) n=2 sign 1 top=gaba conf=0.33 known='gaba' out=24,019 taste-active=0 (max 0.0 Hz) ir94e-active=2 dm1-active=2
+    lLN2P_b (ALLN) n=9 sign 1 top=gaba conf=0.33 known='gaba, MIP; acetylcholine-negative' out=20,735 taste-active=0 (max 0.0 Hz) ir94e-active=9 dm1-active=9
+    PS123 () n=2 sign 1 top=acetylcholine conf=0.96 known='gaba' out=19,490 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    L5 (L1-5) n=48 sign -1 top=acetylcholine conf=0.42 known='acetylcholine' out=17,263 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+B top label disagrees with model sign (no literature; paper's per-synapse rule): 695 neurons, 218,821 outgoing synapses, 7 active in the Phase 3 taste runs (4,882 synapses), 29 under Ir94e (runaway-contaminated), 29 under DM1 (all runaway)
+    PS116 () n=1 sign -1 top=acetylcholine conf=0.42 known='' out=2,555 taste-active=1 (max 1.4 Hz) ir94e-active=1 dm1-active=0
+    CB0207 () n=2 sign 1 top=glutamate conf=0.37 known='' out=2,729 taste-active=1 (max 6.5 Hz) ir94e-active=0 dm1-active=0
+    CB0722 () n=1 sign 1 top=glutamate conf=0.36 known='' out=699 taste-active=1 (max 21.0 Hz) ir94e-active=1 dm1-active=0
+    CB0858 (motor) n=1 sign -1 top=acetylcholine conf=0.37 known='' out=120 taste-active=1 (max 40.3 Hz) ir94e-active=0 dm1-active=0
+    DNge060 (DN) n=1 sign 1 top=glutamate conf=0.37 known='' out=101 taste-active=1 (max 0.9 Hz) ir94e-active=0 dm1-active=0
+    CB0875 (motor) n=1 sign -1 top=acetylcholine conf=0.33 known='' out=22 taste-active=1 (max 1.0 Hz) ir94e-active=0 dm1-active=0
+    CB0871 (motor) n=1 sign -1 top=acetylcholine conf=0.30 known='' out=10 taste-active=1 (max 65.7 Hz) ir94e-active=0 dm1-active=0
+    lLN2F_a (ALLN) n=4 sign 1 top=gaba conf=0.35 known='' out=34,771 taste-active=0 (max 0.0 Hz) ir94e-active=4 dm1-active=4
+C known monoamine, treated as fast excitatory (assumption): 599 neurons, 540,185 outgoing synapses, 10 active in the Phase 3 taste runs (4,381 synapses), 177 under Ir94e (runaway-contaminated), 196 under DM1 (all runaway)
+    CB0892 () n=2 sign 1 top=dopamine conf=0.49 known='serotonin' out=1,500 taste-active=2 (max 30.0 Hz) ir94e-active=0 dm1-active=0
+    CB0262 () n=2 sign 1 top=serotonin conf=0.47 known='serotonin' out=1,031 taste-active=2 (max 39.5 Hz) ir94e-active=0 dm1-active=0
+    CB0212 () n=2 sign 1 top=serotonin conf=0.51 known='serotonin' out=858 taste-active=2 (max 16.5 Hz) ir94e-active=0 dm1-active=1
+    SMP495c () n=2 sign -1 top=glutamate conf=0.89 known='gaba-negative; tyramine' out=1,174 taste-active=1 (max 11.5 Hz) ir94e-active=0 dm1-active=0
+    DNg28 (DN) n=4 sign -1/1 top=gaba conf=0.61 known='serotonin; serotonin' out=707 taste-active=3 (max 20.9 Hz) ir94e-active=0 dm1-active=0
+    OA-AL2b2 () n=4 sign 1 top=acetylcholine conf=0.83 known='tyramine' out=86,348 taste-active=0 (max 0.0 Hz) ir94e-active=4 dm1-active=4
+    OA-AL2i1 () n=2 sign 1 top=octopamine conf=0.78 known='octopamine' out=18,340 taste-active=0 (max 0.0 Hz) ir94e-active=2 dm1-active=2
+    AVLP544 () n=2 sign -1 top=gaba conf=0.65 known='serotonin' out=18,181 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+C predicted monoamine, no literature, treated as fast excitatory (assumption): 1,171 neurons, 313,423 outgoing synapses, 23 active in the Phase 3 taste runs (12,531 synapses), 49 under Ir94e (runaway-contaminated), 57 under DM1 (all runaway)
+    CB0573 () n=2 sign 1 top=dopamine conf=0.68 known='' out=3,215 taste-active=2 (max 75.7 Hz) ir94e-active=0 dm1-active=1
+    (gustatory) (gustatory) n=52 sign 1 top=serotonin conf=0.50 known='' out=6,579 taste-active=7 (max 197.7 Hz) ir94e-active=0 dm1-active=0
+    () () n=110 sign 1 top=serotonin conf=0.55 known='gaba-negative' out=21,109 taste-active=1 (max 54.6 Hz) ir94e-active=1 dm1-active=3
+    CB0461 () n=2 sign 1 top=dopamine conf=0.68 known='' out=2,179 taste-active=1 (max 30.6 Hz) ir94e-active=1 dm1-active=1
+    CB0017 () n=2 sign 1 top=dopamine conf=0.45 known='' out=1,065 taste-active=2 (max 7.0 Hz) ir94e-active=0 dm1-active=0
+    DNpe007 (DN) n=2 sign 1 top=serotonin conf=0.45 known='' out=1,032 taste-active=2 (max 40.8 Hz) ir94e-active=1 dm1-active=0
+    CB0494 () n=2 sign 1 top=dopamine conf=0.67 known='' out=866 taste-active=2 (max 14.1 Hz) ir94e-active=0 dm1-active=0
+    CB0088 () n=2 sign 1 top=dopamine conf=0.50 known='' out=823 taste-active=1 (max 48.3 Hz) ir94e-active=0 dm1-active=0
+D histamine (literature), model sign kept (assumption): 3,308 neurons, 105,027 outgoing synapses, 0 active in the Phase 3 taste runs (0 synapses), 0 under Ir94e (runaway-contaminated), 0 under DM1 (all runaway)
+    R1-6 (visual) n=2310 sign -1/1 top=acetylcholine conf=0.46 known='histamine' out=64,176 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    R7-8 (visual) n=940 sign -1/1 top=acetylcholine conf=0.46 known='histamine; acetylcholine, histamine' out=35,872 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    (optic_lobes) (optic_lobes) n=44 sign -1/1 top=acetylcholine conf=0.44 known='histamine' out=2,411 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    (AN) (AN) n=4 sign 1 top=dopamine conf=0.54 known='histamine; Dh44' out=1,027 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    (L1-5) (L1-5) n=4 sign -1/1 top=acetylcholine conf=0.58 known='histamine' out=726 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    HBeyelet (optic_lobes) n=4 sign -1 top=glutamate conf=0.32 known='histamine, acetylcholine' out=517 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    L5 (L1-5) n=1 sign 1 top=acetylcholine conf=0.71 known='histamine' out=248 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+    R1-6 (optic_lobes) n=1 sign 1 top=acetylcholine conf=0.42 known='histamine' out=50 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs): 5,975 neurons, 1,221,331 outgoing synapses, 0 active in the Phase 3 taste runs (0 synapses), 3245 under Ir94e (runaway-contaminated), 3455 under DM1 (all runaway)
+    KCab (Kenyon_Cell) n=1643 sign 1 top=dopamine conf=0.59 known='acetylcholine; sNPF; acetylcholine, sNPF' out=353,741 taste-active=0 (max 0.0 Hz) ir94e-active=1230 dm1-active=1310
+    KCg-m (Kenyon_Cell) n=2187 sign 1 top=dopamine conf=0.75 known='acetylcholine; sNPF; acetylcholine, sNPF' out=329,181 taste-active=0 (max 0.0 Hz) ir94e-active=1915 dm1-active=1979
+    KCapbp-m (Kenyon_Cell) n=338 sign 1 top=dopamine conf=0.51 known='acetylcholine; acetylcholine' out=84,777 taste-active=0 (max 0.0 Hz) ir94e-active=2 dm1-active=8
+    lLN1_bc (ALLN) n=20 sign 1 top=dopamine conf=0.30 known='acetylcholine' out=78,819 taste-active=0 (max 0.0 Hz) ir94e-active=20 dm1-active=20
+    KCapbp-ap2 (Kenyon_Cell) n=298 sign 1 top=dopamine conf=0.51 known='acetylcholine; acetylcholine' out=70,480 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=2
+    KCapbp-ap1 (Kenyon_Cell) n=279 sign 1 top=dopamine conf=0.48 known='acetylcholine; acetylcholine' out=68,521 taste-active=0 (max 0.0 Hz) ir94e-active=10 dm1-active=12
+    KCg-d (Kenyon_Cell) n=295 sign 1 top=dopamine conf=0.65 known='acetylcholine; sNPF; acetylcholine, sNPF' out=37,867 taste-active=0 (max 0.0 Hz) ir94e-active=11 dm1-active=12
+    KCab-p (Kenyon_Cell) n=128 sign 1 top=dopamine conf=0.62 known='acetylcholine; acetylcholine' out=36,156 taste-active=0 (max 0.0 Hz) ir94e-active=0 dm1-active=0
+
+A by direction: to inhibitory 456, to excitatory 878
+E includes the 44 eLNs: 34

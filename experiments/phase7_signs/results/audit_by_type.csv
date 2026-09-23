@@ -1,0 +1,518 @@
+category,cell_class,type,n,ref_sign,top_nt,mean_conf,known_nt,source,out_synapses,taste_active_neurons,ir94e_active_neurons,dm1_active_neurons,taste_max_hz,active_out_synapses
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,(optic_lobes),806,-1/1,acetylcholine,0.46,acetylcholine,"Davis et al., 2020 (TAPIN)",126463,0,0,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),medulla_intrinsic,Mi1,37,-1,acetylcholine,0.43,acetylcholine,"Davis et al., 2020 (TAPIN)",34125,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),L1-5,L4,222,-1,acetylcholine,0.4,acetylcholine,"Davis et al., 2020 (TAPIN)",27601,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,PS130,2,1,acetylcholine,0.92,gaba,"Nern et al., 2024 (EASI-FISH)",24384,0,0,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),ALLN,il3LN6,2,1,gaba,0.33,gaba,"Tanaka et al., 2012 (immuno)",24019,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),ALLN,lLN2P_b,9,1,gaba,0.33,"gaba, MIP; acetylcholine-negative","Sizemore et al., 2023 (immuno); Croset et al. 2018 (scRNA-seq)",20735,0,9,9,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,PS123,2,1,acetylcholine,0.96,gaba,"Nern et al., 2024 (EASI-FISH)",19490,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),L1-5,L5,48,-1,acetylcholine,0.42,acetylcholine,"Davis et al., 2020 (TAPIN)",17263,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),MBIN,DPM,2,1,dopamine,0.63,"serotonin; amnesiac; gaba; gaba, serotonin",Lee et al. 2011 (immuno); Waddell et al. 2000 (immuno); Haynes et al. 2015 (immuno); Aso et al. 2019 (scRNA-seq),15707,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,(),14,-1/1,serotonin,0.73,glutamate,"Nern et al., 2024 (EASI-FISH)",11902,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),L1-5,(L1-5),31,-1/1,acetylcholine,0.54,acetylcholine,"Davis et al., 2020 (TAPIN)",6242,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB6E3,5,1,glutamate,0.38,glutamate,Hasenhuetl et al. 2024 (intersection),6098,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,LPsP,2,1,acetylcholine,0.46,"dopamine; glutamate; dopamine, glutamate, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative","Alekseyenko et al., 2013 (immuno); Reimers et al. (intersection); Wolff et al., 2024 (EASI-FISH)",5494,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),ALLN,v2LN36,2,1,serotonin,0.53,glutamate,"Chou et al., 2022 (immuno)",4506,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,SAD034,2,1,acetylcholine,0.88,glutamate,Guo et al. 2022,3764,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,LHPV6o1,2,-1,glutamate,0.84,acetylcholine,"Dolan et al., 2019 (immuno)",3705,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4I0",4,1,glutamate,0.27,"glutamate, Nplp1, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative,  tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",3429,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,CB0627,2,-1,gaba,0.51,acetylcholine,"Dolan et al., 2019 (immuno)",3407,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB7E2,3,1,glutamate,0.41,"glutamate,  acetylcholine-negative, gaba-negative; glutamate","Wolff et al., 2024 (EASI-FISH); Hasenhuetl et al. 2024 (intersection)",3357,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4D0",2,1,glutamate,0.28,glutamate,"Wolff et al., 2024 (EASI-FISH)",2844,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB7E1,2,1,glutamate,0.44,"glutamate,  acetylcholine-negative, gaba-negative; glutamate","Wolff et al., 2024 (EASI-FISH); Hasenhuetl et al. 2024 (intersection)",2674,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,Delta7,5,1,glutamate,0.43,"glutamate, serotonin, proctolin, acetylcholine-negative, gaba-negative, dopamine-negative, tyramine-negative, octopamine-negative; glutamate","Wolff et al., 2024 (EASI-FISH); Turner-Evans et al. 2020 (scRNA-seq)",2378,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,T5a,13,-1,acetylcholine,0.41,acetylcholine; acetylcholine,Mauss et al. 2014 (immuno); Shinomiya et al. 2014 (RT-PCR),2280,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,T4d,16,-1,acetylcholine,0.42,acetylcholine,Takemura et al. 2011 (RT-PCR),2008,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB2E10,4,1,glutamate,0.35,"glutamate, MIP, tachykinin, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1996,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DAN,PPL203,2,1,dopamine,0.82,dopamine; dopamine; gaba,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",1906,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4I6",2,1,glutamate,0.42,"glutamate,  Nplp1, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",1885,0,0,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,LNO1,1,1,acetylcholine,0.47,"gaba, acetylcholine-negative, glutamate-negative","Wolff et al., 2024 (EASI-FISH)",1840,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,LC16,2,-1,glutamate,0.37,acetylcholine; gaba-negative,"Davis et al., 2020 (TAPIN); Ito et al., 2013 (immuno, lineage based)",1750,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNd03,2,1,glutamate,0.37,glutamate,"Cheong et al., 2023 (EASI-FISH)",1748,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNg34,2,1,octopamine,0.83,"glutamate, octopamine; octopamine","Cheong et al., 2023 (EASI-FISH); Certel et al., 2010 (MCFO)",1744,0,0,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,DN1pA,5,1,glutamate,0.35,glutamate; allatostatin-c; allatostatin-c; CNMa; Dh31; acetylcholine-negative,"Guo et al. 2016 (immuno); Diaz et al., 2019 (immuno); Reinhard et al., 2023 (immuno); Jin et al., 2021 (immuno); Goda et al., 2016 (immuno); Croset et al., 2018 (scRNA-seq)",1517,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,T4a,14,-1,acetylcholine,0.41,acetylcholine,Takemura et al. 2011 (RT-PCR),1508,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB2E9,2,1,glutamate,0.42,"glutamate, MIP, tachykinin, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1493,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,ExR1,1,-1,gaba,0.52,"acetylcholine, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative, neuropeptides-negative","Wolff et al., 2024 (EASI-FISH)",1459,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB6I0,2,1,serotonin,0.29,glutamate,"Wolff et al., 2024 (EASI-FISH)",1333,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,T5d,9,-1,acetylcholine,0.42,acetylcholine; acetylcholine,Mauss et al. 2014 (immuno); Shinomiya et al. 2014 (RT-PCR),1267,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,FR1,4,-1,gaba,0.43,"acetylcholine, sNPF, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1262,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4I3",3,1,serotonin,0.42,"glutamate, Nplp1, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",1113,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,LC10a,2,-1,glutamate,0.41,acetylcholine,"Davis et al., 2020 (TAPIN)",1096,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNd02,2,1,serotonin,0.34,"glutamate, tyramine","Cheong et al., 2023 (EASI-FISH)",1092,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4I5",1,1,glutamate,0.32,"glutamate, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",1038,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNc01,2,1,dopamine,0.5,SIFamide; acetylcholine-negative; glutamate,"Martelli et al. 2017 (immuno); Croset et al., 2018 (scRNA-seq); Cavanaugh et al., 2016 (RNA-seq)",897,0,1,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNc02,2,1,dopamine,0.54,SIFamide; acetylcholine-negative; glutamate,"Martelli et al. 2017 (immuno); Croset et al., 2018 (scRNA-seq); Cavanaugh et al., 2016 (RNA-seq)",889,0,2,2,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB7B0,2,1,serotonin,0.48,"glutamate, Nplp1, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",874,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB2E8,1,1,glutamate,0.38,"glutamate, MIP, tachykinin, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",649,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4A2",2,1,glutamate,0.39,"glutamate, myosupressin, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",555,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB6I1,1,1,serotonin,0.3,glutamate,"Wolff et al., 2024 (EASI-FISH)",516,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB5B1,2,1,glutamate,0.42,"glutamate, myosupressin, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",501,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),Kenyon_Cell,KCg-m,1,-1,gaba,0.52,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",499,0,1,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB2E4,1,1,serotonin,0.58,"glutamate, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",469,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB2K1,1,1,serotonin,0.35,"tyramine, serotonin, glutamate, Dh44, proctolin, acetylcholine-negative, gaba-negative, dopamine-negative, octopamine-negative; tyramine","Wolff et a., 2024 (EASI-FISH); Chiang et al., 2011 (MCFO)",445,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,CB.FB5B0,2,1,glutamate,0.42,"glutamate, myosupressin, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",405,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,VS,1,-1,acetylcholine,0.37,acetylcholine,"Zhao et  al., 2023 (FISH)",340,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,P1-9,1,1,glutamate,0.46,"octopamine; octopamine; glutamate, acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Busch et al., 2009 (immuno); Sinakevitch and Strausfeld 2006 (immuno); Wolff et a., 2024 (EASI-FISH)",307,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,AVLP026,1,-1,gaba,0.33,acetylcholine,"Dolan et al., 2019 (immuno)",300,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,"MC61,MC64",1,-1,gaba,0.6,acetylcholine,"Nern et al., 2024 (EASI-FISH)",261,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,"CB.FB3,4I9",1,1,glutamate,0.4,"glutamate,  acetylcholine-negative, gaba-negative, dopamine-negative, serotonin-negative,  tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",226,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,Tan,1,-1,gaba,0.4,acetylcholine,"Davis et al., 2020 (TAPIN)",169,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),olfactory,ORN_V,1,-1,gaba,0.68,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",156,0,1,1,0.0,0
+A literature disagrees with model sign (fixed by known_nt),optic_lobes,Dm3,2,1,acetylcholine,0.53,glutamate,"Davis et al., 2020 (TAPIN)",137,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),visual,R7-8,2,-1/1,acetylcholine,0.49,acetylcholine,"Davis et al., 2020 (TAPIN)",103,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,LC25,1,1,acetylcholine,0.81,glutamate,"Nern et al., 2024 (EASI-FISH)",100,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),,"LC25,LC26",2,1,acetylcholine,0.64,glutamate,"Nern et al., 2024 (EASI-FISH)",94,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),TuBu,TuBu08,2,-1,gaba,0.44,acetylcholine; gaba-negative,"Duan et al., 2023 (immuno)",40,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,SA1,1,1,serotonin,0.41,"glutamate, acetylcholine-negative, gaba-negative","Wolff et al., 2024 (EASI-FISH)",34,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNg14,1,-1,gaba,0.32,acetylcholine,"Cheong et al., 2023 (EASI-FISH)",30,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNg02_c,1,-1,acetylcholine,0.41,acetylcholine,"Cheong et al., 2023 (EASI-FISH)",5,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),CX,ER3a,1,1,acetylcholine,0.3,gaba,"Xie et al., 2017 (immuno)",2,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),DN,DNg02_b,1,-1,glutamate,0.49,acetylcholine,"Cheong et al., 2023 (EASI-FISH)",1,0,0,0,0.0,0
+A literature disagrees with model sign (fixed by known_nt),olfactory,ORN_VL1,1,-1,glutamate,0.45,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,PS116,1,-1,acetylcholine,0.42,,,2555,1,1,0,1.4,2555
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0207,2,1,glutamate,0.37,,,2729,1,0,0,6.5,1375
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0722,1,1,glutamate,0.36,,,699,1,1,0,21.0,699
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0858,1,-1,acetylcholine,0.37,,,120,1,0,0,40.3,120
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge060,1,1,glutamate,0.37,,,101,1,0,0,0.9,101
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0875,1,-1,acetylcholine,0.33,,,22,1,0,0,1.0,22
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0871,1,-1,acetylcholine,0.3,,,10,1,0,0,65.7,10
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,lLN2F_a,4,1,gaba,0.35,,,34771,0,4,4,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,LC12,67,-1/1,glutamate,0.37,,,25738,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,lLN2X04,4,1,gaba,0.37,,,22474,0,4,4,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,(),89,-1/1,acetylcholine,0.39,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",19734,0,1,2,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),optic_lobes,(optic_lobes),117,-1/1,acetylcholine,0.37,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",15215,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,CB.FB6E4,5,1,glutamate,0.38,"glutamate; glutamate, acetylcholine; glutamate, acetylcholine, allatostatin-c, Nplp1, gaba-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Hasenhuetl et al. 2024 (intersection); Jones et al., 2024 (immuno); Wolff et al., 2024 (EASI-FISH)",12422,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,v2LN30,1,1,glutamate,0.28,,,11306,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,LC17,12,1,glutamate,0.37,,,6413,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,(ALLN),10,-1/1,glutamate,0.34,,,6100,0,8,8,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,OA-ASM1,1,1,glutamate,0.37,octopamine,"Busch et al., 2009 (immuno)",4892,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),AN,(AN),26,-1/1,glutamate,0.37,,,4644,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0588,2,1,glutamate,0.37,,,3780,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,AVLP078,1,-1,acetylcholine,0.39,,,3511,0,0,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0448,1,-1,acetylcholine,0.46,,,2603,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,EL,6,1,gaba,0.44,"octopamine; octopamine, acetylcholine-negative, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative","Sinakevitch and Strausfeld 2006 (immuno); Wolff et a., 2024 (EASI-FISH)",2433,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,PS083,3,-1,acetylcholine,0.41,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",2309,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,aMe3,1,-1,acetylcholine,0.33,,,2095,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,PS175,1,-1,acetylcholine,0.44,,,1938,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,ATL021,1,-1,acetylcholine,0.4,,,1796,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0596,1,-1,acetylcholine,0.38,,,1688,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),optic_lobes,T1,145,-1/1,gaba,0.39,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",1622,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,PFGs,7,1,glutamate,0.4,"tyramine, MIP, Dh331, acetylcholine-negative, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",1596,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,vLN24,1,-1,acetylcholine,0.38,,,1396,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),gustatory,(gustatory),9,1,glutamate,0.39,,,1300,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,SMP588,3,1,glutamate,0.44,eclosion hormone,"Scott et al., 2020 (immuno)",1274,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,AVLP488,1,1,glutamate,0.47,,,1240,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,LAL132,2,-1,acetylcholine,0.35,,,1234,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,WED099,2,-1,acetylcholine,0.44,,,1098,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,v2LN41,2,-1,acetylcholine,0.38,,,1083,0,2,2,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,LC21,1,-1,acetylcholine,0.41,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1011,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,AVLP039,1,1,glutamate,0.51,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",877,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,TPMN,4,1,glutamate,0.43,,,749,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),optic_lobes,Am,16,-1/1,gaba,0.36,,,727,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,v2LN38,1,-1,acetylcholine,0.4,,,714,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNp01,1,1,glutamate,0.27,,,666,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,LNda,1,1,glutamate,0.4,"ITP, dNPF; ITP; acetylcholine-negative","Reinhard et al., 2023 (scRNA-seq); Hermann-Luibl et al., 2014 (immuno); Croset et al., 2018 (scRNA-seq)",654,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,l2LN22,1,1,gaba,0.37,,,634,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,PFR,1,1,glutamate,0.46,tyramine,"Chiang et al., 2011 (MCFO)",566,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0748,1,1,gaba,0.3,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",525,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0034,1,-1,acetylcholine,0.41,,,509,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,"ATL035,ATL036",1,1,glutamate,0.41,,,468,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),unknown_sensory,(unknown_sensory),2,1,glutamate,0.42,,,460,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,AVLP219,1,1,glutamate,0.41,,,456,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,BM_dOcci,3,1,glutamate,0.37,,,456,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,SMP589,1,1,glutamate,0.43,,,438,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-E,9,-1/1,acetylcholine,0.39,,,433,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,l2LN23,1,-1,acetylcholine,0.47,,,411,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,AVLP190c,1,1,glutamate,0.46,,,382,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0075,1,1,glutamate,0.36,,,294,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),ALLN,v2LN40_2,1,-1,acetylcholine,0.37,,,281,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0532,1,1,glutamate,0.45,,,267,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge045,1,-1,acetylcholine,0.41,,,266,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0446,1,1,glutamate,0.42,,,255,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge117,2,-1,acetylcholine,0.4,,,239,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,(CX),1,1,glutamate,0.35,,,186,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,BM_InOm,6,1,glutamate,0.33,,,185,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,BM_dPoOr,1,1,glutamate,0.27,,,168,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,"MC61,MC64",3,1,gaba,0.4,,,138,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,CB0189,1,1,glutamate,0.39,,,129,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),thermosensory,TRN_VP3a,1,1,gaba,0.41,,,114,0,1,1,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge071,1,-1,acetylcholine,0.42,,,113,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge068,1,1,glutamate,0.41,,,111,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-EVL,3,-1,acetylcholine,0.43,,,99,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,BM_vOcci_vPoOr,1,1,glutamate,0.37,,,98,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge085,4,1,glutamate,0.35,,,91,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-B,26,-1/1,acetylcholine,0.42,,,76,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0804,1,-1,acetylcholine,0.36,,,68,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),visual,ocellar retinula cell,8,-1/1,glutamate,0.44,,,61,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge152,1,1,glutamate,0.44,octopamine,"Babski et al., 2024 (MCFO)",48,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge102,2,1,glutamate,0.4,,,43,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-A,7,-1/1,glutamate,0.38,,,39,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNg10,1,-1,acetylcholine,0.38,,,37,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0706,1,-1,acetylcholine,0.32,,,36,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,(motor),2,-1/1,glutamate,0.33,,,32,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNg18_b,1,1,glutamate,0.4,,,20,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge086,1,-1,acetylcholine,0.41,,,20,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0720,1,1,glutamate,0.36,,,20,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNbe005,1,-1,acetylcholine,0.33,,,19,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-mz,2,-1/1,acetylcholine,0.35,,,19,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,"FB5J,FB5K,FB5L,FB5M,FB5N,FB5W",1,1,glutamate,0.3,,,18,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,SA3,1,1,glutamate,0.36,,,18,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),motor,CB0873,1,1,glutamate,0.27,,,18,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-EV,2,-1/1,glutamate,0.34,,,14,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),pars intercerebralis,PI,2,-1/1,serotonin,0.32,"DILP2, DILP3, DILP5; dARC1; acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Cao et al., 2001 (immuno); Mattaliano et al., 2007 (immuno); Croset et al., 2018 (scRNA-seq)",13,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge017,1,-1,acetylcholine,0.38,,,12,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),hygrosensory,HRN_VP5,2,1,gaba,0.45,,,10,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-CM,2,1,glutamate,0.36,,,10,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),pars lateralis,DNES2,1,1,glutamate,0.24,Dh31; acetylcholine-negative,"Reinhard et al., 2023 (immuno); Croset et al., 2018 (scRNA-seq)",10,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-DA,3,-1/1,serotonin,0.35,,,8,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNge013,1,1,glutamate,0.24,,,7,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),L1-5,(L1-5),1,1,gaba,0.37,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",7,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-CA,3,-1/1,acetylcholine,0.41,,,7,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-F,2,1,glutamate,0.38,,,7,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,"FB4A,FB4D,FB4E,FB4F,FB4G,FB4H,FB4I,FB4J",1,1,glutamate,0.27,,,5,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),CX,CB.FB1I1,1,1,glutamate,0.38,,,4,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),,Hugin-RG,1,-1,acetylcholine,0.49,hugin,"Reinhard et al., 2023 (immuno)",1,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),DN,DNg05_b,1,1,glutamate,0.41,,,1,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-C,1,-1,acetylcholine,0.29,,,1,0,0,0,0.0,0
+B top label disagrees with model sign (no literature; paper's per-synapse rule),mechanosensory,JO-D,1,-1,serotonin,0.34,,,1,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,CB0892,2,1,dopamine,0.49,serotonin,Yao and Scott 2022 (immuno),1500,2,0,0,30.0,1500
+"C known monoamine, treated as fast excitatory (assumption)",,CB0262,2,1,serotonin,0.47,serotonin,Yao and Scott 2022 (immuno),1031,2,0,0,39.5,1031
+"C known monoamine, treated as fast excitatory (assumption)",,CB0212,2,1,serotonin,0.51,serotonin,Yao and Scott 2022 (immuno),858,2,0,1,16.5,858
+"C known monoamine, treated as fast excitatory (assumption)",,SMP495c,2,-1,glutamate,0.89,gaba-negative; tyramine,"Ito et al., 2013 (immuno, lineage based); Chiang et al., 2011 (MCFO, unsure)",1174,1,0,0,11.5,585
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNg28,4,-1/1,gaba,0.61,serotonin; serotonin,Alekseyenko et al. 2010 (immuno); Yao and Scott 2022 (immuno),707,3,0,0,20.9,407
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2b2,4,1,acetylcholine,0.83,tyramine,"Chiang et al., 2011 (MCFO, unsure)",86348,0,4,4,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i1,2,1,octopamine,0.78,octopamine,"Busch et al., 2009 (immuno, intersection)",18340,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,AVLP544,2,-1,gaba,0.65,serotonin,"Chiang et al., 2011 (MCFO)",18181,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i2_1,2,1,octopamine,0.83,octopamine,"Busch et al., 2009 (immuno, intersection)",14800,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-ASM1,3,1,dopamine,0.38,octopamine,"Busch et al., 2009 (immuno)",13779,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,PFR,29,1,dopamine,0.49,tyramine,"Chiang et al., 2011 (MCFO)",13722,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa1,2,1,octopamine,0.82,octopamine,"Busch et al., 2009 (immuno, intersection)",13117,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i2_2,2,1,octopamine,0.85,octopamine,"Busch et al., 2009 (immuno, intersection)",12796,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,AVLP538,2,1,dopamine,0.66,serotonin,"Chiang et al., 2011 (MCFO)",11360,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,"LAL125,LAL108",4,-1,glutamate,0.54,serotonin,"Chiang et al., 2011 (MCFO)",11108,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL103,2,1,dopamine,0.79,"dopamine; dopamine; dopamine, nitric oxide","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",10617,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa4,2,1,octopamine,0.75,octopamine,"Busch et al., 2009 (immuno, intersection)",10014,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,PFL2,12,1,acetylcholine,0.73,"tyramine,  space blanket, acetylcholine-negative, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",9515,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM06,30,1,dopamine,0.8,dopamine,Mao & Davis 2009 (immuno),9417,0,2,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",optic_lobes,(optic_lobes),11,1,dopamine,0.51,serotonin,"Nern et al., 2024 (EASI-FISH)",8472,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i4,2,1,octopamine,0.72,octopamine,"Busch et al., 2009 (immuno, intersection)",8293,0,1,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP143,4,1,dopamine,0.48,tyramine,"Chiang et al., 2011 (MCFO, unsure)",7931,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM08,39,1,dopamine,0.86,dopamine,Mao & Davis 2009 (immuno),7816,0,28,30,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PLP030,3,1,dopamine,0.75,dopamine; dopamine,"Chiang et al., 2011 (MCFO); Mao and Davis 2009 (immuno)",7801,0,1,3,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,CL033,4,1,dopamine,0.74,dopamine,Mao and Davis 2009 (immuno),7704,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,ExR3,2,1,dopamine,0.42,"serotonin; serotonin, acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, negative, tyramine-negative, octopamine-negative, neuropeptides-negative","Pooryasin et al., 2015 (immuno); Wolff et a., 2024 (EASI-FISH)",6749,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,"CB.FB3,4A9",6,1,dopamine,0.41,"serotonin, space blanket, glutamate-negative, acetylcholine-negative, gaba-negative, dopamine-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",6311,0,5,5,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2b1,2,1,octopamine,0.82,octopamine,"Busch et al., 2009 (immuno)",6299,0,1,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa8,1,1,octopamine,0.72,octopamine,"Busch et al., 2009 (immuno, intersection)",6133,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM10,13,1,dopamine,0.83,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),6087,0,13,13,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa2,2,1,octopamine,0.82,octopamine,"Busch et al., 2009 (immuno, intersection)",5673,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPM1201,4,1,dopamine,0.83,dopamine,Mao & Davis 2009 (immuno),5546,0,2,0,0.1,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL101,2,1,dopamine,0.82,"dopamine; dopamine; dopamine, nitric oxide","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",5183,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CSD,CSD,2,1,serotonin,0.79,serotonin,"Dacks et al., 2006 (immuno)",4983,0,0,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL201,2,1,dopamine,0.81,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",4977,0,2,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,5-HTPMPV03,2,1,dopamine,0.44,serotonin,Pooryasin and Fiala 2015 (immuno),4968,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i3_1,2,1,octopamine,0.43,octopamine,"Busch et al., 2009 (immuno, intersection)",4943,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM05,19,1,dopamine,0.78,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),4907,0,2,3,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,"CB.FB3,4A10",4,1,dopamine,0.65,"dopamine, serotonin, glutamate-negative, acetylcholine-negative, gaba-negative, tyramine-negative, octopamine-negative; dopamine","Wolff et al., 2024 (EASI-FISH); Hulse et al., 2020 (immuno)",4741,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL107,2,1,dopamine,0.75,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",4660,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM04,30,1,dopamine,0.77,dopamine,Mao & Davis 2009 (immuno),4581,0,16,17,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,EL,11,-1,gaba,0.54,"octopamine; octopamine, acetylcholine-negative, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative","Sinakevitch and Strausfeld 2006 (immuno); Wolff et a., 2024 (EASI-FISH)",4513,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,PFGs,17,1,serotonin,0.53,"tyramine, MIP, Dh331, acetylcholine-negative, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",4332,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM01,39,1,dopamine,0.89,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),4212,0,14,17,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM11,15,1,dopamine,0.81,dopamine; dopamine,Mao & Davis 2009 (immuno),4133,0,9,9,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-AL2i3_2,2,1,octopamine,0.45,octopamine,"Busch et al., 2009 (immuno, intersection)",4124,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL202,2,1,dopamine,0.76,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",4115,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,"PPM1204,PS139",4,-1,glutamate,0.77,dopamine,"Mao & Davis 2009 (immuno, unsure)",3945,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP504,2,1,acetylcholine,0.83,serotonin,"Chiang et al., 2011 (MCFO)",3933,0,2,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,VES047,2,-1,glutamate,0.6,dopamine,"Chiang et al., 2011 (MCFO)",3918,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPM1203,2,1,dopamine,0.79,dopamine,Mao & Davis 2009 (immuno),3891,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,AVLP476,2,1,dopamine,0.68,dopamine,"Chiang et al., 2011 (MCFO)",3796,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa7,1,1,octopamine,0.73,octopamine,"Busch et al., 2009 (immuno, intersection)",3731,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM07,18,1,dopamine,0.91,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),3685,0,10,10,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL105,2,1,dopamine,0.84,"dopamine; dopamine; dopamine, sNPF","Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",3654,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL106,2,1,dopamine,0.7,dopamine; dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno); Aso et al. 2019 (scRNA-seq)",3322,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNge164,2,1,octopamine,0.67,octopamine,"Babski et al., 2024 (MCFO)",3174,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP178,2,1,acetylcholine,0.72,dopamine,"Chiang et al., 2011 (MCFO)",3059,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VPM4,1,1,octopamine,0.64,octopamine,"Busch et al., 2009 (immuno, intersection)",3049,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,CB.FBTF0,2,1,dopamine,0.58,serotonin,"Chiang et al., 2011 (MCFO)",2991,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,CB.FB2H0,6,1,dopamine,0.52,"dopamine, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative; dopamine","Wolff et al., 2024 (EASI-FISH); Hulse et al., 2020 (immuno)",2959,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SIP087,2,1,dopamine,0.69,serotonin,"Chiang et al., 2011 (MCFO)",2951,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP503,2,1,dopamine,0.75,serotonin,"Chiang et al., 2011 (MCFO)",2823,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM09,10,1,dopamine,0.76,dopamine,Mao & Davis 2009 (immuno),2820,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,CB.FB1H0,4,1,dopamine,0.44,"dopamine, Nplp1, glutamate-negative, acetylcholine-negative, gaba-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",2790,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP384,2,1,dopamine,0.64,serotonin,"Chiang et al., 2011 (MCFO)",2737,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM14,17,1,dopamine,0.89,dopamine,Mao & Davis 2009 (immuno),2570,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa3,2,1,octopamine,0.79,octopamine,"Busch et al., 2009 (immuno, intersection)",2518,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,(DAN),13,1,dopamine,0.82,dopamine,Mao & Davis 2009 (immuno),2500,0,2,4,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM12,22,1,dopamine,0.89,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),2454,0,4,6,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PAL01,2,1,dopamine,0.72,dopamine,"Chiang et al., 2011 (MCFO)",2440,0,1,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PAL03,2,1,dopamine,0.79,dopamine,"Chiang et al., 2011 (MCFO)",2408,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPM1205,2,1,dopamine,0.75,dopamine,Mao & Davis 2009 (immuno),2367,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP495a,2,-1,glutamate,0.85,gaba-negative; tyramine,"Ito et al., 2013 (immuno, lineage based); Chiang et al., 2011 (MCFO, unsure)",2075,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,CB.FB5F0,2,1,dopamine,0.43,dopamine,"Hulse et al., 2020 (immuno)",2067,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,LAL128,2,1,dopamine,0.67,dopamine,"Chiang et al., 2011 (MCFO)",1930,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNge138,2,1,octopamine,0.67,octopamine,"Babski et al., 2024 (MCFO)",1814,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPM1202,4,1,dopamine,0.77,dopamine,Mao & Davis 2009 (immuno),1761,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP341,2,1,acetylcholine,0.89,gaba-negative; tyramine,"Ito et al., 2013 (immuno, lineage based); Chiang et al., 2011 (MCFO, unsure)",1659,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa6,1,1,octopamine,0.77,octopamine,"Busch et al., 2009 (immuno, intersection)",1650,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VPM3,1,1,octopamine,0.68,octopamine,"Busch et al., 2009 (immuno, intersection)",1639,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,OA-VUMa5,2,1,octopamine,0.55,octopamine,"Busch et al., 2009 (immuno, intersection)",1429,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP495b,2,-1,glutamate,0.78,gaba-negative; tyramine,"Ito et al., 2013 (immuno, lineage based); Chiang et al., 2011 (MCFO, unsure)",1325,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP181,2,1,dopamine,0.65,dopamine,"Chiang et al., 2011 (MCFO)",1298,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL104,2,1,dopamine,0.8,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",1257,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,5-HTPMPV01,2,1,dopamine,0.43,serotonin,"Sitaraman et al., 2008 (immuno)",1249,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM13,11,1,dopamine,0.8,dopamine,Mao & Davis 2009 (immuno),1246,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPL108,2,1,dopamine,0.68,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",1192,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP348,4,1,acetylcholine,0.89,gaba-negative; tyramine,"Ito et al., 2013 (immuno, lineage based); Chiang et al., 2011 (MCFO, unsure)",1108,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,ATL042,2,1,dopamine,0.7,dopamine,"Chiang et al., 2011 (MCFO)",1107,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP505,2,1,acetylcholine,0.78,serotonin,"Chiang et al., 2011 (MCFO)",1085,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,SMP039,4,1,dopamine,0.6,serotonin,"Chiang et al., 2011 (MCFO)",1053,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PPL102,2,1,dopamine,0.45,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",1023,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM02,15,-1/1,dopamine,0.75,dopamine; dopamine,Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),1018,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,5-HTPMPD01,2,1,dopamine,0.65,serotonin,"Sitaraman et al., 2008 (immuno)",1016,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,ExR2_2,2,1,dopamine,0.5,dopamine,Nassel and Elekes 1992 (immuno),989,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,ExR2_1,2,1,dopamine,0.56,dopamine,Nassel and Elekes 1992 (immuno),942,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",unknown_sensory,aDT4,3,1,acetylcholine,0.58,serotonin,"Shih and Chiang et al., 2011 (MCFO)",940,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,CL344,2,1,dopamine,0.57,serotonin,"Chiang et al., 2011 (MCFO)",873,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNg30,2,1,serotonin,0.81,"natalisin; serotonin, MIP; acetylcholine-negative","Jiang et al., 2013 (immuno); Scheunemann et al., 2018 (immuno); Croset et al. 2018 (scRNA-seq)",822,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,IB118,2,1,serotonin,0.56,serotonin,"Chiang et al., 2011 (MCFO)",815,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",CX,"CB.FB3,4A21",4,-1/1,serotonin,0.48,"dopamine, tyramine, allatostatin-c, Dh44, SIFamide; dopamine","Janelia (EASI-FISH); Hulse et al., 2020 (immuno)",814,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM03,10,1,dopamine,0.82,dopamine,Mao & Davis 2009 (immuno),773,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PAL02,2,1,dopamine,0.69,dopamine,"Chiang et al., 2011 (MCFO)",682,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,PPL204,2,1,dopamine,0.65,dopamine; dopamine,"Mao & Davis 2009 (immuno); Niens et al., 2017 (immuno)",547,0,2,2,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DAN,PAM15,4,1,dopamine,0.89,"dopamine; dopamine, nitric oxide",Mao & Davis 2009 (immuno); Aso et al. 2019 (scRNA-seq),508,0,1,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,CL352,2,-1/1,glutamate,0.51,serotonin,"Chiang et al., 2011 (MCFO)",327,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,(),1,1,dopamine,0.51,dopamine,Mao & Davis 2009 (immuno),234,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNg26,4,1,serotonin,0.67,allatostatin-c; serotonin,"Cheong et al., 2023 (MCFO); Gautham et al. 2024 (unknown)",232,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNge150,1,1,octopamine,0.56,octopamine,"Babski et al., 2024 (MCFO)",227,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",,CL360,2,1,acetylcholine,0.5,serotonin,"Chiang et al., 2011 (MCFO)",218,0,0,0,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNge149,1,1,octopamine,0.65,octopamine,"Babski et al., 2024 (MCFO)",173,0,0,1,0.0,0
+"C known monoamine, treated as fast excitatory (assumption)",DN,DNge201,1,1,acetylcholine,0.35,octopamine,"Babski et al., 2024 (MCFO)",12,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0573,2,1,dopamine,0.68,,,3215,2,0,1,75.7,3215
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",gustatory,(gustatory),52,1,serotonin,0.5,,,6579,7,0,0,197.7,1997
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,(),110,1,serotonin,0.55,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",21109,1,1,3,54.6,1911
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0461,2,1,dopamine,0.68,,,2179,1,1,1,30.6,1207
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0017,2,1,dopamine,0.45,,,1065,2,0,0,7.0,1065
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe007,2,1,serotonin,0.45,,,1032,2,1,0,40.8,1032
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0494,2,1,dopamine,0.67,,,866,2,0,0,14.1,866
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0088,2,1,dopamine,0.5,,,823,1,0,0,48.3,424
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe086,2,1,serotonin,0.51,,,421,2,0,0,40.2,421
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",AN,(AN),175,1,serotonin,0.61,,,30048,1,0,0,18.0,371
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,CB0836,1,1,serotonin,0.29,,,19,1,0,0,3.6,19
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars intercerebralis,PI,17,1,serotonin,0.39,"DILP2, DILP3, DILP5; dARC1; acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Reinhard et al., 2023 (immuno)",112,1,0,0,11.0,3
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,lLN2T_e,4,1,serotonin,0.33,,,23165,0,4,4,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,lLN2X11,4,1,serotonin,0.41,,,19810,0,4,4,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,lLN2X05,4,1,serotonin,0.36,,,15982,0,4,4,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",unknown_sensory,(unknown_sensory),49,1,serotonin,0.57,,,11534,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,lLN1_a,3,1,serotonin,0.39,,,11366,0,3,3,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,v2LN30,1,1,serotonin,0.29,,,10736,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,(mechanosensory),29,1,serotonin,0.75,,,10598,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMP145,4,1,dopamine,0.54,,,8450,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP532,2,1,dopamine,0.7,,,6960,0,1,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,BM_InOm,121,1,dopamine,0.35,,,5590,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP438,4,1,dopamine,0.41,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",4733,0,3,4,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0623,2,1,dopamine,0.78,,,4622,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",bilateral,l-LNv,7,1,serotonin,0.77,"pdf, dNPF; glycine, acetylcholine-negative; acetylcholine-negative, gaba-negative, glutamate-negative; acetylcholine-negative","Reinhard et al., 2023 (immuno); Mao et al., 2024 (transgenics); Nern et al., 2024 (EASI-FISH); Croset et al., 2018 (scRNA-seq)",4203,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,LC12,9,1,octopamine,0.35,,,3745,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,OA-ASM3,2,1,dopamine,0.47,,,3691,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP594,2,1,serotonin,0.54,natalisin,"Jiang et al., 2013 (immuno)",3605,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0735,4,1,dopamine,0.4,,,3503,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,OA-VUMx1,1,1,dopamine,0.7,,,3419,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",visual,ocellar retinula cell,220,1,serotonin,0.58,,,3201,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP593,2,1,dopamine,0.68,,,3133,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP457,4,1,dopamine,0.71,,,3012,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe048,2,1,serotonin,0.74,CCAP,"González Segarra et al., 2023 (transgenics)",2970,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMP001,2,1,serotonin,0.45,allatostatin-a,"Vitzthum et al., 1996 (immuno)",2941,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALLN,lLN2X12,1,1,serotonin,0.29,,,2813,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,OA-ASM2,2,1,dopamine,0.49,,,2761,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0748,5,1,dopamine,0.33,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",2712,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNp30,2,1,serotonin,0.62,drosulfakinin,"Soderberg et al., 2012 (immuno)",2523,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNp32,2,1,dopamine,0.51,myosuppressin,"Carlsson et al., 2010 (immuno)",2183,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,"CRZ01,CRZ02",4,1,serotonin,0.73,"corazonin, sNPF","Kubrak et al., 2016 (immuno)",2058,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,PLP211,2,1,dopamine,0.51,,,2009,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMPp&v1B_H01,2,1,dopamine,0.59,"acetylcholine-negative, glutamate-negative, gaba-negative, serotonin-negative, dopamine-negative, tyramine-negative, octopamine-negative","Nern et al., 2024 (EASI-FISH)",1873,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0684,2,1,serotonin,0.71,,,1796,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMPp&v1B_T02,2,1,dopamine,0.4,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1712,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0053,2,1,dopamine,0.76,,,1670,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0452,2,1,dopamine,0.63,,,1609,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP219,3,1,serotonin,0.41,,,1527,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe089,2,1,serotonin,0.58,drosulfakinin,"Soderberg et al., 2012 (immuno)",1489,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0722,2,1,serotonin,0.39,,,1400,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",AN,SAG,2,1,serotonin,0.5,,,1349,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,DSKMP3,3,1,dopamine,0.36,drosulfakinin; drosulfakinin,"Soderberg et al., 2012 (immuno); Wu et al., 2019 (immuno)",1340,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP304b,2,1,serotonin,0.68,leucokinin,"Yurgel et al., 2019 (immuno)",1336,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,"CB.FB3,4A3",2,1,serotonin,0.44,"acetylcholine, glutamate, Nplp1, gaba-negative","Wolff et al., 2024 (EASI-FISH)",1315,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP155,1,1,serotonin,0.38,,,1290,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,ATL031,2,1,dopamine,0.69,,,1286,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge222,2,1,dopamine,0.5,,,1268,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge047,2,1,dopamine,0.45,,,1239,0,0,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,OA-VPM4,1,1,octopamine,0.63,,,1231,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,LAL082,2,1,serotonin,0.34,,,1224,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMPp&v1B_M02,2,1,serotonin,0.32,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",1171,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,PLP210,2,1,serotonin,0.39,,,1098,0,1,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,FC2A,4,1,serotonin,0.37,,,1072,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,DGI,2,1,serotonin,0.48,,,1051,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,OA-VPM3,1,1,octopamine,0.64,,,1022,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP403,4,1,serotonin,0.72,,,1022,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0124,1,1,dopamine,0.38,,,943,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0809,2,1,serotonin,0.5,,,937,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNp29,1,1,serotonin,0.53,dNPF; dNPF; acetylcholine-negative,"Krashes et al. 2009 (immuno); Chiang et al., 2011 (MCFO); Croset et al., 2018 (scRNA-seq)",931,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,(CX),9,1,serotonin,0.48,,,902,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-A,21,1,serotonin,0.5,,,896,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,ATL043,2,1,dopamine,0.65,,,893,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP444,4,1,serotonin,0.73,,,848,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,hDeltaJ,4,1,serotonin,0.49,,,827,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMP385,1,1,dopamine,0.69,,,821,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,labial_nerve_sensory_descending,7,1,serotonin,0.79,,,809,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CL107,1,1,serotonin,0.47,,,805,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP212c,2,1,dopamine,0.31,,,734,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge200,2,1,serotonin,0.58,,,728,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",bilateral,(bilateral),1,1,serotonin,0.84,"pdf, dNPF; glycine, acetylcholine-negative; acetylcholine-negative, gaba-negative, glutamate-negative; acetylcholine-negative","Reinhard et al., 2023 (immuno); Mao et al., 2024 (transgenics); Nern et al., 2024 (EASI-FISH); Croset et al., 2018 (scRNA-seq)",712,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge094,6,1,serotonin,0.48,,,626,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,NPFL1-I,2,1,serotonin,0.63,dNPF; dNPF; acetylcholine-negative,"Krashes et al. 2009 (immuno); Chiang et al., 2011 (MCFO); Croset et al., 2018 (scRNA-seq)",616,0,0,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,"vDeltaF,vDeltaG,vDeltaH,vDeltaI",3,1,dopamine,0.32,,,587,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,ATL032,2,1,dopamine,0.45,,,571,0,2,2,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0578,2,1,serotonin,0.46,,,554,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0364,2,1,serotonin,0.52,,,552,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0660,1,1,serotonin,0.38,,,518,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMP589,1,1,dopamine,0.36,,,503,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,BM_vOcci_vPoOr,8,1,serotonin,0.38,,,501,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,FC2B,2,1,serotonin,0.4,,,468,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0483,1,1,serotonin,0.5,,,460,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,CB.FB5I0,3,1,serotonin,0.48,,,447,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,CB0769,2,1,serotonin,0.48,,,415,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SMP588,1,1,dopamine,0.46,eclosion hormone; gaba-negative,"Scott et al., 2020 (immuno); Ito et al., 2013 (immuno, lineage based)",413,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,IB048,1,1,serotonin,0.46,,,394,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge216,1,1,serotonin,0.42,,,388,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,ATL034,1,1,serotonin,0.59,,,387,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP374,2,1,dopamine,0.46,capability,"Deng et al., 2019 (transgenics)",383,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,"ATL017,ATL018",1,1,serotonin,0.68,,,368,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CL255,1,1,serotonin,0.55,,,320,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0224,1,1,serotonin,0.33,,,315,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DAN,PAM11,1,1,dopamine,0.86,,,313,0,1,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg22,2,1,serotonin,0.73,FMRFa,"Song et al., 2023 (immuno)",282,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB0878,2,1,serotonin,0.86,"hugin, sNPF","Carlsson et al., 2013 (immuno)",258,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AOTU024,1,1,serotonin,0.57,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",256,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-B,37,1,serotonin,0.49,,,247,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,SLP463,2,1,serotonin,0.74,"proctolin, allatostatin-c","Reinhard et al., 2023 (immuno, intersection)",234,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars lateralis,CB0726,4,1,serotonin,0.46,"corazonin, sNPF","Reinhard et al., 2023 (immuno)",204,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge231,2,1,serotonin,0.46,,,187,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,"FS4A,FS4B,FS4C",4,1,serotonin,0.52,,,181,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,FC2C,2,1,serotonin,0.55,,,171,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,AVLP441,1,1,serotonin,0.62,,,131,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,"MC61,MC64",1,1,dopamine,0.41,,,123,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe015,3,1,serotonin,0.56,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",113,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,BM_Fr,1,1,serotonin,0.37,,,99,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",optic_lobes,5-HT-IR Tan,5,1,serotonin,0.7,,,87,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-FVA,4,1,serotonin,0.41,,,85,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,"FB4A,FB4D,FB4E,FB4F,FB4G,FB4H,FB4I,FB4J",2,1,serotonin,0.66,,,79,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",optic_lobes,(optic_lobes),10,1,dopamine,0.41,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",79,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",ALON,ALON3,1,1,serotonin,0.43,,,76,0,0,1,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge126,2,1,serotonin,0.73,,,69,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe054,4,1,serotonin,0.46,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",61,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,CB.FB1I1,1,1,serotonin,0.48,,,52,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg36_b,1,1,serotonin,0.33,,,50,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge114,3,1,serotonin,0.69,,,46,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge151,1,1,serotonin,0.51,,,46,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,(motor),1,1,serotonin,0.47,,,43,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,"FB5J,FB5K,FB5L,FB5M,FB5N,FB5W",2,1,serotonin,0.52,,,42,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CB.FBTI1,1,1,serotonin,0.4,,,31,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge109,1,1,serotonin,0.7,,,29,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",CX,FS3,1,1,serotonin,0.55,,,27,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,CAPA,2,1,octopamine,0.32,capability; myosupressin,"Reinhard et al., 2023 (immuno); McKim et al. 2024 (immuno)",23,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",olfactory,ORN_VA1v,1,1,serotonin,0.77,,,23,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,"CL228,SMP491",1,1,serotonin,0.44,,,21,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge102,1,1,serotonin,0.43,,,19,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-F,4,1,serotonin,0.45,,,19,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",optic_lobes,T1,6,1,serotonin,0.35,"acetylcholine-negative, glutamate-negative, gaba-negative, dopamine-negative, serotonin-negative, octopamine-negative","Davis et al., 2020 (TAPIN)",19,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars lateralis,CB0905,1,1,serotonin,0.44,"corazonin, sNPF","Reinhard et al., 2023 (immuno)",18,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,CB0750,1,1,serotonin,0.24,,,14,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,CB0831,1,1,serotonin,0.36,,,14,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNp17,2,1,serotonin,0.6,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",13,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars lateralis,DNES1,4,1,serotonin,0.55,,,11,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars lateralis,DNES3,1,1,dopamine,0.28,Dh31; acetylcholine-negative,"Reinhard et al., 2023 (immuno); Croset et al., 2018 (scRNA-seq)",10,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge013,1,1,octopamine,0.34,,,8,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge015,1,1,serotonin,0.26,,,7,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,Hugin-RG,1,1,octopamine,0.44,hugin,"Reinhard et al., 2023 (immuno)",6,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg03,1,1,serotonin,0.49,,,6,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg17,1,1,serotonin,0.36,,,6,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-mz,3,1,serotonin,0.43,,,5,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-CA,1,1,serotonin,0.71,,,4,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",motor,CB0705,1,1,serotonin,0.41,,,4,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg01_a,1,1,serotonin,0.45,,,3,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNge116,2,1,serotonin,0.36,,,2,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNpe008,2,1,dopamine,0.73,gaba-negative,"Ito et al., 2013 (immuno, lineage based)",2,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",pars lateralis,ITP,1,1,octopamine,0.73,"ITP, tachykinin, sNPF, leucokinin","Reinhard et al., 2023 (immuno)",2,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",,ITP,1,1,octopamine,0.73,"ITP, tachykinin, sNPF, leucokinin","Reinhard et al., 2023 (immuno)",1,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",DN,DNg05_b,1,1,serotonin,0.45,,,1,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-FDA,1,1,serotonin,0.33,,,1,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",mechanosensory,JO-FDL,1,1,serotonin,1.0,,,1,0,0,0,0.0,0
+"C predicted monoamine, no literature, treated as fast excitatory (assumption)",olfactory,ORN_VA1d,1,1,serotonin,0.48,,,1,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",visual,R1-6,2310,-1/1,acetylcholine,0.46,histamine,"Davis et al., 2020 (TAPIN)",64176,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",visual,R7-8,940,-1/1,acetylcholine,0.46,"histamine; acetylcholine, histamine","Sarthy 1991 (immuno); Davis et al., 2020 (TAPIN)",35872,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",optic_lobes,(optic_lobes),44,-1/1,acetylcholine,0.44,histamine,"Davis et al., 2020 (TAPIN)",2411,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",AN,(AN),4,1,dopamine,0.54,histamine; Dh44,"Cheong et al., 2023 (EASI-FISH); Benett et al., (scRNA-seq)",1027,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",L1-5,(L1-5),4,-1/1,acetylcholine,0.58,histamine,"Davis et al., 2020 (TAPIN)",726,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",optic_lobes,HBeyelet,4,-1,glutamate,0.32,"histamine, acetylcholine",Pollack and Hofbauer 1991 (immuno); Yasuyama and Meinertzhagen 1999 (immuno),517,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",L1-5,L5,1,1,acetylcholine,0.71,histamine,"Davis et al., 2020 (TAPIN)",248,0,0,0,0.0,0
+"D histamine (literature), model sign kept (assumption)",optic_lobes,R1-6,1,1,acetylcholine,0.42,histamine,"Davis et al., 2020 (TAPIN)",50,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCab,1643,1,dopamine,0.59,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno, RNAi); Johard et al. (immuno); Aso et al. 2019 (scRNA-seq)",353741,0,1230,1310,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCg-m,2187,1,dopamine,0.75,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",329181,0,1915,1979,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCapbp-m,338,1,dopamine,0.51,acetylcholine; acetylcholine,"Barnstedt et al. 2016 (immuno, RNAi); Aso et al. 2019 (scRNA-seq)",84777,0,2,8,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),ALLN,lLN1_bc,20,1,dopamine,0.3,acetylcholine,"Shang et al., 2007 (immuno)",78819,0,20,20,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCapbp-ap2,298,1,dopamine,0.51,acetylcholine; acetylcholine,"Barnstedt et al. 2016 (immuno, RNAi); Aso et al. 2019 (scRNA-seq)",70480,0,0,2,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCapbp-ap1,279,1,dopamine,0.48,acetylcholine; acetylcholine,"Barnstedt et al. 2016 (immuno, RNAi); Aso et al. 2019 (scRNA-seq)",68521,0,10,12,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCg-d,295,1,dopamine,0.65,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",37867,0,11,12,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCab-p,128,1,dopamine,0.62,acetylcholine; acetylcholine,Barnstedt et al. 2016 (immuno); Aso et al. 2019 (scRNA-seq),36156,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),ALLN,lLN2X03,6,1,serotonin,0.35,acetylcholine,"Shang et al., 2007 (immuno)",27828,0,6,6,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),ALLN,lLN2T_b,4,1,serotonin,0.34,acetylcholine,"Shang et al., 2007 (immuno)",26865,0,4,4,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),ALLN,lLN2T_c,4,1,serotonin,0.35,acetylcholine,"Shang et al., 2007 (immuno)",20149,0,4,4,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,hDeltaK,26,1,serotonin,0.51,"acetylcholine, allatostatin-a, allatostatin-c, NPF, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",12353,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM1,45,1,serotonin,0.44,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",11361,0,0,45,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM2,50,1,serotonin,0.47,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",7599,0,1,2,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA2,57,1,serotonin,0.47,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",6608,0,0,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,"vDeltaA,vDeltaB,vDeltaC,vDeltaD,vDeltaE,vDeltaJ,vDeltaK,vDeltaL,vDeltaM",31,1,serotonin,0.48,acetylcholine,"Wolff et al., 2024 (EASI-FISH)",5548,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM3,57,1,serotonin,0.5,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",4858,0,1,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DL3,79,1,serotonin,0.77,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",3617,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_V,36,1,serotonin,0.42,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",3511,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),DN,DNp27,2,1,serotonin,0.63,acetylcholine; allatostatin-c; trissin; orcokinin,"Cheong et al., 2023 (EASI-FISH); Meiselman et al., 2022 (immuno); Brown et al. 2024 (intersection); Chen et al., 2015 (immuno)",3440,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DL4,52,1,serotonin,0.54,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",2795,0,3,6,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DA4m,32,1,serotonin,0.5,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",2664,0,17,20,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DA4l,37,1,serotonin,0.55,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",2123,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DC1,11,1,serotonin,0.49,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",2098,0,3,4,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA1v,39,1,serotonin,0.62,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1799,0,2,2,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VM3,23,1,serotonin,0.46,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1765,0,1,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCg-s1,2,1,dopamine,0.57,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",1387,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCg-s2,2,1,dopamine,0.52,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",1355,0,1,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM5,24,1,serotonin,0.47,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1221,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DA1,16,1,serotonin,0.51,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1166,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VL1,40,1,serotonin,0.57,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1071,0,13,13,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM4,5,1,serotonin,0.4,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1058,0,1,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DA3,28,1,serotonin,0.59,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1002,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VC2,7,1,dopamine,0.41,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",974,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,"PFNm,PFNp",20,1,serotonin,0.43,"acetylcholine, MIP, gaba-negative, glutamate-negative, dopamine-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",784,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,FR1,3,1,dopamine,0.37,"acetylcholine, sNPF, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative","Wolff et al., 2024 (EASI-FISH)",692,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),AN,(AN),1,1,serotonin,0.69,"acetylcholine, serotonin-negative","Jones et al., 2022 (immuno)",559,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,PEN_b(PEN2),1,1,serotonin,0.39,"acetylcholine, gaba-negative, glutamate-negative, dopamine-negative, serotonin-negative, tyramine-negative, octopamine-negative; acetylcholine","Wolff et al., 2024 (EASI-FISH); Turner-Evans et al. 2020 (scRNA-seq)",450,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),,s-LNva,1,1,serotonin,0.48,"ITP; acetylcholine; glycine, glutamate-negative","Reinhard et al., 2023 (scRNA-seq); Nern et al., 2024 (EASI-FISH); Mao et al., 2024 (transgenics)",445,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),optic_lobes,(optic_lobes),8,-1/1,octopamine,0.48,"acetylcholine, nitric oxide","Davis et al., 2020 (TAPIN)",403,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VM6,5,1,serotonin,0.42,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",399,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA1d,12,1,serotonin,0.58,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",390,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),Kenyon_Cell,KCg-s3,1,1,dopamine,0.49,"acetylcholine; sNPF; acetylcholine, sNPF","Barnstedt et al. 2016 (immuno); Johard et al., 2008 (immuno); Aso et al. 2019 (scRNA-seq)",290,0,0,1,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA7l,2,1,serotonin,0.45,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",188,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DC3,2,1,serotonin,0.46,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",154,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VM2,2,1,serotonin,0.44,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",153,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA4,1,1,serotonin,0.44,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",116,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),CX,hDeltaC,1,1,serotonin,0.41,"acetylcholine, serotonin","Wolff et al., 2024 (EASI-FISH)",84,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VM5d,1,1,serotonin,0.41,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",81,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),,PLP156,1,1,serotonin,0.58,acetylcholine,"Dolan et al., 2019 (immuno)",80,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DA2,2,1,serotonin,0.46,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",78,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DL1,1,1,dopamine,0.33,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",71,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VM4,1,1,serotonin,0.44,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",60,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA6,1,1,serotonin,0.47,"acetylcholine, sNPF","Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",32,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DL5,1,1,serotonin,0.73,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",30,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_DM6,1,1,serotonin,0.54,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",28,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),L1-5,L4,1,1,octopamine,0.21,acetylcholine,"Davis et al., 2020 (TAPIN)",5,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),DN,DNg02_a,1,1,serotonin,0.66,acetylcholine,"Cheong et al., 2023 (EASI-FISH)",1,0,0,0,0.0,0
+E sign agrees with literature but predicted label is a monoamine (e.g. the eLNs),olfactory,ORN_VA7m,1,1,serotonin,0.49,acetylcholine,"Yasuyama et al. 1999 (immuno); Carlsson et al., 2010 (immuno)",1,0,0,0,0.0,0

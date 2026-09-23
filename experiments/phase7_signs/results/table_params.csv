@@ -1,0 +1,10 @@
+config,condition,trials,runaway,mn9_hz,kc_pct_per_trial,still_firing_last_100ms_median
+al_ln_literature_wsyn0.9,dm1_both_150Hz,30,0,0.0,2.72,681
+al_ln_literature_wsyn0.9,ir94e_200Hz,30,0,0.0,0.0,42
+al_ln_literature_wsyn0.9,sugar_100Hz,30,0,59.1,0.0,236
+al_ln_literature_wsyn1.1,dm1_both_150Hz,30,0,0.0,4.56,1074
+al_ln_literature_wsyn1.1,ir94e_200Hz,30,0,0.0,0.0,576
+al_ln_literature_wsyn1.1,sugar_100Hz,30,0,73.57,0.0,299
+al_ln_literature_wsyn1.2,dm1_both_150Hz,30,0,0.0,5.38,1289
+al_ln_literature_wsyn1.2,ir94e_200Hz,30,0,0.0,0.0,739
+al_ln_literature_wsyn1.2,sugar_100Hz,30,0,77.43,0.0,319

@@ -1,0 +1,22 @@
+variant,test,spikes_input_on,kc_active_input_on,neurons_firing_after_400ms,spikes_after_400ms,runaway_trials
+none,"DM1 150 Hz, input off at 300 ms, seed 0",133128.0,3289.0,8012.0,274377.0,
+none,"DM1 150 Hz, input off at 300 ms, seed 1",133472.0,3292.0,8018.0,273894.0,
+none,"Ir94e 200 Hz, 30 trials (seed 0)",,,,,4.0
+V1 eLN44 electrical (= eln_electrical),"DM1 150 Hz, input off at 300 ms, seed 0",51285.0,968.0,3676.0,98369.0,
+V1 eLN44 electrical (= eln_electrical),"DM1 150 Hz, input off at 300 ms, seed 1",51330.0,948.0,3641.0,97878.0,
+V1 eLN44 electrical (= eln_electrical),"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0
+V2 V1 + 13 known-GABA/Glu LNs inhibitory,"DM1 150 Hz, input off at 300 ms, seed 0",33249.0,524.0,2854.0,67503.0,
+V2 V1 + 13 known-GABA/Glu LNs inhibitory,"DM1 150 Hz, input off at 300 ms, seed 1",33183.0,516.0,2848.0,67640.0,
+V2 V1 + 13 known-GABA/Glu LNs inhibitory,"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0
+V3 V1 + other 19 of the 53 inhibitory,"DM1 150 Hz, input off at 300 ms, seed 0",15115.0,193.0,89.0,93.0,
+V3 V1 + other 19 of the 53 inhibitory,"DM1 150 Hz, input off at 300 ms, seed 1",14519.0,174.0,0.0,0.0,
+V3 V1 + other 19 of the 53 inhibitory,"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0
+V4 all 150 excitatory LNs electrical,"DM1 150 Hz, input off at 300 ms, seed 0",12162.0,166.0,309.0,405.0,
+V4 all 150 excitatory LNs electrical,"DM1 150 Hz, input off at 300 ms, seed 1",12080.0,189.0,399.0,659.0,
+V4 all 150 excitatory LNs electrical,"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0
+V5 V4 but 13 known-GABA/Glu LNs inhibitory,"DM1 150 Hz, input off at 300 ms, seed 0",10835.0,172.0,0.0,0.0,
+V5 V4 but 13 known-GABA/Glu LNs inhibitory,"DM1 150 Hz, input off at 300 ms, seed 1",10428.0,186.0,0.0,0.0,
+V5 V4 but 13 known-GABA/Glu LNs inhibitory,"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0
+V6 ln53 inhibitory (Phase 5 LN-fix),"DM1 150 Hz, input off at 300 ms, seed 0",14346.0,204.0,0.0,0.0,
+V6 ln53 inhibitory (Phase 5 LN-fix),"DM1 150 Hz, input off at 300 ms, seed 1",14089.0,191.0,320.0,465.0,
+V6 ln53 inhibitory (Phase 5 LN-fix),"Ir94e 200 Hz, 30 trials (seed 0)",,,,,0.0

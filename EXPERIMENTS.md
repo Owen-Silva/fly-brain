@@ -599,3 +599,82 @@ smaller drop.
 neurons do, keeps every yes/no behaviour of the paper but lowers all the
 firing rates by about a third, so the paper's exact numbers depend on the
 model having no adaptation.
+
+## 2026-09-22/23 - Phase 7 upgrade 5: neurotransmitter sign audit and switchable sign fixes (PRELIMINARY)
+
+**Question.** Phase 6 traced the runaway (the whole brain locking into non-stop firing) to
+the antennal lobe's excitatory local neurons, "eLNs" (types lLN1_b/c and lLN2T). Earlier
+lanes disagreed: one said they are really inhibitory (GABA), another said they are
+excitatory (acetylcholine) but reach projection neurons mainly through electrical contacts,
+which the model lacks. Which is right, and does fixing it remove the runaway without
+breaking the paper's results?
+
+**Sources.** Full text: Shang et al. 2007 (Cell 128:601), Yaksi & Wilson 2010 (Neuron
+67:1034), Chou et al. 2010 (Nat Neurosci 13:439), Tobin et al. 2017 (eLife 6:e24838),
+Schlegel et al. 2021 (eLife 10:e66018), Eckstein et al. 2024 (Cell 187:2574). Abstract only:
+Huang et al. 2010 (Neuron 67:1021); the publisher blocked the full text. FlyWire v783
+`known_nt` / `known_nt_source` columns, mapped to snapshot 630 by supervoxel (127,218 of
+127,400 neurons matched).
+
+**Findings from the papers.** The eLNs are cholinergic, i.e. excitatory: Shang et al. 2007
+("a previously unidentified population of cholinergic local neurons"), Yaksi & Wilson 2010
+(ChAT-positive, GABA-negative), FlyWire's literature entry for exactly 44 neurons, and
+Eckstein et al. 2024 (their serotonin/dopamine guesses for these cells are probably wrong).
+No source read supports "GABAergic". How they reach projection neurons is disputed: Yaksi &
+Wilson 2010 found "mainly or purely electrical", with chemical synapses onto inhibitory
+local neurons; Huang et al. 2010 (abstract) found chemical plus electrical.
+
+**What changed.** New `sim/sign_fixes.py` builds the brain with a named fix, in memory only.
+The engine and data files are unchanged. The fixes:
+- `none`: the paper's model, identical spike for spike (tested).
+- `eln_electrical`: the 44 eLNs' chemical synapses onto non-inhibitory neurons are removed
+  (18,248 connections).
+- `al_ln_literature` (recommended): 13 antennal-lobe local neurons with a literature
+  GABA/glutamate entry become inhibitory, and all 137 remaining excitatory local neurons
+  follow the eLN rule. This removes 51,539 connections and flips 10,455.
+- `known_nt`: 1,334 neurons whose literature transmitter contradicts their model sign are
+  flipped.
+- `ln53_inhibitory`: Phase 5's fix, which makes the 53 serotonin/dopamine-guessed local
+  neurons inhibitory.
+
+Tests: `tests/test_sign_fixes.py`.
+
+**What happened (3 seeds x 30 one-second trials per check).**
+- **Taste results:** every Phase 3 taste result is unchanged under every fix. For
+  `al_ln_literature` the spikes are identical, checked directly on 10 trials per
+  condition. Sugar 100 Hz gives MN9 67.28 Hz.
+- **Ir94e 200 Hz runaway:** 10 of 90 trials at baseline, 0 of 90 under every fix
+  (p = 0.0015).
+- **DM1 smell 150 Hz runaway:** 90 of 90 at baseline. Under `al_ln_literature` and
+  `ln53_inhibitory` it was 0 of 90, but 90 of 90 under `eln_electrical` and under
+  `known_nt`. So the 44 alone are not enough: the other ~100 excitatory local neurons keep
+  the loop going.
+- **Kenyon cells (DM1):** 64% at baseline, 3.6% under `al_ln_literature`. Real flies are
+  roughly 5-10% (background, not re-read).
+- **One-spike triggers** (10 smell neurons, the 44 eLNs, all 685 projection neurons): all
+  three ignite at baseline and none under `al_ln_literature`.
+- **Synapse strength 90%, 110% and 120%:** no runaway under `al_ln_literature`. The paper's
+  model runs away in 28 of 30 trials at 110%.
+- **Steering:** left-only and right-only smell both still give a "turn left" signal
+  (+5.7 and +4.8 Hz), so Phase 5's finding stands. The right DNa02 now responds a little
+  to a right odour (2.5 vs 0.9 Hz).
+
+Wider audit: 1,334 literature disagreements, mostly visual system, none active in the taste
+experiments. The monoamine-as-fast-excitation and histamine assumptions are listed, not
+changed.
+
+**Validated?** No: PRELIMINARY. Seeds and synapse strength were varied, and the bug checks
+and literature were done. Not done: independent review; the Huang 2010 full text; the
+papers FlyWire cites for the 13 cells; snapshot 783; Brian2. Extending the eLN measurement
+to all 137 excitatory local neurons is an inference. The engine has no electrical synapses,
+so the fix leaves the model with no lateral excitation at all. Details:
+`docs/phase7-neurotransmitter-audit.md`.
+
+**Plain English.** The cells blamed for the runaway really are excitatory. The papers
+suggest they excite their neighbours mostly through direct electrical contacts rather than
+ordinary synapses. The model cannot do electrical contacts, so the fix switches off their
+ordinary excitatory synapses onto everything except inhibitory neurons. The same rule is
+applied to the other excitatory local neurons in the smell centre. With that, the whole
+brain stops locking up, the paper's taste results do not change at all, and the smell
+centre recruits a realistic small fraction of the learning centre. The left/right smell
+steering is still wrong.

@@ -1,0 +1,25 @@
+config,trigger,total_spikes,n_active,max_distinct_10ms,runaway,distinct_last_100ms,kc_active
+none,10 DM1 ORNs fire once,444790,8177,4221,True,7713,3301
+none,44 eLNs fire once,705223,10123,6166,True,9737,3866
+none,all 685 AL projection neurons fire once,745729,10415,6670,True,9752,4061
+al_ln_literature,10 DM1 ORNs fire once,31,31,19,False,0,0
+al_ln_literature,44 eLNs fire once,81,81,81,False,0,0
+al_ln_literature,all 685 AL projection neurons fire once,3589,2042,1170,False,0,0
+eln_electrical,10 DM1 ORNs fire once,30,30,18,False,0,0
+eln_electrical,44 eLNs fire once,73,73,70,False,0,0
+eln_electrical,all 685 AL projection neurons fire once,208348,4963,2078,True,3978,1181
+known_nt,10 DM1 ORNs fire once,330640,6709,3238,True,6228,2725
+known_nt,44 eLNs fire once,598290,8781,5276,True,8297,3728
+known_nt,all 685 AL projection neurons fire once,572613,9048,5348,True,8325,3638
+ln53_inhibitory,10 DM1 ORNs fire once,24,24,12,False,0,0
+ln53_inhibitory,44 eLNs fire once,44,44,44,False,0,0
+ln53_inhibitory,all 685 AL projection neurons fire once,3060,1959,1163,False,0,0
+al_ln_literature_wsyn0.9,10 DM1 ORNs fire once,27,27,14,False,0,0
+al_ln_literature_wsyn0.9,44 eLNs fire once,80,80,80,False,0,0
+al_ln_literature_wsyn0.9,all 685 AL projection neurons fire once,2156,1713,1101,False,0,0
+al_ln_literature_wsyn1.1,10 DM1 ORNs fire once,37,37,25,False,0,0
+al_ln_literature_wsyn1.1,44 eLNs fire once,86,86,84,False,0,0
+al_ln_literature_wsyn1.1,all 685 AL projection neurons fire once,2548,2072,1239,False,0,0
+al_ln_literature_wsyn1.2,10 DM1 ORNs fire once,40,40,28,False,0,0
+al_ln_literature_wsyn1.2,44 eLNs fire once,88,88,85,False,0,0
+al_ln_literature_wsyn1.2,all 685 AL projection neurons fire once,2440,2207,1317,False,0,3
