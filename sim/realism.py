@@ -150,10 +150,34 @@ REALISM_DEFAULTS = {
     # conductance model needs that one number re-fitted the same way
     # (experiments/phase7/run_phase7.py, fit_cond_scale).
     "cond_weight_scale": 1.0,
+    # Added 2026-09-23 (docs/phase7-conductance.md): separate factors for the
+    # excitatory and the inhibitory conductances, applied ON TOP of
+    # cond_weight_scale. 1.0 and 1.0 = exactly the behaviour before they
+    # existed. Only used when conductance=True.
+    "cond_exc_scale": 1.0,
+    "cond_inh_scale": 1.0,
     # --- upgrade 3: spike-frequency adaptation ---
     "adaptation": False,
     "tau_adapt_ms": 100.0,      # SK-channel pauses ~100 ms (Onodera et al. 2017)
     "adapt_mV": None,           # None = calibrate to f_last/f_first = ADAPT_TARGET_RATIO
+}
+
+#: Upgrade 2 with separate excitatory / inhibitory scales, for use ON TOP OF
+#: the sign fix "al_ln_literature" (build_realistic_brain below). Added
+#: 2026-09-23, PRELIMINARY; full story in docs/phase7-conductance.md.
+#: MEASURED (published): E_exc 0 mV, E_inh -60 mV (see "Upgrade 2" above).
+#: TUNED (two numbers, the most allowed; the paper tuned one): cond_exc_scale
+#: and cond_inh_scale, fitted ONLY on sugar 100 Hz, seed 900, to two targets:
+#: MN9 = 65.7 Hz (Shiu et al. 2024) and the same median whole-brain spike
+#: count as the fix-only model in that condition (9,736 spikes/trial). Every
+#: other Phase 3 / Phase 6 check was held out as a test.
+#: In words: each excitatory synapse is 1.2x and each inhibitory synapse
+#: 0.87x the rest-matched conductance (per synapse 0.00635 and 0.0299 leak
+#: units), which equals matching the paper's push at about -49.5 mV instead
+#: of at rest (-52 mV) and then making every synapse ~14% stronger.
+CONDUCTANCE_SEPARATE_SCALES = {
+    "conductance": True, "E_exc_mV": 0.0, "E_inh_mV": -60.0,
+    "cond_weight_scale": 1.0, "cond_exc_scale": 1.2, "cond_inh_scale": 0.87,
 }
 
 #: Zhao & Wu 1997: "adaptive" = f_last / f_first < 0.7 over a 600 ms step at
@@ -510,9 +534,16 @@ class RealisticBrain(FastBrain):
         bodies sit outside the brain)."""
         if self._positions is not None:
             return self._positions
-        f = CACHE_DIR / f"connectome_{self.snapshot}_neurons.parquet"
+        # A brain built on a sign fix is named e.g. "630+al_ln_literature" but
+        # its neurons are the plain snapshot's, so it reads the plain
+        # snapshot's positions (build_realistic_brain sets position_snapshot;
+        # any other "<snapshot>+<fix>" name falls back to the part before the
+        # "+"; the neuron-order check below still guards against a mismatch).
+        # Added 2026-09-23; brains with a plain snapshot name are unaffected.
+        snap = getattr(self, "position_snapshot", None) or str(self.snapshot).split("+")[0]
+        f = CACHE_DIR / f"connectome_{snap}_neurons.parquet"
         if not f.exists():
-            raise FileNotFoundError(f"{f} missing: build it with sim.connectome.load_connectome('{self.snapshot}')")
+            raise FileNotFoundError(f"{f} missing: build it with sim.connectome.load_connectome('{snap}')")
         df = pd.read_parquet(f, columns=["root_id", "anchor_x_nm", "anchor_y_nm", "anchor_z_nm",
                                          "soma_x_nm", "soma_y_nm", "soma_z_nm"])
         if not np.array_equal(df["root_id"].to_numpy(np.int64), self.root_ids):
@@ -674,6 +705,11 @@ class RealisticBrain(FastBrain):
                        cond_weight_scale=r["cond_weight_scale"],
                        g_exc_per_synapse=r["cond_weight_scale"] * p["w_syn"] / (r["E_exc_mV"] - v0),
                        g_inh_per_synapse=r["cond_weight_scale"] * p["w_syn"] / (v0 - r["E_inh_mV"]))
+            if r["cond_exc_scale"] != 1.0 or r["cond_inh_scale"] != 1.0:
+                out.update(cond_exc_scale=r["cond_exc_scale"],
+                           cond_inh_scale=r["cond_inh_scale"],
+                           g_exc_per_synapse=out["g_exc_per_synapse"] * r["cond_exc_scale"],
+                           g_inh_per_synapse=out["g_inh_per_synapse"] * r["cond_inh_scale"])
         if r["adaptation"]:
             out.update(tau_adapt_ms=r["tau_adapt_ms"],
                        adapt_mV=self.adaptation_increment_mV(p))
@@ -721,6 +757,10 @@ class RealisticBrain(FastBrain):
             k = float(r["cond_weight_scale"])
             w_exc = k * w_syn / (E_e - v_0)       # conductance per synapse (x leak)
             w_inh = k * w_syn / (v_0 - E_i)
+            if r["cond_exc_scale"] != 1.0:        # separate scales (additive,
+                w_exc *= float(r["cond_exc_scale"])   # skipped at 1.0 so the
+            if r["cond_inh_scale"] != 1.0:        # old arithmetic is untouched)
+                w_inh *= float(r["cond_inh_scale"])
         else:
             E_e = E_i = 0.0
             w_exc, w_inh = w_syn, 0.0
@@ -769,3 +809,31 @@ class RealisticBrain(FastBrain):
             neurons_reached=[int(o[3]) for o in outs], voltages_V=voltages,
             wall_time_s=time.perf_counter() - t0,
         )
+
+
+# ---------------------------------------------------------------------------
+# Added 2026-09-23 (docs/phase7-conductance.md): the realistic engine on top of
+# a sign fix from sim/sign_fixes.py (read-only use of that file).
+# ---------------------------------------------------------------------------
+def build_realistic_brain(fix="none", snapshot="630", params=None, n_threads=1,
+                          realism=None, lab=None, return_report=False):
+    """A RealisticBrain whose connections have ``fix`` applied.
+
+    Plain English: exactly what ``sim.sign_fixes.build_brain(fix)`` builds
+    (same connections, same signs, same order), but on this file's engine, so
+    the Phase 7 upgrades can be switched on for the fixed brain. With every
+    realism switch off it gives the same spikes as ``build_brain(fix)``
+    (tests/test_realism_conductance.py checks this on the whole brain).
+    """
+    from sim import sign_fixes as S
+    if str(snapshot) != "630":
+        raise ValueError("sign fixes are defined for snapshot 630 only")
+    root_ids, pre, post, signed = S.load_reference_arrays(snapshot)
+    pre2, post2, signed2, rep = S.apply_fix(fix, root_ids, pre, post, signed, lab)
+    del pre, post, signed
+    brain = RealisticBrain.from_arrays(root_ids, pre2, post2, signed2, params=params,
+                                       n_threads=n_threads, realism=realism)
+    brain.snapshot = f"630+{fix}"
+    brain.position_snapshot = "630"     # same neurons, same order: plain 630 positions
+    brain.sign_fix = fix
+    return (brain, rep) if return_report else brain

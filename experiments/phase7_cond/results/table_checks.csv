@@ -1,0 +1,21 @@
+config,seed,sugar100 >= 20 Hz,sugar200 > sugar100,contra > ipsi,water >= 5 Hz and < sugar200,bitter <= 1 Hz,sugar+bitter <= 10% sugar,MN9 sugar_100Hz,MN9 sugar_200Hz,MN9 water_200Hz,MN9 bitter_200Hz,MN9 sugar100_bitter120
+fix_only,0,True,True,True,True,True,True,68.17,94.7,29.67,0.0,1.33
+fix_only,1,True,True,True,True,True,True,66.9,92.67,30.63,0.0,1.47
+fix_only,2,True,True,True,True,True,True,66.77,93.23,32.07,0.0,1.27
+g2,0,True,True,True,True,True,True,52.87,72.57,21.57,0.0,3.93
+g2,1,True,True,True,True,True,True,52.0,70.9,20.7,0.0,4.1
+g2,2,True,True,True,True,True,True,53.63,71.83,22.87,0.0,4.67
+sep,0,True,True,True,True,True,True,65.47,91.57,25.33,0.0,3.07
+sep,1,True,True,True,True,True,True,65.97,92.5,24.4,0.0,3.47
+sep,2,True,True,True,True,True,True,66.87,95.17,25.57,0.0,2.57
+sep_exc0.9,0,True,True,True,False,True,True,38.77,73.47,1.43,0.0,0.27
+sep_exc1.1,0,True,True,True,True,True,False,77.47,106.33,59.4,0.0,12.03
+sep_inh0.9,0,True,True,True,True,True,False,73.93,104.23,39.13,0.0,7.97
+sep_inh1.1,0,True,True,True,True,True,True,54.53,84.17,14.97,0.0,0.7
+cur_exc0.9,0,True,True,True,False,True,True,48.93,78.47,3.0,0.0,0.1
+cur_exc1.1,0,True,True,True,True,True,False,82.0,107.6,63.97,0.0,10.67
+sep_all0.9,0,True,True,True,True,True,True,55.13,87.7,5.47,0.0,0.47
+sep_all1.1,0,True,True,True,True,True,True,69.47,99.13,44.43,0.0,5.47
+cur_ref,0,True,True,True,True,True,True,67.77,93.9,29.67,0.0,1.37
+cur_inh0.9,0,True,True,True,True,True,True,77.77,103.53,44.9,0.0,5.73
+cur_inh1.1,0,True,True,True,True,True,True,60.6,86.23,21.9,0.0,0.43

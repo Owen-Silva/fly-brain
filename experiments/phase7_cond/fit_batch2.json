@@ -1,0 +1,8 @@
+[{"cond_exc_scale": 1.5, "cond_inh_scale": 1.25},
+ {"cond_exc_scale": 1.5, "cond_inh_scale": 1.5},
+ {"cond_exc_scale": 1.25, "cond_inh_scale": 1.0},
+ {"cond_exc_scale": 1.25, "cond_inh_scale": 0.8},
+ {"cond_exc_scale": 1.0, "cond_inh_scale": 0.6},
+ {"cond_exc_scale": 1.0, "cond_inh_scale": 0.8},
+ {"cond_exc_scale": 0.8, "cond_inh_scale": 0.4},
+ {"cond_exc_scale": 1.75, "cond_inh_scale": 1.5}]

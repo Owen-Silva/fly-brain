@@ -1,0 +1,6 @@
+[{"cond_exc_scale": 1.2, "cond_inh_scale": 0.9},
+ {"cond_exc_scale": 1.2, "cond_inh_scale": 0.95},
+ {"cond_exc_scale": 1.25, "cond_inh_scale": 0.95},
+ {"cond_exc_scale": 1.15, "cond_inh_scale": 0.85},
+ {"cond_exc_scale": 1.25, "cond_inh_scale": 0.9},
+ {"conductance": false}]

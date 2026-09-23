@@ -1,0 +1,272 @@
+# Conductance synapses on top of the sign fix: summary (PRELIMINARY)
+
+fix_only = sign fix al_ln_literature with the paper's current-based synapses (numbers from experiments/phase7_signs). Runaway = more than 1,500 different neurons fire in some 10 ms slice (Phase 6 definition).
+
+## Runaway and activity (all trials)
+
+| config | condition | runaway | per_seed | ci95 | fisher_p_vs_fix_only | mn9_hz | median_spikes | median_vs_fix_only | over_5x_fix_only_median |
+|---|---|---|---|---|---|---|---|---|---|
+| fix_only | sugar_100Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 67.3 | 9.62e+03 | 1 | 0/90 |
+| fix_only | sugar_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 93.5 | 1.7e+04 | 1 | 0/90 |
+| fix_only | water_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 30.8 | 7.51e+03 | 1 | 0/90 |
+| fix_only | bitter_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 0 | 6.44e+03 | 1 | 0/90 |
+| fix_only | sugar100_bitter120 | 0/90 | 0/0/0 | 0.0-4.1% | nan | 1.36 | 9.33e+03 | 1 | 0/90 |
+| fix_only | ir94e_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 0 | 7.77e+03 | 1 | 0/90 |
+| fix_only | dm1_both_150Hz | 0/90 | 0/0/0 | 0.0-4.1% | nan | 0 | 3.68e+04 | 1 | 0/90 |
+| g2 | sugar_100Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 52.8 | 1.29e+04 | 1.34 | 0/90 |
+| g2 | sugar_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 71.8 | 1.88e+04 | 1.11 | 0/90 |
+| g2 | water_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 21.7 | 2.07e+04 | 2.76 | 0/90 |
+| g2 | bitter_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0 | 1.15e+04 | 1.78 | 0/90 |
+| g2 | sugar100_bitter120 | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 4.23 | 1.42e+04 | 1.52 | 0/90 |
+| g2 | ir94e_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0.811 | 1.09e+04 | 1.4 | 0/90 |
+| g2 | dm1_both_150Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0.311 | 5.33e+04 | 1.45 | 0/90 |
+| sep | sugar_100Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 66.1 | 9.76e+03 | 1.01 | 0/90 |
+| sep | sugar_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 93.1 | 1.66e+04 | 0.976 | 0/90 |
+| sep | water_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 25.1 | 7.79e+03 | 1.04 | 0/90 |
+| sep | bitter_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0 | 6.61e+03 | 1.03 | 0/90 |
+| sep | sugar100_bitter120 | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 3.03 | 9.85e+03 | 1.06 | 0/90 |
+| sep | ir94e_200Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0 | 9.11e+03 | 1.17 | 0/90 |
+| sep | dm1_both_150Hz | 0/90 | 0/0/0 | 0.0-4.1% | 1 | 0 | 3.35e+04 | 0.911 | 0/90 |
+| sep_exc0.9 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 38.8 | 7.03e+03 | 0.73 | 0/30 |
+| sep_exc0.9 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 73.5 | 1.36e+04 | 0.799 | 0/30 |
+| sep_exc0.9 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 1.43 | 6.38e+03 | 0.849 | 0/30 |
+| sep_exc0.9 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.17e+03 | 0.958 | 0/30 |
+| sep_exc0.9 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 0.267 | 8.58e+03 | 0.92 | 0/30 |
+| sep_exc0.9 | ir94e_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 4.82e+03 | 0.621 | 0/30 |
+| sep_exc0.9 | dm1_both_150Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 2.16e+04 | 0.586 | 0/30 |
+| sep_exc1.1 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 77.5 | 1.22e+04 | 1.27 | 0/30 |
+| sep_exc1.1 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 106 | 1.94e+04 | 1.14 | 0/30 |
+| sep_exc1.1 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 59.4 | 1.06e+04 | 1.41 | 0/30 |
+| sep_exc1.1 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 7.1e+03 | 1.1 | 0/30 |
+| sep_exc1.1 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 12 | 1.16e+04 | 1.25 | 0/30 |
+| sep_exc1.1 | ir94e_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 1.5e+04 | 1.93 | 0/30 |
+| sep_exc1.1 | dm1_both_150Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 4.41e+04 | 1.2 | 0/30 |
+| sep_inh0.9 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 73.9 | 1.09e+04 | 1.13 | 0/30 |
+| sep_inh0.9 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 104 | 1.81e+04 | 1.06 | 0/30 |
+| sep_inh0.9 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 39.1 | 8.46e+03 | 1.13 | 0/30 |
+| sep_inh0.9 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.67e+03 | 1.03 | 0/30 |
+| sep_inh0.9 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 7.97 | 1.04e+04 | 1.12 | 0/30 |
+| sep_inh0.9 | ir94e_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 1.16e+04 | 1.49 | 0/30 |
+| sep_inh0.9 | dm1_both_150Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 3.76e+04 | 1.02 | 0/30 |
+| sep_inh1.1 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 54.5 | 8.81e+03 | 0.916 | 0/30 |
+| sep_inh1.1 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 84.2 | 1.53e+04 | 0.9 | 0/30 |
+| sep_inh1.1 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 15 | 7.3e+03 | 0.972 | 0/30 |
+| sep_inh1.1 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.55e+03 | 1.02 | 0/30 |
+| sep_inh1.1 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 0.7 | 9.5e+03 | 1.02 | 0/30 |
+| sep_inh1.1 | ir94e_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 8.31e+03 | 1.07 | 0/30 |
+| sep_inh1.1 | dm1_both_150Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 2.87e+04 | 0.78 | 0/30 |
+| cur_exc0.9 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 48.9 | 7.17e+03 | 0.745 | 0/30 |
+| cur_exc0.9 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 78.5 | 1.38e+04 | 0.811 | 0/30 |
+| cur_exc0.9 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 3 | 6.14e+03 | 0.817 | 0/30 |
+| cur_exc0.9 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.03e+03 | 0.936 | 0/30 |
+| cur_exc0.9 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 0.1 | 8.04e+03 | 0.861 | 0/30 |
+| cur_exc1.1 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 82 | 1.25e+04 | 1.29 | 0/30 |
+| cur_exc1.1 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 108 | 2e+04 | 1.18 | 0/30 |
+| cur_exc1.1 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 64 | 1.09e+04 | 1.45 | 0/30 |
+| cur_exc1.1 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.86e+03 | 1.06 | 0/30 |
+| cur_exc1.1 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 10.7 | 1.09e+04 | 1.17 | 0/30 |
+| sep_all0.9 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 55.1 | 7.97e+03 | 0.828 | 0/30 |
+| sep_all0.9 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 87.7 | 1.49e+04 | 0.879 | 0/30 |
+| sep_all0.9 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 5.47 | 6.55e+03 | 0.872 | 0/30 |
+| sep_all0.9 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.22e+03 | 0.966 | 0/30 |
+| sep_all0.9 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 0.467 | 8.73e+03 | 0.935 | 0/30 |
+| sep_all1.1 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 69.5 | 1.12e+04 | 1.16 | 0/30 |
+| sep_all1.1 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 99.1 | 1.8e+04 | 1.06 | 0/30 |
+| sep_all1.1 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 44.4 | 9.43e+03 | 1.25 | 0/30 |
+| sep_all1.1 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 7.01e+03 | 1.09 | 0/30 |
+| sep_all1.1 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 5.47 | 1.1e+04 | 1.18 | 0/30 |
+| cur_ref | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 67.8 | 9.69e+03 | 1.01 | 0/30 |
+| cur_ref | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 93.9 | 1.7e+04 | 1 | 0/30 |
+| cur_ref | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 29.7 | 7.51e+03 | 1 | 0/30 |
+| cur_ref | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.44e+03 | 1 | 0/30 |
+| cur_ref | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 1.37 | 9.38e+03 | 1 | 0/30 |
+| cur_inh0.9 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 77.8 | 1.1e+04 | 1.14 | 0/30 |
+| cur_inh0.9 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 104 | 1.87e+04 | 1.1 | 0/30 |
+| cur_inh0.9 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 44.9 | 8.38e+03 | 1.12 | 0/30 |
+| cur_inh0.9 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.49e+03 | 1.01 | 0/30 |
+| cur_inh0.9 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 5.73 | 9.75e+03 | 1.04 | 0/30 |
+| cur_inh1.1 | sugar_100Hz | 0/30 | 0 | 0.0-11.4% | 1 | 60.6 | 8.75e+03 | 0.909 | 0/30 |
+| cur_inh1.1 | sugar_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 86.2 | 1.56e+04 | 0.919 | 0/30 |
+| cur_inh1.1 | water_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 21.9 | 7.14e+03 | 0.951 | 0/30 |
+| cur_inh1.1 | bitter_200Hz | 0/30 | 0 | 0.0-11.4% | 1 | 0 | 6.39e+03 | 0.992 | 0/30 |
+| cur_inh1.1 | sugar100_bitter120 | 0/30 | 0 | 0.0-11.4% | 1 | 0.433 | 8.96e+03 | 0.96 | 0/30 |
+
+## Phase 3 checks (MN9, per seed; a check holds only if it passes for every seed)
+
+| config | seed | sugar100 >= 20 Hz | sugar200 > sugar100 | contra > ipsi | water >= 5 Hz and < sugar200 | bitter <= 1 Hz | sugar+bitter <= 10% sugar | MN9 sugar_100Hz | MN9 sugar_200Hz | MN9 water_200Hz | MN9 bitter_200Hz | MN9 sugar100_bitter120 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| fix_only | 0 | True | True | True | True | True | True | 68.2 | 94.7 | 29.7 | 0 | 1.33 |
+| fix_only | 1 | True | True | True | True | True | True | 66.9 | 92.7 | 30.6 | 0 | 1.47 |
+| fix_only | 2 | True | True | True | True | True | True | 66.8 | 93.2 | 32.1 | 0 | 1.27 |
+| g2 | 0 | True | True | True | True | True | True | 52.9 | 72.6 | 21.6 | 0 | 3.93 |
+| g2 | 1 | True | True | True | True | True | True | 52 | 70.9 | 20.7 | 0 | 4.1 |
+| g2 | 2 | True | True | True | True | True | True | 53.6 | 71.8 | 22.9 | 0 | 4.67 |
+| sep | 0 | True | True | True | True | True | True | 65.5 | 91.6 | 25.3 | 0 | 3.07 |
+| sep | 1 | True | True | True | True | True | True | 66 | 92.5 | 24.4 | 0 | 3.47 |
+| sep | 2 | True | True | True | True | True | True | 66.9 | 95.2 | 25.6 | 0 | 2.57 |
+| sep_exc0.9 | 0 | True | True | True | False | True | True | 38.8 | 73.5 | 1.43 | 0 | 0.27 |
+| sep_exc1.1 | 0 | True | True | True | True | True | False | 77.5 | 106 | 59.4 | 0 | 12 |
+| sep_inh0.9 | 0 | True | True | True | True | True | False | 73.9 | 104 | 39.1 | 0 | 7.97 |
+| sep_inh1.1 | 0 | True | True | True | True | True | True | 54.5 | 84.2 | 15 | 0 | 0.7 |
+| cur_exc0.9 | 0 | True | True | True | False | True | True | 48.9 | 78.5 | 3 | 0 | 0.1 |
+| cur_exc1.1 | 0 | True | True | True | True | True | False | 82 | 108 | 64 | 0 | 10.7 |
+| sep_all0.9 | 0 | True | True | True | True | True | True | 55.1 | 87.7 | 5.47 | 0 | 0.47 |
+| sep_all1.1 | 0 | True | True | True | True | True | True | 69.5 | 99.1 | 44.4 | 0 | 5.47 |
+| cur_ref | 0 | True | True | True | True | True | True | 67.8 | 93.9 | 29.7 | 0 | 1.37 |
+| cur_inh0.9 | 0 | True | True | True | True | True | True | 77.8 | 104 | 44.9 | 0 | 5.73 |
+| cur_inh1.1 | 0 | True | True | True | True | True | True | 60.6 | 86.2 | 21.9 | 0 | 0.43 |
+
+## Neuron by neuron vs the fix-only model (stimulated neurons left out)
+
+per_seed: seed k of this model vs seed k of fix-only (same inputs), 30 vs 30 trials, averaged over the 3 seeds; pooled: 90 vs 90 trials. Noise floor: fix-only seed vs another fix-only seed (30 vs 30).
+
+| config | condition | seeds | pearson_r_per_seed | top50_per_seed | pearson_r_pooled | top50_pooled |
+|---|---|---|---|---|---|---|
+| noise floor (fix_only seed vs seed) | sugar_100Hz | 3 | 1 | 49.3 | nan | nan |
+| g2 | sugar_100Hz | 3 | 0.925 | 36 | 0.926 | 36 |
+| sep | sugar_100Hz | 3 | 0.991 | 45.7 | 0.992 | 45 |
+| sep_exc0.9 | sugar_100Hz | 1 | 0.945 | 40 | nan | nan |
+| sep_exc1.1 | sugar_100Hz | 1 | 0.98 | 45 | nan | nan |
+| sep_inh0.9 | sugar_100Hz | 1 | 0.989 | 46 | nan | nan |
+| sep_inh1.1 | sugar_100Hz | 1 | 0.98 | 44 | nan | nan |
+| cur_exc0.9 | sugar_100Hz | 1 | 0.97 | 40 | nan | nan |
+| cur_exc1.1 | sugar_100Hz | 1 | 0.979 | 44 | nan | nan |
+| sep_all0.9 | sugar_100Hz | 1 | 0.978 | 42 | nan | nan |
+| sep_all1.1 | sugar_100Hz | 1 | 0.98 | 44 | nan | nan |
+| cur_ref | sugar_100Hz | 1 | 1 | 50 | nan | nan |
+| cur_inh0.9 | sugar_100Hz | 1 | 0.992 | 46 | nan | nan |
+| cur_inh1.1 | sugar_100Hz | 1 | 0.996 | 46 | nan | nan |
+| noise floor (fix_only seed vs seed) | sugar_200Hz | 3 | 1 | 49.3 | nan | nan |
+| g2 | sugar_200Hz | 3 | 0.946 | 40 | 0.947 | 40 |
+| sep | sugar_200Hz | 3 | 0.991 | 47.7 | 0.991 | 48 |
+| sep_exc0.9 | sugar_200Hz | 1 | 0.966 | 46 | nan | nan |
+| sep_exc1.1 | sugar_200Hz | 1 | 0.993 | 48 | nan | nan |
+| sep_inh0.9 | sugar_200Hz | 1 | 0.994 | 48 | nan | nan |
+| sep_inh1.1 | sugar_200Hz | 1 | 0.981 | 48 | nan | nan |
+| cur_exc0.9 | sugar_200Hz | 1 | 0.981 | 44 | nan | nan |
+| cur_exc1.1 | sugar_200Hz | 1 | 0.993 | 45 | nan | nan |
+| sep_all0.9 | sugar_200Hz | 1 | 0.984 | 48 | nan | nan |
+| sep_all1.1 | sugar_200Hz | 1 | 0.992 | 48 | nan | nan |
+| cur_ref | sugar_200Hz | 1 | 1 | 49 | nan | nan |
+| cur_inh0.9 | sugar_200Hz | 1 | 0.996 | 46 | nan | nan |
+| cur_inh1.1 | sugar_200Hz | 1 | 0.997 | 48 | nan | nan |
+| noise floor (fix_only seed vs seed) | water_200Hz | 3 | 1 | 50 | nan | nan |
+| g2 | water_200Hz | 3 | 0.84 | 41 | 0.839 | 41 |
+| sep | water_200Hz | 3 | 0.993 | 46.7 | 0.993 | 47 |
+| sep_exc0.9 | water_200Hz | 1 | 0.981 | 46 | nan | nan |
+| sep_exc1.1 | water_200Hz | 1 | 0.953 | 42 | nan | nan |
+| sep_inh0.9 | water_200Hz | 1 | 0.991 | 47 | nan | nan |
+| sep_inh1.1 | water_200Hz | 1 | 0.987 | 46 | nan | nan |
+| cur_exc0.9 | water_200Hz | 1 | 0.979 | 47 | nan | nan |
+| cur_exc1.1 | water_200Hz | 1 | 0.93 | 38 | nan | nan |
+| sep_all0.9 | water_200Hz | 1 | 0.987 | 46 | nan | nan |
+| sep_all1.1 | water_200Hz | 1 | 0.977 | 45 | nan | nan |
+| cur_ref | water_200Hz | 1 | 1 | 50 | nan | nan |
+| cur_inh0.9 | water_200Hz | 1 | 0.99 | 45 | nan | nan |
+| cur_inh1.1 | water_200Hz | 1 | 0.998 | 48 | nan | nan |
+| noise floor (fix_only seed vs seed) | bitter_200Hz | 3 | 1 | 49.3 | nan | nan |
+| g2 | bitter_200Hz | 3 | 0.914 | 44.7 | 0.913 | 45 |
+| sep | bitter_200Hz | 3 | 0.996 | 47.7 | 0.996 | 48 |
+| sep_exc0.9 | bitter_200Hz | 1 | 0.995 | 48 | nan | nan |
+| sep_exc1.1 | bitter_200Hz | 1 | 0.99 | 48 | nan | nan |
+| sep_inh0.9 | bitter_200Hz | 1 | 0.997 | 49 | nan | nan |
+| sep_inh1.1 | bitter_200Hz | 1 | 0.994 | 47 | nan | nan |
+| cur_exc0.9 | bitter_200Hz | 1 | 0.997 | 49 | nan | nan |
+| cur_exc1.1 | bitter_200Hz | 1 | 0.997 | 48 | nan | nan |
+| sep_all0.9 | bitter_200Hz | 1 | 0.997 | 49 | nan | nan |
+| sep_all1.1 | bitter_200Hz | 1 | 0.991 | 47 | nan | nan |
+| cur_ref | bitter_200Hz | 1 | 1 | 50 | nan | nan |
+| cur_inh0.9 | bitter_200Hz | 1 | 1 | 48 | nan | nan |
+| cur_inh1.1 | bitter_200Hz | 1 | 1 | 50 | nan | nan |
+| noise floor (fix_only seed vs seed) | sugar100_bitter120 | 3 | 1 | 49 | nan | nan |
+| g2 | sugar100_bitter120 | 3 | 0.885 | 34.3 | 0.887 | 34 |
+| sep | sugar100_bitter120 | 3 | 0.988 | 42 | 0.988 | 41 |
+| sep_exc0.9 | sugar100_bitter120 | 1 | 0.989 | 45 | nan | nan |
+| sep_exc1.1 | sugar100_bitter120 | 1 | 0.967 | 42 | nan | nan |
+| sep_inh0.9 | sugar100_bitter120 | 1 | 0.989 | 43 | nan | nan |
+| sep_inh1.1 | sugar100_bitter120 | 1 | 0.987 | 42 | nan | nan |
+| cur_exc0.9 | sugar100_bitter120 | 1 | 0.978 | 45 | nan | nan |
+| cur_exc1.1 | sugar100_bitter120 | 1 | 0.983 | 44 | nan | nan |
+| sep_all0.9 | sugar100_bitter120 | 1 | 0.992 | 45 | nan | nan |
+| sep_all1.1 | sugar100_bitter120 | 1 | 0.972 | 42 | nan | nan |
+| cur_ref | sugar100_bitter120 | 1 | 1 | 50 | nan | nan |
+| cur_inh0.9 | sugar100_bitter120 | 1 | 0.998 | 48 | nan | nan |
+| cur_inh1.1 | sugar100_bitter120 | 1 | 0.998 | 49 | nan | nan |
+| noise floor (fix_only seed vs seed) | ir94e_200Hz | 3 | 0.999 | 49.3 | nan | nan |
+| g2 | ir94e_200Hz | 3 | 0.86 | 16.7 | 0.861 | 17 |
+| sep | ir94e_200Hz | 3 | 0.985 | 47 | 0.986 | 47 |
+| sep_exc0.9 | ir94e_200Hz | 1 | 0.92 | 32 | nan | nan |
+| sep_exc1.1 | ir94e_200Hz | 1 | 0.914 | 41 | nan | nan |
+| sep_inh0.9 | ir94e_200Hz | 1 | 0.948 | 44 | nan | nan |
+| sep_inh1.1 | ir94e_200Hz | 1 | 0.987 | 45 | nan | nan |
+| noise floor (fix_only seed vs seed) | dm1_both_150Hz | 3 | 0.999 | 47.3 | nan | nan |
+| g2 | dm1_both_150Hz | 3 | 0.925 | 35.7 | 0.925 | 35 |
+| sep | dm1_both_150Hz | 3 | 0.982 | 44 | 0.983 | 44 |
+| sep_exc0.9 | dm1_both_150Hz | 1 | 0.844 | 36 | nan | nan |
+| sep_exc1.1 | dm1_both_150Hz | 1 | 0.985 | 49 | nan | nan |
+| sep_inh0.9 | dm1_both_150Hz | 1 | 0.991 | 50 | nan | nan |
+| sep_inh1.1 | dm1_both_150Hz | 1 | 0.937 | 36 | nan | nan |
+
+## Sensitivity (seed 0 x 30 trials; same inputs for every row)
+
+sep_* = the chosen conductance setting with one scale changed (exc/inh) or both (all); cur_* = the paper's current-based synapses (fix only) written as a conductance model with far-away reversal potentials, with its excitatory or inhibitory synapses scaled. activity_vs_fix_only = median over conditions of (median spikes per trial / fix-only's).
+
+| config | MN9 sugar_100Hz | MN9 sugar_200Hz | MN9 water_200Hz | MN9 bitter_200Hz | MN9 sugar100_bitter120 | sugar_bitter_pct | checks_passed | failed | runaways | activity_vs_fix_only |
+|---|---|---|---|---|---|---|---|---|---|---|
+| fix_only | 68.2 | 94.7 | 29.7 | 0 | 1.33 | 2 | 6/6 | - | 0/210 | 1 |
+| sep | 65.5 | 91.6 | 25.3 | 0 | 3.07 | 4.7 | 6/6 | - | 0/210 | 1.02 |
+| sep_exc0.9 | 38.8 | 73.5 | 1.43 | 0 | 0.27 | 0.7 | 5/6 | water | 0/210 | 0.8 |
+| sep_exc1.1 | 77.5 | 106 | 59.4 | 0 | 12 | 15.5 | 5/6 | sugar+bitter<=10% | 0/210 | 1.24 |
+| sep_inh0.9 | 73.9 | 104 | 39.1 | 0 | 7.97 | 10.8 | 5/6 | sugar+bitter<=10% | 0/210 | 1.11 |
+| sep_inh1.1 | 54.5 | 84.2 | 15 | 0 | 0.7 | 1.3 | 6/6 | - | 0/210 | 0.98 |
+| sep_all0.9 | 55.1 | 87.7 | 5.47 | 0 | 0.47 | 0.8 | 6/6 | - | 0/150 | 0.88 |
+| sep_all1.1 | 69.5 | 99.1 | 44.4 | 0 | 5.47 | 7.9 | 6/6 | - | 0/150 | 1.16 |
+| cur_ref | 67.8 | 93.9 | 29.7 | 0 | 1.37 | 2 | 6/6 | - | 0/150 | 1 |
+| cur_exc0.9 | 48.9 | 78.5 | 3 | 0 | 0.1 | 0.2 | 5/6 | water | 0/150 | 0.82 |
+| cur_exc1.1 | 82 | 108 | 64 | 0 | 10.7 | 13 | 5/6 | sugar+bitter<=10% | 0/150 | 1.18 |
+| cur_inh0.9 | 77.8 | 104 | 44.9 | 0 | 5.73 | 7.4 | 6/6 | - | 0/150 | 1.1 |
+| cur_inh1.1 | 60.6 | 86.2 | 21.9 | 0 | 0.43 | 0.7 | 6/6 | - | 0/150 | 0.96 |
+
+## Calibration points (sugar 100 Hz, seed 900; target MN9 65.7 Hz)
+
+| conductance | cond_weight_scale | cond_exc_scale | cond_inh_scale | E_inh_mV | n_trials | fit_seed | mn9_hz | mn9_sem | mn9_ipsi_hz | median_spikes | max_spikes | runaways | wall_s |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| False | 1 | nan | nan | -60 | 15 | 900 | 68.2 | 1.38 | 49.2 | 9.64e+03 | 1e+04 | 0 | 5.04 |
+| True | 1 | 1.16 | 0.533 | -60 | 15 | 900 | 108 | 1.88 | 95.2 | 1.55e+04 | 1.59e+04 | 0 | 39.1 |
+| True | 1 | 1.39 | 0.64 | -60 | 15 | 900 | 130 | 1.5 | 113 | 2.01e+04 | 2.08e+04 | 0 | 88.2 |
+| True | 1 | 1.5 | 1 | -60 | 15 | 900 | 83.9 | 1.48 | 61.8 | 1.41e+04 | 1.46e+04 | 0 | 53.4 |
+| True | 1 | 1.5 | 0.5 | -60 | 15 | 900 | 158 | 1.32 | 148 | 1.73e+05 | 1.82e+05 | 15 | 205 |
+| True | 1 | 1.25 | 0.25 | -60 | 15 | 900 | 155 | 1.39 | 157 | 4.56e+05 | 4.68e+05 | 15 | 238 |
+| True | 1 | 1 | 0.25 | -60 | 15 | 900 | 148 | 0.94 | 139 | 2.28e+04 | 2.39e+04 | 0 | 80.8 |
+| True | 1 | 2 | 1 | -60 | 15 | 900 | 137 | 1.81 | 118 | 1.23e+05 | 1.29e+05 | 15 | 174 |
+| True | 1 | 2 | 0.5 | -60 | 15 | 900 | 133 | 9.48 | 136 | 8.2e+05 | 8.34e+05 | 15 | 184 |
+| True | 1 | 1.5 | 1.25 | -60 | 15 | 900 | 62 | 0.9 | 43.5 | 1.13e+04 | 1.17e+04 | 0 | 22.3 |
+| True | 1 | 1.5 | 1.5 | -60 | 15 | 900 | 45.1 | 1.17 | 28.5 | 9.46e+03 | 9.92e+03 | 0 | 14.3 |
+| True | 1 | 1.25 | 1 | -60 | 15 | 900 | 59.1 | 1.17 | 39.5 | 9.5e+03 | 9.72e+03 | 0 | 9.63 |
+| True | 1 | 1.25 | 0.8 | -60 | 15 | 900 | 80.9 | 1.3 | 60.3 | 1.19e+04 | 1.25e+04 | 0 | 14.7 |
+| True | 1 | 1 | 0.6 | -60 | 15 | 900 | 69 | 0.956 | 52.7 | 8.39e+03 | 9.11e+03 | 0 | 7.13 |
+| True | 1 | 1 | 0.8 | -60 | 15 | 900 | 27.8 | 1.9 | 16.9 | 5.77e+03 | 6.79e+03 | 0 | 5.76 |
+| True | 1 | 0.8 | 0.4 | -60 | 15 | 900 | 22.9 | 2 | 14.4 | 4.56e+03 | 5.58e+03 | 0 | 4.93 |
+| True | 1 | 1.75 | 1.5 | -60 | 15 | 900 | 63.9 | 0.87 | 44.1 | 1.29e+04 | 1.34e+04 | 0 | 40.7 |
+| True | 1 | 1.2 | 0.9 | -60 | 30 | 900 | 61.9 | 0.838 | 42.4 | 9.42e+03 | 9.89e+03 | 0 | 29 |
+| True | 1 | 1.2 | 0.95 | -60 | 30 | 900 | 56.6 | 1.25 | 36.8 | 8.84e+03 | 9.61e+03 | 0 | 25.4 |
+| True | 1 | 1.25 | 0.95 | -60 | 30 | 900 | 62.8 | 0.826 | 43.6 | 9.92e+03 | 1.05e+04 | 0 | 29.2 |
+| True | 1 | 1.15 | 0.85 | -60 | 30 | 900 | 61.6 | 0.828 | 42.6 | 8.93e+03 | 9.65e+03 | 0 | 28 |
+| True | 1 | 1.25 | 0.9 | -60 | 30 | 900 | 69.1 | 0.993 | 49.1 | 1.05e+04 | 1.11e+04 | 0 | 28.5 |
+| False | 1 | nan | nan | -60 | 30 | 900 | 67.1 | 1.08 | 48.9 | 9.74e+03 | 1.02e+04 | 0 | 7.74 |
+| True | 1 | 1.2 | 0.87 | -60 | 30 | 900 | 66.2 | 1.02 | 45.8 | 9.87e+03 | 1.04e+04 | 0 | 27.4 |
+
+## One-spike triggers (one 1 s run each)
+
+| config | trigger | total_spikes | max_distinct_10ms | runaway |
+|---|---|---|---|---|
+| fix_only | 10 DM1 ORNs fire once | 31 | 19 | False |
+| fix_only | 44 eLNs fire once | 81 | 81 | False |
+| fix_only | all 685 AL projection neurons fire once | 3589 | 1170 | False |
+| sep | 10 DM1 ORNs fire once | 36 | 24 | False |
+| sep | 44 eLNs fire once | 85 | 84 | False |
+| sep | all 685 AL projection neurons fire once | 2154 | 1208 | False |
+| g2 | 10 DM1 ORNs fire once | 50 | 37 | False |
+| g2 | 44 eLNs fire once | 93 | 93 | False |
+| g2 | all 685 AL projection neurons fire once | 2943 | 1587 | True |
+

@@ -1158,3 +1158,82 @@ networks and on the whole brain; two coupled cells give kappa/(1+kappa); spikele
 compared with the literature, but the calibration numbers are read by eye from bar charts,
 the spike width is assumed, the model's junction cannot rectify, and the eLN "loading" has no
 measurement to be checked against. Details: `docs/phase7-electrical-synapses.md`.
+
+## 2026-09-23 - Phase 7 upgrade 2 again: conductance-based synapses on top of the sign fix (PRELIMINARY)
+
+**Sources.** Reversal potentials (unchanged from the first attempt, `docs/phase7-realism.md`):
+excitatory 0 mV (Lee & O'Dowd 1999, J Neurosci 19:5311; Su & O'Dowd 2003, J Neurosci
+23:9246: +8.9 mV in cultured Kenyon cells); inhibitory -60 mV (Rohrbough & Broadie 2002, J
+Neurophysiol 88:847: -50 to -60 mV; McCarthy et al. 2011, J Neurosci 31:8181; Su & O'Dowd 2003:
+-37 mV; all whole-cell). New, read through a web tool that returns quoted key sentences (not line
+by line): Groschner, Malis, Zuidinga & Borst 2022, Nature 603:119 (PMC8891015; T4 neurons in
+vivo: GABA reversal -68 mV, glutamate -71 mV, leak -65 mV; GluCl loss raises input resistance
+5.28 -> 6.70 GOhm); Gouwens & Wilson 2009, J Neurosci 29:6239 (PMC2709801; projection neurons
+598 MOhm, rest about -55 to -60 mV in vivo, 10-50 release sites per ORN connection); Liu,
+Davoudian, Lizbinski & Jeanne 2022, Curr Biol 32:559 (bioRxiv version; excitatory unitary
+potentials 0.4-6.6 mV, predicted by synapse density and location; no inhibitory connections
+recorded). No fly measurement of a single inhibitory synapse's strength was found. Sign fix:
+`docs/phase7-neurotransmitter-audit.md` (`al_ln_literature`).
+
+**What changed.** `sim/realism.py`, additions only (every old setting, default and test behaves
+as before; `tests/test_realism.py` 18 fast + 1 whole-brain tests pass unchanged):
+`cond_exc_scale` and `cond_inh_scale` (separate factors on the excitatory and inhibitory
+conductances, default 1.0), `build_realistic_brain(fix)` (the realistic engine on a sign-fixed
+brain), the preset `CONDUCTANCE_SEPARATE_SCALES` (excitatory x1.2, inhibitory x0.87, reversal
+0 / -60 mV), and a fix so that a sign-fixed brain reads the plain snapshot's neuron positions
+(before, "sign fix + distance delays" could not be built; reported by the app lane). Tests:
+`tests/test_realism_conductance.py`. Runs: `experiments/phase7_cond/`.
+
+**What happened.** (3 seeds x 30 one-second trials unless stated; runaway = more than 1,500
+different neurons firing in some 10 ms slice.)
+
+1. *Does the sign fix cure the x2 version's runaways?* Yes: one global scale x2 on the
+   sign-fixed brain ran away in 0 of 90 trials each with water, bitter, sugar 100 Hz and sugar
+   200 Hz alone (unfixed brain, Phase 7's rule: 19, 4, 2, 2 of 90). But MN9 stayed 20% below the paper (52.8 Hz
+   at sugar 100 Hz against 65.7 Hz) and the brain stayed 1.1-2.8 times as busy as the fix-only
+   model (water most), with neuron-by-neuron correlation 0.84-0.95. With the fix it now passes all six
+   Phase 3 checks on every seed (sugar + bitter 4.2 Hz) and never runs away with Ir94e 200 Hz or
+   DM1 150 Hz either (0 of 90 each), but it is 1.4-1.5 times as busy there too and differs most
+   neuron by neuron under Ir94e (correlation 0.86, 17 of the top 50). One-spike triggers: no
+   ignition (the projection-neuron kick briefly reaches 1,587 different neurons in 10 ms, above
+   the 1,500 mark, but totals 2,943 spikes and is silent in the last 100 ms).
+2. *Separate scales.* Tuned on sugar 100 Hz, seed 900 only (22 settings tried), to MN9 = 65.7
+   Hz and the fix-only model's total activity: excitatory x1.2, inhibitory x0.87 (per synapse
+   0.00635 and 0.0299 leak units; 66.2 Hz and 9,866 spikes per trial on the calibration seed).
+3. *Held-out validation (3 seeds x 30).* All six Phase 3 checks pass on every seed: sugar 100
+   Hz 66.1 Hz (fix-only 67.3), sugar 200 Hz 93.1 (93.5), water 25.1 (30.8), bitter 0 (0),
+   sugar 100 + bitter 120 3.0 Hz = 5% of sugar alone (1.4 Hz = 2%). Runaway 0 of 90 in all 9
+   conditions (the five taste inputs, Ir94e 200 Hz, DM1 150 Hz both / left / right). Spikes per
+   trial 0.91-1.17 times the fix-only model. Neuron by neuron against the fix-only model:
+   correlation 0.982-0.996, 42-48 of the top 50 (noise floor >= 0.999 and 47-50). One-spike
+   triggers: none ignite (36, 85, 2,154 spikes). Kenyon cells 3.3% (fix-only 3.6%). Steering
+   unchanged: both odour sides still say "turn left" (+4.9 / +3.7 Hz).
+4. *Sensitivity (1 seed x 30 each).* Stability is robust: 0 runaways in 1,140 trials with either
+   scale or both changed by 10% (Ir94e and DM1 included). The feeding checks sit on the balance
+   between excitation and inhibition: excitation -10% -> water 1.4 Hz (fails, bar 5 Hz);
+   excitation +10% -> sugar + bitter 15.5% of sugar alone (fails, bar 10%); inhibition -10% ->
+   10.8% (fails, just); inhibition +10% and both scales +-10% pass everything. The paper's own
+   synapses (the fix-only model rebuilt with far-away reversal potentials, which reproduces it:
+   67.8 / 93.9 / 29.7 / 1.4 Hz against 68.2 / 94.7 / 29.7 / 1.3 Hz) fail the same two checks
+   under the same excitation shifts (water 3.0 Hz; bitter 13.0%) and pass the inhibition shifts
+   (7.4%; 0.7%). So the edge is inherited from the paper's model and made somewhat sharper (MN9
+   at sugar 100 Hz -41% / +18% for excitation -/+10%, against -28% / +20%).
+
+**Validated?** PRELIMINARY. Phase 6 step 1 (3 seeds; +-10% of each tuned scale), step 2 (tests,
+spike-identity with the sign-fixed brain when every switch is off) and step 3 (literature) done;
+no independent review; the inhibitory reversal potential was not varied; not stacked with
+upgrades 1 or 3. The machine rebooted at 03:09 during the runs; everything resumed from saved
+per-trial files, no trial was run twice.
+
+**In plain English.** Real synapses push less as the voltage approaches the channel's own
+"stop" voltage. Adding that to the model broke the feeding result the first time. With the
+fixed antennal-lobe signs, the old "make every synapse twice as strong" repair no longer makes
+the brain run away, but it still cannot reach the paper's feeding number and it makes the whole
+brain much busier. Giving excitation and inhibition their own strengths (1.2x and 0.87x) fixes
+both: every taste check passes on every seed, the brain never runs away, and it behaves almost
+exactly like the fix-only brain neuron by neuron. The catch: those two strengths are fitted,
+not measured (no fly study measures one inhibitory synapse next to one excitatory synapse), and
+the water and bitter results depend on the balance between the two strengths: a 10% shift of
+excitation breaks one of them, exactly as the same shift does in the paper's own model (a little
+more sharply here). So it is a usable optional switch, not the new default. Details:
+`docs/phase7-conductance.md`.

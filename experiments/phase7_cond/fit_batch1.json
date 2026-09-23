@@ -1,0 +1,9 @@
+[{"conductance": false},
+ {"cond_exc_scale": 1.1556, "cond_inh_scale": 0.5333},
+ {"cond_exc_scale": 1.3867, "cond_inh_scale": 0.64},
+ {"cond_exc_scale": 1.5, "cond_inh_scale": 1.0},
+ {"cond_exc_scale": 1.5, "cond_inh_scale": 0.5},
+ {"cond_exc_scale": 1.25, "cond_inh_scale": 0.25},
+ {"cond_exc_scale": 1.0, "cond_inh_scale": 0.25},
+ {"cond_exc_scale": 2.0, "cond_inh_scale": 1.0},
+ {"cond_exc_scale": 2.0, "cond_inh_scale": 0.5}]

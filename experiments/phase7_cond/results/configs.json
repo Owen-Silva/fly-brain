@@ -1,0 +1,82 @@
+{
+ "sep": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.2,
+  "cond_inh_scale": 0.87
+ },
+ "sep_exc0.9": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.08,
+  "cond_inh_scale": 0.87
+ },
+ "sep_exc1.1": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.32,
+  "cond_inh_scale": 0.87
+ },
+ "sep_inh0.9": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.2,
+  "cond_inh_scale": 0.783
+ },
+ "sep_inh1.1": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.2,
+  "cond_inh_scale": 0.957
+ },
+ "sep_all0.9": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.2,
+  "cond_inh_scale": 0.87,
+  "cond_weight_scale": 0.9
+ },
+ "sep_all1.1": {
+  "conductance": true,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_exc_scale": 1.2,
+  "cond_inh_scale": 0.87,
+  "cond_weight_scale": 1.1
+ },
+ "cur_ref": {
+  "conductance": true,
+  "E_exc_mV": 1000000.0,
+  "E_inh_mV": -1000000.0
+ },
+ "cur_exc0.9": {
+  "conductance": true,
+  "E_exc_mV": 1000000.0,
+  "E_inh_mV": -1000000.0,
+  "cond_exc_scale": 0.9
+ },
+ "cur_exc1.1": {
+  "conductance": true,
+  "E_exc_mV": 1000000.0,
+  "E_inh_mV": -1000000.0,
+  "cond_exc_scale": 1.1
+ },
+ "cur_inh0.9": {
+  "conductance": true,
+  "E_exc_mV": 1000000.0,
+  "E_inh_mV": -1000000.0,
+  "cond_inh_scale": 0.9
+ },
+ "cur_inh1.1": {
+  "conductance": true,
+  "E_exc_mV": 1000000.0,
+  "E_inh_mV": -1000000.0,
+  "cond_inh_scale": 1.1
+ }
+}

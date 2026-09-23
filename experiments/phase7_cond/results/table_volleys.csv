@@ -1,0 +1,10 @@
+config,trigger,total_spikes,max_distinct_10ms,runaway
+fix_only,10 DM1 ORNs fire once,31,19,False
+fix_only,44 eLNs fire once,81,81,False
+fix_only,all 685 AL projection neurons fire once,3589,1170,False
+sep,10 DM1 ORNs fire once,36,24,False
+sep,44 eLNs fire once,85,84,False
+sep,all 685 AL projection neurons fire once,2154,1208,False
+g2,10 DM1 ORNs fire once,50,37,False
+g2,44 eLNs fire once,93,93,False
+g2,all 685 AL projection neurons fire once,2943,1587,True
