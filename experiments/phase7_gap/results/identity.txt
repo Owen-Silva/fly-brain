@@ -1,0 +1,4 @@
+== Identity checks (seed 0, trials 0-9) ==
+old engine on this brain vs experiments/phase7_signs al_ln_literature: 90 trials compared, all of ['total_spikes', 'n_active', 'max_distinct_10ms', 'mn9_hz', 'kc_active', 'DNa02_L', 'DNa02_R'] identical: True
+old engine vs experiments/phase6/steering al_ln DA1: 20 trials, DNa02 L/R and active-neuron counts identical: True
+new engine with all junctions at strength 0 vs old engine: 110 trials, identical: True

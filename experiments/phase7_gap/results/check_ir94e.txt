@@ -1,0 +1,8 @@
+ir94e_200Hz, seed 0: total spikes per trial
+(in brackets: spikes of the 379 coupled cells)
+trial | stored al_ln | stored gap_x1 | old engine | new, strength 0 | new, strength 1 | new, strength 2
+0 | 6335 | 6335 | 6335 (0) | 6335 (0) | 6335 (0) | 6335 (0)
+10 | 9589 | 10244 | 9589 (1) | 9589 (1) | 10244 (0) | 10244 (0)
+12 | 6888 | 6887 | 6888 (1) | 6888 (1) | 6887 (0) | 6887 (0)
+17 | 13222 | 12947 | 13222 (1) | 13222 (1) | 12947 (0) | 12947 (0)
+20 | 8572 | 8425 | 8572 (1) | 8572 (1) | 8425 (0) | 8425 (0)

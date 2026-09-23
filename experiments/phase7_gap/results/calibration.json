@@ -1,0 +1,73 @@
+{
+ "cc_target": {
+  "eln_pn": 0.013,
+  "sister_pn": 0.016
+ },
+ "kappa": {
+  "eln_pn": 0.01445156732758297,
+  "sister_pn": 0.01969894234024584
+ },
+ "two_cell_cc_of_kappa": {
+  "eln_pn": 0.014245694711333936,
+  "sister_pn": 0.019318390480072535
+ },
+ "n_pairs": {
+  "eln_pn": 7371,
+  "sister_pn": 703
+ },
+ "n_eln": 44,
+ "n_upn": 335,
+ "n_upn_coupled_to_eln": 335,
+ "n_glomeruli": 51,
+ "upn_per_eln_median": 170.0,
+ "eln_per_upn_median": 22.0,
+ "sister_groups_with_2plus": 78,
+ "model_cc_eln_to_pn_median": 0.012999999984043657,
+ "model_cc_pn_to_eln_median": 0.005256791260251828,
+ "measured_cc_pn_to_eln": "depol 0.005 (Cd2+) / 0.008 (Huang); hyperpol 0.004-0.010",
+ "model_cc_sister_median": 0.015999996314107926,
+ "total_kappa_eln_median": 2.4567664456891,
+ "total_kappa_upn_median": 0.37178393321489983,
+ "input_conductance_factor_eln": 3.4567664456891,
+ "input_conductance_factor_upn": 1.3717839332148998,
+ "spike_area_mV_ms": 40.0,
+ "spikelet_mV": {
+  "eln_pn": 0.02890313465516594,
+  "sister_pn": 0.03939788468049168
+ },
+ "dm1_upn_per_side": {
+  "left": 4,
+  "right": 4
+ },
+ "da1_upn_per_side": {
+  "left": 9,
+  "right": 9
+ },
+ "dm1_eln_per_side": {
+  "left": 21,
+  "right": 23
+ },
+ "eln_side": {
+  "right": 23,
+  "left": 21
+ },
+ "eln_glomerulus_same_side_frac": 0.9588929588929589,
+ "x0.5": {
+  "kappa": {
+   "eln_pn": 0.007225783663791485,
+   "sister_pn": 0.00984947117012292
+  },
+  "model_cc_eln_to_pn_median": 0.006694558680704927,
+  "model_cc_sister_median": 0.008919067128085335,
+  "total_kappa_eln_median": 1.22838322284455
+ },
+ "x2.0": {
+  "kappa": {
+   "eln_pn": 0.02890313465516594,
+   "sister_pn": 0.03939788468049168
+  },
+  "model_cc_eln_to_pn_median": 0.025092383330794107,
+  "model_cc_sister_median": 0.026548534387396214,
+  "total_kappa_eln_median": 4.9135328913782
+ }
+}

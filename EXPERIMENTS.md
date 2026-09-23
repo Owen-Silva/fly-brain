@@ -1098,3 +1098,63 @@ were used through abstracts or search summaries (marked in the doc).
 `experiments/phase7_neuromod/` (counts, identity tables, validation runs and tables),
 `experiments/phase8_aversive/` (sniff traces, conditioning, regression, summaries, plot
 `plots/aversive_compare.png`), `docs/phase7-neuromodulators.md`.
+
+## 2026-09-23 - Phase 7 item 5: electrical synapses (gap junctions) in the antennal lobe (PRELIMINARY)
+
+**Question.** The wiring diagram has no electrical synapses (gap junctions: pores that join
+two cells so current flows between them both ways, instantly). The recommended sign fix
+`al_ln_literature` removed the chemical synapses of excitatory antennal-lobe local neurons
+(eLNs) onto projection neurons (PNs) *because* recordings say eLNs reach PNs electrically.
+Adding those electrical connections back, only where recordings measured them: does the
+model still pass the Phase 3 checks, and does it change the one-sided DM1 steering?
+
+**Sources.** Full text + bar charts viewed: Yaksi & Wilson 2010 (Neuron 67:1034; eLN->PN
+coupling coefficient about 0.010, 0.014 with chemical transmission blocked, abolished in the
+*shakB2* gap-junction mutant; "each eLN is connected to most or all PNs"; sister DA1 PNs
+coupled), Kazama & Wilson 2009 (Nat Neurosci 12:1136; sister DM6 PNs, electrical part about
+0.016, other-glomerulus pairs about 0). Figures and abstract only: Huang et al. 2010 (Neuron
+67:1021; eLN->PN about 0.015). Abstract only / searched, not used: Wu et al. 2011 (APL-DPM,
+no strength), Liu et al. 2016 (Kenyon-cell dye coupling, no strength, cells unknown), Shyu et
+al. 2019, Ammer et al. 2022 (visual VS/HS, UNVERIFIED). Bar-chart values were read by eye
+(about +/-0.002).
+
+**What changed.** New `sim/gap_junctions.py` (the engine file is not touched): a copy of the
+compiled loop that adds `kappa x (v_partner - v_self)` to each coupled cell's voltage update
+plus a small "spikelet" per partner spike, and `build_gap_brain()` = `al_ln_literature` +
+junctions. kappa = junction conductance / the cell's own leak conductance; it is chosen so
+the model, probed like the experiments (steady current into one cell of the coupled network),
+gives the measured coupling coefficients: kappa 0.0145 (eLN-PN, target 0.013) and 0.0197
+(sister PNs, target 0.016). Spikelet = kappa x 40 mV x 1 ms / 20 ms (spike width ASSUMED).
+Pairs (no gap junctions in FlyWire, so chosen by rule): each of the 44 literature eLNs with
+every uniglomerular PN of every glomerulus it touches (>= 5 shared chemical synapses):
+7,371 pairs; every pair of same-glomerulus, same-side uniglomerular PNs: 703 pairs. Table
+with a source per row: `experiments/phase7_gap/results/coupling_table.csv`. Tests:
+`tests/test_gap_junctions.py` (zero junctions = the old engine spike for spike, on small
+networks and on the whole brain; two coupled cells give kappa/(1+kappa); spikelet size).
+
+**What happened.** Each run was 3 seeds x 30 trials, compared with `al_ln_literature`.
+- Taste checks (Phase 3): identical. All 450 taste trials have the same spike totals, and
+  MN9 is 67.28 / 93.53 / 30.79 / 0.00 / 1.36 Hz for sugar 100, sugar 200, water, bitter and
+  sugar+bitter. Runaway: 0 of 90 trials for Ir94e 200 Hz, DM1 150 Hz and DA1 150 Hz.
+  Kenyon cells under DM1: 3.62% before, 3.61% after. In 19 of 90 Ir94e trials a single
+  projection-neuron spike no longer happens, which shifts that trial's total; re-running
+  five of those trials confirmed this (`results/check_ir94e.txt`).
+- Antennal lobe: each eLN is joined to about 170 cells that sit mostly at rest, so its input
+  conductance is 3.5 times higher and it goes nearly quiet (DM1 smell: 16.9 -> 2.3 Hz). The
+  lateral excitation of other glomeruli seen in flies does not appear: the other 309 uPNs
+  stay at 0.15 -> 0.14 Hz.
+- DM1 steering. Turn = left minus right DNa02, in Hz, for a left / right smell. Before:
+  +5.7 / +4.8. After: +15.8 / +5.8. The signal now depends on the smell's side (d' 0.2 ->
+  2.6), but a right smell still says "turn left". **The DM1 bias is not fixed.**
+- Why the DM1 signal changes: eLN-PN junctions alone give +20.1 / +5.4, and sister-PN
+  junctions alone give +3.4 / +4.7. No junctions with the 44 eLNs silenced gives
+  +30.8 / +5.2. So the change comes from quieting the eLNs, not from electrical excitation
+  of the projection neurons.
+- DA1 steering is unchanged and still correct: +21.7 / -15.6 before, +21.5 / -15.6 after.
+- At half and double strength, every conclusion above still holds (DM1 d' 1.0 and 1.9).
+- Verdict: keep as an optional switch (`build_gap_brain`), not the default.
+
+**Validated?** No. PRELIMINARY: 3 seeds and 0.5x/2x strength were run and the checks were
+compared with the literature, but the calibration numbers are read by eye from bar charts,
+the spike width is assumed, the model's junction cannot rectify, and the eLN "loading" has no
+measurement to be checked against. Details: `docs/phase7-electrical-synapses.md`.
