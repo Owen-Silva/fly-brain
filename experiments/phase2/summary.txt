@@ -1,0 +1,132 @@
+Phase 2 summary: FlyWire whole-brain connectome, as loaded by sim/connectome.py
+(generated 2026-09-22 18:43)
+
+== Load speed (snapshot 783) ==
+cold load (read source files, build, write cache): 13.4 s
+cached load (parquet cache in data/cache/):        0.45 s
+build sparse matrix (first call only):             1.60 s
+
+== Size vs published FlyWire numbers (Dorkenwald et al. 2024) ==
+                                            ours     published
+neurons                                  138,639       139,255
+synapses between neurons              54,492,922  54.5 million
+connections (any synapse count)       15,091,983    not stated
+connections with >=5 synapses          2,700,513     2,700,513
+neurons in those >=5 connections         134,181       134,181
+missing neurons: 616 (0.4%); see crosscheck_zenodo.txt: every one of them has zero synapses with any other neuron
+synapses per connection: mean 3.61, median 2, max 2,405; 49.7% of connections are a single synapse
+no threshold in this file: smallest connection = 1 synapse
+
+== Neuron lists: which source has which neurons ==
+  reference (Shiu 783)              138,639
+  FlyWire proofread list            139,255
+  annotations (Schlegel v3.1.0)     139,248
+  in reference (Shiu 783), not in FlyWire proofread list: 0
+  in reference (Shiu 783), not in annotations (Schlegel v3.1.0): 14
+  in FlyWire proofread list, not in reference (Shiu 783): 616
+  in FlyWire proofread list, not in annotations (Schlegel v3.1.0): 14
+  in annotations (Schlegel v3.1.0), not in reference (Shiu 783): 623
+  in annotations (Schlegel v3.1.0), not in FlyWire proofread list: 7
+
+== Most connected neurons (by synapse count) ==
+Top 10 senders (total outgoing synapses):
+             root_id     out_synapses  cell_type      super_class        top_nt
+  720575940628908548           99,871  CT1            optic              gaba
+  720575940626979621           98,624  CT1            optic              gaba
+  720575940624547622           60,103  APL            central            gaba
+  720575940613583001           50,681  APL            central            gaba
+  720575940627497244           47,851  Li33           optic              gaba
+  720575940625952755           47,162  Li33           optic              gaba
+  720575940634612194           35,806  LPi15          optic              gaba
+  720575940620008758           33,763  LPi13          optic              gaba
+  720575940628307026           31,889  Am1            optic              gaba
+  720575940628038808           28,611  cM15           visual_centrifugal acetylcholine
+Top 10 receivers (total incoming synapses):
+             root_id      in_synapses  cell_type      super_class        top_nt
+  720575940626979621           69,948  CT1            optic              gaba
+  720575940628908548           68,400  CT1            optic              gaba
+  720575940624547622           68,332  APL            central            gaba
+  720575940613583001           63,780  APL            central            gaba
+  720575940620975696           50,943  DPM            central            dopamine
+  720575940634612194           49,946  LPi15          optic              gaba
+  720575940625934094           41,525  DPM            central            dopamine
+  720575940619991862           38,506  LPi15          optic              gaba
+  720575940627497244           38,080  Li33           optic              gaba
+  720575940625952755           37,421  Li33           optic              gaba
+Top 10 by number of distinct partners they send to:
+             root_id  n_post_partners  cell_type      super_class        top_nt
+  720575940628908548            9,783  CT1            optic              gaba
+  720575940626979621            9,610  CT1            optic              gaba
+  720575940628038808            8,454  cM15           visual_centrifugal acetylcholine
+  720575940628307026            8,445  Am1            optic              gaba
+  720575940631190016            7,787  cM15           visual_centrifugal acetylcholine
+  720575940629513222            7,731  Am1            optic              gaba
+  720575940625952755            7,453  Li33           optic              gaba
+  720575940627497244            7,283  Li33           optic              gaba
+  720575940632777320            6,153  OA-AL2b2       visual_centrifugal acetylcholine
+  720575940613065130            5,798  cL21           visual_centrifugal gaba
+Top 10 by number of distinct partners they receive from:
+             root_id   n_pre_partners  cell_type      super_class        top_nt
+  720575940626979621           10,356  CT1            optic              gaba
+  720575940628908548           10,182  CT1            optic              gaba
+  720575940636543668            5,684  MeMe_e13       optic              acetylcholine
+  720575940625952755            5,432  Li33           optic              gaba
+  720575940626403917            5,349  MeMe_e13       optic              acetylcholine
+  720575940622523508            5,265  Li31           optic              gaba
+  720575940627497244            5,134  Li33           optic              gaba
+  720575940640851363            4,762  Li31           optic              gaba
+  720575940629513222            4,627  Am1            optic              gaba
+  720575940623888397            4,571  Pm14           optic              gaba
+
+== Neurotransmitter breakdown (predicted, Eckstein et al. 2024) ==
+  neurotransmitter  neurons   share   out synapses   share  sign used
+  acetylcholine      86,025   62.0%     30,460,673   55.9%  +1 excitatory
+  glutamate          24,858   17.9%      9,471,876   17.4%  -1 inhibitory
+  gaba               19,147   13.8%     12,600,845   23.1%  -1 inhibitory
+  dopamine            5,905    4.3%      1,384,531    2.5%  +1 excitatory
+  serotonin           2,201    1.6%        436,206    0.8%  +1 excitatory
+  (none)                293    0.2%            952    0.0%  +1 excitatory
+  octopamine            210    0.2%        137,839    0.3%  +1 excitatory
+  our sign (from NT label): excitatory 59.8% of connections, 59.5% of synapses; inhibitory 40.2% / 40.5%
+  reference file's sign: excitatory 60.0% of connections, 59.6% of synapses; inhibitory 40.0% / 40.4%
+
+== Sign cross-check: our NT-derived sign vs the reference file ==
+neurons that send synapses: 138,005; signs agree for 131,977 (95.6%)
+connections agree: 98.8%; synapses agree: 98.9%
+agreement by predicted neurotransmitter:
+  (none)              12 neurons  41.7% agree
+  acetylcholine   85,881 neurons  98.0% agree
+  dopamine         5,900 neurons  99.9% agree
+  gaba            19,079 neurons  92.9% agree
+  glutamate       24,804 neurons  88.1% agree
+  octopamine         193 neurons  99.5% agree
+  serotonin        2,136 neurons  99.6% agree
+agreement by prediction confidence (top_nt_conf):
+  (0.0, 0.4]     7,149 neurons  69.9% agree
+  (0.4, 0.5]    16,238 neurons  86.7% agree
+  (0.5, 0.6]    23,162 neurons  96.1% agree
+  (0.6, 0.7]    25,775 neurons  98.3% agree
+  (0.7, 0.8]    28,527 neurons  99.2% agree
+  (0.8, 0.9]    29,180 neurons  99.6% agree
+  (0.9, 1.0]     7,962 neurons  99.5% agree
+disagreeing neurons by class: {'optic': 2823, 'sensory': 2615, 'central': 329, 'visual_projection': 100, 'descending': 55, 'sensory_ascending': 33}
+
+== Super classes (broad neuron categories) ==
+  optic                 77,530
+  central               32,379
+  sensory               16,352
+  visual_projection      8,038
+  ascending              1,736
+  descending             1,299
+  sensory_ascending        581
+  visual_centrifugal       524
+  motor                    110
+  endocrine                 76
+  (no label)                14
+neurons with a cell type label: 137,147 of 138,639; with a soma position: 118,086; with any 3D position: 138,625
+
+== Snapshot 630 (the one the Shiu et al. 2024 paper used) ==
+neurons 127,400 (paper: 127,400), connections 14,687,178, synapses 52,793,639
+labelled by the v1.1.0 (630) annotations: 127,322
+sign agreement with the reference file: 98.5% of 127,015 sending neurons
+cold load 10.9 s, cached load 0.37 s

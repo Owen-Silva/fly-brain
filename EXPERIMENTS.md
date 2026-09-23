@@ -39,3 +39,39 @@ the result was validated (see PLAN.md Phase 6). Newest entries at the bottom.
   lowers it, zero input gives zero spikes, results repeat exactly with the same
   seed, and the neuron numbers match the reference. This is a learning exercise,
   not a scientific result.
+
+## 2026-09-22: Phase 2, load the real fly brain
+- **Changed:** Added `sim/connectome.py`, which loads the FlyWire wiring
+  diagram (release 783 by default; release 630, the one the Shiu et al. paper
+  used, on request) from the reference paper's files, attaches per-neuron
+  labels from Schlegel et al. 2024 (cell type, class, predicted
+  neurotransmitter, 3D position; downloaded without an account, pinned by
+  checksum), and gives a connection table plus a sparse connection matrix
+  (weight = synapse count, sign from neurotransmitter: acetylcholine +,
+  GABA and glutamate -, everything else +, the reference paper's assumption).
+  Results are cached in `data/cache/`.
+- **Happened:** Release 783 has 138,639 neurons, 15,091,983 connections and
+  54,492,922 synapses. Published FlyWire numbers (Dorkenwald et al. 2024):
+  139,255 neurons, 54.5 million synapses, 2,700,513 connections of 5+
+  synapses between 134,181 neurons. Our 5+ counts match exactly
+  (2,700,513 and 134,181), and every one of our 15,091,983 connections matches
+  FlyWire's official Zenodo table pair for pair, synapse count for synapse
+  count. The 616 missing neurons all have zero synapses with any other neuron,
+  so leaving them out cannot change a simulation. Release 630 has 127,400
+  neurons, the number the paper states. Our neurotransmitter-based signs agree
+  with the reference file's signs for 95.6% of neurons (98.8% of connections,
+  98.9% of synapses) in 783 and 98.5% of neurons in 630; the disagreements
+  are almost all neurons whose neurotransmitter guess was low-confidence.
+  The loader keeps both signs; Phase 3 will use the reference file's.
+  Loading takes 5 to 13 s the first time and about 0.3 to 0.5 s from cache.
+  The most connected neurons are giant inhibitory wide-field cells (CT1, APL,
+  Li33, LPi15). 60% of synapses are excitatory, 40% inhibitory.
+- **Validated:** Yes, as a data check (not a scientific result): counts
+  match the published numbers, the connection list matches FlyWire's official
+  table exactly, and 20 fast + 7 slow automated tests pass. Not verified:
+  the exact rule the paper used to pick each neuron's sign (reproducing it
+  needs the 9.5 GB per-synapse file, not downloaded); our closest
+  re-derivation agrees for 96.9% of neurons.
+- **Checkpoint:** PASS (counts match; cached load under half a second).
+- Details: `docs/phase2-explained.md`, `experiments/phase2/summary.txt`,
+  `experiments/phase2/crosscheck_zenodo.txt`.

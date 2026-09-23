@@ -1,0 +1,35 @@
+Phase 2 cross-check: reference 783 files vs FlyWire Zenodo 783 tables
+(generated 2026-09-22 18:41, took 30 s to stream the table)
+
+== 1. The official connection table ==
+rows (pair x brain region):           16,847,997
+root ids not in the official list:    0
+rows with no neurotransmitter value:  1732
+neuron pairs after summing regions:   15,091,983
+  of which self-connections:          0 (0 synapses)
+total synapses:                       54,492,922
+total synapses without self-links:    54,492,922
+rows (pair x region) with >=5 syn:    2,710,038
+neuron pairs with >=5 synapses:       2,700,513 between 134,181 neurons
+  published (Dorkenwald 2024): 2,700,513 connections between 134,181 neurons at >=5 synapses
+
+== 2. Reference connection list vs official table ==
+reference pairs:                      15,091,983
+  found in official table:            15,091,983 (100.00%)
+  with identical synapse count:       15,091,983 (100.00%)
+official pairs (no self-links) missing from reference: 0 (0 synapses)
+
+== 3. Neurons in FlyWire's list but not in the reference ==
+count:                                616
+  with zero synapses to/from any other neuron: 616
+  with only self-connections:         0
+  with some connections:              0 (max 0 synapses)
+reference neurons with zero connections: 0
+  super classes of the missing: {'sensory': 552, 'sensory_ascending': 31, 'ascending': 14, 'optic': 7, 'central': 4, 'endocrine': 4, 'descending': 4}
+
+== 4. Can the reference's +/- sign be re-derived? ==
+neurons that send synapses (in both): 138,005
+rule A, top NT averaged over the neuron's synapses (official table): 95.74% agree
+rule B, GABA+glutamate share of synapses > 50%:                      96.86% agree
+our loader (Schlegel et al. top_nt label):                           95.63% agree
+rule A vs our loader:                                                98.76% agree
