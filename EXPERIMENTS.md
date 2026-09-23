@@ -186,3 +186,46 @@ the result was validated (see PLAN.md Phase 6). Newest entries at the bottom.
   strength), with the reduced trial count noted. The Ir94e runaway observation is NOT validated.
 - **Explained in plain English:** `docs/phase3-explained.md`. Side-by-side table:
   `experiments/phase3/comparison_table.md`.
+
+## 2026-09-22 — Phase 5 Sensitivity: do the three paper results survive ±20% changes? (PRELIMINARY)
+
+**What was changed.** Nothing in the model itself. We re-ran the paper's three MN9 results (sugar
+100 Hz turns MN9 on; water 200 Hz turns MN9 on; bitter 120 Hz added to sugar 100 Hz suppresses MN9)
+with each of seven model settings changed on its own by -20%, -10%, +10% and +20%: synaptic weight
+(input kick held fixed), threshold (the 7 mV rest-to-threshold **gap** was scaled, not the -45 mV
+value), membrane time constant, synaptic time constant, refractory period, synaptic delay, and
+Poisson input rate. We also gave every one of the 14.7 million connections its own random weight
+change of up to ±20% (15 random patterns; 5 planned, 10 added after one landed on the water
+cut-off). Every point: 3 seeds x 30 trials x 1 s, snapshot 630, fast engine; 12,420 one-second
+trials in total. The same model with 3 new seeds was run to measure pure random noise (about 1%).
+
+**Rule (fixed before the runs).** "MN9 on" = at least 5 Hz; "bitter suppresses" = MN9 with bitter at
+most 50% of sugar alone (same seed) with sugar alone on. A variation "holds" only if every seed
+agrees; one failing seed = "flips".
+
+**What happened.**
+- Sugar turns MN9 on: **holds in all 28 setting changes and all 15 jitter patterns**. MN9 ranged
+  35-80 Hz (baseline 67.0): the direction is robust, the size is not (-47% to +19%).
+- Bitter suppresses sugar: **holds everywhere**. MN9 with bitter never exceeded 10% of sugar alone.
+- Water turns MN9 on: **fragile**. It flips at synaptic weight -20% (0.02 Hz), threshold gap +20%
+  (0.3 Hz) and synaptic time constant -20% (0.4 Hz), and in 1 of 15 jitter patterns (5.1 Hz, on the
+  cut-off). MN9 ranged 0-65 Hz (baseline 30.7). Likely reason: at 200 Hz water sits just above its
+  own switch-on point (the paper puts water's onset near 130 Hz), so any change that weakens signal
+  passing between neurons switches it off.
+- Four settings dominate (synaptic weight, threshold gap, synaptic and membrane time constants);
+  refractory period and delay barely matter (at most about 10% and 2.5%).
+- The top-50 most active downstream neurons stay mostly the same (at least 35 of 50 kept), but
+  their order shifts under the big four settings (Spearman down to 0.57 for sugar vs 0.996 from
+  random noise alone).
+- Changing the cut-offs (1 or 10 Hz; 25% or 75%) does not change which results are robust.
+
+**Validated?** No: PRELIMINARY. This is Phase 6 step 1 only (seeds and parameter variations).
+Not tested: two or more settings changed at once; other snapshots; other operating points.
+
+**Plain English.** Two of the paper's three results (sugar switches on the feeding motor neuron;
+bitter taste shuts that off) survive every 20% nudge to the model we tried, so by the plan's
+standard they look trustworthy. The water result does not: nudging the synapse strength, the firing
+threshold or the synaptic time constant by 20%, or randomly scrambling synapse counts by up to 20%,
+can switch it off. Exact firing rates move a lot with the settings for every result, so only the
+yes/no direction should be trusted, not the numbers. New reusable tool: `sim/validation.py` runs
+this same check on any future result. Write-up with plots: `docs/phase5-sensitivity.md`.

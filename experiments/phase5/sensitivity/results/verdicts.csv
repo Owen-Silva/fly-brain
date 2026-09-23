@@ -1,0 +1,139 @@
+claim,variation,parameter,change,seeds_holding,n_seeds,verdict,identical_to_baseline,rule
+sugar_on,baseline,baseline,0.0,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,baseline_new_seeds,seed_noise,0.0,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,w_syn-20%,w_syn,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,w_syn+20%,w_syn,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,threshold_gap-20%,threshold_gap,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,threshold_gap+20%,threshold_gap,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_mbr-20%,t_mbr,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_mbr+20%,t_mbr,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,tau-20%,tau,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,tau+20%,tau,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_rfc-20%,t_rfc,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_rfc+20%,t_rfc,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_dly-20%,t_dly,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_dly+20%,t_dly,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,r_poi-20%,r_poi,-0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,r_poi+20%,r_poi,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter_control,jitter_control,0.0,3,3,holds,True,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw0,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw1,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw2,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw3,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw4,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw5,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw6,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw7,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw8,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw9,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw10,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw11,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw12,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw13,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,jitter20%_draw14,weight_jitter,0.2,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,w_syn-10%,w_syn,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,w_syn+10%,w_syn,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,threshold_gap-10%,threshold_gap,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,threshold_gap+10%,threshold_gap,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_mbr-10%,t_mbr,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_mbr+10%,t_mbr,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,tau-10%,tau,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,tau+10%,tau,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_rfc-10%,t_rfc,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_rfc+10%,t_rfc,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_dly-10%,t_dly,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,t_dly+10%,t_dly,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,r_poi-10%,r_poi,-0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+sugar_on,r_poi+10%,r_poi,0.1,3,3,holds,False,sugar GRNs at 100 Hz drive MN9 to >= 5 Hz
+water_on,baseline,baseline,0.0,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,baseline_new_seeds,seed_noise,0.0,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,w_syn-20%,w_syn,-0.2,0,3,flips,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,w_syn+20%,w_syn,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,threshold_gap-20%,threshold_gap,-0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,threshold_gap+20%,threshold_gap,0.2,0,3,flips,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_mbr-20%,t_mbr,-0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_mbr+20%,t_mbr,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,tau-20%,tau,-0.2,0,3,flips,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,tau+20%,tau,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_rfc-20%,t_rfc,-0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_rfc+20%,t_rfc,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_dly-20%,t_dly,-0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_dly+20%,t_dly,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,r_poi-20%,r_poi,-0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,r_poi+20%,r_poi,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter_control,jitter_control,0.0,3,3,holds,True,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw0,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw1,weight_jitter,0.2,1,3,flips,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw2,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw3,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw4,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw5,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw6,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw7,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw8,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw9,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw10,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw11,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw12,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw13,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,jitter20%_draw14,weight_jitter,0.2,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,w_syn-10%,w_syn,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,w_syn+10%,w_syn,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,threshold_gap-10%,threshold_gap,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,threshold_gap+10%,threshold_gap,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_mbr-10%,t_mbr,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_mbr+10%,t_mbr,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,tau-10%,tau,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,tau+10%,tau,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_rfc-10%,t_rfc,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_rfc+10%,t_rfc,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_dly-10%,t_dly,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,t_dly+10%,t_dly,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,r_poi-10%,r_poi,-0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+water_on,r_poi+10%,r_poi,0.1,3,3,holds,False,water GRNs at 200 Hz drive MN9 to >= 5 Hz
+bitter_suppresses,baseline,baseline,0.0,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,baseline_new_seeds,seed_noise,0.0,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,w_syn-20%,w_syn,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,w_syn+20%,w_syn,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,threshold_gap-20%,threshold_gap,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,threshold_gap+20%,threshold_gap,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_mbr-20%,t_mbr,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_mbr+20%,t_mbr,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,tau-20%,tau,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,tau+20%,tau,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_rfc-20%,t_rfc,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_rfc+20%,t_rfc,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_dly-20%,t_dly,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_dly+20%,t_dly,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,r_poi-20%,r_poi,-0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,r_poi+20%,r_poi,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter_control,jitter_control,0.0,3,3,holds,True,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw0,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw1,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw2,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw3,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw4,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw5,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw6,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw7,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw8,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw9,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw10,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw11,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw12,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw13,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,jitter20%_draw14,weight_jitter,0.2,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,w_syn-10%,w_syn,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,w_syn+10%,w_syn,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,threshold_gap-10%,threshold_gap,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,threshold_gap+10%,threshold_gap,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_mbr-10%,t_mbr,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_mbr+10%,t_mbr,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,tau-10%,tau,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,tau+10%,tau,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_rfc-10%,t_rfc,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_rfc+10%,t_rfc,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_dly-10%,t_dly,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,t_dly+10%,t_dly,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,r_poi-10%,r_poi,-0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"
+bitter_suppresses,r_poi+10%,r_poi,0.1,3,3,holds,False,"adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz"

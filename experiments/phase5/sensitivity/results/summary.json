@@ -1,0 +1,207 @@
+{
+ "variations_done": 46,
+ "variations_missing": [],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "trials_per_seed": 30,
+ "on_hz": 5.0,
+ "max_ratio": 0.5,
+ "verdict_rule": "A variation 'holds' only if the claim is true for every random seed tested; if it is false for even one seed the verdict is 'flips'. seeds_holding shows how many seeds agreed.",
+ "noise_2se_pct": {
+  "sugar": 1.6820999374108345,
+  "water": 2.5927256567477643,
+  "sugar_bitter": 22.637336038874885,
+  "bitter_ratio_pts": 0.480631932257091
+ },
+ "claims": {
+  "sugar_on": {
+   "rule": "sugar GRNs at 100 Hz drive MN9 to >= 5 Hz",
+   "robust": true,
+   "flips": [],
+   "identical_to_baseline": [
+    "jitter_control"
+   ]
+  },
+  "water_on": {
+   "rule": "water GRNs at 200 Hz drive MN9 to >= 5 Hz",
+   "robust": false,
+   "flips": [
+    [
+     "w_syn-20%",
+     0
+    ],
+    [
+     "threshold_gap+20%",
+     0
+    ],
+    [
+     "tau-20%",
+     0
+    ],
+    [
+     "jitter20%_draw1",
+     1
+    ]
+   ],
+   "identical_to_baseline": [
+    "jitter_control"
+   ]
+  },
+  "bitter_suppresses": {
+   "rule": "adding bitter GRNs at 120 Hz cuts sugar-driven MN9 to <= 50% of sugar alone (same seed), and sugar alone is >= 5 Hz",
+   "robust": true,
+   "flips": [],
+   "identical_to_baseline": [
+    "jitter_control"
+   ]
+  }
+ },
+ "sugar_mn9": {
+  "baseline": 67.03333333333335,
+  "min": [
+   35.4,
+   "w_syn-20%"
+  ],
+  "max": [
+   79.60000000000001,
+   "t_mbr-20%"
+  ]
+ },
+ "water_mn9": {
+  "baseline": 30.677777777777777,
+  "min": [
+   0.022222222222222223,
+   "w_syn-20%"
+  ],
+  "max": [
+   64.85555555555555,
+   "threshold_gap-20%"
+  ]
+ },
+ "sugar_bitter_mn9": {
+  "baseline": 1.4111111111111112,
+  "min": [
+   0.06666666666666667,
+   "w_syn-20%"
+  ],
+  "max": [
+   7.5,
+   "threshold_gap-20%"
+  ]
+ },
+ "bitter_ratio": {
+  "baseline": 0.02105380412722452,
+  "min": [
+   0.0018909423389334512,
+   "w_syn-20%"
+  ],
+  "max": [
+   0.09615863500848339,
+   "threshold_gap-20%"
+  ]
+ },
+ "cutoff_sensitivity": {
+  "sugar_on_1Hz": [],
+  "water_on_1Hz": [
+   "w_syn-20%",
+   "threshold_gap+20%",
+   "tau-20%"
+  ],
+  "sugar_on_5Hz": [],
+  "water_on_5Hz": [
+   "w_syn-20%",
+   "threshold_gap+20%",
+   "tau-20%",
+   "jitter20%_draw1"
+  ],
+  "sugar_on_10Hz": [],
+  "water_on_10Hz": [
+   "w_syn-20%",
+   "threshold_gap+20%",
+   "tau-20%",
+   "r_poi-20%",
+   "jitter20%_draw1",
+   "w_syn-10%",
+   "threshold_gap+10%"
+  ],
+  "bitter_ratio_0.25": [],
+  "bitter_ratio_0.5": [],
+  "bitter_ratio_0.75": []
+ },
+ "ranking_min": {
+  "sugar": [
+   [
+    "w_syn-20%",
+    0.5733973589435775,
+    0.7
+   ],
+   [
+    "threshold_gap+20%",
+    0.6680592573175852,
+    0.74
+   ],
+   [
+    "tau-20%",
+    0.6821128451380551,
+    0.74
+   ]
+  ],
+  "water": [
+   [
+    "jitter20%_draw13",
+    0.916734693877551,
+    0.92
+   ],
+   [
+    "threshold_gap-20%",
+    0.9186554621848738,
+    0.78
+   ],
+   [
+    "w_syn-20%",
+    0.9224009603841536,
+    0.88
+   ]
+  ],
+  "sugar_bitter": [
+   [
+    "w_syn-20%",
+    0.8199476580432553,
+    0.84
+   ],
+   [
+    "threshold_gap-20%",
+    0.8229729407640006,
+    0.84
+   ],
+   [
+    "threshold_gap+20%",
+    0.8326250332539974,
+    0.84
+   ]
+  ]
+ },
+ "ranking_noise_floor": {
+  "sugar": [
+   [
+    0.9961584633853541,
+    1.0
+   ]
+  ],
+  "water": [
+   [
+    0.9996158463385355,
+    1.0
+   ]
+  ],
+  "sugar_bitter": [
+   [
+    0.9991116236162795,
+    0.96
+   ]
+  ]
+ }
+}
