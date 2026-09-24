@@ -2085,3 +2085,64 @@ the smell pathway, so fixing the first relay does not fix it. What still works, 
 without the switch, is the lab test: a fly with one antenna covered turns toward the
 side that can smell. With the balanced map that also works for a vinegar smell. In
 neither case does the fly get closer to the smell.
+
+## 2026-09-23 - Hybrid computer roadmap: what exists, what an individual can use, and a virtual hybrid computer to build first (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or any existing
+doc. New: `docs/hybrid-roadmap.md`, a staged plan for the end goal of a hybrid computer
+(neuromorphic silicon plus living neurons), and this entry. Research only: no runs, no
+purchases, no sign-ups and no contact with anyone. Every source was checked on
+2026-09-23, and every price carries that date.
+
+**What happened.**
+- **The fly brain already runs on neuromorphic silicon.** Sandia put the whole FlyWire
+  brain (139,255 neurons) on 12 Loihi 2 chips. It ran at 12.40 ms per simulated second
+  with 1 ms steps, against 4,419 ms on a CPU (about 356 times faster). With dense
+  activity the gain fell to about 2.4 times. This is an arXiv preprint (2508.16792,
+  2025-08-22), and it reports no power. Weights were cut to 9 bits (0.007% capped).
+- **Energy gap.** A whole fly brain uses about 256 nW (Panda et al. 2026). That is
+  about 2 pW per neuron, against about 1 µW per neuron slot on Loihi 2 and about 30 µW
+  per neuron for a CL1 box (about 25 W for about 800,000 neurons, including life
+  support).
+- **Electrode bottleneck.** A CL1 reads about 800,000 neurons through 59 electrodes,
+  about 13,600 neurons per electrode. DishBrain's loop took about 5 ms. Between US West
+  datacentres and Melbourne or Zurich, a round trip takes 138 to 173 ms, about 14 to 17
+  times DishBrain's 10 ms tick.
+- **What an individual can buy.** A SparkFun Pro Micro RP2350 ($16.95) with a Nordic
+  PPK2 power meter ($99.95). A published test ran 186 spiking neurons in real time on
+  that chip, under 20 mW. FPGA boards cost $36 to $80. The BrainChip Akida M.2 card is
+  $249 on DigiKey, but it runs CNN-style models only. SynSense Xylo and Speck and
+  Innatera Pulsar kits have no public price. Loihi 2, SpiNNaker2 and EBRAINS need an
+  institution. Lava was archived on 2026-05-13.
+- **Living neurons.** No cell culture outside a lab: biosafety rules put even BSL-1 human or
+  animal cells in a supervised lab. Cortical Labs' CL API simulator is free. News
+  reports put Cortical Cloud at $300 a week. Whether individuals can use it, or
+  FinalSpark, is unconfirmed.
+- **Virtual hybrid computer (new Stage 1b, section 6).** It has four parts: a digital
+  core for exact work, neuromorphic cores for sensing, recognition, learning and fly
+  circuits, an optional simulated living module, and the links between them. Time and
+  energy are modeled by counting operations and pricing each one at published per-part
+  costs, the way gem5, Accel-Sim and SANA-FE work. SANA-FE's first version matched
+  Loihi within mean errors of 9.7% (energy) and 13.4% (latency). SST has no spiking
+  component (it added "golem", for in-memory computing). A 10-task benchmark suite
+  names a predicted winner for each task. Every result is labelled measured, modeled or
+  knob-dependent. Cloud GPU prices seen: $0.526 to $6.99 an hour.
+- **Next step.** Find the smallest piece of the fly circuit that keeps MN9 at about
+  67 Hz. If it is about 1,000 neurons or fewer, buy the RP2350 and the PPK2 (about
+  $117). That piece also becomes the virtual computer's first neuromorphic core.
+
+**Validated?** No: PRELIMINARY literature review. Several prices come from secondary
+sources: CNX Software for the AKD1500, news reports for Cortical Cloud, and Vantage for
+AWS. The Sandia result is not peer reviewed. The energy-per-neuron figures are
+order-of-magnitude arithmetic. Every number in the virtual computer is modeled until
+Stages 2 and 3 measure hardware. Its living module rests on guessed settings. Section 8
+of the doc lists what could not be confirmed.
+
+**Plain English.** We wrote a realistic plan for the hybrid computer. Chips that work
+like brains are real, and one already runs our whole fly brain much faster than a
+normal computer. What an individual can actually use is cheap microcontroller and
+FPGA boards, not the big research chips. Living neurons can only be reached through a lab or a paid remote
+service, and today they are read through a few dozen to a few thousand wires. First,
+we will build the whole hybrid computer in software, with every part's speed and
+energy taken from real chips, and test it against normal CPUs and GPUs. After that
+comes a $17 chip and a $100 power meter.
