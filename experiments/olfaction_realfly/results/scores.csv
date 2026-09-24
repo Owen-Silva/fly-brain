@@ -1,0 +1,10 @@
+fact,what,real_fly,model,verdict
+F1,"KC sparseness, set A (23 measured glomeruli)","~5% mean (Honegger 2011), 6% (Turner 2008); no odour mean > 10%","3.0% mean (median 2.7%, max 6.7%, 0 of 110 odours > 10%)",PARTIAL
+F8,Responding KCs fire only a few spikes,'a few spikes' (Lin 2014; Turner 2008),median 6.2 spikes per 0.5 s (90th pct 15.4),PARTIAL
+F2,PNs more broadly tuned than their ORNs,PN < ORN lifetime sparseness in 7 of 7 glomeruli (Bhandawat 2007),PN < ORN in 8 of 23 glomeruli; median S 0.53 (ORN) vs 0.57 (PN); Wilcoxon p = 0.048,MISMATCH
+F5,PN odour responses vs the real-fly normalization equation,equation explained 95% / 87% of real VM7 / DL5 PN variance (Olsen 2010),r = 0.85 (Spearman 0.89) over 2530 glomerulus-odour pairs; mean 34 Hz model vs 48 Hz equation,MATCH
+F6,Odour representations decorrelate from ORNs/PNs to KCs,less correlated in KCs than ORNs (Turner 2008); KC coding decorrelated (Lin 2014),"mean inter-odour r: ORN 0.21, uPN 0.54 (23-glomerulus means 0.31), KC 0.31 (binary responders 0.27)",PARTIAL
+F7,Blocking APL makes KC responses denser and more correlated,denser + more correlated (Lin 2014; size not stated in text),KC responding 3.0% -> 11.3% (110 of 110 odours denser); inter-odour r 0.30 -> 0.41,MATCH
+F1b,"KC sparseness, set B (46 glomeruli incl. DoOR estimates; 6 trials)","~5% mean (Honegger 2011), 6% (Turner 2008); no odour mean > 10%","3.9% mean (median 3.3%, max 12.9%, 2 of 110 odours > 10%)",MATCH
+F3,"Weak ORN input amplified, strong input saturates","Rmax 165 Hz, sigma 12 Hz (Olsen 2010; per glomerulus Rmax 144-170, sigma 12-45)","DL5: Rmax 191, sigma 37 Hz, gain ratio 5.6; DM1: Rmax 243, sigma 32 Hz, gain ratio 8.3; DM4: Rmax 168, sigma 49 Hz, gain ratio 3.2; VM7d: Rmax 181, sigma 36 Hz, gain ratio 6.1",PARTIAL
+F4,Lateral inhibition from other glomeruli (pentyl acetate x1 as 'public' odour),"DL5: 50-78% less; DM1: 51-78% less; DM4: 50-77% less; VM7d: 51-78% less (Olsen 2010 equation, m = 4.19-10.63)",DL5: 83% less; DM1: 85% less; DM4: 76% less; VM7d: 75% less,MATCH

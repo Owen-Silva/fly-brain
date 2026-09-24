@@ -1831,3 +1831,71 @@ it is the same set of neurons. Our fix carries over unchanged: no runaways in hu
 trials, and the paper's sugar-feeding result is identical to the last spike. The same
 handful of smell-centre cells is the way in. One small difference: taste input tips the
 newer map about half as often, because it sits a little further from the edge.
+
+## 2026-09-23 - Does the model's smell system respond like real fly recordings? Real receptor data for 110 odours, 8 pre-registered facts (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/` or `tests/`. New folder
+`experiments/olfaction_realfly/` and write-up `docs/olfaction-vs-real-fly.md`. Real
+receptor responses came from DoOR 2.0 (Muench & Galizia 2016; public GitHub
+`ropensci/DoOR.data`, downloaded to `data/olfaction/door/`, not committed). The inputs are
+Hallem & Carlson 2006's 24 receptors x 110 odours (spikes/s, 1:100) plus DoOR's merged
+estimates for 23 more glomeruli. Receptors were mapped to FlyWire ORN types through DoOR's
+mapping table and the snapshot-630 `hemibrain_type` labels. Coverage: 23 of 51 glomeruli
+measured (1,117 of 2,271 ORNs, 49%). With the DoOR estimates, 46 glomeruli (88%). No
+data: DA1, VC1, VC3m, VC5, VA7m. Every ORN fired Poisson spikes at its spontaneous rate +
+odour response (untested types: 12 Hz, the median measured spontaneous rate). The
+whole-brain model (630, fast engine) ran for 0.5 s trials. Eight real-fly facts and their
+MATCH/PARTIAL/MISMATCH lines were written to `results/preregistration.md` before the main
+runs; only a 3-odour speed test had been seen, and that is disclosed. Runs: recommended fix
+`al_ln_literature`, 110 odours + no odour, 3 seeds x 4 trials; the same with both APL cells
+silenced (3 x 2, trial-paired); DoOR-extended input (3 x 2); published model (`none`) with
+and without spontaneous firing (2 x 0.3 s per odour); Olsen-2010-style single-glomerulus
+curves with and without a "public" odour (4 glomeruli x 7 levels x 3 backgrounds, 3 x 4).
+About 45 minutes of simulation in total.
+
+**What happened.**
+- Stability: recommended fix, 0 runaways in 1,332 trials (busiest 10 ms: 736 non-sensory
+  neurons; threshold 1,500). Published model: all 110 odours run away in 220 of 220
+  trials within 10-20 ms. So does spontaneous input alone, with no odour. About 67% of KCs
+  fire. Stronger odours tip faster (rank correlation -0.77).
+- F1 KC sparseness: 3.0% per odour (median 2.7%, max 6.7%) with the measured inputs;
+  3.9% (max 12.9%) with the DoOR estimates. Real: ~5% (Honegger 2011), 6% (Turner 2008).
+  PARTIAL (2.98% vs the 3% line) / MATCH.
+- F2 PNs broader than ORNs: in 8 of 23 glomeruli (real 7 of 7); median lifetime sparseness
+  0.57 PN vs 0.53 ORN. MISMATCH. The too-picky PNs are the weakly wired ones (rank
+  correlation -0.52 with mV per ORN spike). The DA3 PNs never respond (0.56 mV per ORN spike).
+- F3 transfer curve: saturating (gain 3-8x higher for weak input), but half-point 36-49 Hz
+  vs 12-16 Hz in real DL5/DM4/VM7 (DM1 32 vs 45). PARTIAL.
+- F4 lateral inhibition (pentyl acetate on the other glomeruli): 75-85% less PN response vs
+  50-78% from Olsen 2010's equation. MATCH on size. The shape is subtractive, not
+  divisive: weak input is pushed below rest (the public odour alone lowers DL5 PNs by 44 Hz).
+- F5 PN responses vs the Olsen 2010 normalization equation fed the same data: r = 0.85
+  (2,530 pairs; 0.68 without the normalization term). MATCH.
+- F6 inter-odour correlation: ORN 0.21, uPN 0.54 (0.31 per measured glomerulus), KC 0.31.
+  KCs are less alike than PNs but not less alike than the ORN input. PARTIAL.
+- F7 APL silenced: KCs responding 3.0% -> 11.3% (110 of 110 odours denser), correlation
+  0.30 -> 0.41. MATCH in direction (the real size is in figures only, UNVERIFIED).
+- F8 spikes per responding KC: median 6.2 per 0.5 s (real "a few"). PARTIAL.
+- Seeds: each seed alone gives KC 3.09/3.09/3.09%, F2 8/9/9 glomeruli, F5 r 0.85 each.
+
+**Validated?** No: PRELIMINARY. Done: pre-registration; 3 seeds (they agree to within
+0.01 percentage points on F1); a paired APL comparison on identical input spikes; the
+runaway count excludes the driven ORNs, and the margin was checked; a bug in the F7 verdict
+code (numpy booleans OR-ed instead of added) was caught and fixed before scoring. Sources:
+full text via PMC for Honegger 2011, Bhandawat 2007, Olsen 2010 and Lin 2014 (Lin via a
+summarising fetch). Abstract only: Turner 2008, Olsen & Wilson 2008. Not done: other
+concentrations or odour datasets, an independent review, and a sugar -> MN9 re-run
+(nothing in `sim/` changed). Weak points: one receptor dataset recorded in the "empty
+neuron" system; constant-rate input; half the ORN types unmeasured; the F3/F4 real values
+are an equation fitted to recordings.
+
+**Plain English.** We gave the simulated fly the real responses of its smell sensors to
+110 real odours, and checked its smell circuit against 8 things measured in real flies.
+We decided beforehand what would count as a match. With the recommended fix, the big
+picture is right. The brain stays calm, only about 3-4% of the memory-centre cells respond
+to each smell (real flies about 5%), and the brake neuron APL keeps it that way, as in real
+flies. The first relay station is off, though. Real flies boost weak smell signals there,
+so their output cells respond to more smells than their sensors do. The model boosts them
+too little (about 3 times less sensitive), so its output cells are pickier, and different
+smells look more alike instead of less. The published model without the fix locks up
+for every smell and even with no smell at all. Score: 3 match, 4 partly, 1 does not.
