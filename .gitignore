@@ -17,3 +17,4 @@ experiments/scorecard_batch1/results/raw/
 experiments/energy_budget/results/raw/
 experiments/minimal_circuit/results/raw/
 experiments/mb_continual/results/raw/
+experiments/reservoir_spiking/results/raw/

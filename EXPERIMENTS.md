@@ -2697,3 +2697,140 @@ core, which is much slower than a laptop. For a gadget that listens all day, the
 depends mostly on how little power each part draws while waiting, and we do not know those
 numbers yet. The living neurons worked through 59 electrodes but cost a lot of energy per
 answer, and their settings are guesses.
+
+## 2026-09-24 - Reservoir computing, spiking version: does the fly's wiring compute better than random wiring when run as real spikes? (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. New folder
+`experiments/reservoir_spiking/` and write-up `docs/connectome-reservoir-spiking.md`.
+- The test: the rate lane's reservoir question (`docs/connectome-reservoir.md`),
+  redone with the project's spiking model.
+  - Reservoir: `FastBrain` from `build_brain(fix="al_ln_literature")` (fix
+    passed explicitly), 127,400 neurons, 14,635,639 connections, w_syn
+    0.275 mV. No rescaling of any kind.
+  - Input: u(t) (0 to 0.5, one value per 20 ms bin) as Poisson spikes on all
+    9,145 sensory neurons (the rate lane's set). Push-pull code: half the
+    neurons (random) fire at peak x 2u, the other half at peak x (1 - 2u).
+  - Input level (the tuned setting): peak 150 or 400 Hz.
+  - Readout: spike counts per 20 ms bin of the 1,299 descending neurons, and
+    of 10 / 30 / 100 / 300 / 1,000 random non-sensory neurons. Each clean and
+    with count noise (80% of spikes detected, plus 5 Hz false detections).
+  - Tasks, ridge readout, train / validation / test split (1,000 / 400 / 600
+    bins) and controls: reused from `experiments/reservoir/lib.py`.
+  - Runs cut into 4 segments, each with 500 ms of true-input washout, plus
+    500 ms with the input off at the end (runaway test).
+- Controls, 3 seeds each, built without self-connections: a degree-preserving
+  shuffle (target column permuted), and Erdős-Rényi with the same edge count
+  and weight values.
+- Pre-registered pass rule, written before any comparison run (doc, 00:10),
+  the rate lane's rule unchanged: real wins a task only if it beats both
+  controls by more than the larger seed-to-seed range.
+- Changes from the plan:
+  - Amendment 1 (00:20, compute): the 50 Hz level was dropped after the real
+    network's seed-0 runs, because runs were 1.4x slower than timed. Only
+    that network had been scored; 50 Hz was its worst level.
+  - Amendment 2 (01:25, exploratory): the same grid with 5 ms bins at 400 Hz.
+- Run time: about 115 min of compute (main 70, ±20% check 27, 5 ms run 11,
+  probes and checks 7). That is over the 90-minute budget.
+
+**What happened.**
+- Pass rule: FAIL, with 0 wins, 4 losses and 2 ties (the rate lane's count).
+
+  | | Real | Shuffled | Erdős-Rényi |
+  |---|---|---|---|
+  | Memory, descending neurons | 1.90 | 2.13 | 2.03 |
+  | Memory, 1,000 random | 1.51 | 1.85 | 1.98 |
+  | NARMA-10 error, descending | 0.95 | 0.94 | 0.98 |
+  | NARMA-10 error, 1,000 random | 0.95 | 0.92 | 0.93 |
+  | XOR, descending | 57.6% | 67.8% | 70.7% |
+  | XOR, 1,000 random | 53.4% | 63.6% | 70.4% |
+
+  - Memory and XOR are LOSE; NARMA-10 is a TIE, because every network fails
+    it (1.0 = guessing the average).
+  - Across all 36 comparisons (every readout, clean and noisy): 0 wins, 19
+    losses, 17 ties.
+- Every network forgets within about 2 bins (40-60 ms): memory capacity is
+  about 2, against 18-48 in the rate version.
+- Activity (non-sensory neurons, 400 Hz): no network runs away (0 of 18
+  runs).
+  - Real: 10% of neurons fire, 3.9 Hz on average, 39 Hz among those that
+    fire. 0.9% fire above 100 Hz and make 36% of all spikes. The hot cells
+    are mostly in the smell system (antennal-lobe local and projection
+    neurons, including 30 lLN1_bc at 150-210 Hz).
+  - Shuffle: 22% fire, 2.9 Hz on average, 13 Hz among those that fire.
+  - Erdős-Rényi: 46% fire, 5.5 Hz on average, 12 Hz among those that fire.
+  - The optic lobe is almost silent in the real network (3% active), including
+    the lobula-plate cells behind the rate lane's spectral-radius artefact.
+- Electrode bottleneck:
+  - The real wiring is the worst to read at every electrode count (memory at
+    10 neurons: 0.21 / 0.40 / 0.52).
+  - With count noise its XOR falls to chance (50%) with 1,000 neurons, while
+    Erdős-Rényi keeps 63%.
+  - Its descending neurons are its best, most noise-proof readout.
+- ±20% synapse weight (seed 0, 400 Hz): the real wiring is still lowest on
+  XOR everywhere, and lowest on memory everywhere except the descending
+  neurons at -20% (a three-way level).
+- Exploratory 5 ms bins: 0 wins, 3 losses, 3 ties. Memory reaches back only
+  15-20 ms in any network, and XOR is at chance.
+- Biology check: in the real brain alone, activity outlasts the input. A
+  pair of cholinergic CB0216 neurons (one per side, 451 and 455 synapses onto
+  each other) keeps firing at about 156 Hz for at least 1 s after the input
+  stops, dragging along 422 neurons at low rates. This is likely a model
+  artefact (wrong transmitter, or no synaptic fatigue in the model): a
+  candidate for the transmitter audit.
+
+**Validated?** No: PRELIMINARY.
+- Done:
+  - Pre-registration before any comparison run.
+  - 3 seeds per network.
+  - Settings chosen on validation data and scores taken on test data.
+  - Controls checked: edge counts, no self-connections, weight lists,
+    degrees, signs.
+  - Real network checked against `build_brain`.
+  - Input rates checked (1.5-4% below intended, from the model's own
+    refractory rule).
+  - No readout neuron is sensory.
+  - ±20% synapse weight.
+  - The 5 ms-bin run.
+  - Persistence check.
+  - Literature search.
+- Not done:
+  - The published matrix as a spiking reservoir.
+  - The ±20% check on seeds 1-2.
+  - Other input codes (for example, one sense only).
+  - Independent review.
+- Weak points:
+  - An artificial input that barely reaches the optic lobe.
+  - Tasks built for longer memory than the model has.
+  - Only two input levels.
+  - 1,000 training bins.
+- Bug found in the reused rate-lane code: `degree_shuffle(no_self=True)` can
+  copy a target instead of swapping it when one connection is picked twice.
+  It changed 2 neurons' input counts by one in shuffle seed 1. Negligible;
+  not fixed, because the file belongs to that lane.
+
+**New or reproduction?** Partly both.
+- Already done:
+  - The rate-model versions (Costi et al. 2025; conn2res, Suárez et al.
+    2024).
+  - Informal GitHub projects: a larval-fly spiking reservoir against a
+    degree-matched random graph, too short to conclude; a pre-registered
+    fly-reservoir framework with no results yet; and a simulator showing that
+    rewiring changes activity.
+- Not seen in the sources we reached: the whole adult FlyWire brain as a
+  spiking reservoir on memory / NARMA / XOR with both controls and
+  pre-registration, the descending-neuron readout, the electrode and
+  count-noise sweep, and the activity-concentration measure.
+
+**Plain English.**
+- We ran the fly's whole wiring diagram as real spiking neurons, fed it a
+  signal, and trained only a simple readout, as a living-neuron computer
+  would be used.
+- It again did not beat random wiring of the same size. It remembered less,
+  did worse on a logic task, and matched it on a prediction task that every
+  network failed.
+- The old explanation (a scaling artefact) is gone. The new one is similar
+  in spirit: the real brain drives a few pathways, mostly smell, very hard
+  and leaves 90% of its neurons silent. So random electrodes mostly read
+  silence, and read noise hurts it most.
+- None of the networks remembers anything for longer than about 50 ms. That
+  is a limit of the model (no slow parts), not of the fly.

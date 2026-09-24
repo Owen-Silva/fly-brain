@@ -1,0 +1,82 @@
+{
+ "real": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "mixed_sign_senders": 0
+ },
+ "shuffle_s0": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "out_degree_same": true,
+  "in_degree_same": true,
+  "weights_same_list": true,
+  "mixed_sign_senders": 0,
+  "frac_edges_same_target": 2.3982553819481335e-05
+ },
+ "er_s0": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "weights_same_list": true,
+  "mixed_sign_senders": 127400,
+  "max_out_degree": 164,
+  "real_max_out_degree": 9615
+ },
+ "shuffle_s1": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "out_degree_same": true,
+  "in_degree_same": false,
+  "weights_same_list": true,
+  "mixed_sign_senders": 0,
+  "frac_edges_same_target": 2.3982553819481335e-05
+ },
+ "er_s1": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "weights_same_list": true,
+  "mixed_sign_senders": 127400,
+  "max_out_degree": 166,
+  "real_max_out_degree": 9615
+ },
+ "shuffle_s2": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "out_degree_same": true,
+  "in_degree_same": true,
+  "weights_same_list": true,
+  "mixed_sign_senders": 0,
+  "frac_edges_same_target": 2.2001089258897408e-05
+ },
+ "er_s2": {
+  "edges": 14635639,
+  "self_loops": 0,
+  "weights_same_list": true,
+  "mixed_sign_senders": 127400,
+  "max_out_degree": 166,
+  "real_max_out_degree": 9615
+ },
+ "build_brain_matches_arrays": {
+  "connections": true,
+  "sum_signed": true,
+  "abs_sum": true
+ },
+ "input": {
+  "n_plus": 4548,
+  "n_minus": 4597,
+  "all_events_on_sensory": true,
+  "corr_plus_rate_vs_u": 0.9997567496899007,
+  "corr_minus_rate_vs_u": -0.9997885523245374,
+  "mean_rate_plus_hz": 78.62030013192613,
+  "mean_rate_minus_hz": 70.6883837285186,
+  "intended_mean_plus_hz": 79.01396602375124,
+  "intended_mean_minus_hz": 70.98603397624876
+ },
+ "pool_s0_sensory_overlap": 0,
+ "pool_s1_sensory_overlap": 0,
+ "pool_s2_sensory_overlap": 0,
+ "measured_sensory_mean_rate_hz_seed0": {
+  "main_real_fix_s0_p150_w100": 73.90123018042647,
+  "main_real_fix_s0_p400_w100": 192.3922799343904,
+  "main_real_fix_s0_p50_w100": 24.867039365773646
+ }
+}
