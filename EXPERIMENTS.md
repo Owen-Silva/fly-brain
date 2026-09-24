@@ -1603,3 +1603,64 @@ correct but worded in a way that can mislead, like "12 of 12" when, in plain ter
 from was never saved. The most important of these is the real-fly learning number, which
 the model was tuned to match. None of this changes a conclusion; `docs/claims-audit.md`
 lists the exact line and a suggested rewording for each.
+
+## 2026-09-23 - Real-fly scorecard: 39 published real-fly measurements turned into model tests (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or any existing doc. New:
+`experiments/scorecard/build_catalog.py`, which holds the 39 hand-written items and looks every
+named cell type up in FlyWire's neuron tables (630 labels; 783 labels and literature synonyms
+carried back to 630 by the same root ID, or by the same soma/anchor position within 2 um). It
+writes `catalog.csv` (39 rows: real-fly result, measurement type, source and figure, full text
+or abstract, model test, cell types, 630 IDs, mapping confidence, expected result, numeric
+target, feasibility and reason, cost, first-batch rank) and `ids_630.csv` (3,125 ID rows, each
+with how it was found). Run log: `build_log.txt`. Write-up: `docs/real-fly-scorecard.md`. No
+simulation was run; the connection tables were never loaded. Papers were read through Europe
+PMC abstracts and open full text (searched for the exact sentences), the NCBI BioC service, and
+one eLife page summary.
+
+**What happened.**
+- 39 items. By area: taste and feeding 7, mechanosensation and grooming 4, smell 5, learning 5,
+  steering and descending neurons 6, temperature and humidity 5, pheromones and female courtship
+  5, vision 2. By feasibility: 20 YES, 13 PARTLY, 6 NO.
+- Recommended first batch (all YES, all cheap): FC2 SAG -> pC1a >> pC1b > pC1c-e
+  (Wang et al. 2020, Fig. 3d-f); FC5 cVA -> aSP-g 11/15, aSP-f 1/34, aSP-h 2/8 in females (Kohl
+  et al. 2013); FC1 vpoEN and pC1 -> vpoDN (Wang et al. 2021); SD4 one-sided PFL3 -> same-side
+  turn in about 92% of trials (Mussells Pires et al. 2024, Fig. 5e-h); TH3 cold -> TPN-II ->
+  DN1a inhibition (Alpert et al. 2020, Fig. 5); TH2 with TH1 cool-to-warm crossover inhibition
+  (Liu et al. 2015; 14/17 local neurons cool-excited, +6 +/- 1 mV when inhibition is blocked);
+  OS4 sister projection neurons fire in sync, cross-glomerulus pairs barely (Kazama & Wilson
+  2009); LL1 MBON11 (MVP2) activation suppresses M4/6 but not V2 odour responses (Perisse et
+  al. 2016, Fig. 4A-B); SD1 with SD2
+  LC16 -> MDN (Sen et al. 2017); TF4 Usnea water-only, Phantom both, Clavicle sugar (Shiu et
+  al. 2022, Fig. 3). Reserves: FC3, OS1, TF6.
+- Best areas: female courtship and temperature. Every cell is labelled in the 630 table, the
+  circuits are small, and the model is a female brain. Weakest: mechanosensation (nerve cord,
+  graded signals, unnamed relay cells) and vision (graded early neurons, no eyes).
+- ID mapping: 2,039 rows from 630 labels, 805 from an unchanged root ID in 783, 20 by position
+  (all at 0.00 um, so the same cells renumbered), 257 from project ID lists (the Shiu lab's SEZ
+  list, `sim/shiu_model.py`, `experiments/heldout/ids.py`). 2 hearing sensory neurons could not
+  be mapped (4 blank rows).
+- Left out on purpose: results already covered (Shiu 2024 Phase 3 and silencing screen,
+  Scapula, Hige 2015, Gaudry 2013, Hampel 2015 grooming, the held-out lane's ISN and OA-VPM4)
+  and results the model was built from (Aso & Rubin 2016 sets the slow a2/a3 compartments in
+  `sim/plasticity.py`; Turner et al. 2008 Kenyon-cell sparseness was already compared).
+- Overlap found late: the olfaction lane (`docs/olfaction-vs-real-fly.md`, in progress) already
+  scores OS2 (lateral inhibition), most of OS3 (amplification curve) and OS5 (APL). They are
+  marked DUPLICATE in the catalogue and kept out of the first batch; OS1 and OS4 are not covered.
+- Not found in FlyWire's annotations: TPN3 (bitter taste), oviEN (egg laying), wedge projection
+  neurons (wind). Items that need them say so.
+
+**Validated?** No: PRELIMINARY. This is a literature catalogue, not a result. 17 items were
+checked against full text, 22 against abstracts only (their figures are "not checked"). IDs were
+found by code and re-checked by hand for the position-matched ones. Moderate or low confidence:
+Liu's cool-/warm-PN vs FlyWire types, TPN-II = VP3+_vPN, V2a/V2a' = MBON18/MBON16-17, the
+aSP-f/g/h clusters. Possible overlap with the Shiu 2024 paper's own checks for TF1, TF4, TF5
+(not checked in its figures).
+
+**Plain English.** We made a list of 39 experiments done on real flies that our simulated brain
+can be scored against: switch on these cells, watch those cells, and compare with what the fly
+did. For each one we wrote down the exact neuron numbers in our model, the answer the fly gave,
+and whether our model can run the test at all. 20 are fully runnable, 13 only partly (for
+example because the fly used its nerve cord or slow brain chemicals), and 6 not at all. The ten
+we suggest running first are small, cheap, and have clear answers, mostly from female-courtship
+and temperature circuits, where every cell is already labelled in our data.

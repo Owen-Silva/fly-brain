@@ -1,0 +1,94 @@
+items: 39
+feasibility                      NO  PARTLY  YES  All
+area                                                 
+Learning                          1       2    2    5
+Mechanosensation and grooming     1       3    0    4
+Pheromones and female courtship   0       1    4    5
+Smell                             0       2    3    5
+Steering and descending neurons   2       1    3    6
+Taste and feeding                 1       2    4    7
+Thermo- and hygrosensation        0       1    4    5
+Vision                            1       1    0    2
+All                               6      13   20   39
+
+first batch:
+   1 FC2 SAG input picks out pC1a (YES, cheap)
+   2 FC5 Female lateral-horn cells for the male pheromone (YES, cheap)
+   3 FC1 Song and mating-status inputs converge on vpoDN (YES, cheap)
+   4 SD4 PFL3 steers through the lateral accessory lobe (YES, cheap)
+   5 TH3 Cold projection neurons inhibit DN1a clock cells (YES, cheap)
+   6 TH2 Cool sensors inhibit warm projection neurons (YES, cheap)
+   7 OS4 Sister projection neurons fire in sync (YES, cheap)
+   8 LL1 MVP2 silences the avoidance output neurons (YES, cheap)
+   9 SD1 Looming detectors drive backward walking (YES, cheap)
+  10 TF4 Which feeding neurons see water vs sugar (YES, cheap)
+
+ID rows: 3125 | how found:
+how_found
+630 label                                                                    2039
+same root ID in 630 and 783                                                   805
+sim/shiu_model.py SUGAR_R_630                                                  84
+experiments/heldout/ids.py JON_CE (paper's own IDs)                            70
+sim/shiu_model.py BITTER_R_630                                                 42
+sim/shiu_model.py WATER_R_630                                                  18
+soma within 2 um                                                               14
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'Fdg')           10
+sim/shiu_model.py                                                               8
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'usnea')          6
+anchor within 2 um                                                              6
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'clavicle')       4
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'G2N_1')          4
+sim/shiu_model.py MN9_LEFT, MN9_RIGHT_630                                       2
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'phantom')        2
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'fudog')          2
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'rattle')         2
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'roundup')        2
+UNMAPPED (anchor nearest 5.9 um; 783 id 720575940615041064)                     2
+UNMAPPED (anchor nearest 5.7 um; 783 id 720575940639742627)                     2
+Shiu et al. 2024 SEZ list (data/reference/sez_neurons.pickle, 'TH_VUM')         1
+
+UNMAPPED 783 neurons by item/group:
+item  group                
+MG1   JO-A and JO-B neurons    2
+MG2   JO-A and JO-B neurons    2
+
+per-group counts:
+  TF1: stimulate Fdg (n=2): 720575940647030324 720575940631997032 | read MN9 (left, right) (n=2): 720575940660219265 720575940645521262
+  TF2: stimulate Fdg, one at a time (n=2): 720575940647030324 720575940631997032 | read MN9 (left, right) (n=2): 720575940660219265 720575940645521262
+  TF3: stimulate sugar taste neurons (model's standard set) (n=21): see ids_630.csv | silence Fdg (n=2): 720575940647030324 720575940631997032 | read MN9 (left, right) (n=2): 720575940660219265 720575940645521262 | read Fdg (n=2): 720575940647030324 720575940631997032
+  TF4: stimulate water taste neurons (model's standard set) (n=18): see ids_630.csv | stimulate sugar taste neurons (model's standard set) (n=21): see ids_630.csv | read Usnea (n=2): 720575940641366517 720575940632648612 | read Phantom (n=2): 720575940637763135 720575940616103218 | read Clavicle (n=2): 720
+  TF5: stimulate Usnea (n=2): 720575940641366517 720575940632648612 | stimulate G2N-1 (n=2): 720575940623718380 720575940620874757 | stimulate Clavicle (n=2): 720575940632648868 720575940655014049 | stimulate Fudog (n=2): 720575940632877869 720575940612648106 | silence Rattle (n=2): 720575940630461660 7205
+  TF6: stimulate sugar taste neurons (n=21): see ids_630.csv | stimulate bitter taste neurons (n=21): see ids_630.csv | read Roundup (n=2): 720575940607272649 720575940623211725 | read G2N-1 (n=2): 720575940623718380 720575940620874757
+  TF7: stimulate TH-VUM (n=1): 720575940616857174 | read MN9 (n=2): 720575940660219265 720575940645521262
+  MG1: stimulate JO-A and JO-B neurons (n=356): see ids_630.csv | read vpoEN (n=4): 720575940619415679 720575940632385943 720575940634829168 720575940635403230 | read vpoDN (n=2): 720575940613170498 720575940627496829
+  MG2: stimulate JO-A and JO-B neurons (n=356): see ids_630.csv | read giant fiber (DNp01) (n=2): 720575940622838154 720575940632499757
+  MG3: stimulate JO-C/E neurons (grooming lane's set) (n=70): see ids_630.csv | read wedge projection neurons: not labelled in FlyWire's 630 or 783 annotation; would need identifying by shape and inputs
+  MG4: stimulate head bristle neurons (FlyWire 783 types BM_*): 783 cell_type starting 'BM_' (about 1,400 neurons); not mapped because the item is not runnable
+  OS1: silence DA1 sensory neurons (ORN_DA1) (n=126): see ids_630.csv | stimulate other olfactory sensory neurons: 630 hemibrain_type starting 'ORN_' except ORN_DA1 (about 2,150 neurons), at odour-specific rates | read DA1 projection neurons (n=17): see ids_630.csv
+  OS2: stimulate DA1 sensory neurons (n=126): see ids_630.csv | stimulate other olfactory sensory neurons: 630 hemibrain_type starting 'ORN_' except ORN_DA1, in growing subsets | read DA1 projection neurons (n=17): see ids_630.csv
+  OS3: stimulate DA1 sensory neurons (n=126): see ids_630.csv | read DA1 projection neurons (n=17): see ids_630.csv
+  OS4: stimulate all olfactory sensory neurons: 630 hemibrain_type starting 'ORN_' (about 2,280 neurons) | read DA1 projection neurons (sister pairs) (n=17): see ids_630.csv | read projection neurons of other glomeruli: 630 cell_class ALPN, uniglomerular types
+  OS5: silence APL (n=2): 720575940621280688 720575940629174889 | read Kenyon cells: 630 cell_class Kenyon_Cell (5,177 neurons)
+  LL1: stimulate MVP2 = MBON11 (n=2): 720575940617749538 720575940623201833 | read M4/6: MBON01 (g5b'2a) (n=2): 720575940607183026 720575940624117245 | read M4/6: MBON02 (b2b'2a) (n=2): 720575940617552340 720575940624185095 | read M4/6: MBON03, MBON04 (b'2mp) (n=4): 720575940617582822 720575940620464321 72
+  LL2: stimulate punishment DAN PPL1-g1pedc (n=2): 720575940617691170 720575940621040737 | stimulate reward DANs for b'2 (PAM02, PAM05, PAM06) (n=64): see ids_630.csv | read M4b' = MBON03, MBON04 (n=4): 720575940617582822 720575940620464321 720575940624590316 720575940624694503 | read MVP2 = MBON11 (n=2): 
+  LL3: stimulate sugar taste neurons (n=21): see ids_630.csv | read PAM dopamine neurons (n=293): see ids_630.csv
+  LL4: stimulate bitter taste neurons (standard set) (n=21): see ids_630.csv | read PPL1 dopamine neurons (n=12): 720575940609180611 720575940614457342 720575940617691170 720575940620471745 720575940621040737 720575940624093693 720575940627549205 720575940627594568 720575940631628355 720575940631758393 720
+  LL5: read g4 output neurons (MBON05, MBON21, MBON29) (n=6): 720575940614392999 720575940621164720 720575940626872094 720575940630496374 720575940630590572 720575940643700640
+  SD1: stimulate LC16 (n=150): see ids_630.csv | read MDN (n=4): 720575940610236514 720575940616026939 720575940631082808 720575940640331472
+  SD2: stimulate LC16, left (n=76): see ids_630.csv | stimulate LC16, right (n=74): see ids_630.csv | read MDN (n=4): 720575940610236514 720575940616026939 720575940631082808 720575940640331472
+  SD3: stimulate LC4 (n=104): see ids_630.csv | stimulate LPLC2 (n=210): see ids_630.csv | read giant fiber (DNp01) (n=2): 720575940622838154 720575940632499757
+  SD4: stimulate PFL3 (split by output side before running) (n=24): see ids_630.csv | read DNa02 (left, right) (n=2): 720575940604737708 720575940629327659
+  SD5: stimulate descending neurons: many DN types; not resolved because the item is not runnable
+  SD6: read MDN (n=4): 720575940610236514 720575940616026939 720575940631082808 720575940640331472
+  TH1: stimulate cool sensory neurons (n=9): 720575940613191591 720575940616999069 720575940621831804 720575940621849540 720575940622972820 720575940625293514 720575940627135306 720575940627677258 720575940650751873 | read VP3 projection neurons (n=11): 720575940611352014 720575940613203119 720575940614871
+  TH2: stimulate warm sensory neurons (n=7): 720575940611720362 720575940615856345 720575940617041728 720575940619930534 720575940636878254 720575940638389437 720575940646372228 | stimulate cool sensory neurons (n=9): 720575940613191591 720575940616999069 720575940621831804 720575940621849540 7205759406229
+  TH3: stimulate cool sensory neurons (n=9): 720575940613191591 720575940616999069 720575940621831804 720575940621849540 720575940622972820 720575940625293514 720575940627135306 720575940627677258 720575940650751873 | read TPN-II candidate VP3+_vPN (n=2): 720575940623264906 720575940625007949 | read DN1a (
+  TH4: stimulate cool sensory neurons (n=9): 720575940613191591 720575940616999069 720575940621831804 720575940621849540 720575940622972820 720575940625293514 720575940627135306 720575940627677258 720575940650751873 | stimulate warm sensory neurons (n=7): 720575940611720362 720575940615856345 7205759406170
+  TH5: stimulate humid sensors (n=16): see ids_630.csv | stimulate dry sensors (n=29): see ids_630.csv | stimulate warm sensors (n=7): 720575940611720362 720575940615856345 720575940617041728 720575940619930534 720575940636878254 720575940638389437 720575940646372228 | stimulate cool sensors (n=9): 7205759
+  FC1: stimulate vpoEN (n=4): 720575940619415679 720575940632385943 720575940634829168 720575940635403230 | stimulate pC1a-e (n=10): 720575940618364480 720575940619855296 720575940620356545 720575940620943201 720575940625792698 720575940627295748 720575940627738761 720575940629430978 720575940634866586 720
+  FC2: stimulate SAG (n=2): 720575940623363000 720575940631004202 | read pC1a (n=2): 720575940625792698 720575940646310947 | read pC1b (n=2): 720575940619855296 720575940627738761 | read pC1c, pC1d, pC1e (n=6): 720575940618364480 720575940620356545 720575940620943201 720575940627295748 720575940629430978 7
+  FC3: stimulate pC1a-e (n=10): 720575940618364480 720575940619855296 720575940620356545 720575940620943201 720575940625792698 720575940627295748 720575940627738761 720575940629430978 720575940634866586 720575940646310947 | read oviIN (n=2): 720575940619736523 720575940624470763 | read oviDNa (FlyWire cell
+  FC4: stimulate pC1d, pC1e (n=4): 720575940618364480 720575940620356545 720575940620943201 720575940634866586 | read aIPg (n=23): see ids_630.csv
+  FC5: stimulate cVA sensory neurons (ORN_DA1) (n=126): see ids_630.csv | read aSP-g (n=23): see ids_630.csv | read aSP-f (n=45): see ids_630.csv | read aSP-h (n=22): see ids_630.csv
+  VI1: read T4a-d, T5a-d: 783 cell_type T4a-d and T5a-d (about 11,700 neurons); 630 has no optic-lobe type labels; not mapped because the item is not runnable
+  VI2: stimulate E-PG (one wedge) (n=47): see ids_630.csv | read E-PG (n=47): see ids_630.csv | read Delta7 (n=40): see ids_630.csv
