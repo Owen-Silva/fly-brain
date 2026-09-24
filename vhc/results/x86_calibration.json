@@ -1,0 +1,14 @@
+{
+ "label": "MEASURED on this laptop (Intel i3-1215U), single thread, shared load, median",
+ "date": "2026-09-24T00:11:44",
+ "ns_per_op": {
+  "step_overhead": 36.40999930212274,
+  "neuron_update": 2.1655200005625375,
+  "input_event": 29.535499998019077,
+  "spike": 153.8410622760296,
+  "syn_event": 2.332931252196173,
+  "int64_add": 0.8200000011129305,
+  "sort_cmp": 0.7323156709380073,
+  "mac": 0.03926504632545402
+ }
+}

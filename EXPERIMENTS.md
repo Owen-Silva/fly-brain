@@ -2619,3 +2619,81 @@ loads the published weights as they are.
   the paper still uses it.
 - On the newer brain map (783) the correction is not built in yet, so the app uses the
   published model there and shows a yellow note saying so and why.
+
+## 2026-09-24 - Virtual hybrid computer v0: the fly circuit costs ~1,000x less energy on a Loihi-style chip than on this laptop, but standby power decides the all-day task (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. New folder `vhc/`
+and write-up `docs/virtual-computer.md` (Stage 1b of `docs/hybrid-roadmap.md`, section 6).
+- Parts, each with a price list (`vhc/prices.py`, every constant labelled PUBLISHED,
+  MEASURED, ASSUMED or GUESSED, with its source):
+  - conventional core: Cortex-M33 @ 150 MHz (assumed cycles per operation, 30 mW active)
+    and this laptop's x86 core (ns per operation measured by `vhc/calibrate.py`);
+  - neuromorphic core: a numba LIF engine that counts synaptic events, inputs, spikes and
+    neuron updates, priced with Loihi's Table 2 numbers (Davies et al. 2018, checked
+    against the PDF) in "clocked" (Loihi-style) and "ideal event-driven" modes;
+  - GPU: NVIDIA T4 datasheet plus an assumed 5 us launch overhead;
+  - living-neuron module: 1,000-cell small-world culture with noise, fatigue, drift, cell
+    death and Hebbian plasticity (mostly GUESSED), behind an electrode model (N channels,
+    2.2 uV read noise, stimulation spread, CL1 latencies);
+  - scheduler: rules (exact work -> conventional core, spiking -> neuromorphic, ...), then
+    the cheapest allowed core that meets the accuracy requirement.
+- Workloads: (a) feeding decision on the 36- and 400-neuron circuits; (b) continual
+  odour learning, mushroom-body design, random ("uniform") wiring, imported from
+  `experiments/mb_continual/common.py`; (c) exact sum and sort of 50,000 integers; (d) an
+  all-day odour watch with an exact log (hybrid task); (e) electrode bottleneck, accuracy
+  vs 1-256 channels.
+- Decision rule for (a), set before the benchmark: feed if MN9 > 35.7 Hz (midpoint of the
+  whole brain's sugar and sugar+bitter rates). It was chosen knowing the 36-neuron circuit's
+  sugar+bitter rate (24 Hz).
+- Honesty rule: no design's speed comes from the emulator's own run time.
+
+**What happened.**
+- Engine check: the vhc LIF engine gives identical spikes to `sim/fast_engine.py` on the
+  same input (unit test). MN9 rates reproduce `docs/minimal-circuit.md` exactly (36:
+  62.3 / 0 / 24.5 Hz; 400: 67.7 / 0 / 4.9 Hz for sugar / bitter / both).
+- Feeding decision, 36 neurons: Loihi-style chip 3.1 ms and 19.5 uJ; laptop 1.24 ms
+  measured and 18.7 mJ (x 15 W); M33 64 ms and 1.9 mJ; T4 GPU 100 ms and 7 J (launch-bound).
+  Ideal event-driven: 72 us and 0.64 uJ. 400 neurons: 23.6 ms / 217 uJ (chip) vs 12.9 ms /
+  194 mJ (laptop). Accuracy 98.5-100% everywhere; 9-bit weights 100%, 8-bit 98.9% (36) and
+  100% (400, brake weakened from 3.4 to 9.2 Hz).
+- Odour learning: 66.85% (float, 5 seeds x 2 halves; lane: 66.8%), 66.2% with an 8-bit
+  read-out. Per sniff: chip 7.9 uJ, M33 26 uJ, laptop 2.2 mJ (145 us measured), GPU 3.5 mJ.
+- Exact sum / sort: laptop 14.5 us / 284 us (measured); hybrid = its M33, 1.33 ms / 62 ms;
+  neuromorphic only: not possible.
+- Odour watch, per day: hybrid 87 J, M33 alone 89 J, neuromorphic alone 0.65 J (no log),
+  laptop 259 kJ, GPU 1.1 MJ. The hybrid's day is 99% the M33's GUESSED 1 mW sleep power;
+  at 0.1 / 0.01 mW sleep the hybrid wins by 1.17x / 2.0x. Chip leakage is excluded.
+  Log exact; end-to-end accuracy 95.9% (66% on the odour sniffs alone).
+- Electrodes (1,000-cell culture, 8 patterns, chance 12.5%): 1-16 channels 10-42% (depends
+  on placement), 32: 82%, 59: 90%, 128: 97%, 256: 99.6%; every cell read singly 86%, pooled
+  into 256 areas 92%. 30 simulated days of drift + death (87% alive): the day-0 read-out
+  still 87.5%.
+- Calibration: priced the same way, the whole-brain sugar test on 1,440 cores comes out at
+  9.3 ms per simulated second vs Sandia's measured 53.8 ms (model 5.8x too fast).
+- Laptop cost model vs measured: 11-15% off on the circuits, 2-3x off on sum/sort.
+- Unit tests: `vhc/tests`, 16 passed in about 5 s.
+
+**Validated?** No: PRELIMINARY. Done: spike-for-spike check against the project engine;
+the circuit and odour results reproduced; Loihi constants checked against the paper; one
+calibration against Sandia (failed by 5.8x on time, reported). Not done: any measurement
+on real neuromorphic, microcontroller or GPU hardware; chip static power; on-chip message
+traffic; GPU batching; laptop power measurement for this lane (energy = time x 15 W).
+Weak points: M33 cycle counts and GPU overheads are assumptions; the living module's
+biology is mostly guessed and the model culture does little computing of its own; the
+mushroom body's spike counts per sniff (KC, APL, output spikes) are guesses; most runs use
+one seed; the feeding threshold was set after seeing the 36-neuron circuit's rates.
+
+**New or reproduction?** New as a whole (a priced, testable model of this project's hybrid
+design). The method (count operations, price them per operation) is standard: SANA-FE
+does it for spiking chips, gem5 and Accel-Sim for CPUs and GPUs.
+
+**Plain English.** We built a pretend computer out of software that has the parts of the
+future hybrid machine: an ordinary processor, a brain-like chip and a dish of living
+neurons. We gave every part a price list (how long and how much energy each small step
+costs on the real thing), ran five jobs, and added up the bills. The brain-like chip ran
+the fly's feeding circuit for about a thousandth of the laptop's energy, and learned smells
+cheaply. It cannot do exact maths at all, so the hybrid hands that to its small ordinary
+core, which is much slower than a laptop. For a gadget that listens all day, the winner
+depends mostly on how little power each part draws while waiting, and we do not know those
+numbers yet. The living neurons worked through 59 electrodes but cost a lot of energy per
+answer, and their settings are guesses.
