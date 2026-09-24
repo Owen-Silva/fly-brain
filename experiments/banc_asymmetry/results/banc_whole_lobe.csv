@@ -1,0 +1,17 @@
+target,orn_side,target_side,synapses
+ALPN,left,left,78610
+ALPN,left,right,25673
+ALPN,right,left,25844
+ALPN,right,right,66124
+ALLN,left,left,48165
+ALLN,left,right,37429
+ALLN,right,left,36790
+ALLN,right,right,44564
+count_ORN,,left,1483
+count_ORN,,right,1319
+count_ALPN,,left,348
+count_ALPN,,right,340
+count_ALLN,,left,212
+count_ALLN,,right,213
+ALPN_all_inputs,any,left,300851
+ALPN_all_inputs,any,right,285788

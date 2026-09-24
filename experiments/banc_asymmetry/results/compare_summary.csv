@@ -1,0 +1,7 @@
+fly,glomeruli,mirror,fail,median_w,median_same_over_other,median_abs_size_imbalance_pct,median_signed_size_left_pct,glomeruli_left_bigger,failing
+FlyWire 783,53,33.0,20.0,1.28,1.27,17.4,5.1,38.0,"DA2,DA3,DA4l,DC1,DM1,DM2,DM3,DM5,VA2,VA3,VA4,VA5,VA6,VC2,VC4,VC5,VM2,VM3,VM6l,VM7v"
+FlyWire 630,51,32.0,19.0,1.25,1.25,15.7,5.1,39.0,"DA2,DA3,DA4l,DC1,DM1,DM2,DM3,DM5,VA2,VA3,VA4,VA5,VA6,VC2,VC3m,VC4,VM2,VM3,VM7v"
+BANC,46,46.0,0.0,2.38,2.39,17.2,4.5,30.0,
+BANC v3 synapses,46,45.0,1.0,2.43,2.39,16.5,-0.0,23.0,DC2
+maleCNS,51,41.0,10.0,1.59,1.64,16.2,-8.2,19.0,"DA2,DA3,DA4l,DL3,DM3,DM4,DM5,VA1v,VM2,VM7v"
+hemibrain (right lobe only),22,,,,1.72,,,,

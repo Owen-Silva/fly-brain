@@ -1373,3 +1373,76 @@ turns left even though the smell is on its right: that is the model's failure, s
 honestly. A simple hand-written rule, with no brain, walks straight to the smell. In
 every clip the brain only picks left or right; the legs and the walking speed come from
 the body simulator.
+
+## 2026-09-23 - Phase 6: is FlyWire's left/right lean in other flies? BANC, maleCNS and hemibrain compared (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/` or `tests/`. New analysis
+scripts in `experiments/banc_asymmetry/` and a write-up in `docs/banc-asymmetry.md`. Public
+data from the BANC team's bucket
+(`https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/`;
+no login) went into `data/banc/` (about 4.2 GB, not committed). It has BANC v888 (a second
+adult female fly), plus the hemibrain v1.2.1 and maleCNS v0.9 in the same column format.
+`common.py` holds the ORN -> PN part of `experiments/phase6/steering/s1_anatomy.py`,
+moved into a shared function unchanged. `a0_check_port_flywire.py` shows it reproduces
+the saved FlyWire tables cell for cell (`glomerulus_map_630/783.csv`,
+`pn_ipsi_contra_630/783.csv`) and every number in docs/phase6-steering.md section 3.
+`a1`-`a6` then run BANC, the other two flies, the comparison, a per-ORN branch check and
+the figure. Edge lists are streamed and filtered; peak memory stayed well under 1 GB.
+
+**What happened.**
+- Label matching: BANC ORN = `olfactory_receptor_neuron` with type `ORN_<glomerulus>`, side
+  from the `nerve` column (as FlyWire: the nerve-entry side). PN = `antennal_lobe_projection_neuron`,
+  uniglomerular by FlyWire's rule (50% of ORN input from one type, 20+ synapses). Proofread
+  or roughly proofread neurons; every connection counted, even 1 synapse (the paper's v2
+  synapses). BANC side checks pass: PN cell bodies 345/348 and 335/340 on their side;
+  the ORN `side` column agrees with the nerve for 2,055 of 2,079; 2,546 of 2,790 ORNs
+  favour their own side's PNs. The results hold with strict proofreading, all fragments,
+  `side`-column ORN sides, and the v3 synapse detector (`results/banc_summary.csv`).
+- As released, BANC mirrors at the first synapse in 46 of 46 glomeruli, with a median
+  same-side/other-side ratio of 2.39 (FlyWire 32 of 51, 1.25). But 42.5% of BANC's ORNs
+  have NO synapses onto the far side's PNs of their glomerulus (FlyWire 3.6%, maleCNS
+  11.7%). That is 75.8% of roughly proofread ORNs and 28.4% of fully proofread ones
+  (`results/orn_branch_check.csv`). Real ORNs nearly all branch to both sides, so this is
+  a reconstruction gap that inflates the same-side ratio.
+- Fair version (only ORNs with synapses on both sides; `results/complete_orns_summary.csv`):
+  median same-side ratio FlyWire 1.27, BANC 1.63, maleCNS 1.62, hemibrain right lobe 1.72
+  (22 glomeruli whose ORNs have a named antenna). Glomeruli where the size imbalance beats
+  the same-side advantage: FlyWire 20 of 52, maleCNS 11 of 51, BANC 5 of 41. Median size
+  imbalance: FlyWire 21%, BANC 12%, maleCNS 11%.
+- DM1: the left side is bigger in BANC too, by 23% (FlyWire 49%, maleCNS 10%). But BANC's
+  same-side factor (1.45) beats it: a right-only smell gives the right DM1 PNs 1,580 vs
+  1,365 synapses, so DM1 mirrors. Share of the lobe's smell input: FlyWire left DM1 7.07%,
+  against 4.11-5.83% in the other 5 lobes (FlyWire right 5.26%). So FlyWire's LEFT DM1 is
+  the outlier. DA1 mirrors in every fly. BANC's DA1 is unreliable: only 12 of 113 left
+  DA1 ORNs keep a crossing branch.
+- Different glomeruli are lopsided in each fly (rank correlations of the size imbalance
+  -0.21 / +0.34 / +0.07 signed, -0.09 / +0.17 / -0.01 unsigned). Which glomeruli have a
+  strong same-side advantage does match between flies (+0.73 / +0.86 / +0.59, all
+  p < 0.001). Swap test (41 glomeruli): FlyWire's sizes with BANC's same-side factors
+  give 33 mirroring (actual 25); BANC's sizes with FlyWire's give 28 (actual 36).
+- Label problems found in the harmonised copies: maleCNS `nerve` behaves like a random
+  label for ORNs (same-side ratio 0.95), so its `side` column was used. The hemibrain's
+  `nerve` is filled per ORN type, so the neuPrint `_L`/`_R` instance suffixes were used.
+  BANC's `output_side_index` does not match its documented meaning; not used.
+- Figure: `plots/fly_comparison.png` (4 panels, one dot per glomerulus, the exact
+  "mirrors" wedge shaded).
+
+**Validated?** No: PRELIMINARY. Done: the code port was checked exactly against FlyWire;
+the two-factor split was checked in every glomerulus of every fly; BANC was re-run with
+2 synapse detectors, 3 proofreading rules and 2 ORN-side sources; the BANC labels were
+checked four ways. Not done: why BANC lacks the crossing branches; whether FlyWire's weak
+same-side advantage is biology or reconstruction; whether "left" is the fly's true left
+in every dataset (so "DM1's left is bigger in all 3 flies" is noted, not claimed). No
+literature search on fly-to-fly glomerulus size variation. Nothing shared, no one
+contacted.
+
+**Plain English.** We checked the "always turns left" wiring in three other fly brains
+that are free to download. In the second female fly, the left vinegar glomerulus is
+also a bit bigger, but only half as much as in FlyWire. There, each side's smell
+neurons favour their own side strongly enough that the fly would still steer
+correctly. FlyWire's left vinegar glomerulus is the odd one out: bigger than any other
+we measured. FlyWire also has the weakest same-side preference of the four flies. The
+second fly's data has a gap: in almost half its smell neurons the branch that crosses to
+the far side is missing. That makes it look perfect when it isn't, so we compared using
+only complete neurons. Which glomeruli are lopsided differs from fly to fly, so the lean
+is a FlyWire quirk, not a rule of fly wiring.

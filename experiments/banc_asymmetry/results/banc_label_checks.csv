@@ -1,0 +1,15 @@
+check,label,n,agree,of
+ORN root point on the labelled side,left,1483,1149.0,1154.0
+ORN root point on the labelled side,right,1319,848.0,865.0
+ALPN soma on the labelled side,left,348,345.0,348.0
+ALPN soma on the labelled side,right,340,335.0,340.0
+ORN: side column agrees with nerve side,left,1483,1192.0,1199.0
+ORN: root point in the antennal lobe of the labelled side (AL_L/AL_R),left,1483,1058.0,1062.0
+ORN: most output synapses on the labelled side (output_side_index),left,1483,1465.0,1472.0
+ORN: side column agrees with nerve side,right,1319,863.0,880.0
+ORN: root point in the antennal lobe of the labelled side (AL_L/AL_R),right,1319,739.0,756.0
+ORN: most output synapses on the labelled side (output_side_index),right,1319,81.0,1314.0
+ORN side came from nerve (not side column),all,2811,2801.0,2811.0
+ORN fingerprint: median same-side share of PN synapses,all,2790,0.767,
+ORN fingerprint: ORNs with same-side share above 0.5,all,2790,2546.0,2790.0
+ORNs sending >90% of their PN synapses to the side opposite their label,all,2790,40.0,2790.0

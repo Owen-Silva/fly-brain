@@ -1,0 +1,4 @@
+dataset,glomeruli_with_PNs_both_sides,same_side_stronger,median_same_over_other,pooled_same_over_other,mirror_at_first_synapse,fail_mirror,fail_left_bigger,fail_right_bigger,left_pns_get_more_total,median_abs_asym_fail_pct,median_abs_asym_ok_pct,median_abs_asym_all_pct,median_asym_signed_pct,mirror_perPN,mirror_if_same_side_x1.2,mirror_if_same_side_x1.4,mirror_if_same_side_x1.6,mirror_if_same_side_x2.0,uniglomerular_pns,glomeruli_right,glomeruli_with_L_and_R_ORNs,median_per_orn_same_over_other,glomeruli_fully_suffixed,pooled_same_over_other_fully_suffixed
+"maleCNS, ORN side from nerve",51,21,0.944,0.959,0.0,51.0,11.0,40.0,11.0,9.6,,9.6,-8.6,0.0,0.0,0.0,0.0,0.0,412,,,,,
+"maleCNS, ORN side from side",51,48,1.636,1.94,41.0,10.0,5.0,5.0,11.0,22.1,8.9,9.6,-8.5,41.0,44.0,46.0,47.0,50.0,412,,,,,
+hemibrain (right lobe only; ORN side from instance suffix),0,20,1.723,1.848,,,,,,,,,,,,,,,176,42.0,22.0,1.74,7.0,1.908

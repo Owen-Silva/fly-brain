@@ -1,0 +1,5 @@
+dataset,orns,median_uPN_synapses_per_orn,pct_orns_no_other_side,pct_orns_no_same_side,median_other_side_share,pooled_same_over_other,orns_with_both,pooled_same_over_other_orns_with_both,median_other_side_share_orns_with_both,pooled_same_over_other_top_half_orns,pct_no_other_side_top_half_orns,pooled_same_over_other_strict,pct_no_other_side_strict,orns_strict,pooled_same_over_other_rough_only,pct_no_other_side_rough_only,orns_rough_only
+FlyWire 783,2223,54.0,3.6,4.8,0.435,1.399,2037,1.43,0.433,1.536,0.5,,,,,,
+BANC v2,2628,57.0,42.5,2.7,0.228,2.758,1440,1.7,0.378,2.419,24.3,2.221,28.4,1846.0,7.87,75.8,782.0
+BANC v3,2630,74.0,42.2,2.7,0.216,2.93,1448,1.776,0.374,2.699,26.6,,,,,,
+maleCNS,2187,174.0,11.7,4.7,0.356,1.94,1829,1.882,0.368,2.085,3.0,,,,,,

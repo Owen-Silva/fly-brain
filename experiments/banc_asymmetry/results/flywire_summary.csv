@@ -1,0 +1,3 @@
+dataset,glomeruli_with_PNs_both_sides,same_side_stronger,median_same_over_other,pooled_same_over_other,mirror_at_first_synapse,fail_mirror,fail_left_bigger,fail_right_bigger,left_pns_get_more_total,median_abs_asym_fail_pct,median_abs_asym_ok_pct,median_abs_asym_all_pct,median_asym_signed_pct,mirror_perPN,mirror_if_same_side_x1.2,mirror_if_same_side_x1.4,mirror_if_same_side_x1.6,mirror_if_same_side_x2.0
+FlyWire 630,51,41,1.245,1.417,32,19,15,4,35,19.7,4.9,8.7,4.4,31,35,42,45,46
+FlyWire 783,53,43,1.27,1.399,33,20,15,5,34,19.7,5.2,9.3,4.3,33,37,44,47,48

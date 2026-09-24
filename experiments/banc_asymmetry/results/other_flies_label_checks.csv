@@ -1,0 +1,5 @@
+dataset,orns_with_pn_synapses,median_same_side_share,orns_share_above_half,pooled_same_over_other
+maleCNS ORN side from nerve,2635,0.47,1248,0.952
+maleCNS ORN side from side,2226,0.665,1878,2.076
+hemibrain ORN side from nerve column (right PNs only),2428,0.0,926,0.511
+hemibrain ORN side from instance suffix (right PNs only),1260,1.0,697,2.32

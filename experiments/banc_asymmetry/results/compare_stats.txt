@@ -1,0 +1,71 @@
+decomposition check: mirror_by_factors == mirror_ok_total in every glomerulus of every fly: OK
+                        fly  glomeruli  mirror  fail  median_w  median_same_over_other  median_abs_size_imbalance_pct  median_signed_size_left_pct  glomeruli_left_bigger
+                FlyWire 783         53    33.0  20.0      1.28                    1.27                           17.4                          5.1                   38.0
+                FlyWire 630         51    32.0  19.0      1.25                    1.25                           15.7                          5.1                   39.0
+                       BANC         46    46.0   0.0      2.38                    2.39                           17.2                          4.5                   30.0
+           BANC v3 synapses         46    45.0   1.0      2.43                    2.39                           16.5                         -0.0                   23.0
+                    maleCNS         51    41.0  10.0      1.59                    1.64                           16.2                         -8.2                   19.0
+hemibrain (right lobe only)         22     NaN   NaN       NaN                    1.72                            NaN                          NaN                    NaN
+failing in FlyWire 783: DA2,DA3,DA4l,DC1,DM1,DM2,DM3,DM5,VA2,VA3,VA4,VA5,VA6,VC2,VC4,VC5,VM2,VM3,VM6l,VM7v
+failing in FlyWire 630: DA2,DA3,DA4l,DC1,DM1,DM2,DM3,DM5,VA2,VA3,VA4,VA5,VA6,VC2,VC3m,VC4,VM2,VM3,VM7v
+failing in BANC: 
+failing in BANC v3 synapses: DC2
+failing in maleCNS: DA2,DA3,DA4l,DL3,DM3,DM4,DM5,VA1v,VM2,VM7v
+failing in hemibrain (right lobe only): 
+FlyWire 783 vs BANC: 46 shared glomeruli; Spearman of signed left/right size factor r=-0.30 (p=0.045); of unsigned size imbalance r=-0.07 (p=0.632); of same-side factor r=+0.25 (p=0.084)
+FlyWire 783 vs maleCNS: 51 shared glomeruli; Spearman of signed left/right size factor r=+0.33 (p=0.019); of unsigned size imbalance r=+0.05 (p=0.730); of same-side factor r=+0.75 (p=0.000)
+BANC vs maleCNS: 45 shared glomeruli; Spearman of signed left/right size factor r=+0.03 (p=0.868); of unsigned size imbalance r=+0.02 (p=0.873); of same-side factor r=+0.39 (p=0.009)
+FlyWire 783 vs FlyWire 630: 49 shared glomeruli; Spearman of signed left/right size factor r=+0.97 (p=0.000); of unsigned size imbalance r=+0.94 (p=0.000); of same-side factor r=+0.99 (p=0.000)
+BANC vs BANC v3 synapses: 46 shared glomeruli; Spearman of signed left/right size factor r=+0.97 (p=0.000); of unsigned size imbalance r=+0.92 (p=0.000); of same-side factor r=+0.98 (p=0.000)
+FlyWire-783 failing vs maleCNS failing (glomeruli in all three flies, N=45): overlap 5 of 17 and 8; hypergeometric p(overlap >= 5) = 0.118
+FlyWire-783 failing glomeruli, PN size factor rho (left/right) in each fly:
+  DA2    FW  0.52  BANC 16.99  maleCNS  0.65   (w: FW 0.82 BANC 59.67)
+  DA3    FW  1.04  BANC   nan  maleCNS  0.41   (w: FW 0.82 BANC  nan)
+  DA4l   FW  0.70  BANC   nan  maleCNS  0.61   (w: FW 0.70 BANC  nan)
+  DC1    FW  1.19  BANC  1.95  maleCNS  1.04   (w: FW 1.19 BANC 3.32)
+  DM1    FW  1.48  BANC  1.25  maleCNS  1.10   (w: FW 1.16 BANC 1.45)
+  DM2    FW  1.45  BANC  1.02  maleCNS  1.05   (w: FW 0.87 BANC 1.58)
+  DM3    FW  0.81  BANC  1.41  maleCNS  0.82   (w: FW 0.86 BANC 2.27)
+  DM5    FW  1.66  BANC  0.58  maleCNS  2.34   (w: FW 0.64 BANC 2.72)
+  VA2    FW  1.43  BANC  0.84  maleCNS  0.87   (w: FW 0.93 BANC 1.78)
+  VA3    FW  1.97  BANC  0.86  maleCNS  0.54   (w: FW 1.52 BANC 2.48)
+  VA4    FW  1.34  BANC  1.02  maleCNS  0.89   (w: FW 1.17 BANC 2.08)
+  VA5    FW  1.68  BANC  0.79  maleCNS  0.57   (w: FW 0.42 BANC 6.06)
+  VA6    FW  0.78  BANC  1.32  maleCNS  0.80   (w: FW 1.07 BANC 6.73)
+  VC2    FW  1.57  BANC  0.71  maleCNS  0.91   (w: FW 1.28 BANC 1.75)
+  VC4    FW  1.76  BANC  1.14  maleCNS  1.00   (w: FW 1.27 BANC 1.56)
+  VC5    FW  2.14  BANC  1.18  maleCNS  1.11   (w: FW 1.56 BANC 1.84)
+  VM2    FW  1.85  BANC  1.05  maleCNS  1.52   (w: FW 1.16 BANC 1.90)
+  VM3    FW  1.96  BANC  1.05  maleCNS  1.04   (w: FW 0.83 BANC 1.79)
+  VM6l   FW  0.60  BANC  1.04  maleCNS   nan   (w: FW 1.66 BANC 3.62)
+  VM7v   FW  1.17  BANC  1.02  maleCNS  1.72   (w: FW 0.92 BANC 1.42)
+Swap test on the 46 glomeruli in both: FlyWire's size factors with BANC's same-side factors -> 42 mirror; BANC's size factors with FlyWire's same-side factors -> 28 mirror (actual: FlyWire 28, BANC 46)
+Share of each lobe's ORN -> uniglomerular-PN input (percent; 36 glomeruli present in all four flies):
+glomerulus  FlyWire L  FlyWire R  BANC L  BANC R  maleCNS L  maleCNS R  hemibrain R  others_min  others_max  others_median
+       DM1       7.07       5.26    4.88    4.48       5.83       4.33         4.11        4.11        5.83           4.48
+       DA1       6.01       6.10    8.25    6.55       8.25      13.11         8.59        6.55       13.11           8.25
+       DM2       4.58       3.52    2.79    2.83       3.92       3.13         3.04        2.79        3.92           3.04
+       DM4       4.58       4.26    2.90    3.19       2.12       1.37         2.71        1.37        3.19           2.71
+FlyWire-783 failing glomeruli: FlyWire's bigger and smaller side vs the median of the 5 other lobes
+glomerulus big  big_vs_others  small_vs_others  big_above_all_others  small_below_all_others
+       DC1   L           1.34             1.25                  True                   False
+       DM1   L           1.58             1.18                  True                   False
+       DM2   L           1.51             1.16                  True                   False
+       DM3   R           1.94             1.42                  True                   False
+       DM5   L           0.87             0.58                 False                   False
+       VA3   L           0.87             0.50                 False                   False
+       VA4   L           0.97             0.80                 False                   False
+       VA5   L           0.34             0.26                 False                    True
+       VA6   R           1.51             1.07                  True                   False
+       VC2   L           1.52             1.08                  True                   False
+       VC4   L           0.83             0.55                 False                    True
+       VM3   L           0.71             0.41                 False                   False
+      VM7v   L           0.91             0.86                 False                   False
+  bigger side above every other lobe: 6 of 13; smaller side below every other lobe: 2 of 13
+FAIR VERSION (only ORNs with synapses on both sides' PNs of their glomerulus):
+  FlyWire_783 vs BANC_v2: 41 shared; signed size r=-0.21 (p=0.192); unsigned size r=-0.09 (p=0.550); same-side r=+0.73 (p=0.000); swap: FlyWire_783 sizes with BANC_v2 same-side -> 33 mirror; BANC_v2 sizes with FlyWire_783 same-side -> 28 mirror (actual 25 and 36)
+  FlyWire_783 vs maleCNS: 51 shared; signed size r=+0.34 (p=0.015); unsigned size r=+0.17 (p=0.234); same-side r=+0.86 (p=0.000); swap: FlyWire_783 sizes with maleCNS same-side -> 36 mirror; maleCNS sizes with FlyWire_783 same-side -> 34 mirror (actual 32 and 40)
+  BANC_v2 vs maleCNS: 41 shared; signed size r=+0.07 (p=0.677); unsigned size r=-0.01 (p=0.972); same-side r=+0.59 (p=0.000); swap: BANC_v2 sizes with maleCNS same-side -> 36 mirror; maleCNS sizes with BANC_v2 same-side -> 34 mirror (actual 36 and 33)
+  BANC ORNs kept as 'both branches' (summed over glomeruli in each table): left 695 of 1377, right 738 of 1277
+    DM1: left 38 of 42, right 45 of 47
+    DA1: left 12 of 113, right 91 of 97

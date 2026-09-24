@@ -1,0 +1,11 @@
+dataset,glomerulus,orn_left,orn_right,pn_left,pn_right,Lorn_to_Lpn,Lorn_to_Rpn,Rorn_to_Lpn,Rorn_to_Rpn,left_pn_total,right_pn_total,left_over_right,same_over_other,mirror
+BANC main,DM1,42,47,3,3,1789,985,1365,1580,3154,2565,1.23,1.434,True
+BANC main,DA1,113,97,13,12,4907,486,420,3266,5327,3752,1.42,9.021,True
+BANC strict_proofread,DM1,39,44,4,3,1730,913,1282,1474,3012,2387,1.262,1.46,True
+BANC strict_proofread,DA1,52,28,12,9,2553,327,264,812,2817,1139,2.473,5.694,True
+BANC all_segments,DM1,43,47,3,3,1822,1003,1365,1580,3187,2583,1.234,1.437,True
+BANC all_segments,DA1,122,102,13,12,5311,486,420,3454,5731,3940,1.455,9.674,True
+BANC orn_side_from_side_column,DM1,39,37,3,3,1676,946,1028,1161,2704,2107,1.283,1.437,True
+BANC orn_side_from_side_column,DA1,69,21,13,12,3526,410,107,808,3633,1218,2.983,8.383,True
+BANC v3_synapses,DM1,42,47,3,3,2177,1256,1686,1988,3863,3244,1.191,1.416,True
+BANC v3_synapses,DA1,113,97,13,14,6624,644,548,4671,7172,5315,1.349,9.476,True

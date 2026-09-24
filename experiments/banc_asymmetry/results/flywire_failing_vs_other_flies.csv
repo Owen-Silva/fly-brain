@@ -1,0 +1,14 @@
+glomerulus,big,big_vs_others,small_vs_others,big_above_all_others,small_below_all_others
+DC1,L,1.34,1.25,True,False
+DM1,L,1.58,1.18,True,False
+DM2,L,1.51,1.16,True,False
+DM3,R,1.94,1.42,True,False
+DM5,L,0.87,0.58,False,False
+VA3,L,0.87,0.5,False,False
+VA4,L,0.97,0.8,False,False
+VA5,L,0.34,0.26,False,True
+VA6,R,1.51,1.07,True,False
+VC2,L,1.52,1.08,True,False
+VC4,L,0.83,0.55,False,True
+VM3,L,0.71,0.41,False,False
+VM7v,L,0.91,0.86,False,False
