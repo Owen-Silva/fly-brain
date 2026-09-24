@@ -1,0 +1,16 @@
+snapshot,config,trigger,total_spikes,n_active,max_distinct_10ms,runaway,distinct_last_100ms
+630,fix_rule,10 DM1 smell neurons fire once,31,31,19,False,0
+783,fix_rule,10 DM1 smell neurons fire once,31,31,19,False,0
+783,fix_same_cells,10 DM1 smell neurons fire once,30,30,18,False,0
+630,published,10 DM1 smell neurons fire once,444790,8177,4221,True,7713
+783,published,10 DM1 smell neurons fire once,464459,8429,4395,True,7893
+630,fix_rule,44 eLNs fire once,81,81,81,False,0
+783,fix_rule,44 eLNs fire once,80,80,80,False,0
+783,fix_same_cells,44 eLNs fire once,77,77,77,False,0
+630,published,44 eLNs fire once,705223,10123,6166,True,9737
+783,published,44 eLNs fire once,718558,10289,6221,True,9797
+630,fix_rule,all antennal-lobe projection neurons fire once,3589,2042,1170,False,0
+783,fix_rule,all antennal-lobe projection neurons fire once,4366,2048,1170,False,0
+783,fix_same_cells,all antennal-lobe projection neurons fire once,4419,2061,1170,False,0
+630,published,all antennal-lobe projection neurons fire once,745729,10415,6670,True,9752
+783,published,all antennal-lobe projection neurons fire once,773167,10622,6873,True,10090

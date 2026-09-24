@@ -1,0 +1,23 @@
+{
+ "published": {
+  "n_connections": 15091983
+ },
+ "fix_rule": {
+  "to_inhibitory": 16,
+  "excitatory_lns": 150,
+  "removed_connections": 53416,
+  "removed_synapses": 358159,
+  "flipped_connections": 12524,
+  "flipped_synapses": 56207,
+  "n_connections": 15038567
+ },
+ "fix_same_cells": {
+  "to_inhibitory": 13,
+  "excitatory_lns": 136,
+  "removed_connections": 51965,
+  "removed_synapses": 355575,
+  "flipped_connections": 10486,
+  "flipped_synapses": 49467,
+  "n_connections": 15040018
+ }
+}

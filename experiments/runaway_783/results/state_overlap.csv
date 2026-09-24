@@ -1,0 +1,3 @@
+comparison,n_630_mapped,n_783,both,share_of_630,share_of_783,jaccard
+"DM1 150 Hz, seed 0, fired at all in 30 trials: 630 vs 783",8715,8920,8564,0.983,0.96,0.944
+630 Phase 6 runaway core (Ir94e-triggered) vs 783 DM1 core (fired in >= half of runaways),6760,8484,6550,0.969,0.772,0.753

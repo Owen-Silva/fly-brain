@@ -1,0 +1,13 @@
+config,wsyn_factor,condition,trials,runaway,mn9_hz,kc_pct_per_trial,still_firing_last_100ms_median
+fix_rule,0.9,dm1_both_150Hz,30,0,0.0,2.65,687
+fix_rule,0.9,ir94e_200Hz,30,0,0.0,0.0,42
+fix_rule,0.9,sugar_100Hz,30,0,61.2,0.0,236
+fix_rule,1.1,dm1_both_150Hz,30,0,0.0,4.6,1116
+fix_rule,1.1,ir94e_200Hz,30,0,0.0,0.0,601
+fix_rule,1.1,sugar_100Hz,30,0,75.17,0.0,299
+fix_rule,1.2,dm1_both_150Hz,30,0,0.0,5.38,1308
+fix_rule,1.2,ir94e_200Hz,30,0,0.03,0.0,726
+fix_rule,1.2,sugar_100Hz,30,0,75.97,0.0,320
+published,0.9,dm1_both_150Hz,30,30,0.0,59.57,7245
+published,0.9,ir94e_200Hz,30,0,0.0,0.0,42
+published,0.9,sugar_100Hz,30,0,61.2,0.0,236

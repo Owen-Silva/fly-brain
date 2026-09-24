@@ -1,0 +1,32 @@
+783 model neurons 138,639; with a row in the 783 annotation: 138,625
+783 ALLN (antennal-lobe local neurons): 429; model sign +1: 166, -1: 263, 0 (no outputs): 0
+783 port of al_ln_literature: 16 made inhibitory, 150 excitatory LNs limited; removed 53,416 connections (358,159 synapses) of 15,091,983; flipped 12,524 connections (56,207 synapses)
+783 eLNs (ALLN, literature acetylcholine citing Shang et al. 2007): 44
+630 fix: 13 made inhibitory, 137 excitatory LNs limited; removed 51,539 connections
+630 ALLN: 424; 630 eLNs: 44
+630 fix cells found in 783: 150 of 150 (by supervoxel 150, by same root ID 0); same root ID in both: 101
+  role in 630 vs role given by the 783 rule:
+    excitatory_ln  -> excitatory_ln    136
+    excitatory_ln  -> not_in_783_fix   1
+    to_inhibitory  -> to_inhibitory    13
+    differs: 630 720575940619959174 (, excitatory_ln) -> 783 720575940612305506 class=ALLN type=CB1686 sign=-1 known_nt= role=not_in_783_fix
+783 rule picks 166 cells; 149 are the 630 fix cells, 17 are extra
+    extra in 783: excitatory_ln  CB1013: 1
+    extra in 783: excitatory_ln  CB1473: 2
+    extra in 783: excitatory_ln  CB2471: 1
+    extra in 783: excitatory_ln  CB2571: 1
+    extra in 783: excitatory_ln  CB2908: 1
+    extra in 783: excitatory_ln  CB3417: 1
+    extra in 783: excitatory_ln  CB3633: 1
+    extra in 783: excitatory_ln  OA-VUMa5: 2
+    extra in 783: excitatory_ln  lLN2P_a: 2
+    extra in 783: excitatory_ln  lLN9: 1
+    extra in 783: excitatory_ln  lLN9,lLN17a: 1
+    extra in 783: to_inhibitory  lLN2P_b: 3
+630 eLNs found in 783: 44 of 44; also eLNs by the 783 rule: 44
+783 DM1 smell neurons (cell_type ORN_DM1): 68 (left 35, right 33); cell classes: 68 olfactory
+630 DM1 (68) found in 783: 68; of those typed ORN_DM1 in 783: 68
+IR94E: 18 paper IDs; Phase 3 map -> 783 IDs present in 783: 18; supervoxel lookup agrees with the Phase 3 map for 18
+SUGAR: 21 paper IDs; Phase 3 map -> 783 IDs present in 783: 21; supervoxel lookup agrees with the Phase 3 map for 21
+    630 720575940620900446 -> Phase 3 map 720575940639259967; supervoxel lookup (720575940639259967, 'supervoxel')
+MN9 720575940660219265: in 783 model: True; supervoxel lookup (720575940660219265, 'supervoxel')

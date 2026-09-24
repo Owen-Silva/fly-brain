@@ -1,0 +1,92 @@
+Kenyon cells: 630 5177, 783 5177
+
+RUNAWAY (more than 1,500 different neurons firing in some 10 ms slice)
+  dm1_both_150Hz   630 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 465,528, active 8,278, still firing at end 7,769, KC 64.22%/trial, healthy max nan, runaway min 4236.0, onset median nan ms
+  dm1_both_150Hz   630 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 36,794, active 1,130, still firing at end 880, KC 3.62%/trial, healthy max 557.0, runaway min nan, onset median nan ms
+  dm1_both_150Hz   783 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 484,982, active 8,506, still firing at end 8,009, KC 65.42%/trial, healthy max nan, runaway min 4442.0, onset median 18.0 ms
+  dm1_both_150Hz   783 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 36,903, active 1,142, still firing at end 899, KC 3.61%/trial, healthy max 557.0, runaway min nan, onset median nan ms
+  dm1_both_150Hz   783 fix_same_cells    0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=nan; median spikes 37,125, active 1,153, still firing at end 886, KC 3.68%/trial, healthy max 526.0, runaway min nan, onset median nan ms
+  ir94e_200Hz      630 published        10/90 (4/5/1)  11.1% [5.5-19.5%] p_vs_pub=nan p_vs_other_snap=0.16; median spikes 7,895, active 601, still firing at end 283, KC 7.09%/trial, healthy max 1370.0, runaway min 4184.0, onset median nan ms
+  ir94e_200Hz      630 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=0.0015 p_vs_other_snap=1.0; median spikes 7,768, active 590, still firing at end 271, KC 0.0%/trial, healthy max 384.0, runaway min nan, onset median nan ms
+  ir94e_200Hz      783 published         4/90 (1/1/2)   4.4% [1.2-11.0%] p_vs_pub=nan p_vs_other_snap=0.16; median spikes 7,846, active 577, still firing at end 143, KC 2.85%/trial, healthy max 317.0, runaway min 4320.0, onset median 756.5 ms
+  ir94e_200Hz      783 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=0.12 p_vs_other_snap=1.0; median spikes 8,049, active 606, still firing at end 183, KC 0.0%/trial, healthy max 338.0, runaway min nan, onset median nan ms
+  ir94e_200Hz      783 fix_same_cells    0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=0.12 p_vs_other_snap=nan; median spikes 8,015, active 606, still firing at end 226, KC 0.0%/trial, healthy max 338.0, runaway min nan, onset median nan ms
+  dm1_left_150Hz   630 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 456,953, active 8,219, still firing at end 7,711, KC 64.01%/trial, healthy max nan, runaway min 4225.0, onset median nan ms
+  dm1_left_150Hz   630 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 17,057, active 789, still firing at end 257, KC 2.17%/trial, healthy max 452.0, runaway min nan, onset median nan ms
+  dm1_left_150Hz   783 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 476,682, active 8,446, still firing at end 7,948, KC 65.25%/trial, healthy max nan, runaway min 4384.0, onset median 19.0 ms
+  dm1_left_150Hz   783 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 18,608, active 853, still firing at end 272, KC 2.23%/trial, healthy max 440.0, runaway min nan, onset median nan ms
+  dm1_left_150Hz   783 fix_same_cells    0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=nan; median spikes 17,456, active 802, still firing at end 274, KC 2.18%/trial, healthy max 444.0, runaway min nan, onset median nan ms
+  dm1_right_150Hz  630 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 456,261, active 8,213, still firing at end 7,702, KC 63.98%/trial, healthy max nan, runaway min 4209.0, onset median nan ms
+  dm1_right_150Hz  630 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 17,562, active 827, still firing at end 273, KC 2.11%/trial, healthy max 460.0, runaway min nan, onset median nan ms
+  dm1_right_150Hz  783 published        90/90 (30/30/30) 100.0% [96.0-100.0%] p_vs_pub=nan p_vs_other_snap=1.0; median spikes 475,787, active 8,444, still firing at end 7,944, KC 65.23%/trial, healthy max nan, runaway min 4395.0, onset median 19.0 ms
+  dm1_right_150Hz  783 fix_rule          0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=1.0; median spikes 18,810, active 854, still firing at end 271, KC 2.13%/trial, healthy max 454.0, runaway min nan, onset median nan ms
+  dm1_right_150Hz  783 fix_same_cells    0/90 (0/0/0)   0.0% [0.0-4.0%] p_vs_pub=2.2e-53 p_vs_other_snap=nan; median spikes 17,860, active 843, still firing at end 260, KC 2.11%/trial, healthy max 435.0, runaway min nan, onset median nan ms
+  783, all trials: healthy trials top out at 557 distinct neurons per 10 ms; runaways never drop below 4320 (1076 healthy, 274 runaway trials)
+
+SUGAR 100 Hz -> MN9 (spikes/s; 3 seeds x 30 trials)
+  630 published       MN9 67.28 (sd 4.73; seeds 68.17/66.90/66.77); change +0.000; every trial same = True; spike-for-spike (10 trials) = nan; runaway 0
+  630 fix_rule        MN9 67.28 (sd 4.73; seeds 68.17/66.90/66.77); change +0.000; every trial same = True; spike-for-spike (10 trials) = nan; runaway 0
+  783 published       MN9 68.52 (sd 4.99; seeds 67.50/69.20/68.87); change +0.000; every trial same = True; spike-for-spike (10 trials) = True; runaway 0
+  783 fix_rule        MN9 68.52 (sd 4.99; seeds 67.50/69.20/68.87); change +0.000; every trial same = True; spike-for-spike (10 trials) = True; runaway 0
+  783 fix_same_cells  MN9 68.52 (sd 4.99; seeds 67.50/69.20/68.87); change +0.000; every trial same = True; spike-for-spike (10 trials) = True; runaway 0
+
+VOLLEYS (a group fires once at 5 ms, nothing else; 1 s)
+  10 DM1 smell neurons fire once                   630 fix_rule               31 spikes, runaway False, still firing at end 0
+  10 DM1 smell neurons fire once                   783 fix_rule               31 spikes, runaway False, still firing at end 0
+  10 DM1 smell neurons fire once                   783 fix_same_cells         30 spikes, runaway False, still firing at end 0
+  10 DM1 smell neurons fire once                   630 published         444,790 spikes, runaway True, still firing at end 7713
+  10 DM1 smell neurons fire once                   783 published         464,459 spikes, runaway True, still firing at end 7893
+  44 eLNs fire once                                630 fix_rule               81 spikes, runaway False, still firing at end 0
+  44 eLNs fire once                                783 fix_rule               80 spikes, runaway False, still firing at end 0
+  44 eLNs fire once                                783 fix_same_cells         77 spikes, runaway False, still firing at end 0
+  44 eLNs fire once                                630 published         705,223 spikes, runaway True, still firing at end 9737
+  44 eLNs fire once                                783 published         718,558 spikes, runaway True, still firing at end 9797
+  all antennal-lobe projection neurons fire once   630 fix_rule            3,589 spikes, runaway False, still firing at end 0
+  all antennal-lobe projection neurons fire once   783 fix_rule            4,366 spikes, runaway False, still firing at end 0
+  all antennal-lobe projection neurons fire once   783 fix_same_cells      4,419 spikes, runaway False, still firing at end 0
+  all antennal-lobe projection neurons fire once   630 published         745,729 spikes, runaway True, still firing at end 9752
+  all antennal-lobe projection neurons fire once   783 published         773,167 spikes, runaway True, still firing at end 10090
+
+STATE: 783 DM1 runaway core (fired in >= half of 90 runaway trials): 8,484 neurons; biggest classes: Kenyon_Cell 3,382, (no class) 2,830, ALPN 557, LHLN 450, olfactory 423, ALLN 361, DAN 148, MBON 67
+  DM1 150 Hz, seed 0, fired at all in 30 trials: 630 vs 783: 630 8,715, 783 8,920, both 8,564 (98% of 630's, 96% of 783's; Jaccard 0.944)
+  630 Phase 6 runaway core (Ir94e-triggered) vs 783 DM1 core (fired in >= half of runaways): 630 6,760, 783 8,484, both 6,550 (97% of 630's, 77% of 783's; Jaccard 0.753)
+
+LOCALISATION on 783 (published model, a group silenced)
+  volley: 10 DM1 smell neurons fire once   | intact                                                           1/1   p=nan median spikes 464,459
+  volley: 10 DM1 smell neurons fire once   | 44 eLNs                                                          0/1   p=nan median spikes 26
+  volley: 10 DM1 smell neurons fire once   | control 1: 44 random excitatory runaway neurons outside AL       1/1   p=nan median spikes 462,517
+  volley: 10 DM1 smell neurons fire once   | control 2: 44 random excitatory runaway neurons outside AL       1/1   p=nan median spikes 461,547
+  volley: 10 DM1 smell neurons fire once   | control 3: 44 random excitatory runaway neurons outside AL       1/1   p=nan median spikes 460,683
+  volley: 10 DM1 smell neurons fire once   | all 166 excitatory AL local neurons                              0/1   p=nan median spikes 26
+  volley: 10 DM1 smell neurons fire once   | control 4: 166 random excitatory runaway neurons outside AL      1/1   p=nan median spikes 453,895
+  DM1 150 Hz both sides                    | 44 eLNs                                                         30/30  p=1.0 median spikes 220,337
+  DM1 150 Hz both sides                    | control 1: 44 random excitatory runaway neurons outside AL      30/30  p=1.0 median spikes 483,465
+  DM1 150 Hz both sides                    | control 2: 44 random excitatory runaway neurons outside AL      30/30  p=1.0 median spikes 483,801
+  DM1 150 Hz both sides                    | control 3: 44 random excitatory runaway neurons outside AL      30/30  p=1.0 median spikes 483,623
+  DM1 150 Hz both sides                    | all 166 excitatory AL local neurons                              0/30  p=1.7e-17 median spikes 43,753
+  DM1 150 Hz both sides                    | control 4: 166 random excitatory runaway neurons outside AL     30/30  p=1.0 median spikes 476,948
+  DM1 150 Hz both sides                    | intact (from step 2)                                            30/30  p=nan median spikes 485,016
+
+SYNAPSE STRENGTH on 783 (1 seed x 30 trials; w_syn = 0.275 mV x factor)
+  fix_rule   x0.9  dm1_both_150Hz  runaway 0/30, MN9 0.0, KC 2.65%/trial, still firing at end 687
+  fix_rule   x0.9  ir94e_200Hz     runaway 0/30, MN9 0.0, KC 0.0%/trial, still firing at end 42
+  fix_rule   x0.9  sugar_100Hz     runaway 0/30, MN9 61.2, KC 0.0%/trial, still firing at end 236
+  fix_rule   x1.1  dm1_both_150Hz  runaway 0/30, MN9 0.0, KC 4.6%/trial, still firing at end 1116
+  fix_rule   x1.1  ir94e_200Hz     runaway 0/30, MN9 0.0, KC 0.0%/trial, still firing at end 601
+  fix_rule   x1.1  sugar_100Hz     runaway 0/30, MN9 75.17, KC 0.0%/trial, still firing at end 299
+  fix_rule   x1.2  dm1_both_150Hz  runaway 0/30, MN9 0.0, KC 5.38%/trial, still firing at end 1308
+  fix_rule   x1.2  ir94e_200Hz     runaway 0/30, MN9 0.03, KC 0.0%/trial, still firing at end 726
+  fix_rule   x1.2  sugar_100Hz     runaway 0/30, MN9 75.97, KC 0.0%/trial, still firing at end 320
+  published  x0.9  dm1_both_150Hz  runaway 30/30, MN9 0.0, KC 59.57%/trial, still firing at end 7245
+  published  x0.9  ir94e_200Hz     runaway 0/30, MN9 0.0, KC 0.0%/trial, still firing at end 42
+  published  x0.9  sugar_100Hz     runaway 0/30, MN9 61.2, KC 0.0%/trial, still firing at end 236
+
+Ir94e 200 Hz follow-ups (step 6)
+  630 published x1.05 seeds 0: runaway 17/30 [37.4-74.5%], largest max-distinct/10ms 4625
+  630 published x1.1 seeds 0: runaway 28/30 [77.9-99.2%], largest max-distinct/10ms 4951
+  783 fix_rule x1.0 seeds 3,4,5,6,7,8,9: runaway 0/210 [0.0-1.7%], largest max-distinct/10ms 347
+  783 published x1.0 seeds 3,4,5,6,7,8,9: runaway 13/210 [3.3-10.4%], largest max-distinct/10ms 4556
+  783 published x1.05 seeds 0: runaway 10/30 [17.3-52.8%], largest max-distinct/10ms 4788
+  783 published x1.1 seeds 0: runaway 19/30 [43.9-80.1%], largest max-distinct/10ms 5135
+  783 published, seeds 0-9: 17/300 [3.3-8.9%]; vs 630 published 10/90: Fisher p = 0.095
+  783 fix_rule, seeds 0-9: 0/300 [0.0-1.2%]; vs 783 published: Fisher p = 1.2e-05

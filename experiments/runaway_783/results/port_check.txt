@@ -1,0 +1,12 @@
+A. 630 connection lists identical (pre, post, signed count): True; 14,635,639 vs 14,635,639 connections
+   sim/sign_fixes report: al_ln_literature: connections 14,687,178 -> 14,635,639 (removed 51,539, 351,448 synapses); sign flipped for 13 neurons (13 to inhibitory, 0 to excitatory; 10,455 connections, 49,260 synapses)
+   port: removed 51,539 connections (351,448 synapses), 13 made inhibitory (10,455 connections, 49,260 synapses), 137 excitatory LNs limited
+   same target cells (150): True
+B. built brains identical (row pointers, targets, signed counts): True
+C/D. dm1_both_150Hz seed 0, 10 trials: spikes identical = True (363,114 vs 363,114 spikes); per-trial totals equal the saved Phase 7 run = True
+C/D. ir94e_200Hz seed 0, 10 trials: spikes identical = True (74,006 vs 74,006 spikes); per-trial totals equal the saved Phase 7 run = True
+C/D. sugar_100Hz seed 1000, 10 trials: spikes identical = True (95,881 vs 95,881 spikes); per-trial totals equal the saved Phase 7 run = True
+E. published 783 built from arrays identical to FastBrain('783'): True
+F. 783 'same cells' variant: 150 target cells found; 13 made inhibitory, 136 excitatory LNs limited; removed 51,965 connections (355,575 synapses); flipped 10,486 connections
+   783 rule-based port: 16 made inhibitory, 150 limited; removed 53,416 connections (358,159 synapses); flipped 12,524 connections (56,207 synapses)
+ALL 630 CHECKS PASS: True

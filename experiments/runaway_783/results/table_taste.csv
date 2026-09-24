@@ -1,0 +1,6 @@
+snapshot,config,trials,mn9_hz,mn9_sd,seed_means,change_vs_published,every_trial_same_totals_and_mn9,runaway,spike_for_spike_first_10_trials
+630,published,90,67.28,4.73,68.17/66.90/66.77,0.0,True,0,
+630,fix_rule,90,67.28,4.73,68.17/66.90/66.77,0.0,True,0,
+783,published,90,68.52,4.99,67.50/69.20/68.87,0.0,True,0,True
+783,fix_rule,90,68.52,4.99,67.50/69.20/68.87,0.0,True,0,True
+783,fix_same_cells,90,68.52,4.99,67.50/69.20/68.87,0.0,True,0,True

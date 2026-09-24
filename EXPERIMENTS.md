@@ -1760,3 +1760,74 @@ tests can't say whether it is right; a smell experiment is needed for that. The 
 that makes neurons tire (adaptation) makes one real-fly grooming result slightly worse.
 And in the feeding circuit itself, four neurons that make real flies drink more sugar
 and less water do the opposite in the model.
+
+## 2026-09-23 - Phase 6: do the runaway and its fix hold on FlyWire snapshot 783? Yes (VALIDATED; extras PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or the data. New:
+`experiments/runaway_783/` and `docs/runaway-783.md`. `common783.py` holds our own copy of
+the `al_ln_literature` rule. It runs on either snapshot, because `sim/sign_fixes.build_brain`
+accepts 630 only. The scripts are s0-s6 plus `run_queue.sh` (one brain in memory at a time;
+free RAM checked before each build). The pass/fail criteria were written into the doc
+(section 1) before any 783 trial ran.
+
+**What happened.**
+- Port proof on 630 (`results/port_check.txt`): our copy of the rule gives the same
+  connection list as `build_brain(fix="al_ln_literature")`, entry by entry. That is
+  14,635,639 connections, the same 51,539 removed and the same 10,455 flipped. It picks the
+  same 150 cells, builds identical brains, and gives identical spikes in 10 trials each of
+  DM1 150 Hz, Ir94e 200 Hz and sugar 100 Hz, equal to the saved Phase 7 run. The published
+  783 brain built from arrays equals `FastBrain("783")`.
+- Cells: all 150 cells the fix changes in 630 were found in 783 by supervoxel (101 kept
+  their root ID, 49 have new ones). 149 get the same treatment. The other one (CB1686) is
+  already inhibitory in the 783 model. The rule on 783's own labels picks 166 cells (16
+  made inhibitory, 150 limited). The 17 extra: 3 lLN2P_b (GABA); 12 local neurons that the
+  630 model makes inhibitory but the 783 file makes excitatory; 2 OA-VUMa5 that 783 labels
+  as antennal-lobe local neurons. Two versions were run: "rule" (166 cells) and "same
+  cells" (the 630 set). Brain-wide, the 783 model file makes more GABA- or glutamate-guessed
+  neurons excitatory than the 630 one: 1,348 vs 239 (GABA) and 2,941 vs 580 (glutamate).
+  The cause was not traced.
+- Inputs in 783: DM1 = 68 smell neurons (35 left, 33 right, `cell_type` ORN_DM1; exactly
+  the 630 set). Ir94e = the paper's 18 IDs, unchanged. Sugar = 20 paper IDs plus
+  720575940639259967 for 720575940620900446 (supervoxel lookup and the Phase 3
+  fingerprint agree). MN9 720575940660219265 is unchanged.
+- Published 783 (3 seeds x 30 one-second trials, same seeds as 630): DM1 150 Hz runs away
+  in 90/90 (630: 90/90). Ir94e 200 Hz 4/90 (630: 10/90, p = 0.16); 17/300 with seeds 0-9
+  (p = 0.095). The volleys (10 DM1 neurons, 44 eLNs, all 685 projection neurons fire once)
+  all ignite (464,459 / 718,558 / 773,167 spikes). Same state: of the neurons that fire
+  in seed-0 DM1 trials, 98% of 630's also fire on 783 (96% of 783's); 97% of the Phase 6
+  core is in the 783 core (8,484 neurons). Healthy trials peak at 557 neurons per 10 ms,
+  runaways never below 4,320.
+- Fix on 783, both versions: DM1 0/90, Ir94e 0/90 (rule: 0/300 vs 17/300, p = 1.2e-5).
+  Volleys die out (30 to 4,419 spikes). Kenyon cells under DM1: 3.61% / 3.68% per trial
+  (630: 3.62%). Sugar 100 Hz -> MN9: 68.52 Hz in all three 783 versions, the same in every
+  one of the 90 trials. Every spike of every neuron is identical in the 10 trials saved in
+  full (630: 67.28).
+- Silencing (published 783, seed 0): silencing the 44 eLNs stops the 10-DM1 volley (26
+  spikes); 3 random 44-cell sets from the runaway outside the antennal lobe do not. DM1
+  150 Hz still runs away 30/30 with the eLNs silenced. It stops (0/30) only with all 166
+  excitatory AL local neurons silenced; 166 random cells: 30/30.
+- Synapse strength (1 seed x 30): the fix holds on 783 at -10/+10/+20% (0 runaways for
+  every input). Kenyon cells 2.65/4.60/5.38% (630: 2.72/4.56/5.38). Published 783 at -10%
+  still runs away 30/30 on DM1. Ir94e on the published models at +5/+10%: 783 33%/63%,
+  630 57%/93%.
+- DM1 on one side only (3 seeds x 30): published 783 left 90/90, right 90/90 (630 the
+  same). Both fixes give 0/90 on each side. Kenyon cells 2.1-2.2% per trial (630: 2.1-2.2%).
+- Numbers: `results/summary_stats.txt`; figure `plots/fig_runaway_783.png` (runaway
+  counts like Phase 7's fig1, 630 next to 783, plus sugar -> MN9).
+
+**Validated?** VALIDATED for the questions asked: the runaway holds on 783, the fix holds
+(both versions), and the taste result is unchanged. Each used 3 seeds, a port proven exact
+on 630, and a comparison with 630. PRELIMINARY: the silencing and synapse-strength checks
+(one seed), and the lower taste-trigger rate on 783 (p = 0.095). Not done: Brian2 on 783
+(fast engine only; the Brian2 cross-check was only ever done on 630); smell channels other
+than DM1; why the 783 model file has more excitatory cells. Nothing was shared or sent.
+
+**Plain English.** Everything we had found about the runaway came from the older version of
+the fly wiring map, the one the paper used. Before anyone could tell the model's authors,
+we had to check the newer, public version that everyone downloads today. We wrote down
+beforehand what would count as "it holds", then ran it. The newer map runs away exactly
+like the old one: smell input locks the whole brain into non-stop firing every time, and
+it is the same set of neurons. Our fix carries over unchanged: no runaways in hundreds of
+trials, and the paper's sugar-feeding result is identical to the last spike. The same
+handful of smell-centre cells is the way in. One small difference: taste input tips the
+newer map about half as often, because it sits a little further from the edge.

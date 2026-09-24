@@ -1,0 +1,18 @@
+root_id_783,role_783,cell_type_783,known_nt_783,top_nt_783,root_id_630,in_630_model,cell_class_630,type_630,top_nt_630,known_nt_630,model_sign_630
+720575940610669614,to_inhibitory,lLN2P_b,"gaba, MIP; acetylcholine-negative",gaba,720575940610669614,True,ALLN,lLN2P_b,gaba,"gaba, MIP; acetylcholine-negative",-1
+720575940614429165,to_inhibitory,lLN2P_b,"gaba, MIP; acetylcholine-negative",gaba,720575940629193319,True,ALLN,lLN2P_b,gaba,"gaba, MIP; acetylcholine-negative",-1
+720575940627605779,to_inhibitory,lLN2P_b,"gaba, MIP; acetylcholine-negative",gaba,720575940627605779,True,ALLN,lLN2P_b,gaba,"gaba, MIP; acetylcholine-negative",-1
+720575940606745266,excitatory_ln,CB1473,,gaba,720575940606745266,True,,,gaba,,-1
+720575940611944914,excitatory_ln,lLN2P_a,,glutamate,720575940624738121,True,ALLN,lLN2P_a,glutamate,,-1
+720575940617938752,excitatory_ln,CB1473,,gaba,720575940617938752,True,ALLN,,gaba,,-1
+720575940623437838,excitatory_ln,CB1013,,glutamate,720575940623437838,True,ALLN,,glutamate,,-1
+720575940626518302,excitatory_ln,CB2908,,gaba,720575940626518302,True,ALLN,,gaba,,-1
+720575940626741552,excitatory_ln,OA-VUMa5,octopamine,octopamine,720575940606776009,True,,OA-VUMa5,octopamine,octopamine,1
+720575940627031226,excitatory_ln,CB3633,,glutamate,720575940646839587,True,ALLN,,glutamate,,-1
+720575940627132232,excitatory_ln,CB2571,,acetylcholine,720575940627132232,True,ALLN,,acetylcholine,,-1
+720575940627173636,excitatory_ln,lLN9,,gaba,720575940627173636,True,ALLN,,gaba,,-1
+720575940628861188,excitatory_ln,OA-VUMa5,octopamine,octopamine,720575940638891078,True,,OA-VUMa5,octopamine,octopamine,1
+720575940631497078,excitatory_ln,lLN2P_a,,glutamate,720575940632636876,True,ALLN,lLN2P_a,glutamate,,-1
+720575940635847269,excitatory_ln,"lLN9,lLN17a",,gaba,720575940635847269,True,ALLN,lLN9,gaba,,-1
+720575940638844504,excitatory_ln,CB2471,,gaba,720575940638844504,True,ALLN,,gaba,,-1
+720575940645372964,excitatory_ln,CB3417,,glutamate,720575940620896603,True,ALLN,,glutamate,,-1

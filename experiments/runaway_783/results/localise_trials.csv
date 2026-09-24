@@ -1,0 +1,188 @@
+test,group,n_silenced,seed_index,trial,total_spikes,n_active,max_distinct_10ms,runaway,onset_ms,distinct_last_100ms,mn9_hz,kc_active
+volley: 10 DM1 smell neurons fire once,intact,0,0,0,464459,8429,4395,True,25,7893,0.0,3375
+volley: 10 DM1 smell neurons fire once,44 eLNs,44,0,0,26,26,14,False,-1,0,0.0,0
+volley: 10 DM1 smell neurons fire once,control 1: 44 random excitatory runaway neurons outside AL,44,0,0,462517,8345,4393,True,25,7854,0.0,3365
+volley: 10 DM1 smell neurons fire once,control 2: 44 random excitatory runaway neurons outside AL,44,0,0,461547,8346,4361,True,25,7854,0.0,3347
+volley: 10 DM1 smell neurons fire once,control 3: 44 random excitatory runaway neurons outside AL,44,0,0,460683,8359,4363,True,25,7866,0.0,3359
+volley: 10 DM1 smell neurons fire once,all 166 excitatory AL local neurons,166,0,0,26,26,14,False,-1,0,0.0,0
+volley: 10 DM1 smell neurons fire once,control 4: 166 random excitatory runaway neurons outside AL,166,0,0,453895,8232,4348,True,25,7809,0.0,3329
+DM1 150 Hz both sides,44 eLNs,44,0,0,220969,5001,2162,True,31,4361,0.0,1381
+DM1 150 Hz both sides,44 eLNs,44,0,1,220323,4947,2176,True,32,4427,0.0,1364
+DM1 150 Hz both sides,44 eLNs,44,0,2,220160,4991,2295,True,33,4339,0.0,1404
+DM1 150 Hz both sides,44 eLNs,44,0,3,219551,4959,2260,True,36,4275,0.0,1351
+DM1 150 Hz both sides,44 eLNs,44,0,4,219276,4936,2194,True,33,4256,0.0,1364
+DM1 150 Hz both sides,44 eLNs,44,0,5,221041,5001,2173,True,31,4413,0.0,1400
+DM1 150 Hz both sides,44 eLNs,44,0,6,221993,5034,2270,True,29,4422,0.0,1403
+DM1 150 Hz both sides,44 eLNs,44,0,7,220443,4967,2140,True,32,4377,0.0,1396
+DM1 150 Hz both sides,44 eLNs,44,0,8,219311,4972,2180,True,33,4430,0.0,1378
+DM1 150 Hz both sides,44 eLNs,44,0,9,219886,4943,2171,True,33,4402,0.0,1395
+DM1 150 Hz both sides,44 eLNs,44,0,10,220633,4967,2156,True,32,4328,0.0,1387
+DM1 150 Hz both sides,44 eLNs,44,0,11,220306,4963,2250,True,33,4365,0.0,1375
+DM1 150 Hz both sides,44 eLNs,44,0,12,222215,4995,2213,True,36,4361,0.0,1403
+DM1 150 Hz both sides,44 eLNs,44,0,13,221155,4981,2155,True,35,4322,0.0,1394
+DM1 150 Hz both sides,44 eLNs,44,0,14,220351,4986,2209,True,31,4346,0.0,1386
+DM1 150 Hz both sides,44 eLNs,44,0,15,221817,5006,2154,True,31,4340,0.0,1381
+DM1 150 Hz both sides,44 eLNs,44,0,16,219436,4952,2173,True,29,4321,0.0,1373
+DM1 150 Hz both sides,44 eLNs,44,0,17,219458,4953,2174,True,33,4304,0.0,1372
+DM1 150 Hz both sides,44 eLNs,44,0,18,220454,4945,2161,True,27,4377,0.0,1392
+DM1 150 Hz both sides,44 eLNs,44,0,19,220946,4956,2192,True,32,4436,0.0,1372
+DM1 150 Hz both sides,44 eLNs,44,0,20,219970,4941,2173,True,31,4403,0.0,1367
+DM1 150 Hz both sides,44 eLNs,44,0,21,220603,4962,2188,True,33,4348,0.0,1384
+DM1 150 Hz both sides,44 eLNs,44,0,22,219698,4956,2107,True,30,4249,0.0,1380
+DM1 150 Hz both sides,44 eLNs,44,0,23,221328,5040,2185,True,32,4418,0.0,1393
+DM1 150 Hz both sides,44 eLNs,44,0,24,221510,4984,2255,True,34,4395,0.0,1400
+DM1 150 Hz both sides,44 eLNs,44,0,25,219256,4965,2210,True,33,4454,0.0,1384
+DM1 150 Hz both sides,44 eLNs,44,0,26,221093,5011,2152,True,32,4399,0.0,1390
+DM1 150 Hz both sides,44 eLNs,44,0,27,219613,4955,2166,True,32,4280,0.0,1355
+DM1 150 Hz both sides,44 eLNs,44,0,28,220316,4968,2120,True,33,4366,0.0,1374
+DM1 150 Hz both sides,44 eLNs,44,0,29,220282,5002,2169,True,37,4329,0.0,1401
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,0,482414,8480,4466,True,18,7989,0.0,3379
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,1,483521,8459,4443,True,17,7967,0.0,3387
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,2,482834,8486,4560,True,18,7995,0.0,3381
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,3,484338,8500,4492,True,18,7980,0.0,3382
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,4,482792,8475,4487,True,17,7970,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,5,483654,8469,4428,True,18,8019,0.0,3385
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,6,483477,8470,4490,True,18,8000,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,7,482577,8478,4487,True,18,8014,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,8,482286,8485,4442,True,17,7936,0.0,3378
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,9,483453,8457,4488,True,18,8002,0.0,3384
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,10,483923,8463,4461,True,18,7991,0.0,3385
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,11,482465,8477,4502,True,18,7991,0.0,3380
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,12,484516,8479,4473,True,18,8051,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,13,482895,8468,4437,True,18,7972,0.0,3382
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,14,484184,8507,4631,True,17,8006,0.0,3385
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,15,483127,8497,4562,True,17,8003,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,16,482594,8454,4476,True,18,7953,0.0,3379
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,17,483568,8473,4499,True,17,7938,0.0,3389
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,18,484456,8474,4537,True,18,7997,0.0,3389
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,19,483823,8495,4440,True,18,7980,0.0,3394
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,20,482907,8477,4462,True,18,8003,0.0,3383
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,21,481863,8461,4571,True,18,7962,0.0,3375
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,22,484775,8515,4518,True,17,8024,0.0,3397
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,23,483834,8479,4463,True,17,7973,0.0,3378
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,24,482833,8462,4505,True,18,7993,0.0,3375
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,25,483731,8492,4474,True,19,8010,0.0,3394
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,26,483349,8476,4440,True,17,7945,0.0,3391
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,27,483497,8476,4513,True,18,7999,0.0,3374
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,28,482056,8476,4552,True,18,7969,0.0,3376
+DM1 150 Hz both sides,control 1: 44 random excitatory runaway neurons outside AL,44,0,29,483993,8503,4557,True,17,7973,0.0,3395
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,0,483745,8507,4546,True,18,7966,0.0,3387
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,1,483192,8451,4447,True,17,7983,0.0,3366
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,2,484868,8502,4560,True,18,7961,0.0,3386
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,3,484216,8520,4559,True,18,8025,0.0,3388
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,4,483632,8502,4499,True,17,7955,0.0,3380
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,5,483921,8470,4497,True,18,7938,0.0,3391
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,6,484065,8484,4471,True,18,8045,0.0,3382
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,7,483819,8478,4485,True,18,7983,0.0,3387
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,8,483783,8479,4480,True,17,7988,0.0,3384
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,9,482999,8448,4514,True,18,7978,0.0,3380
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,10,484337,8480,4495,True,18,8007,0.0,3383
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,11,483097,8503,4545,True,18,8002,0.0,3378
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,12,482583,8468,4434,True,18,7961,0.0,3377
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,13,483511,8499,4522,True,18,8000,0.0,3386
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,14,484065,8484,4523,True,17,7987,0.0,3380
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,15,483665,8497,4538,True,17,8009,0.0,3387
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,16,484318,8482,4517,True,18,8020,0.0,3383
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,17,484767,8487,4513,True,17,8009,0.0,3379
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,18,482658,8467,4556,True,18,7981,0.0,3374
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,19,484886,8511,4492,True,18,7994,0.0,3388
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,20,483032,8483,4532,True,18,7996,0.0,3369
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,21,483369,8466,4497,True,18,7998,0.0,3372
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,22,484820,8458,4519,True,17,7984,0.0,3378
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,23,484579,8473,4466,True,17,8005,0.0,3382
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,24,483547,8464,4514,True,18,8016,0.0,3377
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,25,485096,8517,4477,True,19,8002,0.0,3395
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,26,484034,8507,4476,True,17,7967,0.0,3376
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,27,483673,8476,4529,True,18,7963,0.0,3379
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,28,484417,8528,4479,True,18,8018,0.0,3384
+DM1 150 Hz both sides,control 2: 44 random excitatory runaway neurons outside AL,44,0,29,483133,8469,4462,True,17,7899,0.0,3381
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,0,483762,8494,4529,True,18,7998,0.0,3388
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,1,484018,8519,4467,True,17,7962,0.0,3397
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,2,483356,8502,4482,True,18,8035,0.0,3382
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,3,484337,8475,4523,True,18,7948,0.0,3379
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,4,484014,8495,4510,True,17,7998,0.0,3386
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,5,484177,8488,4535,True,18,7970,0.0,3384
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,6,483314,8484,4548,True,18,8043,0.0,3378
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,7,482660,8489,4468,True,18,7963,0.0,3386
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,8,484120,8503,4518,True,17,7994,0.0,3383
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,9,483617,8498,4553,True,18,8003,0.0,3399
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,10,483632,8501,4521,True,18,8035,0.0,3382
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,11,483691,8496,4494,True,18,8015,0.0,3383
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,12,482187,8481,4467,True,18,7997,0.0,3381
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,13,482115,8473,4497,True,18,7961,0.0,3378
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,14,482908,8471,4542,True,17,7949,0.0,3382
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,15,484265,8478,4481,True,17,7981,0.0,3378
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,16,483496,8466,4495,True,18,7986,0.0,3381
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,17,483793,8505,4481,True,17,7988,0.0,3391
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,18,482967,8481,4485,True,18,7877,0.0,3377
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,19,482990,8483,4484,True,18,8013,0.0,3379
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,20,484217,8517,4495,True,18,7987,0.0,3384
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,21,484030,8478,4495,True,18,7964,0.0,3394
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,22,483336,8482,4526,True,17,7966,0.0,3379
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,23,483629,8479,4454,True,17,7988,0.0,3385
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,24,484053,8503,4480,True,18,8032,0.0,3388
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,25,482665,8483,4489,True,19,8018,0.0,3384
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,26,483746,8526,4571,True,17,8034,0.0,3387
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,27,481605,8478,4514,True,18,8011,0.0,3377
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,28,483523,8524,4536,True,18,7965,0.0,3385
+DM1 150 Hz both sides,control 3: 44 random excitatory runaway neurons outside AL,44,0,29,482488,8452,4480,True,17,7981,0.0,3375
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,0,43992,1230,483,False,-1,1031,0.0,201
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,1,44406,1225,485,False,-1,978,0.0,199
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,2,43298,1186,484,False,-1,993,0.0,182
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,3,42823,1202,475,False,-1,963,0.0,191
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,4,43935,1237,502,False,-1,960,0.0,205
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,5,43923,1207,520,False,-1,962,0.0,192
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,6,44416,1239,488,False,-1,993,0.0,204
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,7,42302,1182,548,False,-1,963,0.0,193
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,8,43820,1236,500,False,-1,872,0.0,203
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,9,43132,1220,486,False,-1,913,0.0,194
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,10,43713,1179,471,False,-1,1015,0.0,194
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,11,43513,1218,492,False,-1,1006,0.0,191
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,12,43992,1238,519,False,-1,987,0.0,202
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,13,42876,1181,491,False,-1,989,0.0,189
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,14,43988,1231,489,False,-1,987,0.0,206
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,15,43633,1213,496,False,-1,971,0.0,195
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,16,44513,1249,480,False,-1,1036,0.0,215
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,17,43459,1181,468,False,-1,917,0.0,203
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,18,43564,1201,479,False,-1,969,0.0,201
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,19,43212,1212,507,False,-1,1054,0.0,202
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,20,43434,1207,535,False,-1,992,0.0,195
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,21,43772,1215,491,False,-1,992,0.0,194
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,22,44369,1277,526,False,-1,1064,0.0,216
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,23,44238,1221,489,False,-1,927,0.0,203
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,24,44790,1270,484,False,-1,1055,0.0,205
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,25,43377,1219,472,False,-1,936,0.0,204
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,26,44280,1220,512,False,-1,977,0.0,194
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,27,43793,1222,487,False,-1,1018,0.0,194
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,28,43735,1213,503,False,-1,977,0.0,200
+DM1 150 Hz both sides,all 166 excitatory AL local neurons,166,0,29,43581,1212,502,False,-1,942,0.0,201
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,0,478241,8387,4527,True,18,7928,0.0,3367
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,1,477140,8383,4444,True,17,7866,0.0,3369
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,2,476728,8401,4437,True,18,7916,0.0,3359
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,3,476937,8367,4475,True,18,7904,0.0,3356
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,4,478880,8403,4476,True,17,7940,0.0,3367
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,5,477441,8362,4544,True,18,7866,0.0,3355
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,6,478506,8378,4461,True,18,7878,0.0,3370
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,7,476279,8409,4468,True,18,7889,0.0,3359
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,8,477514,8388,4503,True,17,7946,0.0,3357
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,9,476001,8385,4432,True,18,7987,0.0,3353
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,10,477266,8370,4420,True,18,7918,0.0,3355
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,11,477608,8402,4480,True,18,7914,0.0,3365
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,12,476853,8372,4437,True,18,7881,0.0,3370
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,13,476238,8399,4376,True,18,7910,0.0,3363
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,14,476916,8411,4457,True,17,7882,0.0,3365
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,15,477106,8379,4434,True,17,7898,0.0,3361
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,16,476562,8383,4422,True,18,7869,0.0,3354
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,17,476932,8402,4438,True,17,7929,0.0,3363
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,18,476800,8394,4445,True,18,7876,0.0,3355
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,19,476660,8391,4410,True,18,7959,0.0,3359
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,20,478044,8385,4439,True,18,7935,0.0,3368
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,21,476807,8367,4445,True,18,7871,0.0,3359
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,22,476960,8386,4439,True,17,7892,0.0,3367
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,23,477682,8383,4512,True,17,7867,0.0,3363
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,24,477195,8396,4464,True,18,7906,0.0,3359
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,25,474743,8363,4453,True,19,7896,0.0,3350
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,26,477687,8390,4445,True,17,7905,0.0,3357
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,27,475702,8341,4478,True,18,7949,0.0,3348
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,28,476882,8383,4509,True,18,7879,0.0,3358
+DM1 150 Hz both sides,control 4: 166 random excitatory runaway neurons outside AL,166,0,29,477615,8384,4417,True,17,7897,0.0,3359
