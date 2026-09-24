@@ -1,0 +1,1246 @@
+{
+ "label": "PRELIMINARY",
+ "checkpoint": 317,
+ "stage": "5-single-conn-r7",
+ "n_neurons": 36,
+ "n_connections": 110,
+ "n_synapses": 6463,
+ "neurons": [
+  {
+   "root_id": "720575940607272649",
+   "role": "interneuron",
+   "cell_type": "CB0553",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 43.06666666666667,
+    "S200": 75.53333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 31.2
+   }
+  },
+  {
+   "root_id": "720575940609407939",
+   "role": "interneuron",
+   "cell_type": "DNge080",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 22.433333333333334,
+    "S200": 46.6,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 3.933333333333333
+   }
+  },
+  {
+   "root_id": "720575940610483162",
+   "role": "bitter GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "serotonin",
+   "rate_hz": {
+    "S100": 0.0,
+    "S200": 0.0,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 100.7,
+    "B200": 195.56666666666666,
+    "S100+B100": 95.73333333333333
+   }
+  },
+  {
+   "root_id": "720575940611875570",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 97.76666666666667,
+    "S200": 196.33333333333334,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 97.76666666666667
+   }
+  },
+  {
+   "root_id": "720575940612611301",
+   "role": "interneuron",
+   "cell_type": "CB0277",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 38.7,
+    "S200": 67.33333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 38.666666666666664
+   }
+  },
+  {
+   "root_id": "720575940614763666",
+   "role": "interneuron",
+   "cell_type": "CB0366",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 12.433333333333334,
+    "S200": 35.766666666666666,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 12.433333333333334
+   }
+  },
+  {
+   "root_id": "720575940615041430",
+   "role": "interneuron",
+   "cell_type": "DNge031",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "left",
+   "top_nt": "gaba",
+   "rate_hz": {
+    "S100": 33.233333333333334,
+    "S200": 58.8,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 30.533333333333335
+   }
+  },
+  {
+   "root_id": "720575940615671106",
+   "role": "interneuron",
+   "cell_type": "DNge059",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 48.93333333333333,
+    "S200": 85.43333333333334,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 23.8
+   }
+  },
+  {
+   "root_id": "720575940617937543",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 102.23333333333333,
+    "S200": 198.9,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 102.23333333333333
+   }
+  },
+  {
+   "root_id": "720575940619114048",
+   "role": "interneuron",
+   "cell_type": "CB0824",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 14.0,
+    "S200": 32.9,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 5.366666666666666
+   }
+  },
+  {
+   "root_id": "720575940619853515",
+   "role": "interneuron",
+   "cell_type": "DNge062",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 4.2,
+    "S200": 18.3,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 0.2
+   }
+  },
+  {
+   "root_id": "720575940619877396",
+   "role": "interneuron",
+   "cell_type": "DNge059",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 22.366666666666667,
+    "S200": 46.5,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 3.933333333333333
+   }
+  },
+  {
+   "root_id": "720575940620874757",
+   "role": "interneuron",
+   "cell_type": "CB0616",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 74.23333333333333,
+    "S200": 112.03333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 74.23333333333333
+   }
+  },
+  {
+   "root_id": "720575940621502051",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 100.7,
+    "S200": 195.56666666666666,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 100.7
+   }
+  },
+  {
+   "root_id": "720575940621754367",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 102.76666666666667,
+    "S200": 197.43333333333334,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 102.76666666666667
+   }
+  },
+  {
+   "root_id": "720575940623210445",
+   "role": "interneuron",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "ascending",
+   "cell_class": "AN",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 49.733333333333334,
+    "S200": 82.83333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 49.63333333333333
+   }
+  },
+  {
+   "root_id": "720575940623211725",
+   "role": "interneuron",
+   "cell_type": "CB0553",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 35.63333333333333,
+    "S200": 66.46666666666667,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 19.266666666666666
+   }
+  },
+  {
+   "root_id": "720575940624600840",
+   "role": "interneuron",
+   "cell_type": "CB0219",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "glutamate",
+   "rate_hz": {
+    "S100": 0.0,
+    "S200": 0.0,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 37.833333333333336,
+    "B200": 68.7,
+    "S100+B100": 36.3
+   }
+  },
+  {
+   "root_id": "720575940627847752",
+   "role": "interneuron",
+   "cell_type": "DNge080",
+   "hemibrain_type": "",
+   "super_class": "descending",
+   "cell_class": "DN",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 12.833333333333334,
+    "S200": 34.06666666666667,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 0.5666666666666667
+   }
+  },
+  {
+   "root_id": "720575940628853239",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 95.3,
+    "S200": 198.9,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 95.3
+   }
+  },
+  {
+   "root_id": "720575940629888530",
+   "role": "interneuron",
+   "cell_type": "CB0192",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 69.63333333333334,
+    "S200": 107.26666666666667,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 69.63333333333334
+   }
+  },
+  {
+   "root_id": "720575940630579574",
+   "role": "interneuron",
+   "cell_type": "CB0177",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 31.8,
+    "S200": 60.43333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 31.866666666666667
+   }
+  },
+  {
+   "root_id": "720575940631703608",
+   "role": "interneuron",
+   "cell_type": "CB0872",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 48.43333333333333,
+    "S200": 80.93333333333334,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 48.333333333333336
+   }
+  },
+  {
+   "root_id": "720575940632047890",
+   "role": "interneuron",
+   "cell_type": "CB0393",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 40.46666666666667,
+    "S200": 77.1,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 17.066666666666666
+   }
+  },
+  {
+   "root_id": "720575940632252743",
+   "role": "interneuron",
+   "cell_type": "CB0493",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 40.6,
+    "S200": 68.43333333333334,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 7.433333333333334
+   }
+  },
+  {
+   "root_id": "720575940632365905",
+   "role": "interneuron",
+   "cell_type": "CB0051",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 11.766666666666667,
+    "S200": 36.06666666666667,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 6.0
+   }
+  },
+  {
+   "root_id": "720575940632425919",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 97.86666666666666,
+    "S200": 195.66666666666666,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 97.86666666666666
+   }
+  },
+  {
+   "root_id": "720575940633143833",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 102.0,
+    "S200": 197.63333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 102.0
+   }
+  },
+  {
+   "root_id": "720575940635578303",
+   "role": "interneuron",
+   "cell_type": "CB0855",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 21.133333333333333,
+    "S200": 37.46666666666667,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 15.2
+   }
+  },
+  {
+   "root_id": "720575940638103349",
+   "role": "interneuron",
+   "cell_type": "CB0499",
+   "hemibrain_type": "",
+   "super_class": "central",
+   "cell_class": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 35.43333333333333,
+    "S200": 67.23333333333333,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 35.43333333333333
+   }
+  },
+  {
+   "root_id": "720575940639198653",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 99.93333333333334,
+    "S200": 195.73333333333332,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 99.93333333333334
+   }
+  },
+  {
+   "root_id": "720575940639332736",
+   "role": "sugar GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 99.66666666666667,
+    "S200": 196.5,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 99.66666666666667
+   }
+  },
+  {
+   "root_id": "720575940645743412",
+   "role": "bitter GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 0.0,
+    "S200": 0.0,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 99.66666666666667,
+    "B200": 196.5,
+    "S100+B100": 99.63333333333334
+   }
+  },
+  {
+   "root_id": "720575940646212996",
+   "role": "bitter GRN",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "sensory",
+   "cell_class": "gustatory",
+   "side": "left",
+   "top_nt": "serotonin",
+   "rate_hz": {
+    "S100": 0.0,
+    "S200": 0.0,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 102.76666666666667,
+    "B200": 197.43333333333334,
+    "S100+B100": 98.6
+   }
+  },
+  {
+   "root_id": "720575940655014049",
+   "role": "interneuron",
+   "cell_type": "",
+   "hemibrain_type": "",
+   "super_class": "ascending",
+   "cell_class": "AN",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 49.4,
+    "S200": 83.06666666666666,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 49.4
+   }
+  },
+  {
+   "root_id": "720575940660219265",
+   "role": "MN9",
+   "cell_type": "CB0701",
+   "hemibrain_type": "",
+   "super_class": "motor",
+   "cell_class": "motor",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "rate_hz": {
+    "S100": 63.733333333333334,
+    "S200": 100.06666666666666,
+    "W100": 0.0,
+    "W200": 0.0,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 24.933333333333334
+   }
+  }
+ ],
+ "connections": [
+  {
+   "pre": "720575940607272649",
+   "post": "720575940619114048",
+   "signed_synapses": 29
+  },
+  {
+   "pre": "720575940607272649",
+   "post": "720575940627847752",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940607272649",
+   "post": "720575940615671106",
+   "signed_synapses": 106
+  },
+  {
+   "pre": "720575940607272649",
+   "post": "720575940632252743",
+   "signed_synapses": 162
+  },
+  {
+   "pre": "720575940607272649",
+   "post": "720575940615041430",
+   "signed_synapses": 20
+  },
+  {
+   "pre": "720575940607272649",
+   "post": "720575940635578303",
+   "signed_synapses": 155
+  },
+  {
+   "pre": "720575940609407939",
+   "post": "720575940619877396",
+   "signed_synapses": 210
+  },
+  {
+   "pre": "720575940609407939",
+   "post": "720575940627847752",
+   "signed_synapses": 30
+  },
+  {
+   "pre": "720575940609407939",
+   "post": "720575940615671106",
+   "signed_synapses": 118
+  },
+  {
+   "pre": "720575940610483162",
+   "post": "720575940624600840",
+   "signed_synapses": 30
+  },
+  {
+   "pre": "720575940611875570",
+   "post": "720575940620874757",
+   "signed_synapses": 21
+  },
+  {
+   "pre": "720575940611875570",
+   "post": "720575940632047890",
+   "signed_synapses": 20
+  },
+  {
+   "pre": "720575940611875570",
+   "post": "720575940655014049",
+   "signed_synapses": 11
+  },
+  {
+   "pre": "720575940611875570",
+   "post": "720575940623210445",
+   "signed_synapses": 7
+  },
+  {
+   "pre": "720575940611875570",
+   "post": "720575940632365905",
+   "signed_synapses": 1
+  },
+  {
+   "pre": "720575940612611301",
+   "post": "720575940607272649",
+   "signed_synapses": 59
+  },
+  {
+   "pre": "720575940612611301",
+   "post": "720575940623211725",
+   "signed_synapses": 16
+  },
+  {
+   "pre": "720575940612611301",
+   "post": "720575940630579574",
+   "signed_synapses": 12
+  },
+  {
+   "pre": "720575940612611301",
+   "post": "720575940615041430",
+   "signed_synapses": 4
+  },
+  {
+   "pre": "720575940612611301",
+   "post": "720575940609407939",
+   "signed_synapses": 40
+  },
+  {
+   "pre": "720575940614763666",
+   "post": "720575940623210445",
+   "signed_synapses": 9
+  },
+  {
+   "pre": "720575940615041430",
+   "post": "720575940623211725",
+   "signed_synapses": -100
+  },
+  {
+   "pre": "720575940615671106",
+   "post": "720575940627847752",
+   "signed_synapses": 7
+  },
+  {
+   "pre": "720575940615671106",
+   "post": "720575940623211725",
+   "signed_synapses": 94
+  },
+  {
+   "pre": "720575940617937543",
+   "post": "720575940620874757",
+   "signed_synapses": 3
+  },
+  {
+   "pre": "720575940617937543",
+   "post": "720575940632047890",
+   "signed_synapses": 3
+  },
+  {
+   "pre": "720575940617937543",
+   "post": "720575940623210445",
+   "signed_synapses": 46
+  },
+  {
+   "pre": "720575940619114048",
+   "post": "720575940619877396",
+   "signed_synapses": 98
+  },
+  {
+   "pre": "720575940619114048",
+   "post": "720575940607272649",
+   "signed_synapses": 260
+  },
+  {
+   "pre": "720575940619853515",
+   "post": "720575940660219265",
+   "signed_synapses": 561
+  },
+  {
+   "pre": "720575940619877396",
+   "post": "720575940607272649",
+   "signed_synapses": 86
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940627847752",
+   "signed_synapses": 50
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940614763666",
+   "signed_synapses": 4
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940655014049",
+   "signed_synapses": 18
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940607272649",
+   "signed_synapses": 3
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940623211725",
+   "signed_synapses": 33
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940615671106",
+   "signed_synapses": 18
+  },
+  {
+   "pre": "720575940620874757",
+   "post": "720575940609407939",
+   "signed_synapses": 7
+  },
+  {
+   "pre": "720575940621502051",
+   "post": "720575940620874757",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940621502051",
+   "post": "720575940629888530",
+   "signed_synapses": 28
+  },
+  {
+   "pre": "720575940621502051",
+   "post": "720575940614763666",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940621502051",
+   "post": "720575940638103349",
+   "signed_synapses": 21
+  },
+  {
+   "pre": "720575940621754367",
+   "post": "720575940629888530",
+   "signed_synapses": 19
+  },
+  {
+   "pre": "720575940621754367",
+   "post": "720575940638103349",
+   "signed_synapses": 9
+  },
+  {
+   "pre": "720575940623210445",
+   "post": "720575940631703608",
+   "signed_synapses": 154
+  },
+  {
+   "pre": "720575940623210445",
+   "post": "720575940612611301",
+   "signed_synapses": 37
+  },
+  {
+   "pre": "720575940623210445",
+   "post": "720575940632047890",
+   "signed_synapses": 61
+  },
+  {
+   "pre": "720575940623210445",
+   "post": "720575940630579574",
+   "signed_synapses": 29
+  },
+  {
+   "pre": "720575940623210445",
+   "post": "720575940615041430",
+   "signed_synapses": 125
+  },
+  {
+   "pre": "720575940623211725",
+   "post": "720575940619114048",
+   "signed_synapses": 93
+  },
+  {
+   "pre": "720575940623211725",
+   "post": "720575940607272649",
+   "signed_synapses": 23
+  },
+  {
+   "pre": "720575940623211725",
+   "post": "720575940615671106",
+   "signed_synapses": 86
+  },
+  {
+   "pre": "720575940623211725",
+   "post": "720575940660219265",
+   "signed_synapses": 424
+  },
+  {
+   "pre": "720575940624600840",
+   "post": "720575940627847752",
+   "signed_synapses": -105
+  },
+  {
+   "pre": "720575940624600840",
+   "post": "720575940632047890",
+   "signed_synapses": -152
+  },
+  {
+   "pre": "720575940624600840",
+   "post": "720575940632252743",
+   "signed_synapses": -142
+  },
+  {
+   "pre": "720575940627847752",
+   "post": "720575940619853515",
+   "signed_synapses": 68
+  },
+  {
+   "pre": "720575940627847752",
+   "post": "720575940615671106",
+   "signed_synapses": 185
+  },
+  {
+   "pre": "720575940627847752",
+   "post": "720575940609407939",
+   "signed_synapses": 40
+  },
+  {
+   "pre": "720575940628853239",
+   "post": "720575940620874757",
+   "signed_synapses": 17
+  },
+  {
+   "pre": "720575940628853239",
+   "post": "720575940629888530",
+   "signed_synapses": 68
+  },
+  {
+   "pre": "720575940628853239",
+   "post": "720575940655014049",
+   "signed_synapses": 17
+  },
+  {
+   "pre": "720575940628853239",
+   "post": "720575940638103349",
+   "signed_synapses": 27
+  },
+  {
+   "pre": "720575940629888530",
+   "post": "720575940623211725",
+   "signed_synapses": 11
+  },
+  {
+   "pre": "720575940629888530",
+   "post": "720575940630579574",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940630579574",
+   "post": "720575940607272649",
+   "signed_synapses": 99
+  },
+  {
+   "pre": "720575940630579574",
+   "post": "720575940623211725",
+   "signed_synapses": 31
+  },
+  {
+   "pre": "720575940631703608",
+   "post": "720575940623211725",
+   "signed_synapses": 13
+  },
+  {
+   "pre": "720575940631703608",
+   "post": "720575940612611301",
+   "signed_synapses": 113
+  },
+  {
+   "pre": "720575940631703608",
+   "post": "720575940630579574",
+   "signed_synapses": 52
+  },
+  {
+   "pre": "720575940631703608",
+   "post": "720575940623210445",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940632047890",
+   "post": "720575940623211725",
+   "signed_synapses": 24
+  },
+  {
+   "pre": "720575940632047890",
+   "post": "720575940632252743",
+   "signed_synapses": 31
+  },
+  {
+   "pre": "720575940632047890",
+   "post": "720575940632365905",
+   "signed_synapses": 38
+  },
+  {
+   "pre": "720575940632047890",
+   "post": "720575940623210445",
+   "signed_synapses": 2
+  },
+  {
+   "pre": "720575940632252743",
+   "post": "720575940619877396",
+   "signed_synapses": 23
+  },
+  {
+   "pre": "720575940632252743",
+   "post": "720575940607272649",
+   "signed_synapses": 5
+  },
+  {
+   "pre": "720575940632252743",
+   "post": "720575940615671106",
+   "signed_synapses": 7
+  },
+  {
+   "pre": "720575940632252743",
+   "post": "720575940660219265",
+   "signed_synapses": 281
+  },
+  {
+   "pre": "720575940632252743",
+   "post": "720575940609407939",
+   "signed_synapses": 86
+  },
+  {
+   "pre": "720575940632365905",
+   "post": "720575940623211725",
+   "signed_synapses": 174
+  },
+  {
+   "pre": "720575940632365905",
+   "post": "720575940632047890",
+   "signed_synapses": 142
+  },
+  {
+   "pre": "720575940632425919",
+   "post": "720575940620874757",
+   "signed_synapses": 42
+  },
+  {
+   "pre": "720575940632425919",
+   "post": "720575940614763666",
+   "signed_synapses": 39
+  },
+  {
+   "pre": "720575940632425919",
+   "post": "720575940655014049",
+   "signed_synapses": 38
+  },
+  {
+   "pre": "720575940632425919",
+   "post": "720575940632047890",
+   "signed_synapses": 27
+  },
+  {
+   "pre": "720575940632425919",
+   "post": "720575940623210445",
+   "signed_synapses": 14
+  },
+  {
+   "pre": "720575940633143833",
+   "post": "720575940620874757",
+   "signed_synapses": 41
+  },
+  {
+   "pre": "720575940633143833",
+   "post": "720575940631703608",
+   "signed_synapses": 12
+  },
+  {
+   "pre": "720575940633143833",
+   "post": "720575940623210445",
+   "signed_synapses": 37
+  },
+  {
+   "pre": "720575940635578303",
+   "post": "720575940619853515",
+   "signed_synapses": 80
+  },
+  {
+   "pre": "720575940638103349",
+   "post": "720575940612611301",
+   "signed_synapses": 55
+  },
+  {
+   "pre": "720575940638103349",
+   "post": "720575940630579574",
+   "signed_synapses": 79
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940620874757",
+   "signed_synapses": 91
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940629888530",
+   "signed_synapses": 64
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940655014049",
+   "signed_synapses": 48
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940632047890",
+   "signed_synapses": 7
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940638103349",
+   "signed_synapses": 13
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940632365905",
+   "signed_synapses": 1
+  },
+  {
+   "pre": "720575940639198653",
+   "post": "720575940623210445",
+   "signed_synapses": 10
+  },
+  {
+   "pre": "720575940639332736",
+   "post": "720575940620874757",
+   "signed_synapses": 2
+  },
+  {
+   "pre": "720575940639332736",
+   "post": "720575940629888530",
+   "signed_synapses": 23
+  },
+  {
+   "pre": "720575940639332736",
+   "post": "720575940638103349",
+   "signed_synapses": 16
+  },
+  {
+   "pre": "720575940645743412",
+   "post": "720575940624600840",
+   "signed_synapses": 29
+  },
+  {
+   "pre": "720575940646212996",
+   "post": "720575940624600840",
+   "signed_synapses": 34
+  },
+  {
+   "pre": "720575940655014049",
+   "post": "720575940631703608",
+   "signed_synapses": 33
+  },
+  {
+   "pre": "720575940655014049",
+   "post": "720575940638103349",
+   "signed_synapses": 3
+  },
+  {
+   "pre": "720575940655014049",
+   "post": "720575940632365905",
+   "signed_synapses": 59
+  },
+  {
+   "pre": "720575940655014049",
+   "post": "720575940615041430",
+   "signed_synapses": 19
+  },
+  {
+   "pre": "720575940655014049",
+   "post": "720575940623210445",
+   "signed_synapses": 9
+  }
+ ]
+}

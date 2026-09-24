@@ -1,0 +1,218 @@
+{
+ "label": "PRELIMINARY",
+ "circuit_file": "robust_circuit.json",
+ "n_neurons": 400,
+ "n_connections": 18894,
+ "n_synapses": 202495,
+ "n_input_neurons": 60,
+ "max_synapses_per_connection": 871,
+ "connections_over_127": 181,
+ "n_inhibitory_connections": 7560,
+ "weight_precision_test_seed0": {
+  "whole_brain_seed0": {
+   "S100": 67.63333333333334,
+   "S200": 92.93333333333334,
+   "W100": 0.0,
+   "W200": 30.966666666666665,
+   "B100": 0.0,
+   "B200": 0.0,
+   "S100+B100": 4.366666666666666
+  },
+  "weight_step_synapses": 6.858267716535433,
+  "connections_rounded_to_zero": 11220,
+  "16bit_exact": {
+   "mn9": {
+    "S100": 67.66666666666667,
+    "S200": 93.26666666666667,
+    "W100": 0.0,
+    "W200": 32.46666666666667,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 4.966666666666667
+   },
+   "pass_rule_seed0": true,
+   "err_S100": 0.0004928536224740971,
+   "err_S200": 0.0035868005738880406,
+   "brake_ratio": 0.9910432033719705
+  },
+  "int8_clipped": {
+   "mn9": {
+    "S100": 41.1,
+    "S200": 59.43333333333333,
+    "W100": 0.0,
+    "W200": 8.3,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 1.1
+   },
+   "pass_rule_seed0": false,
+   "err_S100": -0.3923114834894037,
+   "err_S200": -0.3604734576757533,
+   "brake_ratio": 0.6322444678609062
+  },
+  "int8_scaled": {
+   "mn9": {
+    "S100": 66.4,
+    "S200": 93.33333333333333,
+    "W100": 0.16666666666666666,
+    "W200": 32.53333333333333,
+    "B100": 0.0,
+    "B200": 0.0,
+    "S100+B100": 9.233333333333333
+   },
+   "pass_rule_seed0": true,
+   "err_S100": -0.018235584031542643,
+   "err_S200": 0.004304160688665618,
+   "brake_ratio": 0.9035827186512118
+  }
+ },
+ "memory": {
+  "8-bit weights": {
+   "connections_B": 56682,
+   "row_pointers_B": 802,
+   "neuron_state_B": 3600,
+   "delay_buffer_B": 30400,
+   "inputs_B": 184,
+   "total_B": 91668,
+   "total_KB": 89.52,
+   "share_of_520KB": 0.17215
+  },
+  "16-bit weights": {
+   "connections_B": 75576,
+   "row_pointers_B": 802,
+   "neuron_state_B": 3600,
+   "delay_buffer_B": 30400,
+   "inputs_B": 184,
+   "total_B": 110562,
+   "total_KB": 107.97,
+   "share_of_520KB": 0.20764
+  }
+ },
+ "ops_per_simulated_second": {
+  "S100": {
+   "spikes_per_s": 8658.133333333335,
+   "synaptic_events_per_s": 475826.43333333335,
+   "input_kicks_per_s": 2100.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 111958264.33333333,
+    "share_of_one_core": 0.7463884288888889
+   },
+   "event_driven": {
+    "events_per_s": 477926.43333333335,
+    "cycles_per_s": 16752625.166666668,
+    "share_of_one_core": 0.11168416777777779
+   }
+  },
+  "S200": {
+   "spikes_per_s": 15325.866666666665,
+   "synaptic_events_per_s": 840668.9333333333,
+   "input_kicks_per_s": 4200.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 115606689.33333333,
+    "share_of_one_core": 0.7707112622222222
+   },
+   "event_driven": {
+    "events_per_s": 844868.9333333333,
+    "cycles_per_s": 29620812.666666668,
+    "share_of_one_core": 0.19747208444444445
+   }
+  },
+  "W100": {
+   "spikes_per_s": 3163.133333333333,
+   "synaptic_events_per_s": 144232.2,
+   "input_kicks_per_s": 1800.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 108642322.0,
+    "share_of_one_core": 0.7242821466666667
+   },
+   "event_driven": {
+    "events_per_s": 146032.2,
+    "cycles_per_s": 5132727.0,
+    "share_of_one_core": 0.03421818
+   }
+  },
+  "W200": {
+   "spikes_per_s": 6920.200000000001,
+   "synaptic_events_per_s": 327411.4333333333,
+   "input_kicks_per_s": 3600.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 110474114.33333333,
+    "share_of_one_core": 0.7364940955555556
+   },
+   "event_driven": {
+    "events_per_s": 331011.4333333333,
+    "cycles_per_s": 11628600.166666666,
+    "share_of_one_core": 0.0775240011111111
+   }
+  },
+  "B100": {
+   "spikes_per_s": 2863.433333333334,
+   "synaptic_events_per_s": 117881.1,
+   "input_kicks_per_s": 2100.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 108378811.0,
+    "share_of_one_core": 0.7225254066666666
+   },
+   "event_driven": {
+    "events_per_s": 119981.1,
+    "cycles_per_s": 4224538.5,
+    "share_of_one_core": 0.02816359
+   }
+  },
+  "B200": {
+   "spikes_per_s": 6153.700000000001,
+   "synaptic_events_per_s": 241737.53333333333,
+   "input_kicks_per_s": 4200.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 109617375.33333333,
+    "share_of_one_core": 0.7307825022222222
+   },
+   "event_driven": {
+    "events_per_s": 245937.53333333333,
+    "cycles_per_s": 8658213.666666666,
+    "share_of_one_core": 0.05772142444444444
+   }
+  },
+  "S100+B100": {
+   "spikes_per_s": 8865.233333333334,
+   "synaptic_events_per_s": 464196.3333333333,
+   "input_kicks_per_s": 4200.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 4000000,
+    "random_draws_per_s": 600000,
+    "cycles_per_s": 111841963.33333333,
+    "share_of_one_core": 0.7456130888888889
+   },
+   "event_driven": {
+    "events_per_s": 468396.3333333333,
+    "cycles_per_s": 16444271.666666666,
+    "share_of_one_core": 0.10962847777777777
+   }
+  }
+ },
+ "worst_condition": "S200",
+ "assumed_cycles": {
+  "per_neuron_update": 25,
+  "per_synaptic_event": 10,
+  "per_random_draw": 12
+ },
+ "rp2350": {
+  "clock_hz": 150000000.0,
+  "cores": 2,
+  "sram_bytes": 532480,
+  "source": "https://www.raspberrypi.com/products/rp2350/ (2026-09-23)"
+ },
+ "pc_wall_s_per_simulated_s": 0.07463921000016853
+}

@@ -1,0 +1,32 @@
+{
+ "label": "PRELIMINARY",
+ "final": {
+  "n_neurons": 41,
+  "n_connections": 171,
+  "n_synapses": 7982
+ },
+ "single_neuron_pass_complete": true,
+ "single_connection_pass_complete": true,
+ "n_evaluations": 1018,
+ "wall_s": 831.4431342000025,
+ "budget_s": 2700.0,
+ "search_rule": {
+  "tol": 0.075,
+  "bitter_max_hz": 0.0,
+  "brake_frac": 0.6
+ },
+ "fixed_rule": {
+  "tol": 0.1,
+  "bitter_max_hz": 0.5,
+  "brake_frac": 0.5
+ },
+ "refine": {
+  "rounds": 7,
+  "final": {
+   "n_neurons": 36,
+   "n_connections": 110,
+   "n_synapses": 6463
+  },
+  "converged": true
+ }
+}

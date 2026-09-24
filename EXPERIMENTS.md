@@ -2253,3 +2253,75 @@ thousand times more than that. The published model's smell runaway would need ne
 twice the power a real fly brain has, which is more evidence that it is a model fault.
 The lesson for the hybrid computer: fly activity is extremely sparse, so hardware that
 spends nothing on idle neurons is where the big savings are.
+
+## 2026-09-23 - The smallest circuit that still makes the feeding decision: 36 neurons, fits a $17 RP2350 board (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or `data/`. New:
+`experiments/minimal_circuit/` (scripts and results) and `docs/minimal-circuit.md`.
+Model: snapshot 630 with the `al_ln_literature` fix, fast engine, MN9 =
+720575940660219265. The pass rule was written into the doc at 22:19, before any pruned
+circuit was run, and was not changed. A circuit passes if, run on its own
+(`FastBrain.from_arrays`), MN9 at sugar 100 Hz and 200 Hz is within 10% of the whole
+brain; water (100 and 200 Hz) is weaker than sugar at the same rate; bitter alone
+(100 and 200 Hz) gives MN9 below 0.5 Hz; and bitter 100 Hz added to sugar 100 Hz lowers
+MN9 by at least half the whole brain's drop. The final verdict used 3 held-out seeds
+(0, 1, 2) x 30 trials. The search used seed 7 (10 trials) and a stricter version
+(7.5%, zero bitter spikes, brake 0.6). About 47 minutes of compute, one process,
+1 thread.
+
+**What happened.**
+- **Whole brain (30 trials, seeds 0/1/2):** sugar 100 Hz 67.6/67.3/66.2 Hz, sugar
+  200 Hz 92.9/93.3/93.8, water 200 Hz 31.0/30.8/30.3, water 100 Hz and bitter alone 0,
+  sugar + bitter 4.4/3.6/4.9.
+- **Lossless starting cuts.** The 21,461 neurons that received any input, and then the
+  642 that fired and sit on a taste-to-MN9 route, reproduce the whole brain exactly
+  (0.00% error).
+- **Strongest-path pruning** (widest path; strength = presynaptic rate x synapses):
+  600, 500 and 400 neurons pass. 300 misses the stricter search test (9.8%), 200 is off
+  by 14.7%, 80 loses the bitter brake (0.17), 40 leaves MN9 silent.
+- **Greedy pruning** (neuron blocks 100 down to 2, connection blocks, then one at a time
+  until a full round removed nothing): 400 -> 249 -> 120 -> 69 -> 53 -> 51 -> 41 -> **36
+  neurons, 110 connections, 6,463 synapses**. 2,167 candidates were tested.
+- **Held-out check of the 36-neuron circuit: passes on all 3 seeds.** Sugar 100 Hz
+  63.7/62.1/61.0 vs 67.6/67.3/66.2 (-5.8% to -7.9%). Sugar 200 Hz 100.1/100.0/98.8 vs
+  92.9/93.3/93.8 (+5.3% to +7.7%). Brake 0.61/0.58/0.61. Bitter alone 0. Water 0 (whole
+  brain 31 Hz at 200 Hz; the rule did not require water).
+- **Contents:** 9 sugar and 3 bitter taste neurons, MN9, and 23 relay neurons: G2N-1,
+  Zorro, FMIn, Roundup (both), Rattle, Clavicle, Rounddown (both), Roundtree, Sternum,
+  DNge062, Scapula (CB0219, glutamate, the bitter brake), DNge031 (GABA), CB0277, CB0824,
+  CB0872, CB0393, CB0855, CB0177, DNge059 (both) and one unlabelled ascending neuron.
+  6 of the paper's 10 named sugar-pathway types are kept (not Phantom, Usnea, Bract or
+  Fdg). The strongest route (sugar -> G2N-1 -> Roundup -> MN9) is intact, as are 6 of
+  Phase 5's 20 strongest excitatory routes.
+- **Weights +/-20% (seed 0): the 36-neuron circuit fails.** At -20% sugar 100 Hz gives
+  0.3 vs 36.6 Hz. At +20% it gives 120.2 vs 79.7. Every checkpoint from 249 neurons down
+  fails this test. The 400-neuron strongest-path circuit passes it (errors under 3.5%,
+  brake 0.93 to 1.00), passes all 3 held-out seeds and keeps water (30 to 32 Hz).
+- **RP2350 arithmetic** (2 x Cortex-M33 at 150 MHz, 520 KB SRAM; Raspberry Pi product
+  page, checked 2026-09-23). 36 neurons: 3.5 KB with 16-bit weights. Worst case (sugar
+  200 Hz): 360,000 neuron updates, 120,000 random draws and 11,943 synaptic events per
+  simulated second at 0.1 ms steps, about 10.6 M cycles = 7% of one core (clock-driven),
+  or about 0.5 M cycles = 0.3% (event-driven). Cycle costs are assumed (25 per update,
+  12 per draw, 10 per event). 400 neurons: 108 KB, about 77% of one core (clock-driven),
+  20% event-driven. 642 neurons: 181 KB, about 119% (needs both cores). Whole brain:
+  about 88 MB, 170 times the SRAM.
+- **Weight precision (36 neurons, seed 0):** 16-bit exact passes. 8-bit clipped at 127
+  fails (sugar 100 Hz 19.9 Hz). 8-bit rescaled (max 561 -> 127) just fails (-10.3%).
+
+**Validated?** No: PRELIMINARY. Done: 3 held-out seeds, +/-20% weights, lossless-cut
+exactness as a bug check, comparison with the named pathway, chip specs from the maker.
+Not done: other removal orders (36 is a local minimum, not proven smallest), a search
+that includes +/-20% or water in the rule, 32-bit arithmetic, anything on real hardware,
+and a literature search for other minimal feeding circuits. The held-out margins are
+thin (up to 7.9% against 10%), and the circuit's brake is about 60% of the whole
+brain's (sugar + bitter gives about 24 Hz instead of about 4 Hz). This is a reduction of
+the model, which already disagrees with real flies on Roundup and Fdg.
+
+**Plain English.** Out of 127,400 neurons, 36 are enough to reproduce the model's feeding
+decision: sugar drives the feeding motor neuron at the right rate, bitter alone does
+nothing, and bitter still holds sugar back. That circuit needs about 3.5 KB of memory
+and a few percent of one core on the $17 RP2350 board, so it fits with lots of room.
+The catch is that it is fragile: make every connection 20% stronger or weaker and it
+drifts far from the full brain, and it ignores water. A 400-neuron version has none of
+those problems and still fits the chip's memory, but may need both cores to keep up in
+real time.

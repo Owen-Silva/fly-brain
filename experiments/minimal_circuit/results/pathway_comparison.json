@@ -1,0 +1,273 @@
+{
+ "label": "PRELIMINARY",
+ "named_types": [
+  {
+   "name": "Roundup",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 2,
+   "kept_ids": [
+    "720575940607272649",
+    "720575940623211725"
+   ]
+  },
+  {
+   "name": "G2N-1",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940620874757"
+   ]
+  },
+  {
+   "name": "Zorro",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940629888530"
+   ]
+  },
+  {
+   "name": "Rattle",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940638103349"
+   ]
+  },
+  {
+   "name": "Clavicle",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940655014049"
+   ]
+  },
+  {
+   "name": "FMIn",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940614763666"
+   ]
+  },
+  {
+   "name": "Fdg",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 0,
+   "kept_ids": []
+  },
+  {
+   "name": "Bract",
+   "n": 4,
+   "in_touched_set": 4,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 0,
+   "kept_ids": []
+  },
+  {
+   "name": "Phantom",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 0,
+   "kept_ids": []
+  },
+  {
+   "name": "Usnea",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 0,
+   "kept_ids": []
+  },
+  {
+   "name": "Sternum",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940632365905"
+   ]
+  },
+  {
+   "name": "Rounddown",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 2,
+   "kept_ids": [
+    "720575940609407939",
+    "720575940627847752"
+   ]
+  },
+  {
+   "name": "Roundtree",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940632252743"
+   ]
+  },
+  {
+   "name": "DNge062",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 2,
+   "in_minimal_circuit": 1,
+   "kept_ids": [
+    "720575940619853515"
+   ]
+  },
+  {
+   "name": "CB0880",
+   "n": 2,
+   "in_touched_set": 2,
+   "in_spiking_start_set": 1,
+   "in_minimal_circuit": 0,
+   "kept_ids": []
+  }
+ ],
+ "strongest_exc_routes": [
+  {
+   "rank": 1,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": true
+  },
+  {
+   "rank": 2,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0880(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  },
+  {
+   "rank": 3,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0192/Zorro_l(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": true
+  },
+  {
+   "rank": 4,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> DNge080/Rounddown(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 5,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> ?(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 6,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0366/FMIn_l(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 7,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> ?/clavicle_l(+) -> CB0051/Sternum(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "3/3",
+   "route_intact": true
+  },
+  {
+   "rank": 8,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> ?/clavicle_l(+) -> CB0051/Sternum(+) -> CB0493/Roundtree(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "3/3",
+   "route_intact": false
+  },
+  {
+   "rank": 9,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0880(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  },
+  {
+   "rank": 10,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0604(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  },
+  {
+   "rank": 11,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_r(+) -> DNge080(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  },
+  {
+   "rank": 12,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 13,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> DNge080/Rounddown(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "3/3",
+   "route_intact": true
+  },
+  {
+   "rank": 14,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0393(+) -> CB0493/Roundtree(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": true
+  },
+  {
+   "rank": 15,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0393(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": true
+  },
+  {
+   "rank": 16,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> CB0493/Roundtree(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 17,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> ?(+) -> CB0493/Roundtree(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  },
+  {
+   "rank": 18,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0616/G2N_1_l(+) -> DNge080(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 19,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> ?(+) -> CB0553/roundup_l(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "2/2",
+   "route_intact": false
+  },
+  {
+   "rank": 20,
+   "route": "SUGAR_GRNs(21 pooled)(+) -> CB0445(+) -> DNge062(+) -> CB0701/MN9_r(+)",
+   "neurons_kept": "1/2",
+   "route_intact": false
+  }
+ ],
+ "route_neurons_total": 17,
+ "route_neurons_kept": 12,
+ "routes_intact": 6,
+ "scapula_kept": true
+}
