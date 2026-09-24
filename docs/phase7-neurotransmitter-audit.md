@@ -327,6 +327,7 @@ Ranked by how much they could matter:
 **Recommended default: `al_ln_literature`** (`sim.sign_fixes.RECOMMENDED_FIX`), built with
 `sim.sign_fixes.build_brain("al_ln_literature")`. `build_brain("none")` stays available and
 identical to the paper. Whether it becomes the project default is the owner's call.
+Owen approved it on 2026-09-23: `build_brain()`, `build_realistic_brain()` and the app now default to it.
 
 Evidence: it follows the transmitter literature (keeps cholinergic cells excitatory; makes
 cells inhibitory only where a measurement says GABA/glutamate), follows the one full-text

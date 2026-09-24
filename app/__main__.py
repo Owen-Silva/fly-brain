@@ -23,8 +23,12 @@ def main():
     if app.state.adapter.runs_enabled and not args.no_warm:
         print("Building the brain network for each snapshot (once, a few seconds each)...")
         try:
+            from .engine_adapter import variant_label
             for snap, secs in app.state.adapter.warm_up().items():
-                print(f"  snapshot {snap}: ready in {secs:.1f} s")
+                v, why = app.state.adapter.default_variant(snap)
+                print(f"  snapshot {snap} ({variant_label(v)}): ready in {secs:.1f} s")
+                if why:
+                    print(f"    note: the page opens on the published model here: {why}")
         except Exception as exc:  # noqa: BLE001 - shown, and the page banner shows it too
             print(f"WARNING: could not build the network: {type(exc).__name__}: {exc}")
     st = app.state.adapter.status()

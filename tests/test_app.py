@@ -304,10 +304,10 @@ def test_model_panel_state_and_docs(fresh):
     assert "never tested" in r["options"]["up:adaptation"]["why"]
     assert r["options"]["fix:none"]["allowed"] is True
     assert r["memory"]["in_memory"] is False and r["memory"]["error"] is None
-    r = c.get("/api/models/state", params={"upgrades": "delays,adaptation"}).json()
+    r = c.get("/api/models/state", params={"fix": "none", "upgrades": "delays,adaptation"}).json()
     assert r["ok"] and r["key"] == "none+delays+adaptation"
     assert not r["options"]["up:celltype"]["allowed"] and not r["options"]["fix:al_ln_literature"]["allowed"]
-    r = c.get("/api/models/state", params={"snapshot": "783"}).json()
+    r = c.get("/api/models/state", params={"snapshot": "783", "fix": "none"}).json()
     assert r["ok"] and all(not o["allowed"] for k, o in r["options"].items() if k != "fix:none")
     r = c.get("/api/models/state", params={"fix": "al_ln_literature", "upgrades": "delays"}).json()
     assert r["ok"] is False and "never tested" in r["problem"]
@@ -321,6 +321,28 @@ def test_model_panel_state_and_docs(fresh):
     assert c.get("/api/model-docs/PLAN.md").status_code == 404
 
 
+def test_default_model_is_the_recommended_fix_and_783_falls_back_visibly(fresh):
+    """The app opens on the recommended fix (Owen, 2026-09-23). On map 783, where
+    sim/ has no fix, it opens on the published model and says why."""
+    from sim.sign_fixes import RECOMMENDED_FIX
+    c = fresh
+    assert ea.DEFAULT_FIX == RECOMMENDED_FIX == "al_ln_literature"
+    r = c.get("/api/models/state").json()
+    assert r["ok"] and r["variant"] == FIX and r["fallback"] is None and r["problem"] is None
+    r = c.get("/api/models/state", params={"snapshot": "783"}).json()
+    assert r["ok"] and r["variant"] == {"fix": "none", "upgrades": []} and r["problem"] is None
+    assert "630 only" in r["fallback"] and "published model" in r["fallback"]
+    r = c.get("/api/models/state", params={"snapshot": "783", "fix": "al_ln_literature"}).json()
+    assert r["ok"] is False and "630 brain map only" in r["problem"]     # asked for by name: refused
+    models = c.get("/api/status").json()["models"]
+    assert models["default_fix"] == RECOMMENDED_FIX
+    assert models["defaults"]["630"] == {"fix": RECOMMENDED_FIX, "fallback": None}
+    assert models["defaults"]["783"]["fix"] == "none" and models["defaults"]["783"]["fallback"]
+    labels = {o["id"]: o["label"] for o in models["fixes"]}
+    assert labels["none"] == "Published model (Shiu et al. 2024)"
+    assert "(default)" in labels[RECOMMENDED_FIX]
+
+
 def test_at_most_two_brains_in_memory_least_recent_dropped(fresh):
     c = fresh
     ad = c.app.state.adapter
@@ -330,7 +352,7 @@ def test_at_most_two_brains_in_memory_least_recent_dropped(fresh):
     assert ea.MAX_BRAINS_IN_MEMORY == 2 and len(ms["in_memory"]) == 2
     assert [m["key"] for m in ms["in_memory"]] == ["none+adaptation", "al_ln_literature"]  # newest first
     assert "dropped 'Published model'" in ms["dropped"][-1]
-    st_ = c.get("/api/models/state").json()        # the published model needs a rebuild now
+    st_ = c.get("/api/models/state", params={"fix": "none"}).json()  # the published model needs a rebuild now
     assert st_["memory"]["in_memory"] is False
     assert st_["memory"]["will_drop"].startswith("Recommended neurotransmitter fix")
 

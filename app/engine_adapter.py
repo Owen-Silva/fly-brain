@@ -182,6 +182,12 @@ def _file_hash(path: Path) -> str | None:
 PUBLISHED_VARIANT = {"fix": "none", "upgrades": []}
 MAX_BRAINS_IN_MEMORY = 2
 VARIANT_SNAPSHOT = "630"          # every variant is defined for snapshot 630 only
+# The model the page opens on (Owen, 2026-09-23): the recommended fix, i.e.
+# sim.sign_fixes.RECOMMENDED_FIX (tests/test_app.py checks the two agree). Where
+# it cannot be used, the page opens on the published model and says why
+# (EngineAdapter.default_variant). A run request or saved setup WITHOUT a model
+# is still the published model: that is how older setups were saved.
+DEFAULT_FIX = "al_ln_literature"
 
 FIX_CHOICES = {
     "none": {
@@ -191,7 +197,7 @@ FIX_CHOICES = {
         "doc": "phase3-explained.md",
     },
     "al_ln_literature": {
-        "label": "Recommended neurotransmitter fix",
+        "label": "Recommended neurotransmitter fix (default)",
         "short": "Recommended neurotransmitter fix",
         "about": ("Corrects about 150 smell-centre (antennal lobe) local neurons to match published "
                   "recordings. Stops the non-stop 'runaway' firing after strong smell input; taste "
@@ -693,6 +699,25 @@ class EngineAdapter:
             self.option_problems["celltype"] = "sim/celltype_params.py has no CellTypeBrain class"
         self._variant_mods["celltype_params"] = ct
 
+    def default_variant(self, snapshot: str) -> tuple[dict[str, Any], str | None]:
+        """The model the page opens on for this brain map, and the plain-English
+        reason when that is the published model instead of the recommended fix
+        (the page shows it; the app never swaps models without saying so)."""
+        snapshot = check_snapshot(snapshot)
+        if snapshot != VARIANT_SNAPSHOT:
+            return dict(PUBLISHED_VARIANT, upgrades=[]), (
+                f"the recommended fix is built into the simulator (sim/) for brain map "
+                f"{VARIANT_SNAPSHOT} only. It was ported to map 783 for one experiment "
+                "(experiments/runaway_783/, docs/runaway-783.md), but that copy is not part "
+                f"of sim/, so on map {snapshot} the app runs the published model. Switch the "
+                f"brain map to {VARIANT_SNAPSHOT} to use the fix.")
+        why = self.option_problems.get(DEFAULT_FIX)
+        if why:
+            return dict(PUBLISHED_VARIANT, upgrades=[]), (
+                f"the recommended fix cannot be built here ({why}), so the app runs the "
+                "published model.")
+        return {"fix": DEFAULT_FIX, "upgrades": []}, None
+
     def variant_unavailable(self, v: dict[str, Any]) -> str | None:
         """Why this (already checked) variant cannot be built here, or None."""
         for k in (v["fix"], *v["upgrades"]):
@@ -802,6 +827,11 @@ class EngineAdapter:
             "fixes": [opt(k, c) for k, c in FIX_CHOICES.items()],
             "upgrades": [opt(k, c) for k, c in UPGRADE_CHOICES.items()],
             "variant_snapshot": VARIANT_SNAPSHOT, "max_in_memory": MAX_BRAINS_IN_MEMORY,
+            # The model the page opens on, per brain map ("fallback": why it is not
+            # the recommended fix there, or None).
+            "default_fix": DEFAULT_FIX,
+            "defaults": {s: {"fix": v["fix"], "fallback": why}
+                         for s in SNAPSHOTS for v, why in [self.default_variant(s)]},
             "in_memory": [self._mem_entry(s, k) for (s, k) in reversed(self._engines)],  # newest first
             "building": None if b is None else {**b, "for_s": round(time.time() - b["since"], 1)},
             "errors": [{**self._mem_entry(s, k), "reason": e} for (s, k), e in self._engine_errors.items()],
@@ -974,14 +1004,15 @@ class EngineAdapter:
             return eng
 
     def warm_up(self, snapshots=SNAPSHOTS) -> dict[str, float]:
-        """Build the published model's network for each snapshot now (the app does
+        """Build the model the page opens on (default_variant: the recommended fix
+        on 630, the published model on 783) for each snapshot now (the app does
         this at start-up). The default snapshot is built last, so it is the one
         kept longest when a model variant needs the room."""
         took = {}
         for snap in sorted(snapshots, key=lambda s: s == DEFAULT_SNAPSHOT):
             t0 = time.perf_counter()
             self.table(snap)
-            self.engine(snap)
+            self.engine(snap, self.default_variant(snap)[0])
             took[snap] = time.perf_counter() - t0
         return took
 

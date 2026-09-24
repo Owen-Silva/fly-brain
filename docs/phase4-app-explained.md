@@ -12,9 +12,9 @@ A small website that runs on this computer only. In it you can:
    (always show their result, even if they stay quiet). Stimulated neurons
    can be split into **groups, each with its own input rate** (for example
    sugar at 100 Hz and bitter at 40 Hz in the same run).
-3. **Choose the model**: the published model (the default, exactly as
-   before), the recommended neurotransmitter fix, and optional upgrades
-   (see "Choosing the model" below).
+3. **Choose the model**: the recommended neurotransmitter fix (the default
+   since 2026-09-23), the published model (one click away, exactly as
+   before), and optional upgrades (see "Choosing the model" below).
 4. **Run** the whole-brain simulation for a chosen length of time, a chosen
    number of repeats ("trials") and a random seed.
 5. **See the result**: a spike raster (each row is one neuron, each tick one
@@ -97,8 +97,8 @@ write-up.
 
 | Choice | What it is | Write-up |
 | --- | --- | --- |
-| **Published model (Shiu et al. 2024)** (default) | The paper's model exactly as published, the one Phase 3 checked. | docs/phase3-explained.md |
-| **Recommended neurotransmitter fix** | Corrects about 150 smell-centre local neurons to match published recordings. Stops the runaway firing after strong smell input; taste results stay identical. | docs/phase7-neurotransmitter-audit.md |
+| **Published model (Shiu et al. 2024)** | The paper's model exactly as published, the one Phase 3 checked. | docs/phase3-explained.md |
+| **Recommended neurotransmitter fix** (default since 2026-09-23) | Corrects about 150 smell-centre local neurons to match published recordings. Stops the runaway firing after strong smell input; taste results stay identical. | docs/phase7-neurotransmitter-audit.md |
 | Upgrade: **Distance-based delays** | Adds the travel time along the wire (distance / 0.2 m/s) to the 1.8 ms synapse delay. Changes very little. Preliminary. | docs/phase7-realism.md |
 | Upgrade: **Adaptation** | Neurons driven for a long time slow down. Every response gets weaker (sugar 100 Hz: MN9 about 44 Hz instead of 67). Preliminary. | docs/phase7-realism.md |
 | Upgrade: **Measured cell-type settings** | The few measured cell types (4% of neurons) get their measured settings. No effect on taste. Preliminary. | docs/phase7-celltype-params.md |
@@ -247,6 +247,6 @@ any setup, including ones on a model variant.
   would also, as far as reading its code shows, look for a neuron-position
   file named after the fix and fail with delays switched on; not run, noted
   for whoever owns `sim/`.
-- Model choices exist for the 630 brain map only.
-- The start-up still builds the published model for both maps; building a
+- Model choices exist for the 630 brain map only. On 783 the page switches the default fix to the published model and shows why in a yellow note.
+- The start-up builds each map's default model (the fix on 630, the published model on 783); building a
   third model drops one of them (the 783 one first).

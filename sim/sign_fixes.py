@@ -526,12 +526,14 @@ def apply_fix(fix, root_ids, pre, post, signed, lab=None, keep_outputs=None):
     return pre, post, signed, rep
 
 
-def build_brain(fix="none", snapshot="630", params=None, n_threads=1, return_report=False,
+def build_brain(fix=RECOMMENDED_FIX, snapshot="630", params=None, n_threads=1, return_report=False,
                 lab=None, keep_outputs=None):
     """A FastBrain with ``fix`` applied (snapshot 630 only).
 
+    The default is ``RECOMMENDED_FIX`` (the project default since 2026-09-23).
     ``fix="none"`` gives the paper's model, identical spike for spike to
-    ``FastBrain("630")``. Use ``return_report=True`` to also get a
+    ``FastBrain("630")``; pass it explicitly to reproduce the paper.
+    Use ``return_report=True`` to also get a
     ``FixReport`` saying exactly what changed. ``keep_outputs``: see
     ``apply_fix`` (neuromodulator fixes only).
     """

@@ -171,6 +171,9 @@ label.opt input { margin-top: 3px; flex-shrink: 0; }
 label.opt.blocked { cursor: default; }
 label.opt.blocked .opt-title, label.opt.blocked .opt-text > small:not(.why) { opacity: 0.55; }
 .model-problem { color: var(--err); font-size: 12.5px; margin: 8px 0 0; }
+.model-note { font-size: 12.5px; margin: 8px 0 0; padding: 6px 8px; border-radius: 4px;
+  background: var(--warn-bg); color: var(--warn-text); border-left: 3px solid var(--warn-line); }
+.model-note[hidden] { display: none; }
 .model-state { font-size: 12.5px; margin: 8px 0 0; padding: 6px 8px; background: var(--info-bg); border-radius: 4px; }
 .model-state:empty { display: none; }
 .model-state .busy { color: var(--accent); font-weight: 600; }

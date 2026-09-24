@@ -2538,3 +2538,84 @@ for this test.
   electrodes.
 - So copying the fly's wiring as-is is not a shortcut to a better reservoir.
   Whatever the fly's wiring is good for, it is not this generic job.
+
+## 2026-09-23 - The recommended fix (`al_ln_literature`) is now the project default; the published model stays one click away (VALIDATED for the code change)
+
+**What was changed.** Owen approved this on 2026-09-23. `FastBrain` is unchanged: it still
+loads the published weights as they are.
+- `sim/sign_fixes.py`: `build_brain(fix=RECOMMENDED_FIX, ...)`. It used to default to `"none"`.
+- `sim/realism.py`: `build_realistic_brain(fix=RECOMMENDED_FIX, ...)`, imported from
+  `sim.sign_fixes`.
+- `app/engine_adapter.py`:
+  - new `DEFAULT_FIX = "al_ln_literature"`.
+  - new `EngineAdapter.default_variant(snapshot)`, which returns the model and, when it is
+    not the fix, the reason.
+  - `models_status()` now also returns `default_fix` and `defaults` (one entry per map).
+  - the fix's label is now "Recommended neurotransmitter fix (default)". The published
+    model keeps its label, "Published model (Shiu et al. 2024)".
+  - `warm_up()` builds each map's default model.
+- `app/main.py`: when `/api/models/state` gets no `fix`, it uses the map's default and
+  returns `fallback` (the reason, or null).
+- `app/__main__.py`: the start-up printout names the model built for each map and prints
+  the 783 note.
+- `app/static/app.js`, `index.html`, `app.css`:
+  - the page opens on the server's default.
+  - new yellow note `#modelNote`.
+  - drafts are now version 3. An older draft that only held the old default (published
+    model, no upgrades) opens on the new default. Any other saved choice is kept.
+- Tests:
+  - `tests/test_app.py`: 3 calls that relied on the old default now pass `fix=none`.
+    Assertions unchanged. New test for the default and the 783 fallback.
+  - `tests/test_sign_fixes.py`: new test that both builders default to `RECOMMENDED_FIX`.
+- Docs: `docs/phase4-app-explained.md` (3 lines), `docs/phase7-neurotransmitter-audit.md`
+  (1 line).
+
+**Snapshot 783.**
+- `sim/` builds the fix for 630 only. The 783 port lives in `experiments/runaway_783/`
+  (`common783.py`) and is not part of `sim/`.
+- So on 783 the app falls back to the published model and says so in the yellow note:
+  "the recommended fix is built into the simulator (sim/) for brain map 630 only ... so on
+  map 783 the app runs the published model."
+- Switching back to 630 restores the fix and hides the note.
+- If a request to the API asks for the fix on 783 by name, the app still refuses and gives
+  the reason. It never swaps models without saying so.
+- If the fix cannot be built at all (for example, `sim/sign_fixes.py` fails to import), the
+  page opens on the published model and gives the reason, in the same way.
+
+**What stays on the paper's model.**
+- The Phase 3 scripts and the paper-comparison tests (`test_fast_engine.py`,
+  `test_shiu_model.py`) build `FastBrain` or `shiu_model` directly, never `build_brain`, so
+  they are unaffected.
+- Every existing `build_brain` / `build_realistic_brain` call in `experiments/` and `tests/`
+  already passed a fix explicitly (checked with grep).
+- A run request or saved setup with no `variant` is still the published model. That is how
+  setups saved before model choices existed are read. The page always sends a model.
+
+**What happened.**
+- Fast suite before: `211 passed, 2 skipped, 23 deselected, 54 warnings in 37.75s`.
+- After: `213 passed, 2 skipped, 23 deselected, 54 warnings in 46.58s`. The 2 extra are the
+  new tests.
+- App smoke check (real fast engine, port 8799, `--no-warm`, no browser):
+  - `/api/models/state` with no fix gives `al_ln_literature`.
+  - `fix=none` gives the published model.
+  - `snapshot=783` gives the published model plus the `fallback` reason.
+  - `snapshot=783&fix=al_ln_literature` is refused with the reason.
+  - `/api/status` reports `defaults` `{630: al_ln_literature, 783: none}`.
+  - The page HTML contains `#modelNote`.
+
+**Validated?**
+- Yes, for the code change: the tests and the endpoint checks above.
+- Not verified:
+  - the page's JavaScript in a browser: the note appearing on 783 and the fix coming back
+    on 630. Only a syntax check (`node --check`) was run.
+  - `warm_up()` building the fix at start-up (the smoke run used `--no-warm`).
+  - the slow suite (not run).
+
+**Plain English.**
+- The corrected brain model is now the one you get unless you ask otherwise, both in code
+  and in the app.
+- The original published model is still there: pass `fix="none"` in code, or click
+  "Published model (Shiu et al. 2024)" in the app. Anything that checks our work against
+  the paper still uses it.
+- On the newer brain map (783) the correction is not built in yet, so the app uses the
+  published model there and shows a yellow note saying so and why.

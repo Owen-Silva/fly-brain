@@ -815,9 +815,15 @@ class RealisticBrain(FastBrain):
 # Added 2026-09-23 (docs/phase7-conductance.md): the realistic engine on top of
 # a sign fix from sim/sign_fixes.py (read-only use of that file).
 # ---------------------------------------------------------------------------
-def build_realistic_brain(fix="none", snapshot="630", params=None, n_threads=1,
+from sim.sign_fixes import RECOMMENDED_FIX  # noqa: E402  (the project default fix)
+
+
+def build_realistic_brain(fix=RECOMMENDED_FIX, snapshot="630", params=None, n_threads=1,
                           realism=None, lab=None, return_report=False):
     """A RealisticBrain whose connections have ``fix`` applied.
+
+    The default is ``RECOMMENDED_FIX``, as for ``build_brain``; pass
+    ``fix="none"`` for the paper's model.
 
     Plain English: exactly what ``sim.sign_fixes.build_brain(fix)`` builds
     (same connections, same signs, same order), but on this file's engine, so

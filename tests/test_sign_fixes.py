@@ -35,6 +35,16 @@ def test_known_nt_parser():
     assert S.known_nt_sign("gaba-negative") == (0, "none")
 
 
+def test_default_fix_is_the_recommended_fix():
+    """Since 2026-09-23 the builders default to the recommended fix; the paper's
+    model is fix="none" (FastBrain itself stays the published-weights loader)."""
+    import inspect
+    from sim.realism import build_realistic_brain
+    assert S.RECOMMENDED_FIX == "al_ln_literature"
+    for f in (S.build_brain, build_realistic_brain):
+        assert inspect.signature(f).parameters["fix"].default == S.RECOMMENDED_FIX
+
+
 def test_eln_set(data):
     rid, pre, post, signed, lab = data
     eln = S.eln_mask(lab)

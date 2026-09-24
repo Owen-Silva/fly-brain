@@ -10,7 +10,10 @@ function newGroup(name, rate) { return { name, rate: String(rate), ids: new Map(
 const state = {
   groups: [newGroup("Group 1", DEFAULT_RATE)], active: 0,
   lists: { silence: new Map(), watch: new Map() },
-  model: { fix: "none", upgrades: new Set() }, modelInfo: null,
+  // fix null = not chosen yet: the server's default for the brain map is used (see
+  // applyDefaultModel). fellBack = the recommended fix was swapped for the published
+  // model because this map cannot use it (the page says so in #modelNote).
+  model: { fix: null, upgrades: new Set(), fellBack: false }, modelInfo: null,
   hits: [], hitsTotal: 0, query: "",
   job: null, pollTimer: null, lastParams: null, running: false,
   raster: null, replayFrame: null, status: null,
@@ -89,9 +92,49 @@ function optHtml(type, name, o, checked) {
   </label>`;
 }
 
+// The model the page opens on for the current brain map (from the server): the
+// recommended fix, or the published model plus the reason when the map cannot use it.
+function recommendedFix() { return (state.status && state.status.models && state.status.models.default_fix) || "al_ln_literature"; }
+function defaultModel() {
+  const d = state.status && state.status.models && state.status.models.defaults;
+  return (d && d[snapshot()]) ||
+    { fix: "none", fallback: "the app server did not say which model is the default for this brain map." };
+}
+function applyDefaultModel() {
+  const d = defaultModel();
+  state.model.fix = d.fix;
+  state.model.upgrades = new Set();
+  state.model.fellBack = d.fix !== recommendedFix();
+}
+
+// After a brain-map switch: a recommended fix the new map cannot use becomes the
+// published model (said visibly in #modelNote); switching back restores the fix.
+// Any other choice is left alone (if it is not offered, #modelProblem says why).
+function fitModelToSnapshot() {
+  const d = defaultModel(), rec = recommendedFix();
+  if (state.model.fellBack && state.model.fix === "none" && !state.model.upgrades.size) {
+    if (d.fix === rec) { setModel({ fix: rec, upgrades: [] }); return; }
+  } else if (state.model.fix === rec && !state.model.upgrades.size && d.fix !== rec) {
+    setModel({ fix: d.fix, upgrades: [] }, true); return;
+  }
+  refreshModel();
+}
+
+function renderModelNote() {
+  const d = defaultModel();
+  const show = !!(state.model.fellBack && state.model.fix === "none" && d.fallback);
+  $("modelNote").hidden = !show;
+  $("modelNote").textContent = show
+    ? "Running the published model (Shiu et al. 2024), not the recommended fix: " + d.fallback : "";
+}
+
 function renderModelOptions() {
   const m = state.status && state.status.models;
   if (!m) return;
+  if (state.model.fix === null) applyDefaultModel();
+  else if (state.model.fellBack && defaultModel().fix === recommendedFix()) {
+    state.model.fix = recommendedFix(); state.model.fellBack = false;     // the fix works here now
+  }
   $("fixOptions").innerHTML = "<legend>Model</legend>" +
     m.fixes.map((o) => optHtml("radio", "fix", o, state.model.fix === o.id)).join("");
   $("upgradeOptions").innerHTML = "<legend>Optional upgrades</legend>" +
@@ -100,7 +143,7 @@ function renderModelOptions() {
 }
 
 function modelQuery() {
-  return `snapshot=${snapshot()}&fix=${encodeURIComponent(state.model.fix)}&upgrades=${encodeURIComponent([...state.model.upgrades].join(","))}`;
+  return `snapshot=${snapshot()}&fix=${encodeURIComponent(state.model.fix ?? "")}&upgrades=${encodeURIComponent([...state.model.upgrades].join(","))}`;
 }
 
 let modelSeq = 0;
@@ -115,6 +158,7 @@ async function refreshModel() {
   }
   if (seq !== modelSeq) return;               // a newer check is on its way
   state.modelInfo = r;
+  renderModelNote();
   // Each option: switched off (with the reason) if it cannot be combined with the current choice.
   for (const el of document.querySelectorAll("#modelBlock label.opt")) {
     const o = r.options[el.dataset.opt];
@@ -153,13 +197,15 @@ $("modelBlock").addEventListener("change", (ev) => {
   if (t.name === "fix") state.model.fix = t.value;
   else if (t.name === "up") { if (t.checked) state.model.upgrades.add(t.value); else state.model.upgrades.delete(t.value); }
   else return;
+  state.model.fellBack = false;               // the user chose: no automatic swap any more
   saveDraft();
   refreshModel();
 });
 
-function setModel(v) {
-  state.model.fix = (v && v.fix) || "none";
+function setModel(v, fellBack = false) {
+  state.model.fix = (v && v.fix) || "none";   // a setup saved without a model = the published model
   state.model.upgrades = new Set((v && v.upgrades) || []);
+  state.model.fellBack = fellBack;
   for (const el of document.querySelectorAll("#modelBlock input")) {
     el.checked = el.name === "fix" ? el.value === state.model.fix : state.model.upgrades.has(el.value);
   }
@@ -328,12 +374,13 @@ $("groups").addEventListener("change", (ev) => {
 function saveDraft() {
   try {
     localStorage.setItem("flybrain-draft", JSON.stringify({
-      v: 2,
+      v: 3,                                       // 3: the model default is the recommended fix
       groups: state.groups.map((g) => ({ name: g.name, rate: g.rate, neurons: [...g.ids.values()] })),
       active: state.active,
       lists: Object.fromEntries(LISTS.map((k) => [k, [...state.lists[k].values()]])),
       duration: $("duration").value, trials: $("trials").value, seed: $("seed").value,
-      snapshot: snapshot(), model: { fix: state.model.fix, upgrades: [...state.model.upgrades] },
+      snapshot: snapshot(),
+      model: { fix: state.model.fix, upgrades: [...state.model.upgrades], fellBack: state.model.fellBack },
     }));
   } catch { /* storage blocked: the page still works, the draft just is not kept */ }
 }
@@ -355,7 +402,14 @@ function loadDraft() {
     }
     for (const k of LISTS) for (const n of (d.lists && d.lists[k]) || []) state.lists[k].set(n.root_id, n);
     for (const k of ["duration", "trials", "seed", "snapshot"]) if (d[k] !== undefined) $(k).value = d[k];
-    if (d.model) { state.model.fix = d.model.fix || "none"; state.model.upgrades = new Set(d.model.upgrades || []); }
+    // A draft from before v3 holding the old default (published model, no upgrades) opens
+    // on the new default instead; any other saved choice is kept as it was.
+    const oldDefault = (d.v || 0) < 3 && d.model && (d.model.fix || "none") === "none" && !(d.model.upgrades || []).length;
+    if (d.model && d.model.fix !== null && !oldDefault) {
+      state.model.fix = d.model.fix || "none";
+      state.model.upgrades = new Set(d.model.upgrades || []);
+      state.model.fellBack = !!d.model.fellBack;
+    }
   } catch { /* ignore a broken or blocked draft */ }
 }
 for (const k of ["duration", "trials", "seed"]) $(k).addEventListener("change", saveDraft);
@@ -655,6 +709,7 @@ $("loadBtn").addEventListener("click", async () => {
 $("saveBtn").addEventListener("click", async () => {
   const p = currentParams();
   const body = { ...p, name: $("saveName").value.trim(), title: $("saveTitle").value.trim(), description: $("saveDesc").value };
+  if (state.model.fix === null) { $("saveInfo").textContent = "Not saved: the model choice is not loaded yet (the app server has not answered). Try again in a moment."; return; }
   if (p.seed === null) { $("saveInfo").textContent = "Fill in a seed first (or run once and the app fills one in); without it the run cannot be repeated exactly."; return; }
   try {
     const r = await api(`/api/setups?overwrite=${$("saveOverwrite").checked}`, { json: body });
@@ -667,11 +722,12 @@ $("saveBtn").addEventListener("click", async () => {
 
 // Switching snapshot: re-check every picked id against the other brain map
 // (ids that do not exist there turn red), re-check the model choice (variants
-// exist for the 630 map only) and redo the search.
+// exist for the 630 map only; the default fix falls back to the published model
+// on 783, with the reason shown) and redo the search.
 $("snapshot").addEventListener("change", async () => {
-  saveDraft();
   loadStatus();
-  refreshModel();
+  fitModelToSnapshot();
+  saveDraft();
   const ids = [...state.groups.flatMap((g) => [...g.ids.keys()]), ...LISTS.flatMap((k) => [...state.lists[k].keys()])];
   if (ids.length) {
     try {

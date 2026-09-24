@@ -74,10 +74,18 @@ def create_app(adapter: EngineAdapter | None = None, setup_dir: Path | None = No
 
     # ---- model variants ----------------------------------------------------
     @app.get("/api/models/state")
-    def model_state(snapshot: str = DEFAULT_SNAPSHOT, fix: str = "none", upgrades: str = ""):
+    def model_state(snapshot: str = DEFAULT_SNAPSHOT, fix: str | None = None, upgrades: str = ""):
         """Is this model choice allowed, is it in memory, and which other choices
-        are allowed from here (each with a plain-English reason if not)."""
+        are allowed from here (each with a plain-English reason if not).
+
+        No ``fix`` means the app's default for this brain map: the recommended
+        fix, or the published model when the fix cannot be used there, in which
+        case "fallback" says why (fix="none" is the published model)."""
         snap = _snap(snapshot)
+        fallback = None
+        if not fix:
+            dv, fallback = adapter.default_variant(snap)
+            fix = dv["fix"]
         ups = [u for u in upgrades.split(",") if u]
         options = {}
         for k in FIX_CHOICES:
@@ -92,10 +100,12 @@ def create_app(adapter: EngineAdapter | None = None, setup_dir: Path | None = No
         try:
             v = check_variant({"fix": fix, "upgrades": ups}, snap)
         except ValueError as exc:
-            return {"ok": False, "problem": str(exc), "options": options, "variant": None}
+            return {"ok": False, "problem": str(exc), "options": options, "variant": None,
+                    "fallback": fallback}
         return {"ok": True, "problem": adapter.variant_unavailable(v), "variant": v,
                 "key": variant_key(v), "label": variant_label(v), "options": options,
-                "memory": adapter.variant_state(v, snap), "models": adapter.models_status()}
+                "memory": adapter.variant_state(v, snap), "models": adapter.models_status(),
+                "fallback": fallback}
 
     @app.get("/api/model-docs/{name}", response_class=PlainTextResponse)
     def doc(name: str):
