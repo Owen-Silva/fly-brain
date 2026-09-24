@@ -1,0 +1,227 @@
+{
+ "n_changed": {
+  "al_ln_literature": 150,
+  "al_ln_literature+da_5ht_literature": 595
+ },
+ "n_monoamine_literature_cells": 445,
+ "fired": {
+  "aBN1_200_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "aBN1_200_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "aBN1_200_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "aBN2x3_200_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "aBN2x3_200_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "aBN2x3_200_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "ALL_100_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_100_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_100_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_140_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_140_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_140_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 2
+  },
+  "ALL_220_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 5
+  },
+  "ALL_220_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 3
+  },
+  "ALL_220_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 3
+  },
+  "CE_100_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_100_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_100_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_140_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_140_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_140_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_220_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "CE_220_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "CE_220_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "CE_60_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_60_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "CE_60_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "DNge220_200_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 4
+  },
+  "DNge220_200_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 4
+  },
+  "DNge220_200_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 4
+  },
+  "F_100_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_100_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_100_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_140_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_140_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_140_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_220_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "F_220_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "F_220_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "F_60_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_60_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "F_60_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "Fsil_100_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "Fsil_100_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "Fsil_100_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 0
+  },
+  "Fsil_220_s0": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "Fsil_220_s1": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  },
+  "Fsil_220_s2": {
+   "al_ln_literature": 0,
+   "al_ln_literature+da_5ht_literature": 1
+  }
+ },
+ "conditions_where_changed_neurons_fired": {
+  "al_ln_literature": [],
+  "al_ln_literature+da_5ht_literature": [
+   "ALL_100_s0",
+   "ALL_100_s1",
+   "ALL_100_s2",
+   "ALL_140_s0",
+   "ALL_140_s1",
+   "ALL_140_s2",
+   "ALL_220_s0",
+   "ALL_220_s1",
+   "ALL_220_s2",
+   "CE_220_s0",
+   "CE_220_s1",
+   "CE_220_s2",
+   "DNge220_200_s0",
+   "DNge220_200_s1",
+   "DNge220_200_s2",
+   "F_220_s0",
+   "F_220_s1",
+   "F_220_s2",
+   "Fsil_220_s0",
+   "Fsil_220_s1",
+   "Fsil_220_s2"
+  ]
+ }
+}

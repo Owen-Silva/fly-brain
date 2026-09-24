@@ -1,0 +1,17 @@
+{
+ "fix": "al_ln_literature",
+ "gap_kappa": {
+  "eln_pn": 0.01445156732758297,
+  "sister_pn": 0.01969894234024584
+ },
+ "n_pairs": 8074,
+ "variant": "gap",
+ "snapshot": "630+al_ln_literature+gap",
+ "n_trials": 30,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "build_s": 5.3
+}

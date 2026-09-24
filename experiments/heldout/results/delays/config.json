@@ -1,0 +1,26 @@
+{
+ "fix": "none",
+ "realism": {
+  "delays": true,
+  "velocity_m_per_s": 0.2,
+  "distance": "anchor",
+  "conductance": false,
+  "E_exc_mV": 0.0,
+  "E_inh_mV": -60.0,
+  "cond_weight_scale": 1.0,
+  "cond_exc_scale": 1.0,
+  "cond_inh_scale": 1.0,
+  "adaptation": false,
+  "tau_adapt_ms": 100.0,
+  "adapt_mV": null
+ },
+ "variant": "delays",
+ "snapshot": "630+none",
+ "n_trials": 30,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "build_s": 2.7
+}

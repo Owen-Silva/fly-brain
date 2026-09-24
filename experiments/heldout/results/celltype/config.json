@@ -1,0 +1,13 @@
+{
+ "fix": "none",
+ "celltype": "full table (sim/celltype_params.py)",
+ "variant": "celltype",
+ "snapshot": "630",
+ "n_trials": 30,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "build_s": 1.6
+}

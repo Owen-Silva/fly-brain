@@ -1,0 +1,12 @@
+{
+ "fix": "al_ln_literature+da_5ht_literature",
+ "variant": "al_ln_literature+da_5ht_literature",
+ "snapshot": "630+al_ln_literature+da_5ht_literature",
+ "n_trials": 30,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "build_s": 9.0
+}

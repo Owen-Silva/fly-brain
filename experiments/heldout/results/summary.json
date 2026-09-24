@@ -1,0 +1,2353 @@
+{
+ "variants": {
+  "none": {
+   "A": {
+    "pass": true,
+    "aBN1_CE_100": 25.91111111111111,
+    "aBN1_CE_220": 72.80000000000001,
+    "aBN1_F_100": 0.8222222222222223,
+    "aBN1_F_220": 5.033333333333334,
+    "per_seed_CE_100": [
+     26.133333333333333,
+     25.8,
+     25.8
+    ],
+    "per_seed_F_220": [
+     5.333333333333333,
+     4.633333333333334,
+     5.133333333333334
+    ]
+   },
+   "B": {
+    "pass": true,
+    "aBN1_Fsil_100": 22.266666666666666,
+    "aBN1_Fsil_220": 66.1111111111111
+   },
+   "C": {
+    "pass": true,
+    "aBN1_100": 24.8,
+    "aDN1_100": 3.222222222222222,
+    "aDN2_100": 3.744444444444444,
+    "DNge220_100": 73.85555555555555,
+    "aBN2_2026_100": 0.0,
+    "aBN1_140": 44.37777777777777,
+    "aDN1_140": 15.588888888888889,
+    "aDN2_140": 16.3,
+    "DNge220_140": 91.12222222222222,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.62222222222222,
+    "aDN1_220": 38.1,
+    "aDN2_220": 38.288888888888884,
+    "DNge220_220": 119.74444444444445,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 676.0,
+     "n_nonJON_fired_ours_per_seed": [
+      666,
+      660,
+      702
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 748,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.999896626796197,
+     "pearson_r_log": 0.9993536516451573,
+     "n_union": 774
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 476.0,
+     "n_nonJON_fired_ours_per_seed": [
+      473,
+      478,
+      477
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 511,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9998238302335133,
+     "pearson_r_log": 0.9989263193218021,
+     "n_union": 519
+    }
+   },
+   "D": {
+    "complete": true,
+    "pass": true,
+    "drive_aDN1_gt2": [
+     "aBN1",
+     "aDN2"
+    ],
+    "rates_gt2": {
+     "aDN2": 34.1,
+     "aBN1": 68.0
+    },
+    "n_weak_0_to_2": 2,
+    "weak_ids": [
+     720575940644072483,
+     720575940653315489
+    ],
+    "n_JON_run": 0
+   },
+   "E": {
+    "complete": true,
+    "pass": true,
+    "control_aDN1_hz": 14.7,
+    "control_aDN2_hz": 15.5,
+    "required_nonJON": {
+     "DNge220": 0.796,
+     "aDN2": 0.639,
+     "aBN1": 0.0
+    },
+    "n_JON_required": 0,
+    "n_JON_run": 0,
+    "aBN2_2026_in_top300": false
+   },
+   "F": {
+    "F1": {
+     "right": false,
+     "per_cell_right": {
+      "aBN1": true,
+      "aBN2": false,
+      "aDN1": false
+     },
+     "aBN1": 5.033333333333334,
+     "aBN2_2026": 0.0,
+     "aDN1": 0.18888888888888888,
+     "aDN2": 0.2333333333333333,
+     "DNge220": 99.30000000000001
+    },
+    "F2": {
+     "verdict": "can't tell",
+     "aDN1": 0.18888888888888888,
+     "aDN2": 0.2333333333333333
+    },
+    "F3": {
+     "verdict": "right",
+     "aBN2_2026": 11.200000000000001,
+     "DNge220": 0.0
+    },
+    "F4": {
+     "verdict": "not scored",
+     "aBN1": 0.0
+    },
+    "F5": {
+     "verdict": "right",
+     "aDN1": 68.89999999999999,
+     "aDN2": 67.87777777777778
+    },
+    "F6": {
+     "verdict": "right",
+     "aDN1": 78.25555555555555,
+     "stim_aBN2_rate": 196.24074074074073
+    },
+    "F7": {
+     "verdict": "wrong",
+     "aDN2_mean_v_mV": -48.54844880076431,
+     "aDN2_hz": 8.755555555555556,
+     "aDN2_max_mean_trace_mV": -47.34053039550781
+    },
+    "alt_DNge220": {
+     "F1_JO-F_to_DNge220_hz": 99.30000000000001,
+     "F3_aBN1_to_DNge220_hz": 0.0,
+     "F6_DNge220_to_aDN1_hz": 0.0,
+     "F7_DNge220_to_aDN2_mean_v_mV": -51.95497656112543,
+     "F7_DNge220_to_aDN2_hz": 0.0
+    }
+   },
+   "curves": {
+    "CE": {
+     "60": [
+      3.1444444444444444,
+      0.11331154474650627
+     ],
+     "100": [
+      25.91111111111111,
+      0.1571348402636767
+     ],
+     "140": [
+      46.97777777777778,
+      0.2985561965009851
+     ],
+     "220": [
+      72.80000000000001,
+      0.16555182695278994
+     ]
+    },
+    "F": {
+     "60": [
+      0.7444444444444445,
+      0.08748897637790905
+     ],
+     "100": [
+      0.8222222222222223,
+      0.12570787221094182
+     ],
+     "140": [
+      0.9555555555555556,
+      0.136986977843755
+     ],
+     "220": [
+      5.033333333333334,
+      0.29439202887759464
+     ]
+    },
+    "Fsil": {
+     "100": [
+      22.266666666666666,
+      0.11863420280034714
+     ],
+     "220": [
+      66.1111111111111,
+      0.2346523564660312
+     ]
+    }
+   },
+   "identity_vs_none": null,
+   "G": {
+    "mean_MN9_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 0.0,
+     "sug40": 5.56,
+     "sug40+ISN100": 2.26,
+     "sug40+ISN50": 3.13,
+     "sug40+OA100": 5.72,
+     "sug40+OA50": 5.91,
+     "sug50": 18.99,
+     "sug50+ISN100": 10.32,
+     "sug50+ISN50": 16.87,
+     "sug50+OA100": 22.14,
+     "sug50+OA50": 20.21,
+     "sug50_silISN": 18.99,
+     "sug50_silOA": 18.99,
+     "wat160": 10.59,
+     "wat160+ISN100": 17.87,
+     "wat160+ISN50": 11.99,
+     "wat160_silISN": 10.59
+    },
+    "mean_OA_VPM4_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 98.77,
+     "sug40": 0.0,
+     "sug40+ISN100": 0.0,
+     "sug40+ISN50": 0.0,
+     "sug40+OA100": 99.07,
+     "sug40+OA50": 49.75,
+     "sug50": 0.0,
+     "sug50+ISN100": 0.0,
+     "sug50+ISN50": 0.0,
+     "sug50+OA100": 97.95,
+     "sug50+OA50": 50.04,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 0.0,
+     "wat160+ISN50": 0.0,
+     "wat160_silISN": 0.0
+    },
+    "mean_ISN_hz": {
+     "ISN100_alone": 99.59,
+     "OA100_alone": 0.0,
+     "sug40": 0.0,
+     "sug40+ISN100": 98.36,
+     "sug40+ISN50": 49.41,
+     "sug40+OA100": 0.0,
+     "sug40+OA50": 0.0,
+     "sug50": 0.0,
+     "sug50+ISN100": 99.58,
+     "sug50+ISN50": 49.54,
+     "sug50+OA100": 0.0,
+     "sug50+OA50": 0.0,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 99.64,
+     "wat160+ISN50": 49.27,
+     "wat160_silISN": 0.0
+    },
+    "G1": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+OA50",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        5.43,
+        6.53,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+OA100",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        6.1,
+        5.3,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA50",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        20.2,
+        20.0,
+        20.43
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA100",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        21.7,
+        22.0,
+        22.73
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G3": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+ISN50",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.77,
+        2.97,
+        3.67
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+ISN100",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.57,
+        1.9,
+        2.3
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN50",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        16.83,
+        16.37,
+        17.4
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN100",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        11.27,
+        10.67,
+        9.03
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G4": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "wat160 vs wat160+ISN50",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        11.83,
+        12.1,
+        12.03
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "wat160 vs wat160+ISN100",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        17.17,
+        19.07,
+        17.37
+       ],
+       "moved": "up",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G2": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silOA",
+       "verdict": "can't tell",
+       "why": "OA-VPM4 during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "G5": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      },
+      {
+       "pair": "wat160 vs wat160_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during water 160 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "complete": true
+   },
+   "verdicts": {
+    "A": "holds",
+    "B": "holds",
+    "C": "holds",
+    "D": "holds",
+    "E": "holds"
+   }
+  },
+  "al_ln_literature": {
+   "A": null,
+   "B": null,
+   "C": {
+    "pass": true,
+    "aBN1_140": 44.37777777777777,
+    "aDN1_140": 15.588888888888889,
+    "aDN2_140": 16.3,
+    "DNge220_140": 91.12222222222222,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.62222222222222,
+    "aDN1_220": 38.1,
+    "aDN2_220": 38.288888888888884,
+    "DNge220_220": 119.74444444444445,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 676.0,
+     "n_nonJON_fired_ours_per_seed": [
+      666,
+      660,
+      702
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 748,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.999896626796197,
+     "pearson_r_log": 0.9993536516451573,
+     "n_union": 774
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 476.0,
+     "n_nonJON_fired_ours_per_seed": [
+      473,
+      478,
+      477
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 511,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9998238302335133,
+     "pearson_r_log": 0.9989263193218021,
+     "n_union": 519
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": null,
+   "curves": {
+    "CE": {},
+    "F": {},
+    "Fsil": {}
+   },
+   "identity_vs_none": {
+    "n_identical": 15,
+    "n_different": 0,
+    "different": []
+   },
+   "G": {
+    "mean_MN9_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 0.0,
+     "sug40": 5.56,
+     "sug40+ISN100": 2.26,
+     "sug40+ISN50": 3.13,
+     "sug40+OA100": 5.72,
+     "sug40+OA50": 5.91,
+     "sug50": 18.99,
+     "sug50+ISN100": 10.32,
+     "sug50+ISN50": 16.87,
+     "sug50+OA100": 22.14,
+     "sug50+OA50": 20.21,
+     "sug50_silISN": 18.99,
+     "sug50_silOA": 18.99,
+     "wat160": 10.59,
+     "wat160+ISN100": 17.87,
+     "wat160+ISN50": 11.99,
+     "wat160_silISN": 10.59
+    },
+    "mean_OA_VPM4_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 98.77,
+     "sug40": 0.0,
+     "sug40+ISN100": 0.0,
+     "sug40+ISN50": 0.0,
+     "sug40+OA100": 99.07,
+     "sug40+OA50": 49.75,
+     "sug50": 0.0,
+     "sug50+ISN100": 0.0,
+     "sug50+ISN50": 0.0,
+     "sug50+OA100": 97.95,
+     "sug50+OA50": 50.04,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 0.0,
+     "wat160+ISN50": 0.0,
+     "wat160_silISN": 0.0
+    },
+    "mean_ISN_hz": {
+     "ISN100_alone": 99.59,
+     "OA100_alone": 0.0,
+     "sug40": 0.0,
+     "sug40+ISN100": 98.36,
+     "sug40+ISN50": 49.41,
+     "sug40+OA100": 0.0,
+     "sug40+OA50": 0.0,
+     "sug50": 0.0,
+     "sug50+ISN100": 99.58,
+     "sug50+ISN50": 49.54,
+     "sug50+OA100": 0.0,
+     "sug50+OA50": 0.0,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 99.64,
+     "wat160+ISN50": 49.27,
+     "wat160_silISN": 0.0
+    },
+    "G1": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+OA50",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        5.43,
+        6.53,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+OA100",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        6.1,
+        5.3,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA50",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        20.2,
+        20.0,
+        20.43
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA100",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        21.7,
+        22.0,
+        22.73
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G3": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+ISN50",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.77,
+        2.97,
+        3.67
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+ISN100",
+       "without": [
+        5.5,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.57,
+        1.9,
+        2.3
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN50",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        16.83,
+        16.37,
+        17.4
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN100",
+       "without": [
+        20.17,
+        18.53,
+        18.27
+       ],
+       "with": [
+        11.27,
+        10.67,
+        9.03
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G4": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "wat160 vs wat160+ISN50",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        11.83,
+        12.1,
+        12.03
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "wat160 vs wat160+ISN100",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        17.17,
+        19.07,
+        17.37
+       ],
+       "moved": "up",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G2": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silOA",
+       "verdict": "can't tell",
+       "why": "OA-VPM4 during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "G5": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      },
+      {
+       "pair": "wat160 vs wat160_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during water 160 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "complete": true
+   },
+   "verdicts": {
+    "A": "not run",
+    "B": "not run",
+    "C": "holds",
+    "D": "not run",
+    "E": "not run"
+   }
+  },
+  "al_ln_literature+da_5ht_literature": {
+   "A": {
+    "pass": true,
+    "aBN1_CE_100": 25.91111111111111,
+    "aBN1_CE_220": 72.81111111111112,
+    "aBN1_F_100": 0.8222222222222223,
+    "aBN1_F_220": 5.088888888888889,
+    "per_seed_CE_100": [
+     26.133333333333333,
+     25.8,
+     25.8
+    ],
+    "per_seed_F_220": [
+     5.3,
+     4.733333333333333,
+     5.233333333333333
+    ]
+   },
+   "B": {
+    "pass": true,
+    "aBN1_Fsil_100": 22.266666666666666,
+    "aBN1_Fsil_220": 66.1111111111111
+   },
+   "C": {
+    "pass": true,
+    "aBN1_140": 44.28888888888889,
+    "aDN1_140": 15.688888888888888,
+    "aDN2_140": 16.355555555555558,
+    "DNge220_140": 90.83333333333333,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.71111111111111,
+    "aDN1_220": 38.1,
+    "aDN2_220": 38.24444444444445,
+    "DNge220_220": 119.36666666666667,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 657.6666666666666,
+     "n_nonJON_fired_ours_per_seed": [
+      669,
+      644,
+      660
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 717,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.9997396577215316,
+     "pearson_r_log": 0.9951659179679968,
+     "n_union": 751
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 466.0,
+     "n_nonJON_fired_ours_per_seed": [
+      455,
+      473,
+      470
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 496,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9998183645762119,
+     "pearson_r_log": 0.9979941170681039,
+     "n_union": 522
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": {
+    "F1": {
+     "right": false,
+     "per_cell_right": {
+      "aBN1": true,
+      "aBN2": false,
+      "aDN1": false
+     },
+     "aBN1": 5.088888888888889,
+     "aBN2_2026": 0.0,
+     "aDN1": 0.16666666666666666,
+     "aDN2": 0.22222222222222224,
+     "DNge220": 99.30000000000001
+    },
+    "F2": {
+     "verdict": "can't tell",
+     "aDN1": 0.16666666666666666,
+     "aDN2": 0.22222222222222224
+    },
+    "F3": {
+     "verdict": "right",
+     "aBN2_2026": 11.200000000000001,
+     "DNge220": 0.0
+    },
+    "F4": {
+     "verdict": "not scored",
+     "aBN1": 0.0
+    },
+    "F5": {
+     "verdict": "right",
+     "aDN1": 68.89999999999999,
+     "aDN2": 67.87777777777778
+    },
+    "F6": {
+     "verdict": "right",
+     "aDN1": 78.25555555555555,
+     "stim_aBN2_rate": 196.24074074074073
+    },
+    "F7": {
+     "verdict": "wrong",
+     "aDN2_mean_v_mV": -48.54844880076431,
+     "aDN2_hz": 8.755555555555556,
+     "aDN2_max_mean_trace_mV": -47.34053039550781
+    },
+    "alt_DNge220": {
+     "F1_JO-F_to_DNge220_hz": 99.30000000000001,
+     "F3_aBN1_to_DNge220_hz": 0.0,
+     "F6_DNge220_to_aDN1_hz": 0.0,
+     "F7_DNge220_to_aDN2_mean_v_mV": -51.954658339254536,
+     "F7_DNge220_to_aDN2_hz": 0.0
+    }
+   },
+   "curves": {
+    "CE": {
+     "100": [
+      25.91111111111111,
+      0.1571348402636767
+     ],
+     "220": [
+      72.81111111111112,
+      0.18121673811444183
+     ]
+    },
+    "F": {
+     "100": [
+      0.8222222222222223,
+      0.12570787221094182
+     ],
+     "220": [
+      5.088888888888889,
+      0.2528845928164675
+     ]
+    },
+    "Fsil": {
+     "100": [
+      22.266666666666666,
+      0.11863420280034714
+     ],
+     "220": [
+      66.1111111111111,
+      0.23778816176703416
+     ]
+    }
+   },
+   "identity_vs_none": {
+    "n_identical": 17,
+    "n_different": 16,
+    "different": [
+     "ALL_140_s0",
+     "ALL_140_s1",
+     "ALL_140_s2",
+     "ALL_220_s0",
+     "ALL_220_s1",
+     "ALL_220_s2",
+     "CE_220_s0",
+     "DNge220_200_s0",
+     "DNge220_200_s1",
+     "DNge220_200_s2",
+     "F_220_s0",
+     "F_220_s1",
+     "F_220_s2",
+     "Fsil_220_s0",
+     "Fsil_220_s1",
+     "Fsil_220_s2"
+    ]
+   },
+   "G": {
+    "mean_MN9_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 0.0,
+     "sug40": 5.54,
+     "sug40+ISN100": 2.26,
+     "sug40+ISN50": 3.13,
+     "sug40+OA100": 5.72,
+     "sug40+OA50": 5.93,
+     "sug50": 19.32,
+     "sug50+ISN100": 10.2,
+     "sug50+ISN50": 16.71,
+     "sug50+OA100": 22.38,
+     "sug50+OA50": 20.49,
+     "sug50_silISN": 19.32,
+     "sug50_silOA": 19.32,
+     "wat160": 10.59,
+     "wat160+ISN100": 17.54,
+     "wat160+ISN50": 12.11,
+     "wat160_silISN": 10.59
+    },
+    "mean_OA_VPM4_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 98.77,
+     "sug40": 0.0,
+     "sug40+ISN100": 0.0,
+     "sug40+ISN50": 0.0,
+     "sug40+OA100": 99.07,
+     "sug40+OA50": 49.75,
+     "sug50": 0.0,
+     "sug50+ISN100": 0.0,
+     "sug50+ISN50": 0.0,
+     "sug50+OA100": 97.95,
+     "sug50+OA50": 50.04,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 0.0,
+     "wat160+ISN50": 0.0,
+     "wat160_silISN": 0.0
+    },
+    "mean_ISN_hz": {
+     "ISN100_alone": 99.59,
+     "OA100_alone": 0.0,
+     "sug40": 0.0,
+     "sug40+ISN100": 98.36,
+     "sug40+ISN50": 49.41,
+     "sug40+OA100": 0.0,
+     "sug40+OA50": 0.0,
+     "sug50": 0.0,
+     "sug50+ISN100": 99.58,
+     "sug50+ISN50": 49.54,
+     "sug50+OA100": 0.0,
+     "sug50+OA50": 0.0,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 99.64,
+     "wat160+ISN50": 49.27,
+     "wat160_silISN": 0.0
+    },
+    "G1": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+OA50",
+       "without": [
+        5.47,
+        6.73,
+        4.43
+       ],
+       "with": [
+        5.4,
+        6.63,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+OA100",
+       "without": [
+        5.47,
+        6.73,
+        4.43
+       ],
+       "with": [
+        6.1,
+        5.3,
+        5.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA50",
+       "without": [
+        20.53,
+        18.67,
+        18.77
+       ],
+       "with": [
+        20.17,
+        20.27,
+        21.03
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA100",
+       "without": [
+        20.53,
+        18.67,
+        18.77
+       ],
+       "with": [
+        22.53,
+        22.57,
+        22.03
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G3": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+ISN50",
+       "without": [
+        5.47,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.77,
+        2.97,
+        3.67
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+ISN100",
+       "without": [
+        5.47,
+        6.73,
+        4.43
+       ],
+       "with": [
+        2.57,
+        1.9,
+        2.3
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN50",
+       "without": [
+        20.53,
+        18.67,
+        18.77
+       ],
+       "with": [
+        16.73,
+        16.1,
+        17.3
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN100",
+       "without": [
+        20.53,
+        18.67,
+        18.77
+       ],
+       "with": [
+        11.3,
+        10.57,
+        8.73
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G4": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "wat160 vs wat160+ISN50",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        11.6,
+        12.37,
+        12.37
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "wat160 vs wat160+ISN100",
+       "without": [
+        10.2,
+        11.27,
+        10.3
+       ],
+       "with": [
+        16.4,
+        19.13,
+        17.1
+       ],
+       "moved": "up",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G2": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silOA",
+       "verdict": "can't tell",
+       "why": "OA-VPM4 during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "G5": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      },
+      {
+       "pair": "wat160 vs wat160_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during water 160 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "complete": true
+   },
+   "verdicts": {
+    "A": "holds",
+    "B": "holds",
+    "C": "holds",
+    "D": "not run",
+    "E": "not run"
+   }
+  },
+  "delays": {
+   "A": {
+    "pass": true,
+    "aBN1_CE_100": 25.92222222222222,
+    "aBN1_CE_220": 72.21111111111111,
+    "aBN1_F_100": 0.8111111111111112,
+    "aBN1_F_220": 5.0,
+    "per_seed_CE_100": [
+     26.133333333333333,
+     25.833333333333332,
+     25.8
+    ],
+    "per_seed_F_220": [
+     5.4,
+     4.5,
+     5.1
+    ]
+   },
+   "B": {
+    "pass": true,
+    "aBN1_Fsil_100": 22.188888888888886,
+    "aBN1_Fsil_220": 65.83333333333333
+   },
+   "C": {
+    "pass": true,
+    "aBN1_140": 44.53333333333333,
+    "aDN1_140": 16.12222222222222,
+    "aDN2_140": 16.755555555555556,
+    "DNge220_140": 91.73333333333335,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.06666666666666,
+    "aDN1_220": 37.855555555555554,
+    "aDN2_220": 37.955555555555556,
+    "DNge220_220": 119.24444444444445,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 674.6666666666666,
+     "n_nonJON_fired_ours_per_seed": [
+      681,
+      668,
+      675
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 715,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.9997935277073471,
+     "pearson_r_log": 0.9978321859288527,
+     "n_union": 734
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 478.3333333333333,
+     "n_nonJON_fired_ours_per_seed": [
+      474,
+      483,
+      478
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 512,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9997999964102783,
+     "pearson_r_log": 0.9979003187083287,
+     "n_union": 528
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": {
+    "F1": {
+     "right": false,
+     "per_cell_right": {
+      "aBN1": true,
+      "aBN2": false,
+      "aDN1": false
+     },
+     "aBN1": 5.0,
+     "aBN2_2026": 0.0,
+     "aDN1": 0.16666666666666666,
+     "aDN2": 0.20000000000000004,
+     "DNge220": 99.14444444444445
+    },
+    "F2": {
+     "verdict": "can't tell",
+     "aDN1": 0.16666666666666666,
+     "aDN2": 0.20000000000000004
+    },
+    "F3": {
+     "verdict": "right",
+     "aBN2_2026": 11.192592592592591,
+     "DNge220": 0.0
+    },
+    "F4": {
+     "verdict": "not scored",
+     "aBN1": 0.0
+    },
+    "F5": {
+     "verdict": "right",
+     "aDN1": 69.0,
+     "aDN2": 67.84444444444445
+    },
+    "F6": {
+     "verdict": "right",
+     "aDN1": 78.51111111111112,
+     "stim_aBN2_rate": 196.24074074074073
+    },
+    "F7": {
+     "verdict": "wrong",
+     "aDN2_mean_v_mV": -48.48843770467599,
+     "aDN2_hz": 8.544444444444444,
+     "aDN2_max_mean_trace_mV": -47.337791442871094
+    },
+    "alt_DNge220": {
+     "F1_JO-F_to_DNge220_hz": 99.14444444444445,
+     "F3_aBN1_to_DNge220_hz": 0.0,
+     "F6_DNge220_to_aDN1_hz": 0.0,
+     "F7_DNge220_to_aDN2_mean_v_mV": -51.95430844102029,
+     "F7_DNge220_to_aDN2_hz": 0.0
+    }
+   },
+   "curves": {
+    "CE": {
+     "100": [
+      25.92222222222222,
+      0.1498970840359114
+     ],
+     "220": [
+      72.21111111111111,
+      0.30102704853653467
+     ]
+    },
+    "F": {
+     "100": [
+      0.8111111111111112,
+      0.0566557723732532
+     ],
+     "220": [
+      5.0,
+      0.3741657386773942
+     ]
+    },
+    "Fsil": {
+     "100": [
+      22.188888888888886,
+      0.15475986974648906
+     ],
+     "220": [
+      65.83333333333333,
+      0.23726840560069562
+     ]
+    }
+   },
+   "identity_vs_none": {
+    "n_identical": 0,
+    "n_different": 33,
+    "different": [
+     "aBN1_200_s0",
+     "aBN1_200_s1",
+     "aBN1_200_s2",
+     "aBN2x3_200_s0",
+     "aBN2x3_200_s1",
+     "aBN2x3_200_s2",
+     "ALL_140_s0",
+     "ALL_140_s1",
+     "ALL_140_s2",
+     "ALL_220_s0",
+     "ALL_220_s1",
+     "ALL_220_s2",
+     "CE_100_s0",
+     "CE_100_s1",
+     "CE_100_s2",
+     "CE_220_s0",
+     "CE_220_s1",
+     "CE_220_s2",
+     "DNge220_200_s0",
+     "DNge220_200_s1",
+     "DNge220_200_s2",
+     "F_100_s0",
+     "F_100_s1",
+     "F_100_s2",
+     "F_220_s0",
+     "F_220_s1",
+     "F_220_s2",
+     "Fsil_100_s0",
+     "Fsil_100_s1",
+     "Fsil_100_s2",
+     "Fsil_220_s0",
+     "Fsil_220_s1",
+     "Fsil_220_s2"
+    ]
+   },
+   "G": {
+    "mean_MN9_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 0.0,
+     "sug40": 5.93,
+     "sug40+ISN100": 2.31,
+     "sug40+ISN50": 3.21,
+     "sug40+OA100": 6.91,
+     "sug40+OA50": 6.21,
+     "sug50": 21.17,
+     "sug50+ISN100": 11.92,
+     "sug50+ISN50": 17.7,
+     "sug50+OA100": 25.09,
+     "sug50+OA50": 24.04,
+     "sug50_silISN": 21.17,
+     "sug50_silOA": 21.17,
+     "wat160": 9.93,
+     "wat160+ISN100": 17.12,
+     "wat160+ISN50": 11.58,
+     "wat160_silISN": 9.93
+    },
+    "mean_OA_VPM4_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 98.77,
+     "sug40": 0.0,
+     "sug40+ISN100": 0.0,
+     "sug40+ISN50": 0.0,
+     "sug40+OA100": 99.07,
+     "sug40+OA50": 49.75,
+     "sug50": 0.0,
+     "sug50+ISN100": 0.0,
+     "sug50+ISN50": 0.0,
+     "sug50+OA100": 97.95,
+     "sug50+OA50": 50.04,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 0.0,
+     "wat160+ISN50": 0.0,
+     "wat160_silISN": 0.0
+    },
+    "mean_ISN_hz": {
+     "ISN100_alone": 99.59,
+     "OA100_alone": 0.0,
+     "sug40": 0.0,
+     "sug40+ISN100": 98.36,
+     "sug40+ISN50": 49.41,
+     "sug40+OA100": 0.0,
+     "sug40+OA50": 0.0,
+     "sug50": 0.0,
+     "sug50+ISN100": 99.58,
+     "sug50+ISN50": 49.54,
+     "sug50+OA100": 0.0,
+     "sug50+OA50": 0.0,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 99.64,
+     "wat160+ISN50": 49.27,
+     "wat160_silISN": 0.0
+    },
+    "G1": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+OA50",
+       "without": [
+        6.87,
+        5.63,
+        5.3
+       ],
+       "with": [
+        6.1,
+        6.63,
+        5.9
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+OA100",
+       "without": [
+        6.87,
+        5.63,
+        5.3
+       ],
+       "with": [
+        7.0,
+        6.4,
+        7.33
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA50",
+       "without": [
+        22.63,
+        21.4,
+        19.47
+       ],
+       "with": [
+        24.1,
+        23.6,
+        24.43
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA100",
+       "without": [
+        22.63,
+        21.4,
+        19.47
+       ],
+       "with": [
+        26.03,
+        24.5,
+        24.73
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G3": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+ISN50",
+       "without": [
+        6.87,
+        5.63,
+        5.3
+       ],
+       "with": [
+        3.07,
+        3.1,
+        3.47
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug40 vs sug40+ISN100",
+       "without": [
+        6.87,
+        5.63,
+        5.3
+       ],
+       "with": [
+        2.37,
+        2.27,
+        2.3
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN50",
+       "without": [
+        22.63,
+        21.4,
+        19.47
+       ],
+       "with": [
+        17.53,
+        18.23,
+        17.33
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN100",
+       "without": [
+        22.63,
+        21.4,
+        19.47
+       ],
+       "with": [
+        13.03,
+        11.9,
+        10.83
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G4": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "wat160 vs wat160+ISN50",
+       "without": [
+        9.83,
+        9.9,
+        10.07
+       ],
+       "with": [
+        10.83,
+        11.27,
+        12.63
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "wat160 vs wat160+ISN100",
+       "without": [
+        9.83,
+        9.9,
+        10.07
+       ],
+       "with": [
+        17.67,
+        17.43,
+        16.27
+       ],
+       "moved": "up",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G2": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silOA",
+       "verdict": "can't tell",
+       "why": "OA-VPM4 during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "G5": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      },
+      {
+       "pair": "wat160 vs wat160_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during water 160 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "complete": true
+   },
+   "verdicts": {
+    "A": "holds",
+    "B": "holds",
+    "C": "holds",
+    "D": "not run",
+    "E": "not run"
+   }
+  },
+  "adaptation": {
+   "A": {
+    "pass": false,
+    "aBN1_CE_100": 20.58888888888889,
+    "aBN1_CE_220": 56.48888888888888,
+    "aBN1_F_100": 4.355555555555555,
+    "aBN1_F_220": 14.766666666666666,
+    "per_seed_CE_100": [
+     20.6,
+     20.666666666666668,
+     20.5
+    ],
+    "per_seed_F_220": [
+     14.7,
+     14.366666666666667,
+     15.233333333333333
+    ]
+   },
+   "B": {
+    "pass": false,
+    "aBN1_Fsil_100": 16.744444444444444,
+    "aBN1_Fsil_220": 49.91111111111112
+   },
+   "C": {
+    "pass": true,
+    "aBN1_140": 42.855555555555554,
+    "aDN1_140": 10.088888888888889,
+    "aDN2_140": 10.644444444444446,
+    "DNge220_140": 79.82222222222221,
+    "aBN2_2026_140": 0.022222222222222223,
+    "aBN1_220": 66.97777777777777,
+    "aDN1_220": 23.066666666666666,
+    "aDN2_220": 23.53333333333333,
+    "DNge220_220": 103.54444444444444,
+    "aBN2_2026_220": 0.22962962962962963,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 615.3333333333334,
+     "n_nonJON_fired_ours_per_seed": [
+      615,
+      633,
+      598
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 668,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.9838989604173332,
+     "pearson_r_log": 0.9495986152360696,
+     "n_union": 732
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 442.0,
+     "n_nonJON_fired_ours_per_seed": [
+      447,
+      433,
+      446
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 470,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9866566389351009,
+     "pearson_r_log": 0.9602943591013691,
+     "n_union": 536
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": {
+    "F1": {
+     "right": false,
+     "per_cell_right": {
+      "aBN1": true,
+      "aBN2": false,
+      "aDN1": false
+     },
+     "aBN1": 14.766666666666666,
+     "aBN2_2026": 0.0,
+     "aDN1": 1.011111111111111,
+     "aDN2": 1.3555555555555554,
+     "DNge220": 85.43333333333334
+    },
+    "F2": {
+     "verdict": "can't tell",
+     "aDN1": 1.011111111111111,
+     "aDN2": 1.3555555555555554
+    },
+    "F3": {
+     "verdict": "right",
+     "aBN2_2026": 7.814814814814814,
+     "DNge220": 0.0
+    },
+    "F4": {
+     "verdict": "not scored",
+     "aBN1": 0.0
+    },
+    "F5": {
+     "verdict": "right",
+     "aDN1": 51.96666666666667,
+     "aDN2": 54.300000000000004
+    },
+    "F6": {
+     "verdict": "right",
+     "aDN1": 57.666666666666664,
+     "stim_aBN2_rate": 196.24074074074073
+    },
+    "F7": {
+     "verdict": "wrong",
+     "aDN2_mean_v_mV": -48.38594259279006,
+     "aDN2_hz": 3.2777777777777772,
+     "aDN2_max_mean_trace_mV": -47.376686096191406
+    },
+    "alt_DNge220": {
+     "F1_JO-F_to_DNge220_hz": 85.43333333333334,
+     "F3_aBN1_to_DNge220_hz": 0.0,
+     "F6_DNge220_to_aDN1_hz": 0.0,
+     "F7_DNge220_to_aDN2_mean_v_mV": -51.95521769612119,
+     "F7_DNge220_to_aDN2_hz": 0.0
+    }
+   },
+   "curves": {
+    "CE": {
+     "100": [
+      20.58888888888889,
+      0.06849348892187804
+     ],
+     "220": [
+      56.48888888888888,
+      0.22662308949301185
+     ]
+    },
+    "F": {
+     "100": [
+      4.355555555555555,
+      0.06849348892187761
+     ],
+     "220": [
+      14.766666666666666,
+      0.3569417423157553
+     ]
+    },
+    "Fsil": {
+     "100": [
+      16.744444444444444,
+      0.087488976377909
+     ],
+     "220": [
+      49.91111111111112,
+      0.3446236093171301
+     ]
+    }
+   },
+   "identity_vs_none": {
+    "n_identical": 0,
+    "n_different": 33,
+    "different": [
+     "aBN1_200_s0",
+     "aBN1_200_s1",
+     "aBN1_200_s2",
+     "aBN2x3_200_s0",
+     "aBN2x3_200_s1",
+     "aBN2x3_200_s2",
+     "ALL_140_s0",
+     "ALL_140_s1",
+     "ALL_140_s2",
+     "ALL_220_s0",
+     "ALL_220_s1",
+     "ALL_220_s2",
+     "CE_100_s0",
+     "CE_100_s1",
+     "CE_100_s2",
+     "CE_220_s0",
+     "CE_220_s1",
+     "CE_220_s2",
+     "DNge220_200_s0",
+     "DNge220_200_s1",
+     "DNge220_200_s2",
+     "F_100_s0",
+     "F_100_s1",
+     "F_100_s2",
+     "F_220_s0",
+     "F_220_s1",
+     "F_220_s2",
+     "Fsil_100_s0",
+     "Fsil_100_s1",
+     "Fsil_100_s2",
+     "Fsil_220_s0",
+     "Fsil_220_s1",
+     "Fsil_220_s2"
+    ]
+   },
+   "G": {
+    "mean_MN9_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 0.0,
+     "sug40": 2.43,
+     "sug40+ISN100": 1.04,
+     "sug40+ISN50": 2.09,
+     "sug40+OA100": 3.24,
+     "sug40+OA50": 2.33,
+     "sug50": 9.68,
+     "sug50+ISN100": 5.3,
+     "sug50+ISN50": 8.96,
+     "sug50+OA100": 11.36,
+     "sug50+OA50": 9.57,
+     "sug50_silISN": 9.68,
+     "sug50_silOA": 9.68,
+     "wat160": 1.78,
+     "wat160+ISN100": 3.99,
+     "wat160+ISN50": 1.02,
+     "wat160_silISN": 1.78
+    },
+    "mean_OA_VPM4_hz": {
+     "ISN100_alone": 0.0,
+     "OA100_alone": 98.77,
+     "sug40": 0.0,
+     "sug40+ISN100": 0.0,
+     "sug40+ISN50": 0.0,
+     "sug40+OA100": 99.07,
+     "sug40+OA50": 49.75,
+     "sug50": 0.0,
+     "sug50+ISN100": 0.0,
+     "sug50+ISN50": 0.0,
+     "sug50+OA100": 97.95,
+     "sug50+OA50": 50.04,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 0.0,
+     "wat160+ISN50": 0.0,
+     "wat160_silISN": 0.0
+    },
+    "mean_ISN_hz": {
+     "ISN100_alone": 99.59,
+     "OA100_alone": 0.0,
+     "sug40": 0.0,
+     "sug40+ISN100": 98.36,
+     "sug40+ISN50": 49.41,
+     "sug40+OA100": 0.0,
+     "sug40+OA50": 0.0,
+     "sug50": 0.0,
+     "sug50+ISN100": 99.58,
+     "sug50+ISN50": 49.54,
+     "sug50+OA100": 0.0,
+     "sug50+OA50": 0.0,
+     "sug50_silISN": 0.0,
+     "sug50_silOA": 0.0,
+     "wat160": 0.0,
+     "wat160+ISN100": 99.64,
+     "wat160+ISN50": 49.27,
+     "wat160_silISN": 0.0
+    },
+    "G1": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+OA50",
+       "without": [
+        2.4,
+        2.4,
+        2.5
+       ],
+       "with": [
+        2.47,
+        2.4,
+        2.13
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+OA100",
+       "without": [
+        2.4,
+        2.4,
+        2.5
+       ],
+       "with": [
+        3.2,
+        3.0,
+        3.53
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA50",
+       "without": [
+        9.8,
+        10.87,
+        8.37
+       ],
+       "with": [
+        9.37,
+        9.23,
+        10.1
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+OA100",
+       "without": [
+        9.8,
+        10.87,
+        8.37
+       ],
+       "with": [
+        11.4,
+        11.03,
+        11.63
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G3": {
+     "verdict": "wrong",
+     "pairs": [
+      {
+       "pair": "sug40 vs sug40+ISN50",
+       "without": [
+        2.4,
+        2.4,
+        2.5
+       ],
+       "with": [
+        1.13,
+        2.37,
+        2.77
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug40 vs sug40+ISN100",
+       "without": [
+        2.4,
+        2.4,
+        2.5
+       ],
+       "with": [
+        1.27,
+        0.97,
+        0.9
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN50",
+       "without": [
+        9.8,
+        10.87,
+        8.37
+       ],
+       "with": [
+        8.83,
+        8.83,
+        9.2
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "sug50 vs sug50+ISN100",
+       "without": [
+        9.8,
+        10.87,
+        8.37
+       ],
+       "with": [
+        5.97,
+        5.63,
+        4.3
+       ],
+       "moved": "down",
+       "verdict": "wrong"
+      }
+     ]
+    },
+    "G4": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "wat160 vs wat160+ISN50",
+       "without": [
+        2.03,
+        1.47,
+        1.83
+       ],
+       "with": [
+        1.1,
+        0.87,
+        1.1
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      },
+      {
+       "pair": "wat160 vs wat160+ISN100",
+       "without": [
+        2.03,
+        1.47,
+        1.83
+       ],
+       "with": [
+        4.6,
+        4.53,
+        2.83
+       ],
+       "moved": "neither",
+       "verdict": "can't tell"
+      }
+     ]
+    },
+    "G2": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silOA",
+       "verdict": "can't tell",
+       "why": "OA-VPM4 during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "G5": {
+     "verdict": "can't tell",
+     "pairs": [
+      {
+       "pair": "sug50 vs sug50_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during sugar 50 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      },
+      {
+       "pair": "wat160 vs wat160_silISN",
+       "verdict": "can't tell",
+       "why": "ISNs during water 160 Hz: the cells fire [0.0, 0.0, 0.0] Hz (needs >= 1 Hz in every seed)"
+      }
+     ]
+    },
+    "complete": true
+   },
+   "verdicts": {
+    "A": "breaks",
+    "B": "breaks",
+    "C": "changes",
+    "D": "not run",
+    "E": "not run"
+   }
+  },
+  "celltype": {
+   "A": null,
+   "B": null,
+   "C": {
+    "pass": true,
+    "aBN1_140": 44.37777777777777,
+    "aDN1_140": 15.588888888888889,
+    "aDN2_140": 16.3,
+    "DNge220_140": 91.12222222222222,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.62222222222222,
+    "aDN1_220": 38.1,
+    "aDN2_220": 38.288888888888884,
+    "DNge220_220": 119.74444444444445,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 676.0,
+     "n_nonJON_fired_ours_per_seed": [
+      666,
+      660,
+      702
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 748,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.999896626796197,
+     "pearson_r_log": 0.9993536516451573,
+     "n_union": 774
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 476.0,
+     "n_nonJON_fired_ours_per_seed": [
+      473,
+      478,
+      477
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 511,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9998238302335133,
+     "pearson_r_log": 0.9989263193218021,
+     "n_union": 519
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": null,
+   "curves": {
+    "CE": {},
+    "F": {},
+    "Fsil": {}
+   },
+   "identity_vs_none": {
+    "n_identical": 15,
+    "n_different": 0,
+    "different": []
+   },
+   "G": null,
+   "verdicts": {
+    "A": "not run",
+    "B": "not run",
+    "C": "holds",
+    "D": "not run",
+    "E": "not run"
+   }
+  },
+  "gap": {
+   "A": null,
+   "B": null,
+   "C": {
+    "pass": true,
+    "aBN1_140": 44.37777777777777,
+    "aDN1_140": 15.588888888888889,
+    "aDN2_140": 16.3,
+    "DNge220_140": 91.12222222222222,
+    "aBN2_2026_140": 0.0,
+    "aBN1_220": 77.62222222222222,
+    "aDN1_220": 38.1,
+    "aDN2_220": 38.288888888888884,
+    "DNge220_220": 119.74444444444445,
+    "aBN2_2026_220": 0.0,
+    "similarity_220": {
+     "n_nonJON_fired_ours": 675.6666666666666,
+     "n_nonJON_fired_ours_per_seed": [
+      665,
+      660,
+      702
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 747,
+     "n_nonJON_fired_paper": 677,
+     "pearson_r": 0.9998965767769427,
+     "pearson_r_log": 0.999352622212687,
+     "n_union": 773
+    },
+    "similarity_140": {
+     "n_nonJON_fired_ours": 476.0,
+     "n_nonJON_fired_ours_per_seed": [
+      473,
+      478,
+      477
+     ],
+     "n_nonJON_fired_ours_all_seeds_pooled": 511,
+     "n_nonJON_fired_paper": 482,
+     "pearson_r": 0.9998238302335133,
+     "pearson_r_log": 0.9989263193218021,
+     "n_union": 519
+    }
+   },
+   "D": null,
+   "E": null,
+   "F": null,
+   "curves": {
+    "CE": {},
+    "F": {},
+    "Fsil": {}
+   },
+   "identity_vs_none": {
+    "n_identical": 14,
+    "n_different": 1,
+    "different": [
+     "ALL_220_s0"
+    ]
+   },
+   "G": null,
+   "verdicts": {
+    "A": "not run",
+    "B": "not run",
+    "C": "holds",
+    "D": "not run",
+    "E": "not run"
+   }
+  }
+ },
+ "robustness": {
+  "w_syn x0.8 | F_220": {
+   "n_seeds": 3,
+   "aBN1": 8.255555555555555,
+   "aDN1": 0.0,
+   "aDN2": 0.0111111111111111,
+   "DNge220": 89.8,
+   "aBN2_2026": 0.0,
+   "F1": "wrong"
+  },
+  "w_syn x0.8 | ALL_220": {
+   "n_seeds": 3,
+   "aBN1": 69.23333333333333,
+   "aDN1": 22.866666666666664,
+   "aDN2": 23.066666666666663,
+   "DNge220": 109.15555555555557,
+   "aBN2_2026": 0.0,
+   "C": "holds"
+  },
+  "w_syn x0.8 | aBN2x3_200": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 61.77777777777777,
+   "aDN2": 0.14444444444444446,
+   "DNge220": 0.0,
+   "aBN2_2026": 196.24074074074073,
+   "aDN2_mean_v_mV": -48.56952528519588,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "w_syn x1.2 | F_220": {
+   "n_seeds": 3,
+   "aBN1": 2.322222222222222,
+   "aDN1": 0.41111111111111115,
+   "aDN2": 0.4333333333333333,
+   "DNge220": 104.62222222222222,
+   "aBN2_2026": 0.0,
+   "F1": "wrong"
+  },
+  "w_syn x1.2 | ALL_220": {
+   "n_seeds": 3,
+   "aBN1": 82.94444444444444,
+   "aDN1": 49.22222222222222,
+   "aDN2": 41.18888888888889,
+   "DNge220": 126.01111111111112,
+   "aBN2_2026": 0.09629629629629628,
+   "C": "holds"
+  },
+  "w_syn x1.2 | aBN2x3_200": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 92.66666666666667,
+   "aDN2": 22.688888888888886,
+   "DNge220": 0.0,
+   "aBN2_2026": 196.24074074074073,
+   "aDN2_mean_v_mV": -48.965961559060624,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "baseline | aBN2x3_100": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 37.12222222222221,
+   "aDN2": 0.0222222222222222,
+   "DNge220": 0.0,
+   "aBN2_2026": 99.13333333333333,
+   "aDN2_mean_v_mV": -49.82891627920714,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "baseline | aBN2x3_50": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 8.5,
+   "aDN2": 0.0,
+   "DNge220": 0.0,
+   "aBN2_2026": 49.39629629629629,
+   "aDN2_mean_v_mV": -50.993751803949955,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "baseline | aBN2_1_200": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 14.266666666666667,
+   "aDN2": 0.0,
+   "DNge220": 0.0,
+   "aBN2_2026": 65.21851851851852,
+   "aDN2_mean_v_mV": -51.728451334766554,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "baseline | aBN2_2_200": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 3.4555555555555557,
+   "aDN2": 0.0,
+   "DNge220": 0.0,
+   "aBN2_2026": 64.94814814814815,
+   "aDN2_mean_v_mV": -50.66332212259325,
+   "F7": "wrong",
+   "F6": "right"
+  },
+  "baseline | aBN2_3_200": {
+   "n_seeds": 3,
+   "aBN1": 0.0,
+   "aDN1": 34.25555555555555,
+   "aDN2": 0.0,
+   "DNge220": 0.0,
+   "aBN2_2026": 64.65925925925926,
+   "aDN2_mean_v_mV": -49.44212512147288,
+   "F7": "wrong",
+   "F6": "right"
+  }
+ }
+}

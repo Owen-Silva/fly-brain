@@ -1664,3 +1664,99 @@ and whether our model can run the test at all. 20 are fully runnable, 13 only pa
 example because the fly used its nerve cord or slow brain chemicals), and 6 not at all. The ten
 we suggest running first are small, cheap, and have clear answers, mostly from female-courtship
 and temperature circuits, where every cell is already labelled in our data.
+
+## 2026-09-23 - Held-out validation: the paper's grooming results, real-fly grooming and feeding results it never scored, and whether the fixes generalise (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or any existing doc. New:
+`docs/heldout-validation.md` and the folder `experiments/heldout/` (`ids.py`,
+`fetch_published.py`, `published_summary.py`, `run_heldout.py`, `check_changed.py`,
+`robustness.py`, `feeding_heldout.py`, `isn_wiring.py`, `analyze_heldout.py`, `queue.sh`,
+`results/`, `plots/abn1_curves.png`). Why: every fix so far was chosen or checked on the
+same Shiu et al. 2024 taste-to-MN9 results, so nothing showed whether the fixes
+generalise. This lane ran published results no variant was chosen on. Pass/fail rules
+were written into the doc before any simulation ran (section 1; the feeding tests and
+their scoring details were added at 18:16 and 18:24, before those runs). Sources: Shiu et
+al. 2024 Fig. 5 and Ext. Data Fig. 4 (text from PMC11446845, code from
+`data/reference/figures.ipynb`), the authors' own output files (Edmond
+doi:10.17617/3.CZODIW; 61 small files fetched by byte range, not the 4 GB archive), Supp.
+Table 10 (the paper's own scoring); Hampel et al. 2015 *eLife* 4:e08758 (Fig. 6
+functional connectivity); Hampel et al. 2020 *eLife* 9:e59976 ("aJO" renamed JO-F);
+Calle-Schuler et al. *eLife* 14, doi:10.7554/eLife.108044 (FlyWire IDs of aBN2_1-3);
+Youn et al. 2018 *PLoS ONE* 13:e0198362 (OA-VPM4; abstract) and Jourjine et al. 2016
+*Cell* 166:855 (ISNs; abstract only, the full text was blocked). Engine
+`sim/fast_engine.py`, snapshot 630, 3 seeds x 30 trials x 1 s per condition, and the same
+random input for every variant (same seed).
+
+**What happened.**
+- Published model, the paper's grooming results (Tests A-C): reproduced. aBN1 with the
+  70 JO-CE sensors at 100 / 220 Hz: 26.1 / 25.8 / 25.8 and 73.0 / 72.7 / 72.7 Hz (paper
+  25.4 / 73.1). With the 60 JO-F sensors: 0.7-1.0 and 4.6-5.3 Hz (paper 0.9 / 4.6). JO-F
+  with the three GABA cells silenced: 22.1-22.4 and 65.8-66.4 (paper 22.4 / 66.4). All 146
+  JONs at 220 Hz: aBN1 77.5-77.8 (78.2), aDN1 37.9-38.2 (38.4), aDN2 38.2-38.4 (38.6); 660-702
+  non-JON neurons fire per seed (677); every neuron's rate correlates with the paper's at
+  r = 0.9999.
+- The paper's two 300-neuron screens, run on its 154 non-sensory neurons (1 seed x 10
+  trials each; the 146 single-sensor runs were dropped for time). Required for aDN1
+  (all JONs at 140 Hz, each neuron silenced): exactly aBN1, aDN2 and DNge220 cut aDN1 by
+  more than 20% (to 0.00 / 0.64 / 0.80 of the control; paper 0.00 / 0.63 / 0.75), and
+  the next two match too (0.88 / 0.91 vs 0.85 / 0.89). Sufficient (each driven alone at
+  200 Hz): only aBN1 (68.0 Hz; paper 68.5) and aDN2 (34.1; 33.6) drive aDN1 above 2 Hz,
+  and the only weak ones are the paper's two (1.1 and 0.3 Hz; paper 1.07 and 0.33).
+- Real-fly grooming results the paper did not score (Test F, Hampel et al. 2015; aBN2 =
+  the 2026 IDs): 3 right (F3, F5, F6), 2 wrong, 1 can't tell, 1 not scored. F1: JO-F at
+  220 Hz leaves aBN2 at 0.0 Hz and aDN1 at 0.2 (flies: both respond). F7: driving aBN2
+  makes aDN2 FIRE (8.8 Hz, mean -48.5 mV, 3.5 mV above rest; flies: inhibition). Both
+  misses survive synapses 20% weaker and stronger, aBN2 drive at 50 and 100 Hz, and each
+  aBN2 cell alone (`robustness.py`). With the paper's aBN2 (DNge220) instead: F1 right,
+  F3 and F6 wrong. With the 2026 aBN2, the cells never fire during JON input, so the
+  model also predicts aBN2 is NOT required for aDN1, the opposite of the fly silencing
+  data the paper scored as correct.
+- Variants on the grooming tests: `al_ln_literature` is identical to the published model
+  spike for spike (15 runs compared; none of its 150 changed smell neurons fires in any
+  grooming condition, and all 54 feeding runs are identical too), so these tests cannot
+  judge it. `+da_5ht_literature`
+  holds (16 of 33 runs differ, all key rates within 1 Hz). `delays` holds (within about
+  1 Hz). `adaptation` breaks Test A narrowly (JO-F drives aBN1 at 25-27% of JO-CE per
+  seed at 220 Hz; limit 25%; published 7%) and Test B (silencing raises aBN1 only 3.3-3.9x;
+  limit 5x), because the three GABA cells slow down (CB0443 79 to 64 Hz); Test C holds
+  with aDN1 39% lower. `celltype` is identical to the published model in all 15 runs
+  compared and `gap` in 14 of 15 (one run differs by one neuron), so these tests cannot
+  judge them either (Tests A and B not run for these two). No variant fixes F1 or F7.
+- Held-out feeding (G1-G5, published model): ISNs, 4 cells, at 100 Hz cut MN9's sugar
+  response from 19.0 to 10.3 Hz (sugar 50 Hz) and 5.6 to 2.3 Hz (sugar 40 Hz), and raise
+  the water response from 10.6 to 17.9 Hz: both halves the reverse of real flies (G3,
+  G4 wrong; at 50 Hz the same direction, below the 20% / 1 Hz line). OA-VPM4 at 50-100 Hz
+  raises MN9 by at most 4.5 Hz and not past the 20% / 1 Hz line in every seed (G1 can't
+  tell); the source says OA-VPM4 acts by making sugar neurons more sensitive, which the
+  model cannot represent, and the connectome has no OA-VPM4 synapse onto sugar neurons
+  or MN9. Neither cell type fires during taste
+  input, so the silencing tests (G2, G5) can't tell. Same verdicts for `al_ln_literature`
+  (identical, 54 rows), `+da_5ht_literature` and `delays`. `adaptation` lowers every MN9
+  response (sugar 50 Hz: 9.7 instead of 19.0 Hz); ISNs still lower the sugar response
+  (9.7 to 5.3, G3 wrong) and raise the water response (1.8 to 4.0), which misses the
+  1 Hz line in one seed (G4 can't tell). In the wiring, 48% of the ISNs' output synapses
+  go to cells the model treats as inhibitory, which fits the drop in the sugar response
+  (not tested by silencing). Only two feeding experiments (five tests) could be mapped
+  in the time, fewer than the three to six planned.
+
+**Validated?** PRELIMINARY as a whole. VALIDATED: the published-model reproduction
+(Tests A-C: 3 seeds, within about 1 Hz of the authors' own files; Tests D-E: the same
+neurons as the paper, 1 seed x 10 trials each); al_ln_literature's invisibility
+here (a proof from which neurons fire, plus exact identity); F1 and F7 as robust model
+behaviour. PRELIMINARY: that F1 and F7 are real disagreements with flies (depends on
+the aJO = JO-F and aBN2 mappings); the adaptation result (one strength, narrowly past
+the line); the ISN reversal (different readout, abstract-only source, FlyWire type name
+as the mapping). UNVERIFIED: the 147 vs 146 JON count; the paper's aBN1 synapse counts
+(103 / 78) versus the model's table (77 / 69). Nothing was posted, emailed or shared,
+and no one was contacted.
+
+**Plain English.** Until now every change to the model was judged on the same few
+taste tests. So we tested it on results it had never been scored on. The paper's own
+grooming results come out almost exactly right. But real-fly grooming experiments the
+paper did not score catch two robust mistakes in the grooming circuit: one group of
+antenna sensors never reaches two neurons it reaches in flies, and one neuron excites a
+cell that real flies show it inhibiting. The smell fix we recommend never touches these circuits, so these
+tests can't say whether it is right; a smell experiment is needed for that. The option
+that makes neurons tire (adaptation) makes one real-fly grooming result slightly worse.
+And in the feeding circuit itself, four neurons that make real flies drink more sugar
+and less water do the opposite in the model.

@@ -1,0 +1,12 @@
+{
+ "fix": "none",
+ "variant": "none",
+ "snapshot": "630+none",
+ "n_trials": 30,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "build_s": 2.3
+}
