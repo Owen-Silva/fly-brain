@@ -1,0 +1,10 @@
+input,on_ms,off_ms,cb_right_on_hz,cb_left_on_hz,cb_right_last1s_hz,cb_left_last1s_hz,mn9_left_last1s_hz,mn9_right_last1s_hz,n_nonsensory_active_last1s,spikes_last1s,last_spike_cb_right_ms,persistent,seed,cb_before_inh_hz,cb_during_inh_hz
+mech100_then_inhibit_GABA_x2_unlabelled,1000.0,3100.0,161.0,161.0,0.0,0.0,0.0,0.0,0,0,2004.2,False,0,156.0,10.0
+mech100_then_inhibit_GABA_x2_unlabelled,1000.0,3100.0,161.0,161.0,0.0,0.0,0.0,0.0,0,0,2010.2,False,1,157.0,15.0
+mech100_then_inhibit_GABA_x2_unlabelled,1000.0,3100.0,163.0,162.0,0.0,0.0,0.0,0.0,0,0,2003.0,False,2,157.0,10.0
+mech100_then_inhibit_DNge160_x2,1000.0,3100.0,161.0,161.0,156.0,156.0,104.0,125.0,33,1891,4097.8,True,0,156.0,125.0
+mech100_then_inhibit_DNge160_x2,1000.0,3100.0,161.0,161.0,0.0,0.0,0.0,0.0,0,0,2035.9,False,1,157.0,45.0
+mech100_then_inhibit_DNge160_x2,1000.0,3100.0,163.0,162.0,0.0,0.0,0.0,0.0,0,0,2011.2,False,2,157.0,20.0
+mech100_then_inhibit_all_four,1000.0,3100.0,161.0,161.0,0.0,0.0,0.0,0.0,0,0,2004.6000000000001,False,0,156.0,10.0
+mech100_then_inhibit_all_four,1000.0,3100.0,161.0,161.0,0.0,0.0,0.0,0.0,0,0,2002.0,False,1,157.0,5.0
+mech100_then_inhibit_all_four,1000.0,3100.0,163.0,162.0,0.0,0.0,0.0,0.0,0,0,2003.2,False,2,157.0,5.0

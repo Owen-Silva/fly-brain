@@ -1,0 +1,495 @@
+{
+ "pair_630": [
+  720575940633316307,
+  720575940636552805
+ ],
+ "labels": [
+  {
+   "root_id": "720575940633316307",
+   "cell_type": "CB0216",
+   "hemibrain_type": "",
+   "side": "right",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.63896805",
+   "known_nt": "",
+   "known_nt_source": "",
+   "matched_783": "True"
+  },
+  {
+   "root_id": "720575940636552805",
+   "cell_type": "CB0216",
+   "hemibrain_type": "",
+   "side": "left",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.64989567",
+   "known_nt": "",
+   "known_nt_source": "",
+   "matched_783": "True"
+  }
+ ],
+ "ann_630": [
+  {
+   "supervoxel_id": "80577160020077758",
+   "root_id": "720575940633316307",
+   "pos_x": "144672",
+   "pos_y": "80304",
+   "pos_z": "1075",
+   "soma_x": "144672.0",
+   "soma_y": "80304.0",
+   "soma_z": "1075.0",
+   "nucleus_id": "5814161.0",
+   "flow": "intrinsic",
+   "super_class": "central",
+   "cell_type": "CB0216",
+   "ito_lee_hemilineage": "putative_primary",
+   "hartenstein_hemilineage": "putative_primary",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.6389680504798889",
+   "side": "right"
+  },
+  {
+   "supervoxel_id": "78677066488378821",
+   "root_id": "720575940636552805",
+   "pos_x": "117640",
+   "pos_y": "77800",
+   "pos_z": "1182",
+   "soma_x": "117640.0",
+   "soma_y": "77800.0",
+   "soma_z": "1182.0",
+   "nucleus_id": "3769778.0",
+   "flow": "intrinsic",
+   "super_class": "central",
+   "cell_type": "CB0216",
+   "ito_lee_hemilineage": "putative_primary",
+   "hartenstein_hemilineage": "putative_primary",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.6498956680297852",
+   "side": "left"
+  }
+ ],
+ "ann_783": [
+  {
+   "supervoxel_id": "80577160020077758",
+   "root_id": "720575940633316307",
+   "pos_x": "144672.0",
+   "pos_y": "80304.0",
+   "pos_z": "1075.0",
+   "soma_x": "144672",
+   "soma_y": "80304",
+   "soma_z": "1075",
+   "nucleus_id": "5814161",
+   "flow": "intrinsic",
+   "super_class": "central",
+   "supertype": "10849",
+   "cell_type": "CB0216",
+   "ito_lee_hemilineage": "putative_primary",
+   "hartenstein_hemilineage": "putative_primary",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.6420462238721507",
+   "side": "right",
+   "vfb_id": "fw007216",
+   "dimorphism": "isomorphic"
+  },
+  {
+   "supervoxel_id": "78677066488378821",
+   "root_id": "720575940636552805",
+   "pos_x": "117640.0",
+   "pos_y": "77800.0",
+   "pos_z": "1182.0",
+   "soma_x": "117640",
+   "soma_y": "77800",
+   "soma_z": "1182",
+   "nucleus_id": "3769778",
+   "flow": "intrinsic",
+   "super_class": "central",
+   "supertype": "10849",
+   "cell_type": "CB0216",
+   "ito_lee_hemilineage": "putative_primary",
+   "hartenstein_hemilineage": "putative_primary",
+   "top_nt": "acetylcholine",
+   "top_nt_conf": "0.6521245398836665",
+   "side": "left",
+   "vfb_id": "fw036845",
+   "dimorphism": "isomorphic"
+  }
+ ],
+ "n_type_783": 2,
+ "model_syn": {
+  "right_to_left": 451,
+  "left_to_right": 455,
+  "self_right": 0,
+  "self_left": 0
+ },
+ "partners": {
+  "right_in": {
+   "exc_total": 985,
+   "inh_total": 753,
+   "top": [
+    {
+     "root_id": 720575940636552805,
+     "cell_type": "CB0216",
+     "top_nt": "acetylcholine",
+     "w": 455
+    },
+    {
+     "root_id": 720575940640096976,
+     "cell_type": "",
+     "top_nt": "gaba",
+     "w": -116
+    },
+    {
+     "root_id": 720575940613958194,
+     "cell_type": "",
+     "top_nt": "gaba",
+     "w": -111
+    },
+    {
+     "root_id": 720575940623338281,
+     "cell_type": "DNge160",
+     "top_nt": "gaba",
+     "w": -75
+    },
+    {
+     "root_id": 720575940630810486,
+     "cell_type": "DNge160",
+     "top_nt": "gaba",
+     "w": -69
+    },
+    {
+     "root_id": 720575940634105439,
+     "cell_type": "CB0775",
+     "top_nt": "acetylcholine",
+     "w": 44
+    },
+    {
+     "root_id": 720575940631327483,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 37
+    },
+    {
+     "root_id": 720575940628319899,
+     "cell_type": "CB0775",
+     "top_nt": "acetylcholine",
+     "w": 30
+    },
+    {
+     "root_id": 720575940631977291,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 22
+    },
+    {
+     "root_id": 720575940620354836,
+     "cell_type": "DNp14",
+     "top_nt": "acetylcholine",
+     "w": 22
+    },
+    {
+     "root_id": 720575940623193549,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 21
+    },
+    {
+     "root_id": 720575940647024948,
+     "cell_type": "",
+     "top_nt": "glutamate",
+     "w": -20
+    }
+   ]
+  },
+  "right_out": {
+   "exc_total": 2425,
+   "inh_total": 0,
+   "top": [
+    {
+     "root_id": 720575940636552805,
+     "cell_type": "CB0216",
+     "top_nt": "acetylcholine",
+     "w": 451
+    },
+    {
+     "root_id": 720575940660219265,
+     "cell_type": "CB0701",
+     "top_nt": "acetylcholine",
+     "w": 146
+    },
+    {
+     "root_id": 720575940645521262,
+     "cell_type": "CB0701",
+     "top_nt": "acetylcholine",
+     "w": 122
+    },
+    {
+     "root_id": 720575940615583647,
+     "cell_type": "CB0572",
+     "top_nt": "glutamate",
+     "w": 96
+    },
+    {
+     "root_id": 720575940609915204,
+     "cell_type": "CB0807",
+     "top_nt": "gaba",
+     "w": 78
+    },
+    {
+     "root_id": 720575940617552057,
+     "cell_type": "CB0807",
+     "top_nt": "gaba",
+     "w": 73
+    },
+    {
+     "root_id": 720575940607162754,
+     "cell_type": "CB0891",
+     "top_nt": "gaba",
+     "w": 71
+    },
+    {
+     "root_id": 720575940611502286,
+     "cell_type": "CB0572",
+     "top_nt": "glutamate",
+     "w": 69
+    },
+    {
+     "root_id": 720575940639634304,
+     "cell_type": "DNge022",
+     "top_nt": "acetylcholine",
+     "w": 65
+    },
+    {
+     "root_id": 720575940615666655,
+     "cell_type": "DNge022",
+     "top_nt": "acetylcholine",
+     "w": 52
+    },
+    {
+     "root_id": 720575940630246460,
+     "cell_type": "DNge137",
+     "top_nt": "acetylcholine",
+     "w": 48
+    },
+    {
+     "root_id": 720575940622021637,
+     "cell_type": "CB0912",
+     "top_nt": "glutamate",
+     "w": 48
+    }
+   ]
+  },
+  "left_in": {
+   "exc_total": 1018,
+   "inh_total": 842,
+   "top": [
+    {
+     "root_id": 720575940633316307,
+     "cell_type": "CB0216",
+     "top_nt": "acetylcholine",
+     "w": 451
+    },
+    {
+     "root_id": 720575940640096976,
+     "cell_type": "",
+     "top_nt": "gaba",
+     "w": -144
+    },
+    {
+     "root_id": 720575940613958194,
+     "cell_type": "",
+     "top_nt": "gaba",
+     "w": -128
+    },
+    {
+     "root_id": 720575940630810486,
+     "cell_type": "DNge160",
+     "top_nt": "gaba",
+     "w": -90
+    },
+    {
+     "root_id": 720575940623338281,
+     "cell_type": "DNge160",
+     "top_nt": "gaba",
+     "w": -76
+    },
+    {
+     "root_id": 720575940634105439,
+     "cell_type": "CB0775",
+     "top_nt": "acetylcholine",
+     "w": 43
+    },
+    {
+     "root_id": 720575940628319899,
+     "cell_type": "CB0775",
+     "top_nt": "acetylcholine",
+     "w": 36
+    },
+    {
+     "root_id": 720575940605699104,
+     "cell_type": "",
+     "top_nt": "serotonin",
+     "w": 32
+    },
+    {
+     "root_id": 720575940631327483,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 26
+    },
+    {
+     "root_id": 720575940631977291,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 23
+    },
+    {
+     "root_id": 720575940611756723,
+     "cell_type": "DNge200",
+     "top_nt": "serotonin",
+     "w": 21
+    },
+    {
+     "root_id": 720575940623193549,
+     "cell_type": "",
+     "top_nt": "acetylcholine",
+     "w": 20
+    }
+   ]
+  },
+  "left_out": {
+   "exc_total": 2488,
+   "inh_total": 0,
+   "top": [
+    {
+     "root_id": 720575940633316307,
+     "cell_type": "CB0216",
+     "top_nt": "acetylcholine",
+     "w": 455
+    },
+    {
+     "root_id": 720575940645521262,
+     "cell_type": "CB0701",
+     "top_nt": "acetylcholine",
+     "w": 193
+    },
+    {
+     "root_id": 720575940609915204,
+     "cell_type": "CB0807",
+     "top_nt": "gaba",
+     "w": 93
+    },
+    {
+     "root_id": 720575940660219265,
+     "cell_type": "CB0701",
+     "top_nt": "acetylcholine",
+     "w": 92
+    },
+    {
+     "root_id": 720575940615583647,
+     "cell_type": "CB0572",
+     "top_nt": "glutamate",
+     "w": 88
+    },
+    {
+     "root_id": 720575940630246460,
+     "cell_type": "DNge137",
+     "top_nt": "acetylcholine",
+     "w": 80
+    },
+    {
+     "root_id": 720575940611502286,
+     "cell_type": "CB0572",
+     "top_nt": "glutamate",
+     "w": 79
+    },
+    {
+     "root_id": 720575940639634304,
+     "cell_type": "DNge022",
+     "top_nt": "acetylcholine",
+     "w": 75
+    },
+    {
+     "root_id": 720575940615666655,
+     "cell_type": "DNge022",
+     "top_nt": "acetylcholine",
+     "w": 65
+    },
+    {
+     "root_id": 720575940617552057,
+     "cell_type": "CB0807",
+     "top_nt": "gaba",
+     "w": 57
+    },
+    {
+     "root_id": 720575940607162754,
+     "cell_type": "CB0891",
+     "top_nt": "gaba",
+     "w": 50
+    },
+    {
+     "root_id": 720575940626073637,
+     "cell_type": "CB0912",
+     "top_nt": "glutamate",
+     "w": 50
+    }
+   ]
+  }
+ },
+ "v783_pair_edges": [
+  {
+   "neuropil": "GNG",
+   "syn_count": 455,
+   "gaba_avg": 0.029,
+   "ach_avg": 0.626,
+   "glut_avg": 0.208,
+   "oct_avg": 0.002,
+   "ser_avg": 0.018,
+   "da_avg": 0.116,
+   "pre_side": "left",
+   "post_side": "right"
+  },
+  {
+   "neuropil": "GNG",
+   "syn_count": 451,
+   "gaba_avg": 0.027,
+   "ach_avg": 0.624,
+   "glut_avg": 0.224,
+   "oct_avg": 0.002,
+   "ser_avg": 0.022,
+   "da_avg": 0.101,
+   "pre_side": "right",
+   "post_side": "left"
+  }
+ ],
+ "v783_nt_scores": {
+  "right": {
+   "ach_avg": 0.6394746471860082,
+   "gaba_avg": 0.026895264793539483,
+   "glut_avg": 0.2066350242848614,
+   "oct_avg": 0.002030163130013999,
+   "ser_avg": 0.024751974414976757,
+   "da_avg": 0.1002129259585615,
+   "n_out_syn_783": 2426,
+   "out_neuropils": {
+    "GNG": 2426
+   },
+   "in_neuropils": {
+    "GNG": 1738
+   }
+  },
+  "left": {
+   "ach_avg": 0.649530627451448,
+   "gaba_avg": 0.027714422788558048,
+   "glut_avg": 0.18176731794304674,
+   "oct_avg": 0.0024986482879462576,
+   "ser_avg": 0.022620951831910763,
+   "da_avg": 0.11586803212115074,
+   "n_out_syn_783": 2489,
+   "out_neuropils": {
+    "GNG": 2489
+   },
+   "in_neuropils": {
+    "GNG": 1856
+   }
+  }
+ }
+}

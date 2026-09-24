@@ -1,0 +1,169 @@
+{
+ "malecns_09": {
+  "n_match": 2,
+  "rows": [
+   {
+    "malecns_09_id": "10849",
+    "cell_type": "GNG117",
+    "fafb_cell_type": "CB0216",
+    "hemibrain_cell_type": NaN,
+    "side": "left",
+    "hemilineage": "putative_primary",
+    "region": "central_brain",
+    "super_class": "central_brain_intrinsic",
+    "neurotransmitter_predicted": "acetylcholine",
+    "neurotransmitter_score": "0.851631"
+   },
+   {
+    "malecns_09_id": "11755",
+    "cell_type": "GNG117",
+    "fafb_cell_type": "CB0216",
+    "hemibrain_cell_type": NaN,
+    "side": "right",
+    "hemilineage": "putative_primary",
+    "region": "central_brain",
+    "super_class": "central_brain_intrinsic",
+    "neurotransmitter_predicted": "acetylcholine",
+    "neurotransmitter_score": "0.835849"
+   }
+  ],
+  "pair_edges": [
+   {
+    "pre": "10849",
+    "post": "11755",
+    "count": 914
+   },
+   {
+    "pre": "11755",
+    "post": "10849",
+    "count": 973
+   }
+  ],
+  "out_syn": {
+   "10849": 22093,
+   "11755": 20789
+  },
+  "in_syn": {
+   "10849": 4442,
+   "11755": 3954
+  },
+  "top_out": {
+   "10849": [
+    {
+     "post": "11755",
+     "count": 914
+    },
+    {
+     "post": "514951",
+     "count": 302
+    },
+    {
+     "post": "13364",
+     "count": 282
+    }
+   ],
+   "11755": [
+    {
+     "post": "10849",
+     "count": 973
+    },
+    {
+     "post": "514951",
+     "count": 359
+    },
+    {
+     "post": "14290",
+     "count": 298
+    }
+   ]
+  }
+ },
+ "banc_888": {
+  "n_match": 2,
+  "rows": [
+   {
+    "banc_888_id": "720575941581820537",
+    "cell_type": "CB0216",
+    "fafb_cell_type": "CB0216",
+    "fafb_alignment_cell_type": "CB0216",
+    "hemibrain_cell_type": NaN,
+    "malecns_cell_type": NaN,
+    "side": "left",
+    "hemilineage": "putative_primary",
+    "region": "central_brain",
+    "super_class": "central_brain_intrinsic",
+    "neurotransmitter_predicted": "acetylcholine",
+    "neurotransmitter_score": "0.7077",
+    "neurotransmitter_verified": NaN
+   },
+   {
+    "banc_888_id": "720575941507571621",
+    "cell_type": "CB0216",
+    "fafb_cell_type": "CB0216",
+    "fafb_alignment_cell_type": "CB0216",
+    "hemibrain_cell_type": NaN,
+    "malecns_cell_type": "auto:GNG117",
+    "side": "right",
+    "hemilineage": "putative_primary",
+    "region": "central_brain",
+    "super_class": "central_brain_intrinsic",
+    "neurotransmitter_predicted": "acetylcholine",
+    "neurotransmitter_score": "0.6442",
+    "neurotransmitter_verified": NaN
+   }
+  ],
+  "pair_edges": [
+   {
+    "pre": "720575941507571621",
+    "post": "720575941581820537",
+    "count": 205
+   },
+   {
+    "pre": "720575941581820537",
+    "post": "720575941507571621",
+    "count": 237
+   }
+  ],
+  "out_syn": {
+   "720575941581820537": 888,
+   "720575941507571621": 1122
+  },
+  "in_syn": {
+   "720575941581820537": 808,
+   "720575941507571621": 1131
+  },
+  "top_out": {
+   "720575941581820537": [
+    {
+     "post": "720575941507571621",
+     "count": 237
+    },
+    {
+     "post": "720575941540344050",
+     "count": 26
+    },
+    {
+     "post": "720575941415889180",
+     "count": 22
+    }
+   ],
+   "720575941507571621": [
+    {
+     "post": "720575941581820537",
+     "count": 205
+    },
+    {
+     "post": "720575941623285450",
+     "count": 59
+    },
+    {
+     "post": "720575941415889180",
+     "count": 44
+    }
+   ]
+  }
+ },
+ "hemibrain_121": {
+  "n_match": 0
+ }
+}

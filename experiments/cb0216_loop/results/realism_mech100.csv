@@ -1,0 +1,7 @@
+input,on_ms,off_ms,cb_right_on_hz,cb_left_on_hz,cb_right_last1s_hz,cb_left_last1s_hz,mn9_left_last1s_hz,mn9_right_last1s_hz,n_nonsensory_active_last1s,spikes_last1s,last_spike_cb_right_ms,persistent,variant,seed,wall_s
+mech100,1000.0,5000.0,137.0,137.0,126.0,127.0,77.0,96.0,26,1158,5992.900000000001,True,adaptation,0,16.3
+mech100,1000.0,5000.0,138.0,137.0,127.0,127.0,78.0,93.0,26,1161,5997.1,True,adaptation,1,15.5
+mech100,1000.0,5000.0,139.0,138.0,127.0,127.0,78.0,98.0,26,1165,5997.900000000001,True,adaptation,2,15.7
+mech100,1000.0,5000.0,140.0,139.0,151.0,151.0,90.0,121.0,25,1527,5994.1,True,conductance,0,27.1
+mech100,1000.0,5000.0,141.0,140.0,151.0,151.0,89.0,121.0,25,1510,5993.6,True,conductance,1,26.6
+mech100,1000.0,5000.0,85.0,85.0,151.0,151.0,90.0,120.0,25,1509,5998.700000000001,True,conductance,2,26.8

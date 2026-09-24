@@ -1,0 +1,10 @@
+input,on_ms,off_ms,cb_right_on_hz,cb_left_on_hz,cb_right_last1s_hz,cb_left_last1s_hz,mn9_left_last1s_hz,mn9_right_last1s_hz,n_nonsensory_active_last1s,spikes_last1s,last_spike_cb_right_ms,persistent,variant,seed,wall_s
+mech100,1000.0,5000.0,161.0,161.0,157.0,157.0,105.0,125.0,33,1897,5996.200000000001,True,intact,0,10.2
+mech100,1000.0,5000.0,161.0,161.0,157.0,157.0,105.0,125.0,34,1909,5999.900000000001,True,intact,1,10.0
+mech100,1000.0,5000.0,163.0,162.0,157.0,157.0,105.0,125.0,34,1907,5996.3,True,intact,2,10.3
+mech100,1000.0,5000.0,52.0,32.0,0.0,0.0,0.0,0.0,0,0,981.1,False,silence_right,0,9.9
+mech100,1000.0,5000.0,50.0,32.0,0.0,0.0,0.0,0.0,0,0,992.4000000000001,False,silence_right,1,9.8
+mech100,1000.0,5000.0,56.0,34.0,0.0,0.0,0.0,0.0,0,0,986.6,False,silence_right,2,9.8
+mech100,1000.0,5000.0,41.0,44.0,0.0,0.0,0.0,0.0,0,0,998.2,False,silence_left,0,9.6
+mech100,1000.0,5000.0,38.0,43.0,0.0,0.0,0.0,0.0,0,0,976.2,False,silence_left,1,9.9
+mech100,1000.0,5000.0,39.0,43.0,0.0,0.0,0.0,0.0,0,0,990.7,False,silence_left,2,9.9

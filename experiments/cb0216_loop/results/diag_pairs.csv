@@ -1,0 +1,6 @@
+names,w_ab,w_ba,alone_hz,whole_brain_hz,member_spikes_first100ms,n_other_cells_fired_first100ms,inh_synapses_back_from_them,exc_synapses_back_from_them,top_other_cells
+CB0216[r] <-> CB0216[l],451,455,156 156,156 158,32,31,37,32,"CB0701(acet):12, CB0572(glut):10, CB0807(gaba):10, CB0701(acet):10"
+LT1a[l] <-> LT1b[l],252,268,108 110,0 0,2,42,333,168,"?(gaba):2, ?(gaba):2, ?(gaba):2, AVLP435a(acet):2"
+CB0756[r] <-> CB0756[l],229,221,94 94,0 0,2,18,370,76,"CB0700(acet):2, ?(gaba):2, CB0700(glut):2, CB0724(gaba):1"
+LT1b[r] <-> LT1a[r],188,180,72 70,0 0,1,6,479,2,"?(glut):1, ?(gaba):1, ?(gaba):1, ?(gaba):1"
+?[l] <-> ?[r],175,146,0 0,0 0,2,0,0,0,

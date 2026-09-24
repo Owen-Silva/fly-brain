@@ -3022,3 +3022,90 @@ No literature search was done for other robust minimal feeding circuits.
 - On the $17 RP2350 board it would need about 10 KB of memory and about a fifth of one
   core, so it should run in real time with about 5 times to spare. That is arithmetic,
   not a test on the chip. The file a firmware lane needs is ready.
+
+## 2026-09-24 - The CB0216 loop that keeps the brain firing after input stops: real excitatory wiring in three connectomes, not a sign error; the endless lock-in is unverified (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`, and the default model
+(`"al_ln_literature"`) is unchanged. New folder `experiments/cb0216_loop/` (identify,
+cross-dataset, reproduction, loop-search and diagnosis scripts, `results/`) and
+`docs/cb0216-loop.md`. Pass rules R1-R5 were written into the doc before any
+simulation was run. Fast engine, `n_threads=1`, one simulation at a time; about 35 minutes
+of compute in total.
+
+**What happened.**
+- **Identity.** Two cells, one per side: 720575940633316307 (right) and
+  720575940636552805 (left). Both are central intrinsic cells of the gnathal ganglion
+  (GNG) with a putative primary hemilineage. They are the only two CB0216 cells in both
+  annotation releases. All of their synapses are in the GNG. FlyWire predicts
+  acetylcholine at 0.639 / 0.650 (v783: 0.642 / 0.652); `known_nt` is empty. The average
+  synapse scores are ACh 0.64-0.65, Glu 0.18-0.21, DA 0.10-0.12 and GABA 0.03. They have
+  451 and 455 synapses onto each other (identical in the model and the v783 table). Each
+  is the other's largest output (18%) and largest input (24-26%). They send 553 synapses
+  onto the two MN9 motor neurons.
+- **Other connectomes.** In maleCNS 0.9 (type GNG117) the pair has 914 / 973 mutual
+  synapses and ACh at 0.852 / 0.836. In BANC 888 it has 237 / 205 and ACh at
+  0.708 / 0.644. In both, each cell is the other's top output. The hemibrain has no match,
+  since it does not cover the GNG.
+- **R1 PASS.** After the input stops, both cells fire at 156-157 Hz in the last second of
+  5 s, in 3/3 seeds, for the reservoir lane's input (400 Hz peak) and for all touch
+  sensors at 100 Hz. MN9 fires at 104-105 / 125-126 Hz, and 31-32 other cells stay on.
+- **R2 PASS.** Silencing either cell gives 0 Hz for both and 0 other active cells, in
+  12/12 runs.
+- **Switch-on.** One spike in either cell is enough. Touch input switches it on: all
+  mechanosensory cells at 50 Hz for 1 s or 100 Hz for 100 ms, but not at 20 Hz or for
+  20 ms. Only the 50 mechanosensory cells of "unknown" sub-class do it (35 via the
+  maxillary-labial nerve, 15 via the antennal nerve). Sugar, bitter, water, Ir94e, smell,
+  vision, humidity and temperature input do not. CB0216 is at 0 Hz during sugar, so the
+  Phase 3 sugar -> MN9 result does not involve it.
+- **Robustness.** Adaptation on: 126-127 Hz. Conductance-based synapses on: 151 Hz (3/3
+  seeds each). Mutual synapses set by hand: it holds at 205 or more (205: 2/3 seeds;
+  237: 99 Hz; 300: 122 Hz) and never at 150 or fewer. The one-spike arithmetic threshold
+  is about 162.
+- **Off-switch.** Driving the pair's two GABA inputs for 0.1 s stops it in 3/3 seeds; the
+  DNge160 pair stops it in 2/3. Nothing drives these inputs at rest in the model.
+- **R3.** The search found 357 reciprocal excitatory pairs (at least 30 synapses each
+  way), 158 excitatory 3-cycles and 0 autapses. Of the top 60 pairs and 30 cycles tested,
+  only CB0216 self-sustains (it also holds on seeds 1 and 2). Three other pairs are above
+  the one-spike threshold: LT1a/LT1b on the left (252/268) and on the right (188/180),
+  and CB0756 (229/221). Isolated, they hold at 70-110 Hz. In the whole brain they die
+  after 1-2 spikes, because the cells they fire send 333-479 inhibitory synapses back.
+  For CB0216 that number is 37.
+- **Literature.** No publication names CB0216 or GNG117. There is no staining and no
+  recording. Eckstein et al. 2024 (Cell) report 94% neuron-level accuracy and 91% for
+  known cholinergic types; consistent left/right pairs average 0.79 confidence.
+  MN9 activation extends the proboscis (McKellar et al. 2020, eLife); MN9 is driven by
+  sugar and inhibited by bitter (Gordon & Scott 2009, Neuron; abstract). Loop-held
+  persistent activity is real in flies elsewhere (Zhao et al. 2018, eLife:
+  MBgamma > M6 > aSP13, minutes).
+- **R4 verdict (rule fixed in advance): biology (plausible).** ACh comes from maleCNS
+  (0.84-0.85) and BANC on top of FlyWire. The wiring is in both other connectomes,
+  nothing contradicts it, and the loop survives both realism upgrades. **R5 not run**:
+  there is no supported sign correction, so no variant was built.
+
+**Validated?** No: PRELIMINARY. Done: 3 seeds for R1/R2 and the realism upgrades; two
+switch-on inputs; a weight sweep; the IDs, synapse counts and sign checked against the
+v783 table; the isolated pair reproduces the rate; a cross-check in two other
+connectomes; a literature search. One protocol mistake was found and fixed before
+scoring (directly driven cells were given no refractory period, which produced a
+471 Hz state). Not done: any real recording. The rule tests the sign and the wiring, not
+whether a real pair holds on for seconds. The model lacks synaptic depression or
+saturation and background activity. Its adaptation is only the Phase 7 calibration.
+The endless 156 Hz lock-in is probably exaggerated.
+
+**New or reproduction?** New. It explains the reservoir lane's persistence finding. We
+found no prior report on this cell type.
+
+**Plain English.**
+- The brain model has one pair of neurons that, once started, never stop. We checked
+  whether that was a labelling mistake like the earlier smell runaway. It is not. The
+  two cells really are wired strongly to each other in three different fly brains, and
+  every source says they are the excitatory kind.
+- A single spike, or a short touch to the proboscis sensors, turns them on. After that
+  they keep the proboscis motor neurons firing for as long as we simulate. Silencing
+  either cell stops it.
+- Many other pairs in the brain are wired just as strongly. They switch themselves off
+  because the cells they excite send a brake straight back. CB0216 has almost no such
+  brake, which is why it is the only loop that holds.
+- It does not touch the sugar -> feeding result. Whether a real fly's CB0216 cells
+  really stay on after a touch is unknown. Nobody has recorded them, and the model
+  leaves out synapse fatigue, which would probably shorten it.
