@@ -1446,3 +1446,87 @@ second fly's data has a gap: in almost half its smell neurons the branch that cr
 the far side is missing. That makes it look perfect when it isn't, so we compared using
 only complete neurons. Which glomeruli are lopsided differs from fly to fly, so the lean
 is a FlyWire quirk, not a rule of fly wiring.
+
+## 2026-09-23 - Phase 6 step 3: literature check of the bitter brake (CB0219), the runaway and the left/right imbalance (PRELIMINARY)
+
+**What was changed.** Nothing in the model, code or data. New document
+`docs/phase6-literature-check.md`. No simulations. Read-only look-ups:
+- in local files: both FlyWire annotation tables, the snapshot 630 connection list, the
+  snapshot 783 connection table, the model repository's list of named SEZ neurons, and
+  the steering lane's per-glomerulus table;
+- in the public Virtual Fly Brain database (its search index and graph database).
+
+Papers were read through PubMed Central / Europe PMC full text, arXiv PDFs, abstracts
+and GitHub READMEs. Each source is labelled full text or abstract in the doc.
+
+**What happened.**
+- **CB0219 is "Scapula" (KNOWN).**
+  - The Scott lab's 2022 tracing of Scapula (Shiu et al. 2022, *eLife*; FAFB CATMAID
+    16887116) best matches our CB0219-left by shape (NBLAST 0.81, Virtual Fly Brain) and
+    next CB0219-right (0.66).
+  - The FlyBase ontology class "adult CB0219 neuron" has the male CNS name GNG087.
+  - The wiring matches the 2022 description: in 630 the model's 21 bitter GRNs give
+    CB0219 359 synapses, the second-largest bitter input of any named type, and none
+    come from sugar GRNs. It inhibits the premotor neurons Roundup (47/36 synapses),
+    Rounddown (DNge080, 105/105) and Roundtree (CB0493, 142/141). It sends at most 8
+    synapses to the other named sugar-pathway neurons.
+  - The male CNS also predicts glutamate for GNG087 (0.72-0.79).
+  - Shiu 2022 had already proposed "sugar and bitter tastes are integrated at feeding
+    initiation premotor neurons", backed by calcium imaging (Roundup suppressed by
+    bitter, G2N-1 not).
+  - Jacobs et al. 2024 (*Cell Rep* 43:114782; abstract read, full text blocked) ran
+    connectome simulations. Search excerpts say "bitter suppression of Roundup and MN9
+    was abolished by silencing Scapula but not Mime or Marge". Marge = CB0812, our
+    rank-5 candidate.
+  - No real-fly experiment on Scapula itself was found. Bohra et al. 2018's pair of
+    bitter SEZ interneurons (silencing: proboscis extension to sucrose + quinine 5% ->
+    25%) may or may not be the same cells.
+- **The runaway (PARTLY KNOWN).**
+  - The paper, its 10 GitHub issues, the model author's 2025 review and later papers
+    do not report it.
+  - Some modellers expected instability and scaled weights down to avoid it (Wang et al.
+    2025, Loihi 2; Pospisil et al. 2024).
+  - A public, non-peer-reviewed project (Jadog1122/fly-with-a-real-brain, created
+    2026-09-12, snapshot 783) reports the same state: all 53 glomeruli give "~8,300
+    neurons active", the network is bistable, and they "did not localise the runaway".
+  - Our cause (antennal-lobe eLNs) and fix were not found anywhere.
+  - Transmitters: FlyWire v783 guesses for lLN1_bc are mixed and weak (11 acetylcholine
+    / 12 dopamine / 7 serotonin, confidence about 0.3). The male CNS predictions (Berg
+    et al. 2025, via Virtual Fly Brain) call 30 of 30 lLN1_bc and most lLN2T cells
+    acetylcholine (0.7-0.8), confirming the Phase 7 audit.
+- **The left/right imbalance (PARTLY KNOWN).**
+  - Schlegel et al. 2024: FlyWire is "mostly" symmetric, and about 1 cell type in 6
+    differs in number between the sides.
+  - Also Schlegel et al. 2024: synapse completion differs by side and region, and
+    dark-cytosol artefacts that hide synapses are "much" more common in sensory neurons
+    (their example: a DM3 PN, dark on the left only).
+  - No DM1-specific report was found.
+  - DM1 has 35 left vs 33 right ORNs, so the 52% synapse gap is not an ORN-count gap.
+    Across the 53 glomeruli of snapshot 783, synapse asymmetry follows ORN-count
+    asymmetry only weakly (r = 0.16).
+  - Real flies turn toward one-sided DM1 activation (Gaudry et al. 2013), so the model
+    contradicts biology here.
+- Citation fix spotted for docs/phase5-competition.md: French et al. 2015 is *J
+  Neurosci* 35(9):3990-4004, not 35:9542.
+
+**Validated?** PRELIMINARY as a whole.
+- VALIDATED: the CB0219 = Scapula identification (shape, ontology, wiring and two papers
+  agree). The old-to-new root-ID step needs a FlyWire login and was not done.
+- PRELIMINARY: the Jacobs 2024 silencing claim (excerpts only), Bohra 2018 (abstract
+  plus preprint extract), and the READMEs (not peer-reviewed; not reproduced by us).
+- "Not found" means not found in Europe PMC, PubMed Central, arXiv, GitHub, Virtual Fly
+  Brain and web search. Paywalled full texts and the FlyWire forum were not searched.
+- Nothing shared, no one contacted.
+
+**Plain English.** We checked whether our three surprises were already known. The
+neuron that acts as the model's "bitter brake" was already named "Scapula" by a fly lab
+in 2022. They predicted from the wiring that it stops feeding when food tastes bitter,
+and at least one later modelling paper seems to have found what we found. So that one is
+a confirmation, not a discovery. The model is getting a known answer, and the real-fly
+test of that neuron still hasn't been done. The runaway, where smell input locks the
+simulated brain into non-stop firing, has been noticed by at least one other hobbyist.
+Nobody has explained it; our explanation and fix look new, and this is the finding
+worth telling the model's authors about (Owen's call). The left/right difference in the
+smell centre isn't reported anywhere. The FlyWire authors warn that sensory neurons are
+more prone to reconstruction problems on one side, so it may be a flaw in this one
+reconstruction rather than a real difference; a second brain has to settle it.
