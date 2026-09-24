@@ -1530,3 +1530,76 @@ worth telling the model's authors about (Owen's call). The left/right difference
 smell centre isn't reported anywhere. The FlyWire authors warn that sensory neurons are
 more prone to reconstruction problems on one side, so it may be a flaw in this one
 reconstruction rather than a real difference; a second brain has to settle it.
+
+## 2026-09-23 - Claims audit: do the numbers we quote match the saved results? (PRELIMINARY)
+
+**What was changed.** Nothing in the model, the app, the tests or any existing doc. New:
+`experiments/claims_audit/audit.py`, which recomputes every number quoted on the results
+overview page and in the docs' short versions from the rawest saved files (every Phase 3
+spike, per-trial tables, the raw connection lists via row-count metadata and two batched
+column passes, the per-seed steering rates, the per-fly learning tables, the DA1 trial
+table). It writes `results/audit.csv` (82 rows: claim, where quoted, quoted value,
+recomputed value, source file, status, note). Write-up: `docs/claims-audit.md`. No
+simulation was run and the whole brain was never loaded. The script waits for 1.5 GB of
+free RAM before the connection-list passes. It runs in about a minute.
+
+**What happened.**
+- 65 requested claims: 51 MATCH, 1 MISMATCH, 6 AMBIGUOUS, 7 NO-SOURCE. 17 extra claims found
+  on the way: 11 MATCH, 3 MISMATCH, 2 AMBIGUOUS, 1 NO-SOURCE.
+- Every headline number reproduces from raw data. Phase 3 MN9 for all 7 experiments (sugar
+  at 100 Hz: 67.00 Hz from the 10 trials' spikes). The paper's 65.7 / 93.2 match the paper's
+  own Supplementary Table 1A (65.70 / 93.23). 12 of 12 direction checks, re-derived; two of
+  them are the same comparison, so 11 are distinct. Counts from the raw data files: 127,400 /
+  14,687,178 (630), 138,639 / 15,091,983 / 54,492,922 (783). CB0219 gets 247 synapses from
+  bitter GRNs and 0 from sugar GRNs. DM1's left PN gets 3,724 receptor synapses vs the right
+  PN's 2,450 (+52.0%). Silencing screen r = 0.9305 / 0.9334 over 198 neurons. Hill fit
+  redone: b50/sugar 0.465-0.561. CB0219 rescue 12.36 -> 65.70 Hz (97.6%). Sugar holds in
+  28/28 + 15/15, -47.2% to +18.7%; water flips in 3/28 + 1/15. DM1 90/90 vs 0/90, Ir94e
+  10/90. DA1 22.69 vs 1.01 and 15.73 vs 0.14 Hz. All ten circuit learning numbers. Body demo
+  counts and p-values (Mann-Whitney 0.00058). Clip A is 2nd of 12 (63.2 deg).
+- The one requested MISMATCH is a label on the results page: the neuron that lost 91% is
+  called the "avoid" output neuron. It is MBON-γ1pedc>α/β, the "approach" neuron in
+  `docs/phase8-learning.md` and in the analysis code.
+- AMBIGUOUS:
+  - "12 of 12" for the one-antenna fly counts wins over the same-seed silenced fly; in
+    absolute terms 11 of 12 turned toward the smelling side. The silenced fly's "0 deg" is
+    exactly zero by design: its per-seed drift (+9.4, -6.8, -14.4 deg) is the same in every
+    layout and cancels across mirrored layouts.
+  - "Every runaway begins at the 38 eLNs": in the 50 ms before onset, the first neuron to
+    fire is one of the 38 in 3 of the 6 traced runaways (another antennal-lobe local neuron
+    in 1, an unlabelled neuron in 2). eLNs are 0-3 of the first 10 to fire; antennal-lobe
+    local neurons of any kind are 5-7. Phase 7 found DM1 still runs away in 90/90 trials
+    with only the eLNs fixed.
+  - "About 8,300 neurons": the saved runaway trials give a median of about 8,200 that fire,
+    and about 7,700 still firing at the end.
+  - Brian2 "1-4 minutes": the 55 saved trials took 1.0-6.5 min (median 1.9).
+  - "Hundreds of times faster" (page) vs "about 100 times" (fast-engine doc).
+  - "Counts match FlyWire's": the synapse counts match, but the neuron count is 616 short
+    (all of them zero-synapse neurons).
+- NO-SOURCE: five of the paper's Phase 3 numbers (water 30.7, bitter 0.0, sugar+bitter 45.3
+  and 1.5, sugar+Ir94e 64.3; the authors' result CSVs were never saved). The app-equals-code
+  check (printed, not saved). Hige's 90% (literature; `calibration.json` shows the learning
+  speed was fitted to a 90% drop, so the 91% match is by design). "211 tests pass" (no saved
+  full-suite log).
+- Extra MISMATCHes, all inside doc bodies: `docs/phase3-explained.md` "16 or 17 more active
+  neurons" (at 100 Hz it is 12 more), and it names a `results/v783/` folder that does not
+  exist; `docs/phase5-competition.md` "seeds differ by at most about 1 Hz" (up to 3.1 Hz).
+- The page's "28,101 lines / 26 commits / 24 write-ups" are exact at commit 9bcdac4. HEAD
+  has moved on since (29,339 / 27 / 25 when checked).
+
+**Validated?** This is a check of reporting, not a new result. Each status was re-derived
+by code from saved files. The audit's own mistakes were caught and fixed before the final
+run: 18-digit neuron IDs losing precision through floats; a "first neuron" test that
+picked up chance spikes hundreds of ms before onset; a claim that the silenced fly always
+drifts left (it does not). Not checked: anything that needs a new simulation (the app
+comparison, the full test suite), and the paper-side numbers with no local copy.
+
+**Plain English.** We went back through every number on the results page and in the
+write-ups' summaries and recomputed each one from the saved raw results. 51 of the 65 we
+were asked to check come out exactly the same. One thing on the page is wrong: it calls
+the learning neuron the "avoid" neuron when it is the "approach" one. A few others are
+correct but worded in a way that can mislead, like "12 of 12" when, in plain terms, 11 of
+12 flies turned toward the smell. Some numbers can't be checked because the file they came
+from was never saved. The most important of these is the real-fly learning number, which
+the model was tuned to match. None of this changes a conclusion; `docs/claims-audit.md`
+lists the exact line and a suggested rewording for each.
