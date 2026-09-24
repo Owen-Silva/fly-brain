@@ -1,0 +1,3223 @@
+{
+ "label": "PRELIMINARY",
+ "chosen_checkpoint": 411,
+ "stage": "3-conn-blocks",
+ "n_neurons": 95,
+ "n_connections": 1236,
+ "n_synapses": 27295,
+ "n_inhibitory_connections": 292,
+ "max_synapses": 561,
+ "heldout": {
+  "seed0": {
+   "w-20": {
+    "S100": [
+     33.5,
+     36.6
+    ],
+    "S200": [
+     78.9,
+     82.4
+    ],
+    "err_S100": -0.084,
+    "err_S200": -0.042,
+    "brake": 0.86,
+    "SB": [
+     2.3,
+     0.5
+    ],
+    "bitter_max": 0.0
+   },
+   "w+20": {
+    "S100": [
+     83.8,
+     79.7
+    ],
+    "S200": [
+     104.7,
+     100.1
+    ],
+    "err_S100": 0.052,
+    "err_S200": 0.046,
+    "brake": 0.56,
+    "SB": [
+     47.1,
+     13.8
+    ],
+    "bitter_max": 0.0
+   },
+   "int8": {
+    "S100": [
+     68.4,
+     67.6
+    ],
+    "S200": [
+     97.5,
+     92.9
+    ],
+    "err_S100": 0.011,
+    "err_S200": 0.049,
+    "brake": 0.85,
+    "SB": [
+     14.8,
+     4.4
+    ],
+    "bitter_max": 0.0
+   },
+   "normal": {
+    "S100": [
+     72.5,
+     67.6
+    ],
+    "S200": [
+     96.3,
+     92.9
+    ],
+    "err_S100": 0.072,
+    "err_S200": 0.036,
+    "brake": 0.8,
+    "SB": [
+     21.7,
+     4.4
+    ],
+    "bitter_max": 0.0
+   },
+   "water": {
+    "W100": [
+     0.0,
+     0.0
+    ],
+    "W200": [
+     0.0,
+     31.0
+    ]
+   }
+  },
+  "seed1": {
+   "w-20": {
+    "S100": [
+     32.6,
+     35.1
+    ],
+    "S200": [
+     77.8,
+     82.1
+    ],
+    "err_S100": -0.072,
+    "err_S200": -0.052,
+    "brake": 0.86,
+    "SB": [
+     2.7,
+     0.1
+    ],
+    "bitter_max": 0.0
+   },
+   "w+20": {
+    "S100": [
+     84.8,
+     77.2
+    ],
+    "S200": [
+     104.7,
+     99.8
+    ],
+    "err_S100": 0.098,
+    "err_S200": 0.049,
+    "brake": 0.6,
+    "SB": [
+     46.9,
+     14.3
+    ],
+    "bitter_max": 0.0
+   },
+   "int8": {
+    "S100": [
+     69.4,
+     67.3
+    ],
+    "S200": [
+     96.8,
+     93.3
+    ],
+    "err_S100": 0.031,
+    "err_S200": 0.038,
+    "brake": 0.85,
+    "SB": [
+     15.0,
+     3.6
+    ],
+    "bitter_max": 0.0
+   },
+   "normal": {
+    "S100": [
+     73.2,
+     67.3
+    ],
+    "S200": [
+     97.0,
+     93.3
+    ],
+    "err_S100": 0.088,
+    "err_S200": 0.04,
+    "brake": 0.81,
+    "SB": [
+     21.5,
+     3.6
+    ],
+    "bitter_max": 0.0
+   },
+   "water": {
+    "W100": [
+     0.0,
+     0.0
+    ],
+    "W200": [
+     0.0,
+     30.8
+    ]
+   }
+  },
+  "seed2": {
+   "w-20": {
+    "S100": [
+     32.6,
+     34.5
+    ],
+    "S200": [
+     77.0,
+     82.3
+    ],
+    "err_S100": -0.056,
+    "err_S200": -0.064,
+    "brake": 0.89,
+    "SB": [
+     2.1,
+     0.2
+    ],
+    "bitter_max": 0.0
+   },
+   "w+20": {
+    "S100": [
+     84.3,
+     77.4
+    ],
+    "S200": [
+     104.0,
+     97.7
+    ],
+    "err_S100": 0.09,
+    "err_S200": 0.064,
+    "brake": 0.59,
+    "SB": [
+     46.0,
+     12.9
+    ],
+    "bitter_max": 0.0
+   },
+   "int8": {
+    "S100": [
+     67.3,
+     66.2
+    ],
+    "S200": [
+     96.4,
+     93.8
+    ],
+    "err_S100": 0.017,
+    "err_S200": 0.027,
+    "brake": 0.85,
+    "SB": [
+     15.1,
+     4.9
+    ],
+    "bitter_max": 0.0
+   },
+   "normal": {
+    "S100": [
+     70.9,
+     66.2
+    ],
+    "S200": [
+     99.2,
+     93.8
+    ],
+    "err_S100": 0.071,
+    "err_S200": 0.057,
+    "brake": 0.79,
+    "SB": [
+     22.5,
+     4.9
+    ],
+    "bitter_max": 0.0
+   },
+   "water": {
+    "W100": [
+     0.0,
+     0.0
+    ],
+    "W200": [
+     0.0,
+     30.3
+    ]
+   }
+  }
+ },
+ "inputs": {
+  "SUGAR": 18,
+  "WATER": 0,
+  "BITTER": 6
+ },
+ "n_relay": 70,
+ "relay_types": {
+  "DNge163": [
+   "720575940606866377"
+  ],
+  "CB0553": [
+   "720575940607272649",
+   "720575940623211725"
+  ],
+  "CB0473": [
+   "720575940607386290"
+  ],
+  "CB0538": [
+   "720575940609405635"
+  ],
+  "DNge080": [
+   "720575940609407939",
+   "720575940627847752"
+  ],
+  "DNge173": [
+   "720575940610001220"
+  ],
+  "CB0603": [
+   "720575940610258552",
+   "720575940627779983"
+  ],
+  "CB0791": [
+   "720575940611436408",
+   "720575940624906483"
+  ],
+  "CB0277": [
+   "720575940612611301"
+  ],
+  "CB0799": [
+   "720575940612692633"
+  ],
+  "CB0480": [
+   "720575940612906518",
+   "720575940639285949"
+  ],
+  "CB0366": [
+   "720575940614763666"
+  ],
+  "DNge031": [
+   "720575940615041430",
+   "720575940644653348"
+  ],
+  "CB0548": [
+   "720575940615296818"
+  ],
+  "DNge059": [
+   "720575940615671106",
+   "720575940619877396"
+  ],
+  "CB0062": [
+   "720575940616103218"
+  ],
+  "CB0501": [
+   "720575940617593233"
+  ],
+  "CB0824": [
+   "720575940619114048",
+   "720575940624023188"
+  ],
+  "CB0559": [
+   "720575940619473624"
+  ],
+  "DNge062": [
+   "720575940619853515"
+  ],
+  "CB0219": [
+   "720575940620062288",
+   "720575940624600840"
+  ],
+  "CB0616": [
+   "720575940620874757"
+  ],
+  "CB0821": [
+   "720575940621399899"
+  ],
+  "CB0460": [
+   "720575940621422518",
+   "720575940647518340"
+  ],
+  "CB0438": [
+   "720575940621771041"
+  ],
+  "CB0248": [
+   "720575940622695448",
+   "720575940627383685"
+  ],
+  "(unlabelled 720575940623210445)": [
+   "720575940623210445"
+  ],
+  "CB0030": [
+   "720575940623453959"
+  ],
+  "CB0087": [
+   "720575940625047484"
+  ],
+  "CB0883": [
+   "720575940625102692"
+  ],
+  "CB0714": [
+   "720575940625175054"
+  ],
+  "CB0902": [
+   "720575940625178768"
+  ],
+  "CB0788": [
+   "720575940625737776"
+  ],
+  "CB0419": [
+   "720575940626495746"
+  ],
+  "CB0896": [
+   "720575940626626597"
+  ],
+  "CB0542": [
+   "720575940628972048"
+  ],
+  "CB0192": [
+   "720575940629888530"
+  ],
+  "CB0177": [
+   "720575940630579574"
+  ],
+  "CB0449": [
+   "720575940630667372"
+  ],
+  "CB0855": [
+   "720575940630820919",
+   "720575940635578303"
+  ],
+  "CB0573": [
+   "720575940631349335"
+  ],
+  "CB0872": [
+   "720575940631703608"
+  ],
+  "DNge042": [
+   "720575940631959097"
+  ],
+  "CB0393": [
+   "720575940632047890"
+  ],
+  "(unlabelled 720575940632134227)": [
+   "720575940632134227"
+  ],
+  "CB0561": [
+   "720575940632159519"
+  ],
+  "CB0493": [
+   "720575940632252743"
+  ],
+  "CB0051": [
+   "720575940632365905"
+  ],
+  "CB0008": [
+   "720575940632648612"
+  ],
+  "CB0465": [
+   "720575940636809646"
+  ],
+  "CB0467": [
+   "720575940636828334"
+  ],
+  "CB0190": [
+   "720575940637144944"
+  ],
+  "CB0499": [
+   "720575940638103349"
+  ],
+  "(unlabelled 720575940640839120)": [
+   "720575940640839120"
+  ],
+  "DNge051": [
+   "720575940649829241"
+  ],
+  "CB0020": [
+   "720575940652580086"
+  ],
+  "(unlabelled 720575940655014049)": [
+   "720575940655014049"
+  ],
+  "CB0247": [
+   "720575940660223873"
+  ]
+ },
+ "relay_transmitters": {
+  "gaba": 21,
+  "acetylcholine": 41,
+  "glutamate": 7,
+  "dopamine": 1
+ },
+ "named_types": {
+  "Roundup": [
+   2,
+   2
+  ],
+  "G2N-1": [
+   1,
+   2
+  ],
+  "Zorro": [
+   1,
+   2
+  ],
+  "Rattle": [
+   1,
+   2
+  ],
+  "Clavicle": [
+   1,
+   2
+  ],
+  "FMIn": [
+   1,
+   2
+  ],
+  "Fdg": [
+   0,
+   2
+  ],
+  "Bract": [
+   1,
+   4
+  ],
+  "Phantom": [
+   1,
+   2
+  ],
+  "Usnea": [
+   1,
+   2
+  ],
+  "Sternum": [
+   1,
+   2
+  ],
+  "Rounddown": [
+   2,
+   2
+  ],
+  "Roundtree": [
+   1,
+   2
+  ],
+  "DNge062": [
+   1,
+   2
+  ],
+  "CB0880": [
+   0,
+   2
+  ],
+  "Scapula": [
+   1,
+   1
+  ]
+ },
+ "overlap_with_36_neuron_circuit": 34,
+ "family": [
+  {
+   "note": "top 600",
+   "n_neurons": "600",
+   "n_connections": "29588",
+   "n_synapses": "313821",
+   "pass_search": "True",
+   "pass_rule_seed7": "True",
+   "normal_W200": "30.3",
+   "w-20_err_S100": "-0.0029",
+   "w-20_err_S200": "0.0004",
+   "w-20_brake_ratio": "0.997",
+   "w+20_err_S100": "0.0182",
+   "w+20_err_S200": "0.0213",
+   "w+20_brake_ratio": "1.0192",
+   "int8_err_S100": "-0.0398",
+   "int8_err_S200": "-0.0007",
+   "int8_brake_ratio": "0.8984",
+   "normal_err_S100": "-0.0184",
+   "normal_err_S200": "0.0021",
+   "normal_brake_ratio": "0.9766"
+  },
+  {
+   "note": "top 500",
+   "n_neurons": "500",
+   "n_connections": "24478",
+   "n_synapses": "253014",
+   "pass_search": "True",
+   "pass_rule_seed7": "True",
+   "normal_W200": "30.3",
+   "w-20_err_S100": "0.0304",
+   "w-20_err_S200": "-0.0205",
+   "w-20_brake_ratio": "1.0308",
+   "w+20_err_S100": "0.0138",
+   "w+20_err_S200": "0.0206",
+   "w+20_brake_ratio": "0.9662",
+   "int8_err_S100": "-0.0223",
+   "int8_err_S200": "-0.0238",
+   "int8_brake_ratio": "0.9218",
+   "normal_err_S100": "-0.0213",
+   "normal_err_S200": "-0.0267",
+   "normal_brake_ratio": "0.9755"
+  },
+  {
+   "note": "top 400",
+   "n_neurons": "400",
+   "n_connections": "18894",
+   "n_synapses": "202495",
+   "pass_search": "True",
+   "pass_rule_seed7": "True",
+   "normal_W200": "30.2",
+   "w-20_err_S100": "0.0412",
+   "w-20_err_S200": "-0.012",
+   "w-20_brake_ratio": "1.0446",
+   "w+20_err_S100": "0.0333",
+   "w+20_err_S200": "0.0352",
+   "w+20_brake_ratio": "0.9938",
+   "int8_err_S100": "-0.0519",
+   "int8_err_S200": "-0.0007",
+   "int8_brake_ratio": "0.8963",
+   "normal_err_S100": "-0.0175",
+   "normal_err_S200": "-0.0085",
+   "normal_brake_ratio": "0.9771"
+  },
+  {
+   "note": "top 300",
+   "n_neurons": "300",
+   "n_connections": "12814",
+   "n_synapses": "138746",
+   "pass_search": "False",
+   "pass_rule_seed7": "False",
+   "normal_W200": "34.03",
+   "w-20_err_S100": "-0.1904",
+   "w-20_err_S200": "-0.0639",
+   "w-20_brake_ratio": "0.8115",
+   "w+20_err_S100": "0.0009",
+   "w+20_err_S200": "0.0447",
+   "w+20_brake_ratio": "0.9548",
+   "int8_err_S100": "0.0257",
+   "int8_err_S200": "0.0171",
+   "int8_brake_ratio": "1.0344",
+   "normal_err_S100": "-0.0407",
+   "normal_err_S200": "-0.0235",
+   "normal_brake_ratio": "0.9708"
+  },
+  {
+   "note": "top 250",
+   "n_neurons": "250",
+   "n_connections": "9271",
+   "n_synapses": "110197",
+   "pass_search": "False",
+   "pass_rule_seed7": "False",
+   "normal_W200": "27.47",
+   "w-20_err_S100": "-0.2826",
+   "w-20_err_S200": "-0.0185",
+   "w-20_brake_ratio": "0.7192",
+   "w+20_err_S100": "0.1319",
+   "w+20_err_S200": "0.1157",
+   "w+20_brake_ratio": "1.08",
+   "int8_err_S100": "0.0228",
+   "int8_err_S200": "0.0367",
+   "int8_brake_ratio": "1.0182",
+   "normal_err_S100": "0.0218",
+   "normal_err_S200": "0.0673",
+   "normal_brake_ratio": "1.0203"
+  },
+  {
+   "note": "top 200",
+   "n_neurons": "200",
+   "n_connections": "6297",
+   "n_synapses": "82363",
+   "pass_search": "False",
+   "pass_rule_seed7": "False",
+   "normal_W200": "14.57",
+   "w-20_err_S100": "-0.581",
+   "w-20_err_S200": "0.0502",
+   "w-20_brake_ratio": "0.4206",
+   "w+20_err_S100": "0.2725",
+   "w+20_err_S200": "0.2294",
+   "w+20_brake_ratio": "1.0753",
+   "int8_err_S100": "0.0936",
+   "int8_err_S200": "0.1121",
+   "int8_brake_ratio": "1.099",
+   "normal_err_S100": "0.112",
+   "normal_err_S200": "0.1192",
+   "normal_brake_ratio": "1.1167"
+  }
+ ],
+ "accepted_smallest_per_size": [
+  {
+   "checkpoint": 0,
+   "stage": "0-start",
+   "n_neurons": 400,
+   "n_connections": 18894,
+   "n_synapses": 202495,
+   "worst_err_seed7": 0.0519,
+   "min_brake_seed7": 0.8963,
+   "W200_seed7": 30.2
+  },
+  {
+   "checkpoint": 1,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 349,
+   "n_connections": 15888,
+   "n_synapses": 171647,
+   "worst_err_seed7": 0.0697,
+   "min_brake_seed7": 0.8999,
+   "W200_seed7": 30.73
+  },
+  {
+   "checkpoint": 2,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 299,
+   "n_connections": 11417,
+   "n_synapses": 115973,
+   "worst_err_seed7": 0.0531,
+   "min_brake_seed7": 0.9563,
+   "W200_seed7": 35.6
+  },
+  {
+   "checkpoint": 3,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 274,
+   "n_connections": 10082,
+   "n_synapses": 102258,
+   "worst_err_seed7": 0.0679,
+   "min_brake_seed7": 0.995,
+   "W200_seed7": 37.1
+  },
+  {
+   "checkpoint": 4,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 262,
+   "n_connections": 9442,
+   "n_synapses": 98455,
+   "worst_err_seed7": 0.0369,
+   "min_brake_seed7": 0.9712,
+   "W200_seed7": 36.2
+  },
+  {
+   "checkpoint": 5,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 250,
+   "n_connections": 8688,
+   "n_synapses": 91402,
+   "worst_err_seed7": 0.0511,
+   "min_brake_seed7": 0.947,
+   "W200_seed7": 34.13
+  },
+  {
+   "checkpoint": 6,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 238,
+   "n_connections": 8039,
+   "n_synapses": 84435,
+   "worst_err_seed7": 0.042,
+   "min_brake_seed7": 0.8961,
+   "W200_seed7": 36.53
+  },
+  {
+   "checkpoint": 7,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 232,
+   "n_connections": 7755,
+   "n_synapses": 82166,
+   "worst_err_seed7": 0.0595,
+   "min_brake_seed7": 0.9049,
+   "W200_seed7": 36.27
+  },
+  {
+   "checkpoint": 8,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 226,
+   "n_connections": 7529,
+   "n_synapses": 80595,
+   "worst_err_seed7": 0.0536,
+   "min_brake_seed7": 0.9366,
+   "W200_seed7": 38.6
+  },
+  {
+   "checkpoint": 9,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 220,
+   "n_connections": 7248,
+   "n_synapses": 77847,
+   "worst_err_seed7": 0.0653,
+   "min_brake_seed7": 0.946,
+   "W200_seed7": 38.37
+  },
+  {
+   "checkpoint": 10,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 214,
+   "n_connections": 6957,
+   "n_synapses": 76462,
+   "worst_err_seed7": 0.0514,
+   "min_brake_seed7": 0.9075,
+   "W200_seed7": 37.47
+  },
+  {
+   "checkpoint": 11,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 208,
+   "n_connections": 6562,
+   "n_synapses": 73336,
+   "worst_err_seed7": 0.0683,
+   "min_brake_seed7": 0.8281,
+   "W200_seed7": 34.57
+  },
+  {
+   "checkpoint": 12,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 205,
+   "n_connections": 6435,
+   "n_synapses": 72302,
+   "worst_err_seed7": 0.0623,
+   "min_brake_seed7": 0.8494,
+   "W200_seed7": 34.57
+  },
+  {
+   "checkpoint": 13,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 202,
+   "n_connections": 6284,
+   "n_synapses": 70798,
+   "worst_err_seed7": 0.0657,
+   "min_brake_seed7": 0.8348,
+   "W200_seed7": 34.57
+  },
+  {
+   "checkpoint": 14,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 199,
+   "n_connections": 6136,
+   "n_synapses": 68946,
+   "worst_err_seed7": 0.0584,
+   "min_brake_seed7": 0.8286,
+   "W200_seed7": 35.37
+  },
+  {
+   "checkpoint": 15,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 196,
+   "n_connections": 6037,
+   "n_synapses": 68182,
+   "worst_err_seed7": 0.0584,
+   "min_brake_seed7": 0.8047,
+   "W200_seed7": 35.37
+  },
+  {
+   "checkpoint": 16,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 193,
+   "n_connections": 5947,
+   "n_synapses": 67279,
+   "worst_err_seed7": 0.0584,
+   "min_brake_seed7": 0.8047,
+   "W200_seed7": 35.37
+  },
+  {
+   "checkpoint": 17,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 190,
+   "n_connections": 5796,
+   "n_synapses": 65755,
+   "worst_err_seed7": 0.0584,
+   "min_brake_seed7": 0.8047,
+   "W200_seed7": 12.73
+  },
+  {
+   "checkpoint": 18,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 187,
+   "n_connections": 5602,
+   "n_synapses": 63247,
+   "worst_err_seed7": 0.0592,
+   "min_brake_seed7": 0.7455,
+   "W200_seed7": 7.0
+  },
+  {
+   "checkpoint": 19,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 184,
+   "n_connections": 5314,
+   "n_synapses": 59164,
+   "worst_err_seed7": 0.0434,
+   "min_brake_seed7": 0.8061,
+   "W200_seed7": 19.23
+  },
+  {
+   "checkpoint": 20,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 181,
+   "n_connections": 5189,
+   "n_synapses": 58132,
+   "worst_err_seed7": 0.0434,
+   "min_brake_seed7": 0.8061,
+   "W200_seed7": 23.73
+  },
+  {
+   "checkpoint": 21,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 179,
+   "n_connections": 5158,
+   "n_synapses": 57963,
+   "worst_err_seed7": 0.0434,
+   "min_brake_seed7": 0.8061,
+   "W200_seed7": 23.73
+  },
+  {
+   "checkpoint": 22,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 177,
+   "n_connections": 5070,
+   "n_synapses": 57533,
+   "worst_err_seed7": 0.0514,
+   "min_brake_seed7": 0.8061,
+   "W200_seed7": 23.73
+  },
+  {
+   "checkpoint": 23,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 175,
+   "n_connections": 5015,
+   "n_synapses": 57223,
+   "worst_err_seed7": 0.0422,
+   "min_brake_seed7": 0.7657,
+   "W200_seed7": 23.73
+  },
+  {
+   "checkpoint": 24,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 173,
+   "n_connections": 4898,
+   "n_synapses": 55899,
+   "worst_err_seed7": 0.0518,
+   "min_brake_seed7": 0.8161,
+   "W200_seed7": 23.9
+  },
+  {
+   "checkpoint": 25,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 171,
+   "n_connections": 4807,
+   "n_synapses": 55193,
+   "worst_err_seed7": 0.0623,
+   "min_brake_seed7": 0.8416,
+   "W200_seed7": 23.9
+  },
+  {
+   "checkpoint": 26,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 169,
+   "n_connections": 4766,
+   "n_synapses": 55051,
+   "worst_err_seed7": 0.0623,
+   "min_brake_seed7": 0.8286,
+   "W200_seed7": 23.9
+  },
+  {
+   "checkpoint": 27,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 167,
+   "n_connections": 4678,
+   "n_synapses": 54658,
+   "worst_err_seed7": 0.0414,
+   "min_brake_seed7": 0.786,
+   "W200_seed7": 23.9
+  },
+  {
+   "checkpoint": 28,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 165,
+   "n_connections": 4582,
+   "n_synapses": 54027,
+   "worst_err_seed7": 0.0601,
+   "min_brake_seed7": 0.8119,
+   "W200_seed7": 23.9
+  },
+  {
+   "checkpoint": 29,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 163,
+   "n_connections": 4483,
+   "n_synapses": 53465,
+   "worst_err_seed7": 0.0601,
+   "min_brake_seed7": 0.8119,
+   "W200_seed7": 10.17
+  },
+  {
+   "checkpoint": 30,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 161,
+   "n_connections": 4406,
+   "n_synapses": 52906,
+   "worst_err_seed7": 0.0477,
+   "min_brake_seed7": 0.7886,
+   "W200_seed7": 10.8
+  },
+  {
+   "checkpoint": 31,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 159,
+   "n_connections": 4334,
+   "n_synapses": 52492,
+   "worst_err_seed7": 0.0491,
+   "min_brake_seed7": 0.8052,
+   "W200_seed7": 10.8
+  },
+  {
+   "checkpoint": 32,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 157,
+   "n_connections": 4299,
+   "n_synapses": 52109,
+   "worst_err_seed7": 0.048,
+   "min_brake_seed7": 0.786,
+   "W200_seed7": 10.8
+  },
+  {
+   "checkpoint": 33,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 155,
+   "n_connections": 4219,
+   "n_synapses": 50988,
+   "worst_err_seed7": 0.071,
+   "min_brake_seed7": 0.7964,
+   "W200_seed7": 10.8
+  },
+  {
+   "checkpoint": 34,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 153,
+   "n_connections": 4131,
+   "n_synapses": 49932,
+   "worst_err_seed7": 0.0574,
+   "min_brake_seed7": 0.7397,
+   "W200_seed7": 11.0
+  },
+  {
+   "checkpoint": 35,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 151,
+   "n_connections": 4040,
+   "n_synapses": 49238,
+   "worst_err_seed7": 0.0703,
+   "min_brake_seed7": 0.7745,
+   "W200_seed7": 11.0
+  },
+  {
+   "checkpoint": 36,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 149,
+   "n_connections": 3934,
+   "n_synapses": 48348,
+   "worst_err_seed7": 0.0736,
+   "min_brake_seed7": 0.8608,
+   "W200_seed7": 11.0
+  },
+  {
+   "checkpoint": 37,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 147,
+   "n_connections": 3824,
+   "n_synapses": 46671,
+   "worst_err_seed7": 0.0736,
+   "min_brake_seed7": 0.8255,
+   "W200_seed7": 11.0
+  },
+  {
+   "checkpoint": 38,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 145,
+   "n_connections": 3760,
+   "n_synapses": 46315,
+   "worst_err_seed7": 0.0545,
+   "min_brake_seed7": 0.8348,
+   "W200_seed7": 9.67
+  },
+  {
+   "checkpoint": 39,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 143,
+   "n_connections": 3697,
+   "n_synapses": 45807,
+   "worst_err_seed7": 0.0628,
+   "min_brake_seed7": 0.8535,
+   "W200_seed7": 9.67
+  },
+  {
+   "checkpoint": 40,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 141,
+   "n_connections": 3610,
+   "n_synapses": 45250,
+   "worst_err_seed7": 0.0628,
+   "min_brake_seed7": 0.8535,
+   "W200_seed7": 0.67
+  },
+  {
+   "checkpoint": 41,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 139,
+   "n_connections": 3508,
+   "n_synapses": 44240,
+   "worst_err_seed7": 0.0608,
+   "min_brake_seed7": 0.826,
+   "W200_seed7": 1.13
+  },
+  {
+   "checkpoint": 42,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 137,
+   "n_connections": 3480,
+   "n_synapses": 44048,
+   "worst_err_seed7": 0.0608,
+   "min_brake_seed7": 0.7719,
+   "W200_seed7": 1.13
+  },
+  {
+   "checkpoint": 43,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 135,
+   "n_connections": 3397,
+   "n_synapses": 43316,
+   "worst_err_seed7": 0.0608,
+   "min_brake_seed7": 0.7766,
+   "W200_seed7": 1.17
+  },
+  {
+   "checkpoint": 44,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 133,
+   "n_connections": 3332,
+   "n_synapses": 42957,
+   "worst_err_seed7": 0.0608,
+   "min_brake_seed7": 0.7766,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 45,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 131,
+   "n_connections": 3244,
+   "n_synapses": 41255,
+   "worst_err_seed7": 0.0671,
+   "min_brake_seed7": 0.7834,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 46,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 129,
+   "n_connections": 3187,
+   "n_synapses": 40510,
+   "worst_err_seed7": 0.0671,
+   "min_brake_seed7": 0.6556,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 47,
+   "stage": "1-neuron-blocks",
+   "n_neurons": 127,
+   "n_connections": 3161,
+   "n_synapses": 40318,
+   "worst_err_seed7": 0.0671,
+   "min_brake_seed7": 0.6556,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 48,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 126,
+   "n_connections": 3159,
+   "n_synapses": 40265,
+   "worst_err_seed7": 0.0671,
+   "min_brake_seed7": 0.6556,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 49,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 125,
+   "n_connections": 3123,
+   "n_synapses": 40025,
+   "worst_err_seed7": 0.0726,
+   "min_brake_seed7": 0.6519,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 50,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 124,
+   "n_connections": 3070,
+   "n_synapses": 39758,
+   "worst_err_seed7": 0.0726,
+   "min_brake_seed7": 0.6706,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 51,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 123,
+   "n_connections": 3035,
+   "n_synapses": 39460,
+   "worst_err_seed7": 0.0726,
+   "min_brake_seed7": 0.6556,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 52,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 122,
+   "n_connections": 2942,
+   "n_synapses": 39068,
+   "worst_err_seed7": 0.0677,
+   "min_brake_seed7": 0.6639,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 53,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 121,
+   "n_connections": 2937,
+   "n_synapses": 38939,
+   "worst_err_seed7": 0.0677,
+   "min_brake_seed7": 0.6639,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 54,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 120,
+   "n_connections": 2878,
+   "n_synapses": 38545,
+   "worst_err_seed7": 0.0679,
+   "min_brake_seed7": 0.6883,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 55,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 119,
+   "n_connections": 2844,
+   "n_synapses": 38133,
+   "worst_err_seed7": 0.0635,
+   "min_brake_seed7": 0.7325,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 56,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 118,
+   "n_connections": 2784,
+   "n_synapses": 37550,
+   "worst_err_seed7": 0.0666,
+   "min_brake_seed7": 0.7506,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 57,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 117,
+   "n_connections": 2755,
+   "n_synapses": 37268,
+   "worst_err_seed7": 0.0696,
+   "min_brake_seed7": 0.6732,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 58,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 116,
+   "n_connections": 2675,
+   "n_synapses": 36775,
+   "worst_err_seed7": 0.0743,
+   "min_brake_seed7": 0.6836,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 59,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 115,
+   "n_connections": 2668,
+   "n_synapses": 36751,
+   "worst_err_seed7": 0.0743,
+   "min_brake_seed7": 0.6836,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 60,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 114,
+   "n_connections": 2617,
+   "n_synapses": 36244,
+   "worst_err_seed7": 0.0707,
+   "min_brake_seed7": 0.6608,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 61,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 113,
+   "n_connections": 2604,
+   "n_synapses": 36075,
+   "worst_err_seed7": 0.0707,
+   "min_brake_seed7": 0.6608,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 62,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 112,
+   "n_connections": 2579,
+   "n_synapses": 35860,
+   "worst_err_seed7": 0.0643,
+   "min_brake_seed7": 0.6966,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 63,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 111,
+   "n_connections": 2555,
+   "n_synapses": 35493,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6966,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 64,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 110,
+   "n_connections": 2534,
+   "n_synapses": 35376,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6966,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 65,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 109,
+   "n_connections": 2519,
+   "n_synapses": 35283,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6966,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 66,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 108,
+   "n_connections": 2496,
+   "n_synapses": 35220,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6966,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 67,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 107,
+   "n_connections": 2434,
+   "n_synapses": 34867,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.666,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 68,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 106,
+   "n_connections": 2425,
+   "n_synapses": 34825,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6332,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 69,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 105,
+   "n_connections": 2399,
+   "n_synapses": 34330,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6332,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 70,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 104,
+   "n_connections": 2395,
+   "n_synapses": 34171,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6332,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 71,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 103,
+   "n_connections": 2360,
+   "n_synapses": 33917,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6332,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 72,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 102,
+   "n_connections": 2325,
+   "n_synapses": 33739,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6332,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 73,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 101,
+   "n_connections": 2280,
+   "n_synapses": 33579,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6234,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 74,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 100,
+   "n_connections": 2275,
+   "n_synapses": 33533,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6296,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 75,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 99,
+   "n_connections": 2259,
+   "n_synapses": 33483,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6296,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 76,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 98,
+   "n_connections": 2233,
+   "n_synapses": 33325,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6296,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 77,
+   "stage": "2-single-neuron-r1",
+   "n_neurons": 97,
+   "n_connections": 2214,
+   "n_synapses": 33246,
+   "worst_err_seed7": 0.0716,
+   "min_brake_seed7": 0.6296,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 78,
+   "stage": "2-single-neuron-r2",
+   "n_neurons": 96,
+   "n_connections": 2178,
+   "n_synapses": 33006,
+   "worst_err_seed7": 0.0717,
+   "min_brake_seed7": 0.6229,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 430,
+   "stage": "3-conn-blocks",
+   "n_neurons": 95,
+   "n_connections": 1217,
+   "n_synapses": 27253,
+   "worst_err_seed7": 0.0727,
+   "min_brake_seed7": 0.6026,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 436,
+   "stage": "3-conn-blocks",
+   "n_neurons": 94,
+   "n_connections": 1207,
+   "n_synapses": 27091,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6078,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 582,
+   "stage": "3-conn-blocks",
+   "n_neurons": 93,
+   "n_connections": 1056,
+   "n_synapses": 25530,
+   "worst_err_seed7": 0.0697,
+   "min_brake_seed7": 0.6016,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 614,
+   "stage": "3-conn-blocks",
+   "n_neurons": 92,
+   "n_connections": 1021,
+   "n_synapses": 23886,
+   "worst_err_seed7": 0.0731,
+   "min_brake_seed7": 0.6218,
+   "W200_seed7": 0.0
+  },
+  {
+   "checkpoint": 625,
+   "stage": "3-conn-blocks",
+   "n_neurons": 91,
+   "n_connections": 1007,
+   "n_synapses": 23086,
+   "worst_err_seed7": 0.0748,
+   "min_brake_seed7": 0.654,
+   "W200_seed7": 0.0
+  }
+ ],
+ "validation_tried": [
+  {
+   "checkpoint": 625,
+   "n_neurons": 91,
+   "n_connections": 1007,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 624,
+   "n_neurons": 91,
+   "n_connections": 1008,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 623,
+   "n_neurons": 91,
+   "n_connections": 1009,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 622,
+   "n_neurons": 91,
+   "n_connections": 1010,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 621,
+   "n_neurons": 91,
+   "n_connections": 1011,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 620,
+   "n_neurons": 91,
+   "n_connections": 1012,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 619,
+   "n_neurons": 91,
+   "n_connections": 1013,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 618,
+   "n_neurons": 91,
+   "n_connections": 1014,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 617,
+   "n_neurons": 91,
+   "n_connections": 1015,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 616,
+   "n_neurons": 91,
+   "n_connections": 1016,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 615,
+   "n_neurons": 91,
+   "n_connections": 1017,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 614,
+   "n_neurons": 92,
+   "n_connections": 1021,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 613,
+   "n_neurons": 92,
+   "n_connections": 1022,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 612,
+   "n_neurons": 92,
+   "n_connections": 1023,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 611,
+   "n_neurons": 92,
+   "n_connections": 1024,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 610,
+   "n_neurons": 92,
+   "n_connections": 1025,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 609,
+   "n_neurons": 92,
+   "n_connections": 1026,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 608,
+   "n_neurons": 92,
+   "n_connections": 1027,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 607,
+   "n_neurons": 92,
+   "n_connections": 1028,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 606,
+   "n_neurons": 92,
+   "n_connections": 1029,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 605,
+   "n_neurons": 92,
+   "n_connections": 1030,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 604,
+   "n_neurons": 92,
+   "n_connections": 1031,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 603,
+   "n_neurons": 92,
+   "n_connections": 1032,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 602,
+   "n_neurons": 92,
+   "n_connections": 1033,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 601,
+   "n_neurons": 92,
+   "n_connections": 1034,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 600,
+   "n_neurons": 92,
+   "n_connections": 1035,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 599,
+   "n_neurons": 92,
+   "n_connections": 1036,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 598,
+   "n_neurons": 92,
+   "n_connections": 1037,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 597,
+   "n_neurons": 92,
+   "n_connections": 1038,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 596,
+   "n_neurons": 92,
+   "n_connections": 1039,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 595,
+   "n_neurons": 92,
+   "n_connections": 1040,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 594,
+   "n_neurons": 92,
+   "n_connections": 1041,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 593,
+   "n_neurons": 92,
+   "n_connections": 1042,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 592,
+   "n_neurons": 92,
+   "n_connections": 1043,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 591,
+   "n_neurons": 92,
+   "n_connections": 1044,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 590,
+   "n_neurons": 92,
+   "n_connections": 1045,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 589,
+   "n_neurons": 92,
+   "n_connections": 1046,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 588,
+   "n_neurons": 92,
+   "n_connections": 1047,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 587,
+   "n_neurons": 92,
+   "n_connections": 1048,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 586,
+   "n_neurons": 92,
+   "n_connections": 1049,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 585,
+   "n_neurons": 92,
+   "n_connections": 1050,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 584,
+   "n_neurons": 92,
+   "n_connections": 1051,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 583,
+   "n_neurons": 92,
+   "n_connections": 1052,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 582,
+   "n_neurons": 93,
+   "n_connections": 1056,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 581,
+   "n_neurons": 93,
+   "n_connections": 1057,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 580,
+   "n_neurons": 93,
+   "n_connections": 1058,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 579,
+   "n_neurons": 93,
+   "n_connections": 1059,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 578,
+   "n_neurons": 93,
+   "n_connections": 1060,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 577,
+   "n_neurons": 93,
+   "n_connections": 1061,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 576,
+   "n_neurons": 93,
+   "n_connections": 1062,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 575,
+   "n_neurons": 93,
+   "n_connections": 1063,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 574,
+   "n_neurons": 93,
+   "n_connections": 1064,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 573,
+   "n_neurons": 93,
+   "n_connections": 1065,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 572,
+   "n_neurons": 93,
+   "n_connections": 1066,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 571,
+   "n_neurons": 93,
+   "n_connections": 1067,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 570,
+   "n_neurons": 93,
+   "n_connections": 1068,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 569,
+   "n_neurons": 93,
+   "n_connections": 1069,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 568,
+   "n_neurons": 93,
+   "n_connections": 1070,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 567,
+   "n_neurons": 93,
+   "n_connections": 1071,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 566,
+   "n_neurons": 93,
+   "n_connections": 1072,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 565,
+   "n_neurons": 93,
+   "n_connections": 1073,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 564,
+   "n_neurons": 93,
+   "n_connections": 1074,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 563,
+   "n_neurons": 93,
+   "n_connections": 1075,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 562,
+   "n_neurons": 93,
+   "n_connections": 1076,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 561,
+   "n_neurons": 93,
+   "n_connections": 1077,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 560,
+   "n_neurons": 93,
+   "n_connections": 1078,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 559,
+   "n_neurons": 93,
+   "n_connections": 1079,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 558,
+   "n_neurons": 93,
+   "n_connections": 1080,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 557,
+   "n_neurons": 93,
+   "n_connections": 1081,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 556,
+   "n_neurons": 93,
+   "n_connections": 1082,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 555,
+   "n_neurons": 93,
+   "n_connections": 1083,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 554,
+   "n_neurons": 93,
+   "n_connections": 1084,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 553,
+   "n_neurons": 93,
+   "n_connections": 1085,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 552,
+   "n_neurons": 93,
+   "n_connections": 1086,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 551,
+   "n_neurons": 93,
+   "n_connections": 1087,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 550,
+   "n_neurons": 93,
+   "n_connections": 1088,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 549,
+   "n_neurons": 93,
+   "n_connections": 1089,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 548,
+   "n_neurons": 93,
+   "n_connections": 1090,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 547,
+   "n_neurons": 93,
+   "n_connections": 1091,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 546,
+   "n_neurons": 93,
+   "n_connections": 1092,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 545,
+   "n_neurons": 93,
+   "n_connections": 1093,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 544,
+   "n_neurons": 93,
+   "n_connections": 1094,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 543,
+   "n_neurons": 93,
+   "n_connections": 1095,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 542,
+   "n_neurons": 93,
+   "n_connections": 1096,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 541,
+   "n_neurons": 93,
+   "n_connections": 1097,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 540,
+   "n_neurons": 93,
+   "n_connections": 1098,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 539,
+   "n_neurons": 93,
+   "n_connections": 1099,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 538,
+   "n_neurons": 93,
+   "n_connections": 1100,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 537,
+   "n_neurons": 93,
+   "n_connections": 1101,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 536,
+   "n_neurons": 93,
+   "n_connections": 1102,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 535,
+   "n_neurons": 93,
+   "n_connections": 1103,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 534,
+   "n_neurons": 93,
+   "n_connections": 1104,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 533,
+   "n_neurons": 93,
+   "n_connections": 1105,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 532,
+   "n_neurons": 93,
+   "n_connections": 1106,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 531,
+   "n_neurons": 93,
+   "n_connections": 1107,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 530,
+   "n_neurons": 93,
+   "n_connections": 1108,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 529,
+   "n_neurons": 93,
+   "n_connections": 1109,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 528,
+   "n_neurons": 93,
+   "n_connections": 1110,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 527,
+   "n_neurons": 93,
+   "n_connections": 1111,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 526,
+   "n_neurons": 93,
+   "n_connections": 1112,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 525,
+   "n_neurons": 93,
+   "n_connections": 1113,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 524,
+   "n_neurons": 93,
+   "n_connections": 1114,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 523,
+   "n_neurons": 93,
+   "n_connections": 1115,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 522,
+   "n_neurons": 93,
+   "n_connections": 1116,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 521,
+   "n_neurons": 93,
+   "n_connections": 1117,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 520,
+   "n_neurons": 93,
+   "n_connections": 1118,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 519,
+   "n_neurons": 93,
+   "n_connections": 1119,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 518,
+   "n_neurons": 93,
+   "n_connections": 1120,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 517,
+   "n_neurons": 93,
+   "n_connections": 1121,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 516,
+   "n_neurons": 93,
+   "n_connections": 1122,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 515,
+   "n_neurons": 93,
+   "n_connections": 1123,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 514,
+   "n_neurons": 93,
+   "n_connections": 1124,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 513,
+   "n_neurons": 93,
+   "n_connections": 1125,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 512,
+   "n_neurons": 93,
+   "n_connections": 1126,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 511,
+   "n_neurons": 93,
+   "n_connections": 1127,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 510,
+   "n_neurons": 93,
+   "n_connections": 1128,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 509,
+   "n_neurons": 93,
+   "n_connections": 1129,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 508,
+   "n_neurons": 93,
+   "n_connections": 1130,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 507,
+   "n_neurons": 93,
+   "n_connections": 1131,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 506,
+   "n_neurons": 93,
+   "n_connections": 1132,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 505,
+   "n_neurons": 93,
+   "n_connections": 1133,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 504,
+   "n_neurons": 93,
+   "n_connections": 1134,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 503,
+   "n_neurons": 93,
+   "n_connections": 1135,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 502,
+   "n_neurons": 93,
+   "n_connections": 1136,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 501,
+   "n_neurons": 93,
+   "n_connections": 1137,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 500,
+   "n_neurons": 93,
+   "n_connections": 1138,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 499,
+   "n_neurons": 93,
+   "n_connections": 1139,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 498,
+   "n_neurons": 93,
+   "n_connections": 1140,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 497,
+   "n_neurons": 93,
+   "n_connections": 1141,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 496,
+   "n_neurons": 93,
+   "n_connections": 1142,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 495,
+   "n_neurons": 93,
+   "n_connections": 1143,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 494,
+   "n_neurons": 93,
+   "n_connections": 1144,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 493,
+   "n_neurons": 93,
+   "n_connections": 1145,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 492,
+   "n_neurons": 93,
+   "n_connections": 1146,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 491,
+   "n_neurons": 93,
+   "n_connections": 1147,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 490,
+   "n_neurons": 93,
+   "n_connections": 1148,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 489,
+   "n_neurons": 93,
+   "n_connections": 1149,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 488,
+   "n_neurons": 93,
+   "n_connections": 1150,
+   "pass_all": false,
+   "failed_seed": "seed1",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 487,
+   "n_neurons": 93,
+   "n_connections": 1151,
+   "pass_all": false,
+   "failed_seed": "seed1",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 486,
+   "n_neurons": 93,
+   "n_connections": 1152,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 485,
+   "n_neurons": 93,
+   "n_connections": 1153,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 484,
+   "n_neurons": 93,
+   "n_connections": 1154,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 483,
+   "n_neurons": 93,
+   "n_connections": 1155,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 482,
+   "n_neurons": 93,
+   "n_connections": 1156,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 481,
+   "n_neurons": 93,
+   "n_connections": 1157,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 480,
+   "n_neurons": 93,
+   "n_connections": 1158,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 479,
+   "n_neurons": 93,
+   "n_connections": 1159,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 478,
+   "n_neurons": 93,
+   "n_connections": 1160,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 477,
+   "n_neurons": 93,
+   "n_connections": 1161,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 476,
+   "n_neurons": 93,
+   "n_connections": 1162,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 475,
+   "n_neurons": 93,
+   "n_connections": 1163,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 474,
+   "n_neurons": 93,
+   "n_connections": 1164,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 473,
+   "n_neurons": 93,
+   "n_connections": 1165,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 472,
+   "n_neurons": 93,
+   "n_connections": 1166,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 471,
+   "n_neurons": 93,
+   "n_connections": 1167,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 470,
+   "n_neurons": 93,
+   "n_connections": 1168,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 469,
+   "n_neurons": 93,
+   "n_connections": 1169,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 468,
+   "n_neurons": 93,
+   "n_connections": 1170,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 467,
+   "n_neurons": 93,
+   "n_connections": 1171,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 466,
+   "n_neurons": 93,
+   "n_connections": 1172,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 465,
+   "n_neurons": 93,
+   "n_connections": 1173,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 464,
+   "n_neurons": 93,
+   "n_connections": 1174,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 463,
+   "n_neurons": 93,
+   "n_connections": 1175,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 462,
+   "n_neurons": 93,
+   "n_connections": 1176,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 461,
+   "n_neurons": 93,
+   "n_connections": 1177,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 460,
+   "n_neurons": 93,
+   "n_connections": 1178,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 459,
+   "n_neurons": 93,
+   "n_connections": 1179,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 458,
+   "n_neurons": 93,
+   "n_connections": 1180,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 457,
+   "n_neurons": 93,
+   "n_connections": 1181,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 456,
+   "n_neurons": 93,
+   "n_connections": 1182,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 455,
+   "n_neurons": 93,
+   "n_connections": 1183,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 454,
+   "n_neurons": 93,
+   "n_connections": 1184,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 453,
+   "n_neurons": 93,
+   "n_connections": 1185,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 452,
+   "n_neurons": 93,
+   "n_connections": 1186,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 451,
+   "n_neurons": 93,
+   "n_connections": 1187,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 450,
+   "n_neurons": 93,
+   "n_connections": 1188,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 449,
+   "n_neurons": 93,
+   "n_connections": 1189,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 448,
+   "n_neurons": 93,
+   "n_connections": 1190,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 447,
+   "n_neurons": 93,
+   "n_connections": 1191,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 446,
+   "n_neurons": 93,
+   "n_connections": 1192,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 445,
+   "n_neurons": 93,
+   "n_connections": 1193,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 444,
+   "n_neurons": 93,
+   "n_connections": 1194,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 443,
+   "n_neurons": 93,
+   "n_connections": 1195,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 442,
+   "n_neurons": 93,
+   "n_connections": 1196,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 441,
+   "n_neurons": 93,
+   "n_connections": 1197,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 440,
+   "n_neurons": 93,
+   "n_connections": 1198,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 439,
+   "n_neurons": 93,
+   "n_connections": 1199,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 438,
+   "n_neurons": 93,
+   "n_connections": 1200,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 437,
+   "n_neurons": 93,
+   "n_connections": 1201,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 436,
+   "n_neurons": 94,
+   "n_connections": 1207,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 435,
+   "n_neurons": 94,
+   "n_connections": 1208,
+   "pass_all": false,
+   "failed_seed": "seed0",
+   "failed_version": "w-20"
+  },
+  {
+   "checkpoint": 434,
+   "n_neurons": 94,
+   "n_connections": 1209,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 433,
+   "n_neurons": 94,
+   "n_connections": 1210,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 432,
+   "n_neurons": 94,
+   "n_connections": 1211,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 431,
+   "n_neurons": 94,
+   "n_connections": 1212,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 430,
+   "n_neurons": 95,
+   "n_connections": 1217,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 429,
+   "n_neurons": 95,
+   "n_connections": 1218,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 428,
+   "n_neurons": 95,
+   "n_connections": 1219,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 427,
+   "n_neurons": 95,
+   "n_connections": 1220,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 426,
+   "n_neurons": 95,
+   "n_connections": 1221,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 425,
+   "n_neurons": 95,
+   "n_connections": 1222,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "w+20"
+  },
+  {
+   "checkpoint": 424,
+   "n_neurons": 95,
+   "n_connections": 1223,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 423,
+   "n_neurons": 95,
+   "n_connections": 1224,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 422,
+   "n_neurons": 95,
+   "n_connections": 1225,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 421,
+   "n_neurons": 95,
+   "n_connections": 1226,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 420,
+   "n_neurons": 95,
+   "n_connections": 1227,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 419,
+   "n_neurons": 95,
+   "n_connections": 1228,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 418,
+   "n_neurons": 95,
+   "n_connections": 1229,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 417,
+   "n_neurons": 95,
+   "n_connections": 1230,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 416,
+   "n_neurons": 95,
+   "n_connections": 1231,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 415,
+   "n_neurons": 95,
+   "n_connections": 1232,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 414,
+   "n_neurons": 95,
+   "n_connections": 1233,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 413,
+   "n_neurons": 95,
+   "n_connections": 1234,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 412,
+   "n_neurons": 95,
+   "n_connections": 1235,
+   "pass_all": false,
+   "failed_seed": "seed2",
+   "failed_version": "normal"
+  },
+  {
+   "checkpoint": 411,
+   "n_neurons": 95,
+   "n_connections": 1236,
+   "pass_all": true,
+   "failed_seed": null,
+   "failed_version": null
+  }
+ ]
+}

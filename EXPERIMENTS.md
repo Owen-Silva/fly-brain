@@ -2923,3 +2923,102 @@ chance; through 59 it did not. A silicon copy of the same network played almost 
 and a few lines of ordinary code never missed, for far less energy. Unlike DishBrain's real
 cells, our model cells did not get better with practice, so how fast living cells learn is
 still the biggest unknown.
+
+## 2026-09-24 - The smallest hardware-ready feeding circuit: 95 neurons pass +/-20% weights and 8-bit, about 10 KB and 18% of one RP2350 core (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or `data/`. New:
+`experiments/robust_circuit/` (scripts and results; reuses `experiments/minimal_circuit/`
+code by import) and `docs/robust-circuit.md`. Model: snapshot 630 with the
+`al_ln_literature` fix passed explicitly, fast engine, 1 thread, MN9 =
+720575940660219265. The pass rule was written into the doc at 02:05, before any
+candidate was run. A circuit, run on its own (`FastBrain.from_arrays`), must pass in
+four versions, each against the whole brain in the matching state: normal weights,
+weight per synapse -20%, +20%, and 8-bit weights (largest synapse count -> 127, round
+to nearest). In each: MN9 at sugar 100 and 200 Hz within 10% of the whole brain; bitter
+alone below 0.5 Hz; bitter 100 Hz added to sugar 100 Hz lowers MN9 by at least half the
+whole brain's drop. Water is reported, not required. Final verdict as first written:
+seeds 0, 1, 2 x 30 trials. **Amendment at 03:15** (after review): seeds 0-2 were used
+by the step-back to choose among ~215 circuits, so they are not held out; the real
+held-out test is fresh seeds 3, 4, 5 (never used by this or the minimal-circuit lane),
+with four circuits declared in advance. Search: seed 7, stricter version (7.5%, zero bitter spikes,
+brake 0.6), rejecting at the first failed check. **Amendment at 02:08** (search
+settings only): scoring on 30 trials of seed 7 instead of 10, and starting from the
+400-neuron circuit even though it missed the stricter 8-bit check on 10 trials (8.3%
+vs 7.5%). About 68 minutes of compute of the 90 budgeted.
+
+**What happened.**
+- **Whole brain at +/-20% (new; seeds 7/1/2, 30 trials):** -20%: sugar 100 Hz
+  34.0/35.1/34.5, sugar 200 Hz 83.0/82.1/82.3, sugar + bitter 0.4/0.1/0.2. +20%: sugar
+  100 Hz 77.1/77.2/77.4, sugar 200 Hz 98.5/99.8/97.7, sugar + bitter 12.9/14.3/12.9.
+  Bitter alone 0 throughout.
+- **Strongest-path circuits under the new rule:** 600, 500 and 400 neurons pass. 300,
+  250 and 200 fail at -20% (sugar 100 Hz 19%, 28%, 58% low).
+- **Search from the 400:** neuron blocks (100 down to 2, weakest path score first)
+  400 -> 127; single neurons, 3 rounds to a local minimum, 127 -> 95; connection blocks
+  down to single connections (one pass) 2,156 -> 1,007 connections and 91 neurons.
+  3,688 candidates. Of 3,060 rejections, 1,853 failed first at -20%, 1,184 at +20%,
+  21 at normal weights and 2 at 8-bit.
+- **Check on seeds 0-2 (used for selection, not held out):** the 91-neuron end point
+  failed (seed 0, -20%: sugar 100 Hz 13% low). Stepping back, 214 accepted circuits
+  failed and checkpoint 411 passed: **95 neurons, 1,236 connections, 27,295 synapses.**
+  Its neighbours with one connection fewer fail seed 2. On seeds 0/1/2, sugar errors
+  +1.1% to +9.8% and -4.2% to -8.4% across the four versions (worst +9.8%, seed 1,
+  +20%); brake 0.79 to 0.81 (normal), 0.86 to 0.89 (-20%), 0.56 to 0.60 (+20%), 0.85
+  (8-bit); bitter alone 0. Sugar + bitter at normal weights 21.5 to 22.5 Hz against 3.6
+  to 4.9 Hz in the whole brain.
+- **Real held-out test, fresh seeds 3/4/5 (30 trials, whole brain re-measured at each:
+  sugar 100 Hz 67.1/67.8/68.5 normal, 34.6/34.2/34.3 at -20%, 77.1/77.4/77.5 at +20%):**
+  checkpoint 411 **passes all 12 seed x version tests.** Worst sugar error 9.0% (seed 4,
+  normal); weakest brake 0.59 (seed 3, +20%); bitter alone 0. The other circuits
+  declared in advance: checkpoint 79 (95 neurons, 2,156 connections) **fails** seed 5
+  at -20% (13.4% low); checkpoint 47 (127 neurons) passes (worst 7.3%, brake 0.61);
+  the 400-neuron start passes (worst 3.0%, brake 0.91, water 32 vs 30-32 Hz).
+- **Water:** 0 Hz at 100 and 200 Hz on every seed (whole brain 0 and 30 to 31 Hz). The
+  circuit has no water taste neurons; water survived in the search down to 181 neurons.
+- **Contents:** 18 sugar and 6 bitter taste neurons, MN9, 70 relays (41 acetylcholine,
+  21 GABA, 7 glutamate, 1 dopamine). 9 of the paper's 10 named sugar-pathway types
+  (all but Fdg), plus Scapula. It contains 34 of the previous lane's 36-neuron circuit.
+  292 of 1,236 connections inhibit; the largest has 561 synapses.
+- **The 400-neuron start circuit** also passes all four versions on all 3 held-out
+  seeds (worst error 5.4%, weakest brake 0.90).
+- **Second removal order** (random, neurons only, 15 minutes): 400 -> 165 neurons,
+  still shrinking when time ran out. Inconclusive about whether 95 is order-dependent.
+- **RP2350 arithmetic** (2 x Cortex-M33 at 150 MHz, 520 KB SRAM; previous lane's
+  assumed costs: 25 cycles per neuron update, 10 per synaptic event, 12 per random
+  draw; 0.1 ms steps). 8-bit version (954 connections kept; 282 round to zero): memory
+  10,287 B (10 KB, 2% of SRAM; 16-bit 12 KB). Worst case sugar 200 Hz: 950,000 neuron
+  updates, 240,000 random draws, 90,860 synaptic events per simulated second = 27.5 M
+  cycles = 18% of one core, about 5.4x faster than real time (clock-driven); about
+  3.3 M cycles = 2.2%, about 45x (event-driven). For comparison: 36 neurons 7%, 400
+  neurons 77% (previous lane).
+- **Firmware file:** `results/robust_circuit_firmware.json` (20 KB): neurons with types,
+  8-bit and exact weights, parameters, per-step constants, update rule, expected MN9.
+  Rebuilding the circuit from that file alone gives MN9 identical to the simulator
+  (difference 0.000 Hz on all 7 stimuli, seed 0).
+
+**Validated?** No: PRELIMINARY. Done: rule fixed before the search; 3 fresh held-out
+seeds (3-5) in all four versions, after seeds 0-2 turned out to be used for selection;
+whole-brain +/-20% references on every seed used; the firmware file checked by
+rebuilding from it; a second removal order (inconclusive). Not done: more fresh seeds,
+other start points, a completed second order, other 8-bit methods, 32-bit or
+fixed-point arithmetic, anything on a real chip. Margins are thin (9.0% against 10% on
+fresh seeds; brake 0.59 against 0.5), and a 95-neuron sibling fails a fresh seed, so
+some other seeds will probably fail the chosen circuit too. The search overfitted its
+own seed: 214 accepted circuits between 91 and 95 neurons failed seed 0. It is a reduction of the model, which disagrees with real
+flies on Roundup and Fdg.
+
+**New or reproduction?** New as far as this project goes: it extends the previous
+lane's minimal-circuit search with weight-tolerance and 8-bit tests inside the rule.
+No literature search was done for other robust minimal feeding circuits.
+
+**Plain English.**
+- The previous 36-neuron feeding circuit broke if every connection got 20% stronger or
+  weaker, and just failed with 8-bit weights. This time those tests were part of the
+  rule from the start.
+- The smallest circuit that passes all of them has 95 neurons. On random inputs it had
+  never seen, it matches the whole brain's sugar response within 10% (only just: 9%), ignores bitter alone and
+  still lets bitter hold sugar back, whether the synapses are normal, 20% weaker, 20%
+  stronger or stored as 8-bit numbers. It no longer responds to water.
+- On the $17 RP2350 board it would need about 10 KB of memory and about a fifth of one
+  core, so it should run in real time with about 5 times to spare. That is arithmetic,
+  not a test on the chip. The file a firmware lane needs is ready.

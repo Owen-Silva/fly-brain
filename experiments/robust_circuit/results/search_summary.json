@@ -1,0 +1,39 @@
+{
+ "label": "PRELIMINARY",
+ "final": {
+  "n_neurons": 91,
+  "n_connections": 1007,
+  "n_synapses": 23086
+ },
+ "single_neuron_rounds": 3,
+ "single_neuron_local_minimum": true,
+ "connection_pass_complete": false,
+ "n_evaluations": 3688,
+ "n_accepted": 626,
+ "first_failing_test_counts": {
+  "w-20": 1853,
+  "w+20": 1184,
+  "normal": 21,
+  "int8": 2
+ },
+ "family_pass_search": {
+  "600": true,
+  "500": true,
+  "400": true,
+  "300": false,
+  "250": false,
+  "200": false
+ },
+ "wall_s": 2548.385426599998,
+ "budget_s": 3000.0,
+ "search_rule": {
+  "tol": 0.075,
+  "bitter_max_hz": 0.0,
+  "brake_frac": 0.6
+ },
+ "fixed_rule": {
+  "tol": 0.1,
+  "bitter_max_hz": 0.5,
+  "brake_frac": 0.5
+ }
+}

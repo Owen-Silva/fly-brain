@@ -1,0 +1,363 @@
+{
+ "label": "PRELIMINARY",
+ "checkpoint": 411,
+ "stage": "3-conn-blocks",
+ "n_neurons": 95,
+ "n_connections": 1236,
+ "n_synapses": 27295,
+ "n_input_neurons": 24,
+ "max_synapses_per_connection": 561,
+ "int8_step_synapses": 4.417322834645669,
+ "int8_connections_rounded_to_zero": 282,
+ "n_inhibitory_connections": 292,
+ "int8": {
+  "n_connections_stored": 954,
+  "memory": {
+   "connections_B": 1908,
+   "row_pointers_B": 192,
+   "neuron_state_B": 855,
+   "delay_buffer_B": 7220,
+   "inputs_B": 112,
+   "total_B": 10287,
+   "total_KB": 10.05,
+   "share_of_520KB": 0.01932
+  },
+  "mn9_seed0_hz": {
+   "S100": 68.4,
+   "S200": 97.5,
+   "W100": 0.0,
+   "W200": 0.0,
+   "B100": 0.0,
+   "B200": 0.0,
+   "S100+B100": 14.833333333333334
+  },
+  "ops_per_simulated_second": {
+   "S100": {
+    "spikes_per_s": 3931.5000000000005,
+    "synaptic_events_per_s": 49982.933333333334,
+    "input_kicks_per_s": 1800.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27129829.333333332,
+     "share_of_one_core": 0.18086552888888888,
+     "realtime_margin_x": 5.528969539653573
+    },
+    "event_driven": {
+     "events_per_s": 51782.933333333334,
+     "cycles_per_s": 1834002.6666666667,
+     "share_of_one_core": 0.012226684444444445,
+     "realtime_margin_x": 81.78832164547924
+    }
+   },
+   "S200": {
+    "spikes_per_s": 7239.633333333334,
+    "synaptic_events_per_s": 90860.19999999998,
+    "input_kicks_per_s": 3600.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27538602.0,
+     "share_of_one_core": 0.18359068,
+     "realtime_margin_x": 5.446899592070796
+    },
+    "event_driven": {
+     "events_per_s": 94460.19999999998,
+     "cycles_per_s": 3349306.9999999995,
+     "share_of_one_core": 0.02232871333333333,
+     "realtime_margin_x": 44.785383961518015
+    }
+   },
+   "W100": {
+    "spikes_per_s": 0.0,
+    "synaptic_events_per_s": 0.0,
+    "input_kicks_per_s": 0.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26630000.0,
+     "share_of_one_core": 0.17753333333333332,
+     "realtime_margin_x": 5.632745024408562
+    },
+    "event_driven": {
+     "events_per_s": 0.0,
+     "cycles_per_s": 0.0,
+     "share_of_one_core": 0.0,
+     "realtime_margin_x": null
+    }
+   },
+   "W200": {
+    "spikes_per_s": 0.0,
+    "synaptic_events_per_s": 0.0,
+    "input_kicks_per_s": 0.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26630000.0,
+     "share_of_one_core": 0.17753333333333332,
+     "realtime_margin_x": 5.632745024408562
+    },
+    "event_driven": {
+     "events_per_s": 0.0,
+     "cycles_per_s": 0.0,
+     "share_of_one_core": 0.0,
+     "realtime_margin_x": null
+    }
+   },
+   "B100": {
+    "spikes_per_s": 681.0333333333333,
+    "synaptic_events_per_s": 2531.5,
+    "input_kicks_per_s": 600.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26655315.0,
+     "share_of_one_core": 0.1777021,
+     "realtime_margin_x": 5.627395511926983
+    },
+    "event_driven": {
+     "events_per_s": 3131.5,
+     "cycles_per_s": 116802.5,
+     "share_of_one_core": 0.0007786833333333333,
+     "realtime_margin_x": 1284.2190877763746
+    }
+   },
+   "B200": {
+    "spikes_per_s": 1321.3,
+    "synaptic_events_per_s": 4526.166666666667,
+    "input_kicks_per_s": 1200.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26675261.666666668,
+     "share_of_one_core": 0.1778350777777778,
+     "realtime_margin_x": 5.6231875763542964
+    },
+    "event_driven": {
+     "events_per_s": 5726.166666666667,
+     "cycles_per_s": 214815.83333333334,
+     "share_of_one_core": 0.0014321055555555557,
+     "realtime_margin_x": 698.2725512939378
+    }
+   },
+   "S100+B100": {
+    "spikes_per_s": 3856.433333333334,
+    "synaptic_events_per_s": 45079.43333333333,
+    "input_kicks_per_s": 2400.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27080794.333333332,
+     "share_of_one_core": 0.18053862888888889,
+     "realtime_margin_x": 5.538980805129756
+    },
+    "event_driven": {
+     "events_per_s": 47479.43333333333,
+     "cycles_per_s": 1690580.1666666665,
+     "share_of_one_core": 0.011270534444444444,
+     "realtime_margin_x": 88.72693703473198
+    }
+   }
+  },
+  "worst_condition": "S200",
+  "worst": {
+   "spikes_per_s": 7239.633333333334,
+   "synaptic_events_per_s": 90860.19999999998,
+   "input_kicks_per_s": 3600.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 950000,
+    "random_draws_per_s": 240000,
+    "cycles_per_s": 27538602.0,
+    "share_of_one_core": 0.18359068,
+    "realtime_margin_x": 5.446899592070796
+   },
+   "event_driven": {
+    "events_per_s": 94460.19999999998,
+    "cycles_per_s": 3349306.9999999995,
+    "share_of_one_core": 0.02232871333333333,
+    "realtime_margin_x": 44.785383961518015
+   }
+  }
+ },
+ "16bit": {
+  "n_connections_stored": 1236,
+  "memory": {
+   "connections_B": 3708,
+   "row_pointers_B": 192,
+   "neuron_state_B": 855,
+   "delay_buffer_B": 7220,
+   "inputs_B": 112,
+   "total_B": 12087,
+   "total_KB": 11.8,
+   "share_of_520KB": 0.0227
+  },
+  "mn9_seed0_hz": {
+   "S100": 72.53333333333333,
+   "S200": 96.26666666666667,
+   "W100": 0.0,
+   "W200": 0.0,
+   "B100": 0.0,
+   "B200": 0.0,
+   "S100+B100": 21.7
+  },
+  "ops_per_simulated_second": {
+   "S100": {
+    "spikes_per_s": 4040.1666666666665,
+    "synaptic_events_per_s": 69369.26666666668,
+    "input_kicks_per_s": 1800.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27323692.666666668,
+     "share_of_one_core": 0.18215795111111113,
+     "realtime_margin_x": 5.489741149921195
+    },
+    "event_driven": {
+     "events_per_s": 71169.26666666668,
+     "cycles_per_s": 2512524.3333333335,
+     "share_of_one_core": 0.016750162222222222,
+     "realtime_margin_x": 59.70091433940341
+    }
+   },
+   "S200": {
+    "spikes_per_s": 7331.833333333333,
+    "synaptic_events_per_s": 124850.53333333334,
+    "input_kicks_per_s": 3600.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27878505.333333332,
+     "share_of_one_core": 0.18585670222222223,
+     "realtime_margin_x": 5.3804893126982085
+    },
+    "event_driven": {
+     "events_per_s": 128450.53333333334,
+     "cycles_per_s": 4538968.666666667,
+     "share_of_one_core": 0.030259791111111115,
+     "realtime_margin_x": 33.04715476481955
+    }
+   },
+   "W100": {
+    "spikes_per_s": 0.0,
+    "synaptic_events_per_s": 0.0,
+    "input_kicks_per_s": 0.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26630000.0,
+     "share_of_one_core": 0.17753333333333332,
+     "realtime_margin_x": 5.632745024408562
+    },
+    "event_driven": {
+     "events_per_s": 0.0,
+     "cycles_per_s": 0.0,
+     "share_of_one_core": 0.0,
+     "realtime_margin_x": null
+    }
+   },
+   "W200": {
+    "spikes_per_s": 0.0,
+    "synaptic_events_per_s": 0.0,
+    "input_kicks_per_s": 0.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26630000.0,
+     "share_of_one_core": 0.17753333333333332,
+     "realtime_margin_x": 5.632745024408562
+    },
+    "event_driven": {
+     "events_per_s": 0.0,
+     "cycles_per_s": 0.0,
+     "share_of_one_core": 0.0,
+     "realtime_margin_x": null
+    }
+   },
+   "B100": {
+    "spikes_per_s": 682.5999999999999,
+    "synaptic_events_per_s": 3449.5666666666666,
+    "input_kicks_per_s": 600.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26664495.666666668,
+     "share_of_one_core": 0.17776330444444446,
+     "realtime_margin_x": 5.625457982598008
+    },
+    "event_driven": {
+     "events_per_s": 4049.5666666666666,
+     "cycles_per_s": 148934.83333333334,
+     "share_of_one_core": 0.000992898888888889,
+     "realtime_margin_x": 1007.1518975301277
+    }
+   },
+   "B200": {
+    "spikes_per_s": 1323.7,
+    "synaptic_events_per_s": 6201.766666666666,
+    "input_kicks_per_s": 1200.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 26692017.666666668,
+     "share_of_one_core": 0.17794678444444445,
+     "realtime_margin_x": 5.619657602254696
+    },
+    "event_driven": {
+     "events_per_s": 7401.766666666666,
+     "cycles_per_s": 273461.8333333333,
+     "share_of_one_core": 0.0018230788888888888,
+     "realtime_margin_x": 548.5226152826933
+    }
+   },
+   "S100+B100": {
+    "spikes_per_s": 3972.666666666666,
+    "synaptic_events_per_s": 63914.100000000006,
+    "input_kicks_per_s": 2400.0,
+    "clock_driven": {
+     "neuron_updates_per_s": 950000,
+     "random_draws_per_s": 240000,
+     "cycles_per_s": 27269141.0,
+     "share_of_one_core": 0.18179427333333334,
+     "realtime_margin_x": 5.500723326781728
+    },
+    "event_driven": {
+     "events_per_s": 66314.1,
+     "cycles_per_s": 2349793.5,
+     "share_of_one_core": 0.01566529,
+     "realtime_margin_x": 63.83539659974377
+    }
+   }
+  },
+  "worst_condition": "S200",
+  "worst": {
+   "spikes_per_s": 7331.833333333333,
+   "synaptic_events_per_s": 124850.53333333334,
+   "input_kicks_per_s": 3600.0,
+   "clock_driven": {
+    "neuron_updates_per_s": 950000,
+    "random_draws_per_s": 240000,
+    "cycles_per_s": 27878505.333333332,
+    "share_of_one_core": 0.18585670222222223,
+    "realtime_margin_x": 5.3804893126982085
+   },
+   "event_driven": {
+    "events_per_s": 128450.53333333334,
+    "cycles_per_s": 4538968.666666667,
+    "share_of_one_core": 0.030259791111111115,
+    "realtime_margin_x": 33.04715476481955
+   }
+  }
+ },
+ "pc_wall_s_per_simulated_s": 0.0029942000008304605,
+ "assumed_cycles": {
+  "per_neuron_update": 25,
+  "per_synaptic_event": 10,
+  "per_random_draw": 12
+ },
+ "rp2350": {
+  "clock_hz": 150000000.0,
+  "cores": 2,
+  "sram_bytes": 532480,
+  "source": "https://www.raspberrypi.com/products/rp2350/ (checked 2026-09-23 by the minimal-circuit lane)"
+ }
+}
