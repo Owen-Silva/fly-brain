@@ -1998,3 +1998,90 @@ pheromone pathway, a memory-circuit output neuron, and taste cells that should t
 from sugar. They look like wiring or missing-mechanism problems, not the lock-up. One of the
 matches (test 3) is partly built in, because the paper found that connection in the same
 kind of wiring map the model is made from.
+
+## 2026-09-23 - Phase 9: the same-side release boost (Gaudry 2013) as a switch, and can the brain then steer the body toward cVA? (PARTIAL, PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or any existing doc. New, in
+`experiments/phase9_sameside/`: `sameside.py`, an optional "release switch" that multiplies
+every same-side smell-receptor-neuron (ORN) -> projection-neuron (PN) connection by 1.39.
+Source: Gaudry, Hong, Kain, de Bivort & Wilson 2013, *Nature* 493:424 (PMC3590906),
+Fig. 3e: same-side synaptic currents 39% larger than other-side ones (n = 15 pairs of DM6
+PNs); abstract: "~40% more neurotransmitter" per spike from the same-side branch. Weights
+are kept exact (counts x1024, weight per synapse /1024); switch off = the old model
+(`build_brain("al_ln_literature")`), unchanged. Also a DIAGNOSTIC (not a realism claim)
+"arm 2": the switch plus same-side x1.30 more (FlyWire's median same-side ratio 1.25 vs
+about 1.63 in BANC, maleCNS and the hemibrain) and every glomerulus's left/right size
+imbalance removed. Scripts: `check_switch.py` (identity, anatomy, Phase 3),
+`open_loop_sameside.py` (brain-only screen), `pn_drive_check.py` (per-PN rates; PNs driven
+directly), `run_sameside.py` (closed loop; conditions, seeds and measures imported
+unchanged from `experiments/phase9_da1/run_da1.py`), `analyze_sameside.py`. Expectations
+and the pass rule (reused from docs/phase9-da1-demo.md section 1) were written into
+`docs/phase9-sameside.md` section 1 at 19:05, before any run.
+
+**What happened.**
+- Switch checks: at x1.0 the brain is the old one spike for spike (511,602 spikes, sugar
+  200 Hz, 30 trials; DA1 windows identical). Arm 1 changes 11,570 ORN -> PN connections
+  and nothing else (same-side synapse-equivalents 99,296 -> 138,020). Glomeruli in which
+  each PN gets more from its own side's ORNs: 32 of 51 -> 42 (arm 2: 50). Phase 3 sugar
+  -> MN9 with the switch on is unchanged to the last spike (67.28 Hz at 100 Hz sugar,
+  93.53 at 200 Hz; water 30.79, bitter 0.00, sugar + bitter 1.36).
+- Brain-only screen (3 seeds x 2 s): for a DA1 (cVA) source 5 mm to the RIGHT, DNa02 still
+  says "turn left" in every variant (+15.2 to +19.3 Hz); one antenna is answered
+  correctly in every variant. With the diagnostic map the left and right DA1 PNs fire
+  126.9 vs 129.9 Hz per neuron at equal smell, yet DNa02 still leans left. Driving the
+  DA1 PNs directly also gives a left lean (+2.5 Hz at equal drive, +11.7 Hz with the
+  RIGHT PNs driven 50% harder), and the relay DNae007 stays silent. So the lean is not
+  in the ORN -> PN map; it arises after or beside the DA1 PNs (not traced).
+- Closed loop, arm 1, normal fly (15 trials): left turn in 15 of 15 (sign test
+  p = 0.00006); toward the source in 6 of 12, +12.4° vs 0° for each silenced control
+  (Mann-Whitney p = 1.0; paired Wilcoxon p = 0.38); closest approach 4.14 vs 4.22 mm
+  (p = 1.0). Switch off gave +12.7° and 4.12 mm (p = 0.93, 0.97).
+- Arm 1, one antenna (12): toward the smelling side 11 of 12 raw, 12 of 12 against the
+  same-seed control; +34.0° vs 0° (p = 0.0006 vs DA1 silenced and vs DNa02 silenced;
+  paired p = 0.0005); left antenna +47.6°, right +20.4° (switch off +43.1° / +19.0°);
+  closest approach 5.82 vs 5.92 mm (p = 0.93).
+- Arm 2 (DIAGNOSTIC), normal fly (15): left in 15 of 15 (p = 0.00006); toward 6 of 12,
+  +8.8° (p = 1.0); closest 4.14 vs 4.22 mm (p = 0.97).
+- Arm 2 (DIAGNOSTIC), one antenna, cVA (12): toward the smelling side 12 of 12 raw and
+  paired, +43.3° vs 0° (p = 0.00006; paired p = 0.0005); left +58.4°, right +28.2°
+  (not different from switch off: p = 0.39, 0.52); closest approach 5.68 vs 5.92 mm
+  (p = 0.87).
+- DM1 (vinegar): arm 1 failed the pre-registered brain-only rule (right antenna alone
+  said "left" in 2 of 3 seeds, +2.8 Hz), so no pre-registered closed loop. Arm 2
+  mirrored (+26.7 / -10.3 Hz), so a one-antenna DM1 run was added after the screen as a
+  DIAGNOSTIC (12 trials): toward the smelling side 10 of 12 raw, 11 of 12 paired,
+  +42.0° vs 0° (p = 0.002; paired p = 0.001); left +59.8°, right +24.2°; closest
+  approach 5.34 vs 5.92 mm (p = 0.33).
+- Arm 1 with the DNpe002 read-out (direction assumed), normal fly (15): left in 12 of 15
+  (p = 0.035); toward the source 7 of 12, +0.3° vs 0° (p = 0.66; paired p = 0.97);
+  closest approach 4.25 vs 4.22 mm (p = 0.98). Switch off: +2.1° (p = 0.67).
+- Controls: all 69 control trials (DA1 smell neurons silenced, DNa02 silenced, no odor;
+  both arenas) were re-run with the switch on. Each walked exactly its phase9_da1 twin's
+  path (0.0 mm apart), with the straight drive in every window.
+- Verdicts against the pre-registered rule: arm 1 PARTIAL (PRELIMINARY), the same as
+  with the switch off; arm 2 (DIAGNOSTIC) also PARTIAL by the rule, and NOT PASSED for
+  a normal fly. All five pre-registered predictions came true.
+
+**Validated?** No: PRELIMINARY. Done: pre-registration before any run; the identity
+check (x1.0 = old model spike for spike); the Phase 3 re-check (identical); 3 seeds per
+condition; re-run controls compared with their phase9_da1 twins (identical paths); our
+glomerulus table matches the banc_asymmetry lane's in 50 of 51 glomeruli. A screen error
+was caught by a per-neuron check and corrected before writing: one weakly wired right
+PN (M_lvPNm44) had lowered the right-side group mean. Source: Gaudry et al. 2013 read
+through an automated extract of the PMC full text (Fig. 3e legend and results). Not
+done: other factors or a factor per glomerulus, tracing the connections that carry the
+left lean, parameter variations in the closed loop. Weak points: 3 seeds; a factor measured in DM6 applied to every
+glomerulus; possible double counting (part of the 39% may already be in FlyWire's
+synapse counts); a smell-to-firing curve not fitted to cVA or vinegar neurons.
+
+**Plain English.** We added a real effect that a wiring diagram cannot show. In a real
+fly, each smell-sensor spike releases about 40% more transmitter on its own side of the
+brain. It is an on/off switch: off gives exactly the old model, and it leaves the earlier
+sugar test exactly as it was. It did not help the fly steer. With both antennae smelling,
+the simulated fly still circles left whichever side the smell is on, just as before.
+Even a hand-made version with a perfectly balanced first smell station still circles
+left; that version is a diagnostic, not a claim. The left lean comes from further along
+the smell pathway, so fixing the first relay does not fix it. What still works, with or
+without the switch, is the lab test: a fly with one antenna covered turns toward the
+side that can smell. With the balanced map that also works for a vinegar smell. In
+neither case does the fly get closer to the smell.

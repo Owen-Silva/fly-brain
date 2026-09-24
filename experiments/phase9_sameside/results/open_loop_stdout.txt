@@ -1,0 +1,76 @@
+19:13:21 off: brain built in 5 s
+19:13:32 off DA1 bi_left_3mm: L/R ORN 138.5/136.1 Hz done
+19:13:43 off DA1 bi_right_3mm: L/R ORN 136.1/138.5 Hz done
+19:13:53 off DA1 bi_left_5mm: L/R ORN 121.3/118.2 Hz done
+19:14:02 off DA1 bi_right_5mm: L/R ORN 118.2/121.3 Hz done
+19:14:12 off DA1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:14:22 off DA1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:14:31 off DA1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:14:36 off DA1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:14:41 off DA1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:15:01 off DM1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:15:21 off DM1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:15:38 off DM1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:15:52 off DM1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:16:05 off DM1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:16:19 release: brain built in 14 s
+19:16:36 release DA1 bi_left_3mm: L/R ORN 138.5/136.1 Hz done
+19:16:52 release DA1 bi_right_3mm: L/R ORN 136.1/138.5 Hz done
+19:17:05 release DA1 bi_left_5mm: L/R ORN 121.3/118.2 Hz done
+19:17:19 release DA1 bi_right_5mm: L/R ORN 118.2/121.3 Hz done
+19:17:32 release DA1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:17:43 release DA1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:17:59 release DA1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:18:05 release DA1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:18:12 release DA1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:18:32 release DM1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:18:58 release DM1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:19:22 release DM1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:19:41 release DM1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:19:58 release DM1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:20:14 map: brain built in 15 s
+19:20:32 map DA1 bi_left_3mm: L/R ORN 138.5/136.1 Hz done
+19:20:47 map DA1 bi_right_3mm: L/R ORN 136.1/138.5 Hz done
+19:21:05 map DA1 bi_left_5mm: L/R ORN 121.3/118.2 Hz done
+19:21:25 map DA1 bi_right_5mm: L/R ORN 118.2/121.3 Hz done
+19:21:40 map DA1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:21:58 map DA1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:22:15 map DA1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:22:22 map DA1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:22:29 map DA1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:22:57 map DM1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:23:18 map DM1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:23:42 map DM1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:24:01 map DM1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:24:20 map DM1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:24:33 map_same_only: brain built in 13 s
+19:24:51 map_same_only DA1 bi_left_3mm: L/R ORN 138.5/136.1 Hz done
+19:25:08 map_same_only DA1 bi_right_3mm: L/R ORN 136.1/138.5 Hz done
+19:25:26 map_same_only DA1 bi_left_5mm: L/R ORN 121.3/118.2 Hz done
+19:25:42 map_same_only DA1 bi_right_5mm: L/R ORN 118.2/121.3 Hz done
+19:25:59 map_same_only DA1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:26:16 map_same_only DA1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:26:32 map_same_only DA1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:26:38 map_same_only DA1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:26:44 map_same_only DA1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:27:12 map_same_only DM1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:27:34 map_same_only DM1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:27:58 map_same_only DM1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:28:21 map_same_only DM1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:28:41 map_same_only DM1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:28:53 map_balance_only: brain built in 12 s
+19:29:11 map_balance_only DA1 bi_left_3mm: L/R ORN 138.5/136.1 Hz done
+19:29:29 map_balance_only DA1 bi_right_3mm: L/R ORN 136.1/138.5 Hz done
+19:29:42 map_balance_only DA1 bi_left_5mm: L/R ORN 121.3/118.2 Hz done
+19:29:59 map_balance_only DA1 bi_right_5mm: L/R ORN 118.2/121.3 Hz done
+19:30:13 map_balance_only DA1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:30:25 map_balance_only DA1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:30:38 map_balance_only DA1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:30:43 map_balance_only DA1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:30:49 map_balance_only DA1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:31:08 map_balance_only DM1 equal_5mm: L/R ORN 119.8/119.8 Hz done
+19:31:28 map_balance_only DM1 p6_150_100: L/R ORN 150.0/100.0 Hz done
+19:31:46 map_balance_only DM1 p6_100_150: L/R ORN 100.0/150.0 Hz done
+19:31:57 map_balance_only DM1 one_left_115hz: L/R ORN 115.0/0.0 Hz done
+19:32:13 map_balance_only DM1 one_right_115hz: L/R ORN 0.0/115.0 Hz done
+19:32:14 summary written

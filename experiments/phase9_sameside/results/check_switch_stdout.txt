@@ -1,0 +1,10 @@
+19:09:32 building 'off' (old model) and 'unit' (x1024, no change)
+19:10:12 identity sugar: {'test': 'unit vs off, sugar 200 Hz, seed 2000, 30 trials, all neurons', 'identical': True, 'total_spikes_off': 511602, 'total_spikes_unit': 511602}
+19:10:14 identity DA1 windows: {'test': 'unit vs off, DA1 121/118 Hz, 20 x 50 ms windows, DNa02/DNpe002/DNae007', 'identical': True, 'total_spikes_off': 2240.0, 'total_spikes_unit': 2240.0}
+19:10:36 identity release vs off, sugar: {'test': 'release (switch ON) vs off, sugar 200 Hz, seed 2000, 30 trials, all neurons', 'identical': True, 'total_spikes_off': 511602, 'total_spikes_unit': 511602}
+19:11:02 phase3 sugar_100Hz: MN9 67.28 Hz on vs 67.28 off
+19:11:43 phase3 sugar_200Hz: MN9 93.53 Hz on vs 93.53 off
+19:12:14 phase3 water_200Hz: MN9 30.79 Hz on vs 30.79 off
+19:12:32 phase3 bitter_200Hz: MN9 0.00 Hz on vs 0.0 off
+19:12:56 phase3 sugar100_bitter120: MN9 1.36 Hz on vs 1.36 off
+19:12:56 done

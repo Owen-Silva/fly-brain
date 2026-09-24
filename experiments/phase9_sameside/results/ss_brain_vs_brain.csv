@@ -1,0 +1,17 @@
+metric,condition,vs,mean,mean_vs,mannwhitney_p
+turn_toward_source_1s_deg,rel_dna02,old_dna02,12.449,12.659,0.93099
+turn_toward_source_1s_deg,map_dna02,old_dna02,8.7875,12.659,0.93099
+turn_toward_source_1s_deg,map_dna02,rel_dna02,8.7875,12.449,0.70745
+turn_toward_source_1s_deg,rel_dnpe002,old_dnpe002,0.3212,2.1494,0.66501
+heading_change_1s_deg,rel_dna02,old_dna02,61.239,60.418,0.70892
+heading_change_1s_deg,map_dna02,old_dna02,51.749,60.418,0.38373
+heading_change_1s_deg,map_dna02,rel_dna02,51.749,61.239,0.15846
+heading_change_1s_deg,rel_dnpe002,old_dnpe002,15.437,17.973,0.74002
+min_dist_mm,rel_dna02,old_dna02,4.144,4.1226,0.96686
+min_dist_mm,map_dna02,old_dna02,4.1353,4.1226,0.98343
+min_dist_mm,map_dna02,rel_dna02,4.1353,4.144,0.98343
+min_dist_mm,rel_dnpe002,old_dnpe002,4.2469,4.2169,0.98343
+turn_toward_intact_1s_deg (left_only),rel_one_dna02,old_one_dna02,47.551,43.077,0.81818
+turn_toward_intact_1s_deg (right_only),rel_one_dna02,old_one_dna02,20.397,18.959,0.80953
+turn_toward_intact_1s_deg (left_only),map_one_dna02,old_one_dna02,58.426,43.077,0.39394
+turn_toward_intact_1s_deg (right_only),map_one_dna02,old_one_dna02,28.247,18.959,0.52111

@@ -1,0 +1,4 @@
+test,identical,total_spikes_off,total_spikes_unit
+"unit vs off, sugar 200 Hz, seed 2000, 30 trials, all neurons",True,511602.0,511602.0
+"unit vs off, DA1 121/118 Hz, 20 x 50 ms windows, DNa02/DNpe002/DNae007",True,2240.0,2240.0
+"release (switch ON) vs off, sugar 200 Hz, seed 2000, 30 trials, all neurons",True,511602.0,511602.0

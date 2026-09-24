@@ -1,0 +1,36 @@
+19:58:26 A off done
+19:58:39 A release done
+19:58:53 A map done
+19:58:53 A: DA1-type PNs (DA1_lPN + DA1_vPN), mean rate per side, equal smell:
+                  mean  count
+variant pn_side              
+map     left     126.9      9
+        right    129.9      8
+off     left     104.6      9
+        right    101.3      8
+release left     117.4      9
+        right    115.6      8
+19:58:53 A: M_lvPNm44 and DNs:
+variant     map   off  release
+pn_type                       
+DNa02_L    18.0  17.2     17.5
+DNa02_R     1.5   1.0      0.7
+DNae007_L   7.7  18.0     16.3
+DNae007_R   0.2   1.0      0.3
+DNpe002_L  38.7  41.5     41.2
+DNpe002_R  35.2  36.8     36.8
+M_lvPNm44  20.0  12.8     15.0
+19:59:04 B equal_per_PN_100 done
+19:59:11 B equal_total_100 done
+19:59:20 B right_stronger_100_150 done
+19:59:28 B left_stronger_150_100 done
+19:59:33 B right_only_100 done
+19:59:36 B left_only_100 done
+19:59:36 B:
+              stimulus  pn_L_hz  pn_R_hz  DNa02_L  DNa02_R  DNpe002_L  DNpe002_R  DNae007_L  DNae007_R  dna02_turn dna02_turn_by_seed  dnae007_diff  dnpe002_turn
+      equal_per_PN_100    100.0    100.0      2.8      0.3        0.0        0.0        0.0        0.0         2.5     +3.5/+1.0/+3.0           0.0           0.0
+       equal_total_100    100.0    112.5      4.7      0.7        0.0        0.0        0.0        0.0         4.0     +1.5/+5.0/+5.5           0.0           0.0
+right_stronger_100_150    100.0    150.0     13.3      1.7        0.0        0.0        0.0        0.0        11.7  +15.0/+10.0/+10.0           0.0           0.0
+ left_stronger_150_100    150.0    100.0      7.8      0.3        0.0        0.0        0.0        0.0         7.5    +10.0/+7.5/+5.0           0.0           0.0
+        right_only_100      0.0    100.0      2.0      0.5        0.0        0.0        0.0        0.0         1.5     +0.0/+2.0/+2.5           0.0           0.0
+         left_only_100    100.0      0.0      0.0      0.0        0.0        0.0        0.0        0.0         0.0     +0.0/+0.0/+0.0           0.0           0.0

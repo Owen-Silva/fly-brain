@@ -1,0 +1,9 @@
+arena,condition,control,metric,n_pairs,mean_diff,n_positive,wilcoxon_p
+A,old_dna02,ctl_orns_off,turn_toward_source_1s_deg,12,12.659,6,0.38037
+A,rel_dna02,ctl_orns_off,turn_toward_source_1s_deg,12,12.449,6,0.38037
+A,map_dna02,ctl_orns_off,turn_toward_source_1s_deg,12,8.7875,6,0.33936
+A,rel_dnpe002,ctl_orns_off,turn_toward_source_1s_deg,12,0.3212,6,0.96973
+B,old_one_dna02,ctl_one_orns_off,turn_toward_intact_1s_deg,12,31.018,12,0.00048828
+B,rel_one_dna02,ctl_one_orns_off,turn_toward_intact_1s_deg,12,33.974,12,0.00048828
+B,map_one_dna02,ctl_one_orns_off,turn_toward_intact_1s_deg,12,43.336,12,0.00048828
+B,map_one_dna02_dm1,ctl_one_orns_off,turn_toward_intact_1s_deg,12,41.993,11,0.00097656

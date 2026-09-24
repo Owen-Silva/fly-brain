@@ -1,0 +1,4 @@
+variant,glomeruli,mirror,median_w,median_abs_log_rho,DA1_w,DA1_rho,DM1_w,DM1_rho,old_table_matches_banc_csv
+off,51,32,1.2536,0.1567,1.3449,1.0945,1.1568,1.4931,False
+release,51,42,1.7424,0.1567,1.8693,1.0945,1.6079,1.4931,False
+map,51,50,2.2651,0.0000,2.4301,1.0000,2.0903,1.0000,False
