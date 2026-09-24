@@ -1,0 +1,112 @@
+{
+ "left": {
+  "pairs": 1485,
+  "pairs_z_above_3": 89,
+  "pairs_z_below_-3": 31,
+  "null_pairs_abs_z_above_3_mean": 5.7,
+  "top10_overconvergent": [
+   "DA2",
+   "VA7m",
+   "VA5",
+   "DL4",
+   "VM4",
+   "VP1m",
+   "VM1",
+   "VC3m",
+   "DA3",
+   "VC1"
+  ]
+ },
+ "right": {
+  "pairs": 1485,
+  "pairs_z_above_3": 56,
+  "pairs_z_below_-3": 19,
+  "null_pairs_abs_z_above_3_mean": 5.28,
+  "top10_overconvergent": [
+   "VA7m",
+   "DA2",
+   "DL4",
+   "VM5v",
+   "DA4l",
+   "DL2d",
+   "VA7l",
+   "VM5d",
+   "VA3",
+   "VC3m"
+  ]
+ },
+ "left_right_spearman_glomerulus_score": 0.6955266955266957,
+ "left_right_spearman_pair_z": 0.5467591757416282,
+ "core_community": [
+  "DA4m",
+  "VL1",
+  "VP1d",
+  "VP2",
+  "VP4"
+ ],
+ "communities": [
+  {
+   "cluster": 3,
+   "n": 5,
+   "within_mean_z": 3.258,
+   "within_mean_z_left": 3.498,
+   "within_mean_z_right": 3.019,
+   "glomeruli": "DA4m VL1 VP1d VP2 VP4"
+  },
+  {
+   "cluster": 1,
+   "n": 14,
+   "within_mean_z": 2.072,
+   "within_mean_z_left": 2.346,
+   "within_mean_z_right": 1.797,
+   "glomeruli": "DL2d DL2v DM1 DM2 DM3 DM4 DM5 DP1m V VA2 VA4 VC4 VM2 VM3"
+  },
+  {
+   "cluster": 5,
+   "n": 7,
+   "within_mean_z": 1.924,
+   "within_mean_z_left": 2.242,
+   "within_mean_z_right": 1.607,
+   "glomeruli": "DC4 DL5 DM6 VC3l VM5d VM5v VM7d"
+  },
+  {
+   "cluster": 6,
+   "n": 10,
+   "within_mean_z": 1.768,
+   "within_mean_z_left": 2.311,
+   "within_mean_z_right": 1.225,
+   "glomeruli": "D DA1 DC3 DL3 DL4 VA1d VA1v VA3 VL2a VM7v"
+  },
+  {
+   "cluster": 4,
+   "n": 18,
+   "within_mean_z": 0.984,
+   "within_mean_z_left": 1.089,
+   "within_mean_z_right": 0.88,
+   "glomeruli": "DA2 DA3 DA4l DC1 DC2 DL1 VA5 VA6 VA7l VA7m VC1 VC2 VC3m VC5 VL2p VM1 VM4 VP1m"
+  },
+  {
+   "cluster": 2,
+   "n": 1,
+   "within_mean_z": NaN,
+   "within_mean_z_left": NaN,
+   "within_mean_z_right": NaN,
+   "glomeruli": "DP1l"
+  }
+ ],
+ "exposure_fruit_vs_other_mannwhitney_p": 0.16701302565196685,
+ "exposure_mean_fruit": 0.022798992442277167,
+ "exposure_mean_other": 0.01995273608714598,
+ "exposure_by_chem_class": {
+  "acids": 0.017,
+  "alcohols": 0.026,
+  "aldehydes": 0.028,
+  "amines": 0.021,
+  "aromatics": 0.012,
+  "esters": 0.024,
+  "ketones": 0.019,
+  "lactones": 0.026,
+  "sulfur compounds": 0.019,
+  "terpenes": 0.021
+ }
+}

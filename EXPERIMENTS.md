@@ -2325,3 +2325,81 @@ The catch is that it is fragile: make every connection 20% stronger or weaker an
 drifts far from the full brain, and it ignores water. A 400-neuron version has none of
 those problems and still fits the chip's memory, but may need both cores to keep up in
 real time.
+
+## 2026-09-23 - Mushroom body as a continual learner: it barely forgets, but the real PN->KC wiring loses to random wiring (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or `data/`. New:
+`experiments/mb_continual/` (scripts and results) and `docs/mb-continual-learning.md`.
+This is a fast rate model, not the spiking engine. Glomerulus -> KC synapse counts come
+from snapshot 630 via Phase 8's `circuit_630.npz` (uniglomerular ALPNs, 95.5% of PN -> KC
+synapses): 2,397 KCs on the left and 2,423 on the right, 55 glomeruli, about 5.2 inputs
+per KC. Each half was modelled separately. Odours: the 110 Hallem & Carlson odours (smell
+lane set A + DoOR set B, Olsen 2010 transform), with Poisson noise in a 0.05 s window,
+fixed by a pilot on seed 999. APL = keep the top 5% of KCs. There is one output per
+class, and the learning rule is Shen et al.'s local "always add" rule. Controls, drawn
+fresh per seed, keep each KC's in-degree and synapse counts: (a) shuffled (real
+glomerulus frequencies), (b) uniform. The MLP has the same hidden size and uses Adam,
+taught step by step and all at once. The pass rule (WIN only if "higher" by 2 SE,
+paired and unpaired, in all 4 half x control comparisons; LOSE if "lower" in both halves
+for either control) was frozen in `results/preregistration.md` at 21:58, before any
+learning run on the real or shuffled wiring. It was not changed afterwards. There were
+20 fly seeds and 10 MLP seeds. Runs took from about 22:00 to 23:35.
+
+**What happened.**
+- **Primary (110 odours, 10 tasks of 11): REAL WIRING LOSES.** Final accuracy, left /
+  right: real 57.5 / 58.9%, shuffled 64.4 / 64.0%, uniform 66.8 / 66.8%. The real wiring
+  is lower by 5.0 to 9.2 points (9.6 to 22.9 paired SE).
+- **Question 1:** the MLP taught step by step ends at 14.5 / 15.3%, with memory loss
+  0.94 / 0.93. The fly (real wiring) has memory loss 0.12, so it ends more accurate and
+  forgets less (clear in both halves). The MLP taught all at once reaches 93.2%. The fly
+  rule only adds, so its step-by-step and all-at-once results are identical.
+- **Cost per example:** the fly changes 120 synapses (5% of KCs active). The MLP changes
+  about 114,600 (step by step, 27% active) or 275,800 (all at once, 73% active) of its
+  400,170 weights.
+- **11 pre-registered variants:** sparseness 2 / 3 / 7.5 / 10%, windows 0.02 / 0.1 / 0.2 /
+  0.5 s, 5+ synapses only, per-KC-normalised input, and set A only. All are LOSES. The
+  real wiring is lower in all 4 comparisons in 11 of 12 settings. The exception is
+  per-KC-normalised input, where the left real wiring beats shuffled (+3.8 points).
+- **Capacity (good/bad):** fly 6.5 to 7.9 odours before error passes 10%, 34-36% error at
+  110 odours. MLP all at once about 95 (10.5% error at 110); MLP 10 odours at a time
+  about 17. Real vs random: no clear difference. Post hoc: a 0.5 s window gives 8-10
+  odours, and an error-driven local rule gives 14.5-19.5 odours with about 44 synapse
+  changes per example. Neither shows a clear real-vs-random difference.
+- **Odour groups:** the real wiring is lower in 34 of 40 chemical-class comparisons. Fruit
+  odours lose less than the rest in the left half only (2.4 to 2.9 points). Exposure to
+  the core community, pre-registered and post hoc, does not correlate with the loss
+  (Spearman -0.14 to +0.02). The pre-registered core community turned out to be DA4m,
+  VL1 and three thermo/hygro channels.
+- **MNIST (5 tasks of 2 digits, fixed 784 -> 55 projection; 5 fly and 3 MLP seeds):** fly
+  real 72.1 / 71.3%, shuffled 72.6 / 73.0%, uniform 74.3 / 73.8% (LOSES by 0.5 to 2.5
+  points). MLP step by step 19.2%, all at once 92%. Shen et al. report FlyModel 0.86 and
+  a plain network 0.19 on MNIST-20, with better features.
+- **Post-hoc diagnostics:** the structure is real. There are 89 (left) and 56 (right)
+  over-shared glomerulus pairs above z = 3, against about 6 expected, and the halves agree
+  (rho 0.70). The loss is not caused by the non-odour channels or by KC subtypes. The
+  edge-swap control recovers about half of the left-half gap. With self-balancing KCs,
+  the gap shrinks to 1-2 points.
+
+**Validated?** No: PRELIMINARY. Done: PLAN.md Phase 6 steps 1-5 (step 6, sharing,
+skipped); 20 seeds; 11 variants; a recount of the wiring matrix for 100 of 100 KCs;
+control invariants asserted; the diagnostics reproduce the main run exactly (120 of 120
+runs); a literature check (Shen, Zheng, Caron, Dasgupta). Not done: the spiking engine,
+more than one fly, real odour mixtures or concentrations, and continual-learning tricks
+for the MLP (replay, EWC). Weak points: the size of the gap depends on the KC input
+model, which the connectome does not fix (1 to 9 points). 47-95% of DoOR values are
+missing for 23 glomeruli. Capacity mostly measures a noise floor, because the error is
+already 10-13% at 5 odours. The brief's "Shen et al. 2021 PNAS" does not exist: the paper
+is an arXiv preprint (2021) and a Neural Computation paper (2023). Zheng et al.'s exact
+community list sits in a figure, so it was not checked. The main run's MLP part ran
+alongside the variant queue, so at times two processes ran at once. Each started only
+with at least 1.5 GB of RAM free.
+
+**Plain English.** The mushroom body is a good pattern for a machine that has to keep
+learning. It stores each new smell by strengthening a few synapses from the few cells
+that smell switches on, so it almost never overwrites old memories. It does this with
+about a thousandth of the changes a normal neural network makes. The price is accuracy:
+it gets about 58% of 110 noisy odours right, where a normal network taught everything at
+once gets 93%. The fly's actual wiring did worse than random wiring with the same
+statistics, by 5 to 9 points, in every setting we tried. So copy the design, not the
+exact wiring diagram. The real wiring does have structure, but that structure is not
+for this test.

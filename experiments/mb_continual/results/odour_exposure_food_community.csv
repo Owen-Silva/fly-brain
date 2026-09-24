@@ -1,0 +1,111 @@
+odour,chem_class,food_community_share
+ammonium hydroxide,amines,0.247234453459057
+putrescine,amines,0.34339402915482214
+cadaverine,amines,0.3508021303985536
+gamma-butyrolactone,lactones,0.2548626010501034
+gamma-hexalactone,lactones,0.3991455438862843
+gamma-octalactone,lactones,0.22366669876827935
+gamma-decalactone,lactones,0.1371979567340352
+delta-decalactone,lactones,0.1920134832417733
+methanoic acid,acids,0.2614782668573342
+acetic acid,acids,0.3284680459421491
+propanoic acid,acids,0.3473842961431834
+butyric acid,acids,0.34904872063397774
+pentanoic acid,acids,0.2233150951819857
+hexanoic acid,acids,0.3280719818253897
+heptanoic acid,acids,0.23301749664931787
+octanoic acid,acids,0.1843053074337271
+nonanoic acid,acids,0.21232349353450528
+linoleic acid,acids,0.23710667557285767
+isobutyric acid,acids,0.2446794598374731
+isopentanoic acid,acids,0.3600834336649125
+pyruvic acid,acids,0.2744372916272065
+2-ethylhexanoic acid,acids,0.3637765033144018
+lactic acid,acids,0.2616443755429994
+3-methylthio-1-propanol,sulfur compounds,0.397784956138239
+dimethyl sulfide,sulfur compounds,0.3508675221157186
+terpinolene,terpenes,0.1871754973887038
+alpha-pinene,terpenes,0.1744414350486565
+beta-pinene,terpenes,0.16978286260772746
+3-carene,terpenes,0.20220096715268573
+limonene,terpenes,0.19628688065320882
+alpha-humulene,terpenes,0.17443053062580052
+beta-myrcene,terpenes,0.17491702699086398
+(-)-trans-caryophyllene,terpenes,0.15628399529618503
+p-cymene,terpenes,0.20302541103736343
+geranyl acetate,terpenes,0.1460225540174301
+alpha-terpineol,terpenes,0.16445818597033213
+geraniol,terpenes,0.18453271251400855
+nerol,terpenes,0.17431804065351417
+linalool,terpenes,0.10868975651856601
+beta-citronellol,terpenes,0.1603578470437522
+linalool oxide,terpenes,0.2879033558223713
+acetaldehyde,aldehydes,0.4165034113677203
+propanal,aldehydes,0.4306100785134996
+butanal,aldehydes,0.32579057670243633
+pentanal,aldehydes,0.26880668436859273
+hexanal,aldehydes,0.28215187887241494
+E2-hexenal,aldehydes,0.24810397415730912
+furfural,aldehydes,0.2722337158986122
+2-propenal,aldehydes,0.28114726974737597
+acetone,ketones,0.28617139835496375
+2-butanone,ketones,0.36470331339574047
+2-pentanone,ketones,0.421228157554162
+2-heptanone,ketones,0.29229736305970233
+6-methyl-5-hepten-2-one,ketones,0.2516019621065494
+"2,3-butanedione",ketones,0.42599268312387134
+phenethyl alcohol,aromatics,0.16088153837467772
+benzyl alcohol,aromatics,0.166909121971492
+methyl salicylate,aromatics,0.08839717855059967
+methyl benzoate,aromatics,0.19603644337830267
+ethyl benzoate,aromatics,0.13153255760636787
+phenethyl acetate,aromatics,0.2629016578366684
+benzaldehyde,aromatics,0.19440789797839325
+phenylacetaldehyde,aromatics,0.20834347462760597
+acetophenone,aromatics,0.2060220046212663
+ethyl cinnamate,aromatics,0.10679803586887093
+2-methylphenol,aromatics,0.29980929674246243
+4-ethylguaiacol,aromatics,0.20984912514555948
+eugenol,aromatics,0.1787915700618217
+methanol,alcohols,0.351241507586734
+ethanol,alcohols,0.3342615936735743
+1-propanol,alcohols,0.33359017297458554
+1-butanol,alcohols,0.2948812605222787
+1-pentanol,alcohols,0.35346758709280685
+1-hexanol,alcohols,0.2743863769930329
+1-octanol,alcohols,0.35688300021175096
+2-pentanol,alcohols,0.3547862092007951
+3-methyl-butanol,alcohols,0.23972392250999724
+3-methyl-2-buten-1-ol,alcohols,0.26601805329408296
+1-penten-3-ol,alcohols,0.3991613822805543
+1-octen-3-ol,alcohols,0.3259284865026318
+E2-hexenol,alcohols,0.2784174747168342
+Z2-hexenol,alcohols,0.3567662803276188
+E3-hexenol,alcohols,0.31020037018939134
+Z3-hexenol,alcohols,0.277501465279706
+glycerol,alcohols,0.19923619863759212
+"2,3-butanediol",alcohols,0.46188541078427137
+methyl acetate,esters,0.4234310312927897
+ethyl acetate,esters,0.4629171135958785
+propyl acetate,esters,0.44996157538328246
+butyl acetate,esters,0.32786438860718836
+pentyl acetate,esters,0.3353877725132804
+hexyl acetate,esters,0.30762839400552566
+isobutyl acetate,esters,0.44530262523965697
+isopentyl acetate,esters,0.3660206633884205
+E2-hexenyl acetate,esters,0.21268209449215889
+methyl butyrate,esters,0.4791205749969192
+ethyl butyrate,esters,0.44618777888393596
+hexyl butyrate,esters,0.16555389476435348
+ethyl 3-hydroxybutyrate,esters,0.4111713400783494
+ethyl propionate,esters,0.528171698229982
+ethyl methanoate,esters,0.2630735411124282
+methyl hexanoate,esters,0.3384692916046453
+ethyl hexanoate,esters,0.2827315457657325
+hexyl hexanoate,esters,0.16019034399936774
+methyl octanoate,esters,0.2783520729362562
+ethyl octanoate,esters,0.2656747448444805
+ethyl decanoate,esters,0.10623293166983815
+ethyl trans-2-butenoate,esters,0.4497277087740357
+ethyl lactate,esters,0.41359173629744306
+diethyl succinate,esters,0.24938265164562254

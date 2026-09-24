@@ -1,0 +1,375 @@
+{
+ "primary_verdict": "REAL WIRING LOSES",
+ "primary_table": [
+  {
+   "side": "left",
+   "control": "shuffled",
+   "n_seeds": 20,
+   "mean_a": 0.5752,
+   "mean_b": 0.6437,
+   "diff": -0.0684,
+   "se_paired": 0.0047,
+   "se_unpaired": 0.0049,
+   "diff_over_se_paired": -14.5855,
+   "call": "lower"
+  },
+  {
+   "side": "left",
+   "control": "uniform",
+   "n_seeds": 20,
+   "mean_a": 0.5752,
+   "mean_b": 0.6676,
+   "diff": -0.0923,
+   "se_paired": 0.004,
+   "se_unpaired": 0.0041,
+   "diff_over_se_paired": -22.9225,
+   "call": "lower"
+  },
+  {
+   "side": "right",
+   "control": "shuffled",
+   "n_seeds": 20,
+   "mean_a": 0.5893,
+   "mean_b": 0.6396,
+   "diff": -0.0503,
+   "se_paired": 0.0052,
+   "se_unpaired": 0.0054,
+   "diff_over_se_paired": -9.6484,
+   "call": "lower"
+  },
+  {
+   "side": "right",
+   "control": "uniform",
+   "n_seeds": 20,
+   "mean_a": 0.5893,
+   "mean_b": 0.6683,
+   "diff": -0.079,
+   "se_paired": 0.0039,
+   "se_unpaired": 0.0052,
+   "diff_over_se_paired": -20.4204,
+   "call": "lower"
+  }
+ ],
+ "fly_vs_mlp": [
+  {
+   "side": "left",
+   "metric": "final_acc",
+   "fly_real": 0.5752,
+   "mlp_seq": 0.145,
+   "diff": 0.4302,
+   "se_unpaired": 0.0065,
+   "call": "fly higher",
+   "mlp_joint_final_acc": 0.9318
+  },
+  {
+   "side": "left",
+   "metric": "memory_loss",
+   "fly_real": 0.1217,
+   "mlp_seq": 0.9368,
+   "diff": -0.8151,
+   "se_unpaired": 0.0088,
+   "call": "fly lower",
+   "mlp_joint_final_acc": 0.9318
+  },
+  {
+   "side": "right",
+   "metric": "final_acc",
+   "fly_real": 0.5893,
+   "mlp_seq": 0.1531,
+   "diff": 0.4362,
+   "se_unpaired": 0.007,
+   "call": "fly higher",
+   "mlp_joint_final_acc": 0.9319
+  },
+  {
+   "side": "right",
+   "metric": "memory_loss",
+   "fly_real": 0.12,
+   "mlp_seq": 0.9279,
+   "diff": -0.808,
+   "se_unpaired": 0.008,
+   "call": "fly lower",
+   "mlp_joint_final_acc": 0.9319
+  }
+ ],
+ "cost": [
+  {
+   "model": "fly_real",
+   "changed_per_example": 120.2825,
+   "frac_active_test": 0.0499,
+   "n_hidden": 2410.0,
+   "n_weights": NaN
+  },
+  {
+   "model": "fly_shuffled",
+   "changed_per_example": 120.2873,
+   "frac_active_test": 0.0499,
+   "n_hidden": 2410.0,
+   "n_weights": NaN
+  },
+  {
+   "model": "fly_uniform",
+   "changed_per_example": 120.2845,
+   "frac_active_test": 0.0499,
+   "n_hidden": 2410.0,
+   "n_weights": NaN
+  },
+  {
+   "model": "mlp_joint",
+   "changed_per_example": 275795.9727,
+   "frac_active_test": 0.7332,
+   "n_hidden": 2410.0,
+   "n_weights": 400170.0
+  },
+  {
+   "model": "mlp_seq",
+   "changed_per_example": 114601.045,
+   "frac_active_test": 0.2711,
+   "n_hidden": 2410.0,
+   "n_weights": 400170.0
+  }
+ ],
+ "exposure_test": [
+  {
+   "side": "left",
+   "control": "shuffled",
+   "spearman_rho": -0.007,
+   "p": 0.9422
+  },
+  {
+   "side": "left",
+   "control": "uniform",
+   "spearman_rho": 0.0168,
+   "p": 0.8616
+  },
+  {
+   "side": "right",
+   "control": "shuffled",
+   "spearman_rho": -0.136,
+   "p": 0.1564
+  },
+  {
+   "side": "right",
+   "control": "uniform",
+   "spearman_rho": -0.0603,
+   "p": 0.5317
+  }
+ ],
+ "food_community_posthoc": {
+  "glomeruli": [
+   "DL2d",
+   "DL2v",
+   "DM1",
+   "DM2",
+   "DM3",
+   "DM4",
+   "DM5",
+   "DP1m",
+   "V",
+   "VA2",
+   "VA4",
+   "VC4",
+   "VM2",
+   "VM3"
+  ],
+  "tests": [
+   {
+    "side": "left",
+    "control": "shuffled",
+    "spearman_rho": -0.0538,
+    "p": 0.5767,
+    "mean_diff_top_half_share": -0.0717,
+    "mean_diff_bottom_half_share": -0.0651
+   },
+   {
+    "side": "left",
+    "control": "uniform",
+    "spearman_rho": -0.0621,
+    "p": 0.5194,
+    "mean_diff_top_half_share": -0.0975,
+    "mean_diff_bottom_half_share": -0.0871
+   },
+   {
+    "side": "right",
+    "control": "shuffled",
+    "spearman_rho": -0.0819,
+    "p": 0.3951,
+    "mean_diff_top_half_share": -0.0591,
+    "mean_diff_bottom_half_share": -0.0415
+   },
+   {
+    "side": "right",
+    "control": "uniform",
+    "spearman_rho": -0.0181,
+    "p": 0.8512,
+    "mean_diff_top_half_share": -0.0879,
+    "mean_diff_bottom_half_share": -0.0701
+   }
+  ]
+ },
+ "variant_verdicts": {
+  "k2": "REAL WIRING LOSES",
+  "k3": "REAL WIRING LOSES",
+  "k5": "REAL WIRING LOSES",
+  "k7.5": "REAL WIRING LOSES",
+  "k10": "REAL WIRING LOSES",
+  "T0.02": "REAL WIRING LOSES",
+  "T0.1": "REAL WIRING LOSES",
+  "T0.2": "REAL WIRING LOSES",
+  "T0.5": "REAL WIRING LOSES",
+  "syn5": "REAL WIRING LOSES",
+  "kcnorm": "REAL WIRING LOSES",
+  "setA": "REAL WIRING LOSES"
+ },
+ "capacity_verdict_capped": "NO CLEAR DIFFERENCE",
+ "capacity_verdict_uncapped": "NO CLEAR DIFFERENCE",
+ "capacity_T0.5_verdict_capped": "NO CLEAR DIFFERENCE",
+ "capacity_T0.5_verdict_uncapped": "NO CLEAR DIFFERENCE",
+ "mnist_verdict_capped": "REAL WIRING LOSES",
+ "mnist_summary": [
+  {
+   "side": "left",
+   "model": "fly_real_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7209,
+   "final_acc_se": 0.0045,
+   "memory_loss": 0.0812,
+   "saturated_share": 0.015
+  },
+  {
+   "side": "left",
+   "model": "fly_real_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.6571,
+   "final_acc_se": 0.0081,
+   "memory_loss": 0.0647,
+   "saturated_share": NaN
+  },
+  {
+   "side": "left",
+   "model": "fly_shuffled_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7263,
+   "final_acc_se": 0.0048,
+   "memory_loss": 0.0837,
+   "saturated_share": 0.0146
+  },
+  {
+   "side": "left",
+   "model": "fly_shuffled_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.659,
+   "final_acc_se": 0.0051,
+   "memory_loss": 0.069,
+   "saturated_share": NaN
+  },
+  {
+   "side": "left",
+   "model": "fly_uniform_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7428,
+   "final_acc_se": 0.0027,
+   "memory_loss": 0.0805,
+   "saturated_share": 0.015
+  },
+  {
+   "side": "left",
+   "model": "fly_uniform_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.682,
+   "final_acc_se": 0.0054,
+   "memory_loss": 0.0749,
+   "saturated_share": NaN
+  },
+  {
+   "side": "left",
+   "model": "mlp_joint",
+   "n_seeds": 3,
+   "final_acc": 0.9193,
+   "final_acc_se": 0.0007,
+   "memory_loss": NaN,
+   "saturated_share": NaN
+  },
+  {
+   "side": "left",
+   "model": "mlp_seq",
+   "n_seeds": 3,
+   "final_acc": 0.1924,
+   "final_acc_se": 0.0008,
+   "memory_loss": 0.988,
+   "saturated_share": NaN
+  },
+  {
+   "side": "right",
+   "model": "fly_real_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7131,
+   "final_acc_se": 0.0045,
+   "memory_loss": 0.0853,
+   "saturated_share": 0.0146
+  },
+  {
+   "side": "right",
+   "model": "fly_real_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.6414,
+   "final_acc_se": 0.0051,
+   "memory_loss": 0.0671,
+   "saturated_share": NaN
+  },
+  {
+   "side": "right",
+   "model": "fly_shuffled_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7299,
+   "final_acc_se": 0.0039,
+   "memory_loss": 0.0843,
+   "saturated_share": 0.0141
+  },
+  {
+   "side": "right",
+   "model": "fly_shuffled_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.6612,
+   "final_acc_se": 0.0078,
+   "memory_loss": 0.0688,
+   "saturated_share": NaN
+  },
+  {
+   "side": "right",
+   "model": "fly_uniform_capped",
+   "n_seeds": 5,
+   "final_acc": 0.7382,
+   "final_acc_se": 0.0023,
+   "memory_loss": 0.0808,
+   "saturated_share": 0.0147
+  },
+  {
+   "side": "right",
+   "model": "fly_uniform_uncapped",
+   "n_seeds": 5,
+   "final_acc": 0.6762,
+   "final_acc_se": 0.0081,
+   "memory_loss": 0.0686,
+   "saturated_share": NaN
+  },
+  {
+   "side": "right",
+   "model": "mlp_joint",
+   "n_seeds": 3,
+   "final_acc": 0.9205,
+   "final_acc_se": 0.0022,
+   "memory_loss": NaN,
+   "saturated_share": NaN
+  },
+  {
+   "side": "right",
+   "model": "mlp_seq",
+   "n_seeds": 3,
+   "final_acc": 0.1927,
+   "final_acc_se": 0.0004,
+   "memory_loss": 0.9878,
+   "saturated_share": NaN
+  }
+ ]
+}

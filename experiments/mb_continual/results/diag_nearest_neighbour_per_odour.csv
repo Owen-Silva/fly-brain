@@ -1,0 +1,661 @@
+side,wiring,odour,nn_corr
+left,real,ammonium hydroxide,0.47818710819917787
+left,real,putrescine,0.6554351008329761
+left,real,cadaverine,0.6212020246888638
+left,real,gamma-butyrolactone,0.8010497717949394
+left,real,gamma-hexalactone,0.8570843886648523
+left,real,gamma-octalactone,0.6337700806312786
+left,real,gamma-decalactone,0.8840960896700867
+left,real,delta-decalactone,0.8840960896700867
+left,real,methanoic acid,0.7021685328305446
+left,real,acetic acid,0.727701984482159
+left,real,propanoic acid,0.727701984482159
+left,real,butyric acid,0.557579162194525
+left,real,pentanoic acid,0.6918927075520934
+left,real,hexanoic acid,0.5210944746344358
+left,real,heptanoic acid,0.8790532188538352
+left,real,octanoic acid,0.8934352685995387
+left,real,nonanoic acid,0.8934352685995386
+left,real,linoleic acid,0.7383222687215187
+left,real,isobutyric acid,0.7071244724912633
+left,real,isopentanoic acid,0.5210944746344358
+left,real,pyruvic acid,0.7509656913047631
+left,real,2-ethylhexanoic acid,0.5589476906653271
+left,real,lactic acid,0.7021685328305447
+left,real,3-methylthio-1-propanol,0.7472147912823552
+left,real,dimethyl sulfide,0.5505454286759538
+left,real,terpinolene,0.8741740805267879
+left,real,alpha-pinene,0.7494522610700343
+left,real,beta-pinene,0.898877993372932
+left,real,3-carene,0.898877993372932
+left,real,limonene,0.8014866195560277
+left,real,alpha-humulene,0.7899868105637549
+left,real,beta-myrcene,0.8741740805267879
+left,real,(-)-trans-caryophyllene,0.853990339109888
+left,real,p-cymene,0.812887093555952
+left,real,geranyl acetate,0.4897522304558438
+left,real,alpha-terpineol,0.7455997581233207
+left,real,geraniol,0.7267617485084212
+left,real,nerol,0.8236908733498348
+left,real,linalool,0.7455997581233207
+left,real,beta-citronellol,0.853990339109888
+left,real,linalool oxide,0.6929526784904937
+left,real,acetaldehyde,0.5352014076934577
+left,real,propanal,0.4160941868902251
+left,real,butanal,0.6422044991007868
+left,real,pentanal,0.766931642515958
+left,real,hexanal,0.766931642515958
+left,real,E2-hexenal,0.7810512650118098
+left,real,furfural,0.7191571433232172
+left,real,2-propenal,0.6646870738211217
+left,real,acetone,0.5873986392353929
+left,real,2-butanone,0.5873986392353929
+left,real,2-pentanone,0.8570843886648521
+left,real,2-heptanone,0.6894198535919495
+left,real,6-methyl-5-hepten-2-one,0.6352412186416009
+left,real,"2,3-butanedione",0.6199528749276338
+left,real,phenethyl alcohol,0.7318621132818186
+left,real,benzyl alcohol,0.7318621132818186
+left,real,methyl salicylate,0.6232802995156683
+left,real,methyl benzoate,0.5211623820231399
+left,real,ethyl benzoate,0.6807402014906407
+left,real,phenethyl acetate,0.7871702032286181
+left,real,benzaldehyde,0.8106312105964852
+left,real,phenylacetaldehyde,0.6629100343748227
+left,real,acetophenone,0.8106312105964854
+left,real,ethyl cinnamate,0.710020281275677
+left,real,2-methylphenol,0.33836825411178395
+left,real,4-ethylguaiacol,0.6436018509044049
+left,real,eugenol,0.6807402014906407
+left,real,methanol,0.9183906124059792
+left,real,ethanol,0.9183906124059793
+left,real,1-propanol,0.7887700923290057
+left,real,1-butanol,0.82489904803911
+left,real,1-pentanol,0.8682509777596901
+left,real,1-hexanol,0.8498427204118739
+left,real,1-octanol,0.5613326298208425
+left,real,2-pentanol,0.7669742717063464
+left,real,3-methyl-butanol,0.82489904803911
+left,real,3-methyl-2-buten-1-ol,0.768972257937421
+left,real,1-penten-3-ol,0.653840196370035
+left,real,1-octen-3-ol,0.7163767395053098
+left,real,E2-hexenol,0.7494522610700343
+left,real,Z2-hexenol,0.82779430013255
+left,real,E3-hexenol,0.8682509777596901
+left,real,Z3-hexenol,0.8498427204118738
+left,real,glycerol,0.8731310081771658
+left,real,"2,3-butanediol",0.587197421021367
+left,real,methyl acetate,0.8291422569739828
+left,real,ethyl acetate,0.8409595947087922
+left,real,propyl acetate,0.7511499743779757
+left,real,butyl acetate,0.6926479594222144
+left,real,pentyl acetate,0.6608793329572292
+left,real,hexyl acetate,0.7034084299777644
+left,real,isobutyl acetate,0.7345605404564429
+left,real,isopentyl acetate,0.7048504375166229
+left,real,E2-hexenyl acetate,0.7034084299777644
+left,real,methyl butyrate,0.8462171887122317
+left,real,ethyl butyrate,0.7250627065123721
+left,real,hexyl butyrate,0.7854297722008065
+left,real,ethyl 3-hydroxybutyrate,0.7353915582916378
+left,real,ethyl propionate,0.8409595947087922
+left,real,ethyl methanoate,0.7509656913047631
+left,real,methyl hexanoate,0.8337086416710286
+left,real,ethyl hexanoate,0.9265207300523995
+left,real,hexyl hexanoate,0.5763155553794228
+left,real,methyl octanoate,0.8774695638534492
+left,real,ethyl octanoate,0.8774695638534492
+left,real,ethyl decanoate,0.6439201863232389
+left,real,ethyl trans-2-butenoate,0.7353915582916377
+left,real,ethyl lactate,0.6095812051284214
+left,real,diethyl succinate,0.9265207300523995
+left,shuffled,ammonium hydroxide,0.7114477691837788
+left,shuffled,putrescine,0.609598392632648
+left,shuffled,cadaverine,0.6512715813261678
+left,shuffled,gamma-butyrolactone,0.7736217686755712
+left,shuffled,gamma-hexalactone,0.8445013755897689
+left,shuffled,gamma-octalactone,0.744085018246827
+left,shuffled,gamma-decalactone,0.8804817891033864
+left,shuffled,delta-decalactone,0.8804817891033861
+left,shuffled,methanoic acid,0.7231818376701424
+left,shuffled,acetic acid,0.8191534280231145
+left,shuffled,propanoic acid,0.8191534280231147
+left,shuffled,butyric acid,0.659723311875547
+left,shuffled,pentanoic acid,0.6671643283372404
+left,shuffled,hexanoic acid,0.6662596315240872
+left,shuffled,heptanoic acid,0.8212952806185827
+left,shuffled,octanoic acid,0.8684430183386947
+left,shuffled,nonanoic acid,0.8684430183386947
+left,shuffled,linoleic acid,0.6501151332496014
+left,shuffled,isobutyric acid,0.6871982635497169
+left,shuffled,isopentanoic acid,0.6365631169026822
+left,shuffled,pyruvic acid,0.7755704082601615
+left,shuffled,2-ethylhexanoic acid,0.6738680677036623
+left,shuffled,lactic acid,0.7574884371489967
+left,shuffled,3-methylthio-1-propanol,0.6691328005692339
+left,shuffled,dimethyl sulfide,0.5682908636718617
+left,shuffled,terpinolene,0.8995386836583987
+left,shuffled,alpha-pinene,0.8132089170667088
+left,shuffled,beta-pinene,0.8905161882253069
+left,shuffled,3-carene,0.8905161882253069
+left,shuffled,limonene,0.7577249947479684
+left,shuffled,alpha-humulene,0.801243460532379
+left,shuffled,beta-myrcene,0.8855699601156113
+left,shuffled,(-)-trans-caryophyllene,0.7338087870683616
+left,shuffled,p-cymene,0.8288893705797736
+left,shuffled,geranyl acetate,0.49565269815073876
+left,shuffled,alpha-terpineol,0.8023491055123462
+left,shuffled,geraniol,0.7273622004523722
+left,shuffled,nerol,0.8975945850390495
+left,shuffled,linalool,0.7965548243072271
+left,shuffled,beta-citronellol,0.7358630922902255
+left,shuffled,linalool oxide,0.7241561311248572
+left,shuffled,acetaldehyde,0.7019235771647674
+left,shuffled,propanal,0.462410491976596
+left,shuffled,butanal,0.6439525737720186
+left,shuffled,pentanal,0.7861897206212553
+left,shuffled,hexanal,0.7861897206212553
+left,shuffled,E2-hexenal,0.6986701211999986
+left,shuffled,furfural,0.6581725533700474
+left,shuffled,2-propenal,0.7589568382195315
+left,shuffled,acetone,0.5776582526039387
+left,shuffled,2-butanone,0.5832621481165522
+left,shuffled,2-pentanone,0.8523748131116721
+left,shuffled,2-heptanone,0.7399008868503809
+left,shuffled,6-methyl-5-hepten-2-one,0.7074419874018955
+left,shuffled,"2,3-butanedione",0.5853905982357903
+left,shuffled,phenethyl alcohol,0.814723090563567
+left,shuffled,benzyl alcohol,0.814723090563567
+left,shuffled,methyl salicylate,0.672093616176429
+left,shuffled,methyl benzoate,0.738485636226156
+left,shuffled,ethyl benzoate,0.738485636226156
+left,shuffled,phenethyl acetate,0.7494955498853272
+left,shuffled,benzaldehyde,0.7215629136103311
+left,shuffled,phenylacetaldehyde,0.6017739146035196
+left,shuffled,acetophenone,0.7215629136103311
+left,shuffled,ethyl cinnamate,0.7776953014402216
+left,shuffled,2-methylphenol,0.39860833699977494
+left,shuffled,4-ethylguaiacol,0.5855404058967668
+left,shuffled,eugenol,0.6864603195707893
+left,shuffled,methanol,0.9340771480477035
+left,shuffled,ethanol,0.9340771480477035
+left,shuffled,1-propanol,0.8142194117634958
+left,shuffled,1-butanol,0.798108839509176
+left,shuffled,1-pentanol,0.8874816093377049
+left,shuffled,1-hexanol,0.8049873599753014
+left,shuffled,1-octanol,0.6383748940530302
+left,shuffled,2-pentanol,0.8371540289954774
+left,shuffled,3-methyl-butanol,0.7946397241505407
+left,shuffled,3-methyl-2-buten-1-ol,0.7516254189552466
+left,shuffled,1-penten-3-ol,0.720272401968582
+left,shuffled,1-octen-3-ol,0.7501959921113988
+left,shuffled,E2-hexenol,0.794128522049573
+left,shuffled,Z2-hexenol,0.8859072069332556
+left,shuffled,E3-hexenol,0.8316746042539516
+left,shuffled,Z3-hexenol,0.8049873599753014
+left,shuffled,glycerol,0.7534123116646214
+left,shuffled,"2,3-butanediol",0.5259391706827665
+left,shuffled,methyl acetate,0.6967503289699287
+left,shuffled,ethyl acetate,0.6967503289699287
+left,shuffled,propyl acetate,0.7278375901316736
+left,shuffled,butyl acetate,0.8100943384579509
+left,shuffled,pentyl acetate,0.7292594912345162
+left,shuffled,hexyl acetate,0.7251695925576601
+left,shuffled,isobutyl acetate,0.8071257655807939
+left,shuffled,isopentyl acetate,0.7966460525378235
+left,shuffled,E2-hexenyl acetate,0.710367059579569
+left,shuffled,methyl butyrate,0.8395415673929707
+left,shuffled,ethyl butyrate,0.7278375901316738
+left,shuffled,hexyl butyrate,0.7311144383123465
+left,shuffled,ethyl 3-hydroxybutyrate,0.7708128421383774
+left,shuffled,ethyl propionate,0.6191768182245724
+left,shuffled,ethyl methanoate,0.7462290229567531
+left,shuffled,methyl hexanoate,0.8803813157939508
+left,shuffled,ethyl hexanoate,0.8824205278739463
+left,shuffled,hexyl hexanoate,0.6081577266304533
+left,shuffled,methyl octanoate,0.808793185886827
+left,shuffled,ethyl octanoate,0.8044312078899558
+left,shuffled,ethyl decanoate,0.6776269140028355
+left,shuffled,ethyl trans-2-butenoate,0.7914510947669561
+left,shuffled,ethyl lactate,0.5907344537923236
+left,shuffled,diethyl succinate,0.8425818950181496
+left,uniform,ammonium hydroxide,0.7072626855640329
+left,uniform,putrescine,0.6272028968893529
+left,uniform,cadaverine,0.6666603593774989
+left,uniform,gamma-butyrolactone,0.759278969053735
+left,uniform,gamma-hexalactone,0.8291874743825606
+left,uniform,gamma-octalactone,0.6922133759018608
+left,uniform,gamma-decalactone,0.8883085467804077
+left,uniform,delta-decalactone,0.8883085467804079
+left,uniform,methanoic acid,0.7142717971365506
+left,uniform,acetic acid,0.8112474534270759
+left,uniform,propanoic acid,0.8112474534270759
+left,uniform,butyric acid,0.6766552024583985
+left,uniform,pentanoic acid,0.6705313535706997
+left,uniform,hexanoic acid,0.6365594921912469
+left,uniform,heptanoic acid,0.8522443867380716
+left,uniform,octanoic acid,0.8973453591592946
+left,uniform,nonanoic acid,0.8973453591592946
+left,uniform,linoleic acid,0.7090710565013499
+left,uniform,isobutyric acid,0.724708682197307
+left,uniform,isopentanoic acid,0.6337668888785845
+left,uniform,pyruvic acid,0.7720600756418483
+left,uniform,2-ethylhexanoic acid,0.605920625586646
+left,uniform,lactic acid,0.7188747213948925
+left,uniform,3-methylthio-1-propanol,0.6724461747645635
+left,uniform,dimethyl sulfide,0.5505419202457358
+left,uniform,terpinolene,0.8905362171081965
+left,uniform,alpha-pinene,0.7534107450563363
+left,uniform,beta-pinene,0.8862719078323409
+left,uniform,3-carene,0.8862719078323409
+left,uniform,limonene,0.6897241474047593
+left,uniform,alpha-humulene,0.7967970313274158
+left,uniform,beta-myrcene,0.8562534188253528
+left,uniform,(-)-trans-caryophyllene,0.7751325932583639
+left,uniform,p-cymene,0.8059063828449812
+left,uniform,geranyl acetate,0.6284415164393758
+left,uniform,alpha-terpineol,0.7962377244399621
+left,uniform,geraniol,0.7557681025380834
+left,uniform,nerol,0.8880533699527045
+left,uniform,linalool,0.7857124135714046
+left,uniform,beta-citronellol,0.7621402804126776
+left,uniform,linalool oxide,0.6885008424222623
+left,uniform,acetaldehyde,0.6936850744453446
+left,uniform,propanal,0.510575114415356
+left,uniform,butanal,0.6422978702812718
+left,uniform,pentanal,0.7942182501075534
+left,uniform,hexanal,0.7942182501075534
+left,uniform,E2-hexenal,0.7034029744814199
+left,uniform,furfural,0.678990298470296
+left,uniform,2-propenal,0.7329182255774558
+left,uniform,acetone,0.6056709945937929
+left,uniform,2-butanone,0.5995571563047972
+left,uniform,2-pentanone,0.8327280768486105
+left,uniform,2-heptanone,0.6940781551695983
+left,uniform,6-methyl-5-hepten-2-one,0.6676712217324068
+left,uniform,"2,3-butanedione",0.6312486488795136
+left,uniform,phenethyl alcohol,0.765089489748316
+left,uniform,benzyl alcohol,0.765089489748316
+left,uniform,methyl salicylate,0.696489771512606
+left,uniform,methyl benzoate,0.72706962349276
+left,uniform,ethyl benzoate,0.7419072119821398
+left,uniform,phenethyl acetate,0.7766963455197056
+left,uniform,benzaldehyde,0.7142782086749577
+left,uniform,phenylacetaldehyde,0.5706302264018585
+left,uniform,acetophenone,0.7115675560080709
+left,uniform,ethyl cinnamate,0.7905836473572838
+left,uniform,2-methylphenol,0.45466685441008636
+left,uniform,4-ethylguaiacol,0.5871224097964524
+left,uniform,eugenol,0.7080359937275782
+left,uniform,methanol,0.93058747059632
+left,uniform,ethanol,0.93058747059632
+left,uniform,1-propanol,0.782118091811082
+left,uniform,1-butanol,0.7795248390424387
+left,uniform,1-pentanol,0.8787345727085187
+left,uniform,1-hexanol,0.7576455327413398
+left,uniform,1-octanol,0.5804695266655688
+left,uniform,2-pentanol,0.7829478927381939
+left,uniform,3-methyl-butanol,0.7767406905296715
+left,uniform,3-methyl-2-buten-1-ol,0.7583941356204429
+left,uniform,1-penten-3-ol,0.7520265529551977
+left,uniform,1-octen-3-ol,0.6961206190893297
+left,uniform,E2-hexenol,0.7587136589900736
+left,uniform,Z2-hexenol,0.8787345727085187
+left,uniform,E3-hexenol,0.7953155526909986
+left,uniform,Z3-hexenol,0.7761087389237005
+left,uniform,glycerol,0.7916313821318722
+left,uniform,"2,3-butanediol",0.5654932352264255
+left,uniform,methyl acetate,0.6139044955863919
+left,uniform,ethyl acetate,0.6218575788625497
+left,uniform,propyl acetate,0.6868682164061817
+left,uniform,butyl acetate,0.7424987955218025
+left,uniform,pentyl acetate,0.6885399951039509
+left,uniform,hexyl acetate,0.6700787803735775
+left,uniform,isobutyl acetate,0.7653215992088727
+left,uniform,isopentyl acetate,0.7525940667123698
+left,uniform,E2-hexenyl acetate,0.6869525698501294
+left,uniform,methyl butyrate,0.8007618969015589
+left,uniform,ethyl butyrate,0.6848828684849891
+left,uniform,hexyl butyrate,0.7246472420293529
+left,uniform,ethyl 3-hydroxybutyrate,0.7684438320536707
+left,uniform,ethyl propionate,0.5712404360530441
+left,uniform,ethyl methanoate,0.7630242682031636
+left,uniform,methyl hexanoate,0.8503491599223454
+left,uniform,ethyl hexanoate,0.862454189775242
+left,uniform,hexyl hexanoate,0.6428771062753105
+left,uniform,methyl octanoate,0.7204464043440508
+left,uniform,ethyl octanoate,0.7140527576115913
+left,uniform,ethyl decanoate,0.673025688649124
+left,uniform,ethyl trans-2-butenoate,0.7741406987681854
+left,uniform,ethyl lactate,0.5854345120705253
+left,uniform,diethyl succinate,0.8304415966873921
+right,real,ammonium hydroxide,0.7076369702679944
+right,real,putrescine,0.6170374081411875
+right,real,cadaverine,0.6271745344631732
+right,real,gamma-butyrolactone,0.8700554612391209
+right,real,gamma-hexalactone,0.8526064001637472
+right,real,gamma-octalactone,0.7650988717916829
+right,real,gamma-decalactone,0.8678874501553693
+right,real,delta-decalactone,0.8678874501553692
+right,real,methanoic acid,0.7835740725936918
+right,real,acetic acid,0.7087045735958869
+right,real,propanoic acid,0.7087045735958868
+right,real,butyric acid,0.650374320061991
+right,real,pentanoic acid,0.70976854357261
+right,real,hexanoic acid,0.6362052809784694
+right,real,heptanoic acid,0.8895958672265724
+right,real,octanoic acid,0.9381051489196858
+right,real,nonanoic acid,0.9381051489196858
+right,real,linoleic acid,0.7048020739233607
+right,real,isobutyric acid,0.8241051272212576
+right,real,isopentanoic acid,0.570055809569364
+right,real,pyruvic acid,0.7813251113288262
+right,real,2-ethylhexanoic acid,0.6827813646049345
+right,real,lactic acid,0.7835740725936918
+right,real,3-methylthio-1-propanol,0.7200297443828597
+right,real,dimethyl sulfide,0.5672545224772827
+right,real,terpinolene,0.9368308715939595
+right,real,alpha-pinene,0.8048072834150811
+right,real,beta-pinene,0.9180581197841157
+right,real,3-carene,0.9180581197841157
+right,real,limonene,0.796161732990076
+right,real,alpha-humulene,0.7872522261709214
+right,real,beta-myrcene,0.8783322337806793
+right,real,(-)-trans-caryophyllene,0.8915480548809636
+right,real,p-cymene,0.8193202446344874
+right,real,geranyl acetate,0.6397853938480735
+right,real,alpha-terpineol,0.8257743762011445
+right,real,geraniol,0.8258677283734853
+right,real,nerol,0.9368308715939596
+right,real,linalool,0.8258677283734853
+right,real,beta-citronellol,0.8915480548809633
+right,real,linalool oxide,0.7868390098477145
+right,real,acetaldehyde,0.5863556597504012
+right,real,propanal,0.5042906665990401
+right,real,butanal,0.647618245037126
+right,real,pentanal,0.8253745737109837
+right,real,hexanal,0.8253745737109837
+right,real,E2-hexenal,0.7367276163194415
+right,real,furfural,0.7663339244444448
+right,real,2-propenal,0.7201937275091466
+right,real,acetone,0.7407732952768334
+right,real,2-butanone,0.7407732952768334
+right,real,2-pentanone,0.8910379606555094
+right,real,2-heptanone,0.7540022617706511
+right,real,6-methyl-5-hepten-2-one,0.6530958552855202
+right,real,"2,3-butanedione",0.5099142441976772
+right,real,phenethyl alcohol,0.9102176309589011
+right,real,benzyl alcohol,0.9102176309589012
+right,real,methyl salicylate,0.5459112497814472
+right,real,methyl benzoate,0.6101230755676891
+right,real,ethyl benzoate,0.6515235739129595
+right,real,phenethyl acetate,0.8572493098801476
+right,real,benzaldehyde,0.7275831565394697
+right,real,phenylacetaldehyde,0.6889150792650532
+right,real,acetophenone,0.7275831565394697
+right,real,ethyl cinnamate,0.8216822397451555
+right,real,2-methylphenol,0.38029638952414996
+right,real,4-ethylguaiacol,0.5162444644475817
+right,real,eugenol,0.7611012680682266
+right,real,methanol,0.9250548393666005
+right,real,ethanol,0.9250548393666005
+right,real,1-propanol,0.818900917610972
+right,real,1-butanol,0.721656584448089
+right,real,1-pentanol,0.879405790014472
+right,real,1-hexanol,0.8251049260069719
+right,real,1-octanol,0.631578611320863
+right,real,2-pentanol,0.8151912252077449
+right,real,3-methyl-butanol,0.7733678437100381
+right,real,3-methyl-2-buten-1-ol,0.8700554612391209
+right,real,1-penten-3-ol,0.6346899818176888
+right,real,1-octen-3-ol,0.7035408284141998
+right,real,E2-hexenol,0.8555566748634578
+right,real,Z2-hexenol,0.879405790014472
+right,real,E3-hexenol,0.8555566748634579
+right,real,Z3-hexenol,0.863116516168641
+right,real,glycerol,0.788633321844588
+right,real,"2,3-butanediol",0.5099142441976772
+right,real,methyl acetate,0.7988483147468859
+right,real,ethyl acetate,0.7988483147468858
+right,real,propyl acetate,0.8273696540388307
+right,real,butyl acetate,0.7967482181104759
+right,real,pentyl acetate,0.7667847100177156
+right,real,hexyl acetate,0.7344497473388518
+right,real,isobutyl acetate,0.8101931590513046
+right,real,isopentyl acetate,0.7716637417651361
+right,real,E2-hexenyl acetate,0.7344497473388518
+right,real,methyl butyrate,0.8910379606555093
+right,real,ethyl butyrate,0.8273696540388306
+right,real,hexyl butyrate,0.863116516168641
+right,real,ethyl 3-hydroxybutyrate,0.7877738497910055
+right,real,ethyl propionate,0.7594955976650706
+right,real,ethyl methanoate,0.7363347984000206
+right,real,methyl hexanoate,0.8839252667512277
+right,real,ethyl hexanoate,0.8839252667512278
+right,real,hexyl hexanoate,0.5784302901526939
+right,real,methyl octanoate,0.856604824605712
+right,real,ethyl octanoate,0.8566048246057119
+right,real,ethyl decanoate,0.6707992072269446
+right,real,ethyl trans-2-butenoate,0.8101931590513045
+right,real,ethyl lactate,0.6061531632197299
+right,real,diethyl succinate,0.8572493098801477
+right,shuffled,ammonium hydroxide,0.6941454249149096
+right,shuffled,putrescine,0.6082674059083084
+right,shuffled,cadaverine,0.6657450530924928
+right,shuffled,gamma-butyrolactone,0.7436741172073474
+right,shuffled,gamma-hexalactone,0.829316816703457
+right,shuffled,gamma-octalactone,0.7294598494671524
+right,shuffled,gamma-decalactone,0.8729535425975564
+right,shuffled,delta-decalactone,0.8729535425975564
+right,shuffled,methanoic acid,0.7826580537700688
+right,shuffled,acetic acid,0.7960518951575676
+right,shuffled,propanoic acid,0.7960518951575675
+right,shuffled,butyric acid,0.6751654986920022
+right,shuffled,pentanoic acid,0.6620832770320589
+right,shuffled,hexanoic acid,0.6398475812588504
+right,shuffled,heptanoic acid,0.8315845678069007
+right,shuffled,octanoic acid,0.8994238088767407
+right,shuffled,nonanoic acid,0.8994238088767407
+right,shuffled,linoleic acid,0.6588011444902404
+right,shuffled,isobutyric acid,0.6842442488626586
+right,shuffled,isopentanoic acid,0.6150876412524967
+right,shuffled,pyruvic acid,0.7554397267907568
+right,shuffled,2-ethylhexanoic acid,0.6538165077545628
+right,shuffled,lactic acid,0.7868997746703037
+right,shuffled,3-methylthio-1-propanol,0.6670823792415062
+right,shuffled,dimethyl sulfide,0.5698229803160886
+right,shuffled,terpinolene,0.9041881533211779
+right,shuffled,alpha-pinene,0.817152984531939
+right,shuffled,beta-pinene,0.8814183755963148
+right,shuffled,3-carene,0.8796977654463515
+right,shuffled,limonene,0.7545528483837032
+right,shuffled,alpha-humulene,0.8160136232963975
+right,shuffled,beta-myrcene,0.8815458568435623
+right,shuffled,(-)-trans-caryophyllene,0.7470897865331858
+right,shuffled,p-cymene,0.8377068272127637
+right,shuffled,geranyl acetate,0.5543183218619229
+right,shuffled,alpha-terpineol,0.801078451332323
+right,shuffled,geraniol,0.7573728476791816
+right,shuffled,nerol,0.8983694129895883
+right,shuffled,linalool,0.800468409891766
+right,shuffled,beta-citronellol,0.7528033666417681
+right,shuffled,linalool oxide,0.7020526731947869
+right,shuffled,acetaldehyde,0.6580596582430653
+right,shuffled,propanal,0.4824523830874054
+right,shuffled,butanal,0.6649308178376142
+right,shuffled,pentanal,0.7919092020718999
+right,shuffled,hexanal,0.7919092020718999
+right,shuffled,E2-hexenal,0.7361040225073012
+right,shuffled,furfural,0.6536828864955639
+right,shuffled,2-propenal,0.7353475318065692
+right,shuffled,acetone,0.6427565037895911
+right,shuffled,2-butanone,0.6427565037895911
+right,shuffled,2-pentanone,0.8324108991600194
+right,shuffled,2-heptanone,0.7365384421047309
+right,shuffled,6-methyl-5-hepten-2-one,0.6801752744211302
+right,shuffled,"2,3-butanedione",0.5984288753738067
+right,shuffled,phenethyl alcohol,0.8033826450847386
+right,shuffled,benzyl alcohol,0.8033826450847386
+right,shuffled,methyl salicylate,0.6351672722617198
+right,shuffled,methyl benzoate,0.724794118462188
+right,shuffled,ethyl benzoate,0.7251192348657626
+right,shuffled,phenethyl acetate,0.7456600176465266
+right,shuffled,benzaldehyde,0.7299395957287922
+right,shuffled,phenylacetaldehyde,0.5926966377299352
+right,shuffled,acetophenone,0.7299395957287922
+right,shuffled,ethyl cinnamate,0.7567363540206599
+right,shuffled,2-methylphenol,0.41793866985395456
+right,shuffled,4-ethylguaiacol,0.549735509229278
+right,shuffled,eugenol,0.6579956571498674
+right,shuffled,methanol,0.936019592761048
+right,shuffled,ethanol,0.936019592761048
+right,shuffled,1-propanol,0.8013965658370014
+right,shuffled,1-butanol,0.8157594254410021
+right,shuffled,1-pentanol,0.887824699938738
+right,shuffled,1-hexanol,0.8188655754199253
+right,shuffled,1-octanol,0.6543087998244995
+right,shuffled,2-pentanol,0.8081166402295663
+right,shuffled,3-methyl-butanol,0.8157594254410021
+right,shuffled,3-methyl-2-buten-1-ol,0.7533019510023531
+right,shuffled,1-penten-3-ol,0.7112960385443474
+right,shuffled,1-octen-3-ol,0.7541698460379557
+right,shuffled,E2-hexenol,0.8058263722732004
+right,shuffled,Z2-hexenol,0.887824699938738
+right,shuffled,E3-hexenol,0.8405472537804748
+right,shuffled,Z3-hexenol,0.8188655754199253
+right,shuffled,glycerol,0.7818355060647465
+right,shuffled,"2,3-butanediol",0.5245552968554248
+right,shuffled,methyl acetate,0.7021868298215546
+right,shuffled,ethyl acetate,0.7021868298215544
+right,shuffled,propyl acetate,0.7156138692490106
+right,shuffled,butyl acetate,0.7778756982063706
+right,shuffled,pentyl acetate,0.7529025418513282
+right,shuffled,hexyl acetate,0.7239453092279305
+right,shuffled,isobutyl acetate,0.8038117344019391
+right,shuffled,isopentyl acetate,0.7825732004137894
+right,shuffled,E2-hexenyl acetate,0.71535931666765
+right,shuffled,methyl butyrate,0.8082629119662824
+right,shuffled,ethyl butyrate,0.7151141868641713
+right,shuffled,hexyl butyrate,0.766267314586272
+right,shuffled,ethyl 3-hydroxybutyrate,0.7570829045744347
+right,shuffled,ethyl propionate,0.5685595028844206
+right,shuffled,ethyl methanoate,0.7271472506284102
+right,shuffled,methyl hexanoate,0.8445474006889462
+right,shuffled,ethyl hexanoate,0.8651117313660623
+right,shuffled,hexyl hexanoate,0.6287481810702901
+right,shuffled,methyl octanoate,0.77699106142815
+right,shuffled,ethyl octanoate,0.7861135896929186
+right,shuffled,ethyl decanoate,0.683231869631532
+right,shuffled,ethyl trans-2-butenoate,0.7979498887321291
+right,shuffled,ethyl lactate,0.5765794737696963
+right,shuffled,diethyl succinate,0.849547377882897
+right,uniform,ammonium hydroxide,0.6819262484226483
+right,uniform,putrescine,0.5778010970542254
+right,uniform,cadaverine,0.6261767117948589
+right,uniform,gamma-butyrolactone,0.7271080285836249
+right,uniform,gamma-hexalactone,0.8188959357543462
+right,uniform,gamma-octalactone,0.7155117422850035
+right,uniform,gamma-decalactone,0.8832154643480971
+right,uniform,delta-decalactone,0.8832154643480971
+right,uniform,methanoic acid,0.74556966128804
+right,uniform,acetic acid,0.8101530253177103
+right,uniform,propanoic acid,0.8101530253177103
+right,uniform,butyric acid,0.7101446202325159
+right,uniform,pentanoic acid,0.665525347084872
+right,uniform,hexanoic acid,0.6652557077606777
+right,uniform,heptanoic acid,0.8566624736375813
+right,uniform,octanoic acid,0.8917668680016415
+right,uniform,nonanoic acid,0.8914528337219213
+right,uniform,linoleic acid,0.7156368013128123
+right,uniform,isobutyric acid,0.7181134426189912
+right,uniform,isopentanoic acid,0.6460660221555645
+right,uniform,pyruvic acid,0.768144627175213
+right,uniform,2-ethylhexanoic acid,0.6531549766392132
+right,uniform,lactic acid,0.7501498933338338
+right,uniform,3-methylthio-1-propanol,0.6922256755462394
+right,uniform,dimethyl sulfide,0.6044926122291581
+right,uniform,terpinolene,0.8792420299396786
+right,uniform,alpha-pinene,0.7596931678355822
+right,uniform,beta-pinene,0.8765120909221513
+right,uniform,3-carene,0.8765120909221513
+right,uniform,limonene,0.7038562510558906
+right,uniform,alpha-humulene,0.8147107545159875
+right,uniform,beta-myrcene,0.8499459201285212
+right,uniform,(-)-trans-caryophyllene,0.7825988804487698
+right,uniform,p-cymene,0.8040704829695293
+right,uniform,geranyl acetate,0.6318164401076289
+right,uniform,alpha-terpineol,0.807150571556728
+right,uniform,geraniol,0.757250788034325
+right,uniform,nerol,0.8792420299396788
+right,uniform,linalool,0.7989777766570118
+right,uniform,beta-citronellol,0.7654096152938549
+right,uniform,linalool oxide,0.6772915529232917
+right,uniform,acetaldehyde,0.6884388560112162
+right,uniform,propanal,0.5171613891451693
+right,uniform,butanal,0.6555118649751043
+right,uniform,pentanal,0.8175185460244425
+right,uniform,hexanal,0.819299470087073
+right,uniform,E2-hexenal,0.7083742476577004
+right,uniform,furfural,0.6664065792375047
+right,uniform,2-propenal,0.7226180213055045
+right,uniform,acetone,0.5882876858642412
+right,uniform,2-butanone,0.5920797620896183
+right,uniform,2-pentanone,0.8266261592311883
+right,uniform,2-heptanone,0.6947148363711773
+right,uniform,6-methyl-5-hepten-2-one,0.6685306230549617
+right,uniform,"2,3-butanedione",0.5876785937534191
+right,uniform,phenethyl alcohol,0.7495168059827848
+right,uniform,benzyl alcohol,0.7495168059827848
+right,uniform,methyl salicylate,0.6829928716723892
+right,uniform,methyl benzoate,0.695518052807823
+right,uniform,ethyl benzoate,0.6945320701650017
+right,uniform,phenethyl acetate,0.7301500462992713
+right,uniform,benzaldehyde,0.6967202100083913
+right,uniform,phenylacetaldehyde,0.5387489485563292
+right,uniform,acetophenone,0.6967202100083913
+right,uniform,ethyl cinnamate,0.7858340786943435
+right,uniform,2-methylphenol,0.4263177135939745
+right,uniform,4-ethylguaiacol,0.5783242810474147
+right,uniform,eugenol,0.6972454562038964
+right,uniform,methanol,0.925340054334406
+right,uniform,ethanol,0.925340054334406
+right,uniform,1-propanol,0.7753757823754387
+right,uniform,1-butanol,0.764622501067938
+right,uniform,1-pentanol,0.8876920804118743
+right,uniform,1-hexanol,0.7706992255023193
+right,uniform,1-octanol,0.6131558362466356
+right,uniform,2-pentanol,0.80170085266132
+right,uniform,3-methyl-butanol,0.7696648856282345
+right,uniform,3-methyl-2-buten-1-ol,0.7584376793000599
+right,uniform,1-penten-3-ol,0.7204471712884624
+right,uniform,1-octen-3-ol,0.7004869359900949
+right,uniform,E2-hexenol,0.7654991529661088
+right,uniform,Z2-hexenol,0.8876920804118743
+right,uniform,E3-hexenol,0.805657586688542
+right,uniform,Z3-hexenol,0.7758721987814063
+right,uniform,glycerol,0.8003210264296351
+right,uniform,"2,3-butanediol",0.5081257600391218
+right,uniform,methyl acetate,0.6583322295567242
+right,uniform,ethyl acetate,0.6615105228710274
+right,uniform,propyl acetate,0.718483909920987
+right,uniform,butyl acetate,0.7655302033236395
+right,uniform,pentyl acetate,0.6946020032682327
+right,uniform,hexyl acetate,0.6943893483753094
+right,uniform,isobutyl acetate,0.8038155025632852
+right,uniform,isopentyl acetate,0.7653421873845101
+right,uniform,E2-hexenyl acetate,0.6898856268822617
+right,uniform,methyl butyrate,0.8047541219801098
+right,uniform,ethyl butyrate,0.718483909920987
+right,uniform,hexyl butyrate,0.7394885992579787
+right,uniform,ethyl 3-hydroxybutyrate,0.7592172425083954
+right,uniform,ethyl propionate,0.5612108549245779
+right,uniform,ethyl methanoate,0.7650368032842787
+right,uniform,methyl hexanoate,0.8545275179685852
+right,uniform,ethyl hexanoate,0.8595957299283288
+right,uniform,hexyl hexanoate,0.6688425022659004
+right,uniform,methyl octanoate,0.7419106250061108
+right,uniform,ethyl octanoate,0.7286812383923683
+right,uniform,ethyl decanoate,0.7106982161395085
+right,uniform,ethyl trans-2-butenoate,0.7927045593466382
+right,uniform,ethyl lactate,0.5919160938587791
+right,uniform,diethyl succinate,0.826951786451805

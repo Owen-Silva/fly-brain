@@ -1,0 +1,142 @@
+{
+ "pn_to_kc_synapses_all_pns": 329326,
+ "pn_to_kc_synapses_upns": 314594,
+ "kcs_in_circuit": 5177,
+ "kcs_left": 2580,
+ "kcs_right": 2597,
+ "glomeruli_reaching_kcs": 55,
+ "glomeruli_with_odour_data_setA": 23,
+ "glomeruli_with_odour_data_setAB": 46,
+ "glomeruli_without_odour_data": [
+  "DA1",
+  "VA7m",
+  "VC1",
+  "VC3m",
+  "VC5",
+  "VP1d",
+  "VP1m",
+  "VP2",
+  "VP4"
+ ],
+ "upn_share_of_pn_to_kc_synapses": 0.9552662103812029,
+ "left_minsyn1": {
+  "n_kc": 2397,
+  "synapses": 171595,
+  "inputs_per_kc_mean": 5.286608260325407,
+  "inputs_per_kc_median": 5.0,
+  "inputs_per_kc_p5_p95": [
+   2.0,
+   8.0
+  ],
+  "glomeruli_present": 55,
+  "kc_types": {
+   "KCg-m": 1064,
+   "KCab-m": 343,
+   "KCab-s": 311,
+   "KCab-c": 190,
+   "KCa'b'-m": 164,
+   "KCa'b'-ap1": 146,
+   "KCa'b'-ap2": 137,
+   "KCg-d": 31,
+   "KCab-p": 9,
+   "KCg-s3": 1,
+   "KCg-s2": 1
+  },
+  "shuffled_freq_corr_with_real": 0.9979602643530961,
+  "uniform_freq_corr_with_real": -0.030404803203634586
+ },
+ "left_minsyn5": {
+  "n_kc": 2343,
+  "synapses": 166874,
+  "inputs_per_kc_mean": 4.372599231754162,
+  "inputs_per_kc_median": 4.0,
+  "inputs_per_kc_p5_p95": [
+   2.0,
+   7.0
+  ],
+  "glomeruli_present": 55,
+  "kc_types": {
+   "KCg-m": 1061,
+   "KCab-m": 343,
+   "KCab-s": 311,
+   "KCab-c": 190,
+   "KCa'b'-m": 162,
+   "KCa'b'-ap1": 138,
+   "KCa'b'-ap2": 119,
+   "KCg-d": 17,
+   "KCg-s2": 1,
+   "KCab-p": 1
+  }
+ },
+ "right_minsyn1": {
+  "n_kc": 2423,
+  "synapses": 142999,
+  "inputs_per_kc_mean": 5.149401568303755,
+  "inputs_per_kc_median": 5.0,
+  "inputs_per_kc_p5_p95": [
+   2.0,
+   8.0
+  ],
+  "glomeruli_present": 55,
+  "kc_types": {
+   "KCg-m": 1115,
+   "KCab-s": 310,
+   "KCab-m": 276,
+   "KCab-c": 213,
+   "KCa'b'-m": 173,
+   "KCa'b'-ap2": 158,
+   "KCa'b'-ap1": 128,
+   "KCg-d": 42,
+   "KCab-p": 6,
+   "KCg-s2": 1,
+   "KCg-s1": 1
+  },
+  "shuffled_freq_corr_with_real": 0.9982613154588165,
+  "uniform_freq_corr_with_real": -0.006017911337120992
+ },
+ "right_minsyn5": {
+  "n_kc": 2338,
+  "synapses": 137487,
+  "inputs_per_kc_mean": 4.189050470487596,
+  "inputs_per_kc_median": 4.0,
+  "inputs_per_kc_p5_p95": [
+   1.0,
+   7.0
+  ],
+  "glomeruli_present": 55,
+  "kc_types": {
+   "KCg-m": 1112,
+   "KCab-s": 310,
+   "KCab-m": 276,
+   "KCab-c": 213,
+   "KCa'b'-m": 156,
+   "KCa'b'-ap2": 138,
+   "KCa'b'-ap1": 119,
+   "KCg-d": 10,
+   "KCab-p": 3,
+   "KCg-s2": 1
+  }
+ },
+ "odour_checks": {
+  "ethyl acetate": {
+   "strongest_receptor_glomerulus": "VM7d",
+   "strongest_pn_glomerulus": "VM7d",
+   "n_glomeruli_pn_above_20hz": 30
+  },
+  "1-hexanol": {
+   "strongest_receptor_glomerulus": "VA3",
+   "strongest_pn_glomerulus": "VA3",
+   "n_glomeruli_pn_above_20hz": 27
+  },
+  "E2-hexenal": {
+   "strongest_receptor_glomerulus": "VC3l",
+   "strongest_pn_glomerulus": "VC3l",
+   "n_glomeruli_pn_above_20hz": 27
+  }
+ },
+ "pn_mean_evoked_hz": {
+  "median_over_odour_glom_with_data": 11.13404690652624,
+  "p95": 120.68178805717753,
+  "odours_with_no_glomerulus_above_20hz": 0
+ }
+}
