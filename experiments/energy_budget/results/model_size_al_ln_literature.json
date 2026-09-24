@@ -1,0 +1,16 @@
+{
+ "model": "al_ln_literature",
+ "n_neurons": 127400,
+ "n_connections": 14635639,
+ "n_synapses": 52442191,
+ "n_connections_published": 14687178,
+ "n_synapses_published": 52793639,
+ "fix_notes": "13 ALLNs with literature GABA/glutamate made inhibitory; 137 excitatory ALLNs keep chemical synapses only onto inhibitory neurons (Yaksi & Wilson 2010 rule)",
+ "removed_connections": 51539,
+ "removed_synapses": 351448,
+ "trials_per_seed": 20,
+ "seeds": [
+  11,
+  12
+ ]
+}

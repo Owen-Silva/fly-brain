@@ -2146,3 +2146,110 @@ service, and today they are read through a few dozen to a few thousand wires. Fi
 we will build the whole hybrid computer in software, with every part's speed and
 energy taken from real chips, and test it against normal CPUs and GPUs. After that
 comes a $17 chip and a $100 power meter.
+
+## 2026-09-23 - Energy budget: one decision costs a fly nanojoules, a Loihi-class chip millijoules, this laptop joules (PRELIMINARY)
+
+**What was changed.** New lane `experiments/energy_budget/` and write-up
+`docs/energy-budget.md`. Nothing under `sim/`, `app/`, `tests/` or `data/` was edited.
+
+- **Decisions run.** Eight one-second decisions on both the published model ("none") and
+  the recommended fix ("al_ln_literature"): sugar, bitter, water, smell DA1, smell DM1,
+  grooming (JO-C/E), cool and warm. Each got 2 seeds x 20 trials, one thread. Stimulus
+  lists and rates were reused from `phase7_signs`, `scorecard_batch1` and `heldout`.
+- **Counted per trial:**
+  - spikes;
+  - neurons that fired, and neurons touched (got any input);
+  - synaptic events, two ways: spikes x output synapses, and spikes x output connections;
+  - MN9 and aBN1 onset;
+  - wall time and CPU time.
+- **Laptop power.** The CPU package power (Windows' RAPL "Energy Meter" counter) was
+  logged every second during every run.
+- **Energy estimated three ways, each as low / middle / high:**
+  - fly: ATP per spike and per synaptic event, from Sengupta 2010 and Attwell & Laughlin
+    2001, with hemibrain partners per release site;
+  - Loihi (Davies 2018) and Loihi 2 upper bounds derived from Hala Point, plus TrueNorth,
+    SpiNNaker and GPU figures for comparison;
+  - this laptop: measured time x power.
+- **Sandia (arXiv:2508.16792) checked** against its own text.
+- **Scripts:** `run_decisions.py`, `validate.py`, `timing.py`, `analyze.py`, and
+  `constants.py`, where every constant carries its source.
+
+**What happened.**
+
+*Decisions on the fixed model:*
+
+- 87-1,127 neurons fire, 0.07-0.9% of the brain.
+- 6,400-36,400 spikes per decision.
+- Energy per decision, middle estimates:
+
+  | Platform | Energy per decision | Ratio |
+  |---|---|---|
+  | Fly | 4-47 nJ | widest range 1.2-690 nJ |
+  | Loihi-class chip | about 6.6-6.9 mJ | 150,000-1.6 million x the fly |
+  | This laptop | 1.4-19 J | a further 200-2,800 x the chip |
+
+*The published model's runaway (DA1, DM1, cool, warm):*
+
+- About 8,200 neurons fire, 440,000-470,000 spikes.
+- Compared with the fix, that is 13-64x the spikes and 10-60x the fly's energy.
+- It needs about 1.9x the measured power of a whole living fly brain (256 nW, Panda et
+  al. 2026), so a real fly could not sustain it.
+- On a Loihi-class chip it costs only 1.4x more. On the laptop it takes 2-8x longer.
+
+*Why the chip costs what it does:*
+
+- In the Loihi-style estimate, 99.6-99.97% of the chip's energy is spent updating every
+  neuron at every step.
+- A fully event-driven design would need 3,300-38,000x less work than a dense
+  every-step design. That is 60-720x less than Loihi-style.
+
+*Other read-outs:*
+
+- MN9 first spike after sugar onset: median 41 ms. aBN1 during grooming: 73 Hz, onset
+  14 ms.
+- Sandia put FlyWire on 12 Loihi 2 chips. Speed per simulated second of sugar: 54 ms at
+  0.1 ms steps, 12 ms at 1 ms steps. They measured no power.
+- No single chip of any kind holds the whole brain.
+
+**Validated?** No: PRELIMINARY.
+
+*Done:*
+
+- Two seeds agree within 2%.
+- No input gives 0 spikes on both models.
+- Same seed gives the same spikes: 48/48 re-run trials match.
+- Output synapse counts recomputed independently from the connection file are
+  identical (52,793,639 synapses).
+- The fix changes exactly 137 ALLN outputs.
+- Weight per synapse at 80% and 120%: fly energy moves x0.51-x1.33, and the fix never
+  runs away.
+- Every literature constant was swept low to high: the synaptic-event cost dominates,
+  at x0.5-x11.
+- Sandia's sugar run had 0.3% of neurons active, against our 0.28%.
+
+*Not done:*
+
+- No independent review.
+- No Loihi 2 per-operation energy is published, so upper bounds derived from Hala Point
+  stand in.
+- A second "8 nJ" SpiNNaker figure and a whole-brain oxygen-use figure could not be
+  confirmed, and were left out.
+
+*Weak points:*
+
+- The membrane area a spike charges is our assumption.
+- The fly's synaptic-event cost is uncertain by about 30x and uses mammalian vesicle
+  numbers.
+- Chip figures leave out idle power.
+- Laptop timings were slowed by other lanes (package power about 12 W throughout;
+  identical work up to 2.5x slower).
+- The model has no background activity, no glia, no nerve cord and no graded
+  (non-spiking) neurons.
+
+**Plain English.** A fly's brain makes a taste or smell decision for a few billionths of
+a joule. Intel's neuromorphic chip would spend about a million times more, almost all of
+it keeping every silent neuron ticking. This laptop spends another few hundred to few
+thousand times more than that. The published model's smell runaway would need nearly
+twice the power a real fly brain has, which is more evidence that it is a model fault.
+The lesson for the hybrid computer: fly activity is extremely sparse, so hardware that
+spends nothing on idle neurons is where the big savings are.

@@ -1,0 +1,16 @@
+{
+ "model": "none",
+ "n_neurons": 127400,
+ "n_connections": 14687178,
+ "n_synapses": 52793639,
+ "n_connections_published": 14687178,
+ "n_synapses_published": 52793639,
+ "fix_notes": "",
+ "removed_connections": 0,
+ "removed_synapses": 0,
+ "trials_per_seed": 20,
+ "seeds": [
+  11,
+  12
+ ]
+}

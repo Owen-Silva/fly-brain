@@ -14,3 +14,4 @@ __pycache__/
 experiments/heldout/results/published/
 experiments/olfaction_realfly/results/counts/
 experiments/scorecard_batch1/results/raw/
+experiments/energy_budget/results/raw/

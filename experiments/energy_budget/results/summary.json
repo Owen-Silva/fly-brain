@@ -1,0 +1,178 @@
+{
+ "n_neurons": 127400,
+ "connections": {
+  "none": 14687178,
+  "al_ln_literature": 14635639
+ },
+ "synapses": {
+  "none": 52793639,
+  "al_ln_literature": 52442191
+ },
+ "constants": {
+  "atp_per_spike": {
+   "low": 680783.2422586521,
+   "mid": 2723132.9690346085,
+   "high": 8378870.673952642
+  },
+  "atp_per_syn_event": {
+   "low": 2447.7611940298507,
+   "mid": 6119.4029850746265,
+   "high": 82000.0
+  },
+  "j_per_atp": {
+   "low": 7.804533615717079e-20,
+   "mid": 9.132964869456157e-20,
+   "high": 1.1623773470216928e-19
+  },
+  "loihi1": {
+   "synop_J": 2.36e-11,
+   "neuron_update_inactive_J": 5.2e-11,
+   "neuron_update_active_J": 8.1e-11,
+   "neurons_per_chip": 131072,
+   "cores_per_chip": 128
+  },
+  "loihi2_derived": {
+   "synop_J": 6.8421052631578945e-12,
+   "neuron_update_J": 1.0833333333333333e-11,
+   "neurons_per_chip": 1000000,
+   "max_W_per_chip": 2.2569444444444446
+  }
+ },
+ "j_per_average_spike_incl_synapses": {
+  "low": 1.3229603741180897e-13,
+  "mid": 4.802998211911479e-13,
+  "high": 4.923723256797952e-12
+ },
+ "brain_power_affordable_mean_rate_hz": {
+  "low": 15.188808308909568,
+  "mid": 4.183676661159102,
+  "high": 0.4081096859986973
+ },
+ "fixed_model_ranges": {
+  "neurons_fired": [
+   86.75,
+   1126.7
+  ],
+  "frac_fired": [
+   0.0006809262166405024,
+   0.008843799058084773
+  ],
+  "spikes": [
+   6445.7,
+   36411.025
+  ],
+  "fly_J_mid": [
+   4.163169999255839e-09,
+   4.7368063521571404e-08
+  ],
+  "loihi_mid_J": [
+   0.00664554243739,
+   0.006869517344665
+  ],
+  "laptop_mid_J": [
+   1.361590500018792,
+   18.75127200008137
+  ],
+  "laptop_high_J": [
+   2.488383749878266,
+   20.001400500041203
+  ],
+  "laptop_low_J": [
+   1.0887889276841136,
+   14.994359415257355
+  ],
+  "laptop_lane_share_J": [
+   0.45572231020303094,
+   3.3573230520314263
+  ],
+  "saving_dense_vs_event": [
+   3250.751101467692,
+   38418.89831499648
+  ],
+  "saving_loihi_style_vs_event": [
+   61.40209745435231,
+   723.2343469383106
+  ],
+  "loihi1_dt01_share_clock": [
+   0.9963196368799832,
+   0.9996869951559803
+  ]
+ },
+ "mn9_first_spike_ms_sugar": {
+  "median": 41.35,
+  "q25": 34.05,
+  "q75": 46.075
+ },
+ "runaway_cost": {
+  "smell_DA1": {
+   "spikes_x": 17.087132951287323,
+   "neurons_fired_x": 13.730392560283105,
+   "syn_events_x": 27.946070656539025,
+   "fly_J_x": 24.222149530699678,
+   "loihi1_dt01_x": 1.0424348232326233,
+   "loihi1_synops_x": 31.554770227685097,
+   "laptop_fastest_x": 4.189841659535819,
+   "laptop_typical_x": 5.473205217348074,
+   "published_fly_J_mid": 4.846242299340586e-07,
+   "fixed_fly_J_mid": 2.000748237970521e-08,
+   "published_frac_brain_power": 1.8930633981799163
+  },
+  "smell_DM1": {
+   "spikes_x": 12.78199872154107,
+   "neurons_fired_x": 7.351158249755923,
+   "syn_events_x": 9.656331205147332,
+   "fly_J_x": 10.253876304611245,
+   "loihi1_dt01_x": 1.0402532096991333,
+   "loihi1_synops_x": 11.933632398095094,
+   "laptop_fastest_x": 2.315775386543999,
+   "laptop_typical_x": 4.4370355240758075,
+   "published_fly_J_mid": 4.857062641391613e-07,
+   "fixed_fly_J_mid": 4.7368063521571404e-08,
+   "published_frac_brain_power": 1.8972900942935986
+  },
+  "cool": {
+   "spikes_x": 64.23345742373861,
+   "neurons_fired_x": 32.45243275316456,
+   "syn_events_x": 58.81834983142375,
+   "fly_J_x": 60.005029697209565,
+   "loihi1_dt01_x": 1.0422254140084395,
+   "loihi1_synops_x": 78.66316334195223,
+   "laptop_fastest_x": 4.502732319975543,
+   "laptop_typical_x": 7.750001903450932,
+   "published_fly_J_mid": 4.710419456682469e-07,
+   "fixed_fly_J_mid": 7.85004103897897e-09,
+   "published_frac_brain_power": 1.8400076002665895
+  },
+  "warm": {
+   "spikes_x": 40.674065593397415,
+   "neurons_fired_x": 14.428760068664992,
+   "syn_events_x": 23.18785899482667,
+   "fly_J_x": 25.782677492151993,
+   "loihi1_dt01_x": 1.0416300585509948,
+   "loihi1_synops_x": 29.479606855598483,
+   "laptop_fastest_x": 2.174617033971017,
+   "laptop_typical_x": 3.3910062697790684,
+   "published_fly_J_mid": 4.7461448822826465e-07,
+   "fixed_fly_J_mid": 1.8408269985641827e-08,
+   "published_frac_brain_power": 1.8539628446416587
+  }
+ },
+ "laptop_power": {
+  "none": {
+   "pkg_W_before_runs": 11.708187988640995,
+   "pkg_W_whole_run": 11.971907656829368,
+   "cpu_pct_whole_run": 36.77112298247839
+  },
+  "al_ln_literature": {
+   "pkg_W_before_runs": 11.755188330131892,
+   "pkg_W_whole_run": 11.967253313363347,
+   "cpu_pct_whole_run": 78.28471192397666
+  }
+ },
+ "laptop_measured_pkg_W_timing_pass": 11.994673813482322,
+ "sandia_sugar_ceiling_J": {
+  "dt01": 1.4560000000000002,
+  "dt1": 0.3358333333333334
+ },
+ "truenorth_realtime_floor_J_per_chip": 0.063
+}

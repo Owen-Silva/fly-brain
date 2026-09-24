@@ -1,0 +1,9 @@
+decision,varied,x_low,x_high,mid_J
+sugar,ATP per spike,0.8036,1.544,9.26e-09
+sugar,ATP per synaptic event,0.5571,10.15,9.26e-09
+sugar,joules per ATP,0.8545,1.273,9.26e-09
+sugar,model weight per synapse 80% / 120%,0.508,1.334,9.26e-09
+smell_DM1,ATP per spike,0.8566,1.397,4.737e-08
+smell_DM1,ATP per synaptic event,0.5147,11.03,4.737e-08
+smell_DM1,joules per ATP,0.8545,1.273,4.737e-08
+smell_DM1,model weight per synapse 80% / 120%,0.7319,1.333,4.737e-08

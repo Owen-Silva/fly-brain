@@ -1,0 +1,98 @@
+{
+ "wiring_check": {
+  "out_synapses_identical": true,
+  "out_connections_identical": true,
+  "total_synapses": 52793639,
+  "total_connections": 14687178,
+  "mean_out_synapses": 414.39277080062794,
+  "median_out_synapses": 239.0,
+  "max_out_synapses": 98616,
+  "neurons_with_no_outputs": 385,
+  "flywire_table_out_synapses_total": 52793639.0,
+  "corr_with_flywire_table": 1.0
+ },
+ "fix_changes_outputs_of": {
+  "n_neurons": 137,
+  "cell_classes": {
+   "ALLN": 137
+  },
+  "synapses_removed": 351448
+ },
+ "no_input_spikes_none": 0,
+ "no_input_spikes_al_ln_literature": 0,
+ "wsyn_sensitivity_fixed_model": [
+  {
+   "decision": "smell_DM1",
+   "w_scale": 0.8,
+   "spikes": 26366.5,
+   "active": 639.3,
+   "syn_events": 51111600.2,
+   "conn_events": 7295577.4,
+   "runaway": 0
+  },
+  {
+   "decision": "smell_DM1",
+   "w_scale": 1.0,
+   "spikes": 36901.1,
+   "active": 1144.8,
+   "syn_events": 69444918.9,
+   "conn_events": 10575903.7,
+   "runaway": 0
+  },
+  {
+   "decision": "smell_DM1",
+   "w_scale": 1.2,
+   "spikes": 49873.8,
+   "active": 1746.7,
+   "syn_events": 92274116.2,
+   "conn_events": 14941458.4,
+   "runaway": 0
+  },
+  {
+   "decision": "sugar",
+   "w_scale": 0.8,
+   "spikes": 5518.6,
+   "active": 233.6,
+   "syn_events": 5801753.8,
+   "conn_events": 783748.7,
+   "runaway": 0
+  },
+  {
+   "decision": "sugar",
+   "w_scale": 1.0,
+   "spikes": 9601.3,
+   "active": 351.6,
+   "syn_events": 11982502.5,
+   "conn_events": 1456055.6,
+   "runaway": 0
+  },
+  {
+   "decision": "sugar",
+   "w_scale": 1.2,
+   "spikes": 12276.1,
+   "active": 415.5,
+   "syn_events": 16226881.1,
+   "conn_events": 1950161.7,
+   "runaway": 0
+  }
+ ],
+ "same_seed_same_spikes": true,
+ "neurons_touched_mean": {
+  "al_ln_literature|bitter": 5799.333333333333,
+  "al_ln_literature|cool": 20267.666666666668,
+  "al_ln_literature|groom_JO": 22866.0,
+  "al_ln_literature|smell_DA1": 32166.333333333332,
+  "al_ln_literature|smell_DM1": 38590.666666666664,
+  "al_ln_literature|sugar": 10719.0,
+  "al_ln_literature|warm": 47322.333333333336,
+  "al_ln_literature|water": 10943.333333333334,
+  "none|bitter": 5799.333333333333,
+  "none|cool": 98022.0,
+  "none|groom_JO": 22866.0,
+  "none|smell_DA1": 97573.33333333333,
+  "none|smell_DM1": 98027.0,
+  "none|sugar": 10719.0,
+  "none|warm": 97860.0,
+  "none|water": 10943.333333333334
+ }
+}
