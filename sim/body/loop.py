@@ -41,6 +41,11 @@ DA1 (cVA) options (added 2026-09-23, experiments/phase9_da1): ``orn_type=
 ``mapping.dnpe002_drive_mapping()`` (only that DN pair is read and, with
 ``silence="dns"``, silenced); ``sensor_mapping=SensorMapping(antennae=
 "left_only")`` covers the right antenna (a one-antenna fly).
+
+Video hook (added 2026-09-23, experiments/phase9_video): ``run_trial(...,
+on_substep=f)`` calls ``f(body)`` after every physics step so a script can
+copy the body's state for rendering. It must only READ the state. Left out
+(the default), nothing changes.
 """
 
 from __future__ import annotations
@@ -144,9 +149,10 @@ class Body:
             prot[k] = m.reshape(3, 3)
         return sensor_positions(ppos, prot)
 
-    def step(self, drive, duration_s):
+    def step(self, drive, duration_s, on_substep=None):
         """Walk for ``duration_s`` with the given [left, right] drive (FlyGym's
-        controller; NOT brain-driven)."""
+        controller; NOT brain-driven). ``on_substep(self)``, if given, is
+        called after every physics step (read-only video hook)."""
         n = int(round(duration_s / self.sim.timestep))
         drive = np.asarray(drive, float)
         for _ in range(n):
@@ -154,6 +160,8 @@ class Body:
             action = self.controller.step(drive, obs)
             apply_locomotion_action(self.sim, self.name, action)
             self.sim.step()
+            if on_substep is not None:
+                on_substep(self)
 
     def close(self):
         try:
@@ -194,9 +202,10 @@ class BrainInterface:
         return seen, fired
 
 
-def run_trial(cfg: TrialConfig, brain=None, log=None):
+def run_trial(cfg: TrialConfig, brain=None, log=None, on_substep=None):
     """Run one closed-loop trial. ``brain`` (a FastBrain) is needed when
-    ``cfg.steering == "brain"``. Returns a dict with one row per window."""
+    ``cfg.steering == "brain"``. Returns a dict with one row per window.
+    ``on_substep``: optional read-only hook, see the module docstring."""
     source = np.array([[cfg.source_xy_mm[0], cfg.source_xy_mm[1], SOURCE_Z_MM]])
     world = OdorWorld(source) if cfg.odor_on else OdorWorld.no_odor(source)
     body = Body(cfg.spawn_xy_mm, cfg.spawn_heading_rad, seed=cfg.seed)
@@ -236,7 +245,7 @@ def run_trial(cfg: TrialConfig, brain=None, log=None):
         else:
             raise ValueError(f"unknown steering {cfg.steering!r}")
         t1 = time.perf_counter()
-        body.step(drive, win_s)
+        body.step(drive, win_s, on_substep=on_substep)
         t2 = time.perf_counter()
         t_brain += t1 - t0
         t_body += t2 - t1

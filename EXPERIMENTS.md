@@ -1310,3 +1310,66 @@ built-in controller does that.
 
 Files: `experiments/phase9_da1/` (open_loop_da1.py, run_da1.py, analyze_da1.py,
 results/, plots/), `docs/phase9-da1-demo.md`.
+
+## 2026-09-23 - Phase 9: a video of the brain-steered fly (four DA1 trials re-run exactly and rendered) (PRELIMINARY)
+
+**What was changed.** Nothing in the brain model and nothing in how the body loop
+behaves. One additive, read-only hook in `sim/body/loop.py`: `run_trial(...,
+on_substep=f)` (passed on to `Body.step`) calls `f(body)` after every physics step so a
+script can copy the fly's pose; left out, nothing changes. `tests/test_body_loop.py` after
+the change: 22 passed in `.venv-body`, 20 passed + 2 skipped in `.venv`. New scripts in
+`experiments/phase9_video/`: `simulate_clips.py` re-runs four trials of the DA1 (cVA) demo
+using `run_da1.py`'s own settings (same condition, layout, seeds, 6 mm source, 1.5 s,
+50 ms windows, sign fix `al_ln_literature`) and saves the fly's full pose every 1 ms;
+`render_video.py` poses and photographs the fly from those saves (no re-simulation),
+marks the source, draws the path, adds a caption bar, and writes H.264 videos. No new
+package: the encoder (`imageio-ffmpeg==0.6.0`) was already pinned in
+`requirements-body.txt`. The four trials, all replicate 0 (walking-rhythm and brain seed
+0): (A) one antenna covered, DNa02 steers (`one_dna02`, `B_Lonly+90`); (B) the same with
+DNa02 silenced (`one_dna02_off`); (C) normal fly, source front-right (`dna02`, `A-45`);
+(D) the hand-written rule, NOT brain-driven (`hand_rule`, `A-45`).
+
+**What happened.**
+- The re-runs are the saved trials: every column of every 50 ms window (position,
+  heading, antenna smell, smell-neuron rates, DNa02/DNpe002 firing, turn command, drive)
+  equals `experiments/phase9_da1/results/da1_windows.csv` to within 1.4e-14 (rounding of
+  the saved text), with the same number of windows (30, 30, 30, 13)
+  (`results/path_check.csv`).
+- The fly drawn in the video sits on the logged path to within 1.8e-15 mm and 1.3e-14
+  degrees at every window start (`results/render_check.csv`). A first version of this
+  check showed gaps of up to 0.003 mm / 0.08 degrees. The cause: right after a physics
+  step, MuJoCo still reports body positions from before that step, so each logged
+  position belongs to the pose 0.1 ms earlier. Compared with that pose, the match is
+  exact.
+- Output: `phase9_video.mp4` (1.49 MB, 48.2 s, 1280 x 1136, 30 fps,
+  half speed; an intro card, a title card before each clip, a closing card with the
+  PARTIAL verdict), the four clips as separate MP4s, and `poster.png` (clip A at 1.0 s).
+- What the clips show (numbers from the saved trials): A turns left, toward the only
+  antenna that smells, +73 degrees in the first second, but does not reach the source
+  (closest 5.55 mm). B walks straight (+9 degrees, the body's own drift). C turns LEFT
+  +72 degrees, away from a source on its front-right, while its two antennae smell
+  almost the same. D turns right and reaches the source at 0.60 s.
+- Every frame's caption shows the condition, the steering source ("Turning:
+  brain-driven (DNa02)", "none from the brain (DNa02 silenced)" or "NOT brain-driven
+  (hand-written rule)"), the fly time, the left/right DNa02 firing (averaged over the
+  last 0.25 s), the left/right antenna smell, and the line "Legs, walking rhythm and
+  speed: FlyGym's built-in controller, NOT brain-driven".
+
+**Validated?** No new result: the video re-shows four saved trials of the DA1 demo, whose
+status is unchanged (checkpoint PARTIAL, PRELIMINARY; docs/phase9-da1-demo.md). Clip A
+is the second-strongest of the 12 one-antenna DNa02 trials (63 degrees more than the
+same-seed silenced fly; the 12 range from 8 to 75), not a typical one: right-antenna
+trials turned much less. Some things in the picture are not data: the colours, the ball and
+ring marking the source and its 2 mm "reached" zone, and the path line (the thorax
+averaged over one 83 ms stride); all listed in docs/phase9-video.md. Checked by looking
+at still frames and frames decoded from the finished MP4s. Not checked: playback in the
+results web page or on a phone. Nothing shared, no one contacted.
+
+**Plain English.** We made a short video of the virtual fly walking, for the results
+page. It replays four of the trials from the cVA experiment exactly. When one antenna is
+covered, the brain turns the fly toward the side that can smell. When the brain's
+steering neuron is silenced, the fly walks straight. A normal fly with both antennae
+turns left even though the smell is on its right: that is the model's failure, shown
+honestly. A simple hand-written rule, with no brain, walks straight to the smell. In
+every clip the brain only picks left or right; the legs and the walking speed come from
+the body simulator.
