@@ -76,7 +76,7 @@ def test_cost_addition_keeps_worst_label():
 
 def test_every_price_is_labelled():
     labels = {r[3] for r in table()}
-    assert labels <= {"PUBLISHED", "MEASURED", "ASSUMED", "GUESSED"}
+    assert labels <= {"PUBLISHED", "DERIVED", "FITTED", "MEASURED", "ASSUMED", "GUESSED"}
     assert all(r[4] for r in table())                       # every price has a source/reason
 
 

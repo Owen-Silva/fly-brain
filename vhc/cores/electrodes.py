@@ -9,7 +9,8 @@
 
 Published: noise 2.2 uV rms (MaxOne), 25 kHz sampling and 59 electrodes (CL1).
 GUESSED: spike amplitude (150 uV at 20 um), stimulation reach (lambda = 60 um), false-event
-rate (1 Hz per channel). Henze et al. 2000 report units detectable to roughly 100-140 um.
+rate (v0: 1 Hz per channel; v1: 0.05 Hz, bounded by DishBrain's measured mean electrode rate of
+0.05-0.1 Hz, which includes any false events; Kagan et al. 2022 Fig 3C). Henze et al. 2000 report units detectable to roughly 100-140 um.
 """
 from __future__ import annotations
 
@@ -22,7 +23,7 @@ from ..prices import MAXONE_NOISE_UV
 AMP0_UV, R0_UM = 150.0, 20.0        # GUESSED
 THRESH_SD = 5.0                     # ASSUMED: usual spike-detection threshold
 STIM_LAMBDA_UM = 60.0               # GUESSED
-FALSE_HZ = 1.0                      # GUESSED
+FALSE_HZ = 0.05                     # FITTED (v0: 1.0 GUESSED): at most DishBrain's 0.05-0.1 Hz mean electrode rate
 
 
 def grid(n, side_um, margin_um=100.0):

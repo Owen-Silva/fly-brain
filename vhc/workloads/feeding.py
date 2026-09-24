@@ -20,7 +20,10 @@ import numpy as np
 from ..cores.lif import Network, run_poisson
 from ..paths import MINIMAL, load_module
 
-CIRCUITS = {"36": "minimal_circuit.json", "400": "robust_circuit.json"}
+CIRCUITS = {"400": "robust_circuit.json", "36": "minimal_circuit.json"}
+# v1: the robust 400-neuron circuit is the default (it keeps its answers under 8-bit weights and
+# matches the whole brain's bitter brake: 4.9 vs 4.3 Hz); the 36-neuron circuit stays an option.
+DEFAULT_CIRCUIT = "400"
 TASKS = {"sugar": {"SUGAR": 100.0}, "bitter": {"BITTER": 100.0},
          "sugar+bitter": {"SUGAR": 100.0, "BITTER": 100.0}}
 REF_COND = {"sugar": "S100", "bitter": "B100", "sugar+bitter": "S100+B100"}
@@ -34,7 +37,7 @@ def paper_ids():
     return load_module("mc_common", MINIMAL / "common.py").paper_ids()
 
 
-def load_circuit(name):
+def load_circuit(name=DEFAULT_CIRCUIT):
     """Network + MN9 index + root IDs, in the circuit file's own order."""
     d = json.loads((MINIMAL / "results" / CIRCUITS[name]).read_text())
     rid = [int(n["root_id"]) for n in d["neurons"]]
@@ -57,7 +60,7 @@ def excite_for(task, ids, pos):
     return out
 
 
-def run(name, n_trials=30, seed=0, bits=None):
+def run(name=DEFAULT_CIRCUIT, n_trials=30, seed=0, bits=None):
     """Run every task; returns {task: {"mn9_hz": array, "counts": mean counts dict}}."""
     net, mn9, pos = load_circuit(name)
     if bits:
@@ -79,7 +82,7 @@ def accuracy(results):
     return float(np.mean(np.concatenate(ok)))
 
 
-def reference_rates(name):
+def reference_rates(name=DEFAULT_CIRCUIT):
     """Circuit and whole-brain mean MN9 rates from the minimal-circuit lane (3 seeds x 30)."""
     if name == "36":
         v = json.loads((MINIMAL / "results" / "validation.json").read_text())["heldout"][0]["seeds"]

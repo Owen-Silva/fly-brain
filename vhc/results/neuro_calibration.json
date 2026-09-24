@@ -1,0 +1,66 @@
+{
+ "model": "T = T_v0 + steps * A + spikes * B",
+ "A_s_per_step": 3.2968325018202946e-06,
+ "B_s_per_spike": 9.672732939844126e-07,
+ "fit_data": "B: Sandia background sweep, 1 ms steps (7 points); A: Sandia sugar, 0.1 ms steps (1 point)",
+ "sweep_1ms_intercept_discarded_s": 0.035091639064646844,
+ "v0_sugar_s": {
+  "dt0.1": 0.009342660710345833,
+  "dt1": 0.0009375357103458335
+ },
+ "measured_sugar_s": {
+  "dt0.1": 0.05376,
+  "dt1": 0.0124
+ },
+ "v0_ratio_measured_over_model": {
+  "dt0.1": 5.7542494228081615,
+  "dt1": 13.226162868426579
+ },
+ "check_sugar_dt1": {
+  "predicted_s": 0.01568338248361735,
+  "measured_s": 0.0124,
+  "error_pct": 26.478890996914117
+ },
+ "check_sweep_dt0.1_error_pct": [
+  -42.08585890046168,
+  -36.383407338850105,
+  -33.24602765993517,
+  -25.07385636946754,
+  -21.17264350400311,
+  -15.637223525647348,
+  -7.0685950087089005
+ ],
+ "fit_residual_sweep_dt1_error_pct": [
+  -25.855966428241363,
+  -22.589764519661472,
+  -18.525318576120675,
+  -11.245429445037658,
+  -5.270548158865418,
+  1.814965698469706,
+  11.356011429773138
+ ],
+ "sweep_rates_hz": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  10.0,
+  20.0,
+  40.0
+ ],
+ "one_term_A_only": {
+  "A_s_per_step": 4.441733928965417e-06,
+  "check_sugar_dt1_error_pct": -56.618793231360875
+ },
+ "one_term_B_only": {
+  "B_s_per_spike": 3.752611802734803e-06,
+  "check_sugar_dt1_error_pct": 265.765120967742
+ },
+ "sugar_counts": {
+  "neurons": 127400,
+  "spikes": 9748.58,
+  "input_event": 2087.8,
+  "syn_event": 1483970.0
+ },
+ "label": "FITTED to PUBLISHED Loihi 2 measurements (Sandia); a 12-chip system"
+}

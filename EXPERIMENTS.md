@@ -2834,3 +2834,92 @@ answer, and their settings are guesses.
   silence, and read noise hurts it most.
 - None of the networks remembers anything for longer than about 50 ms. That
   is a limit of the model (no slow parts), not of the fly.
+
+## 2026-09-24 - Virtual hybrid computer v1: calibrated on real Loihi 2, the chip's energy lead over a $5 microcontroller shrinks from ~96x to ~4x; the model culture plays Pong only through 1,024 electrodes and does not learn (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. Changes in `vhc/`
+and a rewrite of `docs/virtual-computer.md`.
+- Chip timing calibrated (`vhc/neurocal.py`): v1 = v0 + A per time step + B per spike,
+  fitted to Sandia's Loihi 2 measurements (Wang et al. 2025, arXiv:2508.16792). B = slope of
+  wall time vs spikes in the paper's 1 ms background sweep (7 points; relative least
+  squares, intercept discarded); A = the sugar run at 0.1 ms steps (one point). Held out:
+  the sugar run at 1 ms steps and the 0.1 ms sweep (7 points).
+- Chip static power, per Loihi 2 chip: 18 / 73 / 296 mW (low / mid / high), DERIVED from
+  Shrestha et al. 2024 (arXiv:2310.03251) Table 1 as (total - dynamic energy) / time. The
+  table's time base is ambiguous, hence the 16x range; Hala Point ceiling 2.26 W per chip.
+  Charged for the whole busy time, and all day for the odour watch.
+- `neuromorphic.price(version="v1")` is the default; `"v0"` keeps the old pricing;
+  `price_range` gives best case (v0 timing + low static) and worst case (calibrated + high).
+- Living module: DishBrain (Kagan et al. 2022, Neuron, PMC9747182) and FinalSpark (Jordan
+  et al. 2024, Front. AI, PMC11097343) settings added to `prices.py`, both read in full;
+  figure values read off by eye and labelled so. Cell death FITTED to 50% at 100 days;
+  false electrode events 1 -> 0.05 Hz (bounded by DishBrain's 0.05-0.1 Hz mean electrode
+  rate); resting drive and noise lowered (still GUESSED; ~0.13 spikes/cell/s).
+- New workload (f), `vhc/workloads/pong.py`: DishBrain's game (8 place-coded sites, 4-40 Hz
+  rate code, 10 ms ticks, 100 ms / 100 Hz hit feedback, 4 s / 5 Hz random miss feedback +
+  4 s rest, 20-min sessions) as one compiled closed loop. Players: living culture through N
+  electrodes, its silicon copy on the neuromorphic core (every cell read, pooled), a
+  noise-driven paddle, the culture with no stimulation, and an M33 controller. Paddle size
+  FITTED so the noise paddle scores DishBrain's 0.80 hits per rally; ball crossing time
+  3.5 s DERIVED from 69 rallies per session. GUESSED: layout, paddle speed, read-out rule,
+  and a reward-modulated Hebbian learning rule (eligibility trace, +/- on hit/miss).
+- Feeding default is now the robust 400-neuron circuit; 36 remains an option.
+- `bench.py` writes `results/compare.md` (v0 vs v1 side by side); v0 results kept in
+  `results_v0.json` / `table_v0.md`. New tests: `vhc/tests/test_v1.py`.
+
+**What happened.**
+- Calibration: v0 was 5.8x too fast at 0.1 ms steps and 13.2x at 1 ms, so no single factor
+  fits. Fit: A = 3.30 us per step, B = 0.967 us per spike. Held-out sugar at 1 ms: 15.7 ms
+  predicted vs 12.4 ms measured (+26%). Held-out 0.1 ms sweep: -42% to -7%. Fit residuals
+  on the 1 ms sweep: -26% to +11%. One-term fits miss the held-out point by -57% (A only)
+  and +266% (B only).
+- Feeding, 400 neurons (default): chip 23.6 ms / 217 uJ (v0) -> 65.8 ms / 5.0 mJ (v1; range
+  0.64-19.7 mJ). Laptop 10 ms measured / 150 mJ; M33 694 ms / 20.8 mJ. Energy lead over the
+  laptop ~900x -> ~30x (8-230x); over the M33 ~96x -> ~4x (1.06-32x). 100% correct at 8 and
+  9 bits.
+- Feeding, 36 neurons: 3.1 ms / 19.5 uJ -> 38 ms / 2.8 mJ; the M33 (1.9 mJ) now beats the
+  chip at the mid estimate. Odour sniff: 8.5 -> 66 uJ (M33 26 uJ). Whole-brain sugar on 12
+  chips: 66 mJ -> 113 mJ per simulated second.
+- All-day odour watch: hybrid 87 J/day -> 6,390 J/day (1,640-25,700); M33 alone 88.5 J/day.
+- Electrode test (e): 59 electrodes 89.6% -> 95.4%; silicon copy 91.7% -> 97.5%; after 30
+  days (79% alive) the day-0 read-out 91%.
+- Pong (20-min sessions; hits per rally, balls hit): living 1,024 electrodes 1.89, 62%
+  (learning off: 1.27, 54%); living 59 electrodes 0.62, 46%; DishBrain's own layout 0.77,
+  43%; no stimulation 0.79, 44%; noise paddle 0.86, 47%; silicon copy 98.9% (rallies 42,
+  very spread; learning off 4.1, 98.0%); M33 controller never missed (100%). By electrodes
+  (2-5 sessions): 8: 0.44, 16: 1.07, 32: 0.38, 59: 0.62, 128: 0.39, 256: 1.25, 1,024: 1.89.
+  No within-session improvement (minutes 6-20 vs 0-5) in any living setting; DishBrain's
+  human cultures went 0.68 -> 1.10. Learning rates 0.03-1.0 tried before the benchmark
+  (0.1-1.0 on seeds 10-12, kept apart); none reproduced DishBrain, so eta stays GUESSED.
+- Cost per game-second: living 1 s real time / 25 J (CL1 box); silicon copy 18.7 ms /
+  74 mJ (v0: 11 ms / 1.1 mJ); M33 controller 47 us / 1.0 mJ.
+- Unit tests: `vhc/tests`, 24 passed (8 new). Emulator time of the benchmark ~10 min (never
+  used as a design's speed).
+
+**Validated?** No: PRELIMINARY. Done: a timing fit with a held-out check on real hardware
+data; static power from a published measurement; DishBrain/FinalSpark settings read from
+the papers; the Pong noise baseline matched by construction. Not done: energy measured on
+any chip; a one-chip Loihi 2 timing; the per-step/per-spike split for small jobs; any
+living-culture learning reproduced. Weak points: static power range is 16x; the
+calibrated overheads come from a 12-chip system and are applied to one-chip jobs (range
+given); the Pong skill comes from a GUESSED layout; the culture's wiring, noise, reach,
+fatigue and learning rule are guesses; 2-5 sessions per Pong setting; figure values read
+by eye.
+
+**New or reproduction?** Partly both. The Pong task reproduces DishBrain's published
+protocol; the fitted chip timing and the living-vs-silicon-vs-controller comparison on
+the same game, priced per game-second, are new as far as the sources we read show.
+
+**Plain English.** We checked our pretend brain-like chip against a real one. Sandia ran
+the whole fly brain on 12 real Loihi 2 chips, and our chip was about 6 times too fast. We
+added two costs real chips pay: waiting for each other every step, and sending spikes
+around. Then we tested the fix on a run we had kept aside, and it was off by about a
+quarter. We also added the power a chip leaks while it is switched on. After that, the
+brain-like chip is still better than the laptop on the fly's feeding circuit, but only
+about 4 times better than a $5 microcontroller. For tiny jobs, and for gadgets that
+listen all day, the microcontroller now wins. We also taught the model dish of neurons to
+play Pong the way DishBrain did. Read through 1,024 electrodes it played a bit better than
+chance; through 59 it did not. A silicon copy of the same network played almost perfectly,
+and a few lines of ordinary code never missed, for far less energy. Unlike DishBrain's real
+cells, our model cells did not get better with practice, so how fast living cells learn is
+still the biggest unknown.

@@ -1,188 +1,253 @@
-# The virtual hybrid computer, version 0
+# The virtual hybrid computer, version 1
 
-*Built 2026-09-24. Every number here is **PRELIMINARY**: modeled from published chip numbers
-and guesses, not measured on the real hardware (except where marked M).*
+*Built 2026-09-24. Every number here is **PRELIMINARY**. Times and energies are modeled
+from published chip numbers, fits to published measurements and some guesses. Only the
+times marked (M) were measured, on this laptop. Nothing ran on real neuromorphic chips,
+microcontrollers, GPUs or living cells.*
 
-## The results
+## The v1 results
 
 Each cell gives **time per task / energy per task / accuracy**. "Hybrid" means the
 neuromorphic (brain-like) chip plus a small conventional core (a Cortex-M33, the processor
-in the $17 RP2350 board). The neuromorphic numbers use Intel Loihi's published cost of each
-operation, run the way Loihi runs (every neuron updated every 0.1 ms).
+in the $5 Raspberry Pi Pico 2). The chip is now priced the way real Loihi 2 hardware
+behaved (see "What changed"). Chip energies are the middle estimate, with the full range
+in brackets.
 
 | Task | Hybrid | CPU only: this laptop | CPU only: M33 | GPU (T4) | Neuromorphic only |
 |---|---|---|---|---|---|
-| (a) Feeding decision, 36-neuron fly circuit (1 s of tasting) | 3.1 ms / 19.5 µJ / 100% | 1.2 ms (M) / 18.7 mJ / 98.5% | 64 ms / 1.9 mJ / 98.5% | 100 ms / 7 J / 98.5% | 3.1 ms / 18.9 µJ / 100% |
-| (a) Feeding decision, 400-neuron circuit | 24 ms / 217 µJ / 100% | 12.9 ms (M) / 194 mJ / 100% | 694 ms / 20.8 mJ / 100% | 100 ms / 7 J / 100% | 24 ms / 217 µJ / 100% |
-| (b) Odour learning: 110 odours, one sniff recognised and learned | 316 µs / 8.5 µJ / 66.2% | 145 µs (M) / 2.2 mJ / 66.8% | 866 µs / 26 µJ / 66.8% | 50 µs / 3.5 mJ / 66.8% | 296 µs / 7.9 µJ / 66.2% |
-| (c) Exact sum of 50,000 big whole numbers | 1.3 ms / 40 µJ / 100% | 15 µs (M) / 218 µJ / 100% | 1.3 ms / 40 µJ / 100% | 65 µs / 4.5 mJ / 100% | cannot do it |
-| (c) Sort 50,000 numbers | 62 ms / 1.9 mJ / 100% | 284 µs (M) / 4.3 mJ / 100% | 62 ms / 1.9 mJ / 100% | 118 µs / 8.3 mJ / 100% | cannot do it |
-| (d) All-day odour watch with an exact log (per sniff; **energy per day**) | 280 µs / **87 J** / 95.9%, exact log | 140 µs (M) / **259,000 J** / 95.9% | 854 µs / **89 J** / 95.9% | 45 µs / **1.1 million J** / 95.9% | 277 µs / **0.65 J** / 95.9%, **no log** |
-| (e) Name 1 of 8 stimulation patterns | with living cells, 59 electrodes: 60 ms / 1.5 J / 89.6% (K); with a silicon copy of the culture: 3.6 ms / 41 µJ / 91.7% | 1.3 ms (M) / 19.5 mJ / 91.7% | 101 ms / 3.0 mJ / 91.7% | 6.1 ms / 425 mJ / 91.7% | needs the conventional core for its read-out |
+| (a) Feeding decision, **400-neuron circuit (now the default)**, 1 s of tasting | 66 ms / 5.0 mJ (0.6-20 mJ) / 100% | 10 ms (M) / 150 mJ / 100% | 694 ms / 21 mJ / 100% | 100 ms / 7 J / 100% | 66 ms / 5.0 mJ / 100% |
+| (a) Feeding decision, 36-neuron circuit (option) | 38 ms / 2.8 mJ (0.07-11 mJ) / 100% | 1.1 ms (M) / 16.5 mJ / 98.5% | 64 ms / 1.9 mJ / 98.5% | 100 ms / 7 J / 98.5% | 38 ms / 2.8 mJ / 100% |
+| (b) Odour learning: one sniff recognised and learned | 806 µs / 66 µJ (14-241 µJ) / 66.2% | 121 µs (M) / 1.8 mJ / 66.8% | 866 µs / 26 µJ / 66.8% | 50 µs / 3.5 mJ / 66.8% | 786 µs / 65 µJ / 66.2% |
+| (c) Exact sum of 50,000 big whole numbers | 1.3 ms / 40 µJ / 100% | 13 µs (M) / 195 µJ / 100% | 1.3 ms / 40 µJ / 100% | 65 µs / 4.5 mJ / 100% | cannot do it |
+| (c) Sort 50,000 numbers | 62 ms / 1.9 mJ / 100% | 261 µs (M) / 3.9 mJ / 100% | 62 ms / 1.9 mJ / 100% | 118 µs / 8.3 mJ / 100% | cannot do it |
+| (d) All-day odour watch with an exact log (**energy per day**) | **6,400 J** (1,600-26,000) / 95.9% | **259,000 J** / 95.9% | **89 J** / 95.9% | **1.1 million J** / 95.9% | **6,300 J** / 95.9%, no log |
+| (e) Name 1 of 8 stimulation patterns | living cells, 59 electrodes: 60 ms / 1.5 J / 95.4% (K); silicon copy of the culture: 5.6 ms / 0.43 mJ / 97.5% | 1.1 ms (M) / 17 mJ / 97.5% | 101 ms / 3.0 mJ / 97.5% | 6.1 ms / 425 mJ / 97.5% | needs the conventional core for its read-out |
+| (f) **New: Pong, DishBrain-style** (per second of game; accuracy = share of balls hit) | living cells, 1,024 electrodes: real time / 25 J / 62% (K); silicon copy of the culture: 19 ms / 74 mJ / 99% | not run | a simple controller: 47 µs / 1.0 mJ / 100% | not run | needs the conventional core to run the game |
 
-**Labels.** (M) = time measured on this laptop. Every other time and energy is modeled:
-counted operations times the published (or assumed) cost of each operation. (K) = rests on
-guessed biology settings. Laptop energy = measured time x 15 W (Intel's rated base power; an
-assumed share). Accuracies come from simulating each task. The full table, with the "ideal
-event-driven" chip mode and every label, is in `vhc/results/table.md`.
+**Labels.** (M) = time measured on this laptop. Everything else is modeled: counted
+operations times the price of each operation. The chip's timing is **fitted** to Sandia's
+real Loihi 2 measurements; its idle ("static") power is **derived** from Intel's published
+Loihi 2 measurements. (K) = rests on biology settings that are partly guessed. Laptop
+energy = measured time x 15 W (an assumed share of its rated power). Accuracies come from
+simulating each task. Full table, with every label and v0's numbers next to v1's:
+`vhc/results/compare.md`.
 
-The accuracy gap between 100% and 98.5% on the 36-neuron circuit is not a real difference:
-the chip-style run used one seed (90 trials), the others three seeds (270 trials).
+**The headline.**
+- **The chip's advantage shrank a lot once it was priced like real hardware.** On the
+  400-neuron feeding circuit it now uses about **30 times less energy than this laptop**
+  (range 8-230 times), down from about 900 times in v0. Against the $5 microcontroller the
+  advantage fell from about 96 times to about **4 times** (range 1-32 times).
+- **For the smallest jobs, the microcontroller can now win.** At the middle estimate the
+  M33 uses less energy than the chip on the 36-neuron circuit (1.9 mJ against 2.8 mJ) and on
+  one odour sniff (26 µJ against 66 µJ). The reason: a whole chip leaks power while it
+  steps through a tiny circuit.
+- **The all-day watch now clearly favours the plain microcontroller**: 89 J a day against
+  about 6,400 J (1,600-26,000 J) for the hybrid, because a Loihi-2-sized chip that listens
+  all day leaks power all day.
+- **The chip is also slower than v0 said**: 66 ms for the 400-neuron decision, against 10 ms
+  measured on this laptop.
+- **Pong:** read through 1,024 electrodes, the model culture hit 62% of balls (1.9 hits per
+  rally). A random paddle hits about 47%. Read through a CL1's 59 electrodes, it did no
+  better than random. A silicon copy of the same culture, reading every cell, hit 99%. A
+  few lines of code on the M33 never missed. The M33 did that for 1 mJ per game-second.
+  The silicon copy needed 74 mJ and the living box about 25 J.
+  **The model culture did not learn within a game.** DishBrain's real cultures did.
 
-**The headline.** On the fly's feeding circuit the hybrid's neuromorphic chip uses about
-**1,000 times less energy than this laptop** and **100 times less than the
-microcontroller**, at the same accuracy. On odour learning the saving is smaller: **250
-times** against the laptop and **3 times** against the microcontroller. On exact jobs (sums,
-sorting) the hybrid is only as good as its small conventional core: the laptop is **90 to
-220 times faster**. The all-day odour watch shows the design rule works in principle, but in
-v0 its daily energy is decided by **standby power**, which is guessed (see below).
+## What changed from v0, and why
 
-## How the numbers were made (and why the emulator's speed does not count)
+### 1. The chip is now calibrated against real hardware
 
-The virtual computer runs on this laptop, much slower than real chips would. So its own run
-time is never used as a design's speed. Instead:
+**The problem.** v0 priced each chip operation with Intel's 2018 Loihi numbers. Priced
+that way, the whole fly brain ran **5.8 times faster** than Sandia measured on 12 real
+Loihi 2 chips (9.3 ms against 53.8 ms per simulated second at 0.1 ms steps). With 1 ms
+steps v0 was **13 times** too fast (0.94 ms against 12.4 ms). The two errors differ, so one
+fudge factor cannot fix both.
 
-1. Each task is simulated, and the simulator **counts** what the hardware would have to do:
-   neuron updates, synaptic events (one spike reaching one target), sensor inputs, learning
-   writes, integer additions, comparisons.
-2. Each count is multiplied by the **price** of that operation on the real part:
-   - neuromorphic chip: Intel Loihi, 23.6 pJ and 3.5 ns per synaptic event, 52 to 81 pJ and
-     5.3 to 8.4 ns per neuron update, 120 pJ per learning write, 113 to 465 ns per time-step
-     barrier (Davies et al. 2018, *IEEE Micro*, Table 2, checked against the paper);
-   - M33 microcontroller: 150 MHz, about 30 mW while working (Niedermeier and Krichmar,
-     arXiv:2604.16474); cycles per operation are **assumed** (for example 25 per neuron update,
-     10 per synaptic event, 4 per 64-bit addition);
-   - this laptop: time per operation **measured** here (`vhc/calibrate.py`);
-   - GPU: NVIDIA T4 datasheet (70 W, 8.1 TFLOPS, 320 GB/s) plus an **assumed** 5 µs to start
-     each GPU job;
-   - living cells: they only run in real time; a CL1 box draws about 25 W (The Next Web);
-     59 electrodes, 25 kHz, 40 µs frames (Cortical Labs' CL API paper, arXiv:2602.11632);
-     electrode noise 2.2 µV (MaxWell MaxOne).
-3. Time per task is the time the hardware is busy with one task, running as fast as it can.
-   (The fly model itself covers 1 s of tasting; a chip can finish that second of simulation
-   in 3 ms.)
+**What v1 adds.** Two costs that real multi-chip hardware pays and v0 ignored:
+- **3.3 µs per time step**: the chips wait for each other at the end of every step;
+- **0.97 µs per spike**: each spike has to be sent to the cores and chips that hold its
+  targets.
 
-Every constant, with its label (published, measured, assumed or guessed) and source, is in
-`vhc/prices.py`.
+**How it was fitted, keeping a fair test.** Sandia's paper has 16 timings: the sugar test
+at two step sizes, and 14 runs where every neuron fires on its own at 0.5-40 Hz.
+- The per-spike cost comes from how the run time grows with activity in the seven 1 ms
+  runs.
+- The per-step cost then comes from **one** point: the sugar test at 0.1 ms steps.
+- Held back as the test: **the sugar test at 1 ms steps.** v1 predicts 15.7 ms; Sandia
+  measured 12.4 ms. v1 is **26% too slow** there.
+- Also held back: the seven 0.1 ms background runs. v1 is **7-42% too fast** on those.
+  Those runs also pay for the chip's own random-spike generator, which v1 leaves out.
+- Either cost alone misses the held-back point badly: per-step only is 57% too fast, and
+  per-spike only is 266% too slow. So both are needed.
+
+**Caveat.** Both costs were measured on a 12-chip system. A job that fits on one chip
+(every task here) may pay less. So each chip number comes with a range: the best case is
+v0's timing (Loihi 2's shortest possible step is 200 ns, so v0's per-step time is not
+impossible), and the worst case is the full 12-chip overhead.
+
+### 2. The chip now leaks power
+
+Intel publishes no idle ("static") power for Loihi 2. Intel's own 2024 measurements of
+one Loihi 2 chip (Shrestha et al., arXiv:2310.03251, Table 1) give total and "dynamic"
+energy per task. The difference is the leakage: **18 to 296 mW per chip**, depending on
+how the table's time base is read. v1 uses **73 mW** (the middle) and shows the range.
+Ceiling: Intel's Hala Point system draws at most 2.26 W per chip.
+
+This one change drives most of v1's energy numbers. Here is how the chip rows moved:
+
+| Chip job | v0 | v1 (middle; range) |
+|---|---|---|
+| Feeding, 400 neurons | 23.6 ms / 217 µJ | 66 ms / 5.0 mJ (0.6-20 mJ) |
+| Feeding, 36 neurons | 3.1 ms / 19.5 µJ | 38 ms / 2.8 mJ (0.07-11 mJ) |
+| Odour sniff | 316 µs / 8.5 µJ | 806 µs / 66 µJ (14-241 µJ) |
+| All-day watch, per day | 87 J (hybrid) | 6,400 J (1,600-26,000 J) |
+| Silicon copy of the culture, one pattern | 3.6 ms / 41 µJ | 5.6 ms / 427 µJ (0.1-1.6 mJ) |
+| Whole fly brain, sugar, 12 chips, per simulated second | 9.3 ms / 66 mJ | 53.8 ms (fitted) / 113 mJ |
+
+The "ideal event-driven" chip (one that only works when a spike arrives) is now a bound
+on timing only; it also leaks. For the 36-neuron circuit it would take 72 µs and 5.9 µJ.
+
+### 3. The living-neuron module uses real settings where they exist
+
+Sources: DishBrain (Kagan et al. 2022, *Neuron*, doi:10.1016/j.neuron.2022.09.001) and
+FinalSpark's Neuroplatform (Jordan et al. 2024, *Frontiers in AI*,
+doi:10.3389/frai.2024.1376042), both read in full. Values marked "read off" were read
+from the published figures by eye.
+
+| Setting | v0 | v1 | Status | Source |
+|---|---|---|---|---|
+| How long a culture lasts | half the cells gone at about 6 months | half gone at **100 days** | FITTED; "end of life = half the cells gone" is assumed | FinalSpark: organoids last "up to 100 days in best cases"; DishBrain kept human cultures over 3 months; CL1 up to 6 months |
+| Stimulation during the game | none | DishBrain's exact scheme: 8 sites, place + rate code 4-40 Hz, 75 mV | PUBLISHED | DishBrain |
+| Feedback | none | hit: 100 Hz for 100 ms on all sites; miss: 150 mV at 5 Hz on random sites for 4 s, then 4 s rest | PUBLISHED | DishBrain |
+| Game timing | none | spikes counted and game updated every 10 ms; 20-minute sessions | PUBLISHED | DishBrain |
+| Electrodes | CL1: 59 | also a MaxOne-like array: 1,024 recording channels | PUBLISHED | DishBrain: 26,400 electrodes, 1,024 read at once, 20 kHz |
+| False electrode events | 1 per channel per second | 0.05 | FITTED (upper limit) | DishBrain's mean electrode rate is only 0.05-0.1 Hz (read off Fig 3), false events included |
+| Resting firing | about 4 spikes per cell per second | about 0.13 | GUESSED (checked, not fitted) | see the check below |
+| Learning speed | none | the model shows none (see Pong) | the learning rule is GUESSED; its rate could not be fitted | DishBrain: improvement "within five minutes", +0.2 to +0.4 hits per rally by minutes 6-20 |
+| Variability | one seed | 2-5 sessions per setting; spread reported | reported | DishBrain sessions spread widely (boxes about 0.5-1.4 hits per rally, read off Fig 5B) |
+| Response to one pulse (how far it reaches) | 60 µm | same | GUESSED | no per-cell figure found; FinalSpark gives only pulse sizes (e.g. 4 µA) |
+| Fatigue with repeated pulses | 3% per pulse, 20 s recovery | same | GUESSED | FinalSpark says only that stronger pulses are needed as organoids age |
+| Drift, wiring, synapse strengths, noise | guessed | same | GUESSED | none |
+| Number of cells | 1,000 | 1,000 | ASSUMED (for speed) | DishBrain plated about 1,000,000; CL1 about 800,000 |
+
+**Firing-rate check.** DishBrain's electrodes averaged 0.05-0.1 spikes per second (the
+busiest 6-22). The model's electrodes average 1.2-1.7 (busiest 2-7). The model is quieter
+at its busiest spots and 15-30 times busier on average. The comparison is not like for
+like: DishBrain plated about 250 times more cells per square millimetre, and its cells
+are not all alike. So the model reports this as a check, not a fit.
+
+**Effect on the old electrode test (e).** Fewer false events and a quieter culture make
+patterns easier to read: 95.4% through 59 electrodes (v0: 89.6%), 97.5% for the silicon
+copy (v0: 91.7%). After 30 simulated days (79% of cells alive) the old read-out still
+scores 91%.
+
+### 4. A DishBrain-style Pong game
+
+The model culture plays Pong the way DishBrain's cultures did. The game tells the culture
+where the ball is by stimulating one of 8 sites (which site = where the ball is compared
+with the paddle; how often = how close it is). The culture moves the paddle through
+activity in "up" and "down" areas, read every 10 ms. A hit is followed by calm, regular
+pulses; a miss by 4 seconds of random pulses.
+
+- **The paddle's size was set so a paddle driven by noise scores 0.80 hits per rally,
+  like DishBrain's own random-paddle control.** The ball crossing time (3.5 s) comes from
+  DishBrain's 69 rallies per 20-minute session.
+- **Guessed:** where the stimulation sites and "up/down" areas sit on the dish, how fast
+  the paddle moves, how activity turns into movement, and how the cells learn.
+
+**Results** (20-minute sessions; "hits per rally" = how many times the ball is returned
+before a miss):
+
+| Player | Hits per rally: whole game (minutes 0-5 → 6-20) | Balls hit | Compute time per game-second | Energy per game-second |
+|---|---|---|---|---|
+| Living module, 1,024 electrodes | 1.9 (2.2 → 1.8) | 62% | real time (1 s) | 25 J (the CL1 box) |
+| Same, learning switched off | 1.3 (0.9 → 1.5) | 54% | real time | 25 J |
+| Living module, 59 electrodes (CL1) | 0.6 (0.6 → 0.6) | 46% | real time | 25 J |
+| Living module, DishBrain's own layout (sites along the edge), 1,024 electrodes | 0.8 (0.9 → 0.7) | 43% | real time | 25 J |
+| Living module, no stimulation at all | 0.8 | 44% | real time | 25 J |
+| Silicon copy of the culture on the neuromorphic core, every cell read | 42, very spread (a few endless rallies) | 98.9% | 19 ms (v0: 11 ms) | 74 mJ (v0: 1.1 mJ) |
+| Same, learning switched off | 4.1 | 98.0% | 19 ms | 74 mJ |
+| M33 running a simple controller | never missed (171 hits per game) | 100% | 47 µs | 1.0 mJ |
+| Paddle driven by noise | 0.9 | 47% | none | none |
+| *DishBrain's real cultures (read off Fig 5B)* | *human 0.68 → 1.10; mouse 0.78 → 1.00; noise paddle 0.80* | | *real time* | |
+
+Sessions: 5 each for the living rows with 1,024 electrodes (learning on and off) and 59
+electrodes, the silicon copy and the noise paddle; 3 for the other rows.
+
+- **Electrodes are the bottleneck.** The same network, read cell by cell on silicon, hit
+  99% of balls. Read through 1,024 electrodes it hit 62%, and through 59 it was no better
+  than chance. Part of the gap is fatigue: the living sites tire (about 50% strength by the
+  end), and the silicon copy has no fatigue.
+- **How the score depends on the number of electrodes** (hits per rally; noise paddle 0.86):
+
+  | Electrodes | 8 | 16 | 32 | 59 | 128 | 256 | 1,024 |
+  |---|---|---|---|---|---|---|---|
+  | Hits per rally | 0.44 | 1.07 | 0.38 | 0.62 | 0.39 | 1.25 | 1.89 |
+  | Sessions | 2 | 2 | 2 | 5 | 2 | 2 | 5 |
+
+  Only 1,024 electrodes beat the noise paddle clearly. From 8 to 256 the scores bounce
+  around chance, and 2 sessions each are too few to rank them.
+- **The skill comes from the layout, not from learning.** In the default layout, the cells
+  next to each site sit in the "up" or "down" areas, so the dish starts out with a crude
+  built-in reflex. With DishBrain's own layout (sites along one edge, far from the motor
+  areas), activity in this model does not travel that far, and the culture plays at chance.
+- **No learning.** DishBrain's cultures improved within 5 minutes. In the model, minutes
+  6-20 were not better than minutes 0-5, and switching learning off changed the living
+  score by less than the session-to-session spread. (On the silicon copy, learning
+  lengthened rallies from 4 to 42 hits, but the spread is huge.) Learning rates from 0.03
+  to 1.0 were tried before the benchmark, partly on sessions kept apart for this; none
+  reproduced DishBrain. So the learning rule is only a placeholder, and learning speed is
+  the biggest open gap.
+- **Cost.** The living module costs about 25 J per game-second, because its box runs at
+  25 W and the game runs in real time. The silicon copy is about 340 times cheaper. The
+  simple controller is about 25,000 times cheaper, and it plays perfectly.
+
+### 5. The robust 400-neuron circuit is the feeding default
+
+It makes the same decisions as the whole brain, and its brake on bitter matches the whole
+brain's (MN9 at 4.9 Hz against 4.3 Hz; the 36-neuron circuit gives 24.5 Hz). It still
+decides correctly with 8- or 9-bit weights. The 36-neuron circuit is still an option
+(`feeding.run("36")`).
 
 ## Did the machine get the known answers right?
 
-- **The fly circuits: yes, exactly.** The virtual neuromorphic core gives the same spikes,
-  spike for spike, as the project's own simulator on the same input (checked by a test). So
-  it reproduces the circuit results in `docs/minimal-circuit.md` exactly: MN9 fires 62.3 Hz
-  on sugar, 0 on bitter and 24.5 Hz on sugar plus bitter (36 neurons), and 67.7 / 0 / 4.9 Hz
-  (400 neurons). The whole brain gives 67.0 / 0 / 4.3 Hz.
-- **Decision rule.** "Feed" when MN9 fires above 35.7 Hz, halfway between the whole brain's
-  sugar and sugar-plus-bitter rates. Caveat: I chose this after seeing that the 36-neuron
-  circuit fires 24 Hz on sugar plus bitter; a threshold below 24 Hz would make that circuit
-  wrong every time on that stimulus.
-- **Chip-style weights.** Stored in 9 bits (Loihi 2's fly-brain setting), both circuits still
-  decide correctly on every trial tested (one seed, 30 trials per stimulus). In 8 bits the
-  36-neuron circuit gets 98.9% right, and the 400-neuron circuit's bitter brake gets weaker
-  (9.2 Hz instead of 3.4 Hz) but still decides correctly.
-- **Odour learning: yes.** Random wiring, 5 seeds x 2 brain halves: **66.85%** correct on
-  110 odours, matching the memory-centre lane's 66.8%. With the learned weights stored in
-  8 bits: 66.2%.
-- **Chip timing check: 5.8 times too optimistic.** Priced the same way, the whole fly brain's
-  sugar test on 1,440 cores comes out at 9.3 ms per simulated second. Sandia measured
-  53.8 ms on real Loihi 2 chips. So the chip **times** in the table may be several times too
-  fast, as the roadmap warned (message traffic between chips is not modeled).
-- **Laptop cost model:** within 11-15% of the measured time on the fly circuits; 2-3 times
-  off on sum and sort (so the laptop rows use measured times).
-
-## What the hybrid is good at
-
-- **Brain-like jobs at tiny energy.** The feeding decision costs 19.5 µJ on the chip,
-  against 18.7 mJ on the laptop, 1.9 mJ on the microcontroller and about 7 J on a GPU. The
-  fly circuit is tiny and sparse, which is exactly what spiking hardware is built for.
-- **Learning on the spot, cheaply.** Each odour sniff is recognised and learned from for
-  about 8 µJ, changing only about 120 connections. The laptop spends 2.2 mJ on the same
-  sniff.
-- **Exact records when needed.** The hybrid's log in the odour watch is exact (checked); the
-  neuromorphic chip alone cannot keep one.
-- **Better when "event-driven" hardware arrives.** If the chip only did work when a spike
-  arrived (the "ideal event-driven" mode), the 36-neuron decision would drop from 3.1 ms and
-  19.5 µJ to 72 µs and 0.6 µJ. The fixed clock is most of today's cost for small circuits.
-
-## What it is bad at
-
-- **Exact maths is slow.** The hybrid sends sums and sorts to its small M33 core, which is
-  about 90 times slower than the laptop on the sum and 220 times slower on the sort. It uses
-  less energy than the laptop, but a bigger conventional core would be needed for heavy
-  exact work.
-- **The chip is not faster than the laptop on small circuits.** The laptop finished the
-  36-neuron decision in 1.2 ms (measured); the Loihi-style chip is modeled at 3.1 ms, because
-  it must step through 10,000 clock ticks.
-- **GPUs are wasted on single small tasks.** A GPU spends almost all its time starting jobs.
-  Processing thousands of tasks at once would help it a lot; v0 only models one task at a
-  time, as a sensor delivers them.
-- **Standby power decides the all-day watch.** With the M33 asleep at a guessed 1 mW, the
-  hybrid uses 87 J a day and the M33 alone 89 J: only 2% better. With a 0.1 mW sleep the
-  hybrid wins by 17% (9.3 vs 10.9 J a day), with 0.01 mW by 2 times (1.5 vs 3.1 J). And the
-  chip's own leakage is not in v0 at all: a Xylo-class chip's 100 µW would add 8.6 J a day.
-  So this row is not settled.
-- **The accuracy ceiling of the memory-centre design stays low**: 66% on 110 odours (a
-  normal neural network trained on everything at once gets 93%, `docs/mb-continual-learning.md`).
-- **Living cells cost a lot per answer.** The simulated culture read through a CL1's 59
-  electrodes got 89.6% right, but each answer takes 60 ms of real time and about 1.5 J of the
-  box's life support. A silicon copy of the same network got 91.7% for 41 µJ.
-
-## The electrode bottleneck
-
-The simulated culture has 1,000 cells on a 1.4 mm dish. The same trials were read through
-different numbers of electrodes (chance = 12.5%):
-
-| Electrodes | 1 | 2 | 4 | 8 | 16 | 32 | 59 (CL1) | 128 | 256 | every cell, one by one | every cell, pooled into 256 areas |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Correct | 14% | 15% | 10% | 42% | 11% | 82% | 90% | 97% | 99.6% | 86% | 92% |
-
-- **Below about 32 electrodes it is luck.** With few electrodes, accuracy depends on whether
-  one happens to sit near a stimulated spot (16 electrodes on a wide grid missed all of
-  them). From 32 electrodes up, more is better.
-- **Reading every cell was not the best.** With only 320 training trials, 6,000 separate
-  cell readings are hard to learn from; grouped electrode counts did better. How the reading
-  is pooled matters as much as how many cells are seen.
-- **Drift and cell death barely hurt, in this model.** After 30 simulated days (87% of cells
-  alive), the day-0 read-out still scored 87.5% (90% at day 0). This is probably optimistic:
-  the model culture mostly passes the stimulation on, doing little computing of its own, and
-  the drift rate is a guess.
-- **Fatigue.** Stimulated spots ended at about 83% of their fresh strength (guessed rates).
-
-## What v1 should add
-
-1. **Standby power for every part**, from datasheets (RP2350 sleep and dormant modes, a
-   neuromorphic chip's leakage). This decides the all-day tasks.
-2. **Message traffic on the chip**, calibrated so the whole-brain test matches Sandia's
-   53.8 ms, or SANA-FE (the published Loihi energy/latency simulator) run in the cloud.
-3. **Measured energy on real parts**: the RP2350 board from Stage 2 (a USB power meter), and
-   this laptop's package power (its power counter is readable, `docs/energy-budget.md`).
-4. **A GPU running many tasks at once**, and a real cloud GPU measurement.
-5. **A living module that computes**, not just relays: bursting, a culture model with
-   published parameters (for example Maheswaranathan et al. 2012), and learning through the
-   electrodes (a DishBrain-style task), behind Cortical Labs' CL API simulator.
-6. **A bigger conventional core option** (for example a Cortex-A class core) so exact work
-   is not stuck on a microcontroller.
-7. **The whole brain as a workload** (it would need the fix setting passed explicitly), and
-   the fly-body steering task.
+- **Fly circuits: yes, exactly** (unchanged from v0). The engine matches the project
+  simulator spike for spike. The 400-neuron circuit gives MN9 67.7 / 0 / 4.9 Hz for sugar /
+  bitter / both; the whole brain gives 67.0 / 0 / 4.3 Hz.
+- **Odour learning: yes**: 66.85% on 110 odours (lane: 66.8%); 66.2% with 8-bit weights.
+- **Chip timing: fitted, then tested on held-back data**: 26% off on the held-back sugar
+  run and 7-42% off on the held-back background runs (above).
+- **Pong baselines: yes by design**: the noise paddle scored 0.86 against DishBrain's
+  0.80; the paddle size was fitted for this.
+- **DishBrain's learning: no.** The model does not reproduce it.
 
 ## Limits, stated plainly
 
-- Loihi's numbers are pre-silicon estimates from 2018; newer chips may differ.
-- Static (leakage) power of the neuromorphic chip is left out.
-- The M33 cycle counts are assumptions, not measured on the chip; M33 accuracy was taken
-  from the full-precision simulation.
-- The GPU is modeled, not measured, and charged its full 70 W while busy (an upper bound).
-- Laptop energy charges the whole 15 W to one busy core (an upper-end assumption); laptop
-  times were measured while other work shared the machine.
-- The living module's settings (noise, fatigue, drift, death, plasticity, electrode reach,
-  spike size) are mostly **guessed**; its results are hypotheses for Stage 4.
-- The odour-watch accuracy (95.9%) is flattered by easy "no odour" sniffs (90% of the
-  stream); on odours alone, the name was right 66% of the time.
-- One seed for most runs; no independent review.
+- The chip's timing costs were fitted on one 12-chip system and one kind of workload (the
+  fly brain). They are applied to one-chip jobs, with a range because this is uncertain.
+- The chip's static power comes from one paper's table, read two ways (a 16-fold range).
+  How much a smaller, purpose-built chip would leak is unknown.
+- The chip's energy per operation is still Loihi 1's 2018 pre-silicon figure.
+- The M33 cycle counts and its 1 mW sleep power are still assumptions. Sleep power decides
+  the all-day task.
+- **Living module, still guessed:** wiring, synapse strengths, noise, resting drive, how
+  far a pulse reaches, fatigue, drift, the learning rule, the dish layout in Pong, the
+  paddle speed and the read-out rule. The model culture has 1,000 identical cells, about
+  1,000 times fewer than a real dish.
+- The model culture ran with 0.5 ms steps in Pong (the fly circuits use 0.1 ms), to keep
+  the emulator fast enough.
+- Pong: only 2-5 sessions per setting. Rally lengths vary a lot between sessions.
+- Laptop energy = measured time x 15 W, an assumed share of its power. Laptop times vary
+  by 10-20% from run to run because other work shares the machine.
 
 ## Where things are
 
-- Code: `vhc/` (see `vhc/README.md`); results: `vhc/results/results.json` and
-  `vhc/results/table.md`; price list: `vhc/prices.py`.
-- Run: `.venv\Scripts\python.exe -m vhc.calibrate`, then `-m vhc.bench` (about 75 s of
-  emulator time); tests: `-m pytest vhc/tests -q -p no:cacheprovider` (16 tests, about 5 s).
+- Code: `vhc/` (see `vhc/README.md`). New in v1: `vhc/neurocal.py` (the chip fit),
+  `vhc/workloads/pong.py` (the game) and `vhc/tests/test_v1.py`.
+- Results: `vhc/results/results.json`, `table.md`, `compare.md` (v0 against v1),
+  `neuro_calibration.json`. v0's own results are kept in `results_v0.json` and
+  `table_v0.md`.
+- Price list with every source: `vhc/prices.py`.
+- Run: `.venv\Scripts\python.exe -m vhc.bench` (about 10 minutes; the emulator's own time
+  is never used as a design's speed). Tests: `-m pytest vhc/tests -q -p no:cacheprovider`
+  (24 tests, about 6-8 s).

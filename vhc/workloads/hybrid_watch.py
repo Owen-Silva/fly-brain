@@ -58,21 +58,27 @@ def run(s: O.Setup, readout, n_sniffs=5000, seed=0):
     return res
 
 
-def per_day(res, s: O.Setup, x86_s_per_sniff):
-    """Energy per day and time per sniff for each design."""
+def per_day(res, s: O.Setup, x86_s_per_sniff, version="v1", static="mid"):
+    """Energy per day and time per sniff for each design. v1: the neuromorphic chip listens
+    all day, so its static (leakage) power runs all day too (ASSUMED: no power-gating between
+    sniffs one second apart)."""
     n_od = s.P.shape[0]
     sniffs = DAY_S / SNIFF_PERIOD_S
     det = res["detections_per_sniff"] * sniffs
     log_ops = {"log_write": 1, "select": n_od}
     out = {}
+    cores = neuromorphic.n_cores_for(res["neuro_counts"].get("neurons", 0))
     for mode in neuromorphic.MODES:
-        nc = neuromorphic.price(res["neuro_counts"], mode)
+        nc = neuromorphic.price(res["neuro_counts"], mode, version=version, static=static)
+        idle = 0.0
+        if version == "v1":
+            idle = neuromorphic.static_W(cores, static) * max(DAY_S - sniffs * nc.time_s, 0.0)
         wake = conventional.price(log_ops, "m33", wake=True)
         busy = det * wake.time_s
-        e_h = sniffs * nc.energy_J + det * wake.energy_J + (DAY_S - busy) * M33_SLEEP_W.value
+        e_h = sniffs * nc.energy_J + idle + det * wake.energy_J + (DAY_S - busy) * M33_SLEEP_W.value
         out[f"hybrid ({mode})"] = {"time_s": nc.time_s + res["detections_per_sniff"] * wake.time_s,
                                    "J_per_day": e_h, "log": "exact", "label": "modeled"}
-        out[f"neuromorphic only ({mode})"] = {"time_s": nc.time_s, "J_per_day": sniffs * nc.energy_J,
+        out[f"neuromorphic only ({mode})"] = {"time_s": nc.time_s, "J_per_day": sniffs * nc.energy_J + idle,
                                               "log": "none (no exact memory)", "label": "modeled"}
     mc = O.m33_cost(s, res["active_per_sniff"], n_od, train=False)
     lw = conventional.price(log_ops, "m33")

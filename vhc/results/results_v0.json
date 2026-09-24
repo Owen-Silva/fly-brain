@@ -1,0 +1,693 @@
+{
+ "label": "PRELIMINARY",
+ "date": "2026-09-24 00:18",
+ "calibration_sandia": {
+  "predicted_s_per_sim_s": 0.009342660710345833,
+  "measured_s_per_sim_s": 0.05376,
+  "ratio_measured_over_predicted": 5.7542494228081615,
+  "note": "Loihi 1 per-op timings, 1,440 cores, even load; Sandia ran Loihi 2 (12 chips)"
+ },
+ "feeding_36": {
+  "decision_accuracy_float64": 0.9851851851851853,
+  "decision_accuracy_bits": {
+   "8": 0.9888888888888889,
+   "9": 1.0
+  },
+  "mn9_hz_vhc": {
+   "sugar": 62.27777777777778,
+   "bitter": 0.0,
+   "sugar+bitter": 24.48888888888889
+  },
+  "mn9_hz_vhc_bits_seed0": {
+   "8": {
+    "sugar": 60.7,
+    "bitter": 0.0,
+    "sugar+bitter": 22.366666666666667
+   },
+   "9": {
+    "sugar": 60.2,
+    "bitter": 0.0,
+    "sugar+bitter": 22.533333333333335
+   }
+  },
+  "mn9_hz_minimal_circuit_lane": {
+   "S100": 62.27777777777778,
+   "B100": 0.0,
+   "S100+B100": 24.48888888888889
+  },
+  "mn9_hz_whole_brain": {
+   "S100": 67.03333333333335,
+   "B100": 0.0,
+   "S100+B100": 4.288888888888889
+  },
+  "mean_counts_per_decision": {
+   "steps": 10000.0,
+   "neurons": 36.0,
+   "spikes": 1289.1518518518517,
+   "syn_event": 4296.662962962963,
+   "input_event": 801.7444444444444,
+   "spike_msgs": 1260.2296296296297
+  },
+  "x86_measured_s": 0.0012433999945642427,
+  "x86_model_s": 0.0013757154258914914,
+  "threshold_hz": 35.7
+ },
+ "feeding_400": {
+  "decision_accuracy_float64": 1.0,
+  "decision_accuracy_bits": {
+   "8": 1.0,
+   "9": 1.0
+  },
+  "mn9_hz_vhc": {
+   "sugar": 67.7,
+   "bitter": 0.0,
+   "sugar+bitter": 4.911111111111111
+  },
+  "mn9_hz_vhc_bits_seed0": {
+   "8": {
+    "sugar": 66.4,
+    "bitter": 0.0,
+    "sugar+bitter": 9.233333333333333
+   },
+   "9": {
+    "sugar": 68.13333333333334,
+    "bitter": 0.0,
+    "sugar+bitter": 3.4
+   }
+  },
+  "mn9_hz_minimal_circuit_lane": {
+   "S100": 67.7,
+   "B100": 0.0,
+   "S100+B100": 4.911111111111111
+  },
+  "mn9_hz_whole_brain": {
+   "S100": 67.03333333333335,
+   "B100": 0.0,
+   "S100+B100": 4.288888888888889
+  },
+  "mean_counts_per_decision": {
+   "steps": 10000.0,
+   "neurons": 400.0,
+   "spikes": 6780.2,
+   "syn_event": 350959.56666666665,
+   "input_event": 2801.474074074074,
+   "spike_msgs": 6780.2
+  },
+  "x86_measured_s": 0.012923699992825277,
+  "x86_model_s": 0.010970760644558472,
+  "threshold_hz": 35.7
+ },
+ "odour": {
+  "accuracy_float_mean": 0.6684545454545454,
+  "accuracy_8bit_mean": 0.6623181818181817,
+  "accuracy_float_runs": [
+   0.6627272727272727,
+   0.6781818181818182,
+   0.6659090909090909,
+   0.6568181818181819,
+   0.6804545454545454,
+   0.6422727272727272,
+   0.6468181818181818,
+   0.6890909090909091,
+   0.6640909090909091,
+   0.6981818181818182
+  ],
+  "accuracy_8bit_runs": [
+   0.6459090909090909,
+   0.6763636363636364,
+   0.6572727272727272,
+   0.649090909090909,
+   0.6731818181818182,
+   0.639090909090909,
+   0.6377272727272727,
+   0.6859090909090909,
+   0.6668181818181819,
+   0.6918181818181818
+  ],
+  "lane_reference": "docs/mb-continual-learning.md: uniform random wiring 66.8% / 66.8%",
+  "counts_per_sniff": {
+   "steps": 50,
+   "neurons": 2508,
+   "spikes": 249.60090909090908,
+   "syn_event": 58602.814090909094,
+   "input_event": 86.10408782958984,
+   "syn_update": 119.80045454545454
+  },
+  "active_per_sniff": 119.80045454545454,
+  "n_kc": 2397,
+  "x86_measured_s": 0.0001448499970138073
+ },
+ "exact_sum": {
+  "x86_measured_s": 1.4500008546747267e-05,
+  "correct": true,
+  "x86_model_s": 4.100000005564653e-05
+ },
+ "exact_sort": {
+  "x86_measured_s": 0.0002843999973265454,
+  "correct": true,
+  "x86_model_s": 0.0005715599318007088
+ },
+ "watch": {
+  "threshold": 185.0,
+  "hit_rate": 1.0,
+  "false_alarm_rate": 0.006899621633652348,
+  "named_correct_given_hit": 0.6607495069033531,
+  "end_to_end_accuracy": 0.9594,
+  "log_exact": true,
+  "detections_per_sniff": 0.1076,
+  "active_per_sniff": 118.905,
+  "neuro_counts": {
+   "steps": 50,
+   "neurons": 2508,
+   "spikes": 247.81,
+   "syn_event": 42583.785,
+   "input_event": 18.145000457763672,
+   "syn_update": 0.0
+  },
+  "per_day": {
+   "hybrid (clocked)": {
+    "time_s": 0.00028011808200053407,
+    "J_per_day": 87.05836250107293,
+    "log": "exact",
+    "label": "modeled"
+   },
+   "neuromorphic only (clocked)": {
+    "time_s": 0.00027714832200053405,
+    "J_per_day": 0.6509214704169334,
+    "log": "none (no exact memory)",
+    "label": "modeled"
+   },
+   "hybrid (event)": {
+    "time_s": 0.0005120143310054475,
+    "J_per_day": 86.79422408875614,
+    "log": "exact",
+    "label": "modeled"
+   },
+   "neuromorphic only (event)": {
+    "time_s": 0.0005090445710054475,
+    "J_per_day": 0.3867830581001371,
+    "log": "none (no exact memory)",
+    "label": "modeled"
+   },
+   "CPU only: M33 (modeled)": {
+    "time_s": 0.0008538413333333333,
+    "J_per_day": 88.54150447872001,
+    "log": "exact",
+    "label": "modeled"
+   },
+   "CPU only: laptop (measured time)": {
+    "time_s": 0.00014019999071024358,
+    "J_per_day": 259381.69918796048,
+    "log": "exact",
+    "label": "measured time; energy modeled"
+   },
+   "GPU (modeled)": {
+    "time_s": 4.49628125e-05,
+    "J_per_day": 1123471.93509,
+    "log": "exact (host CPU)",
+    "label": "modeled"
+   }
+  }
+ },
+ "electrode": {
+  "curve": {
+   "1": 0.1375,
+   "2": 0.15,
+   "4": 0.10416666666666667,
+   "8": 0.42083333333333334,
+   "16": 0.1125,
+   "32": 0.8166666666666667,
+   "59": 0.8958333333333334,
+   "128": 0.9666666666666667,
+   "256": 0.9958333333333333,
+   "all cells": 0.8583333333333333,
+   "all cells, pooled into 256 regions": 0.9166666666666666
+  },
+  "drift": {
+   "7": {
+    "old_readout": 0.9041666666666667,
+    "retrained": 0.8416666666666667,
+    "alive_frac": 0.974
+   },
+   "30": {
+    "old_readout": 0.875,
+    "retrained": 0.8333333333333334,
+    "alive_frac": 0.866
+   }
+  },
+  "counts": {
+   "steps": 600.0,
+   "neurons": 1000.0,
+   "spikes": 256.95714285714286,
+   "syn_event": 7476.448214285714,
+   "input_event": 146.6,
+   "spike_msgs": 256.95714285714286
+  },
+  "n_cells": 1000,
+  "stim_efficacy_end": 0.8344689698628677,
+  "emulator_wall_s": 49.79434370994568
+ },
+ "rows": [
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "hybrid (clocked) = neuromorphic + M33",
+   "time_s": 0.0030801741299999997,
+   "energy_J": 1.948989937666667e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": "scheduler: rule: spiking -> neuromorphic"
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "neuromorphic only (clocked)",
+   "time_s": 0.0030598407966666665,
+   "energy_J": 1.887989937666667e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "hybrid (event) = neuromorphic + M33",
+   "time_s": 9.183325703703704e-05,
+   "energy_J": 1.249906272962963e-06,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": "scheduler: rule: spiking -> neuromorphic"
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "neuromorphic only (event)",
+   "time_s": 7.149992370370371e-05,
+   "energy_J": 6.39906272962963e-07,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "CPU only: laptop x86",
+   "time_s": 0.0012433999945642427,
+   "energy_J": 0.01865099991846364,
+   "cost_label": "measured",
+   "accuracy": 0.9851851851851853,
+   "accuracy_label": "sim, float64",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "CPU only: M33",
+   "time_s": 0.06375917061728395,
+   "energy_J": 0.0019127751185185184,
+   "cost_label": "modeled",
+   "accuracy": 0.9851851851851853,
+   "accuracy_label": "sim (float64 stand-in)",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 36-neuron circuit",
+   "design": "GPU (T4)",
+   "time_s": 0.10004773768657409,
+   "energy_J": 7.003341638060186,
+   "cost_label": "modeled",
+   "accuracy": 0.9851851851851853,
+   "accuracy_label": "sim, float64",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "hybrid (clocked) = neuromorphic + M33",
+   "time_s": 0.023609515595925924,
+   "energy_J": 0.0002171669127014815,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": "scheduler: rule: spiking -> neuromorphic"
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "neuromorphic only (clocked)",
+   "time_s": 0.02358918226259259,
+   "energy_J": 0.0002165569127014815,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "hybrid (event) = neuromorphic + M33",
+   "time_s": 0.004287043398148148,
+   "energy_J": 3.817412740148148e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": "scheduler: rule: spiking -> neuromorphic"
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "neuromorphic only (event)",
+   "time_s": 0.004266710064814815,
+   "energy_J": 3.7564127401481476e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, 9-bit weights",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "CPU only: laptop x86",
+   "time_s": 0.012923699992825277,
+   "energy_J": 0.19385549989237916,
+   "cost_label": "measured",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, float64",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "CPU only: M33",
+   "time_s": 0.6940360827160493,
+   "energy_J": 0.020821082481481477,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim (float64 stand-in)",
+   "note": ""
+  },
+  {
+   "workload": "(a) feeding decision, 400-neuron circuit",
+   "design": "GPU (T4)",
+   "time_s": 0.10033526702174383,
+   "energy_J": 7.023468691522068,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "sim, float64",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "hybrid (clocked) = neuromorphic + M33",
+   "time_s": 0.0003164285864054981,
+   "energy_J": 8.53589727147278e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.6623181818181817,
+   "accuracy_label": "sim, 8-bit read-out",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "neuromorphic only (clocked)",
+   "time_s": 0.00029616191973883145,
+   "energy_J": 7.92789727147278e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.6623181818181817,
+   "accuracy_label": "sim, 8-bit read-out",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "hybrid (event) = neuromorphic + M33",
+   "time_s": 0.0007214922234027479,
+   "energy_J": 6.781878891223339e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.6623181818181817,
+   "accuracy_label": "sim, 8-bit read-out",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "neuromorphic only (event)",
+   "time_s": 0.0007012255567360813,
+   "energy_J": 6.173878891223339e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.6623181818181817,
+   "accuracy_label": "sim, 8-bit read-out",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "CPU only: laptop x86",
+   "time_s": 0.0001448499970138073,
+   "energy_J": 0.0021727499552071095,
+   "cost_label": "measured",
+   "accuracy": 0.6684545454545454,
+   "accuracy_label": "sim, float32",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "CPU only: M33",
+   "time_s": 0.0008660520363636364,
+   "energy_J": 2.598156109090909e-05,
+   "cost_label": "modeled",
+   "accuracy": 0.6684545454545454,
+   "accuracy_label": "sim, float32",
+   "note": ""
+  },
+  {
+   "workload": "(b) continual odour learning (per labelled sniff)",
+   "design": "GPU (T4)",
+   "time_s": 4.99628125e-05,
+   "energy_J": 0.003497396875,
+   "cost_label": "modeled",
+   "accuracy": 0.6684545454545454,
+   "accuracy_label": "sim, float32",
+   "note": ""
+  },
+  {
+   "workload": "(c) exact sum of 50,000 64-bit integers",
+   "design": "hybrid = its M33 core",
+   "time_s": 0.0013333333333333333,
+   "energy_J": 3.9999999999999996e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact",
+   "note": "scheduler: rule: exact -> conventional"
+  },
+  {
+   "workload": "(c) exact sum of 50,000 64-bit integers",
+   "design": "neuromorphic only",
+   "time_s": null,
+   "energy_J": null,
+   "cost_label": "n/a",
+   "accuracy": null,
+   "accuracy_label": "not possible",
+   "note": "spiking cores hold 8-9-bit weights and no general memory; exact results unsupported"
+  },
+  {
+   "workload": "(c) exact sum of 50,000 64-bit integers",
+   "design": "CPU only: laptop x86",
+   "time_s": 1.4500008546747267e-05,
+   "energy_J": 0.000217500128201209,
+   "cost_label": "measured",
+   "accuracy": 1.0,
+   "accuracy_label": "exact, checked",
+   "note": ""
+  },
+  {
+   "workload": "(c) exact sum of 50,000 64-bit integers",
+   "design": "CPU only: M33",
+   "time_s": 0.0013333333333333333,
+   "energy_J": 3.9999999999999996e-05,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact",
+   "note": ""
+  },
+  {
+   "workload": "(c) exact sum of 50,000 64-bit integers",
+   "design": "GPU (T4)",
+   "time_s": 6.4584e-05,
+   "energy_J": 0.0045208800000000006,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact (integer)",
+   "note": ""
+  },
+  {
+   "workload": "(c) sort 50,000 32-bit integers",
+   "design": "hybrid = its M33 core",
+   "time_s": 0.06243864,
+   "energy_J": 0.0018731591999999997,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact",
+   "note": "scheduler: rule: exact -> conventional"
+  },
+  {
+   "workload": "(c) sort 50,000 32-bit integers",
+   "design": "neuromorphic only",
+   "time_s": null,
+   "energy_J": null,
+   "cost_label": "n/a",
+   "accuracy": null,
+   "accuracy_label": "not possible",
+   "note": "spiking cores hold 8-9-bit weights and no general memory; exact results unsupported"
+  },
+  {
+   "workload": "(c) sort 50,000 32-bit integers",
+   "design": "CPU only: laptop x86",
+   "time_s": 0.0002843999973265454,
+   "energy_J": 0.004265999959898181,
+   "cost_label": "measured",
+   "accuracy": 1.0,
+   "accuracy_label": "exact, checked",
+   "note": ""
+  },
+  {
+   "workload": "(c) sort 50,000 32-bit integers",
+   "design": "CPU only: M33",
+   "time_s": 0.06243864,
+   "energy_J": 0.0018731591999999997,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact",
+   "note": ""
+  },
+  {
+   "workload": "(c) sort 50,000 32-bit integers",
+   "design": "GPU (T4)",
+   "time_s": 0.00011833333333333334,
+   "energy_J": 0.008283333333333334,
+   "cost_label": "modeled",
+   "accuracy": 1.0,
+   "accuracy_label": "exact (integer)",
+   "note": ""
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "hybrid (clocked)",
+   "time_s": 0.00028011808200053407,
+   "energy_J": 0.0010076199363550109,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log exact",
+   "note": "87.1 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "neuromorphic only (clocked)",
+   "time_s": 0.00027714832200053405,
+   "energy_J": 7.533813315010803e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log none (no exact memory)",
+   "note": "0.651 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "hybrid (event)",
+   "time_s": 0.0005120143310054475,
+   "energy_J": 0.0010045627788050479,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log exact",
+   "note": "86.8 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "neuromorphic only (event)",
+   "time_s": 0.0005090445710054475,
+   "energy_J": 4.476655765047883e-06,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log none (no exact memory)",
+   "note": "0.387 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "CPU only: M33 (modeled)",
+   "time_s": 0.0008538413333333333,
+   "energy_J": 0.0010247859314666669,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log exact",
+   "note": "88.5 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "CPU only: laptop (measured time)",
+   "time_s": 0.00014019999071024358,
+   "energy_J": 3.0021029998606537,
+   "cost_label": "measured time; energy modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log exact",
+   "note": "2.59e+05 J per day"
+  },
+  {
+   "workload": "(d) hybrid odour watch with exact log (per sniff; energy per day in note)",
+   "design": "GPU (modeled)",
+   "time_s": 4.49628125e-05,
+   "energy_J": 13.003147396875,
+   "cost_label": "modeled",
+   "accuracy": 0.9594,
+   "accuracy_label": "sim; log exact (host CPU)",
+   "note": "1.12e+06 J per day"
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "hybrid + living module (CL1-like, 59 channels)",
+   "time_s": 0.06021605333333333,
+   "energy_J": 1.5035022816,
+   "cost_label": "modeled",
+   "accuracy": 0.8958333333333334,
+   "accuracy_label": "sim; GUESSED biology",
+   "note": "scheduler: rule: adaptive-bio -> living"
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "hybrid (clocked): culture network on silicon, every cell read",
+   "time_s": 0.0036034905692261905,
+   "energy_J": 4.123419252214286e-05,
+   "cost_label": "modeled",
+   "accuracy": 0.9166666666666666,
+   "accuracy_label": "sim; no electrodes, pooled read-out",
+   "note": ""
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "hybrid (event): culture network on silicon, every cell read",
+   "time_s": 0.0004210860470833333,
+   "energy_J": 1.066502119892857e-05,
+   "cost_label": "modeled",
+   "accuracy": 0.9166666666666666,
+   "accuracy_label": "sim; no electrodes, pooled read-out",
+   "note": ""
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "CPU only: laptop x86 (simulated culture, every cell read)",
+   "time_s": 0.0013015500007895753,
+   "energy_J": 0.01952325001184363,
+   "cost_label": "measured",
+   "accuracy": 0.9166666666666666,
+   "accuracy_label": "sim, pooled read-out",
+   "note": ""
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "CPU only: M33",
+   "time_s": 0.10105354702380952,
+   "energy_J": 0.0030316064107142856,
+   "cost_label": "modeled",
+   "accuracy": 0.9166666666666666,
+   "accuracy_label": "sim, pooled read-out",
+   "note": ""
+  },
+  {
+   "workload": "(e) electrode bottleneck: 8 stimulation patterns",
+   "design": "GPU (T4)",
+   "time_s": 0.006065716930974702,
+   "energy_J": 0.42460018516822917,
+   "cost_label": "modeled",
+   "accuracy": 0.9166666666666666,
+   "accuracy_label": "sim, pooled read-out",
+   "note": ""
+  }
+ ],
+ "emulator_wall_s_total": 75.4785521030426
+}

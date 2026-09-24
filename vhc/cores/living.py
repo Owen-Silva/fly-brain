@@ -16,6 +16,20 @@ What is modelled:
   * slow plasticity: co-active excitatory pairs strengthen a little (Hebbian; rate GUESSED).
 Neurons use the same LIF equations as the fly model (a simplification: cortical cells differ).
 Time is real time only; energy is the CL1 box's life support (vhc/prices.py).
+
+v1 changes (sources in vhc/prices.py DISHBRAIN / FINALSPARK; what is still guessed is marked):
+  * resting activity lowered (spont_hz 2 -> 0.05, noise 0.3 -> 0.2 mV; both still GUESSED) to
+    about 0.13 spikes per cell per second. DishBrain reports 0.05-0.1 Hz mean per ELECTRODE
+    (busiest 6-22 Hz), but its dish carries ~10^6 plated cells on 8 mm2 against this model's
+    ~500 cells per mm2, so electrode rates cannot be matched one to one; the model's electrode
+    rates are reported next to DishBrain's as a check, not fitted;
+  * lifetime: cell death FITTED so half the cells are gone at 100 days (FinalSpark's best-case
+    organoid lifetime; DishBrain kept human cultures > 3 months; CL1 up to 6 months). "End of
+    life = half the cells gone" is ASSUMED;
+  * stimulation, feedback, read-out timing and learning speed of the Pong task: DishBrain's
+    published settings (vhc/workloads/pong.py).
+Still GUESSED: wiring (k_local, local_um, weights), spontaneous drive and noise, stimulation
+reach, fatigue, drift, the learning mechanism.
 """
 from __future__ import annotations
 
@@ -38,20 +52,20 @@ class CultureParams:
     p_long: float = 0.1            # ASSUMED: share of links rewired to random targets (small-world)
     w_exc: float = 6.0             # GUESSED: excitatory weight, in units of w_syn (0.275 mV)
     w_inh: float = -18.0           # GUESSED: inhibitory weight
-    spont_hz: float = 2.0          # GUESSED: spontaneous input kicks per neuron per second
+    spont_hz: float = 0.05         # GUESSED (v0: 2.0): spontaneous kicks per neuron per second
     spont_kick_mV: float = 8.0     # GUESSED: size of a spontaneous kick
-    noise_mV: float = 0.3          # GUESSED: membrane noise per 0.1 ms step (SD)
+    noise_mV: float = 0.2          # GUESSED (v0: 0.3): membrane noise per 0.1 ms step (SD)
     fatigue_per_pulse: float = 0.03   # GUESSED: stimulation efficacy lost per pulse at a site
     fatigue_recovery_s: float = 20.0  # GUESSED: efficacy recovers with this time constant
     drift_sd_per_day: float = 0.05    # GUESSED: log-normal random walk of each weight per day
-    death_per_day: float = 0.004      # GUESSED: ~50% of cells left after 6 months
+    death_per_day: float = 0.0069     # FITTED (v0: 0.004): half the cells gone at 100 days (FinalSpark)
     hebb_rate: float = 0.002          # GUESSED: relative strengthening per co-active pair spike
     labels: dict = field(default_factory=lambda: {
         "n": "ASSUMED", "dish_um": "ASSUMED", "frac_inh": "ASSUMED", "k_local": "GUESSED",
         "local_um": "GUESSED", "p_long": "ASSUMED", "w_exc": "GUESSED", "w_inh": "GUESSED",
         "spont_hz": "GUESSED", "spont_kick_mV": "GUESSED", "noise_mV": "GUESSED",
         "fatigue_per_pulse": "GUESSED", "fatigue_recovery_s": "GUESSED",
-        "drift_sd_per_day": "GUESSED", "death_per_day": "GUESSED", "hebb_rate": "GUESSED"})
+        "drift_sd_per_day": "GUESSED", "death_per_day": "FITTED", "hebb_rate": "GUESSED"})
 
 
 class Culture:
