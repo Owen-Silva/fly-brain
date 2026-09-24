@@ -1,0 +1,6 @@
+real_fix: top eigenvalue -1953.6+0.0j; participation ratio 8.3 neurons; top-10 share 0.82; top neurons [('<NA>', 0.209), ('LPi21', 0.171), ('<NA>', 0.164), ('<NA>', 0.131)]
+  strongest loops: [(['<NA>', '<NA>'], 725.8), (['LPi12', 'LPi21'], 623.7), (['<NA>', '<NA>'], 573.8)]
+real_none: top eigenvalue 2139.0+0.0j; participation ratio 57.0 neurons; top-10 share 0.31; top neurons [('lLN1_bc', 0.039), ('<NA>', 0.035), ('lLN1_bc', 0.033), ('lLN1_bc', 0.032)]
+  strongest loops: [(['<NA>', '<NA>'], 725.8), (['LPi12', 'LPi21'], 623.7), (['<NA>', '<NA>'], 573.8)]
+shuffle_0: top eigenvalue -306.4+0.0j; participation ratio 69.4 neurons; top-10 share 0.29; top neurons [('<NA>', 0.079), ('CB0274', 0.063), ('<NA>', 0.038), ('<NA>', 0.024)]
+er_0: top eigenvalue -60.0-74.5j; participation ratio 310.0 neurons; top-10 share 0.14; top neurons [('CB0549', 0.043), ('<NA>', 0.021), ('R1-6', 0.014), ('CB0822', 0.013)]

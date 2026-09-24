@@ -2403,3 +2403,138 @@ once gets 93%. The fly's actual wiring did worse than random wiring with the sam
 statistics, by 5 to 9 points, in every setting we tried. So copy the design, not the
 exact wiring diagram. The real wiring does have structure, but that structure is not
 for this test.
+
+## 2026-09-23 - Reservoir computing: does the fly's whole wiring diagram compute better than random wiring? (PRELIMINARY)
+
+**What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. New folder
+`experiments/reservoir/` and write-up `docs/connectome-reservoir.md`.
+- The test: the whole-brain signed matrix (snapshot 630) used as a fixed
+  "reservoir".
+  - Built exactly as the fast engine builds its connection list; 300 neurons
+    were checked against `build_brain`.
+  - Recommended fix (`al_ln_literature`): 127,400 neurons, 14,635,639
+    connections.
+  - Rate model: x(t) = (1-a) x(t-1) + a tanh(rho W x(t-1) + W_in u(t)).
+  - Every network divided by its own spectral radius.
+  - Input: one random number per step (between 0 and 0.5) into all 9,145
+    sensory neurons, with weights of ±1.
+  - Only a ridge readout is trained. The settings are chosen on validation
+    data and the scores are taken on test data.
+- Controls, 3 seeds each: a degree-preserving shuffle (target column
+  permuted), and Erdős-Rényi with the same edge count and weight values.
+- Grid: rho 0.5-1.5 (8 values) x leak 0.3 or 1.
+- Tasks: memory capacity (delays 0-100), NARMA-10, and delayed XOR.
+- Readouts:
+  - all 1,299 descending neurons;
+  - 10 / 30 / 100 / 300 / 1,000 / 3,000 random non-sensory neurons;
+  - each clean and with read noise (SD 0.01).
+- Pre-registered pass rule, written before any comparison run (doc, 21:45):
+  real wins a task only if, at each network's own best setting, it beats both
+  controls by more than the larger seed-to-seed range.
+- Changes from the plan:
+  - The timeline was cut from 3,000 to 2,200 steps before the main run, for
+    compute.
+  - The published matrix got seed 0 only.
+  - The spiking check was not done.
+- Added after the main run:
+  - The two seed-1 controls were re-run without self-connections.
+  - An exploratory "same divisor" run of the real network (seed 0).
+  - An exploratory high-gain run (rho 2-10) of the real and shuffled
+    networks, main readouts only.
+- Run time: about 1 h 40 min of sweep (other lanes made it 2-4x slower than
+  timed), plus about 30 min of follow-up runs and checks.
+
+**What happened.**
+- Pass rule: FAIL, with 0 wins, 4 losses and 2 ties.
+
+  | | Real | Shuffled | Erdős-Rényi |
+  |---|---|---|---|
+  | Memory, descending neurons | 17.9 | 22.4 | 48.0 |
+  | Memory, 1,000 random | 16.3 | 22.3 | 46.0 |
+  | NARMA-10 error, descending | 0.45 | 0.27 | 0.26 |
+  | NARMA-10 error, 1,000 random | 0.47 | 0.29 | 0.26 |
+  | XOR, descending | 91.5% | 91.7% | 91.6% |
+  | XOR, 1,000 random | 90.6% | 91.5% | 91.9% |
+
+  - Memory and NARMA-10 are LOSE; XOR is a TIE.
+  - A plain delay line of the last 30-100 inputs gets NARMA 0.37-0.38, so the
+    real wiring is worse than no network on NARMA.
+- Electrode bottleneck:
+  - At 10 read neurons the networks are close (memory 7.8 / 9.6 / 8.7).
+  - The real wiring saturates by about 100 neurons (14.5 of 17.2).
+  - With read noise 0.01 it collapses: memory 1.5 and XOR 52%. The shuffle
+    keeps memory 9.0; Erdős-Rényi keeps 40.9 and 69% on XOR.
+- Why:
+  - The real matrix's spectral radius (1,954, against 306-373 shuffled and
+    96-100 Erdős-Rényi) is set by a mode on about 8 mutually inhibitory
+    lobula-plate cells (LPi21, DCH, VCH, HSE, H2; 500-760 synapses each way).
+  - After scaling, a typical real neuron swings by only 0.0002, and just 3%
+    of neurons swing more than the noise.
+- The published matrix's top mode (+2,139) is the lLN1_bc antennal-lobe loop
+  behind the Phase 6 runaway. The spectral analysis finds it without any
+  simulation.
+- Published matrix, seed 0: memory 15.5 / 15.2, NARMA 0.38, XOR 89-91%. No
+  wins.
+- Control flaw found:
+  - Random rewiring made a few self-connections. In seed 1 of both controls,
+    one of them set the radius (ER -177, shuffle +335), making those controls
+    too quiet.
+  - Re-run without them: still 0 wins, 4 losses and 2 ties. Erdős-Rényi
+    memory rises to about 60 and NARMA falls to 0.22.
+- Exploratory, not pre-registered:
+  - Same divisor (real matrix divided by the Erdős-Rényi radius, 96, seed 0):
+    loud but input-blind. Memory 1.7-2.9, NARMA 1.0-1.3, XOR 51-54% (chance).
+  - Higher gain, rho 2-10 (real and shuffled, 3 seeds each): the real wiring
+    peaks at rho 1.5-2 and then declines. With best settings re-picked over
+    rho 0.5-10, it still has 0 wins, 4 losses and 2 ties
+    (`verdicts_extended.csv`).
+
+**Validated?** No: PRELIMINARY.
+- Done:
+  - Pre-registration before any comparison run.
+  - 3 seeds per network.
+  - Settings chosen on validation data and scores taken on test data.
+  - Matrix checked against the engine.
+  - Fast kernel checked against a plain one (3e-7).
+  - Task code checked with no-network baselines (a K-step memory gives memory
+    capacity K; linear XOR sits at chance).
+  - Literature check.
+  - Self-connection flaw re-run.
+  - Gain range extended to rho 10 for the real and shuffled networks.
+- Not done:
+  - Spiking-engine check.
+  - Published matrix seeds 1-2.
+  - Other input scalings and noise levels.
+  - Other ways of scaling the matrix (for example, taming only the hot loop).
+  - Independent review.
+- Weak points:
+  - The verdict depends on the standard spectral-radius scaling, which is
+    dominated by a few super-connected cells.
+  - Rate units, not spikes.
+  - An artificial input.
+  - Only 1,000 training steps.
+
+**New or reproduction?** Partly both.
+- Already done:
+  - The whole FlyWire connectome has been used as a reservoir against an
+    Erdős-Rényi control (Costi et al. 2025, *Biomimetics*), with mixed
+    results.
+  - conn2res (Suárez et al. 2024) found no significant advantage for a
+    FlyCircuit fly network over degree-preserving nulls (p = 0.11).
+- Not seen in the sources we reached: the neuron-level degree-preserving
+  control, the descending-neuron readout, the electrode and noise sweep, and
+  the localized-mode explanation.
+
+**Plain English.**
+- We used the fly's whole wiring diagram as a fixed circuit and trained only
+  a simple readout on it, the way a living-neuron computer would be used.
+- The real wiring did not beat random wiring of the same size. It remembered
+  less, did worse on a standard prediction task, and matched it on a logic
+  task.
+- The reason is that a handful of optic-lobe cells are wired to each other
+  so strongly that, once the network is scaled to be stable, everything else
+  is almost silent.
+- That silence makes the real wiring very hard to read with noisy
+  electrodes.
+- So copying the fly's wiring as-is is not a shortcut to a better reservoir.
+  Whatever the fly's wiring is good for, it is not this generic job.

@@ -1,0 +1,37 @@
+network,readout,N,noise,task,rho,leak,mean
+er,DN,1299,0,memory capacity,1.2,1,62.18
+er,DN,1299,0,NARMA-10 error,0.8,1,0.1914
+er,DN,1299,0,delayed XOR accuracy,0.5,1,0.8867
+er,DN,1299,0.01,memory capacity,1.2,1,62.05
+er,DN,1299,0.01,NARMA-10 error,1.05,1,0.3262
+er,DN,1299,0.01,delayed XOR accuracy,0.95,1,0.7167
+er,rand,10,0,memory capacity,0.95,1,9.247
+er,rand,10,0,NARMA-10 error,0.5,0.3,0.5429
+er,rand,10,0,delayed XOR accuracy,0.5,1,0.8367
+er,rand,10,0.01,memory capacity,1.05,1,8.38
+er,rand,10,0.01,NARMA-10 error,1.05,0.3,0.7565
+er,rand,10,0.01,delayed XOR accuracy,1.5,0.3,0.54
+er,rand,100,0,memory capacity,1.05,1,33.9
+er,rand,100,0,NARMA-10 error,0.95,1,0.3851
+er,rand,100,0,delayed XOR accuracy,0.5,1,0.9117
+er,rand,100,0.01,memory capacity,1.05,1,31.24
+er,rand,100,0.01,NARMA-10 error,0.95,1,0.4398
+er,rand,100,0.01,delayed XOR accuracy,0.95,1,0.5933
+er,rand,1000,0,memory capacity,1.2,1,59.28
+er,rand,1000,0,NARMA-10 error,0.8,1,0.1991
+er,rand,1000,0,delayed XOR accuracy,0.5,1,0.9083
+er,rand,1000,0.01,memory capacity,1.2,1,59.14
+er,rand,1000,0.01,NARMA-10 error,1.05,1,0.3716
+er,rand,1000,0.01,delayed XOR accuracy,1.05,1,0.71
+real_fix,DN,1299,0,memory capacity,0.5,1,1.736
+real_fix,DN,1299,0,NARMA-10 error,0.8,0.3,1.264
+real_fix,DN,1299,0,delayed XOR accuracy,1.05,0.3,0.5183
+real_fix,DN,1299,0.01,memory capacity,0.5,1,1.608
+real_fix,DN,1299,0.01,NARMA-10 error,0.8,0.3,1.259
+real_fix,DN,1299,0.01,delayed XOR accuracy,1.05,0.3,0.52
+real_fix,rand,1000,0,memory capacity,0.65,1,2.851
+real_fix,rand,1000,0,NARMA-10 error,1.2,0.3,1.044
+real_fix,rand,1000,0,delayed XOR accuracy,1.05,0.3,0.505
+real_fix,rand,1000,0.01,memory capacity,0.65,1,2.346
+real_fix,rand,1000,0.01,NARMA-10 error,1.2,0.3,1.044
+real_fix,rand,1000,0.01,delayed XOR accuracy,1.2,0.3,0.51

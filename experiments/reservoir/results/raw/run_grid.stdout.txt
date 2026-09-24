@@ -1,0 +1,11 @@
+21:53:21 n=127400 edges=14,635,639 sensory=9145 descending=1299; 13 ALLNs with literature GABA/glutamate made inhibitory; 137 excitatory ALLNs keep chemical synapses only onto inhibitory neurons (Yaksi & Wilson 2010 rule)
+21:56:55 real_fix seed 0: radius 1953.6; dynamics 136s, readouts 62s, total 215s (free RAM at start 4.6 GB). rand1000 clean: best MC 16.91, best NARMA 0.466, best XOR 0.900
+22:02:07 shuffle seed 0: radius 306.4; dynamics 138s, readouts 160s, total 311s (free RAM at start 3.3 GB). rand1000 clean: best MC 23.37, best NARMA 0.211, best XOR 0.898
+22:11:32 er seed 0: radius 95.7; dynamics 352s, readouts 174s, total 565s (free RAM at start 3.2 GB). rand1000 clean: best MC 59.28, best NARMA 0.199, best XOR 0.908
+22:20:57 real_fix seed 1: radius 1953.6; dynamics 331s, readouts 194s, total 565s (free RAM at start 3.9 GB). rand1000 clean: best MC 17.83, best NARMA 0.451, best XOR 0.912
+22:31:07 shuffle seed 1: radius 334.7; dynamics 364s, readouts 172s, total 610s (free RAM at start 3.6 GB). rand1000 clean: best MC 24.35, best NARMA 0.298, best XOR 0.908
+22:43:19 er seed 1: radius 177.0; dynamics 418s, readouts 205s, total 732s (free RAM at start 2.7 GB). rand1000 clean: best MC 29.67, best NARMA 0.259, best XOR 0.922
+22:58:15 real_fix seed 2: radius 1953.6; dynamics 642s, readouts 211s, total 895s (free RAM at start 3.7 GB). rand1000 clean: best MC 14.33, best NARMA 0.470, best XOR 0.918
+23:12:05 shuffle seed 2: radius 372.5; dynamics 646s, readouts 123s, total 831s (free RAM at start 3.7 GB). rand1000 clean: best MC 21.65, best NARMA 0.348, best XOR 0.938
+23:26:04 er seed 2: radius 99.8; dynamics 569s, readouts 192s, total 839s (free RAM at start 3.7 GB). rand1000 clean: best MC 55.72, best NARMA 0.205, best XOR 0.927
+23:32:21 real_none seed 0: radius 2139.0; dynamics 263s, readouts 63s, total 377s (free RAM at start 3.1 GB). rand1000 clean: best MC 15.18, best NARMA 0.369, best XOR 0.910

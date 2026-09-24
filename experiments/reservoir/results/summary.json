@@ -1,0 +1,77 @@
+{
+ "PRELIMINARY": true,
+ "headline_verdicts": [
+  {
+   "readout": "DN",
+   "N": 1299,
+   "task": "memory capacity",
+   "overall": "LOSE",
+   "vs_shuffle": "LOSE",
+   "vs_er": "TIE",
+   "real_mean": 17.90715667855865,
+   "shuffle_mean": 22.40522636009165,
+   "er_mean": 47.95846137559099
+  },
+  {
+   "readout": "DN",
+   "N": 1299,
+   "task": "NARMA-10 error",
+   "overall": "LOSE",
+   "vs_shuffle": "LOSE",
+   "vs_er": "TIE",
+   "real_mean": 0.44546287565482134,
+   "shuffle_mean": 0.26924940899421784,
+   "er_mean": 0.2616801197051422
+  },
+  {
+   "readout": "DN",
+   "N": 1299,
+   "task": "delayed XOR accuracy",
+   "overall": "TIE",
+   "vs_shuffle": "TIE",
+   "vs_er": "TIE",
+   "real_mean": 0.9149999999999999,
+   "shuffle_mean": 0.9172222222222222,
+   "er_mean": 0.9155555555555556
+  },
+  {
+   "readout": "rand",
+   "N": 1000,
+   "task": "memory capacity",
+   "overall": "LOSE",
+   "vs_shuffle": "LOSE",
+   "vs_er": "TIE",
+   "real_mean": 16.251012110568904,
+   "shuffle_mean": 22.281024279094044,
+   "er_mean": 45.9968505546719
+  },
+  {
+   "readout": "rand",
+   "N": 1000,
+   "task": "NARMA-10 error",
+   "overall": "LOSE",
+   "vs_shuffle": "LOSE",
+   "vs_er": "LOSE",
+   "real_mean": 0.46514416679183657,
+   "shuffle_mean": 0.29449213014571024,
+   "er_mean": 0.26410442348286683
+  },
+  {
+   "readout": "rand",
+   "N": 1000,
+   "task": "delayed XOR accuracy",
+   "overall": "TIE",
+   "vs_shuffle": "TIE",
+   "vs_er": "TIE",
+   "real_mean": 0.9061111111111111,
+   "shuffle_mean": 0.915,
+   "er_mean": 0.9188888888888888
+  }
+ ],
+ "seeds_per_network": {
+  "er": 3,
+  "real_fix": 3,
+  "real_none": 1,
+  "shuffle": 3
+ }
+}

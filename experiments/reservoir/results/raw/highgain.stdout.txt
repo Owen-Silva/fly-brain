@@ -1,0 +1,8 @@
+23:42:58 n=127400 edges=14,635,639 sensory=9145 descending=1299; 13 ALLNs with literature GABA/glutamate made inhibitory; 137 excitatory ALLNs keep chemical synapses only onto inhibitory neurons (Yaksi & Wilson 2010 rule)
+23:45:06 real_fix seed 0: radius 1953.6; dynamics 93s, readouts 27s, total 129s (free RAM at start 4.6 GB). rand1000 clean: best MC 17.21, best NARMA 0.454, best XOR 0.835
+23:47:07 real_fix seed 1: radius 1953.6; dynamics 87s, readouts 24s, total 121s (free RAM at start 4.4 GB). rand1000 clean: best MC 13.77, best NARMA 0.454, best XOR 0.822
+23:49:04 real_fix seed 2: radius 1953.6; dynamics 83s, readouts 25s, total 117s (free RAM at start 4.5 GB). rand1000 clean: best MC 12.06, best NARMA 0.465, best XOR 0.818
+23:51:08 shuffle seed 0: radius 306.4; dynamics 91s, readouts 23s, total 124s (free RAM at start 4.5 GB). rand1000 clean: best MC 16.82, best NARMA 0.469, best XOR 0.547
+23:53:01 shuffle_noself seed 1: radius 297.6; dynamics 81s, readouts 22s, total 113s (free RAM at start 4.5 GB). rand1000 clean: best MC 32.50, best NARMA 0.434, best XOR 0.702
+23:54:51 shuffle seed 2: radius 372.5; dynamics 79s, readouts 22s, total 109s (free RAM at start 4.5 GB). rand1000 clean: best MC 35.98, best NARMA 0.273, best XOR 0.823
+23:54:51 all done in 715s

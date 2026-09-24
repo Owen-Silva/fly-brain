@@ -1,0 +1,1220 @@
+{
+ "real_fix": {
+  "eigenvalues": [
+   [
+    -1953.6257599329426,
+    0.0
+   ],
+   [
+    275.68912831578496,
+    1620.8642942968231
+   ],
+   [
+    275.68912831578496,
+    -1620.8642942968231
+   ],
+   [
+    1081.7041368904252,
+    -1132.8253283717065
+   ],
+   [
+    1081.7041368904252,
+    1132.8253283717065
+   ],
+   [
+    -91.23191105743913,
+    1297.7706051411917
+   ]
+  ],
+  "modes": [
+   {
+    "eigenvalue": [
+     -1953.6257599329426,
+     0.0
+    ],
+    "participation_ratio_neurons": 8.261771847505115,
+    "share_of_top_10_neurons": 0.8168854883273536,
+    "top_neurons": [
+     {
+      "root_id": 720575940633227468,
+      "weight_share": 0.2089926358215121,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940640754304,
+      "weight_share": 0.1709865749886009,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "LPi21",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940628391848,
+      "weight_share": 0.16366244429136256,
+      "super_class": "visual_centrifugal",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "DCH",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940634274017,
+      "weight_share": 0.13136424415274062,
+      "super_class": "visual_centrifugal",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "VCH",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940629148007,
+      "weight_share": 0.03466301802471115,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "HSE",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940632427603,
+      "weight_share": 0.0306448104861587,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "H2",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940615933919,
+      "weight_share": 0.029298929552856522,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "HSN",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940625992073,
+      "weight_share": 0.022749446949550146,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0470",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     275.68912831578496,
+     1620.8642942968231
+    ],
+    "participation_ratio_neurons": 4.612495933235816,
+    "share_of_top_10_neurons": 0.7610892861952879,
+    "top_neurons": [
+     {
+      "root_id": 720575940629174889,
+      "weight_share": 0.36775053369700816,
+      "super_class": "central",
+      "cell_class": "MBIN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "APL",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940637132389,
+      "weight_share": 0.2782322928701575,
+      "super_class": "central",
+      "cell_class": "MBIN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "DPM",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940630496374,
+      "weight_share": 0.058220278300712754,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON05",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940638028607,
+      "weight_share": 0.016777632070604745,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON06",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940616463477,
+      "weight_share": 0.016333225854887015,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON22",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940618008859,
+      "weight_share": 0.0069576573771429635,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON30",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940624117245,
+      "weight_share": 0.0053845954492822415,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON01",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940626046154,
+      "weight_share": 0.004014175990147715,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON09",
+      "top_nt": "gaba"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     275.68912831578496,
+     -1620.8642942968231
+    ],
+    "participation_ratio_neurons": 4.612495933235816,
+    "share_of_top_10_neurons": 0.7610892861952879,
+    "top_neurons": [
+     {
+      "root_id": 720575940629174889,
+      "weight_share": 0.36775053369700816,
+      "super_class": "central",
+      "cell_class": "MBIN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "APL",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940637132389,
+      "weight_share": 0.2782322928701575,
+      "super_class": "central",
+      "cell_class": "MBIN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "DPM",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940630496374,
+      "weight_share": 0.058220278300712754,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON05",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940638028607,
+      "weight_share": 0.016777632070604745,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON06",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940616463477,
+      "weight_share": 0.016333225854887015,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON22",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940618008859,
+      "weight_share": 0.0069576573771429635,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON30",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940624117245,
+      "weight_share": 0.0053845954492822415,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON01",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940626046154,
+      "weight_share": 0.004014175990147715,
+      "super_class": "central",
+      "cell_class": "MBON",
+      "cell_type": "<NA>",
+      "hemibrain_type": "MBON09",
+      "top_nt": "gaba"
+     }
+    ]
+   }
+  ],
+  "strongest_two_neuron_loops": [
+   {
+    "a": 720575940628391848,
+    "b": 720575940633227468,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -758.0,
+    "w_ba": -695.0,
+    "loop_gain_sqrt": 725.8167812885013
+   },
+   {
+    "a": 720575940627190556,
+    "b": 720575940640754304,
+    "types": [
+     "LPi12",
+     "LPi21"
+    ],
+    "w_ab": -751.0,
+    "w_ba": -518.0,
+    "loop_gain_sqrt": 623.7130750593577
+   },
+   {
+    "a": 720575940633227468,
+    "b": 720575940634274017,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -463.0,
+    "w_ba": -711.0,
+    "loop_gain_sqrt": 573.7534313622882
+   },
+   {
+    "a": 720575940637252453,
+    "b": 720575940640754304,
+    "types": [
+     "LPi12",
+     "LPi21"
+    ],
+    "w_ab": -695.0,
+    "w_ba": -441.0,
+    "loop_gain_sqrt": 553.6199057114908
+   },
+   {
+    "a": 720575940626662346,
+    "b": 720575940627138562,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -398.0,
+    "w_ba": -686.0,
+    "loop_gain_sqrt": 522.5208129826026
+   }
+  ]
+ },
+ "real_none": {
+  "eigenvalues": [
+   [
+    2139.034382825538,
+    0.0
+   ],
+   [
+    1993.8343776413246,
+    0.0
+   ],
+   [
+    -1953.625759743456,
+    0.0
+   ],
+   [
+    265.4544323063198,
+    -1617.4343995987244
+   ],
+   [
+    265.4544323063198,
+    1617.4343995987244
+   ],
+   [
+    1081.704136385123,
+    1132.8253282423495
+   ]
+  ],
+  "modes": [
+   {
+    "eigenvalue": [
+     2139.034382825538,
+     0.0
+    ],
+    "participation_ratio_neurons": 57.03162331286537,
+    "share_of_top_10_neurons": 0.3112156844477081,
+    "top_neurons": [
+     {
+      "root_id": 720575940630571052,
+      "weight_share": 0.03883807479457262,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940630610425,
+      "weight_share": 0.034798301938858266,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "v2LN30",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940606056905,
+      "weight_share": 0.03319800638284653,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940630183286,
+      "weight_share": 0.03200618234276385,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940608977347,
+      "weight_share": 0.030052801344866445,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940621298270,
+      "weight_share": 0.029365566481954465,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940622920074,
+      "weight_share": 0.028821462336955157,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940628451856,
+      "weight_share": 0.028738195354953734,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     1993.8343776413246,
+     0.0
+    ],
+    "participation_ratio_neurons": 55.13416298585729,
+    "share_of_top_10_neurons": 0.31176059573333925,
+    "top_neurons": [
+     {
+      "root_id": 720575940611174702,
+      "weight_share": 0.04355407320322132,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "v2LN30",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940621195947,
+      "weight_share": 0.04319354912037707,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940625585508,
+      "weight_share": 0.03122973896922383,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940637303182,
+      "weight_share": 0.02998179379674694,
+      "super_class": "central",
+      "cell_class": "ALPN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "DP1m_adPN",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940629994743,
+      "weight_share": 0.028745397320212945,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940612347571,
+      "weight_share": 0.028573718041583342,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "serotonin"
+     },
+     {
+      "root_id": 720575940660217729,
+      "weight_share": 0.02772134166579702,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940618112310,
+      "weight_share": 0.0270613891440456,
+      "super_class": "central",
+      "cell_class": "ALLN",
+      "cell_type": "lLN1_bc",
+      "hemibrain_type": "lLN1_b,lLN1_c",
+      "top_nt": "dopamine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     -1953.625759743456,
+     0.0
+    ],
+    "participation_ratio_neurons": 8.261771873757208,
+    "share_of_top_10_neurons": 0.8168854870046347,
+    "top_neurons": [
+     {
+      "root_id": 720575940633227468,
+      "weight_share": 0.2089926354988117,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940640754304,
+      "weight_share": 0.1709865746904452,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "LPi21",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940628391848,
+      "weight_share": 0.1636624440430283,
+      "super_class": "visual_centrifugal",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "DCH",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940634274017,
+      "weight_share": 0.1313642439543169,
+      "super_class": "visual_centrifugal",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "VCH",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940629148007,
+      "weight_share": 0.03466301796704105,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "HSE",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940632427603,
+      "weight_share": 0.03064481042535264,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "H2",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940615933919,
+      "weight_share": 0.029298929504357547,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "HSN",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940625992073,
+      "weight_share": 0.022749446913335296,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0470",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   }
+  ],
+  "strongest_two_neuron_loops": [
+   {
+    "a": 720575940628391848,
+    "b": 720575940633227468,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -758.0,
+    "w_ba": -695.0,
+    "loop_gain_sqrt": 725.8167812885013
+   },
+   {
+    "a": 720575940627190556,
+    "b": 720575940640754304,
+    "types": [
+     "LPi12",
+     "LPi21"
+    ],
+    "w_ab": -751.0,
+    "w_ba": -518.0,
+    "loop_gain_sqrt": 623.7130750593577
+   },
+   {
+    "a": 720575940633227468,
+    "b": 720575940634274017,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -463.0,
+    "w_ba": -711.0,
+    "loop_gain_sqrt": 573.7534313622882
+   },
+   {
+    "a": 720575940637252453,
+    "b": 720575940640754304,
+    "types": [
+     "LPi12",
+     "LPi21"
+    ],
+    "w_ab": -695.0,
+    "w_ba": -441.0,
+    "loop_gain_sqrt": 553.6199057114908
+   },
+   {
+    "a": 720575940626662346,
+    "b": 720575940627138562,
+    "types": [
+     "<NA>",
+     "<NA>"
+    ],
+    "w_ab": -398.0,
+    "w_ba": -686.0,
+    "loop_gain_sqrt": 522.5208129826026
+   }
+  ]
+ },
+ "shuffle_0": {
+  "eigenvalues": [
+   [
+    -306.37845505164364,
+    0.0
+   ],
+   [
+    -270.8037673139666,
+    0.0
+   ],
+   [
+    -221.52177853029247,
+    -134.45398951605875
+   ],
+   [
+    -221.52177853029247,
+    134.45398951605875
+   ],
+   [
+    251.9753745024155,
+    0.0
+   ],
+   [
+    105.50775474015043,
+    201.48196017753423
+   ]
+  ],
+  "modes": [
+   {
+    "eigenvalue": [
+     -306.37845505164364,
+     0.0
+    ],
+    "participation_ratio_neurons": 69.4392023438124,
+    "share_of_top_10_neurons": 0.29244673054131276,
+    "top_neurons": [
+     {
+      "root_id": 720575940625278990,
+      "weight_share": 0.07893082528619234,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940620654975,
+      "weight_share": 0.06329056781175459,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0274",
+      "hemibrain_type": "hb1069607310",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940638648922,
+      "weight_share": 0.037710661541175465,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940632192676,
+      "weight_share": 0.024081728796536948,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "SMP157",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940609141257,
+      "weight_share": 0.0203401195809656,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0205",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940610504750,
+      "weight_share": 0.015314237556581041,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940618066555,
+      "weight_share": 0.014848218284317021,
+      "super_class": "ascending",
+      "cell_class": "AN",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940628386407,
+      "weight_share": 0.014573537739431094,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     -270.8037673139666,
+     0.0
+    ],
+    "participation_ratio_neurons": 56.68585672370539,
+    "share_of_top_10_neurons": 0.32946895378561497,
+    "top_neurons": [
+     {
+      "root_id": 720575940625278990,
+      "weight_share": 0.07795772980483195,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940638648922,
+      "weight_share": 0.06533131153228448,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940620654975,
+      "weight_share": 0.06344467604300509,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0274",
+      "hemibrain_type": "hb1069607310",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940609141257,
+      "weight_share": 0.027631732633529485,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "CB0205",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940632192676,
+      "weight_share": 0.02163892802588696,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "SMP157",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940618856768,
+      "weight_share": 0.018366417779962046,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940621103296,
+      "weight_share": 0.01584289356483904,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940627700040,
+      "weight_share": 0.013470003805930903,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     -221.52177853029247,
+     -134.45398951605875
+    ],
+    "participation_ratio_neurons": 79.42440366238134,
+    "share_of_top_10_neurons": 0.2606877078267882,
+    "top_neurons": [
+     {
+      "root_id": 720575940632192676,
+      "weight_share": 0.07997833367257655,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "SMP157",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940628386407,
+      "weight_share": 0.049947997995160885,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940626085706,
+      "weight_share": 0.04117773514983232,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "LC17",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940619488390,
+      "weight_share": 0.022622885294754747,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "LC24",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940612710883,
+      "weight_share": 0.01639435590874065,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0563",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940615703007,
+      "weight_share": 0.014493489505595465,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940610191509,
+      "weight_share": 0.010397305578368786,
+      "super_class": "optic",
+      "cell_class": "bilateral",
+      "cell_type": "LC14b",
+      "hemibrain_type": "LC14",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940629900226,
+      "weight_share": 0.010369751132526094,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0504",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     }
+    ]
+   }
+  ]
+ },
+ "er_0": {
+  "eigenvalues": [
+   [
+    -60.03685567234764,
+    -74.53832238929817
+   ],
+   [
+    -60.03685567234764,
+    74.53832238929817
+   ],
+   [
+    86.13424170225267,
+    -41.68494533311846
+   ],
+   [
+    86.13424170225267,
+    41.68494533311846
+   ],
+   [
+    79.37718015264917,
+    52.76549978326423
+   ],
+   [
+    79.37718015264917,
+    -52.76549978326423
+   ]
+  ],
+  "modes": [
+   {
+    "eigenvalue": [
+     -60.03685567234764,
+     -74.53832238929817
+    ],
+    "participation_ratio_neurons": 310.0372018673386,
+    "share_of_top_10_neurons": 0.13548776280168837,
+    "top_neurons": [
+     {
+      "root_id": 720575940634528864,
+      "weight_share": 0.0425930450845171,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0549",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940627758858,
+      "weight_share": 0.021110699682505108,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940628540420,
+      "weight_share": 0.013780300337294485,
+      "super_class": "sensory",
+      "cell_class": "visual",
+      "cell_type": "R1-6",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940625643672,
+      "weight_share": 0.012689955616823859,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0822",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940639326835,
+      "weight_share": 0.009205959559676916,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940628177736,
+      "weight_share": 0.008960155660396837,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940605060798,
+      "weight_share": 0.008749636031752566,
+      "super_class": "central",
+      "cell_class": "Kenyon_Cell",
+      "cell_type": "<NA>",
+      "hemibrain_type": "KCg-m",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940614115635,
+      "weight_share": 0.007757365051862964,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     -60.03685567234764,
+     74.53832238929817
+    ],
+    "participation_ratio_neurons": 310.0372018673386,
+    "share_of_top_10_neurons": 0.13548776280168837,
+    "top_neurons": [
+     {
+      "root_id": 720575940634528864,
+      "weight_share": 0.0425930450845171,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0549",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940627758858,
+      "weight_share": 0.021110699682505108,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940628540420,
+      "weight_share": 0.013780300337294485,
+      "super_class": "sensory",
+      "cell_class": "visual",
+      "cell_type": "R1-6",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940625643672,
+      "weight_share": 0.012689955616823859,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0822",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940639326835,
+      "weight_share": 0.009205959559676916,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940628177736,
+      "weight_share": 0.008960155660396837,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940605060798,
+      "weight_share": 0.008749636031752566,
+      "super_class": "central",
+      "cell_class": "Kenyon_Cell",
+      "cell_type": "<NA>",
+      "hemibrain_type": "KCg-m",
+      "top_nt": "dopamine"
+     },
+     {
+      "root_id": 720575940614115635,
+      "weight_share": 0.007757365051862964,
+      "super_class": "visual_projection",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     }
+    ]
+   },
+   {
+    "eigenvalue": [
+     86.13424170225267,
+     -41.68494533311846
+    ],
+    "participation_ratio_neurons": 602.0897558540285,
+    "share_of_top_10_neurons": 0.094307069292718,
+    "top_neurons": [
+     {
+      "root_id": 720575940634528864,
+      "weight_share": 0.027410740428289684,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0549",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940627758858,
+      "weight_share": 0.013932781186849917,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940628540420,
+      "weight_share": 0.013053002513826172,
+      "super_class": "sensory",
+      "cell_class": "visual",
+      "cell_type": "R1-6",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940625643672,
+      "weight_share": 0.008088153348863135,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "CB0822",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940628453361,
+      "weight_share": 0.006780469258427892,
+      "super_class": "optic",
+      "cell_class": "L1-5",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     },
+     {
+      "root_id": 720575940639326835,
+      "weight_share": 0.0059978630395143345,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "gaba"
+     },
+     {
+      "root_id": 720575940628177736,
+      "weight_share": 0.005837941453745044,
+      "super_class": "optic",
+      "cell_class": "optic_lobes",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "acetylcholine"
+     },
+     {
+      "root_id": 720575940631608647,
+      "weight_share": 0.004701730416871169,
+      "super_class": "central",
+      "cell_class": "<NA>",
+      "cell_type": "<NA>",
+      "hemibrain_type": "<NA>",
+      "top_nt": "glutamate"
+     }
+    ]
+   }
+  ]
+ }
+}
