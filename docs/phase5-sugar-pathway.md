@@ -423,7 +423,9 @@ mismatch. We did not trace why an excitatory neuron acts as a brake here. Seed-0
 no effect at 50 Hz).
 - *Explanation in the wiring:* the paper proposed Phantom -> Scapula (inhibitory) -> Roundup,
   so Phantom normally releases a brake on Roundup. We could not find a Scapula ID in our
-  files. We did find the same pattern in the connectome: Phantom (left) sends 66 synapses to
+  files. (A later literature check found that CB0219, 720575940624600840 left and
+  720575940620062288 right, *is* Scapula: `docs/phase6-literature-check.md`, section 2.)
+  We did find the same pattern in the connectome: Phantom (left) sends 66 synapses to
   CB0219, an inhibitory neuron that sends 47 synapses to Roundup (left). Phantom also sends
   116 synapses to CB0620, another inhibitory neuron that contacts Roundup.
 - *Check:* silencing CB0219 on its own raises MN9 (1.07, significant), which is consistent

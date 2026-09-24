@@ -1,9 +1,10 @@
 # The fast engine, explained
 
 **In one sentence:** `sim/fast_engine.py` runs the same whole-brain model as the
-paper's Brian2 code, gives the same answers, and is about 100 times faster on
-this laptop. That makes silencing sweeps, sensitivity runs and the interactive
-app practical.
+paper's Brian2 code, gives the same answers, and is about 45 to 300 times
+faster on this laptop, depending on how the Brian2 run is timed (about 45x
+against Brian2's best case, about 250-300x against our Phase 3 runs). That makes
+silencing sweeps, sensitivity runs and the interactive app practical.
 
 ## Why it exists
 

@@ -49,9 +49,9 @@ random input makes every trial a little different. Firing rates are averages ove
 2. **Used their data.** The paper used snapshot 630 of the wiring diagram, so that is what
    the main comparison uses. A second check on the newer public snapshot 783 was
    planned but dropped for time (see below).
-3. **Ran fewer trials.** This laptop needs between 1 and 5 minutes of computer time per second
-   of brain time (depending on how busy it is), so the paper's 30 trials per experiment
-   would take 30 minutes to over 2 hours each. We ran 10 trials for the main experiments and 5 for the checks. This is marked
+3. **Ran fewer trials.** This laptop needs between 1 and 6.5 minutes (typically about 2) of
+   computer time per second of brain time (depending on how busy it is), so the paper's 30
+   trials per experiment would take 30 minutes to over 2 hours each. We ran 10 trials for the main experiments and 5 for the checks. This is marked
    "REDUCED" everywhere. It is enough to see the direction and size of every effect.
 4. **Compared three ways.** (a) With the numbers in the paper. (b) With the reference
    code's own saved output (their GitHub repository includes two complete 30-trial sugar
@@ -94,10 +94,11 @@ saved runs (two 30-trial sugar runs that ship with the reference repository):
   (100 Hz). A correlation of 1 would be a perfect match.
 - Not one neuron differs by more than random trial-to-trial noise would explain (0 neurons
   more than 4 standard errors apart).
-- Their run has 16 or 17 more "active" neurons than ours (448 vs 432 at 200 Hz). Every one of
-  those fired less than once every 4 seconds in their run, so with our 10 trials instead of
-  their 30 we simply never caught them. The same reason explains why our neuron counts (392 and
-  432) sit a little under the paper's (410 and 455).
+- Their runs have 16 (200 Hz) and 17 (100 Hz) "active" neurons that never fired in ours
+  (448 vs 432 active at 200 Hz). Every one of those fired less than once every 4 seconds in
+  their runs, so with our 10 trials instead of their 30 we simply never caught them. The
+  same reason explains why our neuron counts (392 and 432) sit a little under the paper's
+  (410 and 455).
 
 **Where the paper's numbers come from.** The paper's text itself only gives a few numbers (for
 example "455 neurons respond at 200 Hz" and "30 simulations of 1,000 ms"). We checked those
@@ -167,7 +168,7 @@ to count as a result.
 - `sim/shiu_model.py`: the model. `run_trials(...)` runs one experiment and returns spike
   times and firing rates.
 - `experiments/phase3/run_experiments.py`: the experiment list and runner.
-- `experiments/phase3/results/v630/`, `results/v783/`: for each experiment, every spike
+- `experiments/phase3/results/v630/`: for each experiment, every spike
   (`*_spikes.parquet`), per-neuron rates (`*_rates.csv`) and exact settings, including seeds
   (`*_settings.json`). `results/phase3_rates.parquet` has all rates in one table. This is the
   ground truth the faster engine (`sim/fast_engine.py`) is checked against.

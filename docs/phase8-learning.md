@@ -21,7 +21,10 @@ several model parameters could not be measured and had to be chosen (listed in s
 - **It learned the right thing, and only when it should.** Afterwards the output neuron
   MBON-γ1pedc>α/β got about **91% less input** from odor A (5 of 5 simulated flies), and
   only about **9% less** from odor B. Hige et al. 2015 measured 90% less input (80% fewer
-  spikes) in real flies. With the odors swapped the result is the same (-89% vs -6%).
+  spikes) in real flies. With the odors swapped the result is the same (-89% vs -6%). The
+  match with Hige is by design: we set the learning speed from Hige's 90%, on separate
+  seeds (`experiments/phase8/results/calibration.json`, section 2.3). The real test is that
+  nothing is learned without pairing (next point).
 - **No pairing, no learning.** Dopamine and odor at separate times: +0.2%. Odor alone: +0.2%.
   Dopamine alone: 0.0%. Nothing at all: 0.0% (by definition the reference).
 - **Reward works the same way, in different compartments.** Odor A with the reward neurons
@@ -43,7 +46,9 @@ several model parameters could not be measured and had to be chosen (listed in s
   simulated flies). Punishment learning cannot be seen: in the whole brain a smell alone
   makes the punishment neurons fire about as much as our artificial punishment does, so
   after one sniff every smell looks "bad", trained or not (section 5). Without any fix (the published brain) smell runs away (62% of KCs respond) and
-  nothing about learning can be read.
+  nothing about learning can be read. **Update:** with the later `+da_5ht_literature`
+  switch, punishment learning does appear in the whole brain (passes with caveats,
+  PRELIMINARY; `docs/phase7-neuromodulators.md`).
 - **Nothing else changed.** With learning switched on but no training, the paper's sugar ->
   feeding result (MN9) is spike-for-spike identical in all 60 test trials, in the published
   brain and in the recommended-fix brain.

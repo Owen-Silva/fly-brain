@@ -27,7 +27,9 @@ least one of those checks is missing. **UNVERIFIED** = not checked against a sou
   the stimulated taste neurons) gets 247 synapses straight from the bitter taste neurons.
   It then inhibits the sugar pathway's middle-stage neurons. Silencing just this neuron
   brings MN9 back from 12 Hz to 66 Hz (98% recovery) with sugar 100 Hz + bitter 80 Hz.
-  **PRELIMINARY and surprising.** The Phase 6 checks we ran are in sections 7 and 9.
+  CB0219 is the known neuron **"Scapula"** (Shiu et al. 2022; male CNS type GNG087), and
+  the model reproduces the bitter-brake role that paper proposed for it (section 8).
+  **PRELIMINARY.** The Phase 6 checks we ran are in sections 7 and 9.
 
 ---
 
@@ -81,7 +83,8 @@ also come from random input, so small differences are expected.
 ![MN9 heatmap](../experiments/phase5/competition/heatmap_sugar_bitter.png)
 
 Each box is MN9's firing rate, averaged over 3 seeds x 30 trials. Darker means faster.
-Across seeds the averages differ by at most about 1 Hz, so the pattern is stable.
+Across seeds the averages differ by at most about 3 Hz (standard deviation at most 1.6 Hz),
+so the pattern is stable.
 The file is `results/bitter_summary.csv`.
 
 ![MN9 curves](../experiments/phase5/competition/curves_sugar_bitter.png)
@@ -228,16 +231,27 @@ inhibit other inhibitors, so removing them lets the remaining brakes work harder
      The model has no GABA_B receptors and no presynaptic inhibition. Its stimulated GRNs
      are driven so hard that inhibition onto them has almost no effect.
   2. *Peripheral suppression.* Bitter chemicals also inhibit sugar GRNs directly at the
-     sensillum (French et al. 2015, *J. Neurosci.* 35:9542). The model cannot represent
-     this because we stimulate neurons, not chemicals.
+     sensillum (French et al. 2015, *J. Neurosci.* 35(9):3990-4004,
+     doi:10.1523/JNEUROSCI.1312-14.2015). The model cannot represent this because we
+     stimulate neurons, not chemicals.
 
   So the model routes **all** of the suppression through central feed-forward
   inhibition, and in this wiring one neuron dominates it. Real flies probably spread the
   job across several mechanisms.
-- **Is CB0219 a known neuron?** A quick web search found no published name or
-  experiment for FlyWire type `CB0219`. Bohra et al. 2018 (*Current Biology*) describe a
-  single pair of bitter-responsive SEZ interneurons. Whether that pair and CB0219 are
-  the same cells is **UNVERIFIED**.
+- **Is CB0219 a known neuron? Yes: it is "Scapula"** (Shiu et al. 2022, *eLife*
+  11:e79887; the male CNS connectome calls the same type GNG087). The Scott lab's own
+  tracing of Scapula best matches our CB0219-left by shape (score 0.81, with CB0219-right
+  second), the FlyBase anatomy ontology lists GNG087 as another name for CB0219, and the
+  wiring fits their description: strong input from bitter taste neurons, glutamate
+  predicted, and output onto the feeding premotor neurons Roundup and Rounddown. The model
+  paper itself names the same Phantom -> Scapula -> Roundup link; only one step (following
+  the older FlyWire ID printed in the 2022 paper, which needs a login) could not be checked.
+  Shiu et al. 2022 proposed this bitter brake from the wiring and showed in real flies that
+  bitter suppresses Roundup, so our result reproduces published work; no real-fly
+  experiment that silences or activates Scapula itself was found
+  (`docs/phase6-literature-check.md`, section 2). Bohra et al. 2018 (*Current Biology*)
+  describe a single pair of bitter-responsive SEZ interneurons. Whether that pair and
+  CB0219 are the same cells is **UNVERIFIED**.
 
 ## 9. Validation status (PLAN.md Phase 6 checklist)
 
@@ -247,7 +261,7 @@ inhibit other inhibitors, so removing them lets the remaining brakes work harder
 | Ir94e suppresses weaker sugar but not strong sugar | yes | as above | matches Shiu 2024 Fig. 3c | the paper reports Ir94e as feeding-inhibitory (background, not re-read) | **VALIDATED** |
 | Sugar + water combine synergistically | yes | as above | matches Shiu 2024 Fig. 4e point | plausible | **VALIDATED** (direction); the full grid shape is **PRELIMINARY** |
 | Steep, ratio-based tipping point (b50 about half the sugar rate, n about 3 to 4) | yes | fit checked against raw points | no dose-response surface found | plausible | **PRELIMINARY** |
-| CB0219-left carries most of the suppression | yes (98 +/- 0.5% recovery) | sign = glutamate as inhibitory (confidence 0.68); holds at w_syn 80-120% (table below) | no published match found | real flies also use presynaptic and peripheral mechanisms | **PRELIMINARY / surprising** |
+| CB0219-left carries most of the suppression | yes (98 +/- 0.5% recovery) | sign = glutamate as inhibitory (confidence 0.68); holds at w_syn 80-120% (table below) | known: it is "Scapula" (Shiu et al. 2022, eLife 11:e79887; see docs/phase6-literature-check.md) | real flies also use presynaptic and peripheral mechanisms | **PRELIMINARY / surprising** |
 
 **Robustness of the CB0219 result to synapse strength** (sugar 100 Hz + bitter 80 Hz, 3 seeds
 x 30 trials, `results/suppressor_robustness.csv`):

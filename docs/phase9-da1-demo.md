@@ -22,8 +22,9 @@ here is **PRELIMINARY** (see section 7). Files: `experiments/phase9_da1/`.
   second read-out, DNpe002, also fails (7 of 12).
 - **One-antenna fly (one antenna covered, a standard lab manipulation): YES, weakly.** It
   turns toward the side of the antenna that can smell: left antenna -> left turn, right
-  antenna -> right turn, 12 of 12 trials compared with the silenced fly of the same seed
-  (+31° in the first second vs 0°, p = 0.0006). With the DA1 smell neurons or DNa02
+  antenna -> right turn. It turned toward the smelling side outright in 11 of 12 trials,
+  and further than the silenced fly of the same seed in all 12 (+31° in the first
+  second vs 0°, p = 0.0006). With the DA1 smell neurons or DNa02
   silenced, the turn disappears completely. The right side is weaker than the left, and
   the fly turns but does not reach the source.
 - **Hand-written rule (NOT brain-driven):** reached the cVA source 5 of 5 times in the

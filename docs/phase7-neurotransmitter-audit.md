@@ -8,8 +8,10 @@
 ## 1. The short version
 
 - **The question.** Phase 6 traced the model's "runaway" (the whole brain locking into
-  non-stop firing) to about 44 antennal-lobe local neurons (types lLN1_b/c and lLN2T, the
-  smell centre's "local" cells). The model makes them excitatory. One earlier lane said they
+  non-stop firing) to the 38 excitatory local neurons as labelled in snapshot 630 (44 in
+  FlyWire's newer annotation, which adds 6 cells typed lLN2X03; section 2a). These are
+  antennal-lobe local neurons of types lLN1_b/c and lLN2T, the smell centre's "local" cells.
+  The model makes them excitatory. One earlier lane said they
   are really inhibitory (GABA); another said they are excitatory (acetylcholine) but talk to
   their neighbours mainly through electrical contacts, which the model does not have.
   Neither lane had read the original papers.

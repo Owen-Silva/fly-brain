@@ -6,7 +6,8 @@
 ## The short version
 
 In Phase 3, two of five trials of "sugar 200 Hz + Ir94e 200 Hz" suddenly switched the whole
-simulated brain into a state where about 8,300 neurons fire non-stop. We checked it the way
+simulated brain into a state where about 8,000 neurons (4,800-8,500 across trials) fire
+non-stop. We checked it the way
 PLAN.md Phase 6 asks. The answer:
 
 - **The model really does this, and our code is not to blame.** Two separate programs (the Brian2
@@ -17,9 +18,10 @@ PLAN.md Phase 6 asks. The answer:
   with Ir94e alone (13%) and never with sugar alone (0 of 150).
 - **It is a tipping event, and once tipped the brain never recovers.** It can start at any moment,
   so longer trials tip more often, and once started it keeps going with no input at all.
-- **It starts in the smell centre, not the taste centre.** Every runaway begins in the antennal
-  lobe (the fly's first smell-processing area), at 38 "excitatory local neurons". Silencing those
-  38 (even just 8 of them) stopped every runaway started by taste or smell input, while silencing random neurons
+- **It starts in the smell centre, not the taste centre.** Every runaway we traced begins among
+  the local neurons of the antennal lobe (the fly's first smell-processing area). Silencing 38 of
+  them, the "excitatory local neurons" (or even just 8 of those), stopped every runaway started by
+  taste input or by a brief smell pulse, while silencing random neurons
   elsewhere changed nothing, and it left the paper's feeding result (sugar -> MN9) exactly as it
   was. It is the same state the Phase 5 olfaction lane called "ignition" (90% the same neurons),
   where a single spike from 3 smell neurons is enough to set it off.
@@ -338,7 +340,11 @@ Codex check, see section 7).
 - **The paper's code repository** (philshiu/Drosophila_brain_model, 10 GitHub issues) and **Eon
   Systems' port** (eonsystemspbc/fly-brain, README, 7 issues, and their "embodied fly" write-up):
   no mention of runaway or unstable activity. Their backend checks compare firing rates to Brian2
-  on sugar-type inputs only. So as far as we could find, **this has not been reported**.
+  on sugar-type inputs only. So as far as we could find, **no peer-reviewed paper reports this**.
+  One public, non-peer-reviewed report of the same state does exist: a hobby project on GitHub
+  (September 2026) that runs the model on snapshot 783 and says it "did not localise the
+  runaway" (found by the later literature check, `docs/phase6-literature-check.md`, section 3a).
+  Our cause (the antennal lobe's excitatory local neurons) and our fix were not found anywhere.
 - **Other whole-brain models:** a 2026 preprint fitting a FlyWire-based whole-brain model to real
   resting activity (Li, Ping, Zhang & Wang, bioRxiv 2026.08.21.745055) found that a sparse set of
   inhibitory hub neurons and their two-way links with excitatory partners are what keeps
