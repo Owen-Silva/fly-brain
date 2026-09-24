@@ -13,3 +13,4 @@ __pycache__/
 .venv-body/
 experiments/heldout/results/published/
 experiments/olfaction_realfly/results/counts/
+experiments/scorecard_batch1/results/raw/

@@ -1,0 +1,9 @@
+test,route,synapses,detail
+2 FC5,DA1 uPNs -> FC5_read_aSPg,63,3 of 23 cells get >= 5 synapses from DA1 uPNs
+2 FC5,DA1 uPNs -> FC5_read_aSPf,0,0 of 45 cells get >= 5 synapses from DA1 uPNs
+2 FC5,DA1 uPNs -> FC5_read_aSPh,0,0 of 22 cells get >= 5 synapses from DA1 uPNs
+9 SD1,LC16 -> X -> MDN,12,LT51 (right) in 8 out -123; LT51 (left) in 7 out -101; LT51 (left) in 19 out -4; LT51 (right) in 14 out -5; LT51 (right) in 67 out -1; CL332 (left) in 49 out 1; LT51 (right) in 6 out -6; OA-ASM2 (right) in 27 out 1
+6 TH2,[none] TH_stim_cool -> X -> warm PNs,581,"143 relays; inhibitory relays' output to warm PNs -2510 syn (48 cells), excitatory 3091 (95 cells); top: l2LN21 (ALLN) in 150 out -551; l2LN21 (ALLN) in 75 out -513; VP3+_vPN (ALPN) in 139 out -88; VP3+_vPN (ALPN) in 123 out -79; l2LN20 (ALLN) in 91 out -106"
+6 TH2,[none] TH_stim_warm -> X -> warm PNs,3669,"215 relays; inhibitory relays' output to warm PNs -2824 syn (65 cells), excitatory 6493 (150 cells); top: VP2_l2PN (ALPN) in 404 out 218; VP2_l2PN (ALPN) in 513 out 106; VP2_adPN (ALPN) in 418 out 48; VP2_adPN (ALPN) in 451 out 20; lLN2X04 (ALLN) in 44 out 188"
+6 TH2,[al_ln_literature] TH_stim_cool -> X -> warm PNs,-2185,"90 relays; inhibitory relays' output to warm PNs -2531 syn (50 cells), excitatory 346 (40 cells); top: l2LN21 (ALLN) in 150 out -551; l2LN21 (ALLN) in 75 out -513; VP3+_vPN (ALPN) in 139 out -88; VP3+_vPN (ALPN) in 123 out -79; l2LN20 (ALLN) in 91 out -106"
+6 TH2,[al_ln_literature] TH_stim_warm -> X -> warm PNs,252,"136 relays; inhibitory relays' output to warm PNs -2887 syn (69 cells), excitatory 3139 (67 cells); top: VP2_l2PN (ALPN) in 404 out 218; VP2_l2PN (ALPN) in 513 out 106; VP2_adPN (ALPN) in 418 out 48; VP2_adPN (ALPN) in 451 out 20; lLN2F_b (ALLN) in 92 out -82"

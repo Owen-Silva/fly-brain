@@ -1,0 +1,294 @@
+{
+ "silent": {
+  "excite": "0 neurons, rates []",
+  "base": 0,
+  "seeds": [
+   0
+  ]
+ },
+ "FC2_SAG": {
+  "excite": "2 neurons, rates [150.0]",
+  "record": [
+   "FC2_read_pC1a",
+   "FC2_read_pC1b",
+   "FC2_read_pC1cde"
+  ],
+  "base": 1000
+ },
+ "FC5_DA1_150": {
+  "excite": "126 neurons, rates [150.0]",
+  "base": 2000
+ },
+ "FC5_DA1_50": {
+  "excite": "126 neurons, rates [50.0]",
+  "base": 2100
+ },
+ "FC1_A_vpoEN": {
+  "excite": "4 neurons, rates [150.0]",
+  "record": [
+   "FC1_read_vpoDN"
+  ],
+  "base": 3000
+ },
+ "FC1_B_pC1": {
+  "excite": "10 neurons, rates [150.0]",
+  "record": [
+   "FC1_read_vpoDN"
+  ],
+  "base": 3100
+ },
+ "FC1_C_both": {
+  "excite": "14 neurons, rates [150.0]",
+  "record": [
+   "FC1_read_vpoDN"
+  ],
+  "base": 3000
+ },
+ "SD4_PFL3_left": {
+  "excite": "12 neurons, rates [150.0]",
+  "base": 4000
+ },
+ "SD4_PFL3_right": {
+  "excite": "12 neurons, rates [150.0]",
+  "base": 4100
+ },
+ "TH3_T0_8mV": {
+  "excite": "0 neurons, rates []",
+  "current": {
+   "TH3_read_DN1a": 8.0
+  },
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5000
+ },
+ "TH3_T1_8mV": {
+  "excite": "9 neurons, rates [150.0]",
+  "current": {
+   "TH3_read_DN1a": 8.0
+  },
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5000
+ },
+ "TH3_T2_8mV": {
+  "excite": "9 neurons, rates [150.0]",
+  "current": {
+   "TH3_read_DN1a": 8.0
+  },
+  "silence": [
+   "TH3_read_VP3vPN"
+  ],
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5000
+ },
+ "TH3_T0_10mV": {
+  "excite": "0 neurons, rates []",
+  "current": {
+   "TH3_read_DN1a": 10.0
+  },
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5100
+ },
+ "TH3_T1_10mV": {
+  "excite": "9 neurons, rates [150.0]",
+  "current": {
+   "TH3_read_DN1a": 10.0
+  },
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5100
+ },
+ "TH3_T2_10mV": {
+  "excite": "9 neurons, rates [150.0]",
+  "current": {
+   "TH3_read_DN1a": 10.0
+  },
+  "silence": [
+   "TH3_read_VP3vPN"
+  ],
+  "mode": "current",
+  "record": [
+   "TH3_read_DN1a",
+   "TH3_read_VP3vPN"
+  ],
+  "base": 5100
+ },
+ "TH3_demo_poisson_T0": {
+  "excite": "3 neurons, rates [23.0]",
+  "base": 5200,
+  "seeds": [
+   0
+  ],
+  "variants": [
+   "none"
+  ]
+ },
+ "TH3_demo_poisson_T1": {
+  "excite": "12 neurons, rates [23.0, 150.0]",
+  "base": 5200,
+  "seeds": [
+   0
+  ],
+  "variants": [
+   "none"
+  ]
+ },
+ "TH2_W": {
+  "excite": "7 neurons, rates [150.0]",
+  "record": [
+   "TH2_read_VP2PN"
+  ],
+  "base": 6000
+ },
+ "TH2_WC": {
+  "excite": "16 neurons, rates [150.0]",
+  "record": [
+   "TH2_read_VP2PN"
+  ],
+  "base": 6000
+ },
+ "TH1_C": {
+  "excite": "9 neurons, rates [150.0]",
+  "base": 6100
+ },
+ "OS4_S": {
+  "excite": "2271 neurons, rates [10.0]",
+  "base": 7000,
+  "pn": true
+ },
+ "OS4_O": {
+  "excite": "2271 neurons, rates [10.0, 50.0]",
+  "base": 7100,
+  "pn": true
+ },
+ "OS4_S_gap": {
+  "excite": "2271 neurons, rates [10.0]",
+  "base": 7000,
+  "pn": true,
+  "mode": "gap",
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "OS4_O_gap": {
+  "excite": "2271 neurons, rates [10.0, 50.0]",
+  "base": 7100,
+  "pn": true,
+  "mode": "gap",
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "OS4post_S30": {
+  "excite": "2271 neurons, rates [30.0]",
+  "base": 7200,
+  "pn": true,
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "OS4post_O30": {
+  "excite": "2271 neurons, rates [30.0, 150.0]",
+  "base": 7300,
+  "pn": true,
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "OS4post_S30_gap": {
+  "excite": "2271 neurons, rates [30.0]",
+  "base": 7200,
+  "pn": true,
+  "mode": "gap",
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "OS4post_O30_gap": {
+  "excite": "2271 neurons, rates [30.0, 150.0]",
+  "base": 7300,
+  "pn": true,
+  "mode": "gap",
+  "variants": [
+   "al_ln_literature"
+  ]
+ },
+ "LL1_O": {
+  "excite": "215 neurons, rates [100.0]",
+  "record": [
+   "LL1_read_MBON01",
+   "LL1_read_MBON02",
+   "LL1_read_MBON0304",
+   "LL1_read_MBON18",
+   "LL1_read_MBON1617"
+  ],
+  "base": 8000
+ },
+ "LL1_OM": {
+  "excite": "217 neurons, rates [100.0, 150.0]",
+  "record": [
+   "LL1_read_MBON01",
+   "LL1_read_MBON02",
+   "LL1_read_MBON0304",
+   "LL1_read_MBON18",
+   "LL1_read_MBON1617"
+  ],
+  "base": 8000
+ },
+ "SD1_LC16_both_100": {
+  "excite": "150 neurons, rates [100.0]",
+  "record": [
+   "SD1_read_MDN"
+  ],
+  "base": 9000
+ },
+ "SD1_LC16_both_50": {
+  "excite": "150 neurons, rates [50.0]",
+  "base": 9100
+ },
+ "SD2_LC16_left_100": {
+  "excite": "76 neurons, rates [100.0]",
+  "base": 9200
+ },
+ "SD2_LC16_right_100": {
+  "excite": "74 neurons, rates [100.0]",
+  "base": 9300
+ },
+ "TF4_water": {
+  "excite": "18 neurons, rates [150.0]",
+  "record": [
+   "TF4_read_Usnea",
+   "TF4_read_Phantom",
+   "TF4_read_Clavicle",
+   "TF4_read_Fdg"
+  ],
+  "base": 10000
+ },
+ "TF4_sugar": {
+  "excite": "21 neurons, rates [150.0]",
+  "record": [
+   "TF4_read_Usnea",
+   "TF4_read_Phantom",
+   "TF4_read_Clavicle",
+   "TF4_read_Fdg"
+  ],
+  "base": 10100
+ }
+}

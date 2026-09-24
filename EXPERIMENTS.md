@@ -1899,3 +1899,102 @@ so their output cells respond to more smells than their sensors do. The model bo
 too little (about 3 times less sensitive), so its output cells are pickier, and different
 smells look more alike instead of less. The published model without the fix locks up
 for every smell and even with no smell at all. Score: 3 match, 4 partly, 1 does not.
+
+## 2026-09-23 - Does the simulation match a real fly? The first 10 scorecard tests, pre-registered, on the published model and the recommended fix (PRELIMINARY)
+
+**What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or
+`experiments/scorecard/`. New folder `experiments/scorecard_batch1/` and write-up
+`docs/real-fly-scorecard-batch1.md`.
+- The tests: the first batch of 10 recommended in `docs/real-fly-scorecard.md` (FC2, FC5,
+  FC1, SD4, TH3, TH2 with TH1, OS4, LL1, SD1 with SD2, TF4), with the catalogue's cell IDs
+  (`ids_630.csv`).
+- Pre-registered before any simulation (doc section 1, 19:45): for each test, the
+  stimulated, silenced and read cells; the input rate (the catalogue's, else 150 Hz); the
+  expected result; and the MATCH/PARTIAL/MISMATCH lines.
+- Model: whole-brain (snapshot 630, fast engine), 1 s trials, 3 seeds x 30 trials.
+  - Versions: the published model (`none`) and the recommended fix (`al_ln_literature`).
+    Test 7 also ran with the Phase 7 gap junctions.
+  - Test 5 gave DN1a a steady 8 mV current as its background (10 mV check), because a
+    Poisson-driven cell fires on every input spike in this engine and cannot be inhibited.
+    A 1-seed Poisson run confirmed it: DN1a 23.1 Hz with and without cool input.
+- Changes from the plan:
+  - Seven published-model conditions that ran away in 30 of 30 trials of seed 0 got 1 seed.
+    This was a time rule added at 20:28; it looks at runaway only.
+  - Two restarts, with the same seeds.
+  - Test 7 was re-run at 30 Hz post hoc and not scored.
+- Run time: about 35 minutes of simulation after the last restart (730 + 1,061 + 336 s),
+  plus the runs saved before it.
+
+**What happened.**
+- Score, published model: 2 MATCH, 3 PARTIAL, 5 MISMATCH.
+- Score, recommended fix: 4 MATCH, 2 PARTIAL, 3 MISMATCH, 1 CAN'T TELL.
+- Runaway:
+  - Published model: every smell or temperature condition, in 30 of 30 trials (26 of its
+    70 runs; one more run in 1 of 30 trials).
+  - Fix: 0 of 100 runs.
+- Results per test (published / fix):
+  - 1 FC2, PARTIAL / PARTIAL: pC1a 80.6 Hz, pC1b 77.7, pC1c 73.6, pC1d 19.1, pC1e 4.8 (fly:
+    pC1a strong, pC1b weak, c-e little or none). SAG sends pC1b 296 synapses vs 387 to
+    pC1a.
+  - 2 FC5, MISMATCH / MISMATCH: aSP-g 0/23, aSP-f 1/45 (published, in runaway) or 0/45,
+    aSP-h 0/22 respond (fly: 11/15, 1/34, 2/8). The DA1 projection neurons send 63
+    synapses to aSP-g and none to aSP-f or aSP-h.
+  - 3 FC1, MATCH / MATCH: vpoDN 55.5 Hz (vpoEN), 104.6 (pC1), 123.9 (both). HIGH
+    circularity.
+  - 4 SD4, MATCH / MATCH: 100% of 90 trials per side turn toward the stimulated side (fly:
+    about 92%).
+  - 5 TH3, MISMATCH / MATCH:
+    - Published: DN1a 22.0 -> 24.4 Hz with cool input (runaway).
+    - Fix: DN1a 22.0 -> 0.0 Hz, and 21.1 with VP3+_vPN silenced.
+    - The 10 mV check agrees.
+  - 6 TH2, PARTIAL (1 seed) / MATCH: warm projection neurons -2.5% (runaway) / -34%
+    (92.2 -> 61.0 Hz, through l2LN21 local neurons). Cool projection neurons respond in
+    both.
+  - 7 OS4, MISMATCH (1 seed) / CAN'T TELL:
+    - Published: sister r 0.039 vs cross 0.024.
+    - Fix: the DA1 projection neurons are silent at 10 Hz (and 30 Hz) background input,
+      with or without gap junctions.
+    - Odour side result (not scored): sister r 0.087 vs 0.004 (0.133 with gap junctions).
+  - 8 LL1, MISMATCH (1 seed) / MISMATCH:
+    - Fix: M4/6 8.9 -> 9.1 Hz; V2 silent.
+    - Switching MVP2 on slows APL (141 -> 91 Hz), which releases MBON02 (30.4 -> 34.3 Hz).
+  - 9 SD1, PARTIAL / PARTIAL: MDN 16.7 Hz with LC16 at 100 Hz, 0 at 50 Hz. One-sided:
+    left 0 vs 0 Hz, right 2.9 vs 5.0 Hz. There is no direct path, and the main relay
+    (LT51) is inhibitory.
+  - 10 TF4, MISMATCH / MISMATCH: water/sugar rates are Usnea 90.7/77.5, Phantom 78.5/39.1
+    (ratio 0.498) and Clavicle 43.2/39.9 Hz. The wiring gives Usnea 305 water vs 285 sugar
+    synapses.
+- Seeds agree to within about 1 Hz. Tests outside the antennal lobe give the same numbers
+  in both versions (within 0.2 Hz).
+
+**Validated?** No: PRELIMINARY.
+- Done:
+  - Pre-registration before any run.
+  - 3 seeds (1 for seven published-model runaway conditions).
+  - A no-input control per version (0 spikes).
+  - Runaway recorded in every trial.
+  - A verdict-code bug was caught and fixed before the write-up: a test 7 run with no
+    scorable pairs had been marked MISMATCH; the pre-registered verdict is CAN'T TELL.
+- Not done:
+  - An independent review.
+  - Full-text reading of the abstract-only sources (Wang 2021, Kazama & Wilson 2009,
+    Sen 2017, Wu 2016).
+  - Checking the aSP-f/g/h and TPN-II (= VP3+_vPN) cell matches.
+  - Checking whether Shiu et al. 2024 already compared Usnea/Phantom/Clavicle.
+  - Any causal test of the proposed reasons, except test 5's silencing.
+- Weak points:
+  - Circularity: HIGH for tests 1 and 3.
+  - Cell matching from the catalogue.
+  - Near-saturated firing under strong input in this engine, which flattens graded
+    differences.
+
+**Plain English.** We checked the simulated fly brain against ten things measured in real
+flies. We decided beforehand what would count as a match. The published model gets 2 right,
+3 partly right and 5 wrong. Most of the wrong ones happen because smell or temperature input
+makes the whole brain lock up, a fault found earlier. With the recommended fix the lock-up
+is gone. The model then gets 4 right, 2 partly right and 3 wrong, and 1 can't be scored. Two
+temperature circuits now behave like the real ones. The three misses that remain are a
+pheromone pathway, a memory-circuit output neuron, and taste cells that should tell water
+from sugar. They look like wiring or missing-mechanism problems, not the lock-up. One of the
+matches (test 3) is partly built in, because the paper found that connection in the same
+kind of wiring map the model is made from.
