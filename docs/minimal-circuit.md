@@ -310,7 +310,7 @@ Use 16-bit weights. They cost 110 extra bytes.
 **Verdict: yes, it fits and should run in real time with a wide margin.** The cycle costs
 are our assumptions, not measured on the chip. As an outside check, a published test
 ran 186 spiking neurons in real time on the same chip (Niedermeier and Krichmar,
-arXiv 2604.16474, cited in docs/hybrid-roadmap.md; a different simulator and neuron
+arXiv 2604.16474, cited in the hybrid-computer plan (not in this repo); a different simulator and neuron
 model). 36 neurons is well below that.
 
 **The larger circuits, same arithmetic:**

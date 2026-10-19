@@ -1,6 +1,6 @@
 # vhc: the virtual hybrid computer, v1 (PRELIMINARY)
 
-A software model of the machine in `docs/hybrid-roadmap.md` section 6: a conventional core,
+A software model of the machine in the hybrid-computer plan (a design note not included in this repo) section 6: a conventional core,
 a neuromorphic core, an optional living-neuron module behind electrodes, and a scheduler.
 Each part carries a price list, so a task gives three numbers per design: time, energy and
 accuracy. Plain-English results: `docs/virtual-computer.md`.

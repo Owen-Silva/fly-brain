@@ -1,7 +1,7 @@
 """The scheduler: sends each job to a core.
 
 Two steps:
-  1. Rules (the design rule of docs/hybrid-roadmap.md 6.1): a job that must be exact goes to
+  1. Rules (the design rule of the hybrid-computer plan (not in this repo) 6.1): a job that must be exact goes to
      the conventional core; spiking circuits and on-the-fly learning go to the neuromorphic
      core; slow adaptive jobs may go to the living module; big dense maths to a GPU block.
   2. Among the cores the rules allow, pick the one with the lowest modeled energy whose

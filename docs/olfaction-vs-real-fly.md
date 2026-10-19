@@ -1,4 +1,4 @@
-# Does the model smell like a real fly?
+# How does the model's smell circuit compare with real-fly recordings?
 
 *Written 2026-09-23. Scripts, raw results and plots: `experiments/olfaction_realfly/`
 (numbers in `results/summary.json` and `results/scores.csv`; the pre-registration, frozen
@@ -9,7 +9,8 @@ compared with the literature. **PRELIMINARY** = at least one of those checks is 
 
 ## The short version
 
-**Mostly yes, once the model's known smell bug is fixed. The first relay station does not
+**Partly, and only after the model's known smell bug is fixed (PRELIMINARY: 3 of 8
+pre-registered facts match, 4 partly match, 1 fails). The first relay station does not
 work like a real fly's.** We fed the whole-brain model the measured smell-receptor
 responses of real flies to 110 real odours (Hallem & Carlson 2006, from the DoOR database).
 Then we compared what its smell circuit did with 8 facts from fly recordings. We wrote the

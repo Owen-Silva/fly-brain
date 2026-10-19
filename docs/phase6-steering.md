@@ -287,7 +287,8 @@ Source: Gaudry et al. 2013 (about 40% more release per spike from the same-side 
 | VA2 | 1.22x | 1.01x | +6.5 / 0 |
 | DA1 | 1.80x | 1.19x (now correct) | +21.6 / -15.8 Hz (mirror, unchanged) |
 
-- The release boost makes the first relay behave like a real fly for DM1, DM4 and DA1.
+- The release boost makes the first relay's PN same/other-side ratio point the same way as
+  in real-fly recordings for DM1, DM4 and DA1 (preliminary; this one measure only).
 - It is **not enough for steering**: for DM1 the right smell now gives an almost balanced
   DNa02 pair (14.4 vs 12.9 Hz) instead of a clear right turn. 7 minor DN pairs do flip for
   DM1 (the best, DNae015, gives +14.1 / -2.0 Hz), which shows the side information now

@@ -398,7 +398,7 @@ synaptic events, 3,600 input kicks):
 **Verdict: yes, it should fit and run in real time on one core, with room to spare.**
 This is arithmetic, not a measurement. It is also below the published 186-neuron
 real-time result on the same chip (Niedermeier and Krichmar, arXiv 2604.16474, cited in
-docs/hybrid-roadmap.md; a different simulator and neuron model). On this PC the fast
+the hybrid-computer plan (not in this repo); a different simulator and neuron model). On this PC the fast
 engine runs it about 330 times faster than real time (3 ms per simulated second).
 
 ## 7. The firmware file

@@ -91,9 +91,9 @@ HALA_POINT_W_CHIP_MAX = Price(2.26, "W", "PUBLISHED", "Hala Point: at most 2,600
 M33_CLOCK_HZ = Price(150e6, "Hz", "PUBLISHED", "Raspberry Pi RP2350 product brief")
 M33_SRAM_B = Price(520 * 1024, "B", "PUBLISHED", "Raspberry Pi RP2350 product brief")
 # Active power: Niedermeier and Krichmar (arXiv:2604.16474) ran 1,200 LIF neurons on an RP2350
-# at about 30 mW (quoted in docs/hybrid-roadmap.md section 6.2). Used as whole-chip power while
+# at about 30 mW (quoted in the hybrid-computer plan (not in this repo) section 6.2). Used as whole-chip power while
 # one core computes.
-M33_ACTIVE_W = Price(30e-3, "W", "PUBLISHED", "Niedermeier & Krichmar 2026, arXiv:2604.16474 (via hybrid-roadmap 6.2)")
+M33_ACTIVE_W = Price(30e-3, "W", "PUBLISHED", "Niedermeier & Krichmar 2026, arXiv:2604.16474 (via hybrid-computer plan 6.2)")
 M33_SLEEP_W = Price(1e-3, "W", "GUESSED", "RP2350 sleep power not checked; 1 mW placeholder")
 M33_WAKE_S = Price(20e-6, "s", "GUESSED", "wake-from-sleep latency not checked; 20 us placeholder")
 # Cycles per operation (ASSUMED; not measured on a chip). The first three are the
@@ -121,7 +121,7 @@ X86_POWER_W = Price(15.0, "W", "PUBLISHED", "Intel i3-1215U product page: 15 W p
 X86_IDLE_W = Price(3.0, "W", "GUESSED", "laptop package idle power, not measured on this machine")
 
 # ------------------------------------------------------------------ GPU -------------------
-# NVIDIA T4 (the GPU in AWS g4dn.xlarge, hybrid-roadmap 6.7). Datasheet: 70 W, 8.1 TFLOPS FP32,
+# NVIDIA T4 (the GPU in AWS g4dn.xlarge, hybrid-computer plan 6.7). Datasheet: 70 W, 8.1 TFLOPS FP32,
 # 320 GB/s, PCIe Gen3 x16.
 T4 = "NVIDIA T4 datasheet"
 GPU = {
@@ -138,9 +138,9 @@ GPU_IDLE_W = Price(10.0, "W", "GUESSED", "T4 idle power not checked; 10 W placeh
 GPU_SYNEVENT_J = (0.3e-6, 0.47e-6)
 
 # ------------------------------------------------------------------ living module ---------
-CL1_POWER_W = Price(25.0, "W", "PUBLISHED", "The Next Web: about 25 W per CL1 box (hybrid-roadmap 6.2)")
-CL1_ELECTRODES = Price(59, "electrodes", "PUBLISHED", "IEEE Spectrum (hybrid-roadmap section 4)")
-CL1_SAMPLE_HZ = Price(25e3, "Hz", "PUBLISHED", "CL API paper arXiv:2602.11632 (hybrid-roadmap section 4)")
+CL1_POWER_W = Price(25.0, "W", "PUBLISHED", "The Next Web: about 25 W per CL1 box (hybrid-computer plan 6.2)")
+CL1_ELECTRODES = Price(59, "electrodes", "PUBLISHED", "IEEE Spectrum (hybrid-computer plan section 4)")
+CL1_SAMPLE_HZ = Price(25e3, "Hz", "PUBLISHED", "CL API paper arXiv:2602.11632 (hybrid-computer plan section 4)")
 CL1_FRAME_S = Price(40e-6, "s", "PUBLISHED", "CL API paper: 40 us frames")
 CL1_STIM_LATENCY_S = Price(100e-6, "s", "PUBLISHED", "CL API paper: stimulus 80-120 us after the call (mid)")
 MAXONE_NOISE_UV = Price(2.2, "uV rms", "PUBLISHED", "MaxWell MaxOne product page")
@@ -190,7 +190,7 @@ FINALSPARK = {
     "stim_uA": Price(4.0, "uA", "PUBLISHED", JORDAN + ": example optimal pulse 4 uA, biphasic, 100 us per phase"),
     "response_window_s": Price(0.2, "s", "PUBLISHED", JORDAN + ": evoked spikes counted for 200 ms after a 10 ms artifact gap"),
 }
-CL1_LIFETIME_DAYS = Price(180.0, "days", "PUBLISHED", "CL1 cultures last up to 6 months (hybrid-roadmap section 4)")
+CL1_LIFETIME_DAYS = Price(180.0, "days", "PUBLISHED", "CL1 cultures last up to 6 months (hybrid-computer plan section 4)")
 
 
 # ------------------------------------------------------------------ measured x86 ----------

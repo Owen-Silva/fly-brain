@@ -1,7 +1,7 @@
 """Simulated living-neuron module: a small cortical-culture-like network with biology's flaws.
 
 THIS IS THE WEAKEST PART OF THE VIRTUAL COMPUTER. No validated model exists of how a CL1
-culture learns, drifts or dies (docs/hybrid-roadmap.md 6.8). Every setting below is labelled;
+culture learns, drifts or dies (the hybrid-computer plan (not in this repo) 6.8). Every setting below is labelled;
 GUESSED ones are placeholders for Stage 4 to measure.
 
 What is modelled:

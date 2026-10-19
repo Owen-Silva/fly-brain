@@ -428,7 +428,7 @@ KC 5,177, MBON 97, DAN 326.
 
 **Plain English.** In the published model, a whiff of any strong smell sets the whole smell
 system on fire. That traces back to 53 inhibitory cells mislabelled as excitatory. With
-those fixed, smell responses look like a real fly's. But left and right smells still steer
+those fixed, smell responses come closer to real-fly recordings (preliminary). But left and right smells still steer
 the same way, because of a lopsided wiring pattern. Phase 9 cannot use a simple left-minus-
 right steering rule without fixing or correcting this first.
 
@@ -2089,7 +2089,7 @@ neither case does the fly get closer to the smell.
 ## 2026-09-23 - Hybrid computer roadmap: what exists, what an individual can use, and a virtual hybrid computer to build first (PRELIMINARY)
 
 **What was changed.** Nothing in the model, `sim/`, `app/`, `tests/` or any existing
-doc. New: `docs/hybrid-roadmap.md`, a staged plan for the end goal of a hybrid computer
+doc. New: a staged plan (a design note kept outside this repo) for the end goal of a hybrid computer
 (neuromorphic silicon plus living neurons), and this entry. Research only: no runs, no
 purchases, no sign-ups and no contact with anyone. Every source was checked on
 2026-09-23, and every price carries that date.
@@ -2114,8 +2114,8 @@ purchases, no sign-ups and no contact with anyone. Every source was checked on
   $249 on DigiKey, but it runs CNN-style models only. SynSense Xylo and Speck and
   Innatera Pulsar kits have no public price. Loihi 2, SpiNNaker2 and EBRAINS need an
   institution. Lava was archived on 2026-05-13.
-- **Living neurons.** No cell culture outside a lab: biosafety rules put even BSL-1 human or
-  animal cells in a supervised lab. Cortical Labs' CL API simulator is free. News
+- **Living neurons.** No cell culture outside a lab: biosafety rules put even BSL-1
+  human or animal cells in a supervised lab. Cortical Labs' CL API simulator is free. News
   reports put Cortical Cloud at $300 a week. Whether individuals can use it, or
   FinalSpark, is unconfirmed.
 - **Virtual hybrid computer (new Stage 1b, section 6).** It has four parts: a digital
@@ -2136,7 +2136,7 @@ sources: CNX Software for the AKD1500, news reports for Cortical Cloud, and Vant
 AWS. The Sandia result is not peer reviewed. The energy-per-neuron figures are
 order-of-magnitude arithmetic. Every number in the virtual computer is modeled until
 Stages 2 and 3 measure hardware. Its living module rests on guessed settings. Section 8
-of the doc lists what could not be confirmed.
+of the plan lists what could not be confirmed.
 
 **Plain English.** We wrote a realistic plan for the hybrid computer. Chips that work
 like brains are real, and one already runs our whole fly brain much faster than a
@@ -2623,7 +2623,7 @@ loads the published weights as they are.
 ## 2026-09-24 - Virtual hybrid computer v0: the fly circuit costs ~1,000x less energy on a Loihi-style chip than on this laptop, but standby power decides the all-day task (PRELIMINARY)
 
 **What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. New folder `vhc/`
-and write-up `docs/virtual-computer.md` (Stage 1b of `docs/hybrid-roadmap.md`, section 6).
+and write-up `docs/virtual-computer.md` (Stage 1b of the hybrid-computer plan, section 6).
 - Parts, each with a price list (`vhc/prices.py`, every constant labelled PUBLISHED,
   MEASURED, ASSUMED or GUESSED, with its source):
   - conventional core: Cortex-M33 @ 150 MHz (assumed cycles per operation, 30 mW active)

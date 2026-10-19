@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import ctypes
 import json
+import os
 import re
 import subprocess
 import time
@@ -29,8 +30,11 @@ from scipy.optimize import curve_fit
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent / "results"
-PAGE = Path(r"<tmp>"
-            r"\scratchpad\overview\fly-brain-results.html")
+# The results overview page (an HTML file outside the repo). Set FLYBRAIN_OVERVIEW_PAGE to
+# its path to check the page's quoted numbers too; if it is unset or missing, page claims
+# are reported without a page line number.
+PAGE = Path(os.environ.get("FLYBRAIN_OVERVIEW_PAGE",
+                           str(OUT / "overview-page-not-set.html")))
 EXP = ROOT / "experiments"
 MN9 = 720575940660219265          # MN9 "contra" (the paper's main read-out)
 MN9_IPSI = 720575940645521262

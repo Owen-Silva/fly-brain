@@ -40,7 +40,7 @@
     "name": "sim.fast_engine",
     "module": "sim/fast_engine.py",
     "version": "FastBrain, numba 0.67.0, 1 thread(s)",
-    "code_hash": "6ff8a24b2570",
+    "code_hash": "95ff3b847b82",
     "is_fake": false
   },
   "saved_at": "2026-09-22T00:00:00+00:00"

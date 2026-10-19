@@ -119,14 +119,14 @@
     "key": "published",
     "label": "Published model",
     "code": {
-      "sim/fast_engine.py": "6ff8a24b2570"
+      "sim/fast_engine.py": "95ff3b847b82"
     }
   },
   "engine": {
     "name": "sim.fast_engine",
     "module": "sim/fast_engine.py",
     "version": "FastBrain, numba 0.67.0, 1 thread(s)",
-    "code_hash": "6ff8a24b2570",
+    "code_hash": "95ff3b847b82",
     "is_fake": false
   },
   "saved_at": "2026-09-23T09:38:56+00:00"
