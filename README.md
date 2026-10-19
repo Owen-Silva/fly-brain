@@ -264,7 +264,7 @@ All sources below can be downloaded without an account.
 | Neuron annotations for release 783 (cell type, class, predicted neurotransmitter, soma and anchor positions) | flywire_annotations tag `v3.1.0`, commit `8587524c17`; SHA-256 `9a4f8b2f...81d1be` | https://raw.githubusercontent.com/flyconnectome/flywire_annotations/8587524c1748ce5ef2080822a2fc890fc03bf597/supplemental_files/Supplemental_file1_neuron_annotations.tsv | Labels, search, 3D positions |
 | Neuron annotations for release 630 | flywire_annotations tag `v1.1.0`, commit `df6bb136f5`; SHA-256 `55c99c61...2e2e76` | https://raw.githubusercontent.com/flyconnectome/flywire_annotations/df6bb136f5b3d91c3992df4e8de2642329e2a384/supplemental_files/Supplemental_file1_annotations.tsv | Labels for the paper's release |
 | Official FlyWire release 783 connectivity (`proofread_root_ids_783.npy`, `proofread_connections_783.feather`) | Zenodo v783.0 (2024-06-02) | https://doi.org/10.5281/zenodo.10676866 | Cross-checks only |
-| Odour responses: DoOR.data (Muench & Galizia 2016), including the Hallem & Carlson 2006 receptor recordings | DoOR.data | https://github.com/ropensci/DoOR.data | Smell inputs and real-fly smell comparisons (`experiments/olfaction_realfly/`) |
+| Odour responses: DoOR.data (Münch & Galizia 2016), including the Hallem & Carlson 2006 receptor recordings | DoOR.data | https://github.com/ropensci/DoOR.data | Smell inputs and real-fly smell comparisons (`experiments/olfaction_realfly/`) |
 | BANC (brain and nerve cord of a second fly), plus the hemibrain and maleCNS tables from the same public bucket | BANC release v888; hemibrain v1.2.1; maleCNS v0.9 | `https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/` (`compiled_data/`) | Left/right comparison across flies; only small per-glomerulus tables in `experiments/banc_asymmetry/results/` are committed |
 
 Codex (https://codex.flywire.ai) serves the same release-783 data but needs a
@@ -287,9 +287,15 @@ https://flywire.ai/guidelines.
   - The three DoOR-derived tables
     `experiments/olfaction_realfly/results/hc_delta.csv`, `hc_sfr.csv` and
     `door_ext_delta.csv` are **CC BY-SA 4.0**, the licence of DoOR.data.
-  - BANC: the bucket's README states no licence and asks users to cite
-    https://doi.org/10.7910/DVN/7WTH1N. The hemibrain and maleCNS tables are
-    credited to Janelia (citations below).
+  - BANC: the bucket's own README states no licence; it says the data are
+    mirrored, with the same documentation, in the Harvard Dataverse deposit
+    https://doi.org/10.7910/DVN/7WTH1N, which is licensed **CC BY 4.0**.
+    hemibrain: Janelia states "Hemibrain is licensed under CC-BY"
+    (https://www.janelia.org/project-team/flyem/hemibrain). maleCNS: "The
+    Male CNS dataset is licensed under CC-BY" (https://male-cns.janelia.org).
+    Neither Janelia statement names a version (we used hemibrain v1.2.1 and
+    maleCNS v0.9, as re-hosted in the BANC bucket). Details in
+    [DATA_LICENSE.md](DATA_LICENSE.md).
 - **Reference model code:** the Brian2 port (`sim/shiu_model.py`) and the
   fast engine's constants (`sim/fast_engine.py`) are copied from Shiu &
   Spiller's Drosophila_brain_model, MIT License, Copyright (c) 2023 Philip Shiu
@@ -336,9 +342,10 @@ Annotations (flywire_annotations v3.x asks for these in addition to 1 and 2):
 6. Matsliah, A. et al. Neuronal parts list and wiring diagram for a visual
    system. *Nature* **634**, 166-180 (2024).
    https://doi.org/10.1038/s41586-024-07981-1
-7. Berg, S. et al. Sexual dimorphism in the complete connectome of the
-   *Drosophila* male central nervous system. *bioRxiv* (2025).
-   https://doi.org/10.1101/2025.10.09.680999 (also the maleCNS source)
+7. Berg, S. et al. Sexual dimorphism in the complete *Drosophila* male
+   central nervous system connectome. *Cell* **189**, 5504-5526.e15 (2026).
+   https://doi.org/10.1016/j.cell.2026.08.015 (also the maleCNS source;
+   preprint https://doi.org/10.1101/2025.10.09.680999)
 
 Underlying data products that FlyWire credits (electron microscopy volume,
 synapse detection):
@@ -360,12 +367,12 @@ Simulator and body model:
     efficient neural simulator. *eLife* **8**, e47314 (2019).
     https://doi.org/10.7554/eLife.47314
 12. Wang-Chen, S. et al. NeuroMechFly v2: simulating embodied sensorimotor
-    control in adult *Drosophila*. *Nature Methods* (2024).
+    control in adult *Drosophila*. *Nature Methods* **21**, 2353-2362 (2024).
     https://doi.org/10.1038/s41592-024-02497-y
 
 Odour responses:
 
-13. Muench, D. & Galizia, C. G. DoOR 2.0 - Comprehensive mapping of
+13. Münch, D. & Galizia, C. G. DoOR 2.0 - Comprehensive mapping of
     *Drosophila melanogaster* odorant responses. *Scientific Reports* **6**,
     21841 (2016). https://doi.org/10.1038/srep21841
 14. Hallem, E. A. & Carlson, J. R. Coding of odors by a receptor repertoire.
@@ -373,14 +380,18 @@ Odour responses:
 
 Other connectomes (used only in `experiments/banc_asymmetry/`):
 
-15. BANC, the Brain And Nerve Cord connectome (Bates, Phelps, Kim, Yang et
-    al.), data release v888. https://doi.org/10.7910/DVN/7WTH1N
+15. Bates, A. S., Phelps, J. S., Kim, M., Yang, H. H. et al. Distributed
+    control circuits across a brain-and-cord connectome. *Nature* **656**,
+    957-970 (2026). https://doi.org/10.1038/s41586-026-10735-w (BANC).
+    Data: Harvard Dataverse, https://doi.org/10.7910/DVN/7WTH1N (CC BY 4.0);
+    this project used BANC release v888 from the public bucket.
 16. Scheffer, L. K. et al. A connectome and analysis of the adult
     *Drosophila* central brain. *eLife* **9**, e57443 (2020).
     https://doi.org/10.7554/eLife.57443 (hemibrain)
 
 Connectome data: FlyWire Consortium, FlyWire Whole-brain Connectome
-Connectivity Data 783, Zenodo (2024). https://doi.org/10.5281/zenodo.10676866
+Connectivity Data, version 783.0, Zenodo (2024).
+https://doi.org/10.5281/zenodo.10676866
 
 ## Contributing
 
