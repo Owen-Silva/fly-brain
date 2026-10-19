@@ -19,3 +19,18 @@ experiments/minimal_circuit/results/raw/
 experiments/mb_continual/results/raw/
 experiments/reservoir_spiking/results/raw/
 experiments/robust_circuit/results/raw/
+# Regenerable caches, run-queue markers and run logs (kept on disk, never tracked)
+*.pkl
+experiments/**/cache/
+experiments/**/queue/
+*.done
+*_killed.txt
+*_failed*.txt
+*_failed*.log
+*.log
+*.out
+experiments/**/logs/
+experiments/**/results/log_*.txt
+# Personal notes and local config stay outside the repo
+.env
+*.local.*
