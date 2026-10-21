@@ -2623,7 +2623,7 @@ loads the published weights as they are.
 ## 2026-09-24 - Virtual hybrid computer v0: the fly circuit costs ~1,000x less energy on a Loihi-style chip than on this laptop, but standby power decides the all-day task (PRELIMINARY)
 
 **What was changed.** Nothing in `sim/`, `app/`, `tests/` or `data/`. New folder `vhc/`
-and write-up `docs/virtual-computer.md` (Stage 1b of the hybrid-computer plan, section 6).
+and write-up `docs/virtual-computer.md` (Stage 1b of the hybrid-computer plan, a design note not in this repo, section 6).
 - Parts, each with a price list (`vhc/prices.py`, every constant labelled PUBLISHED,
   MEASURED, ASSUMED or GUESSED, with its source):
   - conventional core: Cortex-M33 @ 150 MHz (assumed cycles per operation, 30 mW active)

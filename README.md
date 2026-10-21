@@ -9,10 +9,12 @@ paper. It then added a fast engine, an explorer app, experiments, more
 realistic neurons and synapses, mushroom-body learning, a physics body, and a
 scorecard that compares the model with measurements from real flies.
 
-![Explorer app](docs/screenshot.png)
+![Explorer app after a run: 21 sugar-taste neurons stimulated at 100 Hz on the whole brain, with a spike raster and the most active neurons](docs/screenshot.png)
 
-> **TODO:** `docs/screenshot.png` does not exist yet. Add a screenshot of the
-> explorer app before publishing.
+*The explorer app after running the saved setup "Sugar taste neurons (right
+side) -> feeding motor neuron MN9" (published model, FlyWire snapshot 630, 30
+trials of 1 s). The two watched MN9 neurons (cell type CB0701) fire at 67.6
+and 49.6 spikes/s.*
 
 ## Status
 
