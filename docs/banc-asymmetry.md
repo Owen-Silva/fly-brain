@@ -108,7 +108,7 @@ downloaded about 4.2 GB into `data/banc/` (never committed). No file over 5 GB w
 | `malecns_09/*_meta.feather`, `*_simple_edgelist.feather` | 17 MB + 3.4 GB | maleCNS (read 65,536 rows at a time; peak memory stayed small) |
 
 Skipped: the per-synapse tables (17-20 GB each) and anything needing a login (the CAVE
-database and Codex downloads). **Owen does not need to do anything to unlock BANC.**
+database and Codex downloads). **Nothing needs to be done by hand to unlock BANC.**
 
 ## 3. Same measures, same definitions
 
@@ -307,7 +307,7 @@ notes do not say whether the side labels were corrected. **UNVERIFIED.**
 | 3. Literature | Partly. Tobin et al. 2017 (ORNs branch to both sides), Gaudry et al. 2013 (1.4x same-side release), Taisz et al. 2023 (DA1 1.45x in FlyWire), as cited in docs/phase6-steering.md. No paper comparing left/right glomerulus size across flies was searched for (**UNVERIFIED**). |
 | 4. Fits fly biology? | The same-side advantage in every fly fits. BANC's missing crossing branches do not fit biology, so they are treated as a reconstruction gap. |
 | 5. Written up | This document. |
-| 6. Share | Not done (Owen's decision). Nothing was posted or sent. |
+| 6. Share | Not done (the author's decision). Nothing was posted or sent. |
 
 Label choices for the extra flies (`results/other_flies_label_checks.csv`):
 - **maleCNS:** the `nerve` column gives an ORN same-side ratio of 0.95, which looks like

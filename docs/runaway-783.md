@@ -45,7 +45,7 @@
   rule catches them, and both versions of the fix work.
 
 **Verdict: by the criteria fixed in advance, both the runaway and the fix hold on
-snapshot 783, the current public release.** Sharing it is Owen's decision (PLAN.md Phase 6
+snapshot 783, the current public release.** Sharing it is the author's decision (PLAN.md Phase 6
 step 6); nothing was sent to anyone.
 
 Labels: **VALIDATED** = 3 or more seeds (a seed is the starting number of the random
@@ -412,7 +412,7 @@ the same cells as on 630 (PRELIMINARY, one seed).
   published physiology (Yaksi & Wilson 2010) and transmitter data (Shang et al. 2007), and
   the extension from the 44 measured eLN types to all 166 excitatory local neurons remains
   an inference.
-- Nothing was shared or sent. Whether to tell the model's authors is Owen's decision
+- Nothing was shared or sent. Whether to tell the model's authors is this project author's decision
   (PLAN.md Phase 6 step 6).
 
 ---

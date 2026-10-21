@@ -451,7 +451,7 @@ work. The FlyWire authors already warn about sensory-neuron artefacts in general
 would be a caution, not a discovery.
 
 Finding 2 is the one worth telling, and the natural audience is the model's authors: an
-issue on their GitHub repository, or a note. Whether and how is Owen's call (PLAN.md
+issue on their GitHub repository, or a note. Whether and how is the author's call (PLAN.md
 Phase 6 step 6). At least one other user has already hit the runaway and could not explain it.
 Our cause and our literature-based fix, which leaves the paper's taste results unchanged,
 would save the next person the same dead end. Before anything is sent:

@@ -182,7 +182,7 @@ def _file_hash(path: Path) -> str | None:
 PUBLISHED_VARIANT = {"fix": "none", "upgrades": []}
 MAX_BRAINS_IN_MEMORY = 2
 VARIANT_SNAPSHOT = "630"          # every variant is defined for snapshot 630 only
-# The model the page opens on (Owen, 2026-09-23): the recommended fix, i.e.
+# The model the page opens on (author's decision, 2026-09-23): the recommended fix, i.e.
 # sim.sign_fixes.RECOMMENDED_FIX (tests/test_app.py checks the two agree). Where
 # it cannot be used, the page opens on the published model and says why
 # (EngineAdapter.default_variant). A run request or saved setup WITHOUT a model

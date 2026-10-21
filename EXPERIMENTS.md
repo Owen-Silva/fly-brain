@@ -1526,7 +1526,7 @@ a confirmation, not a discovery. The model is getting a known answer, and the re
 test of that neuron still hasn't been done. The runaway, where smell input locks the
 simulated brain into non-stop firing, has been noticed by at least one other hobbyist.
 Nobody has explained it; our explanation and fix look new, and this is the finding
-worth telling the model's authors about (Owen's call). The left/right difference in the
+worth telling the model's authors about (the author's call). The left/right difference in the
 smell centre isn't reported anywhere. The FlyWire authors warn that sensory neurons are
 more prone to reconstruction problems on one side, so it may be a flaw in this one
 reconstruction rather than a real difference; a second brain has to settle it.
@@ -2541,7 +2541,7 @@ for this test.
 
 ## 2026-09-23 - The recommended fix (`al_ln_literature`) is now the project default; the published model stays one click away (VALIDATED for the code change)
 
-**What was changed.** Owen approved this on 2026-09-23. `FastBrain` is unchanged: it still
+**What was changed.** The author approved this on 2026-09-23. `FastBrain` is unchanged: it still
 loads the published weights as they are.
 - `sim/sign_fixes.py`: `build_brain(fix=RECOMMENDED_FIX, ...)`. It used to default to `"none"`.
 - `sim/realism.py`: `build_realistic_brain(fix=RECOMMENDED_FIX, ...)`, imported from

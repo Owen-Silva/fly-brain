@@ -322,7 +322,7 @@ def test_model_panel_state_and_docs(fresh):
 
 
 def test_default_model_is_the_recommended_fix_and_783_falls_back_visibly(fresh):
-    """The app opens on the recommended fix (Owen, 2026-09-23). On map 783, where
+    """The app opens on the recommended fix (author's decision, 2026-09-23). On map 783, where
     sim/ has no fix, it opens on the published model and says why."""
     from sim.sign_fixes import RECOMMENDED_FIX
     c = fresh
